@@ -4,15 +4,22 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+### Hi there 👋
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+[![twitter](https://img.shields.io/twitter/follow/mbrg0?icon=twitter&style=social&label=Follow)](https://twitter.com/intent/follow?screen_name=mbrg0)
+[![email me](https://img.shields.io/badge/michael.bargury-owasp.org-red?logo=Gmail)](mailto:michael.bargury@owasp.org)
+<a rel="me" href="https://infosec.exchange/@mbrg">Mastodon</a>
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+I'm a security researcher and engineer passionate about all things related to cloud, SaaS and no-code security.
 
+Affiliations:
 
-[jekyll-organization]: https://github.com/jekyll
+- Co-founder and CTO at [Zenity](https://www.zenity.io), which provides security governance for low-code / no-code applications
+- Project lead at [OWASP Top 10 Low-Code/No-Code Security Risks](https://owasp.org/www-project-top-10-low-code-no-code-security-risks/)
+- Columnist at [DarkReading](https://www.darkreading.com/author/michael-bargury)
+
+Currently working on:
+
+- [Power-pwn](https://github.com/mbrg/power-pwn) - Power Pwn is an offensive security toolset for Microsoft 365 Power Platform.
+  
+Check out my [latest and upcoming talks](https://github.com/mbrg/talks), come and say hi!
