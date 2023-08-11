@@ -27,8 +27,10 @@ github_username:  mbrg
 # Build settings
 markdown: kramdown
 theme: minimal-mistakes-jekyll
+remote_theme: minimal-mistakes-jekyll
 plugins:
   - jekyll-feed
+  - jekyll-remote-theme
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
