@@ -17,7 +17,7 @@ With all the hype around low-code/no-code platforms, many are now touting the be
 
 If, similar to cloud computing, it is a shared-responsibility model, then where do we draw the lines of responsibility among the different parties involved?
 
-# One Size Does Not Fit All
+## One Size Does Not Fit All
 
 Low-code applications are diverse: They come in different forms, vary in how they are deployed, and solve a broad range of problems. When discussing the security responsibility model for low-code applications, we have to first understand the different layers of a low-code application. Here is a brief summary:
 
@@ -32,7 +32,7 @@ Low-code applications are diverse: They come in different forms, vary in how the
 
 We can also consider the low-code platform development environment used to develop the application as Layer 0. Even if you do everything necessary to rigorously secure your application, if a malicious user gets access to your development console — that’s just as bad.
 
-# Security Is a Shared Responsibility
+## Security Is a Shared Responsibility
 
 Cloud computing’s approach to the shared-responsibility model is straightforward: As you advance in your cloud journey and adopt higher levels of abstraction, the security responsibility shifts away from you and toward the cloud provider.
 
@@ -42,7 +42,7 @@ Should we consider low-code/no-code applications as yet another step in this evo
 
 It depends. Where the responsibility lies depends on the choices you make when adopting low-code development. For example, with the infrastructure layer, are you planning on hosting your application in a private cloud or a public data center? Some low-code/no-code platforms are designed specifically for on-premises or hybrid cloud/on-premises deployments. If you decide to host your own applications, you will have full control over the underlying infrastructure, but that also means you are responsible for securing every aspect of the environment.
 
-# Application-Layer Choices
+## Application-Layer Choices
 
 What are some development choices about the application layer that affect the security responsibility?
 
@@ -72,7 +72,7 @@ Finally, you may have to rely on third-party components because the functionalit
 
 6. Similar to vetting third-party open source packages, you must have a process in place to make sure you are not turning these components into the weakest link of your application security chain.
 
-# Choosing Between the Cloud and On-Premises
+## Choosing Between the Cloud and On-Premises
 
 It’s quite common to integrate low-code applications with existing public cloud accounts in order to consume public cloud services, such as storage buckets, message queues, databases, and so forth. If that is the case, you have to add cloud security as an additional factor to the overall security posture of your application. You should make sure you are adopting a mature cloud security posture management approach.
 
@@ -80,7 +80,7 @@ Many low-code/no-code platforms offer connectivity to on-premises data and appli
 
 When creating a bridge between the cloud and your organization’s on-premises infrastructure, data, and applications, you are essentially opening up your private assets to access from the public Internet. Needless to say, in such cases security and privacy should be top-of-mind, and access should be as restricted as possible — encrypted and monitored at all times.
 
-# Who Is Responsible? The Verdict
+## Who Is Responsible? The Verdict
 
 Given all the different options for low-code application development, there’s really no simple answer. Neither is there a straight line we can draw in some low-code stack security chart that would be clear-cut. Low-code/no-code is a paradigm shift in the way software is developed, from monolithic, to microservices, and now — low-code/no-code. It should not be viewed as a way to abstract away hardware and deployment models as part of the next phase in the evolution of cloud computing.
 
