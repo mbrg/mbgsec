@@ -10,7 +10,7 @@ tags:
   - Vulnerability Management
 ---
 
-Originally posted on [DarkReading](https://www.darkreading.com/edge-articles/addressing-the-low-code-security-elephant-in-the-room/).
+_Originally posted on [DarkReading](https://www.darkreading.com/edge-articles/addressing-the-low-code-security-elephant-in-the-room/)._
 <link rel="canonical" href="https://www.darkreading.com/edge-articles/addressing-the-low-code-security-elephant-in-the-room/" />
   
 With all the hype around low-code/no-code platforms, many are now touting the benefits of adopting low-code/no-code development. Let’s address the (security) elephant in the room: Anyone can spin up applications using these tools, but who is responsible for the security of these applications?
