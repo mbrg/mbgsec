@@ -22,9 +22,13 @@ If, similar to cloud computing, it is a shared-responsibility model, then where 
 Low-code applications are diverse: They come in different forms, vary in how they are deployed, and solve a broad range of problems. When discussing the security responsibility model for low-code applications, we have to first understand the different layers of a low-code application. Here is a brief summary:
 
 - **Layer 1**: The infrastructure on which the low-code application is running on, which includes the servers running the operating system, the network in which the servers are deployed, the underlying operating system(s), and virtualization layers, containers, and container orchestration being used.
+
 - **Layer 2**: The runtime environment used for running the low-code application.
+
 - **Layer 3**: The application itself, which includes the business logic of the application; any widgets, components, and connectors provided by the low-code platform; custom widgets/components created by the app owner’s organization; third-party widgets, components, and connectors, such as those available through the different public marketplaces; any ancillary services being used by the low-code application, such as public cloud services (e.g., storage buckets, message queues, IoT devices) and SaaS instances (e.g., Salesforce, ServiceNow, Slack); and identity and access management tools being used.
+
 - **Layer 4**: The data being used by the application. Data can be stored in different locations — sometimes in the cloud and sometimes on-premise.
+
 
 We can also consider the low-code platform development environment used to develop the application as Layer 0. Even if you do everything necessary to rigorously secure your application, if a malicious user gets access to your development console — that’s just as bad.
 
@@ -57,10 +61,15 @@ While custom built components provide extensibility and the freedom to create fu
 Finally, you may have to rely on third-party components because the functionality you are looking for does not exist as a native service or is offered as an add-on component by your low-code platform. In this case, you will be responsible for vetting and choosing third-party components based on several factors:
 
 1. Is the source code available for review? 
+
 2. How often is the component updated? 
+
 3. Does the component come from a reputable author or organization? 
+
 4. Is the component connected to a third-party service, and, if so, is it secure? 
+
 5. Does the low-code platform provider perform any kind of security validation on components in the marketplace? 
+
 6. Similar to vetting third-party open source packages, you must have a process in place to make sure you are not turning these components into the weakest link of your application security chain.
 
 # Choosing Between the Cloud and On-Premises
