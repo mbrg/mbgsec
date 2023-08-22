@@ -5,7 +5,7 @@ permalink: /talks/
 
 | Date | Conference | Talk | Resources |
 | - | - | - | - |
-| 2023-04-28 | RSAC 2023 | Credential Sharing as a Service: the Dark Side of No Code | [<i class="fab fa-fw fa-slideshare" title="Slides"></i>](/assets/pdfs/2023-04-28_RSAC-2023_DAS-R06_Credential_Sharing_as_a_Service_The_Dark_Side_of_No_Code.pdf) [<i class="fab fa-fw fa-youtube" title="Recording"></i>](https://www.youtube.com/watch?v=QtaA5U7LJ74) |
+| 2023-04-28 | RSAC 2023 | Credential Sharing as a Service: the Dark Side of No Code | [<i class="fab fa-fw fa-slideshare" title="Slides"></i>](../assets/pdfs/2023-04-28_RSAC-2023_DAS-R06_Credential_Sharing_as_a_Service_The_Dark_Side_of_No_Code.pdf) [<i class="fab fa-fw fa-youtube" title="Recording"></i>](https://www.youtube.com/watch?v=QtaA5U7LJ74) |
 | 2023-04-23 | BSidesSF 2023 | Windows 11 At Your Service | [<i class="fab fa-fw fa-slideshare" title="Slides"></i>](/assets/pdfs/2023-04-23_BSidesSF_Windows_11_At_Your_Service.pdf) [<i class="fab fa-fw fa-youtube" title="Recording"></i>](https://youtu.be/yVRglHWHLC8) |
 | 2023-04-23 | BSidesSF 2023 | Sure, Let Business Users Build Their Own. What Could Go Wrong? | [<i class="fab fa-fw fa-slideshare" title="Slides"></i>](/assets/pdfs/2023-04-23_BSidesSF_Sure_Let_Business_Users_Build_Their_Own_What_Could_Go_Wrong.pdf) [<i class="fab fa-fw fa-youtube" title="Recording"></i>](https://youtu.be/Z0RvO6s7Jxk) |
 | 2023-04-22 | BSidesNYC 2023 | Low Code High Risk: Enterprise Domination via Low Code Abuse | [<i class="fab fa-fw fa-slideshare" title="Slides"></i>](/assets/pdfs/2023-04-22_BSidesNYC_Dominating_the_Enterprise_via_Low_Code_Abuse.pdf) [<i class="fab fa-fw fa-youtube" title="Recording"></i>](https://www.youtube.com/watch?v=j0uUpsuUoFQ) |
