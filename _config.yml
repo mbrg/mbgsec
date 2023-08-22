@@ -60,8 +60,8 @@ plugins:
 
 author:
   name   : "First Lastname"
-  avatar : "../assets/images/bio-photo.jpg"
-  bio    : "My awesome biography constrained to a sentence or two goes here."
+  avatar : "assets/images/bio-photo.png"
+  bio    : "Security research, hacking, AppSec, primarily focused on low-code/no-code apps."
   links:
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
