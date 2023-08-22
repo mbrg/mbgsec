@@ -59,7 +59,7 @@ plugins:
   - jekyll-include-cache
 
 author:
-  name   : "First Lastname"
+  name   : "Michael Bargury"
   avatar : "assets/images/bio-photo.png"
   bio    : "Security research, hacking, AppSec, primarily focused on low-code/no-code apps."
   links:
