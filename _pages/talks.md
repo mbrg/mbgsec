@@ -7,8 +7,8 @@ permalink: /talks/
 
 | Date | Conference | Talk | Conf schedule |
 | - | - | - | - |
-| 2023-10-31 | OWASP Global AppSec DC 2023 | OWASP Low-Code No-Code Top 10 | [<i class="fab fa-fw fa-calendar" title="Conference schedule"></i>](https://owasp2023globalappsecwashin.sched.com/event/1OUyz/owasp-low-code-no-code-top-10) |
-| 2023-10-30 | OWASP Global AppSec DC 2023 | Credential Sharing as a Service: the Dark Side of No Code| [<i class="fab fa-fw fa-calendar" title="Conference schedule"></i>](https://owasp2023globalappsecwashin.sched.com/event/1Os3h/credential-sharing-as-a-service-the-dark-side-of-no-code) |
+| 2023-10-31 | OWASP Global AppSec DC 2023 | OWASP Low-Code No-Code Top 10 | [<i class="fa fa-calendar" title="Conference schedule"></i>](https://owasp2023globalappsecwashin.sched.com/event/1OUyz/owasp-low-code-no-code-top-10) |
+| 2023-10-30 | OWASP Global AppSec DC 2023 | Credential Sharing as a Service: the Dark Side of No Code| [<i class="fa fa-calendar" title="Conference schedule"></i>](https://owasp2023globalappsecwashin.sched.com/event/1Os3h/credential-sharing-as-a-service-the-dark-side-of-no-code) |
 
 
 ## Previous Talks
