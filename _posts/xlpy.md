@@ -1,3 +1,37 @@
+#### Basic recon
+
+````python
+import os
+os.popen('uname -a').read()
+````
+````
+"Linux SandboxHost-638284801076031219 5.10.102.2-microsoft-standard #1 SMP Mon Mar 7 17:36:34 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+"
+````
+
+````python
+import os
+os.popen('cat /etc/*release').read()
+````
+````
+"DISTRIB_ID=""Mariner""
+DISTRIB_RELEASE=""2.0.20230811""
+DISTRIB_CODENAME=Mariner
+DISTRIB_DESCRIPTION=""CBL-Mariner 2.0.20230811""
+CBL-Mariner 2.0.20230811
+MARINER_BUILD_NUMBER=c5977a5
+NAME=""Common Base Linux Mariner""
+VERSION=""2.0.20230811""
+ID=mariner
+VERSION_ID=""2.0""
+PRETTY_NAME=""CBL-Mariner/Linux""
+ANSI_COLOR=""1;34""
+HOME_URL=""https://aka.ms/cbl-mariner""
+BUG_REPORT_URL=""https://aka.ms/cbl-mariner""
+SUPPORT_URL=""https://aka.ms/cbl-mariner""
+"
+````
+
 #### Env vars
 
 ```python
