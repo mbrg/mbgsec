@@ -5,8 +5,7 @@ import os
 os.popen('uname -a').read()
 ````
 ````
-"Linux SandboxHost-638284801076031219 5.10.102.2-microsoft-standard #1 SMP Mon Mar 7 17:36:34 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
-"
+Linux SandboxHost-638284801076031219 5.10.102.2-microsoft-standard #1 SMP Mon Mar 7 17:36:34 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
 ````
 
 ````python
@@ -14,7 +13,7 @@ import os
 os.popen('cat /etc/*release').read()
 ````
 ````
-"DISTRIB_ID=""Mariner""
+DISTRIB_ID=""Mariner""
 DISTRIB_RELEASE=""2.0.20230811""
 DISTRIB_CODENAME=Mariner
 DISTRIB_DESCRIPTION=""CBL-Mariner 2.0.20230811""
@@ -29,8 +28,369 @@ ANSI_COLOR=""1;34""
 HOME_URL=""https://aka.ms/cbl-mariner""
 BUG_REPORT_URL=""https://aka.ms/cbl-mariner""
 SUPPORT_URL=""https://aka.ms/cbl-mariner""
-"
 ````
+
+````python
+import os
+os.popen('getent passwd').read()
+````
+````
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/dev/null:/bin/false
+daemon:x:6:6:Daemon User:/dev/null:/bin/false
+messagebus:x:18:18:D-Bus Message Daemon User:/var/run/dbus:/bin/false
+systemd-bus-proxy:x:72:72:systemd Bus Proxy:/:/bin/false
+systemd-journal-gateway:x:73:73:systemd Journal Gateway:/:/bin/false
+systemd-journal-remote:x:74:74:systemd Journal Remote:/:/bin/false
+systemd-journal-upload:x:75:75:systemd Journal Upload:/:/bin/false
+systemd-network:x:76:76:systemd Network Management:/:/bin/false
+systemd-resolve:x:77:77:systemd Resolver:/:/bin/false
+systemd-timesync:x:78:78:systemd Time Synchronization:/:/bin/false
+systemd-coredump:x:79:79:systemd Core Dumper:/:/usr/bin/false
+systemd-oom:x:80:80:systemd Userspace OOM Killer:/:/usr/bin/false
+nobody:x:65534:65533:Unprivileged User:/dev/null:/bin/false
+jovyan:x:1000:100::/home/jovyan:/bin/bash
+````
+
+````python
+import os
+os.popen('id').read()
+# uid=1000(jovyan) gid=100(users) groups=100(users)
+
+import os
+os.popen('groups jovyan').read()
+# jovyan : users
+
+import os
+os.popen('cat /etc/passwd').read()
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/dev/null:/bin/false
+daemon:x:6:6:Daemon User:/dev/null:/bin/false
+messagebus:x:18:18:D-Bus Message Daemon User:/var/run/dbus:/bin/false
+systemd-bus-proxy:x:72:72:systemd Bus Proxy:/:/bin/false
+systemd-journal-gateway:x:73:73:systemd Journal Gateway:/:/bin/false
+systemd-journal-remote:x:74:74:systemd Journal Remote:/:/bin/false
+systemd-journal-upload:x:75:75:systemd Journal Upload:/:/bin/false
+systemd-network:x:76:76:systemd Network Management:/:/bin/false
+systemd-resolve:x:77:77:systemd Resolver:/:/bin/false
+systemd-timesync:x:78:78:systemd Time Synchronization:/:/bin/false
+systemd-coredump:x:79:79:systemd Core Dumper:/:/usr/bin/false
+systemd-oom:x:80:80:systemd Userspace OOM Killer:/:/usr/bin/false
+nobody:x:65534:65533:Unprivileged User:/dev/null:/bin/false
+jovyan:x:1000:100::/home/jovyan:/bin/bash
+
+import os
+os.popen('echo "root2:rOr30SXusA:0:0:root:/root:/bin/bash" | tee -a /etc/passwd').read()
+# Permission denied
+````
+
+Magic functions
+```
+from IPython.core.magic import register_line_magic
+
+@register_line_magic
+def lsmagic_to_var(line):
+    var_name = line.strip()
+    magic_output = %lsmagic
+    get_ipython().user_ns[var_name] = magic_output
+
+%lsmagic_to_var my_var
+print(my_var)
+
+
+Available line magics:
+%alias  %alias_magic  %autoawait  %autocall  %automagic  %autosave  %bookmark  %cat  %cd  %clear  %colors  %conda  %config  %connect_info  %cp  %debug  %dhist  %dirs  %doctest_mode  %ed  %edit  %env  %gui  %hist  %history  %killbgscripts  %ldir  %less  %lf  %lk  %ll  %load  %load_ext  %loadpy  %logoff  %logon  %logstart  %logstate  %logstop  %ls  %lsmagic  %lsmagic_to_var  %lx  %macro  %magic  %man  %matplotlib  %mkdir  %more  %mv  %notebook  %page  %pastebin  %pdb  %pdef  %pdoc  %pfile  %pinfo  %pinfo2  %pip  %popd  %pprint  %precision  %prun  %psearch  %psource  %pushd  %pwd  %pycat  %pylab  %qtconsole  %quickref  %recall  %rehashx  %reload_ext  %rep  %rerun  %reset  %reset_selective  %rm  %rmdir  %run  %save  %sc  %set_env  %store  %sx  %system  %tb  %time  %timeit  %unalias  %unload_ext  %who  %who_ls  %whos  %xdel  %xmode
+
+Available cell magics:
+%%!  %%HTML  %%SVG  %%bash  %%capture  %%debug  %%file  %%html  %%javascript  %%js  %%latex  %%markdown  %%perl  %%prun  %%pypy  %%python  %%python2  %%python3  %%ruby  %%script  %%sh  %%svg  %%sx  %%system  %%time  %%timeit  %%writefile
+
+Automagic is ON, % prefix IS NOT needed for line magics.
+```
+
+#### Open ports
+
+```python
+import socket
+import psutil
+
+open_ports = []
+
+for port in range(1, 65536):
+    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    sock.settimeout(1)
+    result = sock.connect_ex(('localhost', port))
+    if result == 0:
+        open_ports.append(port)
+    sock.close()
+
+for port in open_ports:
+    for conn in psutil.net_connections(kind='inet'):
+        if conn.laddr.port == port:
+            pid = conn.pid
+            p = psutil.Process(pid)
+            cmdline = " ".join(p.cmdline())
+            print(f"Port {port} is open and being used by {p.name()} (PID: {pid}), Command: {cmdline}")
+```
+```
+Port 2759 is open and being used by python (PID: None), Command: /app/officepy/bin/python -m ipykernel_launcher -f /home/jovyan/.local/share/jupyter/runtime/kernel-987b5225-ae54-468f-b900-bfe9db1f31a4.json
+Port 5002 is open and being used by dotnet (PID: 65), Command: dotnet /app/service/Microsoft.OfficePy.Service.CodeExecutionService.dll
+Port 5002 is open and being used by dotnet (PID: 65), Command: dotnet /app/service/Microsoft.OfficePy.Service.CodeExecutionService.dll
+Port 5002 is open and being used by dotnet (PID: 65), Command: dotnet /app/service/Microsoft.OfficePy.Service.CodeExecutionService.dll
+Port 5002 is open and being used by dotnet (PID: 65), Command: dotnet /app/service/Microsoft.OfficePy.Service.CodeExecutionService.dll
+Port 5002 is open and being used by dotnet (PID: 65), Command: dotnet /app/service/Microsoft.OfficePy.Service.CodeExecutionService.dll
+Port 5002 is open and being used by dotnet (PID: 65), Command: dotnet /app/service/Microsoft.OfficePy.Service.CodeExecutionService.dll
+Port 5002 is open and being used by dotnet (PID: 65), Command: dotnet /app/service/Microsoft.OfficePy.Service.CodeExecutionService.dll
+Port 8888 is open and being used by jupyter-noteboo (PID: 103), Command: /app/officepy/bin/python /app/officepy/bin/jupyter-notebook --ip 0.0.0.0 --no-browser
+Port 8888 is open and being used by jupyter-noteboo (PID: 103), Command: /app/officepy/bin/python /app/officepy/bin/jupyter-notebook --ip 0.0.0.0 --no-browser
+Port 8888 is open and being used by jupyter-noteboo (PID: 103), Command: /app/officepy/bin/python /app/officepy/bin/jupyter-notebook --ip 0.0.0.0 --no-browser
+Port 32907 is open and being used by python (PID: 618), Command: /app/officepy/bin/python -m ipykernel_launcher -f /home/jovyan/.local/share/jupyter/runtime/kernel-987b5225-ae54-468f-b900-bfe9db1f31a4.json
+Port 32907 is open and being used by python (PID: 618), Command: /app/officepy/bin/python -m ipykernel_launcher -f /home/jovyan/.local/share/jupyter/runtime/kernel-987b5225-ae54-468f-b900-bfe9db1f31a4.json
+Port 32907 is open and being used by python (PID: 618), Command: /app/officepy/bin/python -m ipykernel_launcher -f /home/jovyan/.local/share/jupyter/runtime/kernel-987b5225-ae54-468f-b900-bfe9db1f31a4.json
+Port 38415 is open and being used by python (PID: 618), Command: /app/officepy/bin/python -m ipykernel_launcher -f /home/jovyan/.local/share/jupyter/runtime/kernel-987b5225-ae54-468f-b900-bfe9db1f31a4.json
+Port 40755 is open and being used by python (PID: 618), Command: /app/officepy/bin/python -m ipykernel_launcher -f /home/jovyan/.local/share/jupyter/runtime/kernel-987b5225-ae54-468f-b900-bfe9db1f31a4.json
+Port 40755 is open and being used by python (PID: 618), Command: /app/officepy/bin/python -m ipykernel_launcher -f /home/jovyan/.local/share/jupyter/runtime/kernel-987b5225-ae54-468f-b900-bfe9db1f31a4.json
+Port 40755 is open and being used by python (PID: 618), Command: /app/officepy/bin/python -m ipykernel_launcher -f /home/jovyan/.local/share/jupyter/runtime/kernel-987b5225-ae54-468f-b900-bfe9db1f31a4.json
+Port 42935 is open and being used by python (PID: 618), Command: /app/officepy/bin/python -m ipykernel_launcher -f /home/jovyan/.local/share/jupyter/runtime/kernel-987b5225-ae54-468f-b900-bfe9db1f31a4.json
+Port 44763 is open and being used by python (PID: 618), Command: /app/officepy/bin/python -m ipykernel_launcher -f /home/jovyan/.local/share/jupyter/runtime/kernel-987b5225-ae54-468f-b900-bfe9db1f31a4.json
+Port 44763 is open and being used by python (PID: 618), Command: /app/officepy/bin/python -m ipykernel_launcher -f /home/jovyan/.local/share/jupyter/runtime/kernel-987b5225-ae54-468f-b900-bfe9db1f31a4.json
+Port 49273 is open and being used by python (PID: 618), Command: /app/officepy/bin/python -m ipykernel_launcher -f /home/jovyan/.local/share/jupyter/runtime/kernel-987b5225-ae54-468f-b900-bfe9db1f31a4.json
+Port 49273 is open and being used by python (PID: 618), Command: /app/officepy/bin/python -m ipykernel_launcher -f /home/jovyan/.local/share/jupyter/runtime/kernel-987b5225-ae54-468f-b900-bfe9db1f31a4.json
+Port 49273 is open and being used by python (PID: 618), Command: /app/officepy/bin/python -m ipykernel_launcher -f /home/jovyan/.local/share/jupyter/runtime/kernel-987b5225-ae54-468f-b900-bfe9db1f31a4.json
+```
+
+```
+```
+```
+/app
+Dockerfile
+Microsoft.OfficePy.CodeExecutionJupyter.nuspec
+[Content_Types].xml
+_rels
+codeexecjupyter.yml
+condaentrypoint.sh
+entrypoint.sh
+excel.tar.gz
+excel.whl
+httpproxy
+httpproxy.zip
+officepy
+officepydep.tar.gz
+officepydep.whl
+package
+pytestresultpkg.tar.gz
+pytestresultpkg.whl
+service
+service.zip
+
+/app/officepy
+bin
+compiler_compat
+conda-meta
+doc
+etc
+include
+lib
+libexec
+man
+mkspecs
+phrasebooks
+plugins
+pyodbc.pyi
+qml
+resources
+sbin
+share
+ssl
+translations
+var
+x86_64-conda-linux-gnu
+x86_64-conda_cos7-linux-gnu
+
+
+/app/service
+Azure.Core.dll
+Azure.Identity.dll
+Azure.Security.KeyVault.Certificates.dll
+Azure.Security.KeyVault.Keys.dll
+Azure.Security.KeyVault.Secrets.dll
+Dockerfile
+IfxMetricExtensionsManaged.dll
+Microsoft.AspNetCore.Authentication.JwtBearer.dll
+Microsoft.AspNetCore.Authentication.OpenIdConnect.dll
+Microsoft.AspNetCore.Cryptography.Internal.dll
+Microsoft.AspNetCore.DataProtection.Abstractions.dll
+Microsoft.AspNetCore.DataProtection.dll
+Microsoft.Bcl.AsyncInterfaces.dll
+Microsoft.Extensions.Logging.Abstractions.dll
+Microsoft.Extensions.Options.dll
+Microsoft.IO.RecyclableMemoryStream.dll
+Microsoft.Identity.Abstractions.dll
+Microsoft.Identity.Client.Extensions.Msal.dll
+Microsoft.Identity.Client.dll
+Microsoft.Identity.Web.Certificate.dll
+Microsoft.Identity.Web.Certificateless.dll
+Microsoft.Identity.Web.Diagnostics.dll
+Microsoft.Identity.Web.TokenAcquisition.dll
+Microsoft.Identity.Web.TokenCache.dll
+Microsoft.Identity.Web.dll
+Microsoft.IdentityModel.Abstractions.dll
+Microsoft.IdentityModel.JsonWebTokens.dll
+Microsoft.IdentityModel.Logging.dll
+Microsoft.IdentityModel.LoggingExtensions.dll
+Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+Microsoft.IdentityModel.Protocols.dll
+Microsoft.IdentityModel.Tokens.dll
+Microsoft.IdentityModel.Validators.dll
+Microsoft.OfficePy.Core.dll
+Microsoft.OfficePy.Core.pdb
+Microsoft.OfficePy.DataStore.Abstractions.dll
+Microsoft.OfficePy.DataStore.Abstractions.pdb
+Microsoft.OfficePy.JupyterServerProtocolClient.dll
+Microsoft.OfficePy.JupyterServerProtocolClient.pdb
+Microsoft.OfficePy.Service.Abstractions.dll
+Microsoft.OfficePy.Service.Abstractions.pdb
+Microsoft.OfficePy.Service.CodeExecutionService.deps.json
+Microsoft.OfficePy.Service.CodeExecutionService.dll
+Microsoft.OfficePy.Service.CodeExecutionService.exe
+Microsoft.OfficePy.Service.CodeExecutionService.pdb
+Microsoft.OfficePy.Service.CodeExecutionService.runtimeconfig.json
+Microsoft.OfficePy.Service.Core.dll
+Microsoft.OfficePy.Service.Core.pdb
+Microsoft.R9.Extensions.AsyncState.dll
+Microsoft.R9.Extensions.Buffers.Abstractions.dll
+Microsoft.R9.Extensions.Cryptography.dll
+Microsoft.R9.Extensions.Data.Classification.dll
+Microsoft.R9.Extensions.Data.Compliance.Abstractions.dll
+Microsoft.R9.Extensions.DependencyInjection.AutoActivation.dll
+Microsoft.R9.Extensions.Diagnostics.ExceptionSummary.Abstractions.dll
+Microsoft.R9.Extensions.Diagnostics.ExceptionSummary.Http.dll
+Microsoft.R9.Extensions.Diagnostics.ExceptionSummary.dll
+Microsoft.R9.Extensions.Enrichment.Abstractions.dll
+Microsoft.R9.Extensions.EnumStrings.dll
+Microsoft.R9.Extensions.Logging.Abstractions.dll
+Microsoft.R9.Extensions.Logging.Exporters.Console.dll
+Microsoft.R9.Extensions.Logging.Exporters.Geneva.dll
+Microsoft.R9.Extensions.Logging.dll
+Microsoft.R9.Extensions.Metering.Abstractions.dll
+Microsoft.R9.Extensions.Metering.Geneva.dll
+Microsoft.R9.Extensions.Options.Validation.dll
+Microsoft.R9.Extensions.Pools.Abstractions.dll
+Microsoft.R9.Extensions.Pools.dll
+Microsoft.R9.Extensions.Redaction.Abstractions.dll
+Microsoft.R9.Extensions.Redaction.O365Hashing.dll
+Microsoft.R9.Extensions.Redaction.dll
+Microsoft.R9.Extensions.Telemetry.Abstractions.dll
+Microsoft.R9.Extensions.Telemetry.Internal.Http.dll
+Microsoft.R9.Extensions.Telemetry.Internal.dll
+Microsoft.R9.Extensions.Telemetry.dll
+Microsoft.R9.Service.AsyncState.HttpContext.dll
+Microsoft.R9.Service.Enrichment.RequestHeaders.dll
+Microsoft.R9.Service.Http.dll
+Microsoft.R9.Service.Middleware.Http.Logging.dll
+Microsoft.R9.Service.Middleware.HttpMetering.dll
+Microsoft.Win32.SystemEvents.dll
+OpenTelemetry.Api.ProviderBuilderExtensions.dll
+OpenTelemetry.Api.dll
+OpenTelemetry.Exporter.Geneva.dll
+OpenTelemetry.dll
+System.Drawing.Common.dll
+System.IdentityModel.Tokens.Jwt.dll
+System.Memory.Data.dll
+System.Security.Cryptography.Pkcs.dll
+System.Security.Cryptography.ProtectedData.dll
+System.Security.Cryptography.Xml.dll
+appsettings.Development.json
+appsettings.json
+packages.lock.json
+runtimes
+
+cat /app/Dockerfile
+"# This docker file can be used to build the docker image from the jupyter nuget package
+# For building just CodeExecJupyter docker image
+# RUN powershell %SRCROOT%\officepy\servicev2\test\tool\build-docker-image-from-nuget.ps1 -Nuget %TARGETROOT%\x64\debug\pkgnuget_officepyservice\x-none\servicev2\Microsoft.OfficePy.CodeExecutionJupyter.nupkg -Target %tmp%\CodeExecJupyterImage -Tag codeexecjupyter -Dockerfile Dockerfile
+FROM mcr.microsoft.com/dotnet/aspnet:7.0-cbl-mariner2.0
+
+WORKDIR /app
+EXPOSE 80
+
+# Same user with jupyter image.
+ARG NB_GID=""100""
+ARG NB_UID=""1000""
+ARG NB_USER=""jovyan""
+
+COPY ./ /app
+RUN chmod +x /app/entrypoint.sh
+RUN sed -i -e 's/\r$//' /app/entrypoint.sh
+RUN chmod +x /app/condaentrypoint.sh
+RUN sed -i -e 's/\r$//' /app/condaentrypoint.sh
+
+# Install conda
+RUN tdnf install -y \
+    conda  \
+    unzip \
+    shadow-utils && \
+    tdnf upgrade -y && \
+    tdnf clean all
+
+# Create the app/officepy folder
+RUN mkdir /app/officepy
+
+# Create the app/service folder
+RUN mkdir /app/service
+RUN mkdir /app/httpproxy
+
+# unzip service.zip to service folder
+RUN unzip service.zip -d /app/service
+
+# unzip httpproxy.zip to httpproxy folder
+RUN unzip httpproxy.zip -d /app/httpproxy
+
+# Create conda environment
+RUN conda env create --prefix /app/officepy --file /app/codeexecjupyter.yml --force
+
+# Make RUN commands use the officepy conda environment:
+SHELL [""conda"", ""run"", ""-p"", ""/app/officepy"", ""/bin/bash"", ""-c""]
+
+# pytest-json-report is not available in conda channels, so we have to get it from pip.
+RUN pip install pytest-json-report
+RUN pip install /app/excel.tar.gz /app/pytestresultpkg.tar.gz /app/officepydep.tar.gz
+
+# Add group, user and provide user ownership
+RUN useradd -u ${NB_UID} -g ${NB_GID} ${NB_USER} \
+&& chown -R ${NB_USER} /app/officepy \
+&& chown -R ${NB_USER} /app/service \
+&& chown -R ${NB_USER} /app/httpproxy \
+&& chown -R ${NB_USER} /home
+USER ${NB_UID}
+
+ENTRYPOINT [""/app/entrypoint.sh""]
+```
+
+#### Jupyter Runtime
+```
+import os
+import os
+os.popen('cat /home/jovyan/.local/share/jupyter/runtime/nbserver-103.json').read()
+
+kernel-987b5225-ae54-468f-b900-bfe9db1f31a4.json
+nbserver-103-open.html
+nbserver-103.json
+notebook_cookie_secret
+
+"{
+  ""base_url"": ""/"",
+  ""hostname"": ""0.0.0.0"",
+  ""notebook_dir"": ""/app"",
+  ""password"": false,
+  ""pid"": 103,
+  ""port"": 8888,
+  ""secure"": false,
+  ""sock"": """",
+  ""token"": ""e9a7adec-75a7-4da2-a943-ffe0335b0d5d"",
+  ""url"": ""http://0.0.0.0:8888/""
+}"
+```
+
 
 #### Env vars
 
