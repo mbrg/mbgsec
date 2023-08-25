@@ -8,6 +8,7 @@ tags:
   - cloud sec
   - app sec
   - vuln mgmt
+  - security governance
   - DarkReading
 link: https://www.darkreading.com/edge-articles/addressing-the-low-code-security-elephant-in-the-room
 ---
