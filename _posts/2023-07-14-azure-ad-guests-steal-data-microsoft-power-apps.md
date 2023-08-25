@@ -5,12 +5,12 @@ categories:
 tags:
   - media
   - DarkReading
-  - AAD
-  - EntraID
+  - AAD / EntraID
   - BlackHat
   - IAM
   - hacking
   - red team
+  - Microsoft
 link: https://www.darkreading.com/black-hat/azure-ad-guests-steal-data-microsoft-power-apps
 ---
 
