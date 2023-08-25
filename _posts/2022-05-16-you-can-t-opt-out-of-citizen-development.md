@@ -3,7 +3,9 @@ title: "You Can't Opt Out of Citizen Development"
 categories:
   - DarkReading
 tags:
-  - Link
+  - DarkReading
+  - Citizen Development
+  - No Code
 link: https://www.darkreading.com/edge-articles/you-can-t-opt-out-of-citizen-development
 ---
   
