@@ -8,6 +8,7 @@ tags:
   - no code
   - risk mgmt
   - app sec
+  - threat
   - DarkReading
 link: https://www.darkreading.com/dr-tech/why-so-many-security-experts-are-concerned-about-low-code-no-code-apps
 ---
