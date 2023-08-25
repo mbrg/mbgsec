@@ -3,7 +3,10 @@ title: "Embracing the Next Generation of Business Developers"
 categories:
   - DarkReading
 tags:
-  - Link
+  - DarkReading
+  - citizen devs
+  - no code
+  - security governance
 link: https://www.darkreading.com/edge-articles/embracing-the-next-generation-of-business-developers
 ---
 
