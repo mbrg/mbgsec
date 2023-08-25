@@ -1,14 +1,13 @@
 ---
 title: "Zapier Storage Exposes Sensitive Customer Data Due to Poor User Choices"
 categories:
-  - Zenity
+  - Zenity blog
 tags:
   - hacking
   - low code
   - no code
   - red team
   - Zapier
-  - Zenity blog
 link: https://www.zenity.io/zapier-storage-exposes-sensitive-customer-data-due-to-poor-user-choices/
 ---
 
