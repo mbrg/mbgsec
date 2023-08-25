@@ -8,6 +8,8 @@ tags:
   - no code
   - Microsoft
   - AI
+  - citizen devs
+  - secuity governance
 link: https://www.darkreading.com/edge-articles/ai-has-your-business-data
 ---
   
