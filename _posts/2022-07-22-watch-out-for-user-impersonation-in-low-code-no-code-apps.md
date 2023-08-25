@@ -3,7 +3,13 @@ title: "Watch Out for User Impersonation in Low-Code/No-Code Apps"
 categories:
   - DarkReading
 tags:
-  - Link
+  - DarkReading
+  - vuln mgmt
+  - low code
+  - no code
+  - IAM
+  - red team
+  - hacking
 link: https://www.darkreading.com/edge-articles/watch-out-for-user-impersonation-in-low-code-no-code-apps
 ---
 
