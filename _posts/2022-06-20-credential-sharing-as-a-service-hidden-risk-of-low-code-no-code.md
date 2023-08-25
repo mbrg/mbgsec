@@ -4,11 +4,12 @@ categories:
   - DarkReading
 tags:
   - DarkReading
-  - Low Code
-  - No Code
-  - Vulnerability Management
-  - Identity & Access Management
-  - Red Teaming
+  - low code
+  - no code
+  - vuln mgmt
+  - IAM
+  - red team
+  - hacking
 link: https://www.darkreading.com/dr-tech/credential-sharing-as-a-service-hidden-risk-of-low-code-no-code
 ---
 
