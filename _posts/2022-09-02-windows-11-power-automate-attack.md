@@ -3,11 +3,11 @@ title: "A Windows 11 Automation Tool Can Easily Be Hijacked"
 categories:
   - Media
 tags:
-  - Cybersecurity
-  - Security
-  - Hacking
+  - windows
+  - rpa
+  - hacking
+  - red team
   - Microsoft
-  - Link
 link: https://www.wired.com/story/windows-11-power-automate-attack/
 ---
 
