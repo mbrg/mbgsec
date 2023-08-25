@@ -1,6 +1,6 @@
 ---
-title: "Projects"
-permalink: /projects/
+title: "WIP"
+permalink: /wip/
 layout: collection
 collection: projects
 entries_layout: grid
