@@ -8,6 +8,8 @@ tags:
   - hacking
   - red team
   - Microsoft
+  - media
+  - Wired
 link: https://www.wired.com/story/windows-11-power-automate-attack/
 ---
 
