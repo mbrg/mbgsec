@@ -3,7 +3,9 @@ title: "Remediation Ballet Is a Pas de Deux of Patch and Performance"
 categories:
   - DarkReading
 tags:
-  - Link
+  - DarkReading
+  - vuln mgmt
+  - AI
 link: https://www.darkreading.com/edge/remediation-ballet-is-a-pas-de-deux-of-patch-and-performance
 ---
   
