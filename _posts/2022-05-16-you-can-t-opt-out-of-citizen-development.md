@@ -4,8 +4,8 @@ categories:
   - DarkReading
 tags:
   - DarkReading
-  - Citizen Development
-  - No Code
+  - citizen devs
+  - no code
 link: https://www.darkreading.com/edge-articles/you-can-t-opt-out-of-citizen-development
 ---
   
