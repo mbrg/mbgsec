@@ -3,7 +3,7 @@ title: "A Windows 11 Automation Tool Can Easily Be Hijacked"
 categories:
   - Media
 tags:
-  - windows
+  - Windows
   - RPA
   - Hacking
   - Red Team
