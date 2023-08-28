@@ -1,6 +1,7 @@
 --- 
 title: Talk Materials
 permalink: /talks/
+author_profile: true
 ---
 
 ## Upcoming Talks
