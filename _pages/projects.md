@@ -1,7 +1,8 @@
 ---
-title: "WIP"
-permalink: /wip/
+title: WIP
 layout: collection
+permalink: /wip/
 collection: projects
-author_profile: true
+entries_layout: grid
+classes: wide
 ---
