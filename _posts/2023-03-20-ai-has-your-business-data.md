@@ -9,7 +9,7 @@ tags:
   - Microsoft
   - AI
   - Citizen Development
-  - secuity governance
+  - Security Governance
 link: https://www.darkreading.com/edge-articles/ai-has-your-business-data
 ---
   
