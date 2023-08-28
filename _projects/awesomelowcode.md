@@ -6,6 +6,6 @@ categories:
 header:
   teaser: /assets/images/projects/awesomelowcode.png 
   image: /assets/images/projects/awesomelowcode.png
----
-  
+priority: 4
 link: https://github.com/zenitysec/awesome-low-code
+---

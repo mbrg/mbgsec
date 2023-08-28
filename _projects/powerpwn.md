@@ -6,6 +6,6 @@ categories:
 header:
   teaser: /assets/images/projects/powerpwn.png
   image: /assets/images/projects/powerpwn.png
----
-  
+priority: 2
 link: https://github.com/mbrg/powerpwn
+---
