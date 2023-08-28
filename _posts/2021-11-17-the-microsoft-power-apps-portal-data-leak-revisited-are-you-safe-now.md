@@ -3,13 +3,13 @@ title: "The Microsoft Power Apps Portal Data Leak Revisited: Are You Safe Now?"
 categories:
   - Zenity blog
 tags:
-  - microsoft
-  - vuln disclosure
-  - vuln mgmt
-  - low code
-  - no code
-  - hacking
-  - red team
+  - Microsoft
+  - Vulnerability Disclosure
+  - Vulnerability Management
+  - Low Code
+  - No Code
+  - Hacking
+  - Red Team
 link: https://www.zenity.io/the-microsoft-power-apps-portal-data-leak-revisited-are-you-safe-now/
 ---
 

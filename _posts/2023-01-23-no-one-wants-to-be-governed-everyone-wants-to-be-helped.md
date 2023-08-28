@@ -4,9 +4,9 @@ categories:
   - DarkReading
 tags:
   - DarkReading
-  - security governance
-  - citizen devs
-  - no code
+  - Security Governance
+  - Citizen Development
+  - No Code
 link: https://www.darkreading.com/edge-articles/no-one-wants-to-be-governed-everyone-wants-to-be-helped
 ---
 

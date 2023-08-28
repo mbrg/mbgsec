@@ -5,9 +5,9 @@ categories:
 tags:
   - DarkReading
   - SaaS
-  - app sec
-  - cloud sec
-  - low code
+  - Application Security
+  - Cloud Security
+  - Low Code
 link: https://www.darkreading.com/edge-articles/we-re-thinking-about-saas-the-wrong-way
 ---
 

@@ -3,12 +3,12 @@ title: "ZAPESCAPE: Organization-wide control over Code by Zapier"
 categories:
   - Zenity blog
 tags:
-  - low code
-  - no code
-  - vuln mgmt
-  - vuln disclosure
-  - hacking
-  - red team
+  - Low Code
+  - No Code
+  - Vulnerability Management
+  - Vulnerability Disclosure
+  - Hacking
+  - Red Team
   - Zapier
 link: https://www.zenity.io/zapescape-organization-wide-control-over-code-by-zapier/
 ---

@@ -3,9 +3,9 @@ title: "Low-Code for Dummies – An Overview of Low-Code Through Examples"
 categories:
   - Zenity blog
 tags:
-  - low code
-  - no code
-  - citizen devs
+  - Low Code
+  - No Code
+  - Citizen Development
 link: https://www.zenity.io/low-code-for-dummies-an-overview-of-low-code-through-examples/
 ---
 

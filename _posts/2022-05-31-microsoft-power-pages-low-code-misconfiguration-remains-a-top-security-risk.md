@@ -3,11 +3,11 @@ title: "Microsoft Power Pages: Low-code Misconfiguration Remains a Top Security 
 categories:
   - Zenity blog
 tags:
-  - low code
-  - no code
-  - hacking
-  - red team
-  - vuln disclosure
+  - Low Code
+  - No Code
+  - Hacking
+  - Red Team
+  - Vulnerability Disclosure
   - Microsoft
 link: https://www.zenity.io/microsoft-power-pages-low-code-misconfiguration-remains-a-top-security-risk/
 ---

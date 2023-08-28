@@ -4,10 +4,10 @@ categories:
   - DarkReading
 tags:
   - DarkReading
-  - low code
-  - no code
-  - app sec
-  - threat
+  - Low Code
+  - No Code
+  - Application Security
+  - Threat
 link: https://www.darkreading.com/edge-articles/major-security-breach-from-business-users-low-code-apps-could-come-in-2023-analysts-warn
 ---
 

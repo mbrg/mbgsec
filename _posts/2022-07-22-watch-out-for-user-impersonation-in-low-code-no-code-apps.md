@@ -4,12 +4,12 @@ categories:
   - DarkReading
 tags:
   - DarkReading
-  - vuln mgmt
-  - low code
-  - no code
+  - Vulnerability Management
+  - Low Code
+  - No Code
   - IAM
-  - red team
-  - hacking
+  - Red Team
+  - Hacking
 link: https://www.darkreading.com/edge-articles/watch-out-for-user-impersonation-in-low-code-no-code-apps
 ---
 

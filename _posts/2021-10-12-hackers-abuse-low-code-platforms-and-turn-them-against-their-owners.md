@@ -3,11 +3,11 @@ title: "Hackers Abuse Low-Code Platforms And Turn Them Against Their Owners"
 categories:
   - Zenity blog
 tags:
-  - low code
-  - no code
-  - hacking
-  - red team
-  - vuln disclosure
+  - Low Code
+  - No Code
+  - Hacking
+  - Red Team
+  - Vulnerability Disclosure
   - Microsoft
 link: https://www.zenity.io/hackers-abuse-low-code-platforms-and-turn-them-against-their-owners/
 ---

@@ -4,9 +4,9 @@ categories:
   - DarkReading
 tags:
   - DarkReading
-  - citizen devs
-  - no code
-  - vuln mgmt
+  - Citizen Development
+  - No Code
+  - Vulnerability Management
 link: https://www.darkreading.com/dr-tech/3-ways-no-code-developers-can-shoot-themselves-in-the-foot
 ---
 

@@ -3,9 +3,9 @@ title: "The 7 Deadly Sins of Low-Code Security and How to Avoid Them"
 categories:
   - Zenity blog
 tags:
-  - low code
-  - no code
-  - vuln mgmt
+  - Low Code
+  - No Code
+  - Vulnerability Management
 link: https://www.zenity.io/low-code-security-risks-7-sins-and-how-to-overcome-every-single-one/
 ---
 

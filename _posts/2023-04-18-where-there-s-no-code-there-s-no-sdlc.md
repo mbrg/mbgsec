@@ -4,11 +4,11 @@ categories:
   - DarkReading
 tags:
   - DarkReading
-  - sdlc
-  - no code
-  - low code
-  - citizen devs
-  - app sec
+  - SDLC
+  - No Code
+  - Low Code
+  - Citizen Development
+  - Application Security
 link: https://www.darkreading.com/edge-articles/where-there-s-no-code-there-s-no-sdlc
 ---
   

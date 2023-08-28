@@ -3,11 +3,11 @@ title: "Low-Code SDLC – Build Fast, Stay Secure"
 categories:
   - Zenity blog
 tags:
-  - low code
-  - no code
-  - citizen devs
-  - security governance
-  - sdlc
+  - Low Code
+  - No Code
+  - Citizen Development
+  - Security Governance
+  - SDLC
 link: https://www.zenity.io/low-code-sdlc-build-fast-stay-secure/
 ---
 

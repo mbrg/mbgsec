@@ -4,11 +4,11 @@ categories:
   - DarkReading
 tags:
   - DarkReading
-  - low code
-  - no code
+  - Low Code
+  - No Code
   - Microsoft
   - AI
-  - citizen devs
+  - Citizen Development
   - secuity governance
 link: https://www.darkreading.com/edge-articles/ai-has-your-business-data
 ---

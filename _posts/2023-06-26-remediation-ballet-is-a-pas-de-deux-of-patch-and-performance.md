@@ -4,7 +4,7 @@ categories:
   - DarkReading
 tags:
   - DarkReading
-  - vuln mgmt
+  - Vulnerability Management
   - AI
 link: https://www.darkreading.com/edge/remediation-ballet-is-a-pas-de-deux-of-patch-and-performance
 ---

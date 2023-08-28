@@ -4,7 +4,7 @@ categories:
   - DarkReading
 tags:
   - DarkReading
-  - cloud sec
+  - Cloud Security
   - password mgmt
 link: https://www.darkreading.com/edge-articles/despite-breach-lastpass-demonstrates-the-power-of-password-management
 ---

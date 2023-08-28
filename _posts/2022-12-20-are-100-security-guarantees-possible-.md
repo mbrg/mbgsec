@@ -4,7 +4,7 @@ categories:
   - DarkReading
 tags:
   - DarkReading
-  - cloud sec
+  - Cloud Security
   - formal verification
 link: https://www.darkreading.com/edge-articles/are-100-security-guarantees-possible-
 ---

@@ -3,12 +3,12 @@ title: "Addressing the Low-Code Security Elephant in the Room"
 categories:
   - DarkReading
 tags:
-  - low code
-  - no code
-  - cloud sec
-  - app sec
-  - vuln mgmt
-  - security governance
+  - Low Code
+  - No Code
+  - Cloud Security
+  - Application Security
+  - Vulnerability Management
+  - Security Governance
   - DarkReading
 link: https://www.darkreading.com/edge-articles/addressing-the-low-code-security-elephant-in-the-room
 ---

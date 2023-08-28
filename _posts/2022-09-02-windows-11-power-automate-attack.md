@@ -5,10 +5,10 @@ categories:
 tags:
   - windows
   - RPA
-  - hacking
-  - red team
+  - Hacking
+  - Red Team
   - Microsoft
-  - media
+  - Media
 link: https://www.wired.com/story/windows-11-power-automate-attack/
 ---
 

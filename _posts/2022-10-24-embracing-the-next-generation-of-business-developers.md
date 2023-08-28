@@ -4,9 +4,9 @@ categories:
   - DarkReading
 tags:
   - DarkReading
-  - citizen devs
-  - no code
-  - security governance
+  - Citizen Development
+  - No Code
+  - Security Governance
 link: https://www.darkreading.com/edge-articles/embracing-the-next-generation-of-business-developers
 ---
 

@@ -4,8 +4,8 @@ categories:
   - DarkReading
 tags:
   - DarkReading
-  - citizen devs
-  - no code
+  - Citizen Development
+  - No Code
   - SaaS
 link: https://www.darkreading.com/edge-articles/you-can-t-opt-out-of-citizen-development
 ---

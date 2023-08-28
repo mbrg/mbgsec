@@ -5,8 +5,8 @@ categories:
 tags:
   - DarkReading
   - AI
-  - security governance
-  - citizen devs
+  - Security Governance
+  - Citizen Development
 link: https://www.darkreading.com/edge-articles/generative-ai-empowers-users-but-challenges-security
 ---
   

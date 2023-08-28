@@ -4,12 +4,12 @@ categories:
   - Media
 tags:
   - BlackHat
-  - media
+  - Media
   - TheRegister
-  - low code
+  - Low Code
   - Microsoft
-  - hacking
-  - red team
+  - Hacking
+  - Red Team
   - AAD / EntraID
 link: https://www.theregister.com/2023/08/10/microsoft_365_guest_accounts_power/
 ---
