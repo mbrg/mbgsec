@@ -100,7 +100,7 @@ defaults:
   # _projects
   - scope:
       path: "_projects"
-      type: pages
+      type: projects
     values:
       layout: single
       author_profile: true
