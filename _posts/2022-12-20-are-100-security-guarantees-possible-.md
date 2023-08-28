@@ -3,7 +3,9 @@ title: "Are 100% Security Guarantees Possible?"
 categories:
   - DarkReading
 tags:
-  - Link
+  - DarkReading
+  - Cloud Security
+  - Formal Verification
 link: https://www.darkreading.com/edge-articles/are-100-security-guarantees-possible-
 ---
 

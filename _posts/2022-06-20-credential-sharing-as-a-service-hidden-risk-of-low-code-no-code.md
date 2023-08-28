@@ -3,7 +3,13 @@ title: "Credential Sharing as a Service: The Hidden Risk of Low-Code/No-Code"
 categories:
   - DarkReading
 tags:
-  - Link
+  - DarkReading
+  - Low Code
+  - No Code
+  - Vulnerability Management
+  - IAM
+  - Red Team
+  - Hacking
 link: https://www.darkreading.com/dr-tech/credential-sharing-as-a-service-hidden-risk-of-low-code-no-code
 ---
 

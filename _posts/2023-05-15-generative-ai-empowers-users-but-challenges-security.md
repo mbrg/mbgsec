@@ -3,7 +3,10 @@ title: "Generative AI Empowers Users but Challenges Security"
 categories:
   - DarkReading
 tags:
-  - Link
+  - DarkReading
+  - AI
+  - Security Governance
+  - Citizen Development
 link: https://www.darkreading.com/edge-articles/generative-ai-empowers-users-but-challenges-security
 ---
   

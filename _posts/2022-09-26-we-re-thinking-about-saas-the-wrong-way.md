@@ -3,7 +3,11 @@ title: "We're Thinking About SaaS the Wrong Way"
 categories:
   - DarkReading
 tags:
-  - Link
+  - DarkReading
+  - SaaS
+  - Application Security
+  - Cloud Security
+  - Low Code
 link: https://www.darkreading.com/edge-articles/we-re-thinking-about-saas-the-wrong-way
 ---
 

@@ -3,7 +3,10 @@ title: "No One Wants to Be Governed, Everyone Wants to Be Helped"
 categories:
   - DarkReading
 tags:
-  - Link
+  - DarkReading
+  - Security Governance
+  - Citizen Development
+  - No Code
 link: https://www.darkreading.com/edge-articles/no-one-wants-to-be-governed-everyone-wants-to-be-helped
 ---
 

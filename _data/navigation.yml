@@ -1,9 +1,7 @@
 main:
-  - title: "Posts"
-    url: /posts/
-  - title: "Categories"
-    url: /categories/
-  - title: "Tags"
-    url: /tags/
-  - title: "About"
-    url: /about/
+  - title: "By Topic"
+    url: /topics/
+  - title: "WIP"
+    url: /wip/
+  - title: "Talks"
+    url: /talks/

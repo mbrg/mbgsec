@@ -3,7 +3,11 @@ title: "Major Security Breach From Business Users' Low-Code Apps Could Come in 2
 categories:
   - DarkReading
 tags:
-  - Link
+  - DarkReading
+  - Low Code
+  - No Code
+  - Application Security
+  - Threat
 link: https://www.darkreading.com/edge-articles/major-security-breach-from-business-users-low-code-apps-could-come-in-2023-analysts-warn
 ---
 

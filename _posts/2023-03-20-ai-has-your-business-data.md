@@ -3,7 +3,13 @@ title: "AI Has Your Business Data"
 categories:
   - DarkReading
 tags:
-  - Link
+  - DarkReading
+  - Low Code
+  - No Code
+  - Microsoft
+  - AI
+  - Citizen Development
+  - Security Governance
 link: https://www.darkreading.com/edge-articles/ai-has-your-business-data
 ---
   

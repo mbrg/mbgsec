@@ -3,7 +3,10 @@ title: "3 Ways No-Code Developers Can Shoot Themselves in the Foot"
 categories:
   - DarkReading
 tags:
-  - Link
+  - DarkReading
+  - Citizen Development
+  - No Code
+  - Vulnerability Management
 link: https://www.darkreading.com/dr-tech/3-ways-no-code-developers-can-shoot-themselves-in-the-foot
 ---
 
