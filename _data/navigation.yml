@@ -1,6 +1,6 @@
 main:
-  - title: "Posts"
-    url: /posts/
+  - title: "By Topic"
+    url: /topics/
   - title: "WIP"
     url: /wip/
   - title: "Talks"
