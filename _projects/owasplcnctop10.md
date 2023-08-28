@@ -5,5 +5,6 @@ categories:
   - projects
 header:
   teaser: /assets/images/projects/owasplcnctop10.png
+  image: /assets/images/projects/owasplcnctop10.png
 link: https://owasp.org/www-project-top-10-low-code-no-code-security-risks/
 ---
