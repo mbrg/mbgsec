@@ -7,7 +7,7 @@ tags:
   - Low Code
   - No Code
   - Application Security
-  - Threat
+  - Threat Intel
 link: https://www.darkreading.com/edge-articles/major-security-breach-from-business-users-low-code-apps-could-come-in-2023-analysts-warn
 ---
 

@@ -8,7 +8,7 @@ tags:
   - No Code
   - Risk Management
   - Application Security
-  - Threat
+  - Threat Intel
   - DarkReading
 link: https://www.darkreading.com/dr-tech/why-so-many-security-experts-are-concerned-about-low-code-no-code-apps
 ---
