@@ -62,6 +62,12 @@ plugins:
   - jemoji
   - jekyll-include-cache
 
+analytics:
+  provider: "google-gtag"
+  google:
+    tracking_id: "G-KQGNGZL7KQ"
+    anonymize_ip: false # default
+
 author:
   name   : "Michael Bargury"
   avatar : "assets/images/bio-photo.png"
