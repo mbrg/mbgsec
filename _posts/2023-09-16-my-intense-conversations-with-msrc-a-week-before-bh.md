@@ -8,7 +8,7 @@ tags:
   - Vulnerability Management
 ---
 
-## As usual
+## Research as usual
 
 A couple of months before BlackHat (USA 2023) I got an email from Microsoft Security Response Center. 
 They saw the abstract of my [upcoming BlackHat talk](https://www.blackhat.com/us-23/briefings/schedule/index.html#all-you-need-is-guest-32647) and were like, Hi, you’re not planning on dropping any 0days on us are ya? 
