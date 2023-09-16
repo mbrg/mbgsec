@@ -42,7 +42,7 @@ Tbh, based on my previous experience reporting logical type of bugs to the Power
 But the DR article has completely changed the conversation. 
 Pretty soon, I was dealing with an entire group of folks across MSRC and the Power Platform team. 
 It was clear my case got escalated and I was now considered *that* kind of researcher. 
-What followed was an intense week where the team and I were having difficult conversations for a few hours every day (Or mostly night given the timezone difference). 
+What followed was an intense week where the team and I were having difficult conversations for a few hours every day (Or mostly night given the time difference). 
 The conversation were also very nice and polite, and both MSRC and I made sure to clarify that we appreciate each other’s work. But we did exchange some strong messages. 
 At the end of the day it was about trust (isn’t it always?). 
 They didn’t trust me to not drop 0days and put customers at risk. 
