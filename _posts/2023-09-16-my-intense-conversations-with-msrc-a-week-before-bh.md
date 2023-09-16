@@ -1,5 +1,5 @@
 ---
-title: "My intense conversation with MSRC a week before BlackHat"
+title: "My intense 2am conversation with MSRC one week before BlackHat"
 categories:
   - Blog
 tags:
