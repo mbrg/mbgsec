@@ -11,12 +11,12 @@ tags:
 ## Research as usual
 
 A couple of months before BlackHat (USA 2023) I got an email from Microsoft Security Response Center. 
-They saw the abstract of my [upcoming BlackHat talk](https://www.blackhat.com/us-23/briefings/schedule/index.html#all-you-need-is-guest-32647) and were like, Hi, you’re not planning on dropping any 0days on us are ya? 
+They saw the abstract of my [upcoming BlackHat talk](https://www.blackhat.com/us-23/briefings/schedule/index.html#all-you-need-is-guest-32647) and were like, Hi, you’re not planning on dropping any 0days on us are you? 
 Nahh we’re sure you’re not *that* type of researcher. 
 We must keep our customers safe, you know.
 
 I was expecting this after getting a similar email before my [NoCodeMalware talk at defcon](https://github.com/mbrg/defcon30) last year so I responded casually that they shouldn’t worry, that I won’t be sharing any undisclosed vulns and that I’m happy to share my slides to help them see that. 
-Based on my defcon experience I expected that to be it. Ohh boy was I wrong.
+Based on my defcon experience I expected that to be it. Ohh boy, was I wrong.
 
 You see, things are fine and dandy until you’re seen as a threat. 
 Sure, the PR parts of the house might downplay your research and say that its contrived. 
