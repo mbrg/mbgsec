@@ -1,5 +1,5 @@
 ---
-title: "Microsoft 365 guest accounts + Power Apps = security nightmare"
+title: "M365 guest accounts + Power Apps = security nightmare"
 categories:
   - Media
 tags:
