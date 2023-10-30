@@ -11,7 +11,7 @@ layout: splash
 | Date | Conference | Talk | Conf schedule |
 | - | - | - | - |
 | 2023-10-31 | OWASP Global AppSec DC 2023 | OWASP Low-Code No-Code Top 10 | [<i class="fa fa-calendar" title="Conference schedule"></i>](https://owasp2023globalappsecwashin.sched.com/event/1OUyz/owasp-low-code-no-code-top-10) |
-| 2023-10-30 | OWASP Global AppSec DC 2023 | Credential Sharing as a Service: the Dark Side of No Code| [<i class="fa fa-calendar" title="Conference schedule"></i>](https://owasp2023globalappsecwashin.sched.com/event/1Os3h/credential-sharing-as-a-service-the-dark-side-of-no-code) |
+| 2023-10-30 | OWASP Global AppSec DC 2023 | Credential Sharing as a Service: the Dark Side of No Code| [<i class="fa fa-calendar" title="Conference schedule"></i>](https://owasp2023globalappsecwashin.sched.com/event/1Os3h/credential-sharing-as-a-service-the-dark-side-of-no-code) [<i class="fab fa-fw fa-slideshare" title="Slides"></i>](../assets/pdfs/2023-10-30_OWASP_DC_CREDENTIALSHARINGASASERVICETHEDARKSIDEOFNOCODE.pdf.pdf) |
 
 
 ## Previous Talks
@@ -19,7 +19,7 @@ layout: splash
 | Date | Conference | Talk | Resources |
 | - | - | - | - |
 | 2023-10-26 | SecTor 2023 | Sure, Let Business Users Build Their Own. What Could Go Wrong? | [<i class="fa fa-calendar" title="Conference schedule"></i>](https://www.blackhat.com/sector/2023/briefings/schedule/#sure-let-business-users-build-their-own-what-could-go-wrong-36063) [<i class="fab fa-fw fa-slideshare" title="Slides"></i>](../assets/pdfs/2023-10-25_Sector-23_SureLetBusinessUsersBuildTheirOwnWhatCouldGoWrong.pdf) |
-| 2023-10-25 | SecTor 2023 | All You Need is Guest | [<i class="fa fa-calendar" title="Conference schedule"></i>](https://www.blackhat.com/sector/2023/briefings/schedule/index.html#all-you-need-is-guest-36062) [<i class="fab fa-fw fa-slideshare" title="Slides"></i>](../assets/pdfs/2023-10-24_Sector-23_AllYouNeedIsGuest.pdf)[<i class="fab fa-fw fa-github" title="powerpwn"></i>](https://github.com/mbrg/power-pwn) |
+| 2023-10-25 | SecTor 2023 | All You Need is Guest | [<i class="fa fa-calendar" title="Conference schedule"></i>](https://www.blackhat.com/sector/2023/briefings/schedule/index.html#all-you-need-is-guest-36062) [<i class="fab fa-fw fa-slideshare" title="Slides"></i>](../assets/pdfs/2023-10-24_Sector-23_AllYouNeedIsGuest.pdf) [<i class="fab fa-fw fa-github" title="powerpwn"></i>](https://github.com/mbrg/power-pwn) |
 | 2023-08-10 | BlackHat US Arsenal 2023 | PowerGuest: AAD Guest Exploitation Beyond Enumeration | [<i class="fab fa-fw fa-youtube" title="Recording"></i>](https://youtu.be/LpdckZyBwvs) [<i class="fab fa-fw fa-github" title="powerpwn"></i>](https://github.com/mbrg/power-pwn) |
 | 2023-08-10 | BlackHat US 2023 | All You Need Is Guest | [<i class="fab fa-fw fa-slideshare" title="Slides"></i>](../assets/pdfs/2023-08-10_BHUSA-2023_All_You_Need_is_Guest.pdf) [<i class="fab fa-fw fa-github" title="powerpwn"></i>](https://github.com/mbrg/power-pwn) |
 | 2023-08-09 | BlackHat US 2023 | Sure, Let Business Users Build Their Own. What Could Go Wrong? | [<i class="fab fa-fw fa-slideshare" title="Slides"></i>](../assets/pdfs/2023-08-09_BHUSA-2023_Sure_Let_Business_Users_Build_Their_Own_What_Could_Go_Wrong.pdf) [<i class="fab fa-fw fa-book" title="OWASP LCNC Top 10"></i>](https://owasp.org/www-project-top-10-low-code-no-code-security-risks/) |
