@@ -1,5 +1,5 @@
 ---
-title: "HackerBot Copilot exfiltrates High Restricted SharePoint files to any user on the Internet, no auth required"
+title: "Copilot exfiltrates High Restricted SharePoint files to any user on the Internet, no auth required"
 categories:
   - Blog
 tags:
