@@ -59,3 +59,17 @@ HackerBot uses a connection to SharePoint to enumerate files on the "HR Complian
 ![HacketBot enumerates a High Restricted SharePoint site](../assets/images/2023-12-03-copilot-sharepoint-data-exfil/hacketbot-lists-sharepoint-files.png)
 ![HackerBot leaks file content](../assets/images/2023-12-03-copilot-sharepoint-data-exfil/hackerbot-leaks-file-content.png)
 
+To allow public access to unauthenticated users, I just needed to leave the default setting as is.
+![Default Copilot Studio authentication settings](../assets/images/2023-12-03-copilot-sharepoint-data-exfil/default-copilot-auth-settings.png)
+
+That's it, it's that simple.
+
+One thing should be bugging you at this point.. if users are not authentication, how is HackerBot able to fetch data from an enterprise SharePoint site?
+
+## Credential Sharing as a Service yet again
+
+The answer is a [recurring theme](https://www.youtube.com/watch?v=QtaA5U7LJ74) with LCNC platforms and Microsoft Power Platform in particular.
+Apps work by impersonating their users.
+When I created HackerBot, I had to provide my credentials as a Copilot maker to run and debug the entire user flow.
+These creds, in this case an OAuth refresh token, are stored by Microsoft and replayed any time a user talks to Copilot.
+Credential Sharing as a Services yet again.
