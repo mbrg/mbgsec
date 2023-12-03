@@ -11,6 +11,7 @@ tags:
 
 Microsoft Copilot Studio allows users to quickly build enterprise Copilots on top of their business data.
 Every enterprise user can now plug enterprise data into GPT models now and share their bots with the world.
+
 What could go wrong?
 
 ## Public access to High Restricted SharePoint sites
@@ -72,4 +73,3 @@ The answer is a [recurring theme](https://www.youtube.com/watch?v=QtaA5U7LJ74) w
 Apps work by impersonating their users.
 When I created HackerBot, I had to provide my credentials as a Copilot maker to run and debug the entire user flow.
 These creds, in this case an OAuth refresh token, are stored by Microsoft and replayed any time a user talks to Copilot.
-Credential Sharing as a Services yet again.
