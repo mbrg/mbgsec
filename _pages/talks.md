@@ -6,12 +6,6 @@ layout: splash
 
 # Talk Materials
 
-## Upcoming Talks
-
-| Date | Conference | Talk | Conf schedule |
-| - | - | - | - |
-
-
 ## Previous Talks
 
 | Date | Conference | Talk | Resources |
