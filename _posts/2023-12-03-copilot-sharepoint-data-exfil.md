@@ -89,4 +89,6 @@ Tenant boundaries (2023-12-04): To clarify, HackerBot can only access SharePoint
 In particular, that means only sites that belong to this maker's tenant. 
 The issue, however, is that HackerBot *users* are not authenticated, don't have relevant permissions and don't belong to this tenant (or to any tenant, for that matter).
 
-Hacker bot's maker (2023-12-04): Any user on any tenant can create HackerBot. Licenses are gives automatically. No permissions required (except those to SharePoint).
+Hacker bot's maker (2023-12-04): Any user on any tenant can create HackerBot. 
+Licenses are gives automatically. 
+Required permissions (Environment Maker in Power Platform) are [assigned by default](https://learn.microsoft.com/en-us/power-platform/admin/environments-overview).
