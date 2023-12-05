@@ -82,3 +82,9 @@ The answer is a [recurring theme](https://www.youtube.com/watch?v=QtaA5U7LJ74) w
 Apps work by user impersonation.
 When I created HackerBot, I had to provide my credentials as a Copilot maker to run and debug the "ExfiltrateSharePoint" topic.
 These creds, in this case an OAuth refresh token, are stored by Microsoft and replayed any time a user talks to Copilot.
+
+## Clarifications
+
+EDIT (2023-12-04): To clarify, HackerBot can only access SharePoint sites its maker can access.
+In particular, that means only sites that belong to this maker's tenant. 
+The issue, however, is that HackerBot *users* are not authenticated, don't have relevant permissions and don't belong to this tenant (or to any tenant, for that matter).
