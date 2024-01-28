@@ -1,5 +1,5 @@
 ---
-title: "Security for AI is the Next Big Thing! But no one knows what it means actually"
+title: "Security for AI is the Next Big Thing! But we don't really know what it means yet"
 categories:
   - Blog
 tags:
