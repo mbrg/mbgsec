@@ -60,8 +60,3 @@ The problem here is how to build an AI application that interacts with the world
 ## A finishing thought
 
 Trying to say anything about where AI or by extension AI security will end up is trying to predict the future. We all know the saying, it's difficult to make predictions, especially about the future. Let’s see how it holds up and where I’ll be most wrong.
-
-
-Hacker bot's maker (2023-12-04): Any user on any tenant can create HackerBot. 
-Licenses are gives automatically. 
-Required permissions (Environment Maker in Power Platform) are [assigned by default](https://learn.microsoft.com/en-us/power-platform/admin/environments-overview).
