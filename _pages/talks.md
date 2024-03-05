@@ -10,6 +10,10 @@ layout: splash
 
 | Date | Conference | Talk | Resources |
 | - | - | - | - |
+| 2024-05-06 | RSAC 2024 | All You Need Is Guest | |
+| 2024-04-18 | t2 | All You Need Is Guest | |
+| 2024-04-15 | SANS Cybersecurity Leadership Summit UK 2024 | AI is here for business users. What does that mean for AppSec? | [<i class="fa fa-calendar" title="Conference schedule"></i>](https://www.sans.org/cyber-security-training-events/cybersecurity-leadership-uk-summit-2024/) |
+| 2023-12-06 | BlackHat EU Arsenal 2023 | EntraID Guest to Corp Data Dump with powerpwn | [<i class="fab fa-fw fa-youtube" title="Recording"></i>](https://youtu.be/LpdckZyBwvs) [<i class="fab fa-fw fa-github" title="powerpwn"></i>](https://github.com/mbrg/power-pwn) |
 | 2023-10-31 | OWASP Global AppSec DC 2023 | OWASP Low-Code No-Code Top 10 | [<i class="fa fa-calendar" title="Conference schedule"></i>](https://owasp2023globalappsecwashin.sched.com/event/1OUyz/owasp-low-code-no-code-top-10) [<i class="fab fa-fw fa-slideshare" title="Slides"></i>](../assets/pdfs/2023-10-31-OWASP_DC_LCNC_Top_10.pdf) |
 | 2023-10-30 | OWASP Global AppSec DC 2023 | Credential Sharing as a Service: the Dark Side of No Code| [<i class="fa fa-calendar" title="Conference schedule"></i>](https://owasp2023globalappsecwashin.sched.com/event/1Os3h/credential-sharing-as-a-service-the-dark-side-of-no-code) [<i class="fab fa-fw fa-slideshare" title="Slides"></i>](../assets/pdfs/2023-10-30_OWASP_DC_CREDENTIALSHARINGASASERVICETHEDARKSIDEOFNOCODE.pdf) |
 | 2023-10-26 | SecTor 2023 | Sure, Let Business Users Build Their Own. What Could Go Wrong? | [<i class="fa fa-calendar" title="Conference schedule"></i>](https://www.blackhat.com/sector/2023/briefings/schedule/#sure-let-business-users-build-their-own-what-could-go-wrong-36063) [<i class="fab fa-fw fa-slideshare" title="Slides"></i>](../assets/pdfs/2023-10-25_Sector-23_SureLetBusinessUsersBuildTheirOwnWhatCouldGoWrong.pdf) |
