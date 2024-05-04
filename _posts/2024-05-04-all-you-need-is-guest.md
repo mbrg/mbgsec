@@ -20,7 +20,7 @@ When you get invited as a guest to an EntraID tenant you get restricted deny-by-
 Well, no. By the end of this post, you’ll see how guests can find credentials to Azure resources and SQL servers and exploit them to get full data dumps of everything behind them.
 
 ![PowerPwn finds credentials available for guests to abuse](/assets/images/2024-05-04-all-you-need-is-guest/powerpwn-creds.png)
-![PowerPwn dumps sensitive corporate data](/assets/images/2024-05-04-all-you-need-is-guest/powerpwn-dumps.png)
+![PowerPwn dumps sensitive corporate data](/assets/images/2024-05-04-all-you-need-is-guest/powerpwn-dump.png)
 
 ## Why invite guests in?
 
@@ -33,9 +33,10 @@ How do we share resources securely? EntraID external identities – guests – a
 ![EntraID external identities](/assets/images/2024-05-04-all-you-need-is-guest/entraid.png)
 
 To accomplish that, it needs to satisfy two conditions: It needs to be easy for vendors to onboard and for IT/security to control.
+
 Indeed, it's super easy to gain access and thus for vendors to onboard. Under default configuration, any user on Teams can just invite a guest in by adding them to a new team. In most enterprises, this is up to individual user choice.
 
-<video controls></video>
+<video controls>
   <source src="/assets/videos/2024-05-04-all-you-need-is-guest/invite-a-guest.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
@@ -50,7 +51,7 @@ There is a caveat here though, it is crucial that guests don’t get full access
 
 ## Guest accounts in practice
 
-Reality differs. Grab any corporate account, go to https://make,powerapps.com and click on connections.
+Reality differs. Grab any corporate account, go to [make.powerapps.com](https://make.powerapps.com) and click on connections.
 
 ![Enters Power Apps](/assets/images/2024-05-04-all-you-need-is-guest/blue-red-pill.png)
 
@@ -165,4 +166,17 @@ You also gain access to a full Swagger UI for each credential that allows you to
 
 I strongly encourage you to play around with it!
 
+## Defense
 
+Tactically, use powerpwn.
+Find and delete these overshared connections.
+Ideally, do it on a schedule or even automated.
+
+But admittedly this is a tactical patch.
+We are placing dev-level power in the hands of every enterprise user without guardrails or training.
+Of course people will make bad judgment calls.
+Still, share with everyone? That it just too much.
+
+![Who owns AppSec for business users?](/assets/images/2024-05-04-all-you-need-is-guest/appsec-for-biz-users.png)
+
+I strongly suggest using the [OWASP LCNC Top 10](https://owasp.org/www-project-top-10-low-code-no-code-security-risks/) to start getting a handle on citizen development.
