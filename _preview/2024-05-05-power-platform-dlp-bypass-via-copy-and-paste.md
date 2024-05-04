@@ -9,7 +9,8 @@ tags:
   - Microsoft
 ---
 
-Last August I gave a talk at BlackHat USA titled [All You Need Is Guest](https://www.blackhat.com/us-23/briefings/schedule/index.html#all-you-need-is-guest-32647). In it, I showed how simple guest access to EntraID could be escalated into full control over Azure resources and SQL servers. This method still works today mostly on the large enterprises and government customers.
+Last August I gave a talk at BlackHat USA titled [All You Need Is Guest](https://www.blackhat.com/us-23/briefings/schedule/index.html#all-you-need-is-guest-32647).
+In it, I showed how simple guest access to EntraID could be escalated into full control over Azure resources and SQL servers. This method still works today mostly on the large enterprises and government customers.
 
 [I got some heat from MSRC](https://www.mbgsec.com/blog/my-intense-2am-conversations-with-msrc-a-week-before-bh/) prior to the talk which I wrote about briefly after. When I got to one of the juicy parts – bypassing Power Platform DLP – I had to waive my hands and ask the audience to look the other way.
 
@@ -19,7 +20,7 @@ After the talk I was asked by Microsoft to sit on those details for longer.
 I appreciate that some fixes require deep architectural work, so I waited.
 On Nov 2023, I finally got my MSRC case resolved and a greenlight to publish.
 
-With everything going on today and the problem unfixed, I feel a strong urge to finally share the details with the broad security community.
+[With everything going on today](https://www.theverge.com/24148033/satya-nadella-microsoft-security-memo) and the problem unfixed, I feel a strong urge to finally share the details with the broad security community.
 
 It is time to share the full information.
 
