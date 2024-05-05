@@ -12,7 +12,7 @@ layout: splash
 | - | - | - | - |
 | 2024-05-06 | RSAC 2024 | All You Need Is Guest | |
 | 2024-05-01 | Caro 2024 | All You Need Is Guest | |
-| 2024-04-18 | t2 2024 | All You Need Is Guest | |
+| 2024-04-18 | t2 2024 | All You Need Is Guest | [<i class="fa fa-calendar" title="Conference schedule"></i>](https://t2.fi/schedule/2024/) [<i class="fab fa-fw fa-slideshare" title="Slides"></i>](../assets/pdfs/2024-04-18_t2-24_AllYouNeedIsGuest.pdf) [<i class="fab fa-fw fa-github" title="powerpwn"></i>](https://github.com/mbrg/power-pwn) |
 | 2024-04-15 | SANS Cybersecurity Leadership Summit UK 2024 | AI is here for business users. What does that mean for AppSec? | [<i class="fa fa-calendar" title="Conference schedule"></i>](https://www.sans.org/cyber-security-training-events/cybersecurity-leadership-uk-summit-2024/) |
 | 2023-12-06 | BlackHat EU Arsenal 2023 | EntraID Guest to Corp Data Dump with powerpwn | [<i class="fab fa-fw fa-youtube" title="Recording"></i>](https://youtu.be/LpdckZyBwvs) [<i class="fab fa-fw fa-github" title="powerpwn"></i>](https://github.com/mbrg/power-pwn) |
 | 2023-10-31 | OWASP Global AppSec DC 2023 | OWASP Low-Code No-Code Top 10 | [<i class="fa fa-calendar" title="Conference schedule"></i>](https://owasp2023globalappsecwashin.sched.com/event/1OUyz/owasp-low-code-no-code-top-10) [<i class="fab fa-fw fa-slideshare" title="Slides"></i>](../assets/pdfs/2023-10-31-OWASP_DC_LCNC_Top_10.pdf) |
