@@ -118,4 +118,4 @@ folks involved at MSRC and BAP security team)
 
 2023-11-21 MSRC closes the case as fixed
 
-2023-05-05 Blog released
+2024-05-05 Blog released
