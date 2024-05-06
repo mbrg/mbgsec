@@ -22,7 +22,7 @@ On Nov 2023 I finally got my MSRC case resolved and a greenlight to publish.
 
 [With everything going on today](https://www.theverge.com/24148033/satya-nadella-microsoft-security-memo) and the problem unfixed, I feel a strong urge to finally share the details with the broad security community.
 
-It is time to share the full story. Hopefully this helps drive urgency to actually fix it.
+It is time to share the full story. Hopefully this helps drive urgency to fix it.
 
 Before I do though I would like to point out the obvious – DLP bypass was not the most interesting or scary part of the talk.
 
@@ -56,7 +56,7 @@ I call this Credential Sharing as a Service.
 Power Platform’s response to my research – and in general to most security concerns raised by the community – has been to emphasize the Power Platform DLP.
 
 This is not a DLP in the Data Loss Prevention sense (data labeling, classification, leak prevention etc’).
-Instead, it is an allow/deny list for which service types can be connected to through Power Platform. An admin can choose to deny connections to SQL server, for example. The unfortunate name choice means sometimes people get lulled into a false sense of security.
+Instead, it is an allow/deny list for which service types can be connected to through Power Platform. An admin can choose to deny connections to SQL server, for example. The unfortunate name choice means sometimes people get a false sense of security.
 
 The fact that Power Platform DLP is not a security mechanism is [well documented](https://www.zenity.io/blog/research/microsoft-power-platform-dlp-bypass-uncovered-finding-5-parent-and-child-flow-execution/).
 It won’t prevent a threat actor. And won’t hold up to most bypass attempts by capable citizen developers as well.
@@ -80,7 +80,7 @@ If you try to access an app that uses a blocked connection you get blocked, as s
 This is a fundamental design flaw. Power Platform DLP applied only to applications and automation that use a blocked connection. The connections themselves are simply not in scope.
 
 The fix Microsoft put in place in Nov 2023 – the one I waited for to release these highly sophisticated details – was to prevent the creation of connections blocked by DLP.
-There are two major things wrong with that fix.
+There are two major things missing in that fix.
 
 First and foremost, it leaves existing customers vulnerable because existing connections still bypass DLP. You can exploit this issue today just as well as you could exploit it before my disclosure.
 
