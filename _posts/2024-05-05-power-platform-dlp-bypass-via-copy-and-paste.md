@@ -56,7 +56,7 @@ I call this Credential Sharing as a Service.
 Power Platform’s response to my research – and in general to most security concerns raised by the community – has been to emphasize the Power Platform DLP.
 
 This is not a DLP in the Data Loss Prevention sense (data labeling, classification, leak prevention etc’).
-Instead, it is an allow/deny list for which service types can be connected to through Power Platform. An admin can choose to deny connections to SQL server, for example. Still it is called DLP so people get a false sense of security.
+Instead, it is an allow/deny list for which service types can be connected to through Power Platform. An admin can choose to deny connections to SQL server, for example. The unfortunate name choice means sometimes people get lulled into a false sense of security.
 
 The fact that Power Platform DLP is not a security mechanism is [well documented](https://www.zenity.io/blog/research/microsoft-power-platform-dlp-bypass-uncovered-finding-5-parent-and-child-flow-execution/).
 It won’t prevent a threat actor. And won’t hold up to most bypass attempts by capable citizen developers as well.
