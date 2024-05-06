@@ -107,14 +107,14 @@ I highly encourage you to go and check it out on your own.
 
 2023-07-12 MSRC acknowledge the issue and decides not to issue a CVE (cloud service)
 
-2023-07-26 MSRC and I collaborate to adjust my BlackHat slides and point to Microsoft-suggested mitigation (thank you to the 
-folks involved at MSRC and Power Platform security team)
+2023-07-26 MSRC and I collaborate to adjust my BlackHat slides, point to Microsoft-suggested mitigation and follow up with a Microsoft technical blog (thank you to the 
+folks involved at MSRC and BAP security team)
 
 2023-08-10 All You Need Is Guest at Black Hat 2023 does not reveal technical details
 
 2023-08-22 Microsoft decides not a release a technical blog on the issue
 
-2023-08-23 I query about mitigation timeline and get asked to wait for more time
+2023-08-23 I query about mitigation timeline and agree to wait for a full deployment of the fix
 
 2023-11-21 MSRC closes the case as fixed
 
