@@ -10,7 +10,13 @@ layout: splash
 
 | Date | Conference | Talk | Resources |
 | - | - | - | - |
-| 2024-05-06 | RSAC 2024 | All You Need Is Guest | |
+| 2024-08-07 | BlackHat US 2024 | Living off Microsoft Copilot | [<i class="fa fa-calendar" title="Conference schedule"></i>](TODO) |
+| 2024-08-07 | BlackHat US 2024 | 15 Ways to Break Your Copilot | [<i class="fa fa-calendar" title="Conference schedule"></i>](TODO) |
+| 2024-08-07 | BlackHat US Arsenal 2024 | Living off the O365 land with powerpwn | [<i class="fa fa-calendar" title="Conference schedule"></i>](TODO) |
+| 2024-06-27 | BSidesTLV 2024 | All You Need Is Guest | [<i class="fa fa-calendar" title="Conference schedule"></i>](TODO) |
+| 2024-06-27 | OWASP Global AppSec Lisbon 2024 | OWASP Low-Code/No-Code Top 10 | [<i class="fa fa-calendar" title="Conference schedule"></i>](TODO) |
+| 2024-05-06 | x33fcon 2024 | All You Need Is Guest | |
+| 2024-05-06 | RSAC 2024 | All You Need Is Guest | [<i class="fab fa-fw fa-slideshare" title="Slides"></i>](../assets/pdfs/2024-05-06_RSAC-24_AllYouNeedIsGuest.pdf) [<i class="fab fa-fw fa-github" title="powerpwn"></i>](https://github.com/mbrg/power-pwn) [<i class="fab fa-fw fa-youtube" title="Recording"></i>](TODO) |
 | 2024-05-01 | Caro 2024 | All You Need Is Guest | |
 | 2024-04-18 | t2 2024 | All You Need Is Guest | [<i class="fa fa-calendar" title="Conference schedule"></i>](https://t2.fi/schedule/2024/) [<i class="fab fa-fw fa-slideshare" title="Slides"></i>](../assets/pdfs/2024-04-18_t2-24_AllYouNeedIsGuest.pdf) [<i class="fab fa-fw fa-github" title="powerpwn"></i>](https://github.com/mbrg/power-pwn) |
 | 2024-04-15 | SANS Cybersecurity Leadership Summit UK 2024 | AI is here for business users. What does that mean for AppSec? | [<i class="fa fa-calendar" title="Conference schedule"></i>](https://www.sans.org/cyber-security-training-events/cybersecurity-leadership-uk-summit-2024/) |
