@@ -143,3 +143,77 @@ List<Department_cc> departmentList = securityDecision.getrecords();
 
 TODO: Is this still running in system context? So lines can be exposed but not their fields?
 
+## WITH USER_MODE
+https://youtu.be/NSjOLmP8Eks
+
+Even if someone uses `WITH SECURITY_ENFORCED`.
+`with sharing`
+`without sharing`
+
+`WITH USER_MODE` overrides and enforces `with sharing class`.
+
+TODO If you put `without sharing class` you actuall get sharing?
+
+TODO what security enforced does?
+
+## WITH SECURITY_ENFORCED
+https://youtu.be/ZPjZlHMH0kQ
+
+This fails the experience on field-level security.
+Without this flag they just doesn't get the data.
+
+Class level share stuff is about object-level access.
+
+```apex
+public with sharing class DepartmentHelper {
+	public statis List<Department__c> getAllRecords() {
+		return [SELECT Id,Name,Owner,TotalSalary__c From Department__c]
+	}
+}
+```
+
+This example has object level but not field level security applied to user.
+So user will be able to see field they don't have access to in records they do have access to.
+
+Field-level as well as object-level security is enforced with WITH SECURITY_ENFORCED.
+
+If you apply `SELECT Id,Name,Owner From Department__c Where TotalSalary__c>10 WITH SECURITY_ENFORCED` this won't work! bcs it only works on the things in select.
+
+TODO find SECURITY_ENFORCED when where has something not in SELECT. Works for Where and OrderBy.
+
+## Object and field level security
+https://youtu.be/KtI6Ugw53s4
+
+With-sharing enforces record-level security but NOT object/field-level security.
+
+Object level means stuff like CRUD on object.
+
+Record level is about ownership of record.
+
+## Security Salesforce
+https://youtu.be/sFFGDQDK_4E
+
+These usually run in sys mode: Apex Classes, Apex Triggers, Apex Web Services
+
+## Apex Dev Guide on using with sharing, without sharing and inherited sharing
+
+`with sharing class` enforces context to current user.
+
+`without sharing class` sharing rules are not enforced.
+
+`inherited sharing` is based on the calling class.
+
+TODO If nothing is declared, class used as an entry point to an apex transaction runs `without sharing`. But that is not the case for 1inherited sharing`.
+TODO check for inner class that is without sharing.
+
+## Apex Dev Guide anonymous blocks
+
+Apex blocks you can execute through dev console, salesforce extension for VSCode or from SOAP API like `ExecuteAnonymousResult executeAnonymous(String code)`.
+
+TODO is this eval??
+
+
+
+
+
+
