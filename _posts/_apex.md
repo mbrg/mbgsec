@@ -76,3 +76,27 @@ public class SecurityDemo {
 }
 ```
 
+## Skill dev academy
+https://youtu.be/DSpY_VD1_iQ
+
+Dynamic SOQL is vulnerable. Use `EscapeSingleQuote`.
+When using Databse, use `Database.qeuryWithBinds`.
+
+Statis SOQL as `EscapeSingleQuote` built it.
+
+Vulnerable Dynamic SOQL
+Exploit `'' AnnualRevenue>0 or Rating=''`.
+
+```apex
+public class VFPageController {
+	public static void getRecords(String userParam){
+		String searchQuery='SELECT Id,Name FROM Account';
+		String whereClause=' Where Name=\''+userParam+'\'';
+		List<Account> accountList=Database.query(searchQuery+whereClause);
+	}
+}
+```
+
+Fix by `userParam=String.escapeSingleQuotes(userParam);`.
+
+Another way `Database.queryWithBinds(query,map,AccessLevel.USER_MODE)` where `map` is key-value. Then in the string, use `whereClause=' Where Name=:AccountName'`.
