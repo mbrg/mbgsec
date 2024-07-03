@@ -13,6 +13,8 @@ public class CaseController {
 }
 ```
 
+TODO check for static SOQL without user_mode
+
 Database inserts specify user or system mode 
 
 ```apex
@@ -28,6 +30,8 @@ public class CaseController {
 }
 ```
 
+TODO check for database query with system mode
+
 ## Security in Dyanmic SOQL and DML
 https://youtu.be/NSjOLmP8Eks
 
@@ -41,6 +45,8 @@ public with sharing class AccountController {
 	}
 }
 ```
+
+TODO with sharing
 
 DML
 
@@ -76,7 +82,9 @@ public class SecurityDemo {
 }
 ```
 
-## Skill dev academy
+TODO search for no specification and for insert as system
+
+## Dynamic SOQL vuln
 https://youtu.be/DSpY_VD1_iQ
 
 Dynamic SOQL is vulnerable. Use `EscapeSingleQuote`.
@@ -97,6 +105,41 @@ public class VFPageController {
 }
 ```
 
+TODO check for dynamic content without these functions
+
 Fix by `userParam=String.escapeSingleQuotes(userParam);`.
 
 Another way `Database.queryWithBinds(query,map,AccessLevel.USER_MODE)` where `map` is key-value. Then in the string, use `whereClause=' Where Name=:AccountName'`.
+
+## Seucirty using Schema Class
+https://youtu.be/yGah99ORLQA
+
+Both `WITH_SECURITY_ENFORCED` and `USER_MODE` will throw exception in security violations.
+
+Schema class help check access: `isAccssible, isCreatable, isUpdateable, isDeleteable`.
+
+```apex
+if (Schema.SObjectType.Contact.fields.Email.isUpdateable()) {
+	// update field
+}
+```
+
+TODO: This looks like an invitation for mistakes using system mode.
+
+This is checking about the logged-in user.
+
+## StripInaccessible
+https://youtu.be/f_lduM7bb9g
+
+Remove frields from a query list wich the user doesn't have access to.
+
+This is a replacement to static SOQL with USER_MODE.
+
+```apex
+// Any field the user has access to will be returned
+SObjectAccessDecision securityDecision = Security.stripInaccessible(AccessType.READABLE,[SELECT Id,Name,TotalSalary__c From Department__c]);
+List<Department_cc> departmentList = securityDecision.getrecords();
+```
+
+TODO: Is this still running in system context? So lines can be exposed but not their fields?
+
