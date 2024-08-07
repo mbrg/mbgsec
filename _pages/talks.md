@@ -10,9 +10,9 @@ layout: splash
 
 | Date | Conference | Talk | Resources |
 | - | - | - | - |
-| 2024-08-07 | BlackHat US 2024 | Living off Microsoft Copilot | [<i class="fa fa-calendar" title="Conference schedule"></i>](TODO) |
-| 2024-08-07 | BlackHat US 2024 | 15 Ways to Break Your Copilot | [<i class="fa fa-calendar" title="Conference schedule"></i>](TODO) |
-| 2024-08-07 | BlackHat US Arsenal 2024 | Living off the O365 land with powerpwn | [<i class="fa fa-calendar" title="Conference schedule"></i>](TODO) |
+| 2024-08-07 | BlackHat US 2024 | Living off Microsoft Copilot | [<i class="fa fa-calendar" title="Conference schedule"></i>](https://www.blackhat.com/us-24/briefings/schedule/#living-off-microsoft-copilot-40074) |
+| 2024-08-07 | BlackHat US 2024 | 15 Ways to Break Your Copilot | [<i class="fab fa-fw fa-slideshare" title="Slides"></i>](../assets/pdfs/2024-08-07_15_ways_to_break_your_Copilot.pdf) [<i class="fa fa-calendar" title="Conference schedule"></i>](https://www.blackhat.com/us-24/briefings/schedule/#-ways-to-break-your-copilot-39770) |
+| 2024-08-07 | BlackHat US Arsenal 2024 | Living off the O365 land with powerpwn | [<i class="fa fa-calendar" title="Conference schedule"></i>](https://www.blackhat.com/us-24/arsenal/schedule/index.html#living-off-the-o-land-with-powerpwn-39636) |
 | 2024-06-27 | BSidesTLV 2024 | All You Need Is Guest | [<i class="fa fa-calendar" title="Conference schedule"></i>](TODO) |
 | 2024-06-27 | OWASP Global AppSec Lisbon 2024 | OWASP Low-Code/No-Code Top 10 | [<i class="fa fa-calendar" title="Conference schedule"></i>](TODO) |
 | 2024-05-06 | x33fcon 2024 | All You Need Is Guest | |
