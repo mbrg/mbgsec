@@ -4,7 +4,7 @@ permalink: /contact/
 layout: splash
 ---
 
-## Where to find me:
+## Where to find me
 
 [Twitter](https://twitter.com/mbrg0)
 
@@ -14,7 +14,7 @@ layout: splash
 
 [LinkedIn](linkedin.com/in/michaelbargury)
 
-## PGP Key
+## PGP key
 
 ```
 -----BEGIN PGP PUBLIC KEY BLOCK-----
