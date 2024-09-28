@@ -22,7 +22,7 @@ getting taken over by an external attacker.
 
 The second vuln is data exfiltration.
 
-You know who else is on the Internet? Everyone else, including them.
+You know who else is on the Internet? Everyone else, including *them*.
 If an attacker can compromise your copilot, they can [instruct it to search a website they control](https://mbrg.github.io/genai-attacks/technique/web_request_triggering.html).
 That means copilot will reach out - proactively, without a user in the loop - to a website a hacker controls.
 The common exploit is encoding data to-be-exfiltrated into a parameter.
