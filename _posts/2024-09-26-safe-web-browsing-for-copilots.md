@@ -1,7 +1,7 @@
 ---
 title: "Safe Web Browsing for Copilots"
 categories:
-  - Blog
+  - Zenity Labs
 tags:
   - Microsoft
   - Hacking
