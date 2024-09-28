@@ -6,10 +6,13 @@ layout: splash
 
 # Talk Materials
 
+## Upcoming Talks
+
 ## Previous Talks
 
 | Date | Conference | Talk | Resources |
 | - | - | - | - |
+| 2024-09-26 | OWASP Global AppSec SF 2024 | Living off Microsoft Copilot | |
 | 2024-08-07 | BlackHat US 2024 | Living off Microsoft Copilot | [<i class="fab fa-fw fa-slideshare" title="Slides part 1"></i>](../assets/pdfs/2024-08-08_Living_off_Microsoft_Copilot_Part1.pdf)[<i class="fab fa-fw fa-slideshare" title="Slides part 2"></i>](../assets/pdfs/2024-08-08_Living_off_Microsoft_Copilot_Part2.pdf)[<i class="fa fa-calendar" title="Conference schedule"></i>](https://www.blackhat.com/us-24/briefings/schedule/#living-off-microsoft-copilot-40074) |
 | 2024-08-07 | BlackHat US 2024 | 15 Ways to Break Your Copilot | [<i class="fab fa-fw fa-slideshare" title="Slides"></i>](../assets/pdfs/2024-08-07_15_ways_to_break_your_Copilot.pdf) [<i class="fa fa-calendar" title="Conference schedule"></i>](https://www.blackhat.com/us-24/briefings/schedule/#-ways-to-break-your-copilot-39770) |
 | 2024-08-07 | BlackHat US Arsenal 2024 | Living off the O365 land with powerpwn | [<i class="fa fa-calendar" title="Conference schedule"></i>](https://www.blackhat.com/us-24/arsenal/schedule/index.html#living-off-the-o-land-with-powerpwn-39636) |
