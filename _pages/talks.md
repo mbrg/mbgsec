@@ -10,6 +10,7 @@ layout: splash
 
 | Date | Conference | Talk | Resources |
 | - | - | - | - |
+| 2024-11-28/29 | DefCamp 2024 | | |
 | 2024-11-13/14/15 | Ekoparty 2024 | | |
 | 2024-10-29/30 | BlueHat USA 2024 | | |
 | 2024-10-24 | hack.lu 2024 | The good, the bad, and the ugly: Microsoft Copilot | |
