@@ -19,9 +19,9 @@ layout: splash
 | Date | Conference | Talk | Resources |
 | - | - | - | - |
 | 2024-10-30 | BlueHat USA 2024 | Scaling AppSec With an SDL for Citizen Development | [<i class="fab fa-fw fa-slideshare" title="Slides"></i>](../assets/pdfs/2024-10-30_Scaling_AppSec_With_an_SDL_for_Cit_Dev.pdf)[<i class="fa fa-calendar" title="Conference schedule"></i>](https://www.microsoft.eventsair.com/bluehat2024/agenda2/#living-off-microsoft-copilot-40074) |
-| 2024-10-24 | hack.lu 2024 | The good, the bad, and the ugly: Microsoft Copilot | |
+| 2024-10-24 | hack.lu 2024 | The good, the bad, and the ugly: Microsoft Copilot | [<i class="fab fa-fw fa-slideshare" title="Slides"></i>](../assets/pdfs/2024-10-24_The_good_the_bad_and_the_ugly.pdf) |
 | 2024-10-24 | BlackHat SecTor 2024 | 15 Ways to Break Your Copilot | |
-| 2024-10-23 | ISS Ohio 2024 | AI Empowers Your Business. What Does that Mean for Security? | |
+| 2024-10-23 | ISS Ohio 2024 | AI Empowers Your Business. What Does that Mean for Security? | [<i class="fab fa-fw fa-slideshare" title="Slides"></i>](../assets/pdfs/2024-10-23_AI_Empowers%20Your_Business_What_Does_that_Mean_for_Security_Steve_Shanko.pdf) |
 | 2024-09-26 | OWASP Global AppSec SF 2024 | Living off Microsoft Copilot |  [<i class="fab fa-fw fa-slideshare" title="Slides"></i>](../assets/pdfs/2024-09-29_Living_off_Microsoft_Copilot.pdf) |
 | 2024-08-07 | BlackHat US 2024 | Living off Microsoft Copilot | [<i class="fab fa-fw fa-slideshare" title="Slides part 1"></i>](../assets/pdfs/2024-08-08_Living_off_Microsoft_Copilot_Part1.pdf)[<i class="fab fa-fw fa-slideshare" title="Slides part 2"></i>](../assets/pdfs/2024-08-08_Living_off_Microsoft_Copilot_Part2.pdf)[<i class="fa fa-calendar" title="Conference schedule"></i>](https://www.blackhat.com/us-24/briefings/schedule/#living-off-microsoft-copilot-40074) |
 | 2024-08-07 | BlackHat US 2024 | 15 Ways to Break Your Copilot | [<i class="fab fa-fw fa-slideshare" title="Slides"></i>](../assets/pdfs/2024-08-07_15_ways_to_break_your_Copilot.pdf) [<i class="fa fa-calendar" title="Conference schedule"></i>](https://www.blackhat.com/us-24/briefings/schedule/#-ways-to-break-your-copilot-39770) |
