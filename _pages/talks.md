@@ -18,7 +18,7 @@ layout: splash
 
 | Date | Conference | Talk | Resources |
 | - | - | - | - |
-| 2024-10-30 | BlueHat USA 2024 | Scaling AppSec With an SDL for Citizen Development | [<i class="fab fa-fw fa-slideshare" title="Slides"></i>](../assets/pdfs/2024-10-30_Scaling_AppSec_With_an_SDL_for_Cit_Dev.pdf)[<i class="fa fa-calendar" title="Conference schedule"></i>](https://www.microsoft.eventsair.com/bluehat2024/agenda2/#living-off-microsoft-copilot-40074) |
+| 2024-10-30 | BlueHat USA 2024 | Scaling AppSec With an SDL for Citizen Development | [<i class="fab fa-fw fa-slideshare" title="Slides"></i>](../assets/pdfs/2024-10-30_Scaling_AppSec_With_an_SDL_for_Cit_Dev.pdf)[<i class="fa fa-calendar" title="Conference schedule"></i>](https://microsoft.eventsair.com/bluehat2024/agenda2/) |
 | 2024-10-24 | hack.lu 2024 | The good, the bad, and the ugly: Microsoft Copilot | [<i class="fab fa-fw fa-slideshare" title="Slides"></i>](../assets/pdfs/2024-10-24_The_good_the_bad_and_the_ugly.pdf) |
 | 2024-10-24 | BlackHat SecTor 2024 | 15 Ways to Break Your Copilot | |
 | 2024-10-23 | ISS Ohio 2024 | AI Empowers Your Business. What Does that Mean for Security? | [<i class="fab fa-fw fa-slideshare" title="Slides"></i>](../assets/pdfs/2024-10-23_AI_Empowers%20Your_Business_What_Does_that_Mean_for_Security_Steve_Shanko.pdf) |
