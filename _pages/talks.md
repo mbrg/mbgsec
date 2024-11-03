@@ -11,7 +11,7 @@ layout: splash
 | Date | Conference | Talk | Resources |
 | - | - | - | - |
 | 2024-11-28/29 | DefCamp 2024 | | |
-| 2024-11-13/14/15 | Ekoparty 2024 | | |
+| 2024-11-13 | Ekoparty 2024 | 15 Ways to Break Your Copilot | [<i class="fa fa-calendar" title="Conference schedule"></i>](https://ekoparty.org/agenda/) |
 
 
 ## Previous Talks
