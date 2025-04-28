@@ -92,6 +92,17 @@ defaults:
       comments: true
       share: true
       related: true
+  # linklog
+  - scope:
+      path: ""
+      type: linklog
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
 
 include:
   - _pages
