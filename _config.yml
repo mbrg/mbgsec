@@ -71,7 +71,7 @@ analytics:
 author:
   name   : "Michael Bargury"
   avatar : "assets/images/bio-photo.png"
-  bio    : "Security research, hacking, AppSec, primarily focused on low-code/no-code apps."
+  bio    : "Security research, hacking, AppSec, primarily focused on AI agents."
   links:
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
