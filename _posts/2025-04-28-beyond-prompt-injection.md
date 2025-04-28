@@ -29,7 +29,7 @@ SQL-injection is a solved problem today, at least in the technical sense--use th
 Surely, AI labs will figure out a solution to prompt injection down the line. Right?
 
 We have reaped the benefits of the term prompt injection, and we are much better for it.
-But we’ve let it constrain our perspective.
+But its ubiquitousness over time can limit our perspective.
 
 We've started to conflate _The Problem_ with the name that was coined to describe it.
 Prompt injection is not the entire problem.
