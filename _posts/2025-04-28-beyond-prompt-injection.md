@@ -31,9 +31,9 @@ Surely, AI labs will figure out a solution to prompt injection down the line. Ri
 We have reaped the benefits of the term prompt injection, and we are much better for it.
 But its ubiquitousness over time can limit our perspective.
 
-We've started to conflate _The Problem_ with the name that was coined to describe it.
-Prompt injection is not the entire problem.
-The problem is that AI inherently does not follow instructions, and we act like it does.
+We've started to conflate _The Problem_ with prompt injection.
+But prompt injection is not the entire problem.
+*The problem is that AI inherently does not follow instructions, and we act like it does.*
 It follows our goals, an attacker's goals, or its own internal goals all the same.
 Attackers exploit this to nudge your AI into accomplishing their goals.
 So far we know they can do it through prompt injection directly and 
