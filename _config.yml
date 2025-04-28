@@ -16,7 +16,7 @@
 title: mbgsec
 email: michael.bargury@owasp.org
 description: >- # this means to ignore newlines until "baseurl:"
-  The two blog readers would know that it is comprised mostly of unfinished thoughts about cloud security, application security and low-code / no-code apps.
+  The two blog readers would know that it is comprised mostly of unfinished thoughts about AI agents, AI security, cloud security, application security and low-code / no-code apps.
 twitter_username: mbrg0
 github_username: mbrg
 minimal_mistakes_skin: default
