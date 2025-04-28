@@ -32,15 +32,6 @@ paginate: 5 # amount of posts to show
 paginate_path: /page:num/
 timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
-collections:
-  projects:
-    output: true
-    permalink: /:collection/:path/
-
-include:
-  - _pages
-  - _projects
-
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
@@ -102,5 +93,24 @@ defaults:
       share: true
       related: true
 
+include:
+  - _pages
+  - _projects
+  - _linklog
+
 feed:
   content: "true"
+  collections:
+    - posts
+    - linklog
+
+collections:
+  posts:
+    output: true
+    permalink: /:collection/:path/
+  projects:
+    output: true
+    permalink: /:collection/:path/
+  linklog:
+    output: true
+    permalink: /:collection/:path/

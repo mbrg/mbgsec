@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>{{ site.title }} - Linklog</title>
+    <link>{{ site.url }}</link>
+    <description>{{ site.description }}</description>
+    {% for entry in site.linklog %}
+    <item>
+      <title>{{ entry.title }}</title>
+      <link>{{ site.url }}{{ entry.url }}</link>
+      <description>{{ entry.excerpt | strip_html }}</description>
+      <pubDate>{{ entry.date | date_to_rfc822 }}</pubDate>
+    </item>
+    {% endfor %}
+  </channel>
+</rss>
