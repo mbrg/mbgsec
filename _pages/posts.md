@@ -1,5 +1,5 @@
 ---
-title: "By topic"
-permalink: /topics/
-layout: tags
+title: "Posts"
+permalink: /posts/
+collection: posts
 ---
