@@ -9,7 +9,7 @@ tags:
   - AI
 ---
 
-The InfoSec community is strongest when it can collaborate openly. Few organizations can fend off sophisticated attacks alone—and even they sometimes fail. If we all had to independently discover every malware variant, every vulnerability, every best practice, we wouldn’t get very far. Over time, we’ve built shared mechanisms: VT and EDR for malware, CVE for vulnerabilities, standard organizations like OWASP for best practices.
+The InfoSec community is strongest when it can collaborate openly. Few organizations can fend off sophisticated attacks alone—and even they sometimes fail. If we all had to independently discover every malware variant, every vulnerability, every best practice, we wouldn’t get very far. Over time, shared mechanisms emerged: VirusTotal and EDR for malware, CVE for vulnerabilities, standard organizations like OWASP for best practices.
 
 It’s remarkable that we can rely on one another at all. Companies compete fiercely. But their security teams collaborate. That kind of collaboration is not trivial. Nuclear arsenals. Ever-growing marketing budgets. These are places where more collaboration could help—but doesn’t.
 
