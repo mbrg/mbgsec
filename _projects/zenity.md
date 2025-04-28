@@ -1,6 +1,6 @@
 ---
 title: "Zenity"
-excerpt: "The low-code/no-code application security company"
+excerpt: "Secure AI Agents Everywhere"
 categories:
   - projects
 header:
