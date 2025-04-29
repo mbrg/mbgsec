@@ -12,7 +12,7 @@ tags:
 Naming is powerful. An excellent name does more than frame the problem, it hints at ownership, solutions, and urgency to address it. 
 In a very real sense, they are like equivalence proofs in mathematics--allowing us to apply knowledge from one domain to the other.
 
-When [Simon Willison’s](https://simonwillison.net/2022/Sep/12/prompt-injection/) _prompt injection_ term got widely accepted, it changed reality for both the AI and security communities. 
+When [Simon Willison’s](https://simonwillison.net/2022/Sep/12/prompt-injection/) <i>prompt injection</i> term got widely accepted, it changed reality for both the AI and security communities. 
 We're still living in the reality this term has created.
 But we are also confined by it, unable to mentally escape its comforting prediction.
 
@@ -62,7 +62,7 @@ Back at BlackHat USA 2024 [I suggested the _Remote Copilot Execution_](https://l
 It has the clear benefit of drawing a parallel to Remote Code Execution, driving up urgency and emphasizing its open-endedness.
 But the problem remains--RCEs are something bad that happens so well-behaved AI. 
 
-*I suggest the term AI Hijacking, or _AIjacking_.
+*I suggest the term AI Hijacking, or <i>AIjacking</i>.
 It places the emphasis on the outcome we'd like to avoid--attackers hijacking our AI--rather than how they do it.*
 
 Hijacking our AI means an attacker can use its access and tools at their disposal.
