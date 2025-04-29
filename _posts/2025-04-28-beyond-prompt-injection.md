@@ -12,7 +12,7 @@ tags:
 Naming is powerful. An excellent name does more than frame the problem, it hints at ownership, solutions, and urgency to address it. 
 In a very real sense, they are like equivalence proofs in mathematics--allowing us to apply knowledge from one domain to the other.
 
-When [Simon Willison’s](https://simonwillison.net/2022/Sep/12/prompt-injection/) <i>prompt injection</i> term got widely accepted, it changed reality for both the AI and security communities. 
+When [Simon Willison’s](https://simonwillison.net/2022/Sep/12/prompt-injection/) *prompt injection* term got widely accepted, it changed reality for both the AI and security communities. 
 We're still living in the reality this term has created.
 But we are also confined by it, unable to mentally escape its comforting prediction.
 
@@ -34,7 +34,7 @@ But its ubiquitousness over time can limit our perspective.
 
 We've started to conflate _The Problem_ with prompt injection.
 But prompt injection is not the entire problem.
-*The problem is that AI inherently does not follow instructions, and we act like it does.*
+**The problem is that AI inherently does not follow instructions, and we act like it does.**
 It follows our goals, an attacker's goals, or its own internal goals all the same.
 Attackers exploit this to nudge your AI into accomplishing their goals.
 So far we know they can do it through prompt injection directly and 
@@ -58,12 +58,12 @@ I was tempted to end this piece without a suggested alternative.
 Feeling it would dilute my argument.
 But making progress requires taking a step forward.
 
-Back at BlackHat USA 2024 [I suggested the _Remote Copilot Execution_](https://labs.zenity.io/p/rce) (the term _Copilot_ has lost favour since).
+Back at BlackHat USA 2024 [I suggested the _Remote Copilot Execution_](https://labs.zenity.io/p/rce) (the term *Copilot* has lost favour since).
 It has the clear benefit of drawing a parallel to Remote Code Execution, driving up urgency and emphasizing its open-endedness.
 But the problem remains--RCEs are something bad that happens so well-behaved AI. 
 
-*I suggest the term AI Hijacking, or <i>AIjacking</i>.
-It places the emphasis on the outcome we'd like to avoid--attackers hijacking our AI--rather than how they do it.*
+**I suggest the term AI Hijacking, or *AIjacking*.**
+**It places the emphasis on the outcome we'd like to avoid--attackers hijacking our AI--rather than how they do it.**
 
 Hijacking our AI means an attacker can use its access and tools at their disposal.
 It puts the emphasis on agentic AI.
