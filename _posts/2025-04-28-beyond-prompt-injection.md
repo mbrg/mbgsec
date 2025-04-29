@@ -1,11 +1,12 @@
 ---
-title: Beyond Prompt Injection
+title: AIjacking Goes Beyond Prompt Injection
 categories:
   - Blog
 tags:
   - Hacking
   - AI
   - Prompt Injection
+  - AIjacking
 ---
 
 Naming is powerful. An excellent name does more than frame the problem, it hints at ownership, solutions, and urgency to address it. 
@@ -51,6 +52,19 @@ The same internet we use, with its digital skyscrapers, dirty gutters and flouri
 We've become hyper-focused on building a security perimeter around AI (another echo from the '90s), 
 and forgot to look up and stare at the damned thing--AI is tainted to its core.
 
-I am tempted to end this piece with a suggested alternative of my own.
-But that would dilute my argument.
-So I won't.
+-----
+
+I was tempted to end this piece without a suggested alternative.
+Feeling it would dilute my argument.
+But making progress requires taking a step forward.
+
+Back at BlackHat USA 2024 [I suggested the _Remote Copilot Execution_](https://labs.zenity.io/p/rce) (the term _Copilot_ has lost favour since).
+It has the clear benefit of drawing a parallel to Remote Code Execution, driving up urgency and emphasizing its open-endedness.
+But the problem remains--RCEs are something bad that happens so well-behaved AI. 
+
+*I suggest the term AI Hijacking, or _AIjacking_.
+It places the emphasis on the outcome we'd like to avoid--attackers hijacking our AI--rather than how they do it.*
+
+Hijacking our AI means an attacker can use its access and tools at their disposal.
+It puts the emphasis on agentic AI.
+An attacker only needs to hijack the agent's goal, and the agent figures out how to best use its capabilities to wreak havoc.
