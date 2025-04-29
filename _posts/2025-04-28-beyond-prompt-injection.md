@@ -7,6 +7,7 @@ tags:
   - AI
   - Prompt Injection
   - AIjacking
+image: assets/images/2025-04-28-beyond-prompt-injection/preview.png
 ---
 
 Naming is powerful. An excellent name does more than frame the problem, it hints at ownership, solutions, and urgency to address it. 
