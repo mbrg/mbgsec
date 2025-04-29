@@ -65,7 +65,7 @@ author:
   bio    : "Security research, hacking, AppSec, primarily focused on AI agents."
   links:
     - label: "X"
-      icon: "fab fa-fw fa-x-twitter"
+      icon: "fab fa-fw fa-twitter-square"
       url: "https://twitter.com/mbrg0"
     - label: "BlueSky"
       icon: "fab fa-fw fa-square-bsky"
