@@ -13,7 +13,7 @@ The InfoSec community is strongest when it can collaborate openly. Few organizat
 
 It’s remarkable that we can rely on one another at all. Companies compete fiercely. But their security teams collaborate. That kind of collaboration is not trivial. Nuclear arsenals. Ever-growing marketing budgets. These are places where more collaboration could help—but doesn’t.
 
-So when attackers hijack AI agents through prompt injection, we fall back on what we know: vulnerability disclosure. Vendors launch responsible disclosure programs (which we applaud). They ask researchers to report successful prompt injections privately. The implicit implication: responsible behavior means private reporting, not public sharing.
+So when [attackers hijack AI agents](https://www.mbgsec.com/posts/2025-04-28-beyond-prompt-injection/) through prompt injection, we fall back on what we know: vulnerability disclosure. Vendors launch responsible disclosure programs (which we applaud). They ask researchers to report successful prompt injections privately. The implicit implication: responsible behavior means private reporting, not public sharing.
 
 But there’s a problem, prompt injection can’t be fixed.
 
