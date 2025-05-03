@@ -1,12 +1,14 @@
 ---
-title: "Citizen Development Moves Too Fast for Its Own Good"
+title: "Zenity Research Published at RSAC 2025"
 categories:
   - Media
 tags:
   - Media
-  - DarkReading
   - Citizen Development
-link: https://www.darkreading.com/application-security/citizen-development-moves-too-fast-for-its-own-good
+  - AI
+  - Prompt Injection
+  - AIjacking
+link: https://labs.zenity.io/p/zenity-research-published-at-rsac-2025
 ---
 
-While low-code/no-code tools can speed up application development, sometimes it's worth taking a slower approach for a safer product.
+We published a summary of all research shared at RSAC 2025 by the Zenity research team.
