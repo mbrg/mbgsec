@@ -112,9 +112,12 @@ def save_file(toread_dir, filename, title, tags, clean_url, content, model_name)
     # Combine provided tags with generated tags, removing duplicates
     all_tags = list(set(tags + generated_tags))
     
+    # Format tags for YAML front matter
+    tags_yaml = '\n   - '.join([''] + all_tags)
+    
     file_content = f'''---
 title: "{title}"
-tags:{['\n   - ' + tag for tag in all_tags]}
+tags:{tags_yaml}
 link: {clean_url}
 date: {datetime.now().strftime('%Y-%m-%d')}
 ---
