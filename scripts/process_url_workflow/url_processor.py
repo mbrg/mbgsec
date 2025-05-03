@@ -1,3 +1,14 @@
+#!/usr/bin/env -S uv run --script
+# /// script
+# requires-python = ">=3.12"
+# dependencies = [
+#     "playwright>=1.40.0",
+#     "pyyaml>=6.0.1",
+#     "python-slugify>=8.0.1",
+#     "llm>=0.12.0"
+# ]
+# ///
+
 import urllib.parse
 from playwright.sync_api import sync_playwright
 import yaml
@@ -9,6 +20,7 @@ from pathlib import Path
 from slugify import slugify
 import llm
 import json
+from typing import Tuple, List, Optional
 
 def clean_url(url):
     """Clean URL by removing query parameters and fragments."""
@@ -112,7 +124,7 @@ date: {datetime.now().strftime('%Y-%m-%d')}
     with open(f'{toread_dir}/{filename}', 'w') as f:
         f.write(file_content)
 
-if __name__ == '__main__':
+def main():
     if len(sys.argv) != 4:
         print("Usage: python process_url.py <url> <toread_dir> <model_name>")
         sys.exit(1)
@@ -134,4 +146,7 @@ if __name__ == '__main__':
     # Create and save new file
     filename = create_filename(title)
     save_file(toread_dir, filename, title, [], clean_url, content, model_name)
-    print(f"filename={filename}") 
+    print(f"filename={filename}")
+
+if __name__ == '__main__':
+    main() 

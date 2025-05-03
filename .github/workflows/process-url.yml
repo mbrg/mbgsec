@@ -31,16 +31,15 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Install dependencies
+      - name: Install UV
         run: |
-          python -m pip install --upgrade pip
-          pip install llm beautifulsoup4 requests pyyaml validators playwright slugify
-          playwright install chromium
+          curl -LsSf https://astral.sh/uv/install.sh | sh
+          echo "$HOME/.cargo/bin" >> $GITHUB_PATH
 
       - name: Process URL
         id: process_url
         run: |
-          python scripts/process_url_workflow/url_processor.py "${{ github.event.inputs.url }}" "${{ github.event.inputs.toreaddir }}" "${{ github.event.inputs.model }}"
+          uv run --script scripts/process_url_workflow/url_processor.py "${{ github.event.inputs.url }}" "${{ github.event.inputs.toreaddir }}" "${{ github.event.inputs.model }}"
         env:
           PYTHONUNBUFFERED: 1
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
@@ -59,7 +58,7 @@ jobs:
 
       - name: Validate new files
         if: steps.process_url.outputs.existing_file == ''
-        run: python scripts/process_url_workflow/frontmatter_validator.py "${{ github.event.inputs.toreaddir }}"
+        run: uv run --script scripts/process_url_workflow/frontmatter_validator.py "${{ github.event.inputs.toreaddir }}"
       
       - name: Push changes
         if: steps.process_url.outputs.existing_file == ''
