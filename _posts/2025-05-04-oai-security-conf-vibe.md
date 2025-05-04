@@ -10,7 +10,7 @@ tags:
   - OpenAI
 ---
 
-This is part 1 on OpenAI's inaugural Security Research Conference. More soon.
+This is part 1. More soon.
 
 The conversation around AI is always about vibes.
 So let's talk about the vibes at [OpenAI's inaugural Security Research Conference](https://www.linkedin.com/posts/daveaitel_thanks-everyone-for-coming-to-the-inaugural-activity-7324492962892046336-Gyu9) last week.
