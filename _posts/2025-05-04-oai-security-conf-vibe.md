@@ -38,7 +38,7 @@ The relationship between government and OpenAI was palpable.
 Observable from friendly relationships, and the strong emphasis on policy conversations relative to security conferences: opening keynote, multiple talks.
 Most subtly -- physical security guards at every corner also gave it away.
 These left an overwhelming appreciation of what's at stake at the national level (or even Western level).
-Last time I sensed that mix of weight and urgency I was in uniform.
+Last time I sensed that mix of urgency and gravitas I was in uniform.
 
 ![OpenAI Security Research Conference Badge](/assets/images/2025-05-04-oai-security-conf-vibe/9741B7CF-7828-4E6C-AA0A-5A3644E1173D_1_105_c.jpeg)
 
