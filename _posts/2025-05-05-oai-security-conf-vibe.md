@@ -49,7 +49,7 @@ An exciting goal for both security and AI researchers.
 People have built incredibly capable autonomous systems already.
 These systems are discovering vulnerabilities in Open Source projects, pen-testing web services, crafting patches.
 Rather than relying on traditional security tooling, they lean on the LLMs.
-As [Dave Aitel](https://x.com/daveaitel) put it in his keynote, the LLM **understand and reason** rather than scans.
+As [Dave Aitel](https://x.com/daveaitel) put it in his keynote, the LLM **understands and reasons** rather than scans.
 Bugs are miscommunications in LLM's native language -- code.
 Incredible results are achieved by combining software engineering and data science skills, no heavy model-training required. 
 There is a general feeling that we're crossing a chasm and everything is about to change.
