@@ -18,6 +18,7 @@ I also primed Matt in advance, joking if we could ask *"real questions"*, to whi
 
 I ended up asking two questions (thank you Ian).
 Here is an imperfect summary of a few questions and answers I found interesting, including my own.
+These are my recollections after more than 48 hours and 24 hours in an airplane, so please take it with a grain of salt.
 
 **Question:** LLMs were a black box from the get go, and are only getting more obscure with reasoning models. How can we trust them if we can't figure out what they are doing?
 
