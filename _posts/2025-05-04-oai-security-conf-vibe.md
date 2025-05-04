@@ -10,6 +10,8 @@ tags:
   - OpenAI
 ---
 
+This is part 1 on OpenAI's inaugural Security Research Conference. More soon.
+
 The conversation around AI is always about vibes.
 So let's talk about the vibes at [OpenAI's inaugural Security Research Conference](https://www.linkedin.com/posts/daveaitel_thanks-everyone-for-coming-to-the-inaugural-activity-7324492962892046336-Gyu9) last week.
 
@@ -38,7 +40,7 @@ Most subtly -- physical security guards at every corner also gave it away.
 These left an overwhelming appreciation of what's at stake at the national level (or even Western level).
 Last time I sensed that mix of weight and urgency I was in uniform.
 
-![OpenAI Security Research Conference Badge](/assets/images/2025-05-05-oai-security-conf-vibe/9741B7CF-7828-4E6C-AA0A-5A3644E1173D_1_105_c.jpeg)
+![OpenAI Security Research Conference Badge](/assets/images/2025-05-04-oai-security-conf-vibe/9741B7CF-7828-4E6C-AA0A-5A3644E1173D_1_105_c.jpeg)
 
 In government circles, 0day development remains the pinnacle of security research.
 I almost forgot about that, having spent more than a decade out in industry where we're still struggling with *"the basics"*.
