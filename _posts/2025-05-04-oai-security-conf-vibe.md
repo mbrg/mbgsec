@@ -53,3 +53,7 @@ As [Dave Aitel](https://x.com/daveaitel) put it in his keynote, the LLM **unders
 Bugs are miscommunications in LLM's native language -- code.
 Incredible results are achieved by combining software engineering and data science skills, no heavy model-training required. 
 There is a general feeling that we're crossing a chasm and everything is about to change.
+
+I really appreciate OpenAI bringing the community together.
+And everyone that contributed and shared their perspectives.
+Huge thank you [Matt Knight](https://www.linkedin.com/in/matthewfknight) and [Ian Brelinsky](https://www.linkedin.com/in/ianbre) for throwing a welcoming, super interesting and fun conference!
