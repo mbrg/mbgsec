@@ -50,8 +50,9 @@ There is a ton of innovation in and around [AIxCC](https://aicyberchallenge.com/
 That was expected.
 I was flabbergasted the first time I learned about [CGC](https://www.darpa.mil/research/programs/cyber-grand-challenge).
 It seemed futuristic and, to be honest, unattainable even though I was learning about it in retrospect.
-This set my expectations of AIxCC very high.
 The most exciting thing about AIxCC innovation -- they seem to be applicable to all of us right now.
+I'll be following the teams very closely from now on.
+Can't wait to read the writeups.
 
 People have built incredibly capable autonomous systems already.
 These systems are discovering vulnerabilities in Open Source projects, pen-testing web services, crafting patches.
