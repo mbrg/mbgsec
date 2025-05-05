@@ -10,8 +10,6 @@ tags:
   - OpenAI
 ---
 
-This is part 1. More soon.
-
 The conversation around AI is always about vibes.
 So let's talk about the vibes at [OpenAI's inaugural Security Research Conference](https://www.linkedin.com/posts/daveaitel_thanks-everyone-for-coming-to-the-inaugural-activity-7324492962892046336-Gyu9) last week.
 
@@ -26,7 +24,7 @@ There's a sense that [we are all n00bs](https://youtu.be/FH6P288i2PE?si=9TxeP06N
 It's humbling to see world-class experts step out of their zones and dive into emerging research.
 Every hallway conversation initiated in fifth gear.
 Folks were happy to openly share perspectives.
-They immediately inquired about anything that seemed novel or different from their obversations.
+They immediately inquired about anything that seemed novel or different from their observations.
 
 Most of the focus was placed on AI for security, not much on security from AI.
 There was general consensus that prompt injection and hallucinations are a massive security problem.
@@ -47,6 +45,13 @@ I almost forgot about that, having spent more than a decade out in industry wher
 It explains then why the allure of having AI find 0days is so strong.
 Its intuitively understood as the ultimate test of intelligence.
 An exciting goal for both security and AI researchers.
+
+There is a ton of innovation in and around [AIxCC](https://aicyberchallenge.com/), both by contestants and at DARPA.
+That was expected.
+I was flabbergasted the first time I learned about [CGC](https://www.darpa.mil/research/programs/cyber-grand-challenge).
+It seemed futuristic and, to be honest, unattainable even though I was learning about it in retrospect.
+This set my expectations of AIxCC very high.
+The most exciting thing about AIxCC innovation -- they seem to be applicable to all of us right now.
 
 People have built incredibly capable autonomous systems already.
 These systems are discovering vulnerabilities in Open Source projects, pen-testing web services, crafting patches.
