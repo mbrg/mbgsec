@@ -10,7 +10,7 @@ tags:
   - OpenAI
 ---
 
-This is part 3 on OpenAI's inaugural Security Research Conference. Here are [part 1](/_posts/2025-05-05-oai-security-conf-vibe.md) and [part 2](/_posts/2025-05-14-oai-security-conf-automated-vuln-discovery.md).
+This is part 3 on OpenAI's inaugural Security Research Conference. Here are [part 1](/_posts/2025-05-04-oai-security-conf-vibe.md) and [part 2](/_posts/2025-05-08-oai-security-conf-automated-vuln-discovery.md).
 
 As soon as they opened up the room for questions I raised my hand.
 I was preparred.
@@ -34,8 +34,11 @@ These are my recollections after more than 48 hours and 24 hours in an airplane,
 
 **Question:** Given that, as you stated, prompt injection is still a big problem, and getting to 99.999% wouldn't prevent attackers from getting their way, how should people think about deploying agents that can now have tools that can make real harm?
 
-**Answer:** People should not deploy agents that can make real harm. 
-  He believes that some of the research they are working on could solve prompt injection 100% of the time.
-  ([MB] asking around, OpenAI researchers do not agree)
+**Answer:** People should not deploy agents that can make real harm. He believes that some of the research they are working on could solve prompt injection 100% of the time. ([MB] asking around, OpenAI researchers do not agree)
+
+**Answers to questions I cannot recall:** 
+
+- OSS
+- GPT4
 
 ![Sam Altman thinking about a question; Matt Knight preparring to fire the next one](/assets/images/2025-05-12-oai-security-conf-sam-altman/8B3E9522-5A28-4F34-AF36-0FC4463CB955_1_105_c.jpeg)

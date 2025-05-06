@@ -10,7 +10,7 @@ tags:
   - OpenAI
 ---
 
-This is part 2 on OpenAI's inaugural Security Research Conference. [Here is part 1](/_posts/2025-05-05-oai-security-conf-vibe.md).
+This is part 2 on OpenAI's inaugural Security Research Conference. [Here is part 1](/_posts/2025-05-04-oai-security-conf-vibe.md).
 
 People have built incredibly capable autonomous systems already.
 Some under the umbrella of AIxCC, and some independently ([Dan Guido](https://x.com/dguido), Tyler Nighswander, [Xinyu Xing](https://x.com/xingxinyu), [Matthew McLure](https://www.linkedin.com/in/ACoAAAscunYBw7DKenrTnIShCO-6MjkP8PFDiko), [Dave Aitel](https://x.com/daveaitel), [Oege de Moor](https://x.com/oegerikus)).
@@ -23,7 +23,7 @@ While initial intuitions relied on traditional static analysis and fuzzing to gu
 As Dave Aitel put it in his keynote, the LLM **understands and reasons** rather than scans.
 Bugs are miscommunications in LLM's native language -- code.
 
-![XBOW leads the HackerOne US leaderboard true to May 5th, 2025](/assets/images/2025-05-07-oai-security-conf-automated-vuln-discovery/Screenshot_2025-05-05_at_11.23.56.png)
+![XBOW leads the HackerOne US leaderboard true to May 5th, 2025](/assets/images/2025-05-08-oai-security-conf-automated-vuln-discovery/Screenshot_2025-05-05_at_11.23.56.png)
 
 The people building these incredible systems are not training models (tho say its the next step).
 The are building **scaffolding** -- software that uses LLMs in just the right way to squeezes maximum value.
