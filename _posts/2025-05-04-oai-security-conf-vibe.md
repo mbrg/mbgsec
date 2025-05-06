@@ -63,4 +63,4 @@ Incredible results are achieved by combining software engineering and data scien
 There is a general feeling that we're crossing a chasm and everything is about to change.
 
 I really appreciate OpenAI bringing the community together, and everyone that contributed and shared their perspectives.
-A huge thank you [Matt Knight](https://www.linkedin.com/in/matthewfknight) and [Ian Brelinsky](https://www.linkedin.com/in/ianbre) for throwing a welcoming, super interesting and fun conference!
+A huge thank you [Dave Aitel](https://x.com/daveaitel), [Matt Knight](https://x.com/embeddedsec) and [Ian Brelinsky](https://www.linkedin.com/in/ianbre) for throwing a welcoming, super interesting and fun conference!
