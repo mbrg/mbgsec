@@ -454,9 +454,9 @@
           if (response.ok) {
             localStorage.setItem('hasSubscribed', 'true');
             modal.style.display = "none";
-            showToast('Successfully subscribed! Welcome aboard! 🎉', 'success');
+            showToast('Thanks for subscribing! 🎉 Please check your email to confirm.', 'success');
           } else {
-            throw new Error('Subscription failed');
+            throw new Error('Subscription failed. Please try again.');
           }
         })
         .catch(error => {
