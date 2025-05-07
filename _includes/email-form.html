@@ -14,7 +14,7 @@
           </div>
           <h1 class="main-title">mbgsec</h1>
           <div class="subtitle">Breaking AI agents, hacking, citizen development and infosec.</div>
-          <div class="byline">By <span class="author">Michael Bargury</span> <span class="verified">&#10003;</span> <span class="dot">·</span> <span class="subscribers">Over 2 subscribers</span></div>
+          <div class="byline">By <span class="author">Michael&nbsp;Bargury</span> <span class="verified">&#10003;</span> <span class="dot">·</span> <span class="subscribers">Over&nbsp;2&nbsp;subscribers</span></div>
           <div class="input-row">
             <input type="email" name="email" id="bd-email" class="styled-input" placeholder="Your email" required />
             <input class="styled-subscribe" type="submit" value="Subscribe" />
@@ -140,14 +140,17 @@
         font-weight: 400;
       }
       .byline {
-        font-size: 0.98rem;
+        font-size: 0.92rem;
         color: #666;
-        margin-bottom: 28px;
+        margin-bottom: 12px;
         font-weight: 400;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
       }
-      .author {
-        font-weight: 500;
-        color: #222;
+      .author, .subscribers {
+        font-size: 0.92rem;
       }
       .verified {
         color: #3b82f6;
@@ -156,11 +159,8 @@
         vertical-align: middle;
       }
       .dot {
-        margin: 0 6px;
+        margin: 0 3px;
         color: #bbb;
-      }
-      .subscribers {
-        color: #666;
       }
       .input-row {
         display: flex;
@@ -169,11 +169,12 @@
         align-items: center;
         gap: 0;
         margin: 0 0 18px 0;
+        height: 2.4rem;
       }
       .styled-input {
         font-family: 'Inter', Arial, sans-serif;
-        font-size: 1.08rem;
-        padding: 0.9rem 1.1rem;
+        font-size: 0.92rem;
+        padding: 0.5rem 0.8rem;
         border: 1.5px solid #d0d0d0;
         border-radius: 6px 0 0 6px;
         outline: none;
@@ -182,22 +183,27 @@
         color: #222;
         box-sizing: border-box;
         transition: border 0.2s;
+        height: 100%;
       }
       .styled-input:focus {
         border: 1.5px solid #e63946;
       }
       .styled-subscribe {
         font-family: 'Inter', Arial, sans-serif;
-        font-size: 1.08rem;
+        font-size: 0.92rem;
         font-weight: 500;
         background: #e63946;
         color: #fff;
         border: none;
         border-radius: 0 6px 6px 0;
-        padding: 0.9rem 1.5rem;
+        padding: 0.5rem 1.1rem;
         cursor: pointer;
         transition: background 0.2s;
         width: 40%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
       .styled-subscribe:hover {
         background: #d62839;
