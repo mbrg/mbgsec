@@ -6,8 +6,6 @@
           id="email-form"
           action="https://buttondown.com/api/emails/embed-subscribe/mbgsec"
           method="post"
-          target="popupwindow"
-          onsubmit="window.open('https://buttondown.com/mbgsec', 'popupwindow')"
           class="email-form">
           <div class="profile-img-container">
             <img src="/assets/images/bio-photo.png" alt="Profile" class="profile-img" />
@@ -328,6 +326,42 @@
         color: var(--text-color-muted);
         opacity: 0.7;
       }
+
+      /* Toast Notification Styles */
+      .toast {
+        position: fixed;
+        top: -100px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 16px 24px;
+        border-radius: 8px;
+        color: white;
+        font-family: 'Inter', Arial, sans-serif;
+        font-size: 0.95rem;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        z-index: 2000;
+        transition: top 0.3s ease-in-out;
+      }
+
+      .toast.success {
+        background-color: #10B981;
+      }
+
+      .toast.error {
+        background-color: #EF4444;
+      }
+
+      .toast.show {
+        top: 24px;
+      }
+
+      .toast-icon {
+        font-size: 1.2rem;
+      }
     </style>
     <script>
       const modal = document.getElementById("email-modal");
@@ -369,9 +403,66 @@
         }
       });
 
+      // Function to show toast notification
+      function showToast(message, type) {
+        // Remove any existing toasts
+        const existingToast = document.querySelector('.toast');
+        if (existingToast) {
+          existingToast.remove();
+        }
+
+        // Create new toast
+        const toast = document.createElement('div');
+        toast.className = `toast ${type}`;
+        
+        // Add icon based on type
+        const icon = type === 'success' ? '✓' : '✕';
+        toast.innerHTML = `
+          <span class="toast-icon">${icon}</span>
+          <span>${message}</span>
+        `;
+        
+        document.body.appendChild(toast);
+        
+        // Trigger animation
+        setTimeout(() => {
+          toast.classList.add('show');
+        }, 100);
+
+        // Remove toast after 3 seconds
+        setTimeout(() => {
+          toast.classList.remove('show');
+          setTimeout(() => {
+            toast.remove();
+          }, 300);
+        }, 3000);
+      }
+
       // Handle form submission
-      form.addEventListener('submit', function() {
-        localStorage.setItem('hasSubscribed', 'true');
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const email = document.getElementById('bd-email').value;
+        
+        fetch('https://buttondown.com/api/emails/embed-subscribe/mbgsec', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          body: `email=${encodeURIComponent(email)}`
+        })
+        .then(response => {
+          if (response.ok) {
+            localStorage.setItem('hasSubscribed', 'true');
+            modal.style.display = "none";
+            showToast('Successfully subscribed! Welcome aboard! 🎉', 'success');
+          } else {
+            throw new Error('Subscription failed');
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          showToast('Failed to subscribe. Please try again.', 'error');
+        });
       });
 
       span.onclick = function() {
