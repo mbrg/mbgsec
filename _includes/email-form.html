@@ -186,6 +186,7 @@
         align-items: center;
         justify-content: center;
         gap: 6px;
+        padding: 0 18px;
       }
       .author, .subscribers {
         font-size: 0.92rem;
@@ -334,9 +335,14 @@
       const span = document.getElementsByClassName("close")[0];
       let hasShownPopup = false;
       
-      // Function to show popup if not shown yet
+      // Check if user has already subscribed
+      function hasSubscribed() {
+        return localStorage.getItem('hasSubscribed') === 'true';
+      }
+
+      // Function to show popup if not shown yet and not subscribed
       function showPopupIfNotShown() {
-        if (!hasShownPopup) {
+        if (!hasShownPopup && !hasSubscribed()) {
           popupNewsletter();
           hasShownPopup = true;
         }
@@ -350,6 +356,11 @@
         if (window.scrollY > window.innerHeight) {
           showPopupIfNotShown();
         }
+      });
+
+      // Handle form submission
+      form.addEventListener('submit', function() {
+        localStorage.setItem('hasSubscribed', 'true');
       });
 
       span.onclick = function() {
