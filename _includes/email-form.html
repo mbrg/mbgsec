@@ -12,15 +12,15 @@
           <div class="profile-img-container">
             <img src="/assets/images/bio-photo.png" alt="Profile" class="profile-img" />
           </div>
-          <h1 class="main-title">The Parnas Perspective</h1>
-          <div class="subtitle">Providing you with the Gen Z perspective on all the issues in the news.</div>
-          <div class="byline">By <span class="author">Aaron Parnas</span> <span class="verified">&#10003;</span> <span class="dot">·</span> <span class="subscribers">Over 436,000 subscribers</span></div>
+          <h1 class="main-title">mbgsec</h1>
+          <div class="subtitle">Breaking AI agents, hacking, citizen development and infosec.</div>
+          <div class="byline">By <span class="author">Michael Bargury</span> <span class="verified">&#10003;</span> <span class="dot">·</span> <span class="subscribers">Over 2 subscribers</span></div>
           <div class="input-row">
             <input type="email" name="email" id="bd-email" class="styled-input" placeholder="Your email" required />
             <input class="styled-subscribe" type="submit" value="Subscribe" />
           </div>
           <div class="legal">
-            By subscribing, I agree to Substack's <a href="#" class="legal-link">Terms of Use</a> and acknowledge its <a href="#" class="legal-link">Information Collection Notice</a> and <a href="#" class="legal-link">Privacy Policy</a>.
+            By subscribing, I agree to <span class="strike"><span style="text-decoration: underline;">Terms of Use</span> and <span style="text-decoration: underline;">Information Collection Notice</span></span> recieving nerdy emails from Michael
           </div>
           <div class="no-thanks-row">
             <a class="no-thanks" onclick="onSkipForNow()">No thanks <span class="arrow">&gt;</span></a>
@@ -253,6 +253,11 @@
         .styled-subscribe {
           border-radius: 6px;
         }
+      }
+      .strike {
+        text-decoration: line-through;
+        color: #888;
+        opacity: 0.7;
       }
     </style>
     <script>
