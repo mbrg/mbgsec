@@ -49,6 +49,7 @@
         margin: 8% auto 0 auto;
         padding: 0;
         max-width: 420px;
+        width: 90vw;
         border-radius: 12px;
         box-shadow: 0 2px 16px rgba(0,0,0,0.08);
         font-family: 'Inter', Arial, sans-serif;
@@ -164,46 +165,51 @@
       }
       .input-row {
         display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        gap: 0;
+        width: 100%;
         margin: 0 0 18px 0;
-        height: 2.4rem;
+        align-items: stretch;
+        box-sizing: border-box;
       }
       .styled-input {
+        flex: 1 1 0%;
+        min-width: 0;
+        height: 48px;
         font-family: 'Inter', Arial, sans-serif;
         font-size: 0.92rem;
-        padding: 0.5rem 0.8rem;
-        border: 1.5px solid #d0d0d0;
-        border-radius: 6px 0 0 6px;
-        outline: none;
-        width: 60%;
         background: #fff;
         color: #222;
+        border: 1.5px solid #d0d0d0;
+        border-radius: 6px 0 0 6px;
         box-sizing: border-box;
-        transition: border 0.2s;
-        height: 100%;
+        padding: 0 0.8rem;
+        outline: none;
       }
       .styled-input:focus {
         border: 1.5px solid #e63946;
       }
+      .styled-input::placeholder {
+        color: #444;
+        opacity: 1;
+        font-family: 'Inter', Arial, sans-serif;
+        font-size: 0.92rem;
+      }
       .styled-subscribe {
+        min-width: 120px;
+        height: 48px;
         font-family: 'Inter', Arial, sans-serif;
         font-size: 0.92rem;
         font-weight: 500;
-        background: #e63946;
-        color: #fff;
         border: none;
         border-radius: 0 6px 6px 0;
-        padding: 0.5rem 1.1rem;
+        background: #e63946;
+        color: #fff;
         cursor: pointer;
-        transition: background 0.2s;
-        width: 40%;
-        height: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
+        box-sizing: border-box;
+        padding: 0 1.5rem;
+        transition: background 0.2s;
       }
       .styled-subscribe:hover {
         background: #d62839;
