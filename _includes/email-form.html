@@ -31,6 +31,43 @@
       
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+      
+      :root {
+        --modal-bg: rgba(255,255,255,0.7);
+        --modal-content-bg: #fff;
+        --text-color: #222;
+        --text-color-secondary: #444;
+        --text-color-tertiary: #666;
+        --text-color-muted: #888;
+        --border-color: #d0d0d0;
+        --hover-color: #e63946;
+        --hover-color-dark: #d62839;
+        --button-bg: #e63946;
+        --button-hover: #d62839;
+        --verified-color: #3b82f6;
+        --dot-color: #bbb;
+        --profile-border: #eee;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --modal-bg: rgba(0,0,0,0.7);
+          --modal-content-bg: #1a1a1a;
+          --text-color: #e0e0e0;
+          --text-color-secondary: #b0b0b0;
+          --text-color-tertiary: #909090;
+          --text-color-muted: #707070;
+          --border-color: #404040;
+          --hover-color: #ff4d5d;
+          --hover-color-dark: #ff3d4d;
+          --button-bg: #ff4d5d;
+          --button-hover: #ff3d4d;
+          --verified-color: #60a5fa;
+          --dot-color: #606060;
+          --profile-border: #333;
+        }
+      }
+
       .email-modal {
         display: none;
         position: fixed;
@@ -41,11 +78,11 @@
         height: 100vh;
         overflow: auto;
         margin: 0 auto;
-        background-color: rgba(255,255,255,0.7);
+        background-color: var(--modal-bg);
       }
       
       .email-modal-content {
-        background: #fff;
+        background: var(--modal-content-bg);
         margin: 8% auto 0 auto;
         padding: 0;
         max-width: 420px;
@@ -66,7 +103,7 @@
       }
       
       .close {
-        color: #222;
+        color: var(--text-color);
         position: absolute;
         right: 24px;
         top: 24px;
@@ -78,7 +115,7 @@
       
       .close:hover,
       .close:focus {
-        color: black;
+        color: var(--text-color);
         text-decoration: none;
         cursor: pointer;
       }
@@ -125,24 +162,24 @@
         height: 64px;
         border-radius: 12px;
         object-fit: cover;
-        border: 1px solid #eee;
+        border: 1px solid var(--profile-border);
       }
       .main-title {
         font-size: 1.7rem;
         font-weight: 700;
-        color: #222;
+        color: var(--text-color);
         margin: 0 0 8px 0;
         letter-spacing: -0.01em;
       }
       .subtitle {
         font-size: 1.08rem;
-        color: #444;
+        color: var(--text-color-secondary);
         margin-bottom: 8px;
         font-weight: 400;
       }
       .byline {
         font-size: 0.92rem;
-        color: #666;
+        color: var(--text-color-tertiary);
         margin-bottom: 24px;
         font-weight: 400;
         display: flex;
@@ -154,14 +191,14 @@
         font-size: 0.92rem;
       }
       .verified {
-        color: #3b82f6;
+        color: var(--verified-color);
         font-size: 1em;
         margin-left: 2px;
         vertical-align: middle;
       }
       .dot {
         margin: 0 3px;
-        color: #bbb;
+        color: var(--dot-color);
       }
       .input-row {
         display: flex;
@@ -176,19 +213,19 @@
         height: 48px;
         font-family: 'Inter', Arial, sans-serif;
         font-size: 0.92rem;
-        background: #fff;
-        color: #222;
-        border: 1.5px solid #d0d0d0;
+        background: var(--modal-content-bg);
+        color: var(--text-color);
+        border: 1.5px solid var(--border-color);
         border-radius: 6px 0 0 6px;
         box-sizing: border-box;
         padding: 0 0.8rem;
         outline: none;
       }
       .styled-input:focus {
-        border: 1.5px solid #e63946;
+        border: 1.5px solid var(--hover-color);
       }
       .styled-input::placeholder {
-        color: #444;
+        color: var(--text-color-secondary);
         opacity: 1;
         font-family: 'Inter', Arial, sans-serif;
         font-size: 0.92rem;
@@ -201,7 +238,7 @@
         font-weight: 500;
         border: none;
         border-radius: 0 6px 6px 0;
-        background: #e63946;
+        background: var(--button-bg);
         color: #fff;
         cursor: pointer;
         display: flex;
@@ -212,11 +249,11 @@
         transition: background 0.2s;
       }
       .styled-subscribe:hover {
-        background: #d62839;
+        background: var(--button-hover);
       }
       .legal {
         font-size: 0.85rem;
-        color: #888;
+        color: var(--text-color-muted);
         margin: 18px 0 0 0;
         line-height: 1.5;
         font-weight: 400;
@@ -234,7 +271,7 @@
         text-align: center;
       }
       .no-thanks {
-        color: #222;
+        color: var(--text-color);
         font-size: 1.08rem;
         font-weight: 500;
         text-decoration: none;
@@ -242,7 +279,7 @@
         transition: color 0.2s;
       }
       .no-thanks:hover {
-        color: #e63946;
+        color: var(--hover-color);
       }
       .arrow {
         font-size: 1.1em;
@@ -268,7 +305,7 @@
       }
       .strike {
         text-decoration: line-through;
-        color: #888;
+        color: var(--text-color-muted);
         opacity: 0.7;
       }
     </style>
