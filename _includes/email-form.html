@@ -366,5 +366,21 @@
       function onSkipForNow() {
         modal.style.display = "none";
       }
+
+      // Add subscribe button to sidebar before X link
+      document.addEventListener('DOMContentLoaded', function() {
+        var sidebar = document.querySelector('.author__urls');
+        if (sidebar) {
+          var subscribeLi = document.createElement('li');
+          subscribeLi.innerHTML = '<a href="javascript:void(0);" onclick="popupNewsletter()" title="Subscribe"><i class="fas fa-fw fa-envelope"></i> Subscribe</a>';
+          // Find the X (Twitter) link
+          var xLink = Array.from(sidebar.querySelectorAll('li')).find(li => li.textContent.trim().startsWith('X'));
+          if (xLink) {
+            sidebar.insertBefore(subscribeLi, xLink);
+          } else {
+            sidebar.insertBefore(subscribeLi, sidebar.firstChild);
+          }
+        }
+      });
     </script>
   </footer>
