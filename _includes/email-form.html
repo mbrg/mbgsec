@@ -340,11 +340,22 @@
         return localStorage.getItem('hasSubscribed') === 'true';
       }
 
-      // Function to show popup if not shown yet and not subscribed
+      // Check if popup was shown today
+      function wasPopupShownToday() {
+        const lastShown = localStorage.getItem('lastPopupShown');
+        if (!lastShown) return false;
+        
+        const lastShownDate = new Date(lastShown);
+        const today = new Date();
+        return lastShownDate.toDateString() === today.toDateString();
+      }
+
+      // Function to show popup if not shown today and not subscribed
       function showPopupIfNotShown() {
-        if (!hasShownPopup && !hasSubscribed()) {
+        if (!hasShownPopup && !hasSubscribed() && !wasPopupShownToday()) {
           popupNewsletter();
           hasShownPopup = true;
+          localStorage.setItem('lastPopupShown', new Date().toISOString());
         }
       }
 
