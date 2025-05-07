@@ -16,7 +16,7 @@
 title: Michael Bargury
 email: michael.bargury@owasp.org
 description: >- # this means to ignore newlines until "baseurl:"
-  The two blog readers would know that it is comprised mostly of unfinished thoughts about AI agents, AI security, cloud security, application security and low-code / no-code apps.
+  The two blog readers would know that it is comprised mostly of unfinished thoughts about breaking AI agents, hacking, cloud security, application security, citizen development and infosec.
 twitter_username: mbrg0
 github_username: mbrg
 minimal_mistakes_skin: default
@@ -68,7 +68,7 @@ author:
       icon: "fab fa-fw fa-twitter-square"
       url: "https://twitter.com/mbrg0"
     - label: "BlueSky"
-      icon: "fab fa-fw fa-cloud"
+      icon: "fab fa-fw fa-twitter-square"
       url: "https://bsky.app/profile/mbrg0.bsky.social"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"

@@ -1,0 +1,499 @@
+<footer>
+    <div id="email-modal" class="email-modal">
+      <div class="email-modal-content">
+        <span class="close">&times;</span>
+        <form
+          id="email-form"
+          action="https://buttondown.com/api/emails/embed-subscribe/mbgsec"
+          method="post"
+          class="email-form">
+          <div class="profile-img-container">
+            <img src="/assets/images/bio-photo.png" alt="Profile" class="profile-img" />
+          </div>
+          <h1 class="main-title">mbgsec</h1>
+          <div class="subtitle">Breaking AI agents, hacking, citizen development and infosec.</div>
+          <div class="byline">By <span class="author">Michael&nbsp;Bargury</span> <span class="verified">😈</span> <span class="dot">·</span> <span class="subscribers">Over&nbsp;2&nbsp;subscribers!</span></div>
+          <div class="input-row">
+            <input type="email" name="email" id="bd-email" class="styled-input" placeholder="Your email" required />
+            <input class="styled-subscribe" type="submit" value="Subscribe" />
+          </div>
+          <div class="legal">
+            By subscribing, I agree to <span class="strike"><span style="text-decoration: underline;">Terms of Use</span> and <span style="text-decoration: underline;">Information Collection Notice</span></span> recieving nerdy emails from Michael
+          </div>
+          <div class="no-thanks-row">
+            <a class="no-thanks" onclick="onSkipForNow()">No thanks <span class="arrow">&gt;</span></a>
+          </div>
+        </form>
+      </div>
+    </div>
+      
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+      
+      :root {
+        --modal-bg: rgba(255,255,255,0.7);
+        --modal-content-bg: #fff;
+        --text-color: #222;
+        --text-color-secondary: #444;
+        --text-color-tertiary: #666;
+        --text-color-muted: #888;
+        --border-color: #d0d0d0;
+        --hover-color: #e63946;
+        --hover-color-dark: #d62839;
+        --button-bg: #e63946;
+        --button-hover: #d62839;
+        --verified-color: #3b82f6;
+        --dot-color: #bbb;
+        --profile-border: #eee;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --modal-bg: rgba(0,0,0,0.7);
+          --modal-content-bg: #1a1a1a;
+          --text-color: #e0e0e0;
+          --text-color-secondary: #b0b0b0;
+          --text-color-tertiary: #909090;
+          --text-color-muted: #707070;
+          --border-color: #404040;
+          --hover-color: #ff4d5d;
+          --hover-color-dark: #ff3d4d;
+          --button-bg: #ff4d5d;
+          --button-hover: #ff3d4d;
+          --verified-color: #60a5fa;
+          --dot-color: #606060;
+          --profile-border: #333;
+        }
+      }
+
+      .email-modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        overflow: auto;
+        margin: 0 auto;
+        background-color: var(--modal-bg);
+      }
+      
+      .email-modal-content {
+        background: var(--modal-content-bg);
+        margin: 8% auto 0 auto;
+        padding: 0;
+        max-width: 420px;
+        width: 90vw;
+        border-radius: 12px;
+        box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+        font-family: 'Inter', Arial, sans-serif;
+        position: relative;
+        text-align: center;
+      }
+      .email-form {
+        margin: auto;
+        background-color: transparent;
+      }
+      .email-form h1 {
+        font-size: 1.5rem;
+        color: rgb(255, 255, 255);
+      }
+      
+      .close {
+        color: var(--text-color);
+        position: absolute;
+        right: 24px;
+        top: 24px;
+        font-size: 22px;
+        font-weight: 400;
+        cursor: pointer;
+        z-index: 2;
+      }
+      
+      .close:hover,
+      .close:focus {
+        color: var(--text-color);
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .email-buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      .subscribe {
+        width: 65% !important;
+        background-color: rgb(0, 151, 197);
+        color: white;
+        padding: 0.5rem;
+        margin: 0;
+      }
+      .skip-container {
+        width: 30% !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+      .underline {
+        text-decoration: underline !important;
+      }
+      .skip-container a {
+        font-weight: 300;
+      }
+      .spacer {
+        height: 1rem;
+      }
+      .light {
+        font-weight: 300;
+      }
+      .masthead {
+        z-index: 0;
+      }
+      .profile-img-container {
+        margin-top: 40px;
+        margin-bottom: 2px;
+      }
+      .profile-img {
+        width: 64px;
+        height: 64px;
+        border-radius: 12px;
+        object-fit: cover;
+        border: 1px solid var(--profile-border);
+      }
+      .main-title {
+        font-size: 1.7rem;
+        font-weight: 700;
+        color: var(--text-color);
+        margin: 0 0 8px 0;
+        letter-spacing: -0.01em;
+      }
+      .subtitle {
+        font-size: 1.08rem;
+        color: var(--text-color-secondary);
+        margin-bottom: 8px;
+        font-weight: 400;
+      }
+      .byline {
+        font-size: 0.92rem;
+        color: var(--text-color-tertiary);
+        margin-bottom: 24px;
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        padding: 0 18px;
+      }
+      .author, .subscribers {
+        font-size: 0.92rem;
+      }
+      .verified {
+        color: var(--verified-color);
+        font-size: 1em;
+        margin-left: 2px;
+        vertical-align: middle;
+      }
+      .dot {
+        margin: 0 3px;
+        color: var(--dot-color);
+      }
+      .input-row {
+        display: flex;
+        width: 100%;
+        margin: 0 0 18px 0;
+        align-items: stretch;
+        box-sizing: border-box;
+      }
+      .styled-input {
+        flex: 1 1 0%;
+        min-width: 0;
+        height: 48px;
+        font-family: 'Inter', Arial, sans-serif;
+        font-size: 0.92rem;
+        background: var(--modal-content-bg);
+        color: var(--text-color);
+        border: 1.5px solid var(--border-color);
+        border-radius: 6px 0 0 6px;
+        box-sizing: border-box;
+        padding: 0 0.8rem;
+        outline: none;
+      }
+      .styled-input:focus {
+        border: 1.5px solid var(--hover-color);
+      }
+      .styled-input::placeholder {
+        color: var(--text-color-secondary);
+        opacity: 1;
+        font-family: 'Inter', Arial, sans-serif;
+        font-size: 0.92rem;
+      }
+      .styled-subscribe {
+        min-width: 120px;
+        height: 48px;
+        font-family: 'Inter', Arial, sans-serif;
+        font-size: 0.92rem;
+        font-weight: 500;
+        border: none;
+        border-radius: 0 6px 6px 0;
+        background: var(--button-bg);
+        color: #fff;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        padding: 0 1.5rem;
+        transition: background 0.2s;
+      }
+      .styled-subscribe:hover {
+        background: var(--button-hover);
+      }
+      .legal {
+        font-size: 0.85rem;
+        color: var(--text-color-muted);
+        margin: 18px 0 0 0;
+        line-height: 1.5;
+        font-weight: 400;
+      }
+      .legal-link {
+        color: #888;
+        text-decoration: underline;
+        transition: color 0.2s;
+      }
+      .legal-link:hover {
+        color: #e63946;
+      }
+      .no-thanks-row {
+        margin: 32px 0 24px 0;
+        text-align: center;
+      }
+      .no-thanks {
+        color: var(--text-color);
+        font-size: 1.08rem;
+        font-weight: 500;
+        text-decoration: none;
+        cursor: pointer;
+        transition: color 0.2s;
+      }
+      .no-thanks:hover {
+        color: var(--hover-color);
+      }
+      .arrow {
+        font-size: 1.1em;
+        margin-left: 2px;
+        vertical-align: middle;
+      }
+      @media (max-width: 500px) {
+        .email-modal-content {
+          max-width: 98vw;
+          margin: 40px 0 0 0;
+        }
+        .input-row {
+          flex-direction: column;
+        }
+        .styled-input, .styled-subscribe {
+          width: 100%;
+          border-radius: 6px;
+          margin-bottom: 8px;
+        }
+        .styled-subscribe {
+          border-radius: 6px;
+        }
+      }
+
+      @media (max-width: 360px) {
+        .email-modal-content {
+          margin: 20px 0 0 0;
+        }
+        .profile-img {
+          width: 48px;
+          height: 48px;
+        }
+        .main-title {
+          font-size: 1.5rem;
+        }
+        .subtitle {
+          font-size: 0.95rem;
+        }
+        .byline {
+          font-size: 0.85rem;
+        }
+      }
+      .strike {
+        text-decoration: line-through;
+        color: var(--text-color-muted);
+        opacity: 0.7;
+      }
+
+      /* Toast Notification Styles */
+      .toast {
+        position: fixed;
+        top: -100px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 16px 24px;
+        border-radius: 8px;
+        color: white;
+        font-family: 'Inter', Arial, sans-serif;
+        font-size: 0.95rem;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        z-index: 2000;
+        transition: top 0.3s ease-in-out;
+      }
+
+      .toast.success {
+        background-color: #10B981;
+      }
+
+      .toast.error {
+        background-color: #EF4444;
+      }
+
+      .toast.show {
+        top: 24px;
+      }
+
+      .toast-icon {
+        font-size: 1.2rem;
+      }
+    </style>
+    <script>
+      const modal = document.getElementById("email-modal");
+      const form = document.getElementById("email-form");
+      const span = document.getElementsByClassName("close")[0];
+      let hasShownPopup = false;
+      
+      // Check if user has already subscribed
+      function hasSubscribed() {
+        return localStorage.getItem('hasSubscribed') === 'true';
+      }
+
+      // Check if popup was shown today
+      function wasPopupShownToday() {
+        const lastShown = localStorage.getItem('lastPopupShown');
+        if (!lastShown) return false;
+        
+        const lastShownDate = new Date(lastShown);
+        const today = new Date();
+        return lastShownDate.toDateString() === today.toDateString();
+      }
+
+      // Function to show popup if not shown today and not subscribed
+      function showPopupIfNotShown() {
+        if (!hasShownPopup && !hasSubscribed() && !wasPopupShownToday()) {
+          popupNewsletter();
+          hasShownPopup = true;
+          localStorage.setItem('lastPopupShown', new Date().toISOString());
+        }
+      }
+
+      // Show popup after 50 seconds
+      setTimeout(showPopupIfNotShown, 50 * 1000);
+
+      // Show popup when user scrolls down a page
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > window.innerHeight) {
+          showPopupIfNotShown();
+        }
+      });
+
+      // Function to show toast notification
+      function showToast(message, type) {
+        // Remove any existing toasts
+        const existingToast = document.querySelector('.toast');
+        if (existingToast) {
+          existingToast.remove();
+        }
+
+        // Create new toast
+        const toast = document.createElement('div');
+        toast.className = `toast ${type}`;
+        
+        // Add icon based on type
+        const icon = type === 'success' ? '✓' : '✕';
+        toast.innerHTML = `
+          <span class="toast-icon">${icon}</span>
+          <span>${message}</span>
+        `;
+        
+        document.body.appendChild(toast);
+        
+        // Trigger animation
+        setTimeout(() => {
+          toast.classList.add('show');
+        }, 100);
+
+        // Remove toast after 3 seconds
+        setTimeout(() => {
+          toast.classList.remove('show');
+          setTimeout(() => {
+            toast.remove();
+          }, 300);
+        }, 3000);
+      }
+
+      // Handle form submission
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const email = document.getElementById('bd-email').value;
+        
+        fetch('https://buttondown.com/api/emails/embed-subscribe/mbgsec', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          body: `email=${encodeURIComponent(email)}`
+        })
+        .then(response => {
+          if (response.ok) {
+            localStorage.setItem('hasSubscribed', 'true');
+            modal.style.display = "none";
+            showToast('Thanks for subscribing! 🎉 Please check your email to confirm.', 'success');
+          } else {
+            throw new Error('Subscription failed. Please try again.');
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          showToast('Failed to subscribe. Please try again.', 'error');
+        });
+      });
+
+      span.onclick = function() {
+        modal.style.display = "none";
+      }
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+      function popupNewsletter() {
+        modal.style.display = "block";
+      }
+      function onSkipForNow() {
+        modal.style.display = "none";
+      }
+
+      // Add subscribe button to sidebar before X link
+      document.addEventListener('DOMContentLoaded', function() {
+        var sidebar = document.querySelector('.author__urls');
+        if (sidebar) {
+          var subscribeLi = document.createElement('li');
+          subscribeLi.innerHTML = '<a href="javascript:void(0);" onclick="popupNewsletter()" title="Subscribe"><i class="fas fa-fw fa-envelope"></i> Subscribe</a>';
+          // Find the X (Twitter) link
+          var xLink = Array.from(sidebar.querySelectorAll('li')).find(li => li.textContent.trim().startsWith('X'));
+          if (xLink) {
+            sidebar.insertBefore(subscribeLi, xLink);
+          } else {
+            sidebar.insertBefore(subscribeLi, sidebar.firstChild);
+          }
+        }
+      });
+    </script>
+  </footer>
