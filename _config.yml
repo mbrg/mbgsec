@@ -68,7 +68,7 @@ author:
       icon: "fab fa-fw fa-twitter-square"
       url: "https://twitter.com/mbrg0"
     - label: "BlueSky"
-      icon: "fab fa-fw fa-cloud"
+      icon: "fab fa-fw fa-twitter-square"
       url: "https://bsky.app/profile/mbrg0.bsky.social"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
