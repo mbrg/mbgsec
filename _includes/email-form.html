@@ -9,25 +9,28 @@
           target="popupwindow"
           onsubmit="window.open('https://buttondown.com/mbgsec', 'popupwindow')"
           class="email-form">
-          <h1>
-            Subscribe
-          </h1>
-          <div class="spacer"></div>
-          <label for="bd-email">Your email</label>
-          <input type="email" name="email" id="bd-email" />
-          <div class="spacer"></div>
-          
-          <span class="email-buttons">
-            <input class="subscribe" type="submit" value="Subscribe" />
-            <div class="skip-container">
-              <a class="underline" onclick="onSkipForNow()" target="_blank">Maybe later</a>
-            </div>
-          </span>
+          <div class="profile-img-container">
+            <img src="/assets/images/bio-photo.png" alt="Profile" class="profile-img" />
+          </div>
+          <h1 class="main-title">The Parnas Perspective</h1>
+          <div class="subtitle">Providing you with the Gen Z perspective on all the issues in the news.</div>
+          <div class="byline">By <span class="author">Aaron Parnas</span> <span class="verified">&#10003;</span> <span class="dot">·</span> <span class="subscribers">Over 436,000 subscribers</span></div>
+          <div class="input-row">
+            <input type="email" name="email" id="bd-email" class="styled-input" placeholder="Your email" required />
+            <input class="styled-subscribe" type="submit" value="Subscribe" />
+          </div>
+          <div class="legal">
+            By subscribing, I agree to Substack's <a href="#" class="legal-link">Terms of Use</a> and acknowledge its <a href="#" class="legal-link">Information Collection Notice</a> and <a href="#" class="legal-link">Privacy Policy</a>.
+          </div>
+          <div class="no-thanks-row">
+            <a class="no-thanks" onclick="onSkipForNow()">No thanks <span class="arrow">&gt;</span></a>
+          </div>
         </form>
       </div>
     </div>
       
     <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
       .email-modal {
         display: none;
         position: fixed;
@@ -38,15 +41,19 @@
         height: 100vh;
         overflow: auto;
         margin: 0 auto;
-        background-color: #b1b1b194;
+        background-color: #fff;
       }
       
       .email-modal-content {
-        background-color: rgb(27, 28, 32);
-        margin: 10% auto;
-        padding: 20px;
-        max-width: min(90%, 40rem);
-        border-radius: 5px;
+        background: #fff;
+        margin: 5% auto;
+        padding: 0;
+        max-width: 420px;
+        border-radius: 12px;
+        box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+        font-family: 'Inter', Arial, sans-serif;
+        position: relative;
+        text-align: center;
       }
       .email-form {
         margin: auto;
@@ -58,11 +65,14 @@
       }
       
       .close {
-        color: #aaa;
-        float: right;
-        font-size: 28px;
-        font-weight: bold;
-        vertical-align: top;
+        color: #222;
+        position: absolute;
+        right: 24px;
+        top: 24px;
+        font-size: 22px;
+        font-weight: 400;
+        cursor: pointer;
+        z-index: 2;
       }
       
       .close:hover,
@@ -105,30 +115,167 @@
       .masthead {
         z-index: 0;
       }
+      .profile-img-container {
+        margin-top: 40px;
+        margin-bottom: 24px;
+      }
+      .profile-img {
+        width: 64px;
+        height: 64px;
+        border-radius: 12px;
+        object-fit: cover;
+        border: 1px solid #eee;
+      }
+      .main-title {
+        font-size: 1.7rem;
+        font-weight: 700;
+        color: #222;
+        margin: 0 0 8px 0;
+        letter-spacing: -0.01em;
+      }
+      .subtitle {
+        font-size: 1.08rem;
+        color: #444;
+        margin-bottom: 24px;
+        font-weight: 400;
+      }
+      .byline {
+        font-size: 0.98rem;
+        color: #666;
+        margin-bottom: 28px;
+        font-weight: 400;
+      }
+      .author {
+        font-weight: 500;
+        color: #222;
+      }
+      .verified {
+        color: #3b82f6;
+        font-size: 1em;
+        margin-left: 2px;
+        vertical-align: middle;
+      }
+      .dot {
+        margin: 0 6px;
+        color: #bbb;
+      }
+      .subscribers {
+        color: #666;
+      }
+      .input-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 0;
+        margin: 0 0 18px 0;
+      }
+      .styled-input {
+        font-family: 'Inter', Arial, sans-serif;
+        font-size: 1.08rem;
+        padding: 0.9rem 1.1rem;
+        border: 1.5px solid #d0d0d0;
+        border-radius: 6px 0 0 6px;
+        outline: none;
+        width: 60%;
+        background: #fff;
+        color: #222;
+        box-sizing: border-box;
+        transition: border 0.2s;
+      }
+      .styled-input:focus {
+        border: 1.5px solid #e63946;
+      }
+      .styled-subscribe {
+        font-family: 'Inter', Arial, sans-serif;
+        font-size: 1.08rem;
+        font-weight: 500;
+        background: #e63946;
+        color: #fff;
+        border: none;
+        border-radius: 0 6px 6px 0;
+        padding: 0.9rem 1.5rem;
+        cursor: pointer;
+        transition: background 0.2s;
+        width: 40%;
+      }
+      .styled-subscribe:hover {
+        background: #d62839;
+      }
+      .legal {
+        font-size: 0.85rem;
+        color: #888;
+        margin: 18px 0 0 0;
+        line-height: 1.5;
+        font-weight: 400;
+      }
+      .legal-link {
+        color: #888;
+        text-decoration: underline;
+        transition: color 0.2s;
+      }
+      .legal-link:hover {
+        color: #e63946;
+      }
+      .no-thanks-row {
+        margin: 32px 0 24px 0;
+        text-align: center;
+      }
+      .no-thanks {
+        color: #222;
+        font-size: 1.08rem;
+        font-weight: 500;
+        text-decoration: none;
+        cursor: pointer;
+        transition: color 0.2s;
+      }
+      .no-thanks:hover {
+        color: #e63946;
+      }
+      .arrow {
+        font-size: 1.1em;
+        margin-left: 2px;
+        vertical-align: middle;
+      }
+      @media (max-width: 500px) {
+        .email-modal-content {
+          max-width: 98vw;
+          margin: 0.5rem;
+        }
+        .input-row {
+          flex-direction: column;
+        }
+        .styled-input, .styled-subscribe {
+          width: 100%;
+          border-radius: 6px;
+          margin-bottom: 8px;
+        }
+        .styled-subscribe {
+          border-radius: 6px;
+        }
+      }
     </style>
     <script>
       const modal = document.getElementById("email-modal");
       const form = document.getElementById("email-form");
       const span = document.getElementsByClassName("close")[0];
-      const poped = JSON.parse(window.localStorage.getItem('poped'));
+      let hasShownPopup = false;
       
-      // Function to show popup and mark as shown
-      function showPopup() {
-        if (!poped) {
+      // Function to show popup if not shown yet
+      function showPopupIfNotShown() {
+        if (!hasShownPopup) {
           popupNewsletter();
-          window.localStorage.setItem('poped', JSON.stringify(true));
+          hasShownPopup = true;
         }
       }
 
       // Show popup after 50 seconds
-      if (!poped) {
-        setTimeout(showPopup, 50 * 1000);
-      }
+      setTimeout(showPopupIfNotShown, 50 * 1000);
 
       // Show popup when user scrolls down a page
       window.addEventListener('scroll', function() {
-        if (!poped && window.scrollY > window.innerHeight) {
-          showPopup();
+        if (window.scrollY > window.innerHeight) {
+          showPopupIfNotShown();
         }
       });
 
@@ -144,7 +291,6 @@
         modal.style.display = "block";
       }
       function onSkipForNow() {
-        window.localStorage.setItem('poped', JSON.stringify(false));
         modal.style.display = "none";
       }
     </script>
