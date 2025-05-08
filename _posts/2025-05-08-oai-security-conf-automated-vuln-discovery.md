@@ -10,7 +10,7 @@ tags:
   - OpenAI
 ---
 
-This is part 2 on OpenAI's inaugural Security Research Conference. [Here is part 1](/_posts/2025-05-04-oai-security-conf-vibe.md).
+This is part 2 on OpenAI's inaugural Security Research Conference. [Here is part 1](/posts/2025-05-04-oai-security-conf-vibe.md).
 
 People have built incredibly capable autonomous systems already.
 Some under the umbrella of AIxCC, and some independently ([Dan Guido](https://x.com/dguido), Tyler Nighswander, [Xinyu Xing](https://x.com/xingxinyu), [Matthew McLure](https://www.linkedin.com/in/ACoAAAscunYBw7DKenrTnIShCO-6MjkP8PFDiko), [Dave Aitel](https://x.com/daveaitel), [Oege de Moor](https://x.com/oegerikus)).
