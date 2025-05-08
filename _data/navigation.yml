@@ -1,11 +1,9 @@
 main:
-  - title: "By Topic"
-    url: /topics/
-  - title: "Link Log"
-    url: /linklog/
-  - title: "WIP"
-    url: /wip/
   - title: "Talks"
     url: /talks/
-  - title: "Contact"
-    url: /contact/
+  - title: "WIP"
+    url: /wip/
+  - title: "Link Log"
+    url: /linklog/
+  - title: "About"
+    url: /about/
