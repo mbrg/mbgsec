@@ -10,7 +10,7 @@ tags:
   - OpenAI
 ---
 
-This is part 3 on OpenAI's inaugural Security Research Conference. Here are [part 1](/_posts/2025-05-04-oai-security-conf-vibe.md) and [part 2](/_posts/2025-05-08-oai-security-conf-automated-vuln-discovery.md).
+This is part 3 on OpenAI's inaugural Security Research Conference. Here are [part 1](https://mbgsec.com/posts/2025-05-04-oai-security-conf-vibe.md) and [part 2](https://mbgsec.com/posts/2025-05-08-oai-security-conf-automated-vuln-discovery.md).
 
 As soon as they opened up the room for questions I raised my hand.
 I was preparred.
@@ -41,4 +41,4 @@ These are my recollections after more than 48 hours and 24 hours in an airplane,
 - OSS
 - GPT4
 
-![Sam Altman thinking about a question; Matt Knight preparring to fire the next one](/assets/images/2025-05-12-oai-security-conf-sam-altman/8B3E9522-5A28-4F34-AF36-0FC4463CB955_1_105_c.jpeg)
+![Sam Altman thinking about a question; Matt Knight preparring to fire the next one](https://mbgsec.com/assets/images/2025-05-12-oai-security-conf-sam-altman/8B3E9522-5A28-4F34-AF36-0FC4463CB955_1_105_c.jpeg)
