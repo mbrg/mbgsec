@@ -1,18 +1,55 @@
 ---
-title: "Contact"
-permalink: /contact/
+title: "About"
+permalink: /about/
 layout: splash
 ---
 
+## Hi there 👋
+
+I'm a hacker, builder and a cybersecurity practitioner. Spent the last decade breaking adapt cloud, no-code apps and AI agents.
+
+Affiliations:
+
+- Co-founder and CTO at [Zenity](https://www.zenity.io) -- secure AI agents everywhere
+- Contributor at [MITRE Atlas](https://atlas.mitre.org)
+- Project lead at [OWASP LCNC Top 10](https://owasp.org/www-project-top-10-low-code-no-code-security-risks/)
+- Columnist at [DarkReading](https://www.darkreading.com/author/michael-bargury)
+
+Currently working on:
+- [GenAI Attacks matrix](https://github.com/mbrg/genai-attacks) - A knowledge source about TTPs used to target GenAI-based systems, copilots and agents
+- [Power-pwn](https://github.com/mbrg/power-pwn) - An offensive security toolset for Microsoft 365 focused on Microsoft Copilot, Copilot Studio and Power Platform
+
+Check out my [latest and upcoming talks](https://github.com/mbrg/talks), come in and say hi!
+
+
 ## Where to find me
 
-[Twitter](https://twitter.com/mbrg0)
-
-[GitHub](https://github.com/mbrg)
-
-[YouTube](https://www.youtube.com/@mbgsec)
-
-[LinkedIn](linkedin.com/in/michaelbargury)
+<ul class="fa-ul">
+  <li>
+    <span class="fa-li"><i class="fas fa-envelope"></i></span>
+    <a href="javascript:void(0);" onclick="popupNewsletter()" title="Subscribe">Subscribe</a>
+  </li>
+  <li>
+    <span class="fa-li"><i class="fab fa-twitter-square"></i></span>
+    <a href="https://twitter.com/mbrg0" target="_blank">X (Twitter)</a>
+  </li>
+  <li>
+    <span class="fa-li"><i class="fab fa-twitter-square"></i></span>
+    <a href="https://bsky.app/profile/mbrg0.bsky.social" target="_blank">BlueSky</a>
+  </li>
+  <li>
+    <span class="fa-li"><i class="fab fa-github"></i></span>
+    <a href="https://github.com/mbrg" target="_blank">GitHub</a>
+  </li>
+  <li>
+    <span class="fa-li"><i class="fab fa-youtube"></i></span>
+    <a href="https://www.youtube.com/@mbgsec" target="_blank">YouTube</a>
+  </li>
+  <li>
+    <span class="fa-li"><i class="fab fa-linkedin"></i></span>
+    <a href="https://linkedin.com/in/michaelbargury" target="_blank">LinkedIn</a>
+  </li>
+</ul>
 
 ## PGP key
 
@@ -69,4 +106,3 @@ q9oytq+QWRj9njHdWv4lReQdkDwNuBigBkD7Dwln2EvWi0OTtisbc1nN1EBpRUKx
 Nt3pi5KWqZc82o99dZaPEII0lvw2EbAD3pOo0SIMXQ==
 =MzOl
 -----END PGP PUBLIC KEY BLOCK-----
-```
