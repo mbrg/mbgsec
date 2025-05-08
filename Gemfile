@@ -11,6 +11,7 @@ gem "base64"
 gem "bigdecimal"
 gem "mutex_m"
 gem "webrick"
+gem "rexml", "~> 3.3.9"
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do
