@@ -23,7 +23,7 @@ While initial intuitions relied on traditional static analysis and fuzzing to gu
 As Dave Aitel put it in his keynote, the LLM **understands and reasons** rather than scans.
 Bugs are miscommunications in LLM's native language -- code.
 
-![XBOW leads the HackerOne US leaderboard true to May 5th, 2025](/assets/images/2025-05-08-oai-security-conf-automated-vuln-discovery/Screenshot_2025-05-05_at_11.23.56.png)
+![XBOW leads the HackerOne US leaderboard true to May 5th, 2025](/assets/images/2025-05-09-oai-security-conf-automated-vuln-discovery/Screenshot_2025-05-05_at_11.23.56.png)
 
 The people building these incredible systems are not training models (tho say its the next step).
 The are building **scaffolding** -- software that uses LLMs in just the right way to squeezes maximum value.
@@ -47,4 +47,4 @@ Code maintainers won't know what to do with hundreds of vulnerabilities submitte
 Trust in automated systems is low in the first place.
 Human systems (i.e. companies) are complicated and often learn the wrong lesson.
 Fixing vulnerabilities is going to be much harder than finding them, at least in the short term.
-That is a scary thought.
+That is a scary realization.
