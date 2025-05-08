@@ -8,19 +8,9 @@ layout: splash
 
 I'm a hacker, builder and a cybersecurity practitioner. Spent the last decade breaking adapt cloud, no-code apps and AI agents.
 
-Affiliations:
+I'm the co-founder and CTO at [Zenity](https://www.zenity.io) -- securing AI agents everywhere, contributor at [MITRE Atlas](https://atlas.mitre.org), project lead at [OWASP LCNC Top 10](https://owasp.org/www-project-top-10-low-code-no-code-security-risks/), and columnist at [DarkReading](https://www.darkreading.com/author/michael-bargury).
 
-- Co-founder and CTO at [Zenity](https://www.zenity.io) -- secure AI agents everywhere
-- Contributor at [MITRE Atlas](https://atlas.mitre.org)
-- Project lead at [OWASP LCNC Top 10](https://owasp.org/www-project-top-10-low-code-no-code-security-risks/)
-- Columnist at [DarkReading](https://www.darkreading.com/author/michael-bargury)
-
-Currently working on:
-- [GenAI Attacks matrix](https://github.com/mbrg/genai-attacks) - A knowledge source about TTPs used to target GenAI-based systems, copilots and agents
-- [Power-pwn](https://github.com/mbrg/power-pwn) - An offensive security toolset for Microsoft 365 focused on Microsoft Copilot, Copilot Studio and Power Platform
-
-Check out my [latest and upcoming talks](https://github.com/mbrg/talks), come in and say hi!
-
+Check out the [projects](/wip) I'm currently working on, my previous and upcoming [talks](/talks), come in and say hi!
 
 ## Where to find me
 
