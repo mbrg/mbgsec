@@ -69,7 +69,7 @@
       .email-modal {
         display: none;
         position: fixed;
-        z-index: 1000;
+        z-index: 100;
         left: 0;
         top: 0;
         width: 100vw;
@@ -90,6 +90,7 @@
         font-family: 'Inter', Arial, sans-serif;
         position: relative;
         text-align: center;
+        z-index: 101;
       }
       .email-form {
         margin: auto;
@@ -343,7 +344,7 @@
         align-items: center;
         gap: 12px;
         box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        z-index: 2000;
+        z-index: 1000;
         transition: top 0.3s ease-in-out;
       }
 
@@ -469,7 +470,7 @@
         modal.style.display = "none";
       }
       window.onclick = function(event) {
-        if (event.target == modal) {
+        if (event.target === modal) {
           modal.style.display = "none";
         }
       }
