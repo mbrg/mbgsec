@@ -15,7 +15,7 @@ This is part 2 on OpenAI's Security Research Conference. [Here is part 1](https:
 People have built incredibly capable autonomous systems already.
 Some under the umbrella of AIxCC, and some independently ([Dan Guido](https://x.com/dguido), [Tyler Nighswander](https://www.linkedin.com/in/tylernighswander/), [Xinyu Xing](https://x.com/xingxinyu), [Matthew McLure](https://www.linkedin.com/in/ACoAAAscunYBw7DKenrTnIShCO-6MjkP8PFDiko), [Dave Aitel](https://x.com/daveaitel), [Oege de Moor](https://x.com/oegerikus)).
 These systems are discovering vulnerabilities in Open Source projects, pen-testing web services, crafting patches.
-One of these systems, XBOW, is now first in the [HackerOne US leaderboard](https://hackerone.com/leaderboard?year=2025&quarter=2&owasp=a1&country=US&assetType=WEB_APP&tab=bbp).
+[XBOW](https://xbow.com) is now first in the [HackerOne US leaderboard](https://hackerone.com/leaderboard?year=2025&quarter=2&owasp=a1&country=US&assetType=WEB_APP&tab=bbp).
 Most powerful results were demonstrated on visible source code and nudgeable APIs.
 We've seen AI reasoning over an entire codebase, honing in on auth-related classes, get confused and pigeonholed, reason out of it.
 Binary analysis was mentioned several times as the next step.
