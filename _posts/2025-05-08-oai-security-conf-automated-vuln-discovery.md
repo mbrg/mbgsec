@@ -13,7 +13,7 @@ tags:
 This is part 2 on OpenAI's inaugural Security Research Conference. [Here is part 1](/posts/2025-05-04-oai-security-conf-vibe).
 
 People have built incredibly capable autonomous systems already.
-Some under the umbrella of AIxCC, and some independently ([Dan Guido](https://x.com/dguido), Tyler Nighswander, [Xinyu Xing](https://x.com/xingxinyu), [Matthew McLure](https://www.linkedin.com/in/ACoAAAscunYBw7DKenrTnIShCO-6MjkP8PFDiko), [Dave Aitel](https://x.com/daveaitel), [Oege de Moor](https://x.com/oegerikus)).
+Some under the umbrella of AIxCC, and some independently ([Dan Guido](https://x.com/dguido), [Tyler Nighswander](https://www.linkedin.com/in/tylernighswander/), [Xinyu Xing](https://x.com/xingxinyu), [Matthew McLure](https://www.linkedin.com/in/ACoAAAscunYBw7DKenrTnIShCO-6MjkP8PFDiko), [Dave Aitel](https://x.com/daveaitel), [Oege de Moor](https://x.com/oegerikus)).
 These systems are discovering vulnerabilities in Open Source projects, pen-testing web services, crafting patches.
 One of these systems, XBOW, is now first in the [HackerOne US leaderboard](https://hackerone.com/leaderboard?year=2025&quarter=2&owasp=a1&country=US&assetType=WEB_APP&tab=bbp).
 Most powerful results were demonstrated on visible source code and nudgeable APIs.
