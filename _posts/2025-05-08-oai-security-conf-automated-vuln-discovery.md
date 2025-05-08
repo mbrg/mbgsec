@@ -1,5 +1,5 @@
 ---
-title: Fully-Autonomous AI Systems Are Discovering Vulnerabilities Today
+title: Fully-Autonomous AI Systems Are Discovering Vulns Today
 categories:
   - Blog
 tags:
