@@ -455,7 +455,7 @@
           if (response.ok) {
             localStorage.setItem('hasSubscribed', 'true');
             modal.style.display = "none";
-            showToast('Thanks for subscribing! 🎉 Please check your email to confirm.', 'success');
+            showToast('Thanks for subscribing! 🎉 Please check your email to confirm (spam too).', 'success');
           } else {
             throw new Error('Subscription failed. Please try again.');
           }
@@ -469,7 +469,7 @@
       span.onclick = function() {
         modal.style.display = "none";
       }
-      window.onclick = function(event) {
+      modal.onclick = function(event) {
         if (event.target === modal) {
           modal.style.display = "none";
         }
