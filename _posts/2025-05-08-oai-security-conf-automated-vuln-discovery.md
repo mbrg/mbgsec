@@ -28,7 +28,7 @@ Bugs are miscommunications in LLM's native language -- code.
 
 ![XBOW leads the HackerOne US leaderboard true to May 5th, 2025](https://mbgsec.com/assets/images/2025-05-08-oai-security-conf-automated-vuln-discovery/Screenshot_2025-05-05_at_11.23.56.png)
 
-The people building these incredible systems are not focused on training models (tho say its the next step).
+The people building these impressive systems are not focused on training models (tho say its the next step).
 The are building **scaffolding** -- software that uses LLMs in just the right way to squeezes maximum value.
 They spend their time experimenting with context.
 Is it better to chuck in the entire codebase? The current location with 100 lines from each side? 200 lines?
