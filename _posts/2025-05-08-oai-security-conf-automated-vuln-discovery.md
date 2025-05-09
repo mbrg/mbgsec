@@ -45,7 +45,7 @@ These left a very strong impression on me.
 We are going to see a fundamental change in the analysis systems we build and use.
 That shift is possible with the models we've got today.
 
-While the tech is there, a common theme has been that humans are not ready for it.
+While the tech is there, a common theme has been that humans are not ready to leverage it.
 Code maintainers won't know what to do with hundreds of vulnerabilities submitted all at once.
 Trust in automated systems is low in the first place.
 Human systems (i.e. companies) are complicated and often learn the wrong lesson.
