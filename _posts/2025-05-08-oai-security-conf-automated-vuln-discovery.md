@@ -21,7 +21,8 @@ OpenAI's Aardvark found vulns in major OSS projects, with their security researc
 AIxCC semifinalists have built systems that don't stop at findings bugs, they patch (most of) them.
 
 Most powerful results were demonstrated on visible source code and nudgeable APIs.
-AI can reason over an entire codebase, hone in on auth-related classes, get confused and pigeonholed, reason out of it.
+We've seen AI reason over an entire codebase, hone in on auth-related classes, get confused and pigeonholed, reason out of it.
+[Found it](https://xbow.com/#dockerhub-src-erudikaltd-scoold---0).
 While initial intuitions relied on traditional static analysis and fuzzing to guide AI, some of these are now set aside.
 As Dave Aitel put it in his keynote, the LLM **understands and reasons** rather than scans.
 Bugs are miscommunications in LLM's native language -- code.
