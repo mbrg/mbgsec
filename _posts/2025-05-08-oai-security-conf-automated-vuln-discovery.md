@@ -21,14 +21,14 @@ OpenAI's Aardvark found vulns in major OSS projects, with their security researc
 AIxCC semifinalists have built systems that don't stop at findings bugs, they patch (most of) them.
 
 Most powerful results were demonstrated on visible source code and nudgeable APIs.
-We've seen AI reasoning over an entire codebase, honing in on auth-related classes, get confused and pigeonholed, reason out of it.
+AI can reason over an entire codebase, hone in on auth-related classes, get confused and pigeonholed, reason out of it.
 While initial intuitions relied on traditional static analysis and fuzzing to guide AI, some of these are now set aside.
 As Dave Aitel put it in his keynote, the LLM **understands and reasons** rather than scans.
 Bugs are miscommunications in LLM's native language -- code.
 
 ![XBOW leads the HackerOne US leaderboard true to May 5th, 2025](https://mbgsec.com/assets/images/2025-05-08-oai-security-conf-automated-vuln-discovery/Screenshot_2025-05-05_at_11.23.56.png)
 
-The people building these incredible systems are not all training models (tho say its the next step).
+The people building these incredible systems are not focused on training models (tho say its the next step).
 The are building **scaffolding** -- software that uses LLMs in just the right way to squeezes maximum value.
 They spend their time experimenting with context.
 Is it better to chuck in the entire codebase? The current location with 100 lines from each side? 200 lines?
