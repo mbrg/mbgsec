@@ -46,8 +46,9 @@ We are going to see a fundamental change in the analysis systems we build and us
 That shift is possible with the models we've got today.
 
 While the tech is there, a common theme has been that humans are not ready to leverage it.
-Code maintainers won't know what to do with hundreds of vulnerabilities submitted all at once.
-Trust in automated systems is low in the first place.
+Code maintainers wouldn't know what to do with hundreds of vulnerabilities submitted all at once.
+Reports will eventually include auto-generated patches.
+But trust in automated systems is low.
 Human systems (i.e. companies) are complicated and often learn the wrong lesson.
 AI systems that can find vulns, but more importantly -- write patches.
 Will we apply them?
