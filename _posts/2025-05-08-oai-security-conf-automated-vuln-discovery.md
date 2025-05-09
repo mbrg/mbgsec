@@ -18,6 +18,7 @@ These systems are discovering vulnerabilities in Open Source projects, pen-testi
 [XBOW](https://xbow.com) is now first in the [HackerOne US leaderboard](https://hackerone.com/leaderboard?year=2025&quarter=2&owasp=a1&country=US&assetType=WEB_APP&tab=bbp).
 OpenAI's Aardvark found vulns in major OSS projects, with their security research team validating and reporying the bugs.
 *"Aardvarks eat bugs"*.
+AIxCC semifinalists have built systems that don't stop at findings bugs, they patch (most of) them.
 
 Most powerful results were demonstrated on visible source code and nudgeable APIs.
 We've seen AI reasoning over an entire codebase, honing in on auth-related classes, get confused and pigeonholed, reason out of it.
