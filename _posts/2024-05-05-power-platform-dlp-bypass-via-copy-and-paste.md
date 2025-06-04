@@ -14,7 +14,7 @@ In it, I showed how simple guest access to EntraID could be escalated into full 
 
 [I got some heat from MSRC](https://www.mbgsec.com/blog/my-intense-2am-conversations-with-msrc-a-week-before-bh/) prior to the talk which I wrote about briefly after. When I got to one of the juicy parts – bypassing Power Platform DLP – I had to waive my hands and ask the audience to look the other way.
 
-![DLP bypass to be disclosed](/assets/images/2024-05-04-all-you-need-is-guest/dlp-bypass-look-away.png)
+![DLP bypass to be disclosed](https://mbgsec.com/assets/images/2024-05-04-all-you-need-is-guest/dlp-bypass-look-away.png)
 
 After the talk I was asked by Microsoft to sit on those details for longer.
 I appreciate that some fixes require deep architectural work, so I waited.
@@ -75,7 +75,7 @@ There is none. It just worked.
 
 If you try to access an app that uses a blocked connection you get blocked, as seen above. But the connection still lives, and you can just use it directly.
 
-![Copy and paste to bypass DLP](/assets/images/2024-05-05-all-you-need-is-guest-dlp-bypass/copy-and-paste%20to%20bypass%20DLP.png)
+![Copy and paste to bypass DLP](https://mbgsec.com/assets/images/2024-05-05-all-you-need-is-guest-dlp-bypass/copy-and-paste%20to%20bypass%20DLP.png)
 
 This is a fundamental design flaw. Power Platform DLP applied only to applications and automation that use a blocked connection. The connections themselves are simply not in scope.
 

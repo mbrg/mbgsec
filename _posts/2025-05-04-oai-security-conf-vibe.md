@@ -38,7 +38,7 @@ Most subtly -- physical security guards at every corner also gave it away.
 These left an overwhelming appreciation of what's at stake at the national level (or even Western level).
 Last time I sensed that mix of urgency and gravitas I was in uniform.
 
-![OpenAI Security Research Conference Badge](/assets/images/2025-05-04-oai-security-conf-vibe/9741B7CF-7828-4E6C-AA0A-5A3644E1173D_1_105_c.jpeg)
+![OpenAI Security Research Conference Badge](https://mbgsec.com/assets/images/2025-05-04-oai-security-conf-vibe/9741B7CF-7828-4E6C-AA0A-5A3644E1173D_1_105_c.jpeg)
 
 In government circles, 0day development remains the pinnacle of security research.
 I almost forgot about that, having spent more than a decade out in industry where we're still struggling with *"the basics"*.
