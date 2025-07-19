@@ -171,4 +171,5 @@ These hard boundaries are all gone by now.
 
 ## The Solution
 
-Here is what you should do instead
+From here the solution is trivial.
+It is left as an exercise for the caffeinated reader.
