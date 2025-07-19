@@ -1,5 +1,6 @@
 ---
 title: Fully-Autonomous AI Systems Are Discovering Vulns Today
+description: "Autonomous systems are already topping HackerOne leaderboards and finding vulnerabilities in major OSS projects by understanding code, not just scanning it."
 categories:
   - Blog
 tags:

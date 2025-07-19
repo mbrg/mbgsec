@@ -1,5 +1,6 @@
 ---
 title: "Power Platform DLP Bypass via Copy-And-Paste"
+description: "Microsoft's DLP fix for credential sharing? Copy-paste the blocked connection—because apparently security through UI controls is the new perimeter defense."
 categories:
   - Blog
 tags:

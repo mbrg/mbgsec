@@ -1,5 +1,6 @@
 ---
 title: "Security for AI is the Next Big Thing! But we don't really know what it means yet"
+description: "AI Security is three distinct categories wearing a trench coat—AI DLP, AI Firewall, and AI SPM—all claiming to solve different problems for different people."
 categories:
   - Blog
 tags:

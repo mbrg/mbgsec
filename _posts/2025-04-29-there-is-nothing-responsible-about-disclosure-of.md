@@ -1,6 +1,7 @@
 ---
 title: There Is Nothing Responsible About Disclosure Of Every Successful Prompt Injection
 subtitle: Prompt injection isn’t a fixable vulnerability—it’s an illustration of risk
+description: "Treat prompt injections like malware, not vulnerabilities—because hiding inherent risks only robs users of informed choice."
 categories:
   - Blog
 tags:

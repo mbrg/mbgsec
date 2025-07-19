@@ -1,5 +1,6 @@
 ---
 title: "Followup links for OWASP Global AppSec DC 2023"
+description: "Your citizen developers are building apps faster than you can secure them."
 categories:
   - Blog
 tags:

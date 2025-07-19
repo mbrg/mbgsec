@@ -1,5 +1,6 @@
 ---
 title: The Vibe at OpenAI's Inaugural Security Research Conf
+description: "We're all n00bs figuring out AI security."
 categories:
   - Blog
 tags:

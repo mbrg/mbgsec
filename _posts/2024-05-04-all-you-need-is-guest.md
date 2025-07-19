@@ -1,5 +1,6 @@
 ---
 title: "All You Need Is Guest"
+description: "Guest access escalation through credential sharing as a service—where deny-by-default becomes access-everything shared-with-everyone."
 categories:
   - Blog
 tags:

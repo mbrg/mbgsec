@@ -1,5 +1,6 @@
 ---
 title: "Safe Web Browsing for Copilots"
+description: "Copilots with web access are one search away from malicious instructions—here's how to keep them from becoming someone else's problem."
 categories:
   - Zenity Labs
 tags:

@@ -1,5 +1,6 @@
 ---
 title: AIjacking Goes Beyond Prompt Injection
+description: "AI is trained on the internet's dirty gutters and flourishing undergrounds—we're building security perimeters around something that's tainted to its core."
 categories:
   - Blog
 tags:

@@ -1,5 +1,6 @@
 ---
 title: OAI Q&A on Security From AI
+description: "Good guys should get unfiltered AI access; Prompt injection still can't be 100% stopped."
 categories:
   - Blog
 tags:

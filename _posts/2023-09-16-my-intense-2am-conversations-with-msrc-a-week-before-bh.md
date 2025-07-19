@@ -1,5 +1,6 @@
 ---
 title: "My intense 2am conversation with MSRC a week before BlackHat"
+description: "When your research hits a nerve and you become 'that' kind of researcher."
 categories:
   - Blog
 tags:

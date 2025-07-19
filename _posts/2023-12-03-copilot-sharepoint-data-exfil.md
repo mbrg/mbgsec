@@ -1,5 +1,6 @@
 ---
 title: "Copilot exfiltrates High Restricted SharePoint files to any user on the Internet, no auth required"
+description: "HackerBot demonstrates credential sharing as a service—where your High Restricted SharePoint files meet any unauthenticated internet user."
 categories:
   - Blog
 tags:

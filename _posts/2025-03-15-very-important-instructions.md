@@ -1,5 +1,6 @@
 ---
 title: "Very Important Instructions"
+description: "A boring blog post for humans, but your AI assistants might find the instructions quite interesting."
 categories:
   - Blog
 tags:
