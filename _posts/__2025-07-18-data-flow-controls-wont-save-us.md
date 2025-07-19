@@ -4,8 +4,10 @@ categories:
   - Blog
 tags:
   - Hacking
+  - LLM
   - AI
   - Guardrails
+  - AI Agents
 ---
 
 # Why Aren't We Making Any Progress
