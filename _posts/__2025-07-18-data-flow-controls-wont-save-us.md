@@ -29,7 +29,7 @@ Jason Haddix sums it up best:
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">AI Pentest: A client pays an exorbitant amount of money for guardrail and implementation consulting services from a defensive AI Security vendor. <br><br>Bypassed in 20 minutes.<br><br>It really does feel like the dawn of web hacking all over again.</p>&mdash; JS0N Haddix (@Jhaddix) <a href="https://twitter.com/Jhaddix/status/1944835174878859680?ref_src=twsrc%5Etfw">July 14, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-## Hard Boundaries
+## In Hard Boundaries We Trust
 
 SQLi attacks were all the rage back in the 90s. 
 [Taint-analysis](https://en.wikipedia.org/wiki/Taint_checking) was invented to detect vulnerable data flow paths. 
@@ -66,7 +66,7 @@ Or whether the LLM chose to do the web search query because it was instructed to
 LLMs mix and match data. 
 Instructions are data.
 
-## Soft Boundaries
+## Hackers Don't Care About Your Soft Boundaries
 
 AI labs invented a new type of guardrail based on fine-tuning LLMs–a soft boundary. 
 <mark>**Soft boundaries are created by training AI real hard not to violate control flow, and hope that it doesn't. 
@@ -171,5 +171,6 @@ These hard boundaries are all gone by now.
 
 ## The Solution
 
-From here the solution is trivial.
-It is left as an exercise for the caffeinated reader.
+This piece is too long already.
+But I'll be brief.
+To solve this problem you simply should
