@@ -172,5 +172,8 @@ These hard boundaries are all gone by now.
 ## The Solution
 
 This piece is too long already.
-But I'll be brief.
-To solve this problem you simply should
+Fortunately the solution is simple.
+
+Here's what I think we should
+
+![Claude says bye bye](/assets/images/2025-07-18-data-flow-controls-wont-save-us/claude_refusal.png)
