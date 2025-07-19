@@ -13,16 +13,16 @@ tags:
 # Guardrails Are Soft Boundaries. Hard Boundaries Do Exist.
 
 Yesterday OpenAI released [Agent mode](https://openai.com/index/introducing-chatgpt-agent/).
-ChatGPT now has access to a general purpose tool -- its own web browser.
+ChatGPT now wields a general purpose tool -- its own web browser.
 It manipulates the mouse and keyboard directly. 
-It can use any web tool that you and I can.
+It can use any web tool, like we do.
 
 Any AI security researcher will tell you that this is 100x uptake on risk.
 Heck, even Sam Altman dedicated half his [launch post](https://x.com/sama/status/1945900345378697650) warning that this is unsafe for sensitive use.
 
-Meanwhile Guardrails are The leading idea in AI security. 
+Meanwhile AI guardrails are The leading idea in AI security. 
 It's safe to say they've been commoditized.
-You can get your from your AI provider, hordes of Open Source, or buy a commercial one.
+You can get yours from your AI provider, hordes of Open Source projects, or buy a commercial one.
 
 Yet hackers are having a ball. 
 Jason Haddix sums it up best:
@@ -35,19 +35,20 @@ SQLi attacks were all the rage back in the 90s.
 [Taint-analysis](https://en.wikipedia.org/wiki/Taint_checking) was invented to detect vulnerable data flow paths. 
 Define user inputs as sources, special character escaping-function as sanitizers, and database queries as sinks. 
 Static analysis tools analyze the software to find any route from source to sink that doesn’t go through a sanitizer. 
-This is [still the core of static analysis tools](https://codeql.github.com/docs/writing-codeql-queries/creating-path-queries/). 
+This is [still the core](https://codeql.github.com/docs/writing-codeql-queries/creating-path-queries/) of static analysis tools. 
 
-Formal verification techniques take this a step further and actually allow you to *prove* that there is no unsanitized path between source and sink. 
+Formal verification take this a step further and actually allow you to **prove** that there is no unsanitized path between source and sink. 
 [AWS Network Analyzer enables](https://aws.amazon.com/blogs/aws/new-amazon-vpc-network-access-analyzer/) policies like _“S3 bucket cannot be exposed to the public internet”_.
 No matter how many gateways and load balancers you place in-between.
 
-ORM libraries have sanitization [built-in](https://docs.djangoproject.com/en/5.2/topics/security/) to enforce boundaries preventing XSS and SQLi.
+ORM libraries have sanitization [built-in](https://docs.djangoproject.com/en/5.2/topics/security/) to enforce boundaries.
+Preventing XSS and SQLi.
 SQLi is solved as a technical problem (the operational problem remains, of course).
 
-<mark>**With software you can create hard boundaries. 
-You CANNOT get from here to there.**</mark>
+**With software you can create hard boundaries. 
+You CANNOT get from here to there.**
 
-Hard boundaries [cannot be applied anywhere](https://www.darkreading.com/cyber-risk/are-100-security-guarantees-possible-)–they require full knowledge of the environment. 
+Hard boundaries [cannot be applied](https://www.darkreading.com/cyber-risk/are-100-security-guarantees-possible-) anywhere–they require full knowledge of the environment. 
 They shine when you go all-in on one ecosystem. 
 In one ecosystem you can codify the entire environment state into a formula. 
 AWS Networking Analyzer. 
@@ -55,11 +56,13 @@ Django ORM.
 Virtual machines.
 These are illustrative examples of strong guarantees you can get out of buying-into one ecosystem.
 
-<mark>**It’s enticing to think that hard boundaries will solve our AI security problems. 
-With hard boundaries, instructions hidden in a document simply CANNOT trigger additional tool calls.**</mark>
+**It’s enticing to think that hard boundaries will solve our AI security problems. 
+With hard boundaries, instructions hidden in a document simply CANNOT trigger additional tool calls.**
 
-Meanwhile we can't even tell if an LLM hallucinated or fetched information from a cited document.
+Meanwhile we can't even tell if an LLM hallucinated.
+Even when we feed in an authoritative document and ask for citation.
 We can't generate a data flow graph for LLMs.
+
 Sure, you can say the LLM fetched a document and then searched the web. 
 But you CANNOT know whether elements of that file were incorporated into web search query parameters. 
 Or whether the LLM chose to do the web search query because it was instructed to by the document. 
@@ -69,9 +72,9 @@ Instructions are data.
 ## Hackers Don't Care About Your Soft Boundaries
 
 AI labs invented a new type of guardrail based on fine-tuning LLMs–a soft boundary. 
-<mark>**Soft boundaries are created by training AI real hard not to violate control flow, and hope that it doesn't. 
+**Soft boundaries are created by training AI real hard not to violate control flow, and hope that it doesn't. 
 Sometimes we don’t even train for it. 
-We ask it nicely to apply a boundary through _"system instructions"_.**</mark>
+We ask it nicely to apply a boundary through _"system instructions"_.**
 
 System instructions themselves are a soft boundary.
 An imaginary boundary. 
@@ -99,9 +102,9 @@ You pass a fetched document through an LLM or classifier and ask it to clean out
 It's a sanitizer, the equivalent of backslashing notorious escape characters that lead to injections. 
 But unlike software sanitizer, it's based on statistical models. 
 
-<mark>**Soft boundaries rely on training AI to identify and enforce them. 
+**Soft boundaries rely on training AI to identify and enforce them. 
 They work most of the time. 
-Hackers don't care about what happens most of the time.**</mark>
+Hackers don't care about what happens most of the time.**
 
 Relying on AI makes soft boundaries easy to apply.
 They work when hard boundaries are not feasible.
@@ -147,7 +150,7 @@ Salesforce Einstein simply [does not read](https://labs.zenity.io/p/inside-sales
 Here is Einstein querying CRM records.
 Results are presented in a structured UI component, not summarized by an LLM.
 You CANNOT inject instructions through CRM results.
-Until someone [finds a bypass](https://www.blackhat.com/us-25/briefings/schedule/index.html#ai-enterprise-compromise---0click-exploit-methods-46442).
+Until someone finds a bypass. More on this at [BHUSA 2025](https://www.blackhat.com/us-25/briefings/schedule/index.html#ai-enterprise-compromise---0click-exploit-methods-46442) _"AI Enterprise Compromise - 0click Exploit Methods"_.
 
 ![Salesforce Einstein does not read its own tool outputs. Image by Tamir Ishay Sharbat.](/assets/images/2025-07-18-data-flow-controls-wont-save-us/salesforce_crm_result.png)
 
@@ -160,7 +163,8 @@ ChatGPT validates image URL before rendering them using an API endpoint called `
 They must explicitly be provided by the user.
 Until someone [finds a bypass](https://youtu.be/84NVG1c5LRI?si=6sxgefcXoKQAZuC6&t=808).
 
-<mark>**The main issue with hard boundaries is that they nerf the agent.**</mark>
+**The main issue with hard boundaries is that they nerf the agent.**
+They make agents less useful.
 Like a surgeon removing an entire organ out of abundance of caution.
 
 With market pressure for adoption, AI vendors are removing these one by one.
@@ -174,6 +178,6 @@ These hard boundaries are all gone by now.
 This piece is too long already.
 Fortunately the solution is simple.
 
-Here's what I think we should
+Here's what we should
 
 ![Claude says bye bye](/assets/images/2025-07-18-data-flow-controls-wont-save-us/claude_refusal.png)
