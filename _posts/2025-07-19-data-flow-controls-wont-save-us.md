@@ -8,6 +8,7 @@ tags:
   - AI
   - Guardrails
   - AI Agents
+image: /assets/images/2025-07-19-data-flow-controls-wont-save-us/social.jpg
 ---
 
 # Guardrails Are Soft Boundaries. Hard Boundaries Do Exist.
