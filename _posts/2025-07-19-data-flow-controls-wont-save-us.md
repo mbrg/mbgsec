@@ -92,7 +92,7 @@ Hackers are [happy](https://embracethered.com/blog/posts/2025/chatgpt-operator-p
 This isn't to say that soft boundaries aren't useful.
 Here is ChatGPT with GPT 4o refusing to store a malicious memory based on instructions I placed in a Google Drive document.
 
-![ChatGPT 4o refuses to store a memory based on instructions in a Google Drive document](/assets/images/2025-07-18-data-flow-controls-wont-save-us/chatgpt_memory_refusal.png)
+![ChatGPT 4o refuses to store a memory based on instructions in a Google Drive document](/assets/images/2025-07-19-data-flow-controls-wont-save-us/chatgpt_memory_refusal.png)
 
 Check out the conversation [transcript](https://chatgpt.com/share/e/687a40e8-25bc-8002-ba2a-b86b4727c1f0).
 More on this at [BHUSA 2025](https://www.blackhat.com/us-25/briefings/schedule/index.html#ai-enterprise-compromise---0click-exploit-methods-46442) _"AI Enterprise Compromise - 0click Exploit Methods"_.
@@ -152,7 +152,7 @@ Results are presented in a structured UI component, not summarized by an LLM.
 You CANNOT inject instructions through CRM results.
 Until someone finds a bypass. More on this at [BHUSA 2025](https://www.blackhat.com/us-25/briefings/schedule/index.html#ai-enterprise-compromise---0click-exploit-methods-46442) _"AI Enterprise Compromise - 0click Exploit Methods"_.
 
-![Salesforce Einstein does not read its own tool outputs. Image by Tamir Ishay Sharbat.](/assets/images/2025-07-18-data-flow-controls-wont-save-us/salesforce_crm_result.png)
+![Salesforce Einstein does not read its own tool outputs. Image by Tamir Ishay Sharbat.](/assets/images/2025-07-19-data-flow-controls-wont-save-us/salesforce_crm_result.png)
 
 Microsoft Copilot simply does not render markdown images.
 You CANNOT [exfiltrate data through image](https://atlas.mitre.org/techniques/AML.T0077) parameters if there's no image. 
@@ -180,4 +180,4 @@ Fortunately the solution is simple.
 
 Here's what we should
 
-![Claude says bye bye](/assets/images/2025-07-18-data-flow-controls-wont-save-us/claude_refusal.png)
+![Claude says bye bye](/assets/images/2025-07-19-data-flow-controls-wont-save-us/claude_refusal.png)
