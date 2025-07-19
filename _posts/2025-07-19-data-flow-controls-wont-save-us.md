@@ -1,5 +1,6 @@
 ---
 title: Why Aren't We Making Any Progress In Security From AI
+description: "Soft boundaries are created by training AI real hard not to violate control flow, and hope that it doesn't. Hackers don't care about what happens most of the time."
 categories:
   - Blog
 tags:
@@ -8,7 +9,10 @@ tags:
   - AI
   - Guardrails
   - AI Agents
-image: /assets/images/2025-07-19-data-flow-controls-wont-save-us/social.jpg
+header:
+  image: /assets/images/2025-07-19-data-flow-controls-wont-save-us/social.jpg
+  teaser: /assets/images/2025-07-19-data-flow-controls-wont-save-us/social.jpg
+  og_image: /assets/images/2025-07-19-data-flow-controls-wont-save-us/social.jpg
 ---
 
 # Guardrails Are Soft Boundaries. Hard Boundaries Do Exist.
