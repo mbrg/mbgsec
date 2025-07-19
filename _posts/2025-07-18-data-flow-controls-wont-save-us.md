@@ -111,7 +111,7 @@ They work when hard boundaries are not feasible.
 You don't have to limit yourself to one ecosystem. 
 They apply in an open environment that spans multiple ecosystems.
 
-\* The steel man argument for soft boundaries is that AI labs are building AGI. 
+\* The steelman argument for soft boundaries is that AI labs are building AGI. 
 And AGI can solve anything, including strictly enforcing a soft boundary.
 Indeed, soft boundary benchmarks are [going up](https://arxiv.org/abs/2312.14197).
 Do you _feel the AGI_?
