@@ -172,7 +172,3 @@ These hard boundaries are all gone by now.
 ## The Solution
 
 Here is what you should do instead
-
-This post goes wells beyond a typical attention span.
-There's so much more left to cover.
-On my list are Google's [CaMeL paper](https://arxiv.org/abs/2503.18813), Microsoft's [Information-Flow Control](https://arxiv.org/abs/2505.23643), and how can we actually make progress.
