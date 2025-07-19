@@ -10,7 +10,7 @@ tags:
   - OpenAI
 ---
 
-This is part 3 on OpenAI's inaugural Security Research Conference. Here are [part 1](https://www.mbgsec.com/posts/2025-05-04-oai-security-conf-vibe/) and [part 2](https://www.mbgsec.com/posts/2025-05-08-oai-security-conf-automated-vuln-discovery.md).
+This is part 3 on OpenAI's inaugural Security Research Conference. Here are [part 1](https://www.mbgsec.com/posts/2025-05-04-oai-security-conf-vibe/) and [part 2](https://www.mbgsec.com/posts/2025-05-08-oai-security-conf-automated-vuln-discovery/).
 
 As soon as they opened up the room for questions I raised my hand.
 I was prepared.
