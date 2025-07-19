@@ -15,7 +15,7 @@ This is part 3 on OpenAI's Security Research Conference. Here are [part 1](https
 As soon as they opened up the room for questions I raised my hand.
 I was prepared.
 I also primed a member of their technical stuff in advance, joking if we could ask *"real questions"*, to which he replied -- what is a *real* question? 
-People asked very real questions and got very real answers, kudos to the OAI's team for their openness.
+People asked very real questions and got very real answers, kudos to the OAI's team for their openness to debate.
 
 I ended up asking two questions (thank you Ian).
 Here is an imperfect summary of a few questions and answers I found interesting, including my own.
