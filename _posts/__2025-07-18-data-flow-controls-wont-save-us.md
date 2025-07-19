@@ -1,5 +1,5 @@
 ---
-title: Soft Guardrail, Hard Boundaries, And Making Meaningful Process In Security From AI
+title: Soft Guardrails, Hard Boundaries, And Actually Making Process In Security From AI
 categories:
   - Blog
 tags:
@@ -8,9 +8,24 @@ tags:
   - Guardrails
 ---
 
-# Just 
+# Why Aren't We Making Any Progress
 
+Yesterday OpenAI released [Agent mode](https://openai.com/index/introducing-chatgpt-agent/).
+ChatGPT now has access to a general purpose tool -- its own web browser.
+It manipulates the mouse and keyboard directly. 
+It can use any web tool that you and I can.
 
+Any AI security researcher will tell you that this is 100x uptake on risk.
+Heck, even Sam Altman dedicated half his [launch post](https://x.com/sama/status/1945900345378697650) to this being unsafe for sensitive use.
+
+Meanwhile Guardrails are the leading idea in AI security. 
+It's safe to say they've been commoditized.
+You can get your from your AI provider, hordes of Open Source or buy a commercial one.
+
+Yet hackers are having a ball. 
+Jason Haddix sums it up best:
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">AI Pentest: A client pays an exorbitant amount of money for guardrail and implementation consulting services from a defensive AI Security vendor. <br><br>Bypassed in 20 minutes.<br><br>It really does feel like the dawn of web hacking all over again.</p>&mdash; JS0N Haddix (@Jhaddix) <a href="https://twitter.com/Jhaddix/status/1944835174878859680?ref_src=twsrc%5Etfw">July 14, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 ## Hard Boundaries
 
