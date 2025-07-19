@@ -10,7 +10,6 @@ tags:
   - Guardrails
   - AI Agents
 header:
-  image: /assets/images/2025-07-19-data-flow-controls-wont-save-us/social.jpg
   teaser: /assets/images/2025-07-19-data-flow-controls-wont-save-us/social.jpg
   og_image: /assets/images/2025-07-19-data-flow-controls-wont-save-us/social.jpg
 ---
