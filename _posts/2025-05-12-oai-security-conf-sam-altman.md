@@ -1,5 +1,5 @@
 ---
-title: OpenAI on Security From AI
+title: OAI Q&A on Security From AI
 categories:
   - Blog
 tags:
