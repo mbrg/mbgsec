@@ -9,7 +9,8 @@ layout: splash
 ## Upcoming Talks
 
 | Date | Conference | Talk | Resources |
-| - | - | - | - |-->
+| - | - | - | - |
+| 2025-11-13 | DefCamp 2025 | 0click Enterprise compromise - thank you, AI | |
 | 2025-08-09 | What Hackers Yearn 2025 | 0click Enterprise compromise - thank you, AI | |
 | 2025-08-06 | BlackHat USA 2025 | AI Enterprise Compromise - 0click Exploit Methods | [<i class="fa fa-calendar" title="Conference schedule"></i>](https://www.blackhat.com/us-25/briefings/schedule/index.html#ai-enterprise-compromise---0click-exploit-methods-46442) |
 
