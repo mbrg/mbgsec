@@ -15,7 +15,7 @@ tags:
 - Transportation Safety
 - Vulnerability Management
 - Cybersecurity
-title: End-of-Train and Head-of-Train Remote Linking Protocol | CISA
+title: "End-of-Train and Head-of-Train Remote Linking Protocol ◆ CISA"
 ---
 {% raw %}
 
