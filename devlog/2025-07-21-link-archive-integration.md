@@ -97,6 +97,13 @@ The integration followed a planned approach with three alternatives considered:
 **Clarity**: Better semantic meaning (web-log vs link-log)
 **UX**: Single menu item for processed content
 
+### Why Escape Liquid Syntax in Archive Content
+**Problem**: Archive markdown files contain literal `{{` and `{%` characters (e.g., `{{DoomArena: A Framework...}}`)
+**Jekyll Issue**: Liquid templating engine tries to parse these as template syntax and fails with "Tag was not properly terminated"
+**Solution**: Wrap content (not front matter) in `{% raw %}...{% endraw %}` tags
+**Implementation**: AWK script in GitHub Actions that preserves YAML front matter while escaping content
+**Result**: Archive content displays exactly as written while preventing Liquid parsing errors
+
 ## File Structure
 ```
 mbgsec/
@@ -113,6 +120,7 @@ mbgsec/
 2. **Simpler is better** - Direct cloning > Submodules  
 3. **Test early** - Local build testing revealed plugin limitations
 4. **Dave Farley principles work** - Simple, reliable, fast, maintainable
+5. **Content escaping is critical** - Archive content needs Liquid syntax protection to prevent Jekyll build failures
 
 ## Maintenance
 
