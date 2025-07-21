@@ -75,16 +75,48 @@ jobs:
         find _archive -name "*.md" -delete 2>/dev/null || true
         find _weblog -name "*.md" -delete 2>/dev/null || true
         
-        # Copy archive files
+        # Copy archive files and escape Liquid syntax
         if [ -d ".tmp/link-archive/archive" ]; then
-          cp .tmp/link-archive/archive/*.md _archive/ 2>/dev/null || true
+          for file in .tmp/link-archive/archive/*.md; do
+            if [ -f "$file" ]; then
+              basename=$(basename "$file")
+              # Add {% raw %} after front matter and {% endraw %} at end
+              awk '
+                /^---$/ { dash_count++ }
+                { print }
+                dash_count == 2 && !raw_added { 
+                  print "{% raw %}"
+                  raw_added = 1 
+                }
+                END { 
+                  if (raw_added) print "{% endraw %}" 
+                }
+              ' "$file" > "_archive/$basename"
+            fi
+          done
           archive_count=$(ls _archive/*.md 2>/dev/null | wc -l)
           echo "Copied $archive_count archive files"
         fi
         
-        # Copy weblog files
+        # Copy weblog files and escape Liquid syntax
         if [ -d ".tmp/link-archive/weblog" ]; then
-          cp .tmp/link-archive/weblog/*.md _weblog/ 2>/dev/null || true
+          for file in .tmp/link-archive/weblog/*.md; do
+            if [ -f "$file" ]; then
+              basename=$(basename "$file")
+              # Add {% raw %} after front matter and {% endraw %} at end
+              awk '
+                /^---$/ { dash_count++ }
+                { print }
+                dash_count == 2 && !raw_added { 
+                  print "{% raw %}"
+                  raw_added = 1 
+                }
+                END { 
+                  if (raw_added) print "{% endraw %}" 
+                }
+              ' "$file" > "_weblog/$basename"
+            fi
+          done
           weblog_count=$(ls _weblog/*.md 2>/dev/null | wc -l)
           echo "Copied $weblog_count weblog files"
         fi
