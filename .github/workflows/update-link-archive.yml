@@ -1,0 +1,125 @@
+name: Update Link Archive Content
+
+on:
+  # Trigger when link-archive repository is updated
+  repository_dispatch:
+    types: [link-archive-updated]
+  
+  # Manual trigger
+  workflow_dispatch:
+  
+  # Scheduled check for updates (4 AM ET and 4 AM Israel time)
+  schedule:
+    - cron: '0 2 * * *'  # 4 AM Israel time (UTC+2)
+    - cron: '0 9 * * *'  # 4 AM ET (UTC-5)
+
+permissions:
+  contents: write
+
+jobs:
+  update-content:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+    
+    - name: Checkout link-archive
+      uses: actions/checkout@v4
+      with:
+        repository: mbrg/link-archive
+        path: .tmp/link-archive
+        ref: main
+    
+    - name: Check for changes
+      id: changes
+      run: |
+        # Force processing for repository_dispatch and workflow_dispatch
+        if [ "${{ github.event_name }}" = "repository_dispatch" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+          echo "changed=true" >> $GITHUB_OUTPUT
+          echo "Force processing due to ${{ github.event_name }} trigger"
+          cd .tmp/link-archive
+          CURRENT_HASH=$(git rev-parse HEAD)
+          cd ../..
+          echo "current_hash=$CURRENT_HASH" >> $GITHUB_OUTPUT
+          exit 0
+        fi
+        
+        # For scheduled runs, check if content actually changed
+        cd .tmp/link-archive
+        CURRENT_HASH=$(git rev-parse HEAD)
+        cd ../..
+        
+        if [ -f ".last-link-archive-commit" ]; then
+          LAST_HASH=$(cat .last-link-archive-commit)
+          if [ "$CURRENT_HASH" = "$LAST_HASH" ]; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "No changes in link-archive since last run ($CURRENT_HASH)"
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "Link-archive changed: $LAST_HASH -> $CURRENT_HASH"
+          fi
+        else
+          echo "changed=true" >> $GITHUB_OUTPUT
+          echo "First run - processing commit $CURRENT_HASH"
+        fi
+        
+        echo "current_hash=$CURRENT_HASH" >> $GITHUB_OUTPUT
+    
+    - name: Copy archive and weblog files
+      if: steps.changes.outputs.changed == 'true'
+      run: |
+        # Clear existing files (except .gitkeep)
+        find _archive -name "*.md" -delete 2>/dev/null || true
+        find _weblog -name "*.md" -delete 2>/dev/null || true
+        
+        # Copy archive files
+        if [ -d ".tmp/link-archive/archive" ]; then
+          cp .tmp/link-archive/archive/*.md _archive/ 2>/dev/null || true
+          archive_count=$(ls _archive/*.md 2>/dev/null | wc -l)
+          echo "Copied $archive_count archive files"
+        fi
+        
+        # Copy weblog files
+        if [ -d ".tmp/link-archive/weblog" ]; then
+          cp .tmp/link-archive/weblog/*.md _weblog/ 2>/dev/null || true
+          weblog_count=$(ls _weblog/*.md 2>/dev/null | wc -l)
+          echo "Copied $weblog_count weblog files"
+        fi
+    
+    - name: Setup Ruby
+      if: steps.changes.outputs.changed == 'true'
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: '3.1'
+        bundler-cache: true
+    
+    - name: Build Jekyll site
+      if: steps.changes.outputs.changed == 'true'
+      run: |
+        bundle exec jekyll build
+    
+    - name: Update commit hash and push changes
+      if: steps.changes.outputs.changed == 'true'
+      run: |
+        # Update the last processed commit hash
+        echo "${{ steps.changes.outputs.current_hash }}" > .last-link-archive-commit
+        
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add .
+        
+        if ! git diff --staged --quiet; then
+          archive_count=$(ls _archive/*.md 2>/dev/null | wc -l || echo 0)
+          weblog_count=$(ls _weblog/*.md 2>/dev/null | wc -l || echo 0)
+          git commit -m "Update link-archive content
+
+          - Imported $archive_count archive files
+          - Imported $weblog_count weblog files
+          - Processed commit: ${{ steps.changes.outputs.current_hash }}"
+          git push
+        else
+          echo "No changes to commit"
+        fi

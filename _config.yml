@@ -96,6 +96,12 @@ footer:
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
       url: "https://twitter.com/mbrg0"
+    - label: "Post RSS"
+      icon: "fas fa-fw fa-rss"
+      url: "/feed.xml"
+    - label: "Weblog RSS"
+      icon: "fas fa-fw fa-rss"
+      url: "/weblog/feed.xml"
 
 defaults:
   # _posts
@@ -109,10 +115,21 @@ defaults:
       comments: true
       share: true
       related: true
-  # linklog
+  # weblog
   - scope:
       path: ""
-      type: linklog
+      type: weblog
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
+  # archive
+  - scope:
+      path: ""
+      type: archive
     values:
       layout: single
       author_profile: true
@@ -124,13 +141,15 @@ defaults:
 include:
   - _pages
   - _projects
-  - _linklog
+  - _weblog
+  - _archive
 
 feed:
   content: "true"
   collections:
     - posts
-    - linklog
+    - weblog
+    - archive
 
 collections:
   posts:
@@ -139,6 +158,9 @@ collections:
   projects:
     output: true
     permalink: /:collection/:path/
-  linklog:
+  archive:
+    output: true
+    permalink: /:collection/:path/
+  weblog:
     output: true
     permalink: /:collection/:path/
