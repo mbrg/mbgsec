@@ -9,7 +9,7 @@ layout: archive
 {% if paginator %}
   {% assign posts = paginator.posts %}
 {% else %}
-  {% assign posts = site.weblog %}
+  {% assign posts = site.weblog | sort: 'date' | reverse %}
 {% endif %}
 
 {% assign entries_layout = page.entries_layout | default: 'list' %}
