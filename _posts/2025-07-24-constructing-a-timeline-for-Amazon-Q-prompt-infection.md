@@ -121,6 +121,23 @@ Claude translates:
 
 [2025-07-23T14:02:16Z] 404media story [breaks out](https://www.404media.co/hacker-plants-computer-wiping-commands-in-amazons-ai-coding-agent/).
 
+## How did `lkmanka58` gain access?
+
+Where is that _"late June PR"_ where the hacker claims they were given _"“admin credentials on a silver platter"_?
+
+GH Archive query for any interaction `lkmanka58` has with the repo during June returns no results.
+
+```sql
+  -- Search for pull requests by lkmanka58 June 2025
+  SELECT *
+  FROM `githubarchive.day.202506*`
+  WHERE
+    repo.name = 'aws/aws-toolkit-vscode'
+    AND actor.login = 'lkmanka58'
+--
+-- There is no data to display.
+```
+
 ## Unsolved
 
 - Where is that _"late June PR"_ where the hacker claims they were given _"“admin credentials on a silver platter"_?
