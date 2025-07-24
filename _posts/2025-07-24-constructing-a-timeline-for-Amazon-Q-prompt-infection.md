@@ -146,3 +146,8 @@ GH Archive query for any interaction `lkmanka58` has with the repo during June r
 - Who triggered `aws-toolkit-automation` to create the `stability` tag and how?
 - Did `lkmanka58` pull off a similar thing elsewhere?
 
+
+
+
+https://www.mbgsec.com/assets/images/2025-07-24-constructing-a-timeline-for-amazon-q-prompt-infection/GwkkxIKXEAEUyCx.jpeg
+https://www.mbgsec.com/assets/images/2025-07-24-constructing-a-timeline-for-amazon-q-prompt-injection/GwkkxIKXEAEUyCx.jpeg
