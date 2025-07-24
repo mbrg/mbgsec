@@ -145,3 +145,9 @@ GH Archive query for any interaction `lkmanka58` has with the repo during June r
 - Is `atonaamz` a benign bystander used as cover by `lkmanka58`?
 - Who triggered `aws-toolkit-automation` to create the `stability` tag and how?
 - Did `lkmanka58` pull off a similar thing elsewhere?
+
+## Other awesome work
+
+- This story was exposed by [404media](https://www.404media.co/hacker-plants-computer-wiping-commands-in-amazons-ai-coding-agent/).
+
+- I learned about GH Archive through Sharon Brizinov's [awesome work](https://trufflesecurity.com/blog/guest-post-how-i-scanned-all-of-github-s-oops-commits-for-leaked-secrets) using it to detect leaked secrets.
