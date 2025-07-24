@@ -76,7 +76,7 @@ This is commit `1294b38`.
 
 It replaces what looks like a debugging subprocess call `childProcess.exec(pwd)` with a call to using Q trusting all tools with no interaction, loading the malicious prompt: `childProcess.exec(q --trust-all-tools --no-interactive "${PROMPT}")`.
 
-![Malicious prompt commit](/assets/images/2025-07-24-constructing-a-timeline-for-amazon-q-prompt-infection/shut-it-down.png).
+![Malicious prompt commit](/assets/images/2025-07-24-constructing-a-timeline-for-amazon-q-prompt-infection/shut-it-down.png)
 
 [2025-07-13T20:30:24.000Z] 20 minutes later `lkmanka58` [commits](https://github.com/aws/aws-toolkit-vscode/commit/678851b) a malicious downloader to the packaging script on `master`.
 This is commit `678851b`.
