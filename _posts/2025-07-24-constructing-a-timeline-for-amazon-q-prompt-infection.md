@@ -1,5 +1,5 @@
 ---
-title: Constructing a timeline for Amazon Q prompt infection
+title: Reconstructing a timeline for Amazon Q prompt infection
 description: "404media reported a story about a hacker planting malicious instructions to wipe the computer into Amazon Q. But many questions are left unanswered. How did this happen?."
 categories:
   - Blog
