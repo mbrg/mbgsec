@@ -67,7 +67,7 @@ Let's see which ones are still up on GitHub:
 PRs [#5120](https://github.com/aws/aws-toolkit-vscode/pull/5120) and [#5123](https://github.com/aws/aws-toolkit-vscode/pull/5123) were deleted from github.
 
 GOT YOU.
-[Future Michael: I didn't really get him]
+[Future Michael: I didn't really get them]
 
 ```json
 [{
