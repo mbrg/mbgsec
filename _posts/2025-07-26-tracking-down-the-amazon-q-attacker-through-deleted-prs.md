@@ -162,7 +162,7 @@ Full data about these events is [available here](/assets/json/2025-07-26-trackin
 
 ### PR `#5120` Commit `93578ad`
 
-PR #5120 was closed by `justinmk3` without a merge.
+PR #5120 has title `Codespace fluffy space memory wrvrwwxwvrqrc9xwg`, it's probably automated. It was closed by `justinmk3` without a merge.
  A dump of all events related to this PR is [available here](/assets/json/2025-07-26-tracking-down-the-amazon-q-attacker-through-deleted-prs/pr_5120.json).
 
 PR `#5120` pushed commit `93578ad`.
@@ -185,7 +185,7 @@ It was closed without merging.
 
 PR #5123 is a PR from branch `patch-1` of repo `Frank97Tyler/aws-toolkit-vscode`.
 It received a review.
-Could this be the PR that introduced the code-stealing code?
+Could this be the PR that introduced the token-stealing code?
 
 See SQL query below (_"Get everything on PR #5123"_). 
 A dump of the results is [available here](/assets/json/2025-07-26-tracking-down-the-amazon-q-attacker-through-deleted-prs/pr_5123.json).
