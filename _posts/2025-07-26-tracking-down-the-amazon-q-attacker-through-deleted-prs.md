@@ -1,5 +1,5 @@
 ---
-title: Attempt To Track Down the Amazon Q Attacker Through Deleted PRs
+title: Failed Attempt To Track Down the Amazon Q Attacker Through Deleted PRs
 description: "New details on the Amazon Q hack reveal an external since-deleted user that tried to merged a couple of PRs. Initial access path remains uncertain."
 categories:
   - Blog
