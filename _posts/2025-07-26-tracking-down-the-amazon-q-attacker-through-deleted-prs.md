@@ -54,4 +54,4 @@ The user and all of their interactions were deleted.
 I go on a scavenger hunt. 
 It results in an auto-generated outlook email, indication of use of codespaces, and no indirection of compromise.
 
-[Activity Analysis for Deleted PRs To AWS VSCode Toolkit](/posts/2025-07-26-activity_analysis_for_deleted_prs_to_aws_vscode_toolkit.md).
+[Activity Analysis of Deleted PRs To AWS VSCode Toolkit](/posts/2025-07-26-activity_analysis_for_deleted_prs_to_aws_vscode_toolkit.md).
