@@ -178,6 +178,8 @@ This PR would cause crashes because of this double ".
 It has merge commit hash `63c5b82eaabcf563a5138b95a5b862c5738eeddd`.
 It was closed without merging.
 
+![Change to codespaces cofig](/assets/images/2025-07-26-tracking-down-the-amazon-q-attacker-through-deleted-prs/change_codespaces.png)
+
 ### PR `#5123`
 
 PR #5123 is a PR from branch `patch-1` of repo `Frank97Tyler/aws-toolkit-vscode`.
