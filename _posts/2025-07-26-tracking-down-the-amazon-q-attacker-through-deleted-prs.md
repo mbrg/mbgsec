@@ -20,7 +20,7 @@ This confirms our [earlier findings](https://www.mbgsec.com/posts/2025-07-24-con
 In fact, this token gave the attacked write access to AWS Toolkit, IDE Extension and Amazon Q.
 
 The blog also details that the attacker gained access by exploiting a vulnerability in the CodeBuild and using memory dump to grab the tokens. 
-That confirms our [suspicion](https://aws.amazon.com/security/security-bulletins/aws-2025-016/).
+That confirms our [suspicion](https://x.com/mbrg0/status/1949001616230649904).
 
 A key question remains -- how did the attacker compromise this token?
 
