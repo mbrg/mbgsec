@@ -371,18 +371,14 @@ aws.console.
 
 {% endcapture %}
 
-<div class="notice--info" markdown="1">
-  <details>
-  <summary>I discover a new GitHub user `Frank97Tyler` who had suspicious interactions with the aws repo in early June. The user and all of their interactions were deleted. I go on a scavenger hunt. It results in an auto-generated outlook email, indication of use of codespaces, and no indirection of compromise.</summary>
-  {{ frank_investigation }}
-  </details>
-</div>
+<details>
+<summary>I discover a new GitHub user `Frank97Tyler` who had suspicious interactions with the aws repo in early June. The user and all of their interactions were deleted. I go on a scavenger hunt. It results in an auto-generated outlook email, indication of use of codespaces, and no indirection of compromise.</summary>
+{{ frank_investigation }}
+</details>
 
 ---
 
-<div class="notice--info" markdown="1">
-  <details>
-  <summary>I share my GH Archive queries. I record the now-deleted issues create by `Frank97Tyler`.</summary>
-  {{ appendix }}
-  </details>
-</div>
+<details>
+<summary>I share my GH Archive queries. I record the now-deleted issues create by `Frank97Tyler`.</summary>
+{{ appendix }}
+</details>
