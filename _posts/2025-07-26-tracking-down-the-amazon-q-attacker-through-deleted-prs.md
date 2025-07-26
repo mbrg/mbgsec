@@ -67,7 +67,7 @@ Let's see which ones are still up on GitHub:
 PRs [#5120](https://github.com/aws/aws-toolkit-vscode/pull/5120) and [#5123](https://github.com/aws/aws-toolkit-vscode/pull/5123) were deleted from github.
 
 GOT YOU.
-[Future Michael: I didn't really get them]
+[Future Michael: I didn't really get them.]
 
 ```json
 [{
@@ -196,7 +196,7 @@ Looking at all events related to this PR we see:
 
 It has one commit:
 
-#### `Commit `fba839b`
+#### Commit `fba839b`
 
 PR `#5123` pushed commit `fba839b`.
 Looking at commit [`fba839b`](https://api.github.com/repos/aws/aws-toolkit-vscode/commits/fba839b188b6b221fff481cf0b2f3a465a348abf) and its [committed files](https://github.com/aws/aws-toolkit-vscode/commit/fba839b188b6b221fff481cf0b2f3a465a348abf) it:
@@ -218,7 +218,10 @@ How bad this could be?
 
 I couldn't find any indication that these PRs triggered a GitHub workflow.
 
-## More questions
+## This ends with more questions
+
+We found no indications of compromise.
+But a whole lot of threads to pull for the curious.
 
 - A key question remains -- how did the attacker compromise this token?
 
