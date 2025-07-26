@@ -122,7 +122,9 @@ Here's our timeline:
 2024-06-08 18:02:51UTC | aws/aws-toolkit-vscode          | Created PR \#5123 | Create devcontainer.json
 2024-06-08 20:13:14UTC | aws/aws-toolkit-vscode          | Closed Issue \#5122 | aws.console.
 2024-06-08 20:13:15UTC | aws/aws-toolkit-vscode          | Commented on Issue \#5122 | extension/marketplace = 
-**2024-06-08 20:13:58UTC | aws/aws-toolkit-vscode          | PullRequestReviewEvent PR \#5123 | Create devcontainer.json**
+**
+2024-06-08 20:13:58UTC | aws/aws-toolkit-vscode          | PullRequestReviewEvent PR \#5123 | Create devcontainer.json
+**
 2024-06-08 20:17:07UTC | aws/aws-toolkit-vscode          | Commented on Issue \#3097 | [](url)
 2024-06-09 11:23:00UTC | aws/aws-toolkit-vscode          | Commented on Issue \#5105 | @mtdowling 
 ```
