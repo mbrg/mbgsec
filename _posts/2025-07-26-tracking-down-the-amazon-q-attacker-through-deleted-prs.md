@@ -1,5 +1,5 @@
 ---
-title: Research Journal: Failed Attempt To Track Down the Amazon Q Attacker Through Deleted PRs
+title: Research Journal: Failed Attempt To Track Down the Amazon Q Attacker Through Deleted PRs Reveals Suspicious Activity
 description: "This is more research journal than a well formatted blog. It's a hunt for details on the Amazon Q hack. It reveal an external since-deleted user that tried to merged a couple of PRs. Initial access path remains uncertain."
 categories:
   - Blog
