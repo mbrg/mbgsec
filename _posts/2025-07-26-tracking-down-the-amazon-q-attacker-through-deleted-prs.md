@@ -47,12 +47,9 @@ I'm sharing this hoping that others can join in pulling on them.**
 
 ___
 
-<details>
-<summary> I discover a new GitHub user `Frank97Tyler` who had suspicious interactions with the aws repo in early June.
-The user and all of their interactions were deleted.
-I go on a scavenger hunt.
-It results in an auto-generated outlook email, indication of use of codespaces, and no indirection of compromise.
-</summary>
+  
+{% capture frank_investigation %}
+
 
 ## Deletions leave a noisy trace
 
@@ -250,12 +247,8 @@ But a whole lot of threads to pull for the curious.
 - `Frank Williamson`, `Frank Tyler` names
 - `frank.williamson97@outlook.com`, `9f622e692bcb8a66f37da56c69079e084d30ace5@outlook.com` email addresses
 
-</details>
-
-___
-
-<details>
-<summary> I share my GH Archive queries. I record the now-deleted issues create by `Frank97Tyler`.</summary>
+{% endcapture %}
+{% capture appendix %}
 
 # Appendix
 
@@ -376,4 +369,20 @@ aws.console.
 
 \## Problem\r\n\r\n## Steps to reproduce the issue\r\n\r\n\u003c!--\r\n1. Go to \u0027...\u0027\r\n2. Click on \u0027...\u0027\r\n3. See error\r\n--\u003e\r\n\r\n## Expected behavior\r\n\r\n## System details (run `AWS: About` and/or `Amazon Q: About`)\r\n\r\n-   OS:\r\n-   Visual Studio Code version:\r\n-   AWS Toolkit version:\r\n-   Amazon Q version:\r\n
 
-</details>
+{% endcapture %}
+
+<div class="notice--info" markdown="1">
+  <details>
+  <summary>I discover a new GitHub user `Frank97Tyler` who had suspicious interactions with the aws repo in early June. The user and all of their interactions were deleted. I go on a scavenger hunt. It results in an auto-generated outlook email, indication of use of codespaces, and no indirection of compromise.</summary>
+  {{ frank_investigation }}
+  </details>
+</div>
+
+---
+
+<div class="notice--info" markdown="1">
+  <details>
+  <summary>I share my GH Archive queries. I record the now-deleted issues create by `Frank97Tyler`.</summary>
+  {{ appendix }}
+  </details>
+</div>
