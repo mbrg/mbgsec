@@ -12,7 +12,7 @@ tags:
 hidden: true
 ---
 
-This is a technical sub-post for [Tracking Down the Amazon Q Attacker Through Deleted PRs Reveals Suspicious Activity But No Smoking Gun](/_posts/2025-07-26-tracking-down-the-amazon-q-attacker-through-deleted-prs.md).
+This is a technical sub-post for [Tracking Down the Amazon Q Attacker Through Deleted PRs Reveals Suspicious Activity But No Smoking Gun](/posts/2025-07-26-tracking-down-the-amazon-q-attacker-through-deleted-prs.md).
 
 ## Deletions leave a noisy trace
 
