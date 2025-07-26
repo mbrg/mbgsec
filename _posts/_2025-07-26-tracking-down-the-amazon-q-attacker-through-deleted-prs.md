@@ -1,6 +1,6 @@
 ---
-title: Tracking Down the Amazon Q Attacker Through Deleted PRs
-description: "New details on the Amazon Q hack reveal an external since-deleted user successfully merged a PR. Initial access path remains uncertain."
+title: Attempt To Track Down the Amazon Q Attacker Through Deleted PRs
+description: "New details on the Amazon Q hack reveal an external since-deleted user that tried to merged a couple of PRs. Initial access path remains uncertain."
 categories:
   - Blog
 tags:
@@ -19,7 +19,8 @@ This confirms our [earlier findings](https://www.mbgsec.com/posts/2025-07-24-con
 
 In fact, this token gave the attacked write access to AWS Toolkit, IDE Extension and Amazon Q.
 
-The blog also details that the attacker gained access by exploiting a vulnerability in the CodeBuild and using memory dump to grab the tokens. That confirms our [suspicion](https://aws.amazon.com/security/security-bulletins/aws-2025-016/).
+The blog also details that the attacker gained access by exploiting a vulnerability in the CodeBuild and using memory dump to grab the tokens. 
+That confirms our [suspicion](https://aws.amazon.com/security/security-bulletins/aws-2025-016/).
 
 A key question remains -- how did the attacker compromise this token?
 
@@ -35,9 +36,16 @@ On that second point:
 
 Since the user `lkmanka58` is now delete along with their repos, we can no long look at the code of this repo.
 Fortunately, I looked at it yesterday before it got deleted.
-On June 13th `lkmanka58` created a repo `lkmanka58/code_whisperer`  playing around with `aws-actions/configure-aws-credentials@v4` trying to assume role `arn:aws:iam::975050122078:role/code_whisperer`.
+On June 13th `lkmanka58` created a repo `lkmanka58/code_whisperer` playing around with `aws-actions/configure-aws-credentials@v4` trying to assume role `arn:aws:iam::975050122078:role/code_whisperer`.
 
 ![GH Archive reveals three push events to lkmanka58's now-deleted repository](/assets/images/2025-07-26-tracking-down-the-amazon-q-attacker-through-deleted-prs/Gww-oRoWIAA-FJa.jpeg)
+
+This led me down this goose chase.
+Before you go on, please know that this thread doesn't end with any new and meaningful information.
+Just more open threads.
+I'm sharing this hoping that others can join in pulling on them.
+
+___
 
 ## Deletions leave a noisy trace
 
@@ -59,6 +67,7 @@ Let's see which ones are still up on GitHub:
 PRs [#5120](https://github.com/aws/aws-toolkit-vscode/pull/5120) and [#5123](https://github.com/aws/aws-toolkit-vscode/pull/5123) were deleted from github.
 
 GOT YOU.
+[Future Michael: I didn't really get him]
 
 ```json
 [{
@@ -67,7 +76,7 @@ GOT YOU.
   "title": "Codespace fluffy space memory wrvrwwxwvrqrc9xwg",
   "author": "Frank97Tyler",
   "commit_hash": "93578ad6476e508891138699d87235a18c8045e4",
-  "pr_body": "## Problem\r\n\r\n## Solution\r\n\r\n\u003c!---\r\n    REMINDER:\r\n    - Read CONTRIBUTING.md first.\r\n    - Add test coverage for your changes.\r\n    - Update the changelog using `npm run newChange`.\r\n    - Link to related issues/commits.\r\n    - Testing: how did you test your changes?\r\n    - Screenshots (if the pull request is related to UI/UX then please include light and dark theme screenshots)\r\n--\u003e\r\n\r\n## License\r\n\r\nBy submitting this pull request, I confirm that my contribution is made under the terms of the Apache 2.0 license.\r\n",
+  "pr_body": "",
   "pr_created_at": "2024-06-08T17:52:21Z",
   "event_time": "2024-06-08 17:52:22.000000 UTC",
   "pr_url": "https://github.com/aws/aws-toolkit-vscode/pull/5120"
@@ -77,7 +86,7 @@ GOT YOU.
   "title": "Create devcontainer.json",
   "author": "Frank97Tyler",
   "commit_hash": "fba839b188b6b221fff481cf0b2f3a465a348abf",
-  "pr_body": "console.python/log\r\n\r\n## Problem\r\n\r\n## Solution\r\n\r\n\u003c!---\r\n    REMINDER:\r\n    - Read CONTRIBUTING.md first.\r\n    - Add test coverage for your changes.\r\n    - Update the changelog using `npm run newChange`.\r\n    - Link to related issues/commits.\r\n    - Testing: how did you test your changes?\r\n    - Screenshots (if the pull request is related to UI/UX then please include light and dark theme screenshots)\r\n--\u003e\r\n\r\n## License\r\n\r\nBy submitting this pull request, I confirm that my contribution is made under the terms of the Apache 2.0 license.\r\n",
+  "pr_body": "console.python/log",
   "pr_created_at": "2024-06-08T18:02:49Z",
   "event_time": "2024-06-08 18:02:51.000000 UTC",
   "pr_url": "https://github.com/aws/aws-toolkit-vscode/pull/5123"
@@ -109,25 +118,23 @@ See SQL query below (_"Get `Frank97Tyler`'s activity from 2024"_).
 
 Here's our timeline:
 
-```bash
-2024-06-06 00:15:22UTC | aws/aws-toolkit-vscode          | Created Issue \#5108 | Amazon Q - Licensing Certificate Analysis
-2024-06-06 15:31:10UTC | aws/aws-toolkit-vscode          | Created Issue \#5111 | For remote debugging, you need to start a headless delve process on the remote side.
-2024-06-08 17:49:13UTC | aws/aws-toolkit-vscode          | ForkEvent |  | 
-2024-06-08 17:49:29UTC | Frank97Tyler/aws-toolkit-vscode | CreateEvent |  | 
-2024-06-08 17:52:22UTC | aws/aws-toolkit-vscode          | Created PR \5120 | Codespace fluffy space memory wrvrwwxwvrqrc9xwg
-2024-06-08 17:55:08UTC | aws/aws-toolkit-vscode          | Created Issue \#5121 | java.
-2024-06-08 17:55:33UTC | aws/aws-toolkit-vscode          | Commented on Issue \#5121 | Uploading 4421D740-0964-4A8E-9448-BBC93A4AA096.mov…
-2024-06-08 17:56:13UTC | Frank97Tyler/aws-toolkit-vscode | PushEvent |  | 
-2024-06-08 18:01:31UTC | aws/aws-toolkit-vscode          | Created Issue \#5122 | aws.console.
-2024-06-08 18:02:51UTC | aws/aws-toolkit-vscode          | Created PR \#5123 | Create devcontainer.json
-2024-06-08 20:13:14UTC | aws/aws-toolkit-vscode          | Closed Issue \#5122 | aws.console.
-2024-06-08 20:13:15UTC | aws/aws-toolkit-vscode          | Commented on Issue \#5122 | extension/marketplace = 
-**
-2024-06-08 20:13:58UTC | aws/aws-toolkit-vscode          | PullRequestReviewEvent PR \#5123 | Create devcontainer.json
-**
-2024-06-08 20:17:07UTC | aws/aws-toolkit-vscode          | Commented on Issue \#3097 | [](url)
-2024-06-09 11:23:00UTC | aws/aws-toolkit-vscode          | Commented on Issue \#5105 | @mtdowling 
-```
+| Timestamp | Repo | Event | Title or Content |
+| -- | -- | -- | -- |
+| 2024-06-06 00:15:22UTC | aws/aws-toolkit-vscode          | Created Issue \#5108 | Amazon Q - Licensing Certificate Analysis |
+| 2024-06-06 15:31:10UTC | aws/aws-toolkit-vscode          | Created Issue \#5111 | For remote debugging, you need to start a headless delve process on the remote side. |
+| 2024-06-08 17:49:13UTC | aws/aws-toolkit-vscode          | ForkEvent |  | 
+| 2024-06-08 17:49:29UTC | Frank97Tyler/aws-toolkit-vscode | CreateEvent |  | 
+| 2024-06-08 17:52:22UTC | aws/aws-toolkit-vscode          | Created PR \5120 | Codespace fluffy space memory wrvrwwxwvrqrc9xwg |
+| 2024-06-08 17:55:08UTC | aws/aws-toolkit-vscode          | Created Issue \#5121 | java. |
+| 2024-06-08 17:55:33UTC | aws/aws-toolkit-vscode          | Commented on Issue \#5121 | Uploading 4421D740-0964-4A8E-9448-BBC93A4AA096.mov… |
+| 2024-06-08 17:56:13UTC | Frank97Tyler/aws-toolkit-vscode | PushEvent |  | 
+| 2024-06-08 18:01:31UTC | aws/aws-toolkit-vscode          | Created Issue \#5122 | aws.console. |
+| 2024-06-08 18:02:51UTC | aws/aws-toolkit-vscode          | Created PR \#5123 | Create devcontainer.json |
+| 2024-06-08 20:13:14UTC | aws/aws-toolkit-vscode          | Closed Issue \#5122 | aws.console. |
+| 2024-06-08 20:13:15UTC | aws/aws-toolkit-vscode          | Commented on Issue \#5122 | extension/marketplace = |
+| 2024-06-08 20:13:58UTC | aws/aws-toolkit-vscode          | PullRequestReviewEvent PR \#5123 | Create devcontainer.json |
+| 2024-06-08 20:17:07UTC | aws/aws-toolkit-vscode          | Commented on Issue \#3097 | [](url) |
+| 2024-06-09 11:23:00UTC | aws/aws-toolkit-vscode          | Commented on Issue \#5105 | @mtdowling |
 
 A full dump of the activity log for this query is [available here](/assets/json/2025-07-26-tracking-down-the-amazon-q-attacker-through-deleted-prs/Frank97Tyler_interaction_with_aws_vscode_toolkit.json).
 
@@ -151,7 +158,27 @@ Remember that these were the head commits for PRs created by `Frank97Tyler`.
 
 Full data about these events is [available here](/assets/json/2025-07-26-tracking-down-the-amazon-q-attacker-through-deleted-prs/Frank97Tyler_interaction_with_aws_vscode_toolkit.json).
 
-## `Frank97Tyler` successfully merged a PR
+## `Frank97Tyler` submitted two PRs that were merged
+
+### PR `#5120` Commit `93578ad`
+
+PR #5120 was closed by `justinmk3` without a merge.
+ A dump of all events related to this PR is [available here](/assets/json/2025-07-26-tracking-down-the-amazon-q-attacker-through-deleted-prs/pr_5120.json).
+
+PR `#5120` pushed commit `93578ad`.
+Looking at commit [`93578ad`](https://api.github.com/repos/aws/aws-toolkit-vscode/commits/93578ad6476e508891138699d87235a18c8045e4) and its [committed files](https://github.com/aws/aws-toolkit-vscode/commit/93578ad6476e508891138699d87235a18c8045e4) it:
+- Author name `Frank Tyler` email `160696700+Frank97Tyler@users.noreply.github.com` date `2024-06-08T17:49:26Z`
+- Exact same committer metadata
+- Commit message `Pending changes exported from your codespace`
+- Isn't verified
+- Touches `.vscode/extensions.json`, `aws-toolkit-vscode.code-workspace`, `packages/core/.vscode/extensions.json`
+- Has a typo in it's change to `.vscode/extensions.json`. Notice the double ": `"recommendations": ["amodio.tsl-problem-matcher""]`
+
+This PR would cause crashes because of this double ".
+It has merge commit hash `63c5b82eaabcf563a5138b95a5b862c5738eeddd`.
+It was closed without merging.
+
+### PR `#5123`
 
 PR #5123 is a PR from branch `patch-1` of repo `Frank97Tyler/aws-toolkit-vscode`.
 It received a review.
@@ -164,13 +191,12 @@ Looking at all events related to this PR we see:
 
 - PullRequestEvent opened by `Frank97Tyler` at `2024-06-08 18:02:51 UTC` with merge sha `4e0bd23f18de881abec626d4faf5abd4811415fc`
 - PullRequestReviewEvent created by `Frank97Tyler` at `2024-06-08 20:13:58 UTC`. This is a comment, not an approval. The comments says `> extension/marketplacez`.
-- PullRequestEvent closed MERGED by `justinmk3` at `2024-06-10 16:02:22 UTC` with merge sha `e20f40a44605d66c4b9916b998389140841b09c6`
-
-THIS PR WAS MERGED AT `2024-06-10 16:02:22 UTC`.
+- Merge commit created with hash `e20f40a44605d66c4b9916b998389140841b09c6`
+- PullRequestEvent closed by `justinmk3` at `2024-06-10 16:02:22 UTC` but was not merged.
 
 It has one commit:
 
-### PR `#5123` Commit `fba839b`
+#### `Commit `fba839b`
 
 PR `#5123` pushed commit `fba839b`.
 Looking at commit [`fba839b`](https://api.github.com/repos/aws/aws-toolkit-vscode/commits/fba839b188b6b221fff481cf0b2f3a465a348abf) and its [committed files](https://github.com/aws/aws-toolkit-vscode/commit/fba839b188b6b221fff481cf0b2f3a465a348abf) it:
@@ -188,25 +214,21 @@ It indeed adds a devcontainer with image `mcr.microsoft.com/devcontainers/univer
 This is an [official](https://mcr.microsoft.com/en-us/artifact/mar/devcontainers/universal/tags) Microsoft devcontainer.
 How bad this could be?
 
-## Workflows
+### Workflows
 
-# More
+I couldn't find any indication that these PRs triggered a GitHub workflow.
 
-## PR `#5120` Commit `93578ad` -- for completeness
+## More questions
 
-PR #5120 was closed by `justinmk3` without a merge. A dump of the results is [available here](/assets/json/2025-07-26-tracking-down-the-amazon-q-attacker-through-deleted-prs/pr_5120.json).
+- A key question remains -- how did the attacker compromise this token?
 
-PR `#5120` pushed commit `93578ad`.
-Looking at commit [`93578ad`](https://api.github.com/repos/aws/aws-toolkit-vscode/commits/93578ad6476e508891138699d87235a18c8045e4) and its [committed files](https://github.com/aws/aws-toolkit-vscode/commit/93578ad6476e508891138699d87235a18c8045e4) it:
-- Author name `Frank Tyler` email `160696700+Frank97Tyler@users.noreply.github.com` date `2024-06-08T17:49:26Z`
-- Exact same committer metadata
-- Commit message `Pending changes exported from your codespace`
-- Isn't verified
-- Touches `.vscode/extensions.json`, `aws-toolkit-vscode.code-workspace`, `packages/core/.vscode/extensions.json`
-- Has a typo in it's change to `.vscode/extensions.json`. Notice the double ": `"recommendations": ["amodio.tsl-problem-matcher""]`
+- Is `Frank97Tyler` related to `lkmanka58`?
 
-This PR would cause crashes because of this double ".
-It was closed without merging.
+- If not, why were their PRs, issues and user deleted?
+
+__
+
+# Appendix
 
 ## Queries
 
