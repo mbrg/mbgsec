@@ -1,6 +1,6 @@
 ---
-title: Reconstructing a timeline for Amazon Q prompt infection
-description: "404media reported a story about a hacker planting malicious instructions to wipe the computer into Amazon Q. But many questions are left unanswered. How did this happen?."
+title: Tracking Down the Amazon Q Attacker Through Deleted PRs
+description: "New details on the Amazon Q hack reveal an external since-deleted user successfully merged a PR. Initial access path remains uncertain."
 categories:
   - Blog
 tags:
@@ -10,8 +10,8 @@ tags:
   - AmazonQ
   - AI Agents
 header:
-  teaser: /assets/images/2025-07-24-constructing-a-timeline-for-amazon-q-prompt-infection/shut-it-down.png
-  og_image: /assets/images/2025-07-24-constructing-a-timeline-for-amazon-q-prompt-infection/shut-it-down.png
+  teaser: /assets/images/2025-07-26-tracking-down-the-amazon-q-attacker-through-deleted-prs/devcontainer.png
+  og_image: /assets/images/2025-07-26-tracking-down-the-amazon-q-attacker-through-deleted-prs/devcontainer.png
 ---
 
 [AWS security blog](https://aws.amazon.com/security/security-bulletins/aws-2025-016/) confirms the attacker gained access to a write token and abused it to inject the malicious prompt.
@@ -37,7 +37,7 @@ Since the user `lkmanka58` is now delete along with their repos, we can no long 
 Fortunately, I looked at it yesterday before it got deleted.
 On June 13th `lkmanka58` created a repo `lkmanka58/code_whisperer`  playing around with `aws-actions/configure-aws-credentials@v4` trying to assume role `arn:aws:iam::975050122078:role/code_whisperer`.
 
-![GH Archive reveals three push events to lkmanka58's now-deleted repository](/assets/images/2025-07-26/Gww-oRoWIAA-FJa.jpeg)
+![GH Archive reveals three push events to lkmanka58's now-deleted repository](/assets/images/2025-07-26-tracking-down-the-amazon-q-attacker-through-deleted-prs/Gww-oRoWIAA-FJa.jpeg)
 
 ## Deletions leave a noisy trace
 
@@ -50,11 +50,11 @@ Or is it?
 GH Archive remembers everything, including 125 PRs created in `aws/aws-toolkit-vscode` in June.
 See SQL query below (_"Get all `aws/aws-toolkit-vscode` PRs created in June"_).
 
-![125 PRs to `aws/aws-toolkit-vscode` created in June](/assets/images/2025-07-26/prs_in_june.png)
+![125 PRs to `aws/aws-toolkit-vscode` created in June](/assets/images/2025-07-26-tracking-down-the-amazon-q-attacker-through-deleted-prs/prs_in_june.png)
 
 Let's see which ones are still up on GitHub:
 
-![A couple of couple are missing!](/assets/images/2025-07-26/ping_prs.png)
+![A couple of couple are missing!](/assets/images/2025-07-26-tracking-down-the-amazon-q-attacker-through-deleted-prs/ping_prs.png)
 
 PRs [#5120](https://github.com/aws/aws-toolkit-vscode/pull/5120) and [#5123](https://github.com/aws/aws-toolkit-vscode/pull/5123) were deleted from github.
 
@@ -90,13 +90,13 @@ In June 8th (not late June like the attacker claimed in the 404media article).
 PR titles are very suspicious `Codespace fluffy space memory wrvrwwxwvrqrc9xwg` and `Create devcontainer.json`.
 Note `console.python/log` written into the body of the second PR.
 
-![Two deleted PRs](/assets/images/2025-07-26/prs_in_june.png)
+![Two deleted PRs](/assets/images/2025-07-26-tracking-down-the-amazon-q-attacker-through-deleted-prs/prs_in_june.png)
 
 ## Who is `Frank97Tyler`?
 
 `Frank97Tyler` user on GitHub has been deleted.
 
-![Deletes repository `Frank97Tyler/-.`](/assets/images/2025-07-26/Frank97Tyler_deleted.png)
+![Deletes repository `Frank97Tyler/-.`](/assets/images/2025-07-26-tracking-down-the-amazon-q-attacker-through-deleted-prs/Frank97Tyler_deleted.png)
 
 Using GH Archive we can see `Frank97Tyler`'s activity throughout 2024:
 
@@ -127,7 +127,7 @@ Here's our timeline:
 2024-06-09 11:23:00UTC | aws/aws-toolkit-vscode          | Commented on Issue \#5105 | @mtdowling 
 ```
 
-A full dump of the activity log for this query is [available here](/assets/json/Frank97Tyler_interaction_with_aws_vscode_toolkit.json).
+A full dump of the activity log for this query is [available here](/assets/json/2025-07-26-tracking-down-the-amazon-q-attacker-through-deleted-prs/Frank97Tyler_interaction_with_aws_vscode_toolkit.json).
 
 That are plenty of threads to pull.
 - PRs [#5120](https://github.com/aws/aws-toolkit-vscode/pull/5120), [#5123](https://github.com/aws/aws-toolkit-vscode/pull/5123)
@@ -147,7 +147,7 @@ Was this PR actually reviewed?
 Let's look at the commits first.
 Remember that these were the head commits for PRs created by `Frank97Tyler`.
 
-Full data about these events is [available here](/assets/json/Frank97Tyler_interaction_with_aws_vscode_toolkit.json).
+Full data about these events is [available here](/assets/json/2025-07-26-tracking-down-the-amazon-q-attacker-through-deleted-prs/Frank97Tyler_interaction_with_aws_vscode_toolkit.json).
 
 ## `Frank97Tyler` successfully merged a PR
 
@@ -156,15 +156,15 @@ It received a review.
 Could this be the PR that introduced the code-stealing code?
 
 See SQL query below (_"Get everything on PR #5123"_). 
-A dump of the results is [available here](/assets/json/pr_5123.json).
+A dump of the results is [available here](/assets/json/2025-07-26-tracking-down-the-amazon-q-attacker-through-deleted-prs/pr_5123.json).
 
 Looking at all events related to this PR we see:
 
-- PullRequestEvent opened by `Frank97Tyler` at `2024-06-08 18:02:51 UTC`
+- PullRequestEvent opened by `Frank97Tyler` at `2024-06-08 18:02:51 UTC` with merge sha `4e0bd23f18de881abec626d4faf5abd4811415fc`
 - PullRequestReviewEvent created by `Frank97Tyler` at `2024-06-08 20:13:58 UTC`. This is a comment, not an approval. The comments says `> extension/marketplacez`.
-- PullRequestEvent closed MERGED by `justinmk3` at `2024-06-10 16:02:22 UTC` with merge sha `4e0bd23f18de881abec626d4faf5abd4811415fc`
+- PullRequestEvent closed MERGED by `justinmk3` at `2024-06-10 16:02:22 UTC` with merge sha `e20f40a44605d66c4b9916b998389140841b09c6`
 
-THIS PR WAS MERGED!
+THIS PR WAS MERGED AT `2024-06-10 16:02:22 UTC`.
 
 It has one commit:
 
@@ -181,7 +181,7 @@ Looking at commit [`fba839b`](https://api.github.com/repos/aws/aws-toolkit-vscod
 Committer name and verification indicates that this commit was done via GitHub web.
 It indeed adds a devcontainer with image `mcr.microsoft.com/devcontainers/universal:2`.
 
-![.devcontainer/devcontainer.json created](/assets/images/2025-07-26/devcontainer.png)
+![.devcontainer/devcontainer.json created](/assets/images/2025-07-26-tracking-down-the-amazon-q-attacker-through-deleted-prs/devcontainer.png)
 
 This is an [official](https://mcr.microsoft.com/en-us/artifact/mar/devcontainers/universal/tags) Microsoft devcontainer.
 How bad this could be?
@@ -192,7 +192,7 @@ How bad this could be?
 
 ## PR `#5120` Commit `93578ad` -- for completeness
 
-PR #5120 was closed by `justinmk3` without a merge. A dump of the results is [available here](/assets/json/pr_5120.json).
+PR #5120 was closed by `justinmk3` without a merge. A dump of the results is [available here](/assets/json/2025-07-26-tracking-down-the-amazon-q-attacker-through-deleted-prs/pr_5120.json).
 
 PR `#5120` pushed commit `93578ad`.
 Looking at commit [`93578ad`](https://api.github.com/repos/aws/aws-toolkit-vscode/commits/93578ad6476e508891138699d87235a18c8045e4) and its [committed files](https://github.com/aws/aws-toolkit-vscode/commit/93578ad6476e508891138699d87235a18c8045e4) it:
@@ -205,8 +205,6 @@ Looking at commit [`93578ad`](https://api.github.com/repos/aws/aws-toolkit-vscod
 
 This PR would cause crashes because of this double ".
 It was closed without merging.
-
-TODO DID IT TRIGGER
 
 ## Queries
 
