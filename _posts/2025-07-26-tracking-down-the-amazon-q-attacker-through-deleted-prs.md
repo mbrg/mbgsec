@@ -206,6 +206,11 @@ Looking at commit [`fba839b`](https://api.github.com/repos/aws/aws-toolkit-vscod
 - Is verified
 - Touches `.devcontainer/devcontainer.json`
 
+Looking at the push event to `Frank97Tyler/aws-toolkit-vscode` with the same commit ID reveals different metadata:
+- Author name : `Frank Williamson` author email `9f622e692bcb8a66f37da56c69079e084d30ace5@outlook.com` date `2024-06-08 17:56:13 UTC`.
+
+Either this is some particular behavior by GitHub, or we've got ourself a weird-looking email.
+
 Committer name and verification indicates that this commit was done via GitHub web.
 It indeed adds a devcontainer with image `mcr.microsoft.com/devcontainers/universal:2`.
 
@@ -228,6 +233,12 @@ But a whole lot of threads to pull for the curious.
 - Is `Frank97Tyler` related to `lkmanka58`?
 
 - If not, why were their PRs, issues and user deleted?
+
+### Threads to pull
+
+- `Frank97Tyler` GitHub user
+- `Frank Williamson`, ``Frank Tyler` names
+- `frank.williamson97@outlook.com`, `9f622e692bcb8a66f37da56c69079e084d30ace5@outlook.com` email addresses
 
 __
 
