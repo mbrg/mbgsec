@@ -40,10 +40,10 @@ On June 13th `lkmanka58` created a repo `lkmanka58/code_whisperer` playing aroun
 
 ![GH Archive reveals three push events to lkmanka58's now-deleted repository](/assets/images/2025-07-26-tracking-down-the-amazon-q-attacker-through-deleted-prs/Gww-oRoWIAA-FJa.jpeg)
 
-This led me down this goose chase.
+**This led me down this goose chase.
 Before you go on, please know that this thread doesn't end with any new and meaningful information.
 Just more open threads.
-I'm sharing this hoping that others can join in pulling on them.
+I'm sharing this hoping that others can join in pulling on them.**
 
 ___
 
