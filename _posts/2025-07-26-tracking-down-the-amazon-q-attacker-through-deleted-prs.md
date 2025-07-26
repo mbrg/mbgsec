@@ -1,6 +1,6 @@
 ---
-title: Failed Attempt To Track Down the Amazon Q Attacker Through Deleted PRs
-description: "New details on the Amazon Q hack reveal an external since-deleted user that tried to merged a couple of PRs. Initial access path remains uncertain."
+title: Research Journal: Failed Attempt To Track Down the Amazon Q Attacker Through Deleted PRs
+description: "This is more research journal than a well formatted blog. It's a hunt for details on the Amazon Q hack. It reveal an external since-deleted user that tried to merged a couple of PRs. Initial access path remains uncertain."
 categories:
   - Blog
 tags:
@@ -24,7 +24,7 @@ That confirms our [suspicion](https://x.com/mbrg0/status/1949001616230649904).
 
 A key question remains -- how did the attacker compromise this token?
 
-## Evidence are getting deleted, fast
+## Evidence are getting deleted fast
 
 [Our earlier findings](https://www.mbgsec.com/posts/2025-07-24-constructing-a-timeline-for-amazon-q-prompt-infection/) were based on analysis of GH Archive and the Github user `lkmanka58`. 
 GH Archive gives us commit SHAs.
@@ -46,6 +46,13 @@ Just more open threads.
 I'm sharing this hoping that others can join in pulling on them.**
 
 ___
+
+<details>
+<summary> I discover a new GitHub user `Frank97Tyler` who had suspicious interactions with the aws repo in early June.
+The user and all of their interactions were deleted.
+I go on a scavenger hunt.
+It results in an auto-generated outlook email, indication of use of codespaces, and no indirection of compromise.
+</summary>
 
 ## Deletions leave a noisy trace
 
@@ -243,7 +250,11 @@ But a whole lot of threads to pull for the curious.
 - `Frank Williamson`, `Frank Tyler` names
 - `frank.williamson97@outlook.com`, `9f622e692bcb8a66f37da56c69079e084d30ace5@outlook.com` email addresses
 
+</details>
 __
+
+<details>
+<summary> I share my GH Archive queries. I record the now-deleted issues create by `Frank97Tyler`.</summary>
 
 # Appendix
 
@@ -363,3 +374,5 @@ aws.console.
 #### Body
 
 \## Problem\r\n\r\n## Steps to reproduce the issue\r\n\r\n\u003c!--\r\n1. Go to \u0027...\u0027\r\n2. Click on \u0027...\u0027\r\n3. See error\r\n--\u003e\r\n\r\n## Expected behavior\r\n\r\n## System details (run `AWS: About` and/or `Amazon Q: About`)\r\n\r\n-   OS:\r\n-   Visual Studio Code version:\r\n-   AWS Toolkit version:\r\n-   Amazon Q version:\r\n
+
+</details>
