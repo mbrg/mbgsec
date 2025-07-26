@@ -252,7 +252,7 @@ But a whole lot of threads to pull for the curious.
 
 </details>
 
-__
+___
 
 <details>
 <summary> I share my GH Archive queries. I record the now-deleted issues create by `Frank97Tyler`.</summary>
