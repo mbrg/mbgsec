@@ -15,6 +15,7 @@ layout: archive
 {% assign entries_layout = page.entries_layout | default: 'list' %}
 <div class="entries-{{ entries_layout }}">
   {% for post in posts %}
+    {% unless post.hidden %}
     <article class="archive__item">
       {% if post.title %}
         <h2 class="archive__item-title no_toc" itemprop="headline">
@@ -43,6 +44,7 @@ layout: archive
         </p>
       {% endif %}
     </article>
+    {% endunless %}
   {% endfor %}
 </div>
 
