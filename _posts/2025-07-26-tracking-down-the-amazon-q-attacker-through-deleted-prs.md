@@ -40,4 +40,4 @@ On June 13th `lkmanka58` created a repo `lkmanka58/code_whisperer` playing aroun
 
 ![GH Archive reveals three push events to lkmanka58's now-deleted repository](/assets/images/2025-07-26-tracking-down-the-amazon-q-attacker-through-deleted-prs/Gww-oRoWIAA-FJa.jpeg)
 
-Sadly there are no deleted PRs in June 2025.
+Sadly there were no deleted PRs in June 2025.
