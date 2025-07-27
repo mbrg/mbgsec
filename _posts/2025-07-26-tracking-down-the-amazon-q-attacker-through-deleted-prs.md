@@ -1,6 +1,6 @@
 ---
-title: Tracking Down the Amazon Q Attacker Through Deleted PRs Reveals Suspicious Activity But No Smoking Gun
-description: "This is more research journal than a well formatted blog. It's a hunt for details on the Amazon Q hack. It reveal an external since-deleted user that tried to merged a couple of PRs. Initial access path remains uncertain."
+title: Someone Is Cleaning Up Evidence
+description: "The attacker deletes their user. Luckily we still have GH Archive."
 categories:
   - Blog
 tags:
@@ -40,18 +40,4 @@ On June 13th `lkmanka58` created a repo `lkmanka58/code_whisperer` playing aroun
 
 ![GH Archive reveals three push events to lkmanka58's now-deleted repository](/assets/images/2025-07-26-tracking-down-the-amazon-q-attacker-through-deleted-prs/Gww-oRoWIAA-FJa.jpeg)
 
-**This led me down this goose chase.
-Before you go on, please know that this thread doesn't end with any new and meaningful information.
-Just more open threads.
-I'm sharing this hoping that others can join in pulling on them.**
-
-___
-
-In the post below:
-
-I discover a new GitHub user `Frank97Tyler` who had suspicious interactions with the aws repo in early June. 
-The user and all of their interactions were deleted. 
-I go on a scavenger hunt. 
-It results in an auto-generated outlook email, indication of use of codespaces, and no indirection of compromise.
-
-[Activity Analysis of Deleted PRs To AWS VSCode Toolkit](https://www.mbgsec.com/posts/2025-07-26-activity_analysis_for_deleted_prs_to_aws_vscode_toolkit).
+Sadly there are no deleted PRs in June 2025.
