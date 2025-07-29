@@ -93,7 +93,7 @@ This happens only with `env.STAGE=prod` to avoid detection on tests.
 
 [Comparing](https://github.com/aws/aws-toolkit-vscode/compare/amazonq/v1.83.0...amazonq/v1.84.0) `v1.84.0` to `v1.83.0` shows that indeed malicious commit `678851b` is included.
 
-Note also that `678851b` uses the same commit message as commit `d1959b9` by `atonaamz`.
+Note also that `678851b` uses the same commit message and author date as commit `d1959b9` by `atonaamz`. [More on this](https://x.com/mbrg0/status/1948771285107876312).
 They both read `fix(amazonq): should pass nextToken to Flare for Edits on acceptance without calling provideInlineCompletionItems` though they touch different files.
 
 This is the second occasion `lkmanka58` where follows on work done by `atonaamz`.
