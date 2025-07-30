@@ -1,0 +1,457 @@
+[{
+  "pr_number": "7414",
+  "action": "opened",
+  "title": "feat: adding back addedCharacterCount and deletedCharacterCount for N…",
+  "author": "atonaamz",
+  "pr_created_at": "2025-06-02T16:49:33Z",
+  "event_time": "2025-06-02 16:49:34.000000 UTC",
+  "pr_url": "https://github.com/aws/aws-toolkit-vscode/pull/7414"
+}, {
+  "pr_number": "7415",
+  "action": "opened",
+  "title": "fix(lsp): handle ShowDocumentParams.external",
+  "author": "justinmk3",
+  "pr_created_at": "2025-06-02T18:55:33Z",
+  "event_time": "2025-06-02 18:55:35.000000 UTC",
+  "pr_url": "https://github.com/aws/aws-toolkit-vscode/pull/7415"
+}, {
+  "pr_number": "7417",
+  "action": "opened",
+  "title": "fix(amazonq): Revert \"feat(amazonq): add the mcp field to client capa…",
+  "author": "yueny2020",
+  "pr_created_at": "2025-06-02T22:32:56Z",
+  "event_time": "2025-06-02 22:32:57.000000 UTC",
+  "pr_url": "https://github.com/aws/aws-toolkit-vscode/pull/7417"
+}, {
+  "pr_number": "7420",
+  "action": "opened",
+  "title": "fix(amazonq): minor text update",
+  "author": "dhasani23",
+  "pr_created_at": "2025-06-03T19:25:52Z",
+  "event_time": "2025-06-03 19:25:54.000000 UTC",
+  "pr_url": "https://github.com/aws/aws-toolkit-vscode/pull/7420"
+}, {
+  "pr_number": "7421",
+  "action": "opened",
+  "title": "feat(amazonq): Bundle LSP with the extension as fallback.  ",
+  "author": "leigaol",
+  "pr_created_at": "2025-06-03T22:06:05Z",
+  "event_time": "2025-06-03 22:06:07.000000 UTC",
+  "pr_url": "https://github.com/aws/aws-toolkit-vscode/pull/7421"
+}, {
+  "pr_number": "7424",
+  "action": "opened",
+  "title": "telemetry(amazonq): bumping up telemetry version to 1.0.323",
+  "author": "laileni-aws",
+  "pr_created_at": "2025-06-04T16:19:25Z",
+  "event_time": "2025-06-04 16:19:26.000000 UTC",
+  "pr_url": "https://github.com/aws/aws-toolkit-vscode/pull/7424"
+}, {
+  "pr_number": "7426",
+  "action": "opened",
+  "title": "fix(amazonq): Add proxy configuration support with SSL Cert Validation",
+  "author": "tsmithsz",
+  "pr_created_at": "2025-06-04T22:58:50Z",
+  "event_time": "2025-06-04 22:58:52.000000 UTC",
+  "pr_url": "https://github.com/aws/aws-toolkit-vscode/pull/7426"
+}, {
+  "pr_number": "7429",
+  "action": "opened",
+  "title": "test",
+  "author": "Will-ShaoHua",
+  "pr_created_at": "2025-06-06T13:24:22Z",
+  "event_time": "2025-06-06 13:24:23.000000 UTC",
+  "pr_url": "https://github.com/aws/aws-toolkit-vscode/pull/7429"
+}, {
+  "pr_number": "7451",
+  "action": "opened",
+  "title": "feat: add MCP server support",
+  "author": "chungjac",
+  "pr_created_at": "2025-06-09T20:31:17Z",
+  "event_time": "2025-06-09 20:31:19.000000 UTC",
+  "pr_url": "https://github.com/aws/aws-toolkit-vscode/pull/7451"
+}, {
+  "pr_number": "7453",
+  "action": "opened",
+  "title": "feat(lambda): Add handler for upcoming Lambda URI",
+  "author": "rhamilt",
+  "pr_created_at": "2025-06-09T20:50:16Z",
+  "event_time": "2025-06-09 20:50:17.000000 UTC",
+  "pr_url": "https://github.com/aws/aws-toolkit-vscode/pull/7453"
+}, {
+  "pr_number": "7455",
+  "action": "opened",
+  "title": "bug: ISSUE-7452: Fix EC2 Remove Workspace Connect for Any OS",
+  "author": "arminanton",
+  "pr_created_at": "2025-06-09T22:03:24Z",
+  "event_time": "2025-06-09 22:03:25.000000 UTC",
+  "pr_url": "https://github.com/aws/aws-toolkit-vscode/pull/7455"
+}, {
+  "pr_number": "7456",
+  "action": "opened",
+  "title": "merge master into feature/flare-mega ",
+  "author": "leigaol",
+  "pr_created_at": "2025-06-09T23:19:28Z",
+  "event_time": "2025-06-09 23:19:30.000000 UTC",
+  "pr_url": "https://github.com/aws/aws-toolkit-vscode/pull/7456"
+}, {
+  "pr_number": "7458",
+  "action": "opened",
+  "title": "chore: revert to \"feat(amazonq): add MCP server support (#7451)\"",
+  "author": "ashishrp-aws",
+  "pr_created_at": "2025-06-10T05:36:58Z",
+  "event_time": "2025-06-10 05:37:00.000000 UTC",
+  "pr_url": "https://github.com/aws/aws-toolkit-vscode/pull/7458"
+}, {
+  "pr_number": "7461",
+  "action": "opened",
+  "title": "fix(amazonq): clean up git history to avoid conflicts",
+  "author": "leigaol",
+  "pr_created_at": "2025-06-10T18:12:06Z",
+  "event_time": "2025-06-10 18:12:08.000000 UTC",
+  "pr_url": "https://github.com/aws/aws-toolkit-vscode/pull/7461"
+}, {
+  "pr_number": "7467",
+  "action": "opened",
+  "title": "fix(paidtier): don\u0027t show \"Manage Subscription\" for IdC user",
+  "author": "justinmk3",
+  "pr_created_at": "2025-06-11T16:47:38Z",
+  "event_time": "2025-06-11 16:47:40.000000 UTC",
+  "pr_url": "https://github.com/aws/aws-toolkit-vscode/pull/7467"
+}, {
+  "pr_number": "7468",
+  "action": "opened",
+  "title": "feat(amazonq): add MCP server support",
+  "author": "chungjac",
+  "pr_created_at": "2025-06-11T17:04:47Z",
+  "event_time": "2025-06-11 17:04:49.000000 UTC",
+  "pr_url": "https://github.com/aws/aws-toolkit-vscode/pull/7468"
+}, {
+  "pr_number": "7472",
+  "action": "opened",
+  "title": "test(amazonq): test build",
+  "author": "Will-ShaoHua",
+  "pr_created_at": "2025-06-11T19:14:06Z",
+  "event_time": "2025-06-11 19:14:08.000000 UTC",
+  "pr_url": "https://github.com/aws/aws-toolkit-vscode/pull/7472"
+}, {
+  "pr_number": "7474",
+  "action": "opened",
+  "title": "merge master to feature/flare-mega",
+  "author": "leigaol",
+  "pr_created_at": "2025-06-11T21:24:10Z",
+  "event_time": "2025-06-11 21:24:12.000000 UTC",
+  "pr_url": "https://github.com/aws/aws-toolkit-vscode/pull/7474"
+}, {
+  "pr_number": "7475",
+  "action": "opened",
+  "title": "fix(amazonq): fix git merge caused compile failure",
+  "author": "leigaol",
+  "pr_created_at": "2025-06-11T21:44:24Z",
+  "event_time": "2025-06-11 21:44:26.000000 UTC",
+  "pr_url": "https://github.com/aws/aws-toolkit-vscode/pull/7475"
+}, {
+  "pr_number": "7488",
+  "action": "opened",
+  "title": "feat: enable model selection from serverCapabilities",
+  "author": "ctlai95",
+  "pr_created_at": "2025-06-13T22:29:33Z",
+  "event_time": "2025-06-13 22:29:35.000000 UTC",
+  "pr_url": "https://github.com/aws/aws-toolkit-vscode/pull/7488"
+}, {
+  "pr_number": "7489",
+  "action": "opened",
+  "title": "fix(amazonq): only show lines of code",
+  "author": "dhasani23",
+  "pr_created_at": "2025-06-13T22:51:59Z",
+  "event_time": "2025-06-13 22:52:00.000000 UTC",
+  "pr_url": "https://github.com/aws/aws-toolkit-vscode/pull/7489"
+}, {
+  "pr_number": "7494",
+  "action": "opened",
+  "title": "List all CFN resources that are not DELETE_COMPLETE",
+  "author": "liramon1",
+  "pr_created_at": "2025-06-16T18:09:40Z",
+  "event_time": "2025-06-16 18:09:42.000000 UTC",
+  "pr_url": "https://github.com/aws/aws-toolkit-vscode/pull/7494"
+}, {
+  "pr_number": "7496",
+  "action": "opened",
+  "title": "feat(auth): add IAM credentials LSP requests to AuthUtils and auth2",
+  "author": "liramon1",
+  "pr_created_at": "2025-06-16T20:12:17Z",
+  "event_time": "2025-06-16 20:12:19.000000 UTC",
+  "pr_url": "https://github.com/aws/aws-toolkit-vscode/pull/7496"
+}, {
+  "pr_number": "7499",
+  "action": "opened",
+  "title": "Merge master into feature/flare-iam",
+  "author": "aws-toolkit-automation",
+  "pr_created_at": "2025-06-16T23:12:36Z",
+  "event_time": "2025-06-16 23:12:38.000000 UTC",
+  "pr_url": "https://github.com/aws/aws-toolkit-vscode/pull/7499"
+}, {
+  "pr_number": "7500",
+  "action": "opened",
+  "title": "Merge master into feature/flare-inline",
+  "author": "aws-toolkit-automation",
+  "pr_created_at": "2025-06-16T23:13:21Z",
+  "event_time": "2025-06-16 23:13:23.000000 UTC",
+  "pr_url": "https://github.com/aws/aws-toolkit-vscode/pull/7500"
+}, {
+  "pr_number": "7507",
+  "action": "opened",
+  "title": "feat(auth): add IAM credentials LSP requests to AuthUtils and auth2",
+  "author": "liramon1",
+  "pr_created_at": "2025-06-17T19:08:52Z",
+  "event_time": "2025-06-17 19:08:54.000000 UTC",
+  "pr_url": "https://github.com/aws/aws-toolkit-vscode/pull/7507"
+}, {
+  "pr_number": "7511",
+  "action": "opened",
+  "title": "fix: increase memory limit for amazon q",
+  "author": "yueny2020",
+  "pr_created_at": "2025-06-17T21:22:19Z",
+  "event_time": "2025-06-17 21:22:21.000000 UTC",
+  "pr_url": "https://github.com/aws/aws-toolkit-vscode/pull/7511"
+}, {
+  "pr_number": "7512",
+  "action": "opened",
+  "title": "fix(amazonq): improve typeahead experience",
+  "author": "leigaol",
+  "pr_created_at": "2025-06-17T22:17:06Z",
+  "event_time": "2025-06-17 22:17:07.000000 UTC",
+  "pr_url": "https://github.com/aws/aws-toolkit-vscode/pull/7512"
+}, {
+  "pr_number": "7514",
+  "action": "opened",
+  "title": "docs(amazonq): add changelog for pinned context",
+  "author": "avi-alpert",
+  "pr_created_at": "2025-06-18T00:46:00Z",
+  "event_time": "2025-06-18 00:46:02.000000 UTC",
+  "pr_url": "https://github.com/aws/aws-toolkit-vscode/pull/7514"
+}, {
+  "pr_number": "7520",
+  "action": "opened",
+  "title": "fix(amazonq): chatOptions are missing in q chat",
+  "author": "laileni-aws",
+  "pr_created_at": "2025-06-18T04:45:00Z",
+  "event_time": "2025-06-18 04:45:02.000000 UTC",
+  "pr_url": "https://github.com/aws/aws-toolkit-vscode/pull/7520"
+}, {
+  "pr_number": "7524",
+  "action": "opened",
+  "title": "Improved the local LSP setup documentation with more information",
+  "author": "abhraina",
+  "pr_created_at": "2025-06-18T22:08:05Z",
+  "event_time": "2025-06-18 22:08:06.000000 UTC",
+  "pr_url": "https://github.com/aws/aws-toolkit-vscode/pull/7524"
+}, {
+  "pr_number": "7525",
+  "action": "opened",
+  "title": "fix(accessanalyzer): update cfn-policy-validator and tf-policy-validator versions",
+  "author": "hbendapu",
+  "pr_created_at": "2025-06-18T22:24:14Z",
+  "event_time": "2025-06-18 22:24:16.000000 UTC",
+  "pr_url": "https://github.com/aws/aws-toolkit-vscode/pull/7525"
+}, {
+  "pr_number": "7526",
+  "action": "opened",
+  "title": "feat(stepfunctions): add provider file for new entry point and webview",
+  "author": "l0minous",
+  "pr_created_at": "2025-06-18T22:38:46Z",
+  "event_time": "2025-06-18 22:38:47.000000 UTC",
+  "pr_url": "https://github.com/aws/aws-toolkit-vscode/pull/7526"
+}, {
+  "pr_number": "7531",
+  "action": "opened",
+  "title": "fix: Q opens the history tabs automatically after plugin launch",
+  "author": "laileni-aws",
+  "pr_created_at": "2025-06-20T00:47:03Z",
+  "event_time": "2025-06-20 00:47:05.000000 UTC",
+  "pr_url": "https://github.com/aws/aws-toolkit-vscode/pull/7531"
+}, {
+  "pr_number": "7533",
+  "action": "opened",
+  "title": "feat(lsp): support select images as context",
+  "author": "yzhangok",
+  "pr_created_at": "2025-06-20T06:53:30Z",
+  "event_time": "2025-06-20 06:53:32.000000 UTC",
+  "pr_url": "https://github.com/aws/aws-toolkit-vscode/pull/7533"
+}, {
+  "pr_number": "7535",
+  "action": "opened",
+  "title": "feat(amazonq): Support receiving findings message from flare",
+  "author": "BlakeLazarine",
+  "pr_created_at": "2025-06-20T21:45:14Z",
+  "event_time": "2025-06-20 21:45:16.000000 UTC",
+  "pr_url": "https://github.com/aws/aws-toolkit-vscode/pull/7535"
+}, {
+  "pr_number": "7544",
+  "action": "opened",
+  "title": "fix(amazonq): migrate process.env proxy setting handling to proxyUtil.ts",
+  "author": "samgst-amazon",
+  "pr_created_at": "2025-06-23T21:28:05Z",
+  "event_time": "2025-06-23 21:28:07.000000 UTC",
+  "pr_url": "https://github.com/aws/aws-toolkit-vscode/pull/7544"
+}, {
+  "pr_number": "7548",
+  "action": "opened",
+  "title": "fix(amazonq): fix for amazon q app initialization failure on sagemaker",
+  "author": "ashishrp-aws",
+  "pr_created_at": "2025-06-24T17:19:25Z",
+  "event_time": "2025-06-24 17:19:27.000000 UTC",
+  "pr_url": "https://github.com/aws/aws-toolkit-vscode/pull/7548"
+}, {
+  "pr_number": "7551",
+  "action": "opened",
+  "title": "fix(amazonq): fix for amazon q app initialization failure on sagemaker",
+  "author": "ashishrp-aws",
+  "pr_created_at": "2025-06-25T00:18:53Z",
+  "event_time": "2025-06-25 00:18:54.000000 UTC",
+  "pr_url": "https://github.com/aws/aws-toolkit-vscode/pull/7551"
+}, {
+  "pr_number": "7553",
+  "action": "opened",
+  "title": "config(amazonq): temporarily disable cursor update manager before ove…",
+  "author": "Will-ShaoHua",
+  "pr_created_at": "2025-06-25T02:32:45Z",
+  "event_time": "2025-06-25 02:32:46.000000 UTC",
+  "pr_url": "https://github.com/aws/aws-toolkit-vscode/pull/7553"
+}, {
+  "pr_number": "7554",
+  "action": "opened",
+  "title": "fix(amazonq): minor text update",
+  "author": "dhasani23",
+  "pr_created_at": "2025-06-25T17:27:46Z",
+  "event_time": "2025-06-25 17:27:48.000000 UTC",
+  "pr_url": "https://github.com/aws/aws-toolkit-vscode/pull/7554"
+}, {
+  "pr_number": "7556",
+  "action": "opened",
+  "title": "fix(amazonq): Re-enable experimental proxy support",
+  "author": "tsmithsz",
+  "pr_created_at": "2025-06-25T22:03:55Z",
+  "event_time": "2025-06-25 22:03:56.000000 UTC",
+  "pr_url": "https://github.com/aws/aws-toolkit-vscode/pull/7556"
+}, {
+  "pr_number": "7558",
+  "action": "opened",
+  "title": "fix(amazonq): Remove setSystemCertificates from proxyUtil",
+  "author": "tsmithsz",
+  "pr_created_at": "2025-06-25T23:01:11Z",
+  "event_time": "2025-06-25 23:01:13.000000 UTC",
+  "pr_url": "https://github.com/aws/aws-toolkit-vscode/pull/7558"
+}, {
+  "pr_number": "7559",
+  "action": "opened",
+  "title": "fix: connect chat history to VSCode workspace file",
+  "author": "jngyuamz",
+  "pr_created_at": "2025-06-25T23:27:35Z",
+  "event_time": "2025-06-25 23:27:37.000000 UTC",
+  "pr_url": "https://github.com/aws/aws-toolkit-vscode/pull/7559"
+}, {
+  "pr_number": "7560",
+  "action": "opened",
+  "title": "refactor(stepfunctions): migrate to sdkv3",
+  "author": "zelzhou",
+  "pr_created_at": "2025-06-25T23:34:00Z",
+  "event_time": "2025-06-25 23:34:02.000000 UTC",
+  "pr_url": "https://github.com/aws/aws-toolkit-vscode/pull/7560"
+}, {
+  "pr_number": "7561",
+  "action": "opened",
+  "title": "feat: send ide diagnostics for inline completions",
+  "author": "liumofei-amazon",
+  "pr_created_at": "2025-06-26T00:15:41Z",
+  "event_time": "2025-06-26 00:15:42.000000 UTC",
+  "pr_url": "https://github.com/aws/aws-toolkit-vscode/pull/7561"
+}, {
+  "pr_number": "7564",
+  "action": "opened",
+  "title": "Create devcontainer.json",
+  "author": "cokybit",
+  "pr_created_at": "2025-06-26T17:12:54Z",
+  "event_time": "2025-06-26 17:12:55.000000 UTC",
+  "pr_url": "https://github.com/aws/aws-toolkit-vscode/pull/7564"
+}, {
+  "pr_number": "7570",
+  "action": "opened",
+  "title": "fix(amazonq): delete dev purpose debug.html",
+  "author": "Will-ShaoHua",
+  "pr_created_at": "2025-06-27T19:51:08Z",
+  "event_time": "2025-06-27 19:51:10.000000 UTC",
+  "pr_url": "https://github.com/aws/aws-toolkit-vscode/pull/7570"
+}, {
+  "pr_number": "7571",
+  "action": "opened",
+  "title": "fix(amazonq): typo amazonq.editSuggestionActive -\u003e aws.amazonq.editSuggestionActive",
+  "author": "Will-ShaoHua",
+  "pr_created_at": "2025-06-27T19:59:09Z",
+  "event_time": "2025-06-27 19:59:11.000000 UTC",
+  "pr_url": "https://github.com/aws/aws-toolkit-vscode/pull/7571"
+}, {
+  "pr_number": "7573",
+  "action": "opened",
+  "title": "fix: incorrect onDidSaveTextDocument notification method name",
+  "author": "jngyuamz",
+  "pr_created_at": "2025-06-27T21:53:22Z",
+  "event_time": "2025-06-27 21:53:24.000000 UTC",
+  "pr_url": "https://github.com/aws/aws-toolkit-vscode/pull/7573"
+}, {
+  "pr_number": "7574",
+  "action": "opened",
+  "title": "Nep merge",
+  "author": "Will-ShaoHua",
+  "pr_created_at": "2025-06-27T22:17:09Z",
+  "event_time": "2025-06-27 22:17:10.000000 UTC",
+  "pr_url": "https://github.com/aws/aws-toolkit-vscode/pull/7574"
+}, {
+  "pr_number": "7577",
+  "action": "opened",
+  "title": "build(amazonq): sync with mainline",
+  "author": "Will-ShaoHua",
+  "pr_created_at": "2025-06-28T01:00:31Z",
+  "event_time": "2025-06-28 01:00:33.000000 UTC",
+  "pr_url": "https://github.com/aws/aws-toolkit-vscode/pull/7577"
+}, {
+  "pr_number": "7578",
+  "action": "opened",
+  "title": "feat(stepfunctions): Enable execution details page",
+  "author": "l0minous",
+  "pr_created_at": "2025-06-28T22:55:02Z",
+  "event_time": "2025-06-28 22:55:03.000000 UTC",
+  "pr_url": "https://github.com/aws/aws-toolkit-vscode/pull/7578"
+}, {
+  "pr_number": "7581",
+  "action": "opened",
+  "title": "fix(amazonq): revert unneeded changes",
+  "author": "Will-ShaoHua",
+  "pr_created_at": "2025-06-30T07:26:10Z",
+  "event_time": "2025-06-30 07:26:13.000000 UTC",
+  "pr_url": "https://github.com/aws/aws-toolkit-vscode/pull/7581"
+}, {
+  "pr_number": "7585",
+  "action": "opened",
+  "title": "fix(amazonq): update cursor tracking based on autotrigger setting",
+  "author": "floralph",
+  "pr_created_at": "2025-06-30T18:52:51Z",
+  "event_time": "2025-06-30 18:52:53.000000 UTC",
+  "pr_url": "https://github.com/aws/aws-toolkit-vscode/pull/7585"
+}, {
+  "pr_number": "7587",
+  "action": "opened",
+  "title": "fix(amazonq): remove the depedency of the CDN js script.",
+  "author": "grl-wang",
+  "pr_created_at": "2025-06-30T22:58:57Z",
+  "event_time": "2025-06-30 22:58:59.000000 UTC",
+  "pr_url": "https://github.com/aws/aws-toolkit-vscode/pull/7587"
+}, {
+  "pr_number": "7588",
+  "action": "opened",
+  "title": "Merging Master into feature/stepfunction-execution",
+  "author": "l0minous",
+  "pr_created_at": "2025-06-30T22:59:40Z",
+  "event_time": "2025-06-30 22:59:42.000000 UTC",
+  "pr_url": "https://github.com/aws/aws-toolkit-vscode/pull/7588"
+}]
