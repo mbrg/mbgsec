@@ -9,6 +9,9 @@ tags:
   - AI
   - Red Teaming
   - OpenAI
+header:
+  teaser: /assets/images/2025-05-12-oai-security-conf-sam-altman/8B3E9522-5A28-4F34-AF36-0FC4463CB955_1_105_c.jpeg
+  og_image: /assets/images/2025-05-12-oai-security-conf-sam-altman/8B3E9522-5A28-4F34-AF36-0FC4463CB955_1_105_c.jpeg
 ---
 
 This is part 3 on OpenAI's Security Research Conference. Here are [part 1](https://www.mbgsec.com/posts/2025-05-04-oai-security-conf-vibe/) and [part 2](https://www.mbgsec.com/posts/2025-05-08-oai-security-conf-automated-vuln-discovery/).
@@ -38,7 +41,4 @@ These are my recollections after more than 48 hours and 24 hours in an airplane,
 
 **Answer:** People should not deploy agents that can make real harm. He believes that some of the research they are working on could solve prompt injection 100% of the time.
 
-**Answers to questions I cannot recall:** 
-
-- OSS
-- GPT4
+![Sam Altman thinking about a question; Matt Knight preparing to fire the next one](https://mbgsec.com/assets/images/2025-05-12-oai-security-conf-sam-altman/8B3E9522-5A28-4F34-AF36-0FC4463CB955_1_105_c.jpeg)

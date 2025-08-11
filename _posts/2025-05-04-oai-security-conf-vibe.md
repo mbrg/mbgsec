@@ -9,6 +9,9 @@ tags:
   - AI
   - Red Teaming
   - OpenAI
+header:
+  teaser: /assets/images/2025-05-04-oai-security-conf-vibe/9741B7CF-7828-4E6C-AA0A-5A3644E1173D_1_105_c.jpeg
+  og_image: /assets/images/2025-05-04-oai-security-conf-vibe/9741B7CF-7828-4E6C-AA0A-5A3644E1173D_1_105_c.jpeg
 ---
 
 The conversation around AI is always about vibes.

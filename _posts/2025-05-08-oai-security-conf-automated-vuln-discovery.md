@@ -9,6 +9,9 @@ tags:
   - AI
   - Red Teaming
   - OpenAI
+header:
+  teaser: /assets/images/2025-05-08-oai-security-conf-automated-vuln-discovery/Screenshot_2025-05-05_at_11.23.56.png
+  og_image: /assets/images/2025-05-08-oai-security-conf-automated-vuln-discovery/Screenshot_2025-05-05_at_11.23.56.png
 ---
 
 This is part 2 on OpenAI's Security Research Conference. [Here is part 1](https://mbgsec.com/posts/2025-05-04-oai-security-conf-vibe).
