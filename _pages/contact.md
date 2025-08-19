@@ -10,7 +10,7 @@ My name is Michael Bargury.
 I'm a hacker, builder and a cybersecurity practitioner. 
 Spent the last decade breaking apart cloud, no-code apps and AI agents.
 
-I'm the Co-founder and CTO at [Zenity](https://www.zenity.io) -- securing AI agents everywhere, contributor at [MITRE Atlas](https://atlas.mitre.org), project lead at [OWASP LCNC Top 10](https://owasp.org/www-project-top-10-low-code-no-code-security-risks/), and columnist at [DarkReading](https://www.darkreading.com/author/michael-bargury).
+I'm the Co-founder and CTO at [Zenity](https://www.zenity.io) -- securing AI agents everywhere, contributor at [MITRE Atlas](https://atlas.mitre.org), project co-lead at OWASP [AIVSS](http://aivss.owasp.org) and [OWASP LCNC Top 10](https://owasp.org/www-project-top-10-low-code-no-code-security-risks/), and columnist at [DarkReading](https://www.darkreading.com/author/michael-bargury).
 
 Check out the [projects](/wip) I'm currently working on, my previous and upcoming [talks](/talks), come in and say hi!
 
