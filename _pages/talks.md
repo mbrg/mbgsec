@@ -11,13 +11,13 @@ layout: splash
 | Date | Conference | Talk | Resources |
 | - | - | - | - |
 | 2025-11-13 | DefCamp 2025 | 0click Enterprise compromise - thank you, AI | |
-| 2025-08-09 | What Hackers Yearn 2025 | 0click Enterprise compromise - thank you, AI | |
 
 
 ## Previous Talks
 
 | Date | Conference | Talk | Resources |
 | - | - | - | - |
+| 2025-08-09 | What Hackers Yearn 2025 | 0click Enterprise compromise - thank you, AI (delivered by Inbar Raz) | [<i class="fab fa-fw fa-slideshare" title="Slides"></i>](../assets/pdfs/2025-08-06_BHUSA2025_AI-Enterprise-Compromise-0click-Exploit-Methods.pdf) |
 | 2025-08-06 | BlackHat USA 2025 | AI Enterprise Compromise - 0click Exploit Methods (ft Tamir Ishay Sharbat) | [<i class="fa fa-calendar" title="Conference schedule"></i>](https://www.blackhat.com/us-25/briefings/schedule/index.html#ai-enterprise-compromise---0click-exploit-methods-46442)[<i class="fab fa-fw fa-slideshare" title="Slides"></i>](../assets/pdfs/2025-08-06_BHUSA2025_AI-Enterprise-Compromise-0click-Exploit-Methods.pdf) |
 | 2025-04-30 | RSAC 2025 | Scaling AppSec With an SDLC for Citizen Development (ft Ryan McDonald) | [<i class="fa fa-calendar" title="Conference schedule"></i>](https://path.rsaconference.com/flow/rsac/us25/FullAgenda/page/catalog)[<i class="fab fa-fw fa-slideshare" title="Slides"></i>](../assets/pdfs/2025-04-30_Scaling_AppSec_With_an_SDLC_for_Citizen_Development.pdf)[<i class="fab fa-fw fa-youtube" title="Recording"></i>](https://m.youtube.com/watch?v=ge9q6WIDzso) |
 | 2025-04-29 | RSAC 2025 | Your Copilot is My Insider | [<i class="fa fa-calendar" title="Conference schedule"></i>](https://path.rsaconference.com/flow/rsac/us25/FullAgenda/page/catalog)[<i class="fab fa-fw fa-slideshare" title="Slides"></i>](../assets/pdfs/2025-04-29_Your_Copilot_Is_My_Insider.pdf)[<i class="fab fa-fw fa-youtube" title="Recording"></i>](https://m.youtube.com/watch?v=MpM5CYGs3BU) |
