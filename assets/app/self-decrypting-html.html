@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Encryptor - Create Self-Decrypting Pages</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            min-height: 100vh;
+            padding: 2rem;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 0.6s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        h1 {
+            text-align: center;
+            color: #2c5364;
+            margin-bottom: 0.5rem;
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, #0f2027, #2c5364);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+        
+        .warning {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            color: #856404;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+        
+        .section {
+            margin-bottom: 2rem;
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 15px;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .section-title {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #2c5364;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .step-number {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        
+        .file-input-wrapper {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            width: 100%;
+        }
+        
+        .file-input-label {
+            display: block;
+            padding: 1rem;
+            background: white;
+            border: 2px dashed #667eea;
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            color: #667eea;
+            font-weight: 500;
+        }
+        
+        .file-input-label:hover {
+            background: rgba(102, 126, 234, 0.05);
+            border-color: #764ba2;
+        }
+        
+        input[type="file"] {
+            position: absolute;
+            left: -9999px;
+        }
+        
+        textarea {
+            width: 100%;
+            min-height: 200px;
+            padding: 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            resize: vertical;
+            transition: all 0.3s;
+        }
+        
+        textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        input[type="password"] {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        
+        input[type="password"]:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        button {
+            flex: 1;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .primary-btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+        
+        .primary-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+        
+        .secondary-btn {
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+        
+        .secondary-btn:hover {
+            background: rgba(102, 126, 234, 0.05);
+        }
+        
+        .success-msg {
+            display: none;
+            padding: 1rem;
+            background: #d4edda;
+            color: #155724;
+            border-radius: 10px;
+            margin-top: 1rem;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .error-msg {
+            display: none;
+            padding: 1rem;
+            background: #f8d7da;
+            color: #721c24;
+            border-radius: 10px;
+            margin-top: 1rem;
+            border: 1px solid #f5c6cb;
+        }
+        
+        .or-divider {
+            text-align: center;
+            margin: 1.5rem 0;
+            color: #999;
+            position: relative;
+        }
+        
+        .or-divider::before,
+        .or-divider::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 45%;
+            height: 1px;
+            background: #ddd;
+        }
+        
+        .or-divider::before { left: 0; }
+        .or-divider::after { right: 0; }
+        
+        .file-info {
+            margin-top: 1rem;
+            padding: 0.8rem;
+            background: rgba(102, 126, 234, 0.1);
+            border-radius: 8px;
+            color: #667eea;
+            display: none;
+        }
+        
+        .output-section {
+            display: none;
+        }
+        
+        pre {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 1.5rem;
+            border-radius: 10px;
+            overflow-x: auto;
+            font-size: 14px;
+            line-height: 1.5;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔒 HTML Encryptor</h1>
+        <p class="subtitle">Create self-decrypting HTML pages with password protection</p>
+        
+        <div class="warning">
+            ⚠️ <strong>Security Note:</strong> This creates a client-side encrypted HTML file. While the content is encrypted with AES, the encrypted data is embedded in the HTML source. For highly sensitive content, consider server-side solutions.
+        </div>
+        
+        <!-- Step 1: Input HTML -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="step-number">1</span>
+                Input your HTML content
+            </h2>
+            
+            <div class="file-input-wrapper">
+                <label for="htmlFile" class="file-input-label">
+                    📁 Click to upload HTML file or drag & drop
+                </label>
+                <input type="file" id="htmlFile" accept=".html,.htm">
+            </div>
+            
+            <div class="or-divider">OR</div>
+            
+            <textarea id="htmlContent" placeholder="Paste your HTML content here..."></textarea>
+            
+            <div id="fileInfo" class="file-info"></div>
+        </div>
+        
+        <!-- Step 2: Set Password -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="step-number">2</span>
+                Set encryption password
+            </h2>
+            <input type="password" id="password" placeholder="Enter a strong password">
+            <p style="margin-top: 0.5rem; color: #666; font-size: 0.9rem;">
+                💡 Use a strong password with letters, numbers, and symbols. This password cannot be recovered!
+            </p>
+        </div>
+        
+        <!-- Generate Button -->
+        <div class="button-group">
+            <button class="primary-btn" onclick="generateEncryptedHTML()">
+                🔐 Generate Encrypted HTML
+            </button>
+            <button class="secondary-btn" onclick="resetForm()">
+                🔄 Reset
+            </button>
+        </div>
+        
+        <div id="successMsg" class="success-msg">
+            ✅ Encrypted HTML generated successfully! Click "Download" to save your file.
+        </div>
+        
+        <div id="errorMsg" class="error-msg"></div>
+        
+        <!-- Output Section -->
+        <div id="outputSection" class="output-section section">
+            <h2 class="section-title">
+                <span class="step-number">✓</span>
+                Generated encrypted HTML
+            </h2>
+            <pre id="outputCode"></pre>
+            <div class="button-group">
+                <button class="primary-btn" onclick="downloadHTML()">
+                    💾 Download Encrypted HTML
+                </button>
+                <button class="secondary-btn" onclick="copyToClipboard()">
+                    📋 Copy to Clipboard
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        let generatedHTML = '';
+        
+        // Handle file upload
+        document.getElementById('htmlFile').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('htmlContent').value = e.target.result;
+                    document.getElementById('fileInfo').style.display = 'block';
+                    document.getElementById('fileInfo').innerHTML = `📄 Loaded: ${file.name} (${(file.size / 1024).toFixed(2)} KB)`;
+                };
+                reader.readAsText(file);
+            }
+        });
+        
+        // Drag and drop support
+        const fileLabel = document.querySelector('.file-input-label');
+        
+        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+            fileLabel.addEventListener(eventName, preventDefaults, false);
+        });
+        
+        function preventDefaults(e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+        
+        ['dragenter', 'dragover'].forEach(eventName => {
+            fileLabel.addEventListener(eventName, () => {
+                fileLabel.style.background = 'rgba(102, 126, 234, 0.1)';
+            }, false);
+        });
+        
+        ['dragleave', 'drop'].forEach(eventName => {
+            fileLabel.addEventListener(eventName, () => {
+                fileLabel.style.background = 'white';
+            }, false);
+        });
+        
+        fileLabel.addEventListener('drop', function(e) {
+            const dt = e.dataTransfer;
+            const files = dt.files;
+            if (files.length > 0) {
+                document.getElementById('htmlFile').files = files;
+                const event = new Event('change', { bubbles: true });
+                document.getElementById('htmlFile').dispatchEvent(event);
+            }
+        });
+        
+        function extractTitle(html) {
+            const match = html.match(/<title[^>]*>(.*?)<\/title>/i);
+            return match ? match[1] : 'Protected Content';
+        }
+        
+        function obfuscateString(str) {
+            // Split string into chunks and encode in a way that's not immediately visible
+            const chunks = [];
+            for (let i = 0; i < str.length; i += 100) {
+                chunks.push(str.slice(i, i + 100));
+            }
+            return chunks;
+        }
+        
+        function generateEncryptedHTML() {
+            const htmlContent = document.getElementById('htmlContent').value;
+            const password = document.getElementById('password').value;
+            
+            // Validation
+            if (!htmlContent) {
+                showError('Please provide HTML content to encrypt');
+                return;
+            }
+            
+            if (!password) {
+                showError('Please enter a password');
+                return;
+            }
+            
+            if (password.length < 8) {
+                showError('Password should be at least 8 characters long for security');
+                return;
+            }
+            
+            // Extract title from HTML
+            const pageTitle = extractTitle(htmlContent);
+            
+            // Encrypt the HTML content
+            const encrypted = CryptoJS.AES.encrypt(htmlContent, password).toString();
+            
+            // Obfuscate the encrypted content
+            const chunks = obfuscateString(encrypted);
+            const chunksCode = chunks.map((chunk, i) => `c[${i}]="${chunk}"`).join(';');
+            
+            // Generate the self-decrypting HTML with obfuscated content
+            generatedHTML = `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>${pageTitle}</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"><\/script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #1a1a2e;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        body::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, #1a1a2e, #16213e, #0f3460, #16213e, #1a1a2e);
+            animation: gradient 15s ease infinite;
+        }
+        @keyframes gradient {
+            0%, 100% { transform: translate(-50%, -50%) rotate(0deg); }
+            50% { transform: translate(-50%, -50%) rotate(180deg); }
+        }
+        #x {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+            width: 90%;
+            max-width: 400px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            z-index: 1;
+        }
+        #x h2 {
+            color: #fff;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+        #x input {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            font-size: 16px;
+            transition: all 0.3s;
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+        #x input::placeholder { color: rgba(255, 255, 255, 0.5); }
+        #x input:focus {
+            outline: none;
+            border-color: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.08);
+        }
+        #x button {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        #x button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
+        }
+        #e {
+            color: #ff6b6b;
+            font-size: 14px;
+            margin-top: 15px;
+            text-align: center;
+            display: none;
+            animation: fadeIn 0.3s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .shake { animation: shake 0.5s; }
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+        }
+        .lock {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 2rem;
+            position: relative;
+        }
+        .lock::before {
+            content: '🔐';
+            font-size: 3rem;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+<body>
+    <div id="x">
+        <div class="lock"></div>
+        <h2>AUTHENTICATION REQUIRED</h2>
+        <input type="password" id="p" placeholder="Enter password" autofocus>
+        <button onclick="d()">DECRYPT</button>
+        <div id="e">Access denied. Invalid password.</div>
+    </div>
+    <script>
+        var c=[];${chunksCode};
+        var ec=c.join('');
+        function d(){
+            var p=document.getElementById('p').value;
+            if(!p){document.getElementById('e').textContent='Password required';document.getElementById('e').style.display='block';return;}
+            try{
+                var dc=CryptoJS.AES.decrypt(ec,p).toString(CryptoJS.enc.Utf8);
+                if(!dc)throw new Error();
+                var s=document.open();s.write(dc);s.close();
+            }catch(e){
+                document.getElementById('e').style.display='block';
+                document.getElementById('x').classList.add('shake');
+                setTimeout(()=>document.getElementById('x').classList.remove('shake'),500);
+                document.getElementById('p').value='';
+                document.getElementById('p').focus();
+            }
+        }
+        document.getElementById('p').addEventListener('keypress',function(e){if(e.key==='Enter')d();});
+    <\/script>
+</body>
+</html>`;
+            
+            // Show the output
+            document.getElementById('outputCode').textContent = generatedHTML;
+            document.getElementById('outputSection').style.display = 'block';
+            document.getElementById('successMsg').style.display = 'block';
+            document.getElementById('errorMsg').style.display = 'none';
+            
+            // Scroll to output
+            document.getElementById('outputSection').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function downloadHTML() {
+            if (!generatedHTML) {
+                showError('No encrypted HTML to download');
+                return;
+            }
+            
+            const blob = new Blob([generatedHTML], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'encrypted_page.html';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+        
+        function copyToClipboard() {
+            if (!generatedHTML) {
+                showError('No encrypted HTML to copy');
+                return;
+            }
+            
+            navigator.clipboard.writeText(generatedHTML).then(() => {
+                const btn = event.target;
+                const originalText = btn.textContent;
+                btn.textContent = '✅ Copied!';
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                }, 2000);
+            }).catch(() => {
+                showError('Failed to copy to clipboard');
+            });
+        }
+        
+        function resetForm() {
+            document.getElementById('htmlContent').value = '';
+            document.getElementById('password').value = '';
+            document.getElementById('htmlFile').value = '';
+            document.getElementById('fileInfo').style.display = 'none';
+            document.getElementById('outputSection').style.display = 'none';
+            document.getElementById('successMsg').style.display = 'none';
+            document.getElementById('errorMsg').style.display = 'none';
+            generatedHTML = '';
+        }
+        
+        function showError(message) {
+            const errorDiv = document.getElementById('errorMsg');
+            errorDiv.textContent = '❌ ' + message;
+            errorDiv.style.display = 'block';
+            document.getElementById('successMsg').style.display = 'none';
+            
+            setTimeout(() => {
+                errorDiv.style.display = 'none';
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
