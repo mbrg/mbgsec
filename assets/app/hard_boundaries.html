@@ -3,14 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Agent Taint Analysis - Interactive Demo</title>
+    <title>AI Agent Hard Boundaries - Interactive Demo</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+<div class="demo-controls">
+                        <button class="scenario-btn active" data-scenario="external-attacker">
+                            🏴‍☠️ External Attacker
+                        </button>
+                        <button class="scenario-btn" data-scenario="malicious-insider">
+                            🕵️ Malicious Insider
+                        </button>
+                        <button class="scenario-btn" data-scenario="ai-confusion">
+                            🤖 AI Confusion
+                        </button>
+                        <button class="scenario-btn" data-scenario="business-usual">
+                            ✅ Business as Usual
+                        </button>
+                        <button class="scenario-btn" data-scenario="override-demo">
+                            🔐 Override Controls
+                        </button>
+                    </div>
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 100%);
@@ -604,7 +620,7 @@
     <div class="container">
         <header>
             <h1>AI Agent Taint Analysis</h1>
-            <div class="subtitle">Hard Boundaries for Deterministic Security</div>
+            <div class="subtitle">Hard Boundaries for AI Agents. You Cannot Get There From Here.</div>
         </header>
 
         <div class="nav-tabs">
