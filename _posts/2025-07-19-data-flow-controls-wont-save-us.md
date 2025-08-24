@@ -50,7 +50,7 @@ Preventing XSS and SQLi.
 SQLi is solved as a technical problem (the operational problem remains, of course).
 
 **With software you can create hard boundaries. 
-You CANNOT get from here to there.**
+You CANNOT get there from here.**
 
 Hard boundaries [cannot be applied](https://www.darkreading.com/cyber-risk/are-100-security-guarantees-possible-) anywhere–they require full knowledge of the environment. 
 They shine when you go all-in on one ecosystem. 
