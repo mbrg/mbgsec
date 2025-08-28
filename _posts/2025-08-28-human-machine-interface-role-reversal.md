@@ -35,7 +35,7 @@ You can try to hide complexity away, to provide templates, to achieve the holy "
 But then you sell to a F50 and discover 20 quirky regulations of regional community banks vs. national banks, or dual-regulated entities.
 Besides, your product expands.
 You end up trying to cater your turn-key solution to hundreds of different diverging views.
-So they average user who's got one or two use cases in mind must filter out the noise.
+So the median user who's got one or two use cases in mind must filter out the noise.
 
 Wiz is still highly regarded, but their UX is far from simple. 
 Just look at that side menu.
