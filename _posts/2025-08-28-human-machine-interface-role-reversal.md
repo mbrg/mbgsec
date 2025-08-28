@@ -1,6 +1,6 @@
 ---
 title: How Should AI Ask for Our Input?
-description: "How should we reason over machines taking over"
+description: "How should we reason about machines taking over"
 categories:
   - Blog
 tags:
