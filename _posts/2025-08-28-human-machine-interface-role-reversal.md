@@ -71,7 +71,7 @@ To manage a complex process.
 AI doesn't need any of that.
 It just eats up raw, messy, beautiful data.
 
-What interface do humans needs when AI performs the analysis, handles the process, manages the program, and asks us for direction?
+What interface do humans need when AI performs the analysis, handles the process, manages the program, and asks us for direction?
 
 We might need an interface to review AI's work.
 But there's a big difference between an interface for creation and for review.
