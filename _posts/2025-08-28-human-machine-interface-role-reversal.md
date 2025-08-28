@@ -56,6 +56,11 @@ You've never used 90% of the views? Hide them away.
 Let every user see only what *they* care about and nothing more.
 **Let them vibe-code *your* UX.**
 
+Can we expect customers to *know* what they want and to vibe-code correctly?
+I don't think so, but we have to?
+TikTok figures out who your are based on profiling of our attention, a very natural signal.
+We can build AI agents that infer what users need even without them asking (p.s. remember privacy?).
+
 Maybe we could finally have a great user experience that stays great *for you* even as products evolve for the needs of others.
 
 But.
