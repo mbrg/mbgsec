@@ -78,7 +78,8 @@ But there's a big difference between an interface for creation and one for revie
 Think code review software (PRs) vs. IDEs.
 
 I asked this question to a very smart friend.
-He thought about it for a while, and then reversed the roles--what interface does AI need to ask the human for input?
+He thought about it for a while.
+Then he reversed the roles and asked: what interface does AI need to ask the human for input?
 
 We're no longer designing user experiences. 
 We're designing a machine-human interface.
