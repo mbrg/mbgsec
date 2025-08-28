@@ -37,7 +37,7 @@ Besides, your product expands.
 You end up trying to cater your turn-key solution to hundreds of different diverging views.
 So the median user who's got one or two use cases in mind must filter out the noise.
 
-Wiz is still highly regarded, but their UX is far from simple. 
+Wiz is still highly regarded, but their UX is far from simple nowadays. 
 Just look at that side menu.
 Enterprise UX is complex because enterprises are complex and cybersecurity is complex.
 
