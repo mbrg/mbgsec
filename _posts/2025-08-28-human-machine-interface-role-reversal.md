@@ -30,7 +30,7 @@ Graphs are part of the common formula now (ty Wiz).
 
 The issue isn't modern look-and-feel.
 You can find the common formula applied with the latest hottest UI framework if you wish, just go to your nearest startup.
-It's that cybersecurity is a [complex system](https://en.wikipedia.org/wiki/Complex_system).
+It's that cybersecurity is [complex](https://en.wikipedia.org/wiki/Complex_system).
 You can try to hide complexity away, to provide templates, to achieve the holy "turn-key solution".
 But then you sell to a F50 and discover 20 quirky regulations of regional community banks vs. national banks, or dual-regulated entities.
 Besides, your product expands.
