@@ -1,6 +1,6 @@
 ---
 title: How Should AI Ask for Our Input?
-description: "Exploring how what does user experience even mean where AI performs the work and queries humans for direction rather than the other way around"
+description: "How should we reason over machines taking over"
 categories:
   - Blog
 tags:
@@ -17,17 +17,17 @@ Enterprise systems provide a terrible user experience.
 That's [common knowledge](https://en.wikipedia.org/wiki/Common_knowledge).
 Check out one of the flash keynotes about the latest flagship AI product by big incumbents.
 Look behind the fancy agent, what do you see?
-You'll likely find a form-based system with strong early 2000s vibe.
+You'll likely find a form-based system with strong early 2000s vibes.
 But don't laugh, yet.
 We're no better.
 
 ![alt text](image.png)
-There's a *common formula* for cybersecurity user experience.
+There's a **common formula** for cybersecurity user experience.
 A nice useless dashboard as eye-candy, an inventory, list(s) of risks, knobs and whistles for configs.
 When Wiz came out a few years ago breaking the formula with their graph-centric UI, people welcomed the change. 
 Wiz popularized graphs and toxic combinations of risk.
-They came our with a simple and intuitive UI.
-Graphs are part of the common formula now.
+They came out with a simple and intuitive UI.
+Graphs are part of the common formula now (ty Wiz).
 
 The issue isn't modern look-and-feel.
 You can find the common formula applied with the latest hottest UI framework if you wish, just go to a startup.
@@ -47,11 +47,12 @@ But we've got AI now.
 <blockquote class="twitter-tweet" data-media-max-width="560"><p lang="en" dir="ltr">I&#39;m building a notes app that builds itself<br><br>now everyone gets their dream notes app<br>will open source soon <a href="https://t.co/nf3Ntk9Q5H">pic.twitter.com/nf3Ntk9Q5H</a></p>&mdash; Omer Vexler (@omer_vexler) <a href="https://twitter.com/omer_vexler/status/1936177164086317486?ref_src=twsrc%5Etfw">June 20, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 Not those pesky right-panel copilots.
-I'm talking AI agents.
+Look at what Omer Vexler [does here](https://twitter.com/omer_vexler/status/1936177164086317486).
+Developed is interweaved with usage.
 If devs can use Claude Code to vibe-code their product's UX, let's go all in, and let customers do it directly.
 
 Want a new report? Here you go.
-Table missing a column? Please.
+Table missing a column? Not anymore.
 You've never used 90% of the views? Hide them away.
 Let every user see only what *they* care about and nothing more.
 **Let them vibe-code *your* UX.**
