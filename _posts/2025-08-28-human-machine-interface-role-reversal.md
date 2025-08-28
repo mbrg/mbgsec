@@ -46,8 +46,8 @@ But we've got AI now.
 <blockquote class="twitter-tweet" data-media-max-width="560"><p lang="en" dir="ltr">I&#39;m building a notes app that builds itself<br><br>now everyone gets their dream notes app<br>will open source soon <a href="https://t.co/nf3Ntk9Q5H">pic.twitter.com/nf3Ntk9Q5H</a></p>&mdash; Omer Vexler (@omer_vexler) <a href="https://twitter.com/omer_vexler/status/1936177164086317486?ref_src=twsrc%5Etfw">June 20, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 Not those pesky right-panel copilots.
-Look at what Omer Vexler [does here](https://twitter.com/omer_vexler/status/1936177164086317486).
-Developed is interweaved with usage.
+What Omer Vexler is doing [above](https://twitter.com/omer_vexler/status/1936177164086317486) is very cool.
+He interweaves usage with development.
 If devs can use Claude Code to vibe-code their product's UX, let's go all in, and let customers do it directly.
 
 Want a new report? Here you go.
