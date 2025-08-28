@@ -59,7 +59,7 @@ Let every user see only what *they* care about and nothing more.
 Can we expect customers to *know* what they want and to vibe-code correctly?
 I don't think so, but do we have to?
 TikTok figures out who your are based on profiling your attention, via a very natural signal of you scrolling thru videos.
-We can build AI agents that infer what users need even without them asking (p.s. remember privacy?).
+We can build AI agents that infer what users need right now even without them asking (p.s. remember privacy?).
 
 Maybe we could finally have a great user experience that stays great *for you* even as products evolve for the needs of others.
 
