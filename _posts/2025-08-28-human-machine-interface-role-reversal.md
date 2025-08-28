@@ -21,7 +21,6 @@ You'll likely find a form-based system with strong early 2000s vibes.
 But don't laugh, yet.
 We're no better.
 
-![alt text](image.png)
 There's a **common formula** for cybersecurity user experience.
 A nice useless dashboard as eye-candy, an inventory, list(s) of risks, knobs and whistles for configs.
 When Wiz came out a few years ago breaking the formula with their graph-centric UI, people welcomed the change. 
