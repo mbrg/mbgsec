@@ -23,13 +23,13 @@ We're no better.
 
 There's a common formula for cybersecurity user experience.
 A nice useless dashboard as eye-candy, an inventory, list(s) of risks, knobs and whistles for configs.
-When Wiz came out a few years ago breaking the formula with their graph-centric UI, people welcomed the change. 
+When Wiz came out a few years ago breaking the formula with their graph-centric UX, people welcomed the change. 
 Wiz popularized graphs and toxic combinations of risk.
-They came out with a simple and intuitive UI.
+They came out with a simple and intuitive UX.
 Graphs are part of the common formula now (ty Wiz).
 
 The issue isn't modern look-and-feel.
-You can find the common formula applied with the latest hottest UI framework if you wish, just go to a startup.
+You can find the common formula applied with the latest hottest UI framework if you wish, just go to your nearest startup.
 It's that cybersecurity is a [complex system](https://en.wikipedia.org/wiki/Complex_system).
 You can try to hide complexity away, to provide templates, to achieve the holy "turn-key solution".
 But then you sell to a F50 and discover 20 quirky regulations of regional community banks vs. national banks, or dual-regulated entities.
