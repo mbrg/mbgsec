@@ -74,7 +74,7 @@ It just eats up raw, messy, beautiful data.
 What interface do humans need when AI performs the analysis, handles the process, manages the program, and asks us for direction?
 
 We might need an interface to review AI's work.
-But there's a big difference between an interface for creation and for review.
+But there's a big difference between an interface for creation and one for review.
 Think code review software (PRs) vs. IDEs.
 
 I asked this question to a very smart friend.
