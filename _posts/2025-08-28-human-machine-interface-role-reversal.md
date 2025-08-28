@@ -59,10 +59,9 @@ Let every user see only what *they* care about and nothing more.
 Maybe we could finally have a great user experience that stays great *for you* even as products evolve for the needs of others.
 
 But.
-
 Do we even need a user experience anymore?
 
-The reason why we have dashboards and lists and graphs is for us humans to reason of complex data.
+The reason why we have dashboards and lists and graphs is for us humans to reason about complex data.
 To manage a complex process.
 AI doesn't need any of that.
 It just eats up raw, messy, beautiful data.
@@ -71,7 +70,7 @@ What interface do humans needs when AI performs the analysis, handles the proces
 
 We might need an interface to review AI's work.
 But there's a big difference between an interface for creation and for review.
-Think code review software (Github PRs) vs. IDEs.
+Think code review software (PRs) vs. IDEs.
 
 I asked this question to a very smart friend.
 He thought about it for a while, and then reversed the roles--what interface does AI need to ask the human for input?
