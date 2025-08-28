@@ -56,7 +56,7 @@ You've never used 90% of the views? Hide them away.
 Let every user see only what *they* care about and nothing more.
 **Let them vibe-code *your* UX.**
 
-Maybe we could finally have a great user experience that stays great *for you*.
+Maybe we could finally have a great user experience that stays great *for you* even as products evolve for the needs of others.
 
 But.
 
