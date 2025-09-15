@@ -149,9 +149,6 @@
       .light {
         font-weight: 300;
       }
-      .masthead {
-        z-index: 0;
-      }
       .profile-img-container {
         margin-top: 40px;
         margin-bottom: 2px;
@@ -362,6 +359,14 @@
 
       .toast-icon {
         font-size: 1.2rem;
+      }
+      /* Fix for Minimal Mistakes mobile navigation */
+      .greedy-nav .hidden-links {
+        z-index: 20 !important;
+        position: absolute !important;
+      }
+      .greedy-nav .hidden-links:after {
+        z-index: 19 !important;
       }
     </style>
     <script>
