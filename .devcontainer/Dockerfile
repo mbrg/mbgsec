@@ -9,4 +9,4 @@ WORKDIR /workspace
 # Expose default Jekyll port
 EXPOSE 4000
 
-CMD ["bundle", "exec", "jekyll", "serve", "--host", "0.0.0.0"]
+CMD ["bundle", "exec", "jekyll", "serve", "--host", "0.0.0.0", "--incremental"]
