@@ -1,0 +1,8 @@
+{
+  "name": "Jekyll Dev Container",
+  "dockerFile": "Dockerfile",
+  "settings": {},
+  "extensions": ["ms-vscode-remote.remote-containers"],
+  "forwardPorts": [4000],
+  "postCreateCommand": "bundle install"
+}
