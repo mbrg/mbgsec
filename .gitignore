@@ -9,3 +9,6 @@ _site
 
 # Node.js dependencies
 node_modules/
+
+vendor/
+.bundle/

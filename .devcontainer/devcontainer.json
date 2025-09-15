@@ -4,5 +4,6 @@
   "settings": {},
   "extensions": ["ms-vscode-remote.remote-containers"],
   "forwardPorts": [4000],
-  "postCreateCommand": "bundle install"
+  "postCreateCommand": "bundle config set --local path 'vendor/bundle' && bundle install",
+  "remoteUser": "vscode"
 }
