@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 gem "jekyll", "~> 3.10.0"
-gem "github-pages", "~> 232", group: :jekyll_plugins
+gem "kramdown-parser-gfm"
 
 gem "tzinfo-data"
 gem "wdm", "~> 0.1.0" if Gem.win_platform?
@@ -15,6 +15,7 @@ gem "rexml", "~> 3.3.9"
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do
+  gem "jekyll-remote-theme"
   gem "jekyll-paginate"
   gem "jekyll-sitemap"
   gem "jekyll-gist"
