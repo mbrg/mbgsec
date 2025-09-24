@@ -37,12 +37,6 @@ search: true
 # Build settings
 markdown: kramdown
 remote_theme: mmistakes/minimal-mistakes
-encoding: utf-8
-
-# Sass/SCSS for utf8 encoding support in cloudflare
-sass:
-  sass_dir: _sass
-  style: compressed
 
 # Outputting
 permalink: /:categories/:title/
