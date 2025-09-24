@@ -38,6 +38,12 @@ search: true
 markdown: kramdown
 remote_theme: mmistakes/minimal-mistakes
 encoding: utf-8
+
+# Sass/SCSS for utf8 encoding support in cloudflare
+sass:
+  sass_dir: _sass
+  style: compressed
+
 # Outputting
 permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
