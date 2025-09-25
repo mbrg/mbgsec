@@ -10,7 +10,11 @@ layout: splash
 
 | Date | Conference | Talk | Resources |
 | - | - | - | - |
-| 2025-11-13 | DefCamp 2025 | 0click Enterprise compromise - thank you, AI | |
+| 2025-11-13 | DefCamp 2025 | 0click Enterprise compromise - thank you, AI (delivered by Inbar Raz) | |
+| 2025-11-07 | OWASP Global AppSec US 2025 | OWASP Citizen Development Project (delivered by Kayla Underkoffler) | |
+| 2025-11-07 | OWASP Global AppSec US 2025 | OWASP AIVSS Project (delivered by Ken Huang) | |
+| 2025-11-07 | OWASP Global AppSec US 2025 | 0click Enterprise compromise - thank you, AI (delivered with Tamir Oshay Sharbat) | |
+| 2025-10-22 | Ekoparty 2025 | 0click Enterprise compromise - thank you, AI (delivered by Inbar Raz) | |
 
 
 ## Previous Talks
