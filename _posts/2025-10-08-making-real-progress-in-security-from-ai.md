@@ -30,6 +30,8 @@ But for now, here are my links and references:
 - [https://brave.com/blog/comet-prompt-injection/](Brave showing a prompt injection attack on Perplexity Comet that breaks CORS)
 - [https://www.perplexity.ai/hub/blog/agents-or-bots-making-sense-of-ai-on-the-open-web](Perpelexity defending its stance that agents should not respect browser rules)
 - [https://www.mbgsec.com/posts/2025-08-08-enterprise-ai-compromise-0click-exploit-methods-sneak-peek/](Our 0click persistent attack on ChatGPT and other flagship AIs)
+- [https://labs.zenity.io/p/links-materials-15-ways-break-copilot](Breaking Copilot Studio to change scope between SharePoint sites, BlackHat USA 2024)
+- [https://labs.zenity.io/p/links-materials-living-off-microsoft-copilot](Hijacking Microsoft 365 Copilot by sending an email or an external Teams message, BlackHat USA 2024)
 - [https://embracethered.com/blog/posts/2024/chatgpt-macos-app-persistent-data-exfiltration/](Johann's original discovery of AI memory as a persistence mechanism)
 - [https://www.makeuseof.com/ai-browser-for-privacy-brave-leo/](Brave's Leo AI intentionally nerfs its capabilities to stay secure)
 - [https://embracethered.com/blog/posts/2023/chatgpt-webpilot-data-exfil-via-markdown-injection/](Johann's original discovery of markdown images as a data exfiltration vector)
