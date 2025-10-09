@@ -20,7 +20,7 @@ But for now, here are:
 
 My [slides](../assets/pdfs/2025-10-08_ActuallyMakingProgressInSecurityFromAI.pdf).
 
-My links and references:
+Links and references:
 
 - [Anthropic applying mechanistic interpretability to a frontier model for the first time](https://x.com/jack_w_lindsey/status/1972732219795153126)
 - [OpenAI's early attempts at "solving" prompt injection"](https://openai.com/index/the-instruction-hierarchy/)
