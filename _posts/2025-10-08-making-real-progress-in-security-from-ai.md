@@ -17,8 +17,7 @@ I gave a talk at the [AI Agent Security Summit by Zenity Labs](https://zenity.io
 I'll post a blog version of that talk here shortly.
 
 But for now, here are:
-
-My [slides](../assets/pdfs/2025-10-08_ActuallyMakingProgressInSecurityFromAI.pdf).
+My [slides](https://www.mbgsec.com/assets/pdfs/2025-10-08_ActuallyMakingProgressInSecurityFromAI.pdf).
 
 Links and references:
 
