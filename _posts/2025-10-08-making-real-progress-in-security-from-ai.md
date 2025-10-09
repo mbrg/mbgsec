@@ -13,7 +13,7 @@ header:
   og_image: /assets/images/2025-10-08-making-real-progress-in-security-from-ai/AIAgentSummit.png
 ---
 
-I gave a talk at the [AI Agent Security Summit](https://zenity.io/resources/events/ai-agent-security-summit-2025) on October 8th in San Francisco.
+I gave a talk at the [AI Agent Security Summit by Zenity Labs](https://zenity.io/resources/events/ai-agent-security-summit-2025) on October 8th in San Francisco.
 I'll post a blog version of that talk here shortly.
 
 But for now, here are:
