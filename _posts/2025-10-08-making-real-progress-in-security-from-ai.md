@@ -16,7 +16,11 @@ header:
 I gave a talk at the [AI Agent Security Summit](https://zenity.io/resources/events/ai-agent-security-summit-2025) on October 8th in San Francisco.
 I'll post a blog version of that talk here shortly.
 
-But for now, here are my links and references:
+But for now, here are:
+
+My [slides](../assets/pdfs/2025-10-08_ActuallyMakingProgressInSecurityFromAI.pdf).
+
+My links and references:
 
 - [https://x.com/jack_w_lindsey/status/1972732219795153126](Anthropic applying mechanistic interpretability to a frontier model for the first time)
 - [https://openai.com/index/the-instruction-hierarchy/](OpenAI's early attempts at "solving" prompt injection")
