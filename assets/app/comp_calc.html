@@ -53,6 +53,7 @@
         padding: 48px 0 40px;
         border-bottom: 1px solid var(--border);
         margin-bottom: 32px;
+        position: relative;
     }
 
     header h1 {
@@ -70,6 +71,114 @@
     header p {
         color: var(--text-secondary);
         font-size: 0.9rem;
+    }
+
+    /* Share Button */
+    .share-btn {
+        position: absolute;
+        top: 24px;
+        right: 0;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 18px;
+        background: linear-gradient(135deg, var(--corp-primary) 0%, var(--startup-primary) 100%);
+        border: none;
+        border-radius: var(--radius-md);
+        color: white;
+        font-family: 'Space Mono', monospace;
+        font-size: 0.85rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+    }
+
+    .share-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+    }
+
+    .share-btn:active {
+        transform: translateY(0);
+    }
+
+    .share-btn svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    /* Toast Notification */
+    .toast {
+        position: fixed;
+        bottom: 24px;
+        left: 50%;
+        transform: translateX(-50%) translateY(100px);
+        background: var(--bg-card);
+        border: 1px solid var(--startup-primary);
+        border-radius: var(--radius-md);
+        padding: 14px 24px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 0.9rem;
+        color: var(--text-primary);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+
+    .toast.show {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+    }
+
+    .toast-icon {
+        color: var(--startup-primary);
+        font-size: 1.2rem;
+    }
+
+    /* Shared Config Banner */
+    .shared-banner {
+        background: linear-gradient(135deg, rgba(37, 99, 235, 0.15) 0%, rgba(5, 150, 105, 0.15) 100%);
+        border: 1px solid var(--startup-primary);
+        border-radius: var(--radius-md);
+        padding: 12px 20px;
+        margin-bottom: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+    }
+
+    .shared-banner-text {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 0.85rem;
+        color: var(--text-primary);
+    }
+
+    .shared-banner-icon {
+        font-size: 1.2rem;
+    }
+
+    .reset-btn {
+        padding: 6px 14px;
+        background: transparent;
+        border: 1px solid var(--text-secondary);
+        border-radius: var(--radius-sm);
+        color: var(--text-secondary);
+        font-family: 'Space Mono', monospace;
+        font-size: 0.75rem;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+
+    .reset-btn:hover {
+        border-color: var(--danger);
+        color: var(--danger);
     }
 
     /* Cards */
@@ -635,6 +744,10 @@
 
     @media (max-width: 600px) {
         .tax-grid { grid-template-columns: 1fr; }
+        .share-btn {
+            position: static;
+            margin: 20px auto 0;
+        }
     }
 
     .tax-grid strong {
@@ -692,10 +805,29 @@
     <div class="container">
         <header>
             <h1>Corp vs Startup Comp 🇮🇱</h1>
-            <p>Real talk about your compensation options in Israel</p>
+            <p>Real talk about your compensation options in Israel • Share via URL (🔒 never logged)</p>
+            <button class="share-btn" id="shareBtn" title="Copy link to share this calculation">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="18" cy="5" r="3"></circle>
+                    <circle cx="6" cy="12" r="3"></circle>
+                    <circle cx="18" cy="19" r="3"></circle>
+                    <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                    <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                </svg>
+                Copy Link
+            </button>
         </header>
 
 ```
+    <!-- Shared Config Banner (hidden by default) -->
+    <div class="shared-banner" id="sharedBanner" style="display: none;">
+        <div class="shared-banner-text">
+            <span class="shared-banner-icon">🔒</span>
+            <span>Loaded from shared link. Your data never touches our servers.</span>
+        </div>
+        <button class="reset-btn" id="resetBtn">Reset to defaults</button>
+    </div>
+
     <!-- General Assumptions -->
     <div class="card" style="margin-bottom: 24px;">
         <div class="card-header assumptions">
@@ -1176,6 +1308,12 @@
     </footer>
 </div>
 
+<!-- Toast notification -->
+<div class="toast" id="toast">
+    <span class="toast-icon">✓</span>
+    <span id="toastMessage">Link copied to clipboard!</span>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
 /**
@@ -1230,6 +1368,282 @@ let state = {
     displayCurrency: 'NIS',
     chart: null
 };
+
+// ===========================================
+// URL SHARING FUNCTIONS
+// ===========================================
+
+/**
+ * Short key mapping for URL encoding
+ * Using short keys to minimize URL length
+ * Maps: shortKey -> inputId
+ * 
+ * IMPORTANT: Never change these mappings once in production!
+ * Adding new keys is fine, but changing existing ones breaks old URLs.
+ */
+const KEY_MAP = {
+    // General (a-b)
+    a: 'exchangeRate',
+    b: 'yearsToExit',
+    // Corporate (c-m)
+    c: 'corpSalary',
+    d: 'corpBonus',
+    e: 'corpSignOnCash',
+    f: 'corpRsu',
+    g: 'corpVesting',
+    h: 'corpCliff',
+    i: 'corpVestingSchedule',
+    j: 'corpYearlyBonusCash',
+    k: 'corpYearlyRsu',
+    // Startup (l-z)
+    l: 'startupSalary',
+    m: 'startupSignOnCash',
+    n: 'startupShares',
+    o: 'currentSharePrice',
+    p: 'strikePrice',
+    q: 'startupVesting',
+    r: 'startupCliff',
+    s: 'startupVestingSchedule',
+    t: 'startupTopUpShares',
+    u: 'startupTopUpFrequency',
+    v: 'topUpStrikePrice',
+    w: 'is102',
+    // Scenarios (x-Z)
+    x: 'moonshotMultiple',
+    y: 'probMoonshot',
+    z: 'targetMultiple',
+    A: 'probTarget',
+    B: 'prob1x',
+    // UI state
+    C: 'currency'
+};
+
+// Reverse mapping: inputId -> shortKey
+const REVERSE_KEY_MAP = Object.fromEntries(
+    Object.entries(KEY_MAP).map(([k, v]) => [v, k])
+);
+
+/**
+ * Default values for all inputs (used for reset)
+ * IMPORTANT: Include defaults in encoded URL to ensure 
+ * consistent experience even if we change defaults later
+ */
+const DEFAULT_VALUES = {
+    exchangeRate: '3.65', yearsToExit: '5',
+    corpSalary: '600000', corpBonus: '15', corpSignOnCash: '0',
+    corpRsu: '100000', corpVesting: '4', corpCliff: '1',
+    corpVestingSchedule: 'quarterly', corpYearlyBonusCash: '0',
+    corpYearlyRsu: '25000',
+    startupSalary: '420000', startupSignOnCash: '0', startupShares: '50000',
+    currentSharePrice: '3.00', strikePrice: '1.50', startupVesting: '4',
+    startupCliff: '1', startupVestingSchedule: 'monthly',
+    startupTopUpShares: '15000', startupTopUpFrequency: '2',
+    topUpStrikePrice: '3.00', is102: 'yes',
+    moonshotMultiple: '20', probMoonshot: '5', targetMultiple: '5',
+    probTarget: '10', prob1x: '25',
+    currency: 'NIS'
+};
+
+/**
+ * Encode state to URL-safe base64 string
+ * Uses URL fragment (#) which is never sent to servers
+ * @returns {string} Base64url encoded state
+ */
+function encodeState() {
+    const data = {};
+    
+    // Collect all input values using short keys
+    Object.entries(KEY_MAP).forEach(([shortKey, inputId]) => {
+        if (inputId === 'currency') {
+            data[shortKey] = state.displayCurrency;
+        } else {
+            const el = document.getElementById(inputId);
+            if (el) {
+                // Store numbers as numbers, strings as strings
+                const val = el.value;
+                data[shortKey] = isNaN(val) || val === '' ? val : parseFloat(val);
+            }
+        }
+    });
+
+    // JSON stringify and base64url encode
+    const json = JSON.stringify(data);
+    const base64 = btoa(json)
+        .replace(/\+/g, '-')  // URL-safe
+        .replace(/\//g, '_')  // URL-safe
+        .replace(/=+$/, '');  // Remove padding
+    
+    return base64;
+}
+
+/**
+ * Decode state from URL-safe base64 string
+ * @param {string} encoded - Base64url encoded state
+ * @returns {Object|null} Decoded state object or null if invalid
+ */
+function decodeState(encoded) {
+    try {
+        // Restore base64 padding and characters
+        let base64 = encoded
+            .replace(/-/g, '+')
+            .replace(/_/g, '/');
+        
+        // Add padding if needed
+        while (base64.length % 4) {
+            base64 += '=';
+        }
+
+        const json = atob(base64);
+        return JSON.parse(json);
+    } catch (e) {
+        console.warn('Failed to decode URL state:', e);
+        return null;
+    }
+}
+
+/**
+ * Generate a shareable URL with encoded state in fragment
+ * Fragment (#) is never sent to servers — stays client-side only
+ * @returns {string} Full URL with encoded fragment
+ */
+function generateShareUrl() {
+    const encoded = encodeState();
+    const baseUrl = window.location.origin + window.location.pathname;
+    return baseUrl + '#' + encoded;
+}
+
+/**
+ * Load values from URL fragment into the form
+ * @returns {boolean} True if state was loaded from URL
+ */
+function loadFromUrl() {
+    const fragment = window.location.hash.slice(1); // Remove #
+    
+    if (!fragment) return false;
+
+    const data = decodeState(fragment);
+    if (!data) return false;
+
+    let loadedAny = false;
+
+    // Apply decoded values to inputs
+    Object.entries(data).forEach(([shortKey, value]) => {
+        const inputId = KEY_MAP[shortKey];
+        if (!inputId) return;
+
+        if (inputId === 'currency') {
+            if (value === 'USD' || value === 'NIS') {
+                state.displayCurrency = value;
+                if (value === 'USD') {
+                    document.getElementById('btnUsd')?.classList.add('active');
+                    document.getElementById('btnNis')?.classList.remove('active');
+                }
+                loadedAny = true;
+            }
+        } else {
+            const el = document.getElementById(inputId);
+            if (el) {
+                el.value = value;
+                loadedAny = true;
+            }
+        }
+    });
+
+    return loadedAny;
+}
+
+/**
+ * Reset all inputs to default values
+ */
+function resetToDefaults() {
+    Object.entries(DEFAULT_VALUES).forEach(([id, value]) => {
+        if (id === 'currency') {
+            state.displayCurrency = value;
+            document.getElementById('btnNis')?.classList.add('active');
+            document.getElementById('btnUsd')?.classList.remove('active');
+        } else {
+            const el = document.getElementById(id);
+            if (el) {
+                el.value = value;
+            }
+        }
+    });
+
+    // Hide the banner
+    document.getElementById('sharedBanner').style.display = 'none';
+
+    // Clear URL fragment
+    window.history.replaceState({}, document.title, window.location.pathname);
+
+    // Recalculate
+    calculate();
+
+    showToast('Reset to default values');
+}
+
+/**
+ * Show toast notification
+ * @param {string} message - Message to display
+ */
+function showToast(message) {
+    const toast = document.getElementById('toast');
+    const toastMessage = document.getElementById('toastMessage');
+    
+    toastMessage.textContent = message;
+    toast.classList.add('show');
+    
+    setTimeout(() => {
+        toast.classList.remove('show');
+    }, 3000);
+}
+
+/**
+ * Handle share button click
+ * Uses Web Share API if available, otherwise copies to clipboard
+ * URL uses fragment (#) which is never sent to servers — privacy first
+ */
+async function shareConfig() {
+    const shareUrl = generateShareUrl();
+    
+    // Try native share first (works on mobile)
+    if (navigator.share) {
+        try {
+            await navigator.share({
+                title: 'Corp vs Startup Comp Calculator',
+                text: 'Check out this compensation comparison',
+                url: shareUrl
+            });
+            return;
+        } catch (err) {
+            // User cancelled or share failed, fall through to clipboard
+            if (err.name === 'AbortError') return;
+        }
+    }
+
+    // Fall back to clipboard
+    try {
+        await navigator.clipboard.writeText(shareUrl);
+        showToast('Link copied! 🔒 Data stays private (not logged by servers)');
+    } catch (err) {
+        // Final fallback: select and copy
+        const textArea = document.createElement('textarea');
+        textArea.value = shareUrl;
+        textArea.style.position = 'fixed';
+        textArea.style.left = '-999999px';
+        document.body.appendChild(textArea);
+        textArea.select();
+        
+        try {
+            document.execCommand('copy');
+            showToast('Link copied! 🔒 Data stays private (not logged by servers)');
+        } catch (e) {
+            // Show URL in prompt as last resort
+            prompt('Copy this link:', shareUrl);
+        }
+        
+        document.body.removeChild(textArea);
+    }
+}
 
 // ===========================================
 // PURE CALCULATION FUNCTIONS (Testable)
@@ -1940,6 +2354,20 @@ function calculate() {
         exchangeRate: inputs.general.exchangeRate,
         useLogScale: chartLogScale
     });
+
+    // Sync URL with current state (real-time URL updates)
+    syncUrlWithState();
+}
+
+/**
+ * Update the browser URL fragment to reflect current input state
+ * Uses replaceState to avoid polluting browser history
+ * Fragment (#) is never sent to servers — privacy first
+ */
+function syncUrlWithState() {
+    const encoded = encodeState();
+    const newUrl = window.location.pathname + '#' + encoded;
+    window.history.replaceState({}, '', newUrl);
 }
 
 // ===========================================
@@ -1967,6 +2395,12 @@ function setupEventListeners() {
         document.getElementById('btnNis').classList.remove('active');
         calculate();
     });
+
+    // Share button
+    document.getElementById('shareBtn')?.addEventListener('click', shareConfig);
+
+    // Reset button
+    document.getElementById('resetBtn')?.addEventListener('click', resetToDefaults);
 }
 
 // ===========================================
@@ -1975,6 +2409,13 @@ function setupEventListeners() {
 
 document.addEventListener('DOMContentLoaded', () => {
     setupEventListeners();
+
+    // Load from URL if parameters exist
+    const loadedFromUrl = loadFromUrl();
+    if (loadedFromUrl) {
+        document.getElementById('sharedBanner').style.display = 'flex';
+    }
+
     // Wait for Chart.js to load
     if (typeof Chart !== 'undefined') {
         calculate();
@@ -1987,6 +2428,10 @@ document.addEventListener('DOMContentLoaded', () => {
 // Fallback if DOMContentLoaded already fired
 if (document.readyState === 'complete' || document.readyState === 'interactive') {
     setupEventListeners();
+    const loadedFromUrl = loadFromUrl();
+    if (loadedFromUrl) {
+        document.getElementById('sharedBanner').style.display = 'flex';
+    }
     setTimeout(calculate, 100);
 }
 </script>
