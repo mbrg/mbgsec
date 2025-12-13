@@ -1,0 +1,1996 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corp vs Startup Comp Calculator | Israel 🇮🇱</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0a0a0a;
+            --bg-card: #111111;
+            --bg-input: #1a1a1a;
+            --border: #252525;
+            --border-hover: #3a3a3a;
+            --text-primary: #f5f5f5;
+            --text-secondary: #888888;
+            --text-muted: #555555;
+
+```
+        --corp-primary: #2563eb;
+        --corp-glow: rgba(37, 99, 235, 0.15);
+        --startup-primary: #059669;
+        --startup-glow: rgba(5, 150, 105, 0.15);
+        --warning: #d97706;
+        --danger: #dc2626;
+        --moonshot: #7c3aed;
+        
+        --radius-sm: 6px;
+        --radius-md: 10px;
+        --radius-lg: 14px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+        font-family: 'Space Mono', monospace;
+        background: var(--bg-dark);
+        color: var(--text-primary);
+        min-height: 100vh;
+        line-height: 1.6;
+    }
+
+    .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 24px;
+    }
+
+    /* Header */
+    header {
+        text-align: center;
+        padding: 48px 0 40px;
+        border-bottom: 1px solid var(--border);
+        margin-bottom: 32px;
+    }
+
+    header h1 {
+        font-family: 'Syne', sans-serif;
+        font-size: clamp(2rem, 5vw, 3rem);
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        margin-bottom: 12px;
+        background: linear-gradient(135deg, var(--corp-primary) 0%, var(--startup-primary) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    header p {
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+    }
+
+    /* Cards */
+    .card {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 24px;
+    }
+
+    .card-header {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 24px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .card-header.corp { border-bottom-color: var(--corp-primary); }
+    .card-header.startup { border-bottom-color: var(--startup-primary); }
+    .card-header.assumptions { border-bottom-color: var(--warning); }
+
+    .card-icon {
+        width: 42px;
+        height: 42px;
+        border-radius: var(--radius-md);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.4rem;
+    }
+
+    .card-icon.corp { background: var(--corp-glow); }
+    .card-icon.startup { background: var(--startup-glow); }
+    .card-icon.assumptions { background: rgba(217, 119, 6, 0.15); }
+
+    .card-title {
+        font-family: 'Syne', sans-serif;
+        font-size: 1.25rem;
+        font-weight: 700;
+    }
+
+    /* Layout */
+    .main-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        margin-bottom: 24px;
+    }
+
+    @media (max-width: 1000px) {
+        .main-grid { grid-template-columns: 1fr; }
+    }
+
+    /* Inputs */
+    .input-group {
+        margin-bottom: 16px;
+    }
+
+    .input-group label {
+        display: block;
+        color: var(--text-secondary);
+        font-size: 0.8rem;
+        margin-bottom: 6px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .input-group label .hint {
+        text-transform: none;
+        opacity: 0.7;
+        font-size: 0.75rem;
+    }
+
+    .input-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    .input-wrapper .prefix,
+    .input-wrapper .suffix {
+        position: absolute;
+        color: var(--text-muted);
+        font-size: 0.85rem;
+        pointer-events: none;
+    }
+
+    .input-wrapper .prefix { left: 14px; }
+    .input-wrapper .suffix { right: 14px; }
+
+    input[type="number"], select {
+        width: 100%;
+        padding: 11px 14px;
+        background: var(--bg-input);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        color: var(--text-primary);
+        font-family: 'Space Mono', monospace;
+        font-size: 0.9rem;
+        transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    input:hover, select:hover {
+        border-color: var(--border-hover);
+    }
+
+    input:focus, select:focus {
+        outline: none;
+        border-color: var(--corp-primary);
+        box-shadow: 0 0 0 3px var(--corp-glow);
+    }
+
+    input.has-prefix { padding-left: 32px; }
+    input.has-suffix { padding-right: 32px; }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    .input-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-bottom: 16px;
+    }
+
+    .input-row > .input-group {
+        flex: 1 1 180px;
+        min-width: 140px;
+    }
+
+    /* Remove margin from input-groups inside rows - the row handles spacing */
+    .input-row .input-group,
+    .input-row-4 .input-group {
+        margin-bottom: 0;
+    }
+
+    /* Remove margin from last input-group in a card to avoid double spacing */
+    .card > .input-group:last-child,
+    .card > .input-row:last-child,
+    .card > .assumptions-grid:last-child,
+    .scenarios-config > .input-row:last-child,
+    .scenarios-config > .input-row-4:last-child {
+        margin-bottom: 0;
+    }
+
+    /* Special grid for assumptions - more responsive */
+    .assumptions-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .assumptions-grid > .input-group {
+        flex: 1 1 180px;
+        min-width: 140px;
+        margin-bottom: 0;
+    }
+
+    .input-row-4 {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 16px;
+    }
+
+    .input-row-4 > .input-group {
+        flex: 1 1 100px;
+        min-width: 80px;
+    }
+
+    .section-label {
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        margin: 20px 0 12px;
+        padding-top: 16px;
+        border-top: 1px solid var(--border);
+    }
+
+    .section-label.corp { color: var(--corp-primary); }
+    .section-label.startup { color: var(--startup-primary); }
+
+    .derived-value {
+        font-size: 0.75rem;
+        color: var(--startup-primary);
+        margin-top: 6px;
+        font-style: italic;
+    }
+
+    .derived-prob {
+        font-size: 0.75rem;
+        color: var(--danger);
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .scenarios-config {
+        background: var(--bg-input);
+        border-radius: var(--radius-md);
+        padding: 16px;
+        margin-top: 8px;
+    }
+
+    /* Results */
+    .results-section {
+        margin-top: 32px;
+    }
+
+    .currency-toggle {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-bottom: 24px;
+    }
+
+    .currency-toggle button {
+        padding: 10px 28px;
+        border: 1px solid var(--border);
+        background: var(--bg-input);
+        color: var(--text-secondary);
+        border-radius: var(--radius-sm);
+        cursor: pointer;
+        font-family: 'Space Mono', monospace;
+        font-size: 0.85rem;
+        transition: all 0.2s;
+    }
+
+    .currency-toggle button:hover {
+        border-color: var(--border-hover);
+        color: var(--text-primary);
+    }
+
+    .currency-toggle button.active {
+        background: var(--corp-primary);
+        border-color: var(--corp-primary);
+        color: white;
+    }
+
+    .results-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-bottom: 28px;
+    }
+
+    @media (max-width: 900px) {
+        .results-grid { grid-template-columns: 1fr; }
+    }
+
+    .result-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 24px;
+        text-align: center;
+    }
+
+    .result-card.corp { border-top: 3px solid var(--corp-primary); }
+    .result-card.startup { border-top: 3px solid var(--startup-primary); }
+    .result-card.comparison { border-top: 3px solid var(--warning); }
+
+    .result-label {
+        color: var(--text-secondary);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 12px;
+    }
+
+    .result-value {
+        font-family: 'Syne', sans-serif;
+        font-size: 1.75rem;
+        font-weight: 700;
+        margin-bottom: 4px;
+    }
+
+    .result-value.corp { color: var(--corp-primary); }
+    .result-value.startup { color: var(--startup-primary); }
+    .result-value.positive { color: var(--startup-primary); }
+    .result-value.negative { color: var(--danger); }
+
+    .result-secondary {
+        color: var(--text-secondary);
+        font-size: 0.85rem;
+    }
+
+    .breakdown {
+        margin-top: 16px;
+        padding-top: 16px;
+        border-top: 1px solid var(--border);
+        text-align: left;
+    }
+
+    .breakdown-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 5px 0;
+        font-size: 0.8rem;
+    }
+
+    .breakdown-item .label { color: var(--text-secondary); }
+    .breakdown-item .value { font-weight: 600; }
+    .breakdown-item.tax .value { color: var(--danger); }
+
+    /* Bar Chart */
+    .bar-chart {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 24px;
+        margin-top: 20px;
+    }
+
+    .bar-chart-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .bar-chart-header h3 {
+        font-family: 'Syne', sans-serif;
+        font-size: 1.1rem;
+        font-weight: 600;
+    }
+
+    .toggle-switch {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .toggle-switch input { display: none; }
+
+    .toggle-slider {
+        width: 40px;
+        height: 22px;
+        background: var(--bg-input);
+        border: 1px solid var(--border);
+        border-radius: 11px;
+        position: relative;
+        transition: all 0.2s;
+    }
+
+    .toggle-slider::after {
+        content: '';
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        background: var(--text-secondary);
+        border-radius: 50%;
+        top: 2px;
+        left: 2px;
+        transition: all 0.2s;
+    }
+
+    .toggle-switch input:checked + .toggle-slider {
+        background: var(--corp-primary);
+        border-color: var(--corp-primary);
+    }
+
+    .toggle-switch input:checked + .toggle-slider::after {
+        transform: translateX(18px);
+        background: white;
+    }
+
+    .toggle-label {
+        font-size: 0.8rem;
+        color: var(--text-secondary);
+    }
+
+    .bar-row {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        gap: 12px;
+    }
+
+    .bar-label {
+        width: 130px;
+        font-size: 0.75rem;
+        color: var(--text-secondary);
+        flex-shrink: 0;
+    }
+
+    .bar-track {
+        flex: 1;
+        height: 34px;
+        background: var(--bg-input);
+        border-radius: var(--radius-sm);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .bar-fill {
+        height: 100%;
+        border-radius: var(--radius-sm);
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 0 12px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: white;
+        transition: width 0.4s ease-out;
+        /* FIXED: Removed min-width that was causing the bug */
+        white-space: nowrap;
+    }
+
+    .bar-fill.corp { background: var(--corp-primary); }
+    .bar-fill.fail { background: var(--danger); }
+    .bar-fill.acquihire { background: var(--warning); }
+    .bar-fill.target { background: var(--startup-primary); }
+    .bar-fill.moonshot { background: var(--moonshot); }
+
+    .bar-value-external {
+        position: absolute;
+        right: 8px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 0.75rem;
+        color: var(--text-secondary);
+    }
+
+    /* Scenario Cards */
+    .scenarios-title {
+        text-align: center;
+        margin: 40px 0 16px;
+        font-family: 'Syne', sans-serif;
+        font-size: 1.1rem;
+        font-weight: 600;
+    }
+
+    .scenarios {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
+    }
+
+    @media (max-width: 900px) {
+        .scenarios { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 500px) {
+        .scenarios { grid-template-columns: 1fr; }
+    }
+
+    .scenario-card {
+        background: var(--bg-input);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        padding: 18px;
+        text-align: center;
+    }
+
+    .scenario-card h4 {
+        font-size: 0.85rem;
+        margin-bottom: 8px;
+    }
+
+    .scenario-card.fail h4 { color: var(--danger); }
+    .scenario-card.acquihire h4 { color: var(--warning); }
+    .scenario-card.target h4 { color: var(--startup-primary); }
+    .scenario-card.moonshot h4 { color: var(--moonshot); }
+
+    .scenario-value {
+        font-family: 'Syne', sans-serif;
+        font-size: 1.2rem;
+        font-weight: 700;
+    }
+
+    .scenario-prob {
+        font-size: 0.75rem;
+        color: var(--text-secondary);
+        margin-top: 4px;
+    }
+
+    .scenario-desc {
+        font-size: 0.65rem;
+        color: var(--text-muted);
+        margin-top: 6px;
+    }
+
+    /* Chart */
+    .chart-container {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 24px;
+        margin-top: 28px;
+    }
+
+    .chart-container h3 {
+        font-family: 'Syne', sans-serif;
+        font-size: 1.1rem;
+        font-weight: 600;
+        text-align: center;
+        margin-bottom: 8px;
+    }
+
+    .chart-subtitle {
+        text-align: center;
+        color: var(--text-secondary);
+        font-size: 0.8rem;
+        margin-bottom: 16px;
+    }
+
+    .chart-wrapper {
+        position: relative;
+        height: 380px;
+    }
+
+    .chart-legend {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 16px;
+        flex-wrap: wrap;
+    }
+
+    .legend-item {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 0.7rem;
+        color: var(--text-secondary);
+    }
+
+    .legend-color {
+        width: 20px;
+        height: 3px;
+        border-radius: 2px;
+    }
+
+    /* Tax Summary */
+    .tax-summary {
+        background: var(--bg-input);
+        border-radius: var(--radius-md);
+        padding: 20px;
+        margin-top: 24px;
+    }
+
+    .tax-summary h5 {
+        color: var(--text-secondary);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 14px;
+    }
+
+    .tax-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    @media (max-width: 600px) {
+        .tax-grid { grid-template-columns: 1fr; }
+    }
+
+    .tax-grid strong {
+        display: block;
+        margin-bottom: 8px;
+    }
+
+    .tax-grid strong.corp { color: var(--corp-primary); }
+    .tax-grid strong.startup { color: var(--startup-primary); }
+
+    .tax-grid ul {
+        color: var(--text-secondary);
+        font-size: 0.8rem;
+        padding-left: 18px;
+    }
+
+    .tax-grid li { margin-bottom: 4px; }
+
+    /* Disclaimer */
+    .disclaimer {
+        background: rgba(220, 38, 38, 0.08);
+        border: 1px solid rgba(220, 38, 38, 0.25);
+        border-radius: var(--radius-md);
+        padding: 20px;
+        margin-top: 28px;
+        text-align: center;
+    }
+
+    .disclaimer h4 {
+        color: var(--danger);
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+    }
+
+    .disclaimer p {
+        color: var(--text-secondary);
+        font-size: 0.8rem;
+        line-height: 1.7;
+    }
+
+    /* Footer */
+    footer {
+        text-align: center;
+        padding: 32px 0;
+        margin-top: 40px;
+        border-top: 1px solid var(--border);
+        color: var(--text-muted);
+        font-size: 0.85rem;
+    }
+</style>
+```
+
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Corp vs Startup Comp 🇮🇱</h1>
+            <p>Real talk about your compensation options in Israel</p>
+        </header>
+
+```
+    <!-- General Assumptions -->
+    <div class="card" style="margin-bottom: 24px;">
+        <div class="card-header assumptions">
+            <div class="card-icon assumptions">⚙️</div>
+            <h2 class="card-title">General Assumptions</h2>
+        </div>
+        <div class="assumptions-grid">
+            <div class="input-group">
+                <label>USD/NIS Exchange Rate</label>
+                <div class="input-wrapper">
+                    <span class="prefix">₪</span>
+                    <input type="number" id="exchangeRate" value="3.65" step="0.01" class="has-prefix">
+                </div>
+            </div>
+            <div class="input-group">
+                <label>Years to Analyze</label>
+                <div class="input-wrapper">
+                    <input type="number" id="yearsToExit" value="5" min="1" max="15" class="has-suffix">
+                    <span class="suffix">yrs</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-grid">
+        <!-- Corporate Offer -->
+        <div class="card">
+            <div class="card-header corp">
+                <div class="card-icon corp">🏢</div>
+                <h2 class="card-title">Corporate Offer</h2>
+            </div>
+            
+            <div class="input-row">
+                <div class="input-group">
+                    <label>Annual Base Salary (Gross)</label>
+                    <div class="input-wrapper">
+                        <span class="prefix">₪</span>
+                        <input type="number" id="corpSalary" value="600000" step="10000" class="has-prefix">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>Annual Bonus <span class="hint">(% of salary)</span></label>
+                    <div class="input-wrapper">
+                        <input type="number" id="corpBonus" value="15" min="0" max="100" class="has-suffix">
+                        <span class="suffix">%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-label corp">Sign-On Bonus (One-Time)</div>
+            <div class="input-group">
+                <label>Cash Sign-On</label>
+                <div class="input-wrapper">
+                    <span class="prefix">₪</span>
+                    <input type="number" id="corpSignOnCash" value="0" step="5000" class="has-prefix">
+                </div>
+            </div>
+
+            <div class="section-label corp">Initial RSU Grant</div>
+            <div class="input-row">
+                <div class="input-group">
+                    <label>RSU Grant (Total)</label>
+                    <div class="input-wrapper">
+                        <span class="prefix">$</span>
+                        <input type="number" id="corpRsu" value="100000" step="5000" class="has-prefix">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>Vesting Period</label>
+                    <div class="input-wrapper">
+                        <input type="number" id="corpVesting" value="4" min="1" max="6" class="has-suffix">
+                        <span class="suffix">yrs</span>
+                    </div>
+                </div>
+            </div>
+            <div class="input-row">
+                <div class="input-group">
+                    <label>Cliff Period</label>
+                    <div class="input-wrapper">
+                        <input type="number" id="corpCliff" value="1" min="0" max="2" step="0.5" class="has-suffix">
+                        <span class="suffix">yrs</span>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>Vesting After Cliff</label>
+                    <select id="corpVestingSchedule">
+                        <option value="quarterly">Quarterly</option>
+                        <option value="monthly">Monthly</option>
+                        <option value="annually">Annually</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="section-label corp">Yearly Refresh (Starting Year 2)</div>
+            <div class="input-row">
+                <div class="input-group">
+                    <label>Annual Cash Refresh</label>
+                    <div class="input-wrapper">
+                        <span class="prefix">₪</span>
+                        <input type="number" id="corpYearlyBonusCash" value="0" step="5000" class="has-prefix">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>Annual RSU Refresh</label>
+                    <div class="input-wrapper">
+                        <span class="prefix">$</span>
+                        <input type="number" id="corpYearlyRsu" value="25000" step="5000" class="has-prefix">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Startup Offer -->
+        <div class="card">
+            <div class="card-header startup">
+                <div class="card-icon startup">🚀</div>
+                <h2 class="card-title">Startup Offer</h2>
+            </div>
+            
+            <div class="input-group">
+                <label>Annual Base Salary (Gross)</label>
+                <div class="input-wrapper">
+                    <span class="prefix">₪</span>
+                    <input type="number" id="startupSalary" value="420000" step="10000" class="has-prefix">
+                </div>
+            </div>
+
+            <div class="section-label startup">Sign-On Bonus (One-Time)</div>
+            <div class="input-group">
+                <label>Cash Sign-On</label>
+                <div class="input-wrapper">
+                    <span class="prefix">₪</span>
+                    <input type="number" id="startupSignOnCash" value="0" step="5000" class="has-prefix">
+                </div>
+            </div>
+
+            <div class="section-label startup">Initial Equity Grant</div>
+            <div class="input-row">
+                <div class="input-group">
+                    <label>Number of Options</label>
+                    <div class="input-wrapper">
+                        <input type="number" id="startupShares" value="50000" step="1000">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>Current Price/Share</label>
+                    <div class="input-wrapper">
+                        <span class="prefix">$</span>
+                        <input type="number" id="currentSharePrice" value="3.00" step="0.01" class="has-prefix">
+                    </div>
+                </div>
+            </div>
+            <div class="input-row">
+                <div class="input-group">
+                    <label>Strike Price</label>
+                    <div class="input-wrapper">
+                        <span class="prefix">$</span>
+                        <input type="number" id="strikePrice" value="1.50" step="0.01" class="has-prefix">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>Vesting Period</label>
+                    <div class="input-wrapper">
+                        <input type="number" id="startupVesting" value="4" min="1" max="6" class="has-suffix">
+                        <span class="suffix">yrs</span>
+                    </div>
+                </div>
+            </div>
+            <div class="input-row">
+                <div class="input-group">
+                    <label>Cliff Period</label>
+                    <div class="input-wrapper">
+                        <input type="number" id="startupCliff" value="1" min="0" max="2" step="0.5" class="has-suffix">
+                        <span class="suffix">yrs</span>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>Vesting After Cliff</label>
+                    <select id="startupVestingSchedule">
+                        <option value="monthly" selected>Monthly</option>
+                        <option value="quarterly">Quarterly</option>
+                        <option value="annually">Annually</option>
+                    </select>
+                </div>
+            </div>
+            <div class="derived-value">Current grant value: $<span id="currentGrantValue">75,000</span> (if fully vested)</div>
+
+            <div class="section-label startup">Equity Top-Up (Refresh)</div>
+            <div class="input-row">
+                <div class="input-group">
+                    <label>Top-Up Options</label>
+                    <div class="input-wrapper">
+                        <input type="number" id="startupTopUpShares" value="15000" step="1000">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>Every X Years</label>
+                    <div class="input-wrapper">
+                        <input type="number" id="startupTopUpFrequency" value="2" min="1" max="5" class="has-suffix">
+                        <span class="suffix">yrs</span>
+                    </div>
+                </div>
+            </div>
+            <div class="input-group">
+                <label>Top-Up Strike Price <span class="hint">(usually higher)</span></label>
+                <div class="input-wrapper">
+                    <span class="prefix">$</span>
+                    <input type="number" id="topUpStrikePrice" value="3.00" step="0.01" class="has-prefix">
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>102 Capital Gains Track?</label>
+                <select id="is102">
+                    <option value="yes">Yes (25% tax on gains)</option>
+                    <option value="no">No (income tax ~50%)</option>
+                </select>
+            </div>
+
+            <div class="section-label startup">Exit Scenarios & Probabilities</div>
+            <div class="scenarios-config">
+                <div class="input-row">
+                    <div class="input-group">
+                        <label>🚀 Moonshot Multiple</label>
+                        <div class="input-wrapper">
+                            <input type="number" id="moonshotMultiple" value="20" min="1" max="100" step="1" class="has-suffix">
+                            <span class="suffix">x</span>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label>🚀 Moonshot Prob</label>
+                        <div class="input-wrapper">
+                            <input type="number" id="probMoonshot" value="5" min="0" max="100" class="has-suffix">
+                            <span class="suffix">%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-row">
+                    <div class="input-group">
+                        <label>🎯 Target Multiple</label>
+                        <div class="input-wrapper">
+                            <input type="number" id="targetMultiple" value="5" min="1" max="50" step="0.5" class="has-suffix">
+                            <span class="suffix">x</span>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label>🎯 Target Prob</label>
+                        <div class="input-wrapper">
+                            <input type="number" id="probTarget" value="10" min="0" max="100" class="has-suffix">
+                            <span class="suffix">%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-row">
+                    <div class="input-group">
+                        <label>😐 1x Exit Prob</label>
+                        <div class="input-wrapper">
+                            <input type="number" id="prob1x" value="25" min="0" max="100" class="has-suffix">
+                            <span class="suffix">%</span>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label>💀 Fail Prob <span class="hint">(derived)</span></label>
+                        <div class="input-wrapper">
+                            <input type="number" id="probFail" value="60" disabled class="has-suffix" style="opacity: 0.6;">
+                            <span class="suffix">%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="derived-prob">Fail = 100% − others (equity worthless)</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Results -->
+    <div class="results-section">
+        <div class="currency-toggle">
+            <button id="btnNis" class="active">₪ NIS</button>
+            <button id="btnUsd">$ USD</button>
+        </div>
+
+        <div class="results-grid">
+            <div class="result-card corp">
+                <div class="result-label">Corporate Total (After Tax)</div>
+                <div class="result-value corp" id="corpTotal">₪0</div>
+                <div class="result-secondary" id="corpTotalAlt">$0</div>
+                <div class="breakdown">
+                    <div class="breakdown-item">
+                        <span class="label">Base Salary</span>
+                        <span class="value" id="corpSalaryBreak">₪0</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span class="label">Annual Bonus</span>
+                        <span class="value" id="corpBonusBreak">₪0</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span class="label">Sign-On Cash</span>
+                        <span class="value" id="corpSignOnBreak">₪0</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span class="label">Initial RSU (Vested)</span>
+                        <span class="value" id="corpRsuBreak">₪0</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span class="label">Refresh (Vested)</span>
+                        <span class="value" id="corpRefreshBreak">₪0</span>
+                    </div>
+                    <div class="breakdown-item tax">
+                        <span class="label">Total Tax</span>
+                        <span class="value" id="corpTaxBreak">-₪0</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="result-card startup">
+                <div class="result-label">Startup Expected Value</div>
+                <div class="result-value startup" id="startupTotal">₪0</div>
+                <div class="result-secondary" id="startupTotalAlt">$0</div>
+                <div class="breakdown">
+                    <div class="breakdown-item">
+                        <span class="label">Base Salary</span>
+                        <span class="value" id="startupSalaryBreak">₪0</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span class="label">Sign-On Cash</span>
+                        <span class="value" id="startupSignOnBreak">₪0</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span class="label">Expected Equity</span>
+                        <span class="value" id="startupEquityBreak">₪0</span>
+                    </div>
+                    <div class="breakdown-item tax">
+                        <span class="label">Total Tax</span>
+                        <span class="value" id="startupTaxBreak">-₪0</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="result-card comparison">
+                <div class="result-label">Difference</div>
+                <div class="result-value" id="difference">₪0</div>
+                <div class="result-secondary" id="differenceAlt">$0</div>
+                <div class="result-secondary" id="differenceNote"></div>
+                <div class="breakdown">
+                    <div class="breakdown-item">
+                        <span class="label">Period</span>
+                        <span class="value" id="periodYears">5 years</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span class="label">Options (vested/total)</span>
+                        <span class="value" id="yourShares">0</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span class="label">Salary diff/year</span>
+                        <span class="value" id="salaryDiff">₪0</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span class="label">Total salary gap</span>
+                        <span class="value" id="totalSalaryGap">₪0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bar Chart - FIXED -->
+        <div class="bar-chart">
+            <div class="bar-chart-header">
+                <h3>📊 Visual Comparison (After Tax)</h3>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="barLogScale">
+                    <span class="toggle-slider"></span>
+                    <span class="toggle-label">Log Scale</span>
+                </label>
+            </div>
+            <div id="barChartContainer"></div>
+        </div>
+
+        <!-- Scenario Cards -->
+        <h3 class="scenarios-title">Startup Outcome Scenarios (After Tax)</h3>
+        <div class="scenarios">
+            <div class="scenario-card fail">
+                <h4>💀 Fail</h4>
+                <div class="scenario-value" id="scenarioFail">₪0</div>
+                <div class="scenario-prob" id="scenarioFailProb">60%</div>
+                <div class="scenario-desc">Company shuts down. Equity = 0.</div>
+            </div>
+            <div class="scenario-card acquihire">
+                <h4>😐 Acqui-hire (1x)</h4>
+                <div class="scenario-value" id="scenario1x">₪0</div>
+                <div class="scenario-prob" id="scenario1xProb">25%</div>
+                <div class="scenario-desc">Sells at current valuation.</div>
+            </div>
+            <div class="scenario-card target">
+                <h4>🎯 Target (<span id="targetMultLabel">5</span>x)</h4>
+                <div class="scenario-value" id="scenarioTarget">₪0</div>
+                <div class="scenario-prob" id="scenarioTargetProb">10%</div>
+                <div class="scenario-desc">Solid exit outcome.</div>
+            </div>
+            <div class="scenario-card moonshot">
+                <h4>🚀 Moonshot (<span id="moonshotMultLabel">20</span>x)</h4>
+                <div class="scenario-value" id="scenarioMoonshot">₪0</div>
+                <div class="scenario-prob" id="scenarioMoonshotProb">5%</div>
+                <div class="scenario-desc">The dream. Unicorn.</div>
+            </div>
+        </div>
+
+        <!-- Line Chart -->
+        <div class="chart-container">
+            <div class="bar-chart-header">
+                <h3>📈 Compensation Build-Up (Month over Month)</h3>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="chartLogScale">
+                    <span class="toggle-slider"></span>
+                    <span class="toggle-label">Log Scale</span>
+                </label>
+            </div>
+            <p class="chart-subtitle">Corp (solid) vs Startup scenarios (dashed) — all values after tax</p>
+            <div class="chart-wrapper">
+                <canvas id="compChart"></canvas>
+            </div>
+            <div class="chart-legend">
+                <div class="legend-item">
+                    <div class="legend-color" style="background: var(--corp-primary);"></div>
+                    <span>Corp Total</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: var(--danger);"></div>
+                    <span>Fail (salary only)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: var(--warning);"></div>
+                    <span>1x Exit</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: var(--startup-primary);"></div>
+                    <span>Target</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: var(--moonshot);"></div>
+                    <span>Moonshot</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tax Summary -->
+        <div class="tax-summary">
+            <h5>🧾 Israeli Tax Summary</h5>
+            <div class="tax-grid">
+                <div>
+                    <strong class="corp">Corporate Income:</strong>
+                    <ul>
+                        <li>Salary, Bonus, RSUs: Up to 47% marginal</li>
+                        <li>Social security: ~12% (capped)</li>
+                    </ul>
+                </div>
+                <div>
+                    <strong class="startup">Startup Equity (102):</strong>
+                    <ul>
+                        <li>Capital Gains: 25% flat</li>
+                        <li>No 102: Up to 50%</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="disclaimer">
+        <h4>⚠️ Disclaimer</h4>
+        <p>
+            Rough estimates only. Consult a licensed Israeli tax advisor (יועץ מס). 
+            Excludes pension (פנסיה) and education funds (קרן השתלמות) which add 15-20%.
+            Startup valuations are highly speculative. Past performance ≠ future results.
+        </p>
+    </div>
+
+    <footer>
+        <p>Built with 💚 for the Israeli tech community</p>
+    </footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+/**
+ * Corp vs Startup Compensation Calculator
+ * Refactored following Dave Farley's principles:
+ * - Separation of concerns (business logic vs presentation)
+ * - Single responsibility functions
+ * - DRY (Don't Repeat Yourself)
+ * - Pure functions for testability
+ * - Explicit over implicit (no magic numbers)
+ */
+
+// ===========================================
+// CONFIGURATION (Avoid magic numbers)
+// ===========================================
+const CONFIG = {
+    tax: {
+        // 2024 Israeli tax brackets
+        brackets: [
+            { limit: 84120, rate: 0.10 },
+            { limit: 120720, rate: 0.14 },
+            { limit: 193800, rate: 0.20 },
+            { limit: 269280, rate: 0.31 },
+            { limit: 560280, rate: 0.35 },
+            { limit: 721560, rate: 0.47 },
+            { limit: Infinity, rate: 0.50 }
+        ],
+        socialSecurityRate: 0.12,
+        socialSecurityCap: 84000,
+        capitalGainsRate102: 0.25,
+        capitalGainsRateNon102: 0.50
+    },
+    vesting: {
+        monthsPerYear: 12,
+        periodsPerQuarter: 3
+    },
+    chart: {
+        colors: {
+            corp: '#2563eb',
+            fail: '#dc2626',
+            acquihire: '#d97706',
+            target: '#059669',
+            moonshot: '#7c3aed'
+        }
+    }
+};
+
+// ===========================================
+// STATE
+// ===========================================
+let state = {
+    displayCurrency: 'NIS',
+    chart: null
+};
+
+// ===========================================
+// PURE CALCULATION FUNCTIONS (Testable)
+// ===========================================
+
+/**
+ * Calculate Israeli income tax using progressive brackets
+ * @param {number} annualIncome - Annual gross income in NIS
+ * @returns {number} Total tax including social security
+ */
+function calculateIsraeliIncomeTax(annualIncome) {
+    if (annualIncome <= 0) return 0;
+    
+    let tax = 0;
+    let remainingIncome = annualIncome;
+    let prevLimit = 0;
+
+    for (const bracket of CONFIG.tax.brackets) {
+        if (remainingIncome <= 0) break;
+        const taxableInBracket = Math.min(remainingIncome, bracket.limit - prevLimit);
+        tax += taxableInBracket * bracket.rate;
+        remainingIncome -= taxableInBracket;
+        prevLimit = bracket.limit;
+    }
+
+    const socialSecurity = Math.min(
+        annualIncome * CONFIG.tax.socialSecurityRate,
+        CONFIG.tax.socialSecurityCap
+    );
+
+    return tax + socialSecurity;
+}
+
+/**
+ * Calculate effective tax rate for a given income
+ * @param {number} annualIncome - Annual gross income in NIS
+ * @returns {number} Effective tax rate (0-1)
+ */
+function calculateEffectiveTaxRate(annualIncome) {
+    if (annualIncome <= 0) return 0;
+    return calculateIsraeliIncomeTax(annualIncome) / annualIncome;
+}
+
+/**
+ * Calculate vested shares at a given point in time
+ * Pure function - no side effects
+ * @param {Object} params - Vesting parameters
+ * @returns {number} Fraction vested (0-1)
+ */
+function calculateVestingFraction(params) {
+    const { monthsElapsed, vestingYears, cliffYears, schedule } = params;
+    
+    const cliffMonths = cliffYears * CONFIG.vesting.monthsPerYear;
+    const vestingMonths = vestingYears * CONFIG.vesting.monthsPerYear;
+
+    // Still in cliff period
+    if (monthsElapsed < cliffMonths) return 0;
+
+    // Fully vested
+    if (monthsElapsed >= vestingMonths) return 1;
+
+    const cliffFraction = cliffYears / vestingYears;
+    const monthsAfterCliff = monthsElapsed - cliffMonths;
+    const remainingMonths = vestingMonths - cliffMonths;
+    const remainingFraction = 1 - cliffFraction;
+
+    switch (schedule) {
+        case 'monthly':
+            return cliffFraction + (remainingFraction * monthsAfterCliff / remainingMonths);
+        case 'quarterly': {
+            const quartersAfterCliff = Math.floor(monthsAfterCliff / CONFIG.vesting.periodsPerQuarter);
+            const totalQuarters = remainingMonths / CONFIG.vesting.periodsPerQuarter;
+            return cliffFraction + (remainingFraction * quartersAfterCliff / totalQuarters);
+        }
+        case 'annually': {
+            const yearsAfterCliff = Math.floor(monthsAfterCliff / CONFIG.vesting.monthsPerYear);
+            const totalYearsRemaining = vestingYears - cliffYears;
+            return cliffFraction + (remainingFraction * yearsAfterCliff / totalYearsRemaining);
+        }
+        default:
+            return cliffFraction + (remainingFraction * monthsAfterCliff / remainingMonths);
+    }
+}
+
+/**
+ * Calculate corporate compensation over a period
+ * @param {Object} inputs - All corp input values
+ * @returns {Object} Breakdown of corp compensation
+ */
+function calculateCorpCompensation(inputs) {
+    const {
+        years, exchangeRate, salary, bonusPercent, signOnCash,
+        rsuUsd, vesting, cliff, vestingSchedule,
+        yearlyBonusCash, yearlyRsuUsd
+    } = inputs;
+
+    const months = years * CONFIG.vesting.monthsPerYear;
+    const annualBonus = salary * bonusPercent;
+    const rsuNis = rsuUsd * exchangeRate;
+    const yearlyRsuNis = yearlyRsuUsd * exchangeRate;
+
+    // Calculate totals
+    const totalSalary = salary * years;
+    const totalBonus = annualBonus * years;
+    const totalSignOn = signOnCash;
+
+    // Initial RSU vesting
+    const initialRsuVested = rsuNis * calculateVestingFraction({
+        monthsElapsed: months, vestingYears: vesting,
+        cliffYears: cliff, schedule: vestingSchedule
+    });
+
+    // Refresh RSUs (starting year 2)
+    let refreshRsuVested = 0;
+    let refreshCashTotal = 0;
+    
+    for (let y = 2; y <= years; y++) {
+        const grantMonth = (y - 1) * CONFIG.vesting.monthsPerYear;
+        const monthsVesting = months - grantMonth;
+        
+        if (monthsVesting > 0) {
+            const vestFraction = calculateVestingFraction({
+                monthsElapsed: monthsVesting, vestingYears: vesting,
+                cliffYears: cliff, schedule: vestingSchedule
+            });
+            refreshRsuVested += yearlyRsuNis * vestFraction;
+        }
+        refreshCashTotal += yearlyBonusCash;
+    }
+
+    const totalRefresh = refreshCashTotal + refreshRsuVested;
+    const totalGross = totalSalary + totalBonus + totalSignOn + initialRsuVested + totalRefresh;
+
+    // Calculate tax
+    const avgAnnual = totalGross / years;
+    const effectiveTaxRate = calculateEffectiveTaxRate(avgAnnual);
+    const totalTax = totalGross * effectiveTaxRate;
+    const totalNet = totalGross - totalTax;
+
+    return {
+        salary: totalSalary,
+        bonus: totalBonus,
+        signOn: totalSignOn,
+        initialRsu: initialRsuVested,
+        refresh: totalRefresh,
+        gross: totalGross,
+        tax: totalTax,
+        net: totalNet,
+        effectiveTaxRate
+    };
+}
+
+/**
+ * Calculate startup compensation with scenario analysis
+ * @param {Object} inputs - All startup input values
+ * @returns {Object} Breakdown of startup compensation by scenario
+ */
+function calculateStartupCompensation(inputs) {
+    const {
+        years, exchangeRate, salary, signOnCash,
+        shares, currentPrice, strikePrice,
+        vesting, cliff, vestingSchedule,
+        topUpShares, topUpFrequency, topUpStrikePrice,
+        is102, probabilities, multiples
+    } = inputs;
+
+    const months = years * CONFIG.vesting.monthsPerYear;
+    const equityTaxRate = is102 ? CONFIG.tax.capitalGainsRate102 : CONFIG.tax.capitalGainsRateNon102;
+
+    // Salary calculation
+    const totalSalary = salary * years;
+    const salaryTaxRate = calculateEffectiveTaxRate(salary);
+    const salaryTax = totalSalary * salaryTaxRate;
+    const signOnTax = signOnCash * salaryTaxRate;
+    const baseNet = (totalSalary - salaryTax) + (signOnCash - signOnTax);
+
+    // Initial equity vesting
+    const initialVestFraction = calculateVestingFraction({
+        monthsElapsed: months, vestingYears: vesting,
+        cliffYears: cliff, schedule: vestingSchedule
+    });
+    const initialVestedShares = shares * initialVestFraction;
+
+    // Top-up grants
+    let topUpVestedShares = 0;
+    const topUpEquityByScenario = { '1x': 0, target: 0, moonshot: 0 };
+    
+    for (let y = topUpFrequency; y <= years; y += topUpFrequency) {
+        const grantMonth = (y - 1) * CONFIG.vesting.monthsPerYear + 1;
+        const monthsVesting = months - grantMonth + 1;
+        
+        if (monthsVesting > 0) {
+            const vestFraction = calculateVestingFraction({
+                monthsElapsed: monthsVesting, vestingYears: vesting,
+                cliffYears: cliff, schedule: vestingSchedule
+            });
+            const vestedShares = topUpShares * vestFraction;
+            topUpVestedShares += vestedShares;
+
+            // Top-ups have different strike price
+            topUpEquityByScenario['1x'] += vestedShares * Math.max(0, currentPrice - topUpStrikePrice);
+            topUpEquityByScenario.target += vestedShares * Math.max(0, currentPrice * multiples.target - topUpStrikePrice);
+            topUpEquityByScenario.moonshot += vestedShares * Math.max(0, currentPrice * multiples.moonshot - topUpStrikePrice);
+        }
+    }
+
+    const totalVestedShares = initialVestedShares + topUpVestedShares;
+
+    // Calculate equity value for each scenario (initial + top-ups)
+    const calculateEquityValue = (priceMultiple, topUpValue) => {
+        const exitPrice = currentPrice * priceMultiple;
+        const initialValue = initialVestedShares * Math.max(0, exitPrice - strikePrice);
+        return (initialValue + topUpValue) * exchangeRate;
+    };
+
+    const equity = {
+        fail: { gross: 0, net: 0 },
+        '1x': {
+            gross: calculateEquityValue(1, topUpEquityByScenario['1x']),
+            get net() { return this.gross * (1 - equityTaxRate); }
+        },
+        target: {
+            gross: calculateEquityValue(multiples.target, topUpEquityByScenario.target),
+            get net() { return this.gross * (1 - equityTaxRate); }
+        },
+        moonshot: {
+            gross: calculateEquityValue(multiples.moonshot, topUpEquityByScenario.moonshot),
+            get net() { return this.gross * (1 - equityTaxRate); }
+        }
+    };
+
+    // Expected value calculation
+    const expectedEquityGross = 
+        probabilities['1x'] * equity['1x'].gross +
+        probabilities.target * equity.target.gross +
+        probabilities.moonshot * equity.moonshot.gross;
+    
+    const expectedEquityNet = 
+        probabilities['1x'] * equity['1x'].net +
+        probabilities.target * equity.target.net +
+        probabilities.moonshot * equity.moonshot.net;
+
+    // Scenario totals
+    const scenarios = {
+        fail: baseNet,
+        '1x': baseNet + equity['1x'].net,
+        target: baseNet + equity.target.net,
+        moonshot: baseNet + equity.moonshot.net
+    };
+
+    // Total shares info
+    const numTopUps = Math.floor(years / topUpFrequency);
+    const totalSharesGranted = shares + (topUpShares * numTopUps);
+
+    return {
+        salary: totalSalary,
+        signOn: signOnCash,
+        baseNet,
+        expectedEquityGross,
+        expectedEquityNet,
+        totalTax: salaryTax + signOnTax + (expectedEquityGross - expectedEquityNet),
+        totalExpected: baseNet + expectedEquityNet,
+        scenarios,
+        equity,
+        totalVestedShares,
+        totalSharesGranted,
+        currentGrantValue: shares * Math.max(0, currentPrice - strikePrice)
+    };
+}
+
+// ===========================================
+// INPUT HELPERS
+// ===========================================
+
+function getInputValue(id) {
+    const el = document.getElementById(id);
+    return el ? (parseFloat(el.value) || 0) : 0;
+}
+
+function getSelectValue(id) {
+    const el = document.getElementById(id);
+    return el ? el.value : '';
+}
+
+function readInputs() {
+    const exchangeRate = getInputValue('exchangeRate');
+    const years = getInputValue('yearsToExit');
+    
+    // Probabilities
+    const probMoonshot = getInputValue('probMoonshot') / 100;
+    const probTarget = getInputValue('probTarget') / 100;
+    const prob1x = getInputValue('prob1x') / 100;
+    const probFail = Math.max(0, 1 - probMoonshot - probTarget - prob1x);
+
+    return {
+        general: { exchangeRate, years },
+        corp: {
+            years,
+            exchangeRate,
+            salary: getInputValue('corpSalary'),
+            bonusPercent: getInputValue('corpBonus') / 100,
+            signOnCash: getInputValue('corpSignOnCash'),
+            rsuUsd: getInputValue('corpRsu'),
+            vesting: getInputValue('corpVesting'),
+            cliff: getInputValue('corpCliff'),
+            vestingSchedule: getSelectValue('corpVestingSchedule'),
+            yearlyBonusCash: getInputValue('corpYearlyBonusCash'),
+            yearlyRsuUsd: getInputValue('corpYearlyRsu')
+        },
+        startup: {
+            years,
+            exchangeRate,
+            salary: getInputValue('startupSalary'),
+            signOnCash: getInputValue('startupSignOnCash'),
+            shares: getInputValue('startupShares'),
+            currentPrice: getInputValue('currentSharePrice'),
+            strikePrice: getInputValue('strikePrice'),
+            vesting: getInputValue('startupVesting'),
+            cliff: getInputValue('startupCliff'),
+            vestingSchedule: getSelectValue('startupVestingSchedule'),
+            topUpShares: getInputValue('startupTopUpShares'),
+            topUpFrequency: getInputValue('startupTopUpFrequency'),
+            topUpStrikePrice: getInputValue('topUpStrikePrice'),
+            is102: getSelectValue('is102') === 'yes',
+            probabilities: { fail: probFail, '1x': prob1x, target: probTarget, moonshot: probMoonshot },
+            multiples: {
+                target: getInputValue('targetMultiple'),
+                moonshot: getInputValue('moonshotMultiple')
+            }
+        }
+    };
+}
+
+// ===========================================
+// FORMATTING HELPERS
+// ===========================================
+
+function formatCurrency(amount, currency = state.displayCurrency, exchangeRate = 3.65) {
+    if (currency === 'NIS') {
+        return '₪' + Math.round(amount).toLocaleString();
+    }
+    return '$' + Math.round(amount / exchangeRate).toLocaleString();
+}
+
+function formatAltCurrency(amount, exchangeRate) {
+    return state.displayCurrency === 'NIS' 
+        ? formatCurrency(amount, 'USD', exchangeRate)
+        : formatCurrency(amount, 'NIS', exchangeRate);
+}
+
+// ===========================================
+// BAR CHART RENDERING (FIXED)
+// ===========================================
+
+/**
+ * Render bar chart with proper proportional sizing
+ * FIXED: Removed min-width constraint, added proper log scale
+ */
+function renderBarChart(data, useLogScale) {
+    const container = document.getElementById('barChartContainer');
+    if (!container) return;
+
+    const { corp, fail, oneX, target, moonshot, probabilities, exchangeRate } = data;
+    
+    const values = [corp, fail, oneX, target, moonshot];
+    const maxVal = Math.max(...values);
+    const minPositive = Math.min(...values.filter(v => v > 0)) || 1;
+
+    /**
+     * Calculate bar width percentage
+     * FIXED: Proper proportional scaling, no minimum width override
+     */
+    function calculateBarWidth(value) {
+        if (value <= 0) return 0;
+        
+        if (useLogScale && minPositive > 0 && maxVal > minPositive) {
+            // Log scale: Map log values to 5-100% range
+            const logMin = Math.log10(minPositive);
+            const logMax = Math.log10(maxVal);
+            const logVal = Math.log10(value);
+            const logRange = logMax - logMin;
+            
+            if (logRange === 0) return 50;
+            
+            // Map to 5-100% (5% minimum for visibility)
+            return 5 + ((logVal - logMin) / logRange) * 95;
+        } else {
+            // Linear scale: Direct proportion
+            return Math.max((value / maxVal) * 100, 2);
+        }
+    }
+
+    const bars = [
+        { id: 'corp', label: '🏢 Corp', value: corp, class: 'corp', prob: null },
+        { id: 'fail', label: '💀 Fail', value: fail, class: 'fail', prob: probabilities.fail },
+        { id: '1x', label: '😐 1x', value: oneX, class: 'acquihire', prob: probabilities['1x'] },
+        { id: 'target', label: '🎯 Target', value: target, class: 'target', prob: probabilities.target },
+        { id: 'moonshot', label: '🚀 Moonshot', value: moonshot, class: 'moonshot', prob: probabilities.moonshot }
+    ];
+
+    container.innerHTML = bars.map(bar => {
+        const width = calculateBarWidth(bar.value);
+        const formattedValue = formatCurrency(bar.value, state.displayCurrency, exchangeRate);
+        const probText = bar.prob !== null ? ` (${Math.round(bar.prob * 100)}%)` : '';
+        
+        // Determine if text should be inside or outside the bar
+        const showValueInside = width > 25;
+        
+        return `
+            <div class="bar-row">
+                <div class="bar-label">${bar.label}${probText}</div>
+                <div class="bar-track">
+                    <div class="bar-fill ${bar.class}" style="width: ${width}%;">
+                        ${showValueInside ? formattedValue : ''}
+                    </div>
+                    ${!showValueInside ? `<span class="bar-value-external">${formattedValue}</span>` : ''}
+                </div>
+            </div>
+        `;
+    }).join('');
+}
+
+// ===========================================
+// LINE CHART RENDERING
+// ===========================================
+
+function renderLineChart(params) {
+    const {
+        years, corp, startup, exchangeRate, useLogScale
+    } = params;
+
+    const months = years * CONFIG.vesting.monthsPerYear;
+    const labels = [];
+    const datasets = {
+        corp: [], fail: [], oneX: [], target: [], moonshot: []
+    };
+
+    let corpAccum = 0;
+    let startupBaseAccum = 0;
+
+    for (let m = 1; m <= months; m++) {
+        const year = Math.ceil(m / 12);
+        const isYearEnd = m % 12 === 0;
+        
+        labels.push(isYearEnd ? `Y${year}` : (m === 1 ? 'Start' : ''));
+
+        // Corp accumulation
+        const monthlyCorpCash = (corp.inputs.salary + corp.inputs.salary * corp.inputs.bonusPercent) / 12;
+        corpAccum += monthlyCorpCash * (1 - corp.result.effectiveTaxRate);
+
+        if (m === 1) {
+            corpAccum += corp.inputs.signOnCash * (1 - corp.result.effectiveTaxRate);
+        }
+
+        // Corp RSU vesting
+        const corpVestNow = calculateVestingFraction({
+            monthsElapsed: m,
+            vestingYears: corp.inputs.vesting,
+            cliffYears: corp.inputs.cliff,
+            schedule: corp.inputs.vestingSchedule
+        });
+        const corpVestPrev = m > 1 ? calculateVestingFraction({
+            monthsElapsed: m - 1,
+            vestingYears: corp.inputs.vesting,
+            cliffYears: corp.inputs.cliff,
+            schedule: corp.inputs.vestingSchedule
+        }) : 0;
+        
+        const corpRsuNis = corp.inputs.rsuUsd * exchangeRate;
+        corpAccum += (corpVestNow - corpVestPrev) * corpRsuNis * (1 - corp.result.effectiveTaxRate);
+
+        // Corp refresh vesting
+        for (let gy = 2; gy <= year; gy++) {
+            const grantMonth = (gy - 1) * 12 + 1;
+            if (m >= grantMonth) {
+                const refreshVestNow = calculateVestingFraction({
+                    monthsElapsed: m - grantMonth + 1,
+                    vestingYears: corp.inputs.vesting,
+                    cliffYears: corp.inputs.cliff,
+                    schedule: corp.inputs.vestingSchedule
+                });
+                const refreshVestPrev = m > grantMonth ? calculateVestingFraction({
+                    monthsElapsed: m - grantMonth,
+                    vestingYears: corp.inputs.vesting,
+                    cliffYears: corp.inputs.cliff,
+                    schedule: corp.inputs.vestingSchedule
+                }) : 0;
+                
+                const yearlyRsuNis = corp.inputs.yearlyRsuUsd * exchangeRate;
+                corpAccum += (refreshVestNow - refreshVestPrev) * yearlyRsuNis * (1 - corp.result.effectiveTaxRate);
+            }
+        }
+
+        datasets.corp.push(corpAccum);
+
+        // Startup salary accumulation
+        const startupSalaryTaxRate = calculateEffectiveTaxRate(startup.inputs.salary);
+        startupBaseAccum += (startup.inputs.salary / 12) * (1 - startupSalaryTaxRate);
+
+        if (m === 1) {
+            startupBaseAccum += startup.inputs.signOnCash * (1 - startupSalaryTaxRate);
+        }
+
+        // Calculate current equity values for each scenario
+        const vestFraction = calculateVestingFraction({
+            monthsElapsed: m,
+            vestingYears: startup.inputs.vesting,
+            cliffYears: startup.inputs.cliff,
+            schedule: startup.inputs.vestingSchedule
+        });
+        const vestedShares = startup.inputs.shares * vestFraction;
+
+        // Calculate top-up vested shares at this point
+        let topUpVestedAtM = { shares: 0, value1x: 0, valueTarget: 0, valueMoonshot: 0 };
+        for (let ty = startup.inputs.topUpFrequency; ty <= years; ty += startup.inputs.topUpFrequency) {
+            const grantMonth = (ty - 1) * 12 + 1;
+            if (m >= grantMonth) {
+                const topUpVestFraction = calculateVestingFraction({
+                    monthsElapsed: m - grantMonth + 1,
+                    vestingYears: startup.inputs.vesting,
+                    cliffYears: startup.inputs.cliff,
+                    schedule: startup.inputs.vestingSchedule
+                });
+                const topUpVested = startup.inputs.topUpShares * topUpVestFraction;
+                topUpVestedAtM.shares += topUpVested;
+                topUpVestedAtM.value1x += topUpVested * Math.max(0, startup.inputs.currentPrice - startup.inputs.topUpStrikePrice);
+                topUpVestedAtM.valueTarget += topUpVested * Math.max(0, startup.inputs.currentPrice * startup.inputs.multiples.target - startup.inputs.topUpStrikePrice);
+                topUpVestedAtM.valueMoonshot += topUpVested * Math.max(0, startup.inputs.currentPrice * startup.inputs.multiples.moonshot - startup.inputs.topUpStrikePrice);
+            }
+        }
+
+        const equityTaxRate = startup.inputs.is102 ? CONFIG.tax.capitalGainsRate102 : CONFIG.tax.capitalGainsRateNon102;
+        
+        // Initial equity values
+        const initial1x = vestedShares * Math.max(0, startup.inputs.currentPrice - startup.inputs.strikePrice);
+        const initialTarget = vestedShares * Math.max(0, startup.inputs.currentPrice * startup.inputs.multiples.target - startup.inputs.strikePrice);
+        const initialMoonshot = vestedShares * Math.max(0, startup.inputs.currentPrice * startup.inputs.multiples.moonshot - startup.inputs.strikePrice);
+
+        // Total equity (initial + top-ups) in NIS, after tax
+        const equity1xNet = (initial1x + topUpVestedAtM.value1x) * exchangeRate * (1 - equityTaxRate);
+        const equityTargetNet = (initialTarget + topUpVestedAtM.valueTarget) * exchangeRate * (1 - equityTaxRate);
+        const equityMoonshotNet = (initialMoonshot + topUpVestedAtM.valueMoonshot) * exchangeRate * (1 - equityTaxRate);
+
+        datasets.fail.push(startupBaseAccum);
+        datasets.oneX.push(startupBaseAccum + equity1xNet);
+        datasets.target.push(startupBaseAccum + equityTargetNet);
+        datasets.moonshot.push(startupBaseAccum + equityMoonshotNet);
+    }
+
+    // Render chart
+    const ctx = document.getElementById('compChart').getContext('2d');
+    if (state.chart) state.chart.destroy();
+
+    state.chart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels,
+            datasets: [
+                { label: 'Corp', data: datasets.corp, borderColor: CONFIG.chart.colors.corp, borderWidth: 3, fill: false, tension: 0, pointRadius: 0 },
+                { label: 'Fail', data: datasets.fail, borderColor: CONFIG.chart.colors.fail, borderWidth: 2, borderDash: [5, 5], fill: false, tension: 0, pointRadius: 0 },
+                { label: '1x', data: datasets.oneX, borderColor: CONFIG.chart.colors.acquihire, borderWidth: 2, borderDash: [5, 5], fill: false, tension: 0, pointRadius: 0 },
+                { label: 'Target', data: datasets.target, borderColor: CONFIG.chart.colors.target, borderWidth: 2, borderDash: [5, 5], fill: false, tension: 0, pointRadius: 0 },
+                { label: 'Moonshot', data: datasets.moonshot, borderColor: CONFIG.chart.colors.moonshot, borderWidth: 2, borderDash: [5, 5], fill: false, tension: 0, pointRadius: 0 }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            interaction: { intersect: false, mode: 'index' },
+            plugins: {
+                legend: { display: false },
+                tooltip: {
+                    callbacks: {
+                        title: ctx => 'Month ' + (ctx[0].dataIndex + 1),
+                        label: ctx => ctx.dataset.label + ': ₪' + Math.round(ctx.raw).toLocaleString()
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    grid: {
+                        color: ctx => (ctx.tick?.value + 1) % 12 === 0 ? 'rgba(255,255,255,0.3)' : 'rgba(255,255,255,0.05)',
+                        lineWidth: ctx => (ctx.tick?.value + 1) % 12 === 0 ? 2 : 1
+                    },
+                    ticks: {
+                        color: ctx => ctx.tick?.label?.startsWith('Y') ? '#fff' : '#888',
+                        font: ctx => ({ weight: ctx.tick?.label?.startsWith('Y') ? 'bold' : 'normal', size: 11 }),
+                        maxRotation: 0,
+                        autoSkip: false
+                    }
+                },
+                y: {
+                    type: useLogScale ? 'logarithmic' : 'linear',
+                    grid: { color: 'rgba(255,255,255,0.08)' },
+                    ticks: {
+                        color: '#888',
+                        callback: v => v >= 1e6 ? '₪' + (v / 1e6).toFixed(1) + 'M' : '₪' + (v / 1e3).toFixed(0) + 'K'
+                    }
+                }
+            }
+        }
+    });
+}
+
+// ===========================================
+// DOM UPDATES
+// ===========================================
+
+function updateDOM(inputs, corpResult, startupResult) {
+    const { exchangeRate, years } = inputs.general;
+    const probs = inputs.startup.probabilities;
+    const mults = inputs.startup.multiples;
+
+    // Update derived fail probability
+    document.getElementById('probFail').value = Math.round(probs.fail * 100);
+
+    // Update labels
+    document.getElementById('moonshotMultLabel').textContent = mults.moonshot;
+    document.getElementById('targetMultLabel').textContent = mults.target;
+
+    // Current grant value
+    document.getElementById('currentGrantValue').textContent = 
+        Math.round(startupResult.currentGrantValue).toLocaleString();
+
+    // Corp results
+    document.getElementById('corpTotal').textContent = formatCurrency(corpResult.net, state.displayCurrency, exchangeRate);
+    document.getElementById('corpTotalAlt').textContent = formatAltCurrency(corpResult.net, exchangeRate);
+    document.getElementById('corpSalaryBreak').textContent = formatCurrency(corpResult.salary, state.displayCurrency, exchangeRate);
+    document.getElementById('corpBonusBreak').textContent = formatCurrency(corpResult.bonus, state.displayCurrency, exchangeRate);
+    document.getElementById('corpSignOnBreak').textContent = formatCurrency(corpResult.signOn, state.displayCurrency, exchangeRate);
+    document.getElementById('corpRsuBreak').textContent = formatCurrency(corpResult.initialRsu, state.displayCurrency, exchangeRate);
+    document.getElementById('corpRefreshBreak').textContent = formatCurrency(corpResult.refresh, state.displayCurrency, exchangeRate);
+    document.getElementById('corpTaxBreak').textContent = '-' + formatCurrency(corpResult.tax, state.displayCurrency, exchangeRate);
+
+    // Startup results
+    document.getElementById('startupTotal').textContent = formatCurrency(startupResult.totalExpected, state.displayCurrency, exchangeRate);
+    document.getElementById('startupTotalAlt').textContent = formatAltCurrency(startupResult.totalExpected, exchangeRate);
+    document.getElementById('startupSalaryBreak').textContent = formatCurrency(startupResult.salary, state.displayCurrency, exchangeRate);
+    document.getElementById('startupSignOnBreak').textContent = formatCurrency(startupResult.signOn, state.displayCurrency, exchangeRate);
+    document.getElementById('startupEquityBreak').textContent = formatCurrency(startupResult.expectedEquityGross, state.displayCurrency, exchangeRate);
+    document.getElementById('startupTaxBreak').textContent = '-' + formatCurrency(startupResult.totalTax, state.displayCurrency, exchangeRate);
+
+    // Difference
+    const diff = startupResult.totalExpected - corpResult.net;
+    const diffEl = document.getElementById('difference');
+    diffEl.textContent = (diff >= 0 ? '+' : '') + formatCurrency(diff, state.displayCurrency, exchangeRate);
+    diffEl.className = 'result-value ' + (diff >= 0 ? 'positive' : 'negative');
+    document.getElementById('differenceAlt').textContent = (diff >= 0 ? '+' : '') + formatAltCurrency(diff, exchangeRate);
+    document.getElementById('differenceNote').textContent = diff >= 0 ? 'Startup higher EV' : 'Corp pays more';
+
+    // Comparison details
+    document.getElementById('periodYears').textContent = years + ' years';
+    document.getElementById('yourShares').textContent = 
+        Math.round(startupResult.totalVestedShares).toLocaleString() + ' / ' + 
+        startupResult.totalSharesGranted.toLocaleString();
+    
+    const corpAnnualTotal = inputs.corp.salary + (inputs.corp.salary * inputs.corp.bonusPercent);
+    const annualSalaryDiff = inputs.startup.salary - corpAnnualTotal;
+    document.getElementById('salaryDiff').textContent = 
+        (annualSalaryDiff >= 0 ? '+' : '') + formatCurrency(annualSalaryDiff, state.displayCurrency, exchangeRate);
+    document.getElementById('totalSalaryGap').textContent = 
+        formatCurrency(Math.max(0, -annualSalaryDiff * years), state.displayCurrency, exchangeRate);
+
+    // Scenario cards
+    const scenarios = startupResult.scenarios;
+    document.getElementById('scenarioFail').textContent = formatCurrency(scenarios.fail, state.displayCurrency, exchangeRate);
+    document.getElementById('scenarioFailProb').textContent = Math.round(probs.fail * 100) + '%';
+    document.getElementById('scenario1x').textContent = formatCurrency(scenarios['1x'], state.displayCurrency, exchangeRate);
+    document.getElementById('scenario1xProb').textContent = Math.round(probs['1x'] * 100) + '%';
+    document.getElementById('scenarioTarget').textContent = formatCurrency(scenarios.target, state.displayCurrency, exchangeRate);
+    document.getElementById('scenarioTargetProb').textContent = Math.round(probs.target * 100) + '%';
+    document.getElementById('scenarioMoonshot').textContent = formatCurrency(scenarios.moonshot, state.displayCurrency, exchangeRate);
+    document.getElementById('scenarioMoonshotProb').textContent = Math.round(probs.moonshot * 100) + '%';
+}
+
+// ===========================================
+// MAIN CALCULATE FUNCTION
+// ===========================================
+
+function calculate() {
+    const inputs = readInputs();
+    
+    // Calculate
+    const corpResult = calculateCorpCompensation(inputs.corp);
+    const startupResult = calculateStartupCompensation(inputs.startup);
+
+    // Update DOM
+    updateDOM(inputs, corpResult, startupResult);
+
+    // Render bar chart
+    const barLogScale = document.getElementById('barLogScale')?.checked || false;
+    renderBarChart({
+        corp: corpResult.net,
+        fail: startupResult.scenarios.fail,
+        oneX: startupResult.scenarios['1x'],
+        target: startupResult.scenarios.target,
+        moonshot: startupResult.scenarios.moonshot,
+        probabilities: inputs.startup.probabilities,
+        exchangeRate: inputs.general.exchangeRate
+    }, barLogScale);
+
+    // Render line chart
+    const chartLogScale = document.getElementById('chartLogScale')?.checked || false;
+    renderLineChart({
+        years: inputs.general.years,
+        corp: { inputs: inputs.corp, result: corpResult },
+        startup: { inputs: inputs.startup, result: startupResult },
+        exchangeRate: inputs.general.exchangeRate,
+        useLogScale: chartLogScale
+    });
+}
+
+// ===========================================
+// EVENT LISTENERS
+// ===========================================
+
+function setupEventListeners() {
+    // Input changes
+    document.querySelectorAll('input, select').forEach(el => {
+        el.addEventListener('input', calculate);
+        el.addEventListener('change', calculate);
+    });
+
+    // Currency toggle
+    document.getElementById('btnNis')?.addEventListener('click', () => {
+        state.displayCurrency = 'NIS';
+        document.getElementById('btnNis').classList.add('active');
+        document.getElementById('btnUsd').classList.remove('active');
+        calculate();
+    });
+
+    document.getElementById('btnUsd')?.addEventListener('click', () => {
+        state.displayCurrency = 'USD';
+        document.getElementById('btnUsd').classList.add('active');
+        document.getElementById('btnNis').classList.remove('active');
+        calculate();
+    });
+}
+
+// ===========================================
+// INITIALIZATION
+// ===========================================
+
+document.addEventListener('DOMContentLoaded', () => {
+    setupEventListeners();
+    // Wait for Chart.js to load
+    if (typeof Chart !== 'undefined') {
+        calculate();
+    } else {
+        // Chart.js loaded via script tag, might need a small delay
+        setTimeout(calculate, 100);
+    }
+});
+
+// Fallback if DOMContentLoaded already fired
+if (document.readyState === 'complete' || document.readyState === 'interactive') {
+    setupEventListeners();
+    setTimeout(calculate, 100);
+}
+</script>
+```
+
+</body>
+</html>
