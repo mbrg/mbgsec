@@ -835,7 +835,7 @@
                 <label>USD/NIS Exchange Rate</label>
                 <div class="input-wrapper">
                     <span class="prefix">₪</span>
-                    <input type="number" id="exchangeRate" value="3.65" step="0.01" class="has-prefix">
+                    <input type="number" id="exchangeRate" value="3.3" step="0.01" class="has-prefix">
                 </div>
             </div>
             <div class="input-group">
@@ -1425,7 +1425,7 @@ const REVERSE_KEY_MAP = Object.fromEntries(
  * consistent experience even if we change defaults later
  */
 const DEFAULT_VALUES = {
-    exchangeRate: '3.65', yearsToExit: '5',
+    exchangeRate: '3.3', yearsToExit: '5',
     corpSalary: '600000', corpBonus: '15', corpSignOnCash: '0',
     corpRsu: '100000', corpVesting: '4', corpCliff: '1',
     corpVestingSchedule: 'quarterly', corpYearlyBonusCash: '0',
@@ -1977,7 +1977,7 @@ function readInputs() {
 // FORMATTING HELPERS
 // ===========================================
 
-function formatCurrency(amount, currency = state.displayCurrency, exchangeRate = 3.65) {
+function formatCurrency(amount, currency = state.displayCurrency, exchangeRate = 3.3) {
     if (currency === 'NIS') {
         return '₪' + Math.round(amount).toLocaleString();
     }
