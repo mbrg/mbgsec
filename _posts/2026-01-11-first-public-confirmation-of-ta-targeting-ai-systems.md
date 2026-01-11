@@ -64,7 +64,7 @@ A day after, [boB Rudis at GrayNoise reported](https://www.greynoise.io/blog/thr
 > - xAI (Grok)
 
 But they got more than that.
-The two IPs GrayNoise observed scanning the internet for AI system API formats were previously observed **exploiting** known CVEs.
+These two IPs were previously observed **exploiting** known CVEs.
 So we know its not "good" researchers. 
 It's someone actively trying to exploit vulnerable endpoints out there.
 Exploitation attempts included React2Shell, which to me (together with the noisy nature of these scans) suggests an opportunistic and financially motivated actor (i.e. cybercrime).
