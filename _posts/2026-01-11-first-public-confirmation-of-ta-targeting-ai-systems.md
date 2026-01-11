@@ -26,7 +26,7 @@ From our own RT perspective, there isn't a single AI system we've observed and w
 ![It's the 90s again](https://mbgsec.com/assets/images/2026-01-11-first-public-confirmation-of-ta-targeting-ai-systems/90s.png)
 
 Enterprise security teams have been seeing the other side of this: massive risk taking.
-The hype-tweet-to-prod-deployment at a F50 bank has never been shorter.
+The hype-tweet-to-enterprise-deployment pipeline has never been shorter.
 Sama posts about the latest AI thingy (agentic browers, coding assistants, ...) and C-level execs ask how fast can we adopt it. 
 The gold rush is in full swing.
 
