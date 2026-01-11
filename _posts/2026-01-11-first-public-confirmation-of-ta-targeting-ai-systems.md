@@ -44,7 +44,7 @@ People share stories in private forums.
 But there isn't yet a publicly confirmed incident.
 
 Or there wasn't--until now.
-A few days ago [DefusedCyber observed](https://xcancel.com/DefusedCyber/status/2009007964246692130) _"an actor actively trying to access various LLM pathways, querying multiple different honeypot types for OpenAI, Gemini & Claude endpoints"_.
+A few days ago [DefusedCyber](https://xcancel.com/DefusedCyber/status/2009007964246692130) [observed](https://github.com/eliwoodward/HoneyPot-Logs/blob/main/LLM%20scanning) _"an actor actively trying to access various LLM pathways, querying multiple different honeypot types for OpenAI, Gemini & Claude endpoints"_.
 
 ![DefusedCyber post](https://mbgsec.com/assets/images/2026-01-11-first-public-confirmation-of-ta-targeting-ai-systems/defusedcyber.png)
 
