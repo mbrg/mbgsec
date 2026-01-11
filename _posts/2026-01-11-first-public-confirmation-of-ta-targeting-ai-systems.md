@@ -14,7 +14,9 @@ header:
 
 Over the past year I've been asking people the same question over and over again: **when your AI systems are targeted, will you know?**
 
-Answers vary in elaboration of compensating controls, but the bottom line is almost always the same--No.
+Answers vary.
+Mostly in elaboration of compensating controls.
+But the bottom line is almost always the same--No.
 Some even go the extra mile and say that AI security threats are all fruits of red team imagination.
 
 On the offensive side, AI red teamers are [having a ball](https://mbgsec.com/posts/2025-08-08-enterprise-ai-compromise-0click-exploit-methods-sneak-peek/).
