@@ -12,7 +12,7 @@ header:
   og_image: /assets/images/assets/images/2026-01-11-first-public-confirmation-of-ta-targeting-ai-systems/aita.png
 ---
 
-Over the past year I've been asking people the same question over and over again: **when your AI systems are targeted, will you know?**
+Over the past year I've been asking people the same question over and over again: **when our AI systems are targeted, will you know?**
 
 Answers vary.
 Mostly in elaboration of compensating controls.
@@ -35,7 +35,7 @@ With bleeding edge tech that is so vulnerable that (good) hackers are feeling li
 So where are the massive new headlines of devastating breaches?
 
 Joshua Saxe called this the [AI risk overhang](https://substack.com/inbox/post/183640704), accepting the narrative that attackers aren't there yet.
-So, asking that question again: When your AI systems are targeted, will you know?
+So, asking that question again: When our AI systems are targeted, will you know?
 **Of course not. Most aren't even looking.**
 
 One major thing here is that AI system breaches can still be hidden away from public view.
@@ -65,41 +65,42 @@ A day after, [boB Rudis at GrayNoise reported](https://www.greynoise.io/blog/thr
 
 But they got more than that.
 These two IPs were previously observed **exploiting** known CVEs.
-So we know its not "good" researchers. 
-It's someone actively trying to exploit vulnerable endpoints out there.
+So we know these aren't "good" researchers. 
+These are actors actively trying to exploit exposed vulnerable endpoints.
 Exploitation attempts included React2Shell, which to me (together with the noisy nature of these scans) suggests an opportunistic and financially motivated actor (i.e. cybercrime).
-boB's assessment:
+Here's boB's assessment:
 
 > Assessment: Professional threat actor conducting reconnaissance. The infrastructure overlap with established CVE scanning operations suggests this enumeration feeds into a larger exploitation pipeline. They're building target lists.
->
 > ...
->
 > Eighty thousand enumeration requests represent investment. Threat actors don't map infrastructure at this scale without plans to use that map. If you're running exposed LLM endpoints, you're likely already on someone's list.
 
 This is **the first public confirmation of a threat actor targeting AI systems**.
 Huge find by DefusedCyber and boB @ GrayNoise.
 This changes the calculus.
-We now have all three: 
+We now have all three factors for a big mess: 
 1. Rapidly expanding AI attack surface - the enterprise AI gold rush
-2. Profound exploitability of AI systems - applications are vulnerable when they have an exploitable bug; agents are exploitable
+2. Fundamental exploitability of AI systems - applications are vulnerable when they have an exploitable bug; agents are exploitable
 3. Threat actors actively search for exposed AI systems (1) to exploit (2)
 
 What to do next?
 First, we need to update our world view.
 And I need to update my question.
-It's no longer "when your AI systems are targeted, will you know?".
-The question to ask yourself and your org now is: **"Your AI systems are actively targeted by threat actors. Do you know which of is exposed? which has already been breached?"**
+It's no longer _"when our AI systems are targeted, will you know?"_.
+**If you have a publicly exposed AI system and your systems were not alerted, the answer to that has proven to be No.**
+
+The question to ask ourselves and our orgs now is: **"Our AI systems are actively targeted by threat actors. Do we know which of is exposed? which has already been breached?"**
 
 ## P.S Learning From The Threat Actor's Choice of Prompts
 
 ### LLM literacy by the Threat Actor
 
-Once a threat actor finds an exploitable AI system, what will they do with it? How LLM literate are they?
+Once a threat actor finds an exploitable AI system, what will they do with it? 
+How LLM literate are they?
 
 Let's start with the second question.
 Look at the prompts used by the threat actor to ping the AI systems they found:
 
-![Test queries performed by the threat actor, GrayNoise](https://mbgsec.com/assets/images/assets/images/2026-01-11-first-public-confirmation-of-ta-targeting-ai-systems/aita.png)
+![Test queries performed by the threat actor, GrayNoise](https://mbgsec.com/assets/images/2026-01-11-first-public-confirmation-of-ta-targeting-ai-systems/aita.png)
 
 Asking _"What model are you"_ is a rather straightforward way to figure out if you're talking to a state of the art model or something running in somebody's basement.
 But the last query is most revealing: _"How many letter r are in the word strawberry?"_.
@@ -112,7 +113,7 @@ At least in prompt engineering, which is the same skill you need for prompt inje
 
 ### What Can the Threat Actor do With Discovered AI Systems?
 
-First, if you want to [use LLMs for malicious operations](https://www.anthropic.com/news/detecting-and-countering-malicious-uses-of-claude-march-2025), using one through stolen access is a great way to avoid detection.
+If you want to [use LLMs for malicious operations](https://www.anthropic.com/news/detecting-and-countering-malicious-uses-of-claude-march-2025), using one through stolen access is a great way to avoid detection.
 With bonus points for letting someone else pick up the bill.
 
 But if those systems have access to enterprise data.
