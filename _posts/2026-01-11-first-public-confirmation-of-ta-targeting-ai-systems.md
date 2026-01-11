@@ -20,8 +20,8 @@ But the bottom line is almost always the same--No.
 Some even go the extra mile and say that AI security threats are all fruits of red team imagination.
 
 On the offensive side, AI red teamers are [having a ball](https://mbgsec.com/posts/2025-08-08-enterprise-ai-compromise-0click-exploit-methods-sneak-peek/).
-Ask your friendly AI hackers and they will all tell you, it feels like the 90s again.
-From our own RT perspective, there isn't a single AI system we've observed and we're able to compromise within hours.
+Ask your friendly AI hacker and they will all tell you, it feels like the 90s again.
+From our own RT perspective, there isn't a single AI system we've observed and weren't able to compromise within hours.
 
 ![It's the 90s again](https://mbgsec.com/assets/images/2026-01-11-first-public-confirmation-of-ta-targeting-ai-systems/90s.png)
 
