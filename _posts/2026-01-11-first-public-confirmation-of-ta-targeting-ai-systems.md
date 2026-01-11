@@ -1,5 +1,5 @@
 ---
-title: First Public Confirmation of a Threat Actor Targeting AI Systems
+title: First Publicly Confirmed Threat Actor Targeting AI Systems
 description: "Security researchers have publicly confirmed, for the first time, that threat actors are actively scanning and probing enterprise AI systems for exploitation. Correlated observations from DefusedCyber and GrayNoise show systematic reconnaissance of exposed LLM endpoints—using techniques associated with known CVE exploitation pipelines—marking a shift from theoretical AI risk to active adversary behavior."
 categories:
   - Blog
