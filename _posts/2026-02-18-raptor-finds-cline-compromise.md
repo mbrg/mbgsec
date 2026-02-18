@@ -38,7 +38,7 @@ You find the important pieces on [xitter](https://x.com/mbrg0/status/20240737882
 Raptor works much faster than I do, so here is its [forensic report](/assets/files/2026-02-18-raptor-finds-cline-compromise/forensic-report-v1.md) and [full session history](/assets/files/2026-02-18-raptor-finds-cline-compromise/raptor_session.html). 
 Stay tuned.
 
-**__**Edit (2/18 11:30AM ET)**: [Adnan provided more detail](https://x.com/adnanthekhan/status/2024093384558686537?s=20) clarifying that `gcbrun` and `Dev11940518` are their accounts.
+**Edit (2/18 11:30AM ET)**: [Adnan provided more detail](https://x.com/adnanthekhan/status/2024093384558686537?s=20) clarifying that `gcbrun` and `Dev11940518` are their accounts.
 
 The initial access vector is confirmed to have been issue #8904 made to Cline repo with this prompt injection in the title:
 
