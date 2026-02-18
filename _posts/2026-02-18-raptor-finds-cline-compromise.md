@@ -20,6 +20,8 @@ As [Johann said](https://x.com/wunderwuzzi23/status/2024027082397761621), you ca
 The "unauthorized" language and the "benign compromise" got me interested.
 Pretty quickly I spotted [Adnan Khan's blog](https://adnanthekhan.com/posts/clinejection/) -- full disclosure of a supply chain vulnerability in cline.
 Attackers could steal repo auth tokens through prompt injection.
+This is a very cool find by Adnan! 
+Github action compromise through prompt injection.
 Adnan's blog mentions reaching out privately to cline on Jan 1st and repeatedly since, eventually resulting in full disclosure on Feb 7th (after no response).
 
 This seemed like an amazing test case for [Raptor](https://github.com/gadievron/raptor) and its [/oss-forensics command](https://github.com/gadievron/raptor/blob/main/.claude/commands/oss-forensics.md).
