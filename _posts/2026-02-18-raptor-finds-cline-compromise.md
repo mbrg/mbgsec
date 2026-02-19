@@ -17,12 +17,19 @@ header:
 For 8 hours, installing Cline CLI resulted in also.. installing OpenClaw.
 As [Johann said](https://x.com/wunderwuzzi23/status/2024027082397761621), you can't make this up.
 
-The "unauthorized" language and the "benign compromise" got me interested.
+Installing OpenClaw and seeming doing nothing with it got me curious.
+Cline calling this incident an "unauthorized npm public" and assigning low severity got me suspicious.
+
+![Cline's advisory](/assets/images/2026-02-18-raptor-finds-cline-compromise/unauthorized.png).
+
 Pretty quickly I spotted [Adnan Khan's blog](https://adnanthekhan.com/posts/clinejection/) -- full disclosure of a supply chain vulnerability in cline.
-Attackers could steal repo auth tokens through prompt injection.
+Adnan found that attackers could steal Cline's repo auth tokens through prompt injection.
+Cline is set up to auto-triage any Github issue on the Cline repo.
+That workflow was misconfigured to have access to the repo credentials. 
+It spawned an AI agent (Cline) to process the issue.. so prompt injection through the issue's title led to credential theft. 
 This is a very cool find by Adnan! 
-Github action compromise through prompt injection.
-Adnan's blog mentions reaching out privately to cline on Jan 1st and repeatedly since, eventually resulting in full disclosure on Feb 7th (after no response).
+Adnan's blog mentions reaching out privately to cline on Jan 1st and repeatedly since, but getting no response.
+He eventually had to result to full disclosure on Feb 7th.
 
 This seemed like an amazing test case for [Raptor](https://github.com/gadievron/raptor) and its [/oss-forensics command](https://github.com/gadievron/raptor/blob/main/.claude/commands/oss-forensics.md).
 I kicked off Raptor with this prompt:
@@ -30,6 +37,7 @@ I kicked off Raptor with this prompt:
 > /oss-forensics look at this advisory: https://github.com/cline/cline/security/advisories/GHSA-9ppg-jx86-fqw7. how
 pushed the malicious commit? what else did they do?
 
+In 5 minutes I had a set of IOCs and have identified the malicious user, weaponized issue, malicious commits and payloads on gists.
 Long story short, it nailed it.
 ![Raptor finds the compromising user](/assets/images/2026-02-18-raptor-finds-cline-compromise/results.png).
 
@@ -52,8 +60,4 @@ The preinstall script leads to a now-deleted gist (probably with the payload).
 Most importantly, issue 8904 was created on Jan 28, while Adnan's blog was released on Feb 7. 
 This means **the attacker `gtlhub-actions` spotted Adnan's public POC and took advantage of it** before the full disclosure blog was published.
 
-Updated [forensic report (v2)](/assets/files/2026-02-18-raptor-finds-cline-compromise/forensic-report-v2.md).
-
-**Edit (2/18 12:PM ET)**: 
-
-Updated [forensic report (v3)](/assets/files/2026-02-18-raptor-finds-cline-compromise/forensic-report-v3.md).
+Updated [forensic report (v3)](/assets/files/2026-02-18-raptor-finds-cline-compromise/forensic-report-v2.md).
