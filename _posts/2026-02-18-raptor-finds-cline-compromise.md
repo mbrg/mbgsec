@@ -13,6 +13,12 @@ header:
   og_image: /assets/images/2026-02-18-raptor-finds-cline-compromise/HBb2TkmWIAA9u68.jpeg
 ---
 
+**Edit (2/19 2:30AM ET)**: This blog post was written **during** an ongoing investigation. 
+It shows a messy research process.
+If you want to learn what happened with Cline's supply chain compromise, read [Agent Compromised by Agent To Deploy an Agent](https://mbgsec.com/posts/2026-02-19-agent-repo-compromised-by-agent-to-install-an-agent.md).
+
+--
+
 12 hours ago Cline [released](https://github.com/cline/cline/security/advisories/GHSA-9ppg-jx86-fqw7) an advisory about an unauthorized npm publication.
 For 8 hours, installing Cline CLI resulted in also.. installing OpenClaw.
 As [Johann said](https://x.com/wunderwuzzi23/status/2024027082397761621), you can't make this up.
