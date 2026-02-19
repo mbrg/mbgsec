@@ -66,4 +66,4 @@ The preinstall script leads to a now-deleted gist (probably with the payload).
 Most importantly, issue 8904 was created on Jan 28, while Adnan's blog was released on Feb 7. 
 This means **the attacker `gtlhub-actions` spotted Adnan's public POC and took advantage of it** before the full disclosure blog was published.
 
-Updated [forensic report (v3)](/assets/files/2026-02-18-raptor-finds-cline-compromise/forensic-report-v2.md).
+Updated [forensic report (v3)](/assets/files/2026-02-18-raptor-finds-cline-compromise/forensic-report-v3.md).
