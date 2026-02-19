@@ -141,6 +141,7 @@ This gist and others by `glthub-actions` were deleted. I was unable to recover t
 The exfiltration payload sends secrets to an attacker-controlled endpoint.
 
 Looking at `glthub-actions`'s commits to their private folks, we spotted this Burp Collaborator address: 
+
 ```bash
 637rio6pykojp15rrkbm4gk960cr0jo8.oastify.com
 ```
