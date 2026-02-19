@@ -9,11 +9,9 @@ tags:
   - Threat Intelligence
   - Supply Chain
 header:
-  teaser: /assets/images/2026-02-18-raptor-finds-cline-compromise/HBb2TkmWIAA9u68.jpeg
-  og_image: /assets/images/2026-02-18-raptor-finds-cline-compromise/HBb2TkmWIAA9u68.jpeg
+  teaser: /assets/images/2026-02-18-raptor-finds-cline-compromise/akiovo.jpg
+  og_image: /assets/images/2026-02-18-raptor-finds-cline-compromise/akiovo.jpg
 ---
-
-## Intro
 
 Yesterday (Feb 17, 2026, 12:18AM ET) Cline [released](https://github.com/cline/cline/security/advisories/GHSA-9ppg-jx86-fqw7) an advisory about an unauthorized npm publication.
 For 8 hours, anyone installing Cline CLI from their official npm package got a little surprise baked in.
@@ -34,7 +32,8 @@ Someone found Adnan's blog and abused it before Cline could fix it?
 That issue used prompt injection in its title, copying Adnan's documented work.
 This issue was created on Jan 27 ET.
 A week and a half **before** Adnan's blog went public.
-**Wait, WHAT?**
+
+**Wait. WHAT?**
 
 **This story doesn't add up.**
 1. If this issue was reported by a researcher (Adnan), how did we get to an unauthorized npm package publication?
@@ -47,19 +46,22 @@ I also [documented my research process](https://mbgsec.com/posts/2026-02-18-rapt
 
 ## What Actually Happened
 
-**Created**: 2026-02-18
-
-**Published**: 2026-02-19 3AM ET
-
-**Classification**: Supply Chain Attack via Prompt Injection
-
-**Report by**: [Michael Bargury](https://x.com/mbrg0) and [Raptor](https://github.com/gadievron/raptor)
-
 ### Executive Summary
 
 This investigation examined a supply chain attack against the Cline VS Code extension, a popular AI coding assistant with significant npm download volume. The attacker spotted and abused a security researcher's public POC (dubbed "Clinejection") before the researcher willingly published it. They then exploited a prompt injection vulnerability in the project's automated Claude-powered issue triage workflow to steal CI/CD secrets, ultimately enabling publication of a malicious npm package.
 
+Here's what actually happened.
+- An Agent (Cline) was compromised by an agent (Claude issue reviewer) to deploy an agent (OpenClaw)
+- A bug hunter (`glthub-actions`) discovered a vulnerability discovered by another security researcher (Adnan Khan) while they were going through disclosure
+- Cline knew about this vulnerability from Jan 1st through Adnan's responsible disclosure
+- The bug bunter exploited Cline's failure to respond to Adnan's disclosure and the public POC (pre-publication) to compromise Cline's npm credentials and publish a compromised version, probably as a POC
+
 **Attribution with HIGH confidence**: An unknown actor with Github username `glthub-actions` discovered security researcher Adnan Khan's public POC repository. This was while Adnan was still trying to go through coordinated disclosure to Cline, and before his full disclosure blog was published. The actor abused Adnan's find to compromise Cline's publication credentials on Jan 27 10:51 PM ET, and subsequently publish a compromised npm version on Feb 17 6:26AM ET. The attack chain involved prompt injection via GitHub issue titles, and exfiltration of npm publishing tokens from GitHub Actions workflows. The malicious package (cline@2.3.0) contained a benign payload (`openclaw@latest`) rather than actual malware. An examination of the actor's Github history reveals a separate compromise of `newrelic/test-oac-repository`, a "Automation and Contribution (OAC) workflow pattern" repo set up newrelic inviting bug bounty hunters to find vulnerabilities in their Github automation. The evidence is consistent with a security research demonstration rather than a malicious campaign.
+
+**Created**: 2026-02-18
+**Published**: 2026-02-19 3AM ET
+**Classification**: Supply Chain Attack via Prompt Injection
+**Report by**: [Michael Bargury](https://x.com/mbrg0) and [Raptor](https://github.com/gadievron/raptor)
 
 ### Timeline
 
@@ -231,15 +233,6 @@ The workflow interpolated branch names into shell commands without sanitization:
 We're seeing three different actors using different attack techniques.
 These appear to be **bug bounty hunters** testing the same vulnerability class. 
 Their presence suggests this was a known/discoverable vulnerability pattern.
-
-##### Current Status
-
-- `newrelic/test-oac-repository` → **404 (deleted)**
-
-**Why deleted:** Likely security response after:
-- Bug bounty reports from bhtestacount123/r3s1l3n7
-- Detection of glthub-actions' attack attempts
-- Or routine cleanup of vulnerable test infrastructure
 
 ##### Connection to Cline Attack
 
