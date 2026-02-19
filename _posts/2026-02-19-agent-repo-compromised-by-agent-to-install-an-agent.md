@@ -52,7 +52,7 @@ This investigation examined a supply chain attack against the Cline VS Code exte
 
 Here's what actually happened.
 - An Agent (Cline) was compromised by an agent (Claude issue reviewer) to deploy an agent (OpenClaw)
-- A bug hunter (`glthub-actions`) discovered a vulnerability discovered by another security researcher (Adnan Khan) while they were going through disclosure
+- A bug hunter (`glthub-actions`) discovered a POC for a vulnerability discovered by another security researcher (Adnan Khan) while they were going through disclosure
 - Cline knew about this vulnerability from Jan 1st through Adnan's responsible disclosure
 - The bug bunter exploited Cline's failure to respond to Adnan's disclosure and the public POC (pre-publication) to compromise Cline's npm credentials and publish a compromised version, probably as a POC
 
