@@ -15,7 +15,7 @@ header:
 
 **Edit (2/19 2:30AM ET)**: This blog post was written **during** an ongoing investigation. 
 It shows a messy research process.
-If you want to learn what happened with Cline's supply chain compromise, read [Agent Compromised by Agent To Deploy an Agent](https://mbgsec.com/posts/2026-02-19-agent-repo-compromised-by-agent-to-install-an-agent.md).
+If you want to learn what happened with Cline's supply chain compromise, read [Agent Compromised by Agent To Deploy an Agent](https://mbgsec.com/posts/2026-02-19-agent-repo-compromised-by-agent-to-install-an-agent).
 
 --
 

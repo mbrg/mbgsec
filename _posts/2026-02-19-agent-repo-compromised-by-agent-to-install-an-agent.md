@@ -28,7 +28,7 @@ Someone found Adnan's blog and abused it before Cline could fix it?
 
 !["Just another vuln, move on"](/assets/images/2026-02-18-raptor-finds-cline-compromise/akiovo.jpg)
 
-[I did some digging](https://mbgsec.com/posts/2026-02-18-raptor-finds-cline-compromise.md) and found that the initial access vector was a Github issue #8904.
+[I did some digging](https://mbgsec.com/posts/2026-02-18-raptor-finds-cline-compromise) and found that the initial access vector was a Github issue #8904.
 That issue used prompt injection in its title, copying Adnan's documented work.
 This issue was created on Jan 27 ET.
 A week and a half **before** Adnan's blog went public.
@@ -42,7 +42,7 @@ A week and a half **before** Adnan's blog went public.
 
 I used [Raptor](https://github.com/gadievron/raptor) -- Claude Code does cybersecurity -- to investigate and uncover it all.
 Here's our report. 
-I also [documented my research process](https://mbgsec.com/posts/2026-02-18-raptor-finds-cline-compromise.md) including Raptor sessions for you to dig in, if you're so inclined.
+I also [documented my research process](https://mbgsec.com/posts/2026-02-18-raptor-finds-cline-compromise) including Raptor sessions for you to dig in, if you're so inclined.
 
 ## What Actually Happened
 
