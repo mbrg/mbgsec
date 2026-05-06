@@ -49,7 +49,7 @@ Long story short, it nailed it.
 
 This is an ongoing investigation, I will continue to update this blog with details.
 You find the important pieces on [xitter](https://x.com/mbrg0/status/2024073788204240929).
-Raptor works much faster than I do, so here is its [forensic report (v1)](/assets/files/2026-02-18-raptor-finds-cline-compromise/forensic-report-v1.md) and [full session history](/assets/files/2026-02-18-raptor-finds-cline-compromise/index.html). 
+Raptor works much faster than I do, so here is its [forensic report (v1)](https://mbgsec./assets/files/2026-02-18-raptor-finds-cline-compromise/forensic-report-v1.md) and [full session history](/assets/files/2026-02-18-raptor-finds-cline-compromise/index.html). 
 Stay tuned.
 
 **Edit (2/18 11:30AM ET)**: [Adnan provided more detail](https://x.com/adnanthekhan/status/2024093384558686537?s=20) clarifying that `gcbrun` and `Dev11940518` are their accounts.

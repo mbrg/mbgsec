@@ -6,25 +6,22 @@ layout: splash
 
 # Talk Materials
 
-## Upcoming Talks
+## Previous Talks
 
 | Date | Conference | Talk | Resources |
 | - | - | - | - |
-| | CarolinaCon 2025 | 0click enterprise compromise – thank you, AI! | |
+| 2026-04-30 | Founder-Led Growth in Cyber by Vertex | How to ~~Get Fortune 500 Inbounds~~ Create Value in Cybersecurity | [<i class="fab fa-fw fa-slideshare" title="Slides"></i>](../assets/pdfs/2026-04-30_How-To-Generate-Value-In-CyberSecurity.pdf) |
+| 2026-03-23 | RSAC 2026 | Your AI Agents Are My Minions | [<i class="fab fa-fw fa-slideshare" title="Slides"></i>](../assets/pdfs/2026-03-23_YourAIAgentsAreMyMinions.pdf) |
+| 2026-03-04 | [[Un]]prompted 2026 | Perplexed Browser: PleaseFix (delivered by Gadi Evron) | [<i class="fab fa-fw fa-slideshare" title="Slides"></i>](../assets/pdfs/2026-03-04_PerplexedBrowser.pdf)[<i class="fab fa-fw fa-youtube" title="Recording"></i>](https://youtu.be/yUqBC3mc544?si=e4xO5TqMw-lvt9Zg) |
 | 2025-11-13 | DefCamp 2025 | 0click Enterprise compromise - thank you, AI (delivered by Inbar Raz) | |
 | 2025-11-07 | OWASP Global AppSec US 2025 | OWASP Citizen Development Project (delivered by Kayla Underkoffler) | |
 | 2025-11-07 | OWASP Global AppSec US 2025 | OWASP AIVSS Project (delivered by Ken Huang) | |
 | 2025-11-07 | OWASP Global AppSec US 2025 | 0click Enterprise compromise - thank you, AI (delivered with Tamir Oshay Sharbat) | |
 | 2025-10-22 | Ekoparty 2025 | 0click Enterprise compromise - thank you, AI (delivered by Inbar Raz) | |
-
-
-## Previous Talks
-
-| Date | Conference | Talk | Resources |
-| - | - | - | - |
-| 2025-10-08 | AI Agent Security Summit by Zenity Labs @ SF 2025 | Making Real Progress In Security From AI | [<i class="fab fa-fw fa-slideshare" title="Slides"></i>](../assets/pdfs/2025-10-08_ActuallyMakingProgressInSecurityFromAI.pdf)[<i class="fab fa-fw fa-blog" title="Slides"></i>](../assets/pdfs/2025-10-08_ActuallyMakingProgressInSecurityFromAI.pdf) |
+| 2025-10-08 | Intent 2025 | Pwn the Enterprise - Thank you AI! | [<i class="fa fa-calendar" title="Conference schedule"></i>](https://intentsummit.org/)[<i class="fab fa-fw fa-youtube" title="Recording"></i>](https://youtu.be/F1m5tEJMMms?si=jT_0CxMJR7jgY4V-&t=1076) |
+| 2025-10-08 | AI Agent Security Summit by Zenity Labs @ SF 2025 | Making Real Progress In Security From AI | [<i class="fab fa-fw fa-slideshare" title="Slides"></i>](../assets/pdfs/2025-10-08_ActuallyMakingProgressInSecurityFromAI.pdf) |
 | 2025-08-09 | What Hackers Yearn 2025 | 0click Enterprise compromise - thank you, AI (delivered by Inbar Raz) | [<i class="fab fa-fw fa-slideshare" title="Slides"></i>](../assets/pdfs/2025-08-06_BHUSA2025_AI-Enterprise-Compromise-0click-Exploit-Methods.pdf) |
-| 2025-08-06 | BlackHat USA 2025 | AI Enterprise Compromise - 0click Exploit Methods (ft Tamir Ishay Sharbat) | [<i class="fa fa-calendar" title="Conference schedule"></i>](https://www.blackhat.com/us-25/briefings/schedule/index.html#ai-enterprise-compromise---0click-exploit-methods-46442)[<i class="fab fa-fw fa-slideshare" title="Slides"></i>](../assets/pdfs/2025-08-06_BHUSA2025_AI-Enterprise-Compromise-0click-Exploit-Methods.pdf) |
+| 2025-08-06 | BlackHat USA 2025 | AI Enterprise Compromise - 0click Exploit Methods (ft Tamir Ishay Sharbat) | [<i class="fa fa-calendar" title="Conference schedule"></i>](https://www.blackhat.com/us-25/briefings/schedule/index.html#ai-enterprise-compromise---0click-exploit-methods-46442)[<i class="fab fa-fw fa-slideshare" title="Slides"></i>](../assets/pdfs/2025-08-06_BHUSA2025_AI-Enterprise-Compromise-0click-Exploit-Methods.pdf)[<i class="fab fa-fw fa-youtube" title="Recording"></i>](https://www.youtube.com/watch?v=M_BDq2hTJxU) |
 | 2025-04-30 | RSAC 2025 | Scaling AppSec With an SDLC for Citizen Development (ft Ryan McDonald) | [<i class="fa fa-calendar" title="Conference schedule"></i>](https://path.rsaconference.com/flow/rsac/us25/FullAgenda/page/catalog)[<i class="fab fa-fw fa-slideshare" title="Slides"></i>](../assets/pdfs/2025-04-30_Scaling_AppSec_With_an_SDLC_for_Citizen_Development.pdf)[<i class="fab fa-fw fa-youtube" title="Recording"></i>](https://m.youtube.com/watch?v=ge9q6WIDzso) |
 | 2025-04-29 | RSAC 2025 | Your Copilot is My Insider | [<i class="fa fa-calendar" title="Conference schedule"></i>](https://path.rsaconference.com/flow/rsac/us25/FullAgenda/page/catalog)[<i class="fab fa-fw fa-slideshare" title="Slides"></i>](../assets/pdfs/2025-04-29_Your_Copilot_Is_My_Insider.pdf)[<i class="fab fa-fw fa-youtube" title="Recording"></i>](https://m.youtube.com/watch?v=MpM5CYGs3BU) |
 | 2025-03-31 | AI Agent Security Summit by Zenity Labs @ NYC 2025 | Prompt Injection is Not a Bug For Us to Patch | [<i class="fab fa-fw fa-slideshare" title="Slides"></i>](../assets/pdfs/2025-03-31-AI_Agent_Security_Summit_welcome_keynote.pdf)[<i class="fab fa-fw fa-youtube" title="Recording"></i>](https://youtu.be/pab7hgLIn0w?si=wIJmxd_aH9S8mOq2) |
