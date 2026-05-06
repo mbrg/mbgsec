@@ -6,6 +6,6 @@ categories:
 header:
   teaser: /assets/images/projects/genaiattacks.png
   image: /assets/images/projects/genaiattacks.png
-priority: 2
+priority: 3
 link: https://github.com/mbrg/genai-attacks
 ---

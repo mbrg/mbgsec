@@ -6,6 +6,6 @@ categories:
 header:
   teaser: /assets/images/projects/chatsboxai.png
   image: /assets/images/projects/chatsboxai.png
-priority: 0
+priority: 4
 link: https://chatsbox.ai
 ---

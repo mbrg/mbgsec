@@ -6,6 +6,6 @@ categories:
 header:
   teaser: /assets/images/projects/owasplcnctop10.png
   image: /assets/images/projects/owasplcnctop10.png
-priority: 0
+priority: 1
 link: https://aivss.owasp.org
 ---
