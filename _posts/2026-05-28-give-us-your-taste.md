@@ -1,6 +1,6 @@
 ---
 title: Give Us Your Taste
-description: ""
+description: "AI slop is creeping into Slack messages, emails, tickets, and docs, and it's hollowing out the human intent that makes communication valuable. Use AI to sharpen your thinking, but don't reduce yourself to a copy-paste operator. We want your taste, your deliberate choices."
 categories:
   - Blog
 tags:
