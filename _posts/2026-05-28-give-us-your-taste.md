@@ -8,9 +8,11 @@ tags:
   - Software Engineering
   - AI Agents
 header:
-  teaser: /assets/images/2026-02-18-raptor-finds-cline-compromise/akiovo.jpg
-  og_image: /assets/images/2026-02-18-raptor-finds-cline-compromise/akiovo.jpg
+  teaser: /assets/images/2026-05-28-give-us-your-taste/cover.png
+  og_image: /assets/images/2026-05-28-give-us-your-taste/cover.png
 ---
+
+
 
 AI is incredible. But you know what’s more incredible? Thoughtful human interaction. 
 When a human writes, there’s an entire world behind every choice of word. Every inclusion or exclusion is a choice. Good writing transfers an idea from one head to another. It’s magic.
