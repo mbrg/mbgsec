@@ -14,7 +14,7 @@ header:
 
 
 
-AI is incredible. But you know what’s more incredible? Thoughtful human interaction. 
+AI is incredible. But even more incredible is thoughtful human interaction. 
 When a human writes, there’s an entire world behind every choice of word. Every inclusion or exclusion is a choice. Good writing transfers an idea from one head to another. It’s magic.
 
 Increasingly we're seeing heartless AI slop throughout our digital space. Slack messages, emails, Jira tickets, code, specs, plans. Written by AI that mushed together something that “looks like an opinion”, but actually wasn’t deliberately selected by the human who pasted it. I see a doc, dive in to try to understand, provide comments and suggestions, try and help sharpen the thought behind it – only to realize I’m just talking to Claude. I’m the first human to *actually* read this.
