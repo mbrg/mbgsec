@@ -27,6 +27,7 @@ Increasingly we're seeing heartless AI slop throughout our digital space. Slack 
 > [I’m tired of talking to AI](https://orchidfiles.com/im-tired-of-ai-generated-answers/)
 
 I get the urge. **Fight it.**
+
 By all means, use AI to express yourself and to sharpen your thought. Don’t reduce yourself to a copy-paste operator, you’re not here for that.
 
 **We want your taste. Your deliberate choices.** You have agency to drive us forward, don’t pass it on to a numb machine. When we create things, they are valuable because of the human **intent** embedded into them.
