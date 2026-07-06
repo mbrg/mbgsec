@@ -6,11 +6,16 @@ categories:
 tags:
   - AI Agents
   - Threat Intelligence
+  - Hacking
+  - AI Security
+  - Red Team
+  - Guardrails
 header:
   teaser: /assets/images/2026-07-06-attackers-dont-buy-tokens-they-steal-yours/HMNOtsaWYAAjva1.jpeg
   og_image: /assets/images/2026-07-06-attackers-dont-buy-tokens-they-steal-yours/HMNOtsaWYAAjva1.jpeg
 ---
 
+![Attackers Don't Buy Tokens. They Steal Yours.](/assets/images/2026-07-06-attackers-dont-buy-tokens-they-steal-yours/HMNOtsaWYAAjva1.jpeg)
 
 We spent the last 6 months building a global network of honeypots with exposed AI inference and agent endpoints. Attackers were quick to find and exploit it ... while we watched.
 
