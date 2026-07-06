@@ -1,6 +1,6 @@
 ---
 title: Attackers Don't Buy Tokens. They Steal Yours.
-description: ""
+description: "For six months we ran a global network of AI honeypots with exposed inference and agent endpoints. Attackers found them fast, exploiting days-old CVEs for RCE, stealing environment variables and API keys, and hijacking our infra to run offensive tooling against real victims. The twist: to abuse our tokens they had to hand over their prompts, tools, and reasoning, leaving the attacker's intent sitting right there in natural language."
 categories:
   - Blog
 tags:
@@ -12,7 +12,7 @@ header:
 ---
 
 
-We spent the last 6 month building a global network of honeypots with exposed AI inference and agent endpoints. Attackers were quick to find and exploit it ... while we watched.
+We spent the last 6 months building a global network of honeypots with exposed AI inference and agent endpoints. Attackers were quick to find and exploit it ... while we watched.
 
 **The bad news: attackers are actively scanning for Internet-facing inference endpoints, and exploiting the ones they find.** 
 We observed attackers exploit days-old CVEs to get RCE and exfiltrate environment variables. 
@@ -41,7 +41,7 @@ Our infra includes ollama, LiteLLM, OpenClaw and LangServe.
 Very quickly we started observing **attackers probing our endpoints for model capabilities. They want the good models, not just any model.**
 
 
-We observed hundreds of requests from 57 IP addresses probing in four different languages, trying to figure out which model is being served and what are its capabilities:
+We observed hundreds of requests from 57 IP addresses probing in four different languages, trying to figure out which model is being served and what its capabilities are:
 
 ```markdown
 Consecutive questions template (e.g., What is your exact model name and version?, Who made you?)
@@ -96,7 +96,7 @@ Our findings show that **attackers will look for your exposed AI infra, exploit 
 
 Avishai and Ayush:
 
-> Between March and May 2026, our honeypot sensors caught three separate operators hijacking our exposed Ollama and LiteLLM  endpoints as the **model backend for offensive tooling.**
+> Between March and May 2026, our honeypot sensors caught three separate operators hijacking our exposed Ollama and LiteLLM endpoints as the **model backend for offensive tooling.**
 
 Two tools were (legit and awesome) autonomous penetration-testing frameworks Strix and HexStrike, and the third was an OpenAI Codex agent carrying a persona built to suppress safety refusals and assisting in web reverse-engineering work.
 
