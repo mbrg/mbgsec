@@ -47,13 +47,11 @@ timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
+exclude:
+  - .deck-build
+  - .deck-sources
+  - node_modules
+  - vendor
 #   - vendor/ruby/
 
 # Plugins (previously gems:)

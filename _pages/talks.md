@@ -10,6 +10,7 @@ layout: splash
 
 | Date | Conference | Talk | Resources |
 | - | - | - | - |
+| 2026-08-06 | Black Hat USA 2026 | Promptware EOD: Skillful Agent Detonation | [<i class="fa fa-calendar" title="Conference schedule"></i>](https://blackhat.com/us-26/briefings/schedule/)[<i class="fab fa-fw fa-slideshare" title="Live slides"></i>](/talks/2026-08-06-bhusa2026-promptware-eod-skillful-agent-detonation/) |
 | 2026-04-30 | Founder-Led Growth in Cyber by Vertex | How to ~~Get Fortune 500 Inbounds~~ Create Value in Cybersecurity | [<i class="fab fa-fw fa-slideshare" title="Slides"></i>](../assets/pdfs/2026-04-30_How-To-Generate-Value-In-CyberSecurity.pdf) |
 | 2026-03-23 | RSAC 2026 | Your AI Agents Are My Minions | [<i class="fab fa-fw fa-slideshare" title="Slides"></i>](../assets/pdfs/2026-03-23_YourAIAgentsAreMyMinions.pdf) |
 | 2026-03-04 | [Un]prompted 2026 | Perplexed Browser: PleaseFix (delivered by Gadi Evron) | [<i class="fab fa-fw fa-slideshare" title="Slides"></i>](../assets/pdfs/2026-03-04_PerplexedBrowser.pdf)[<i class="fab fa-fw fa-youtube" title="Recording"></i>](https://youtu.be/yUqBC3mc544?si=e4xO5TqMw-lvt9Zg) |

@@ -10,5 +10,11 @@ _site
 # Node.js dependencies
 node_modules/
 
+# Deck sources and generated publishing bundles stay outside Git.
+.deck-sources/
+.deck-build/
+.env
+.env.*
+
 vendor/
 .bundle/

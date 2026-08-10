@@ -1,0 +1,221 @@
+:root {
+  color-scheme: dark;
+  font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #090b10;
+  color: #f4f6fb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+body.deck-page {
+  min-height: 100dvh;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% -20%, rgba(83, 116, 255, 0.2), transparent 38rem),
+    #090b10;
+}
+
+.deck-player {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  min-height: 100dvh;
+  padding: max(0.75rem, env(safe-area-inset-top)) max(0.75rem, env(safe-area-inset-right)) max(0.75rem, env(safe-area-inset-bottom)) max(0.75rem, env(safe-area-inset-left));
+  gap: 0.75rem;
+}
+
+.deck-player__header {
+  display: grid;
+  grid-template-columns: minmax(4rem, 1fr) minmax(0, 4fr) minmax(4rem, 1fr);
+  align-items: center;
+  gap: 1rem;
+  min-height: 2.5rem;
+}
+
+.deck-player__title {
+  overflow: hidden;
+  margin: 0;
+  font-size: clamp(0.9rem, 1.7vw, 1.15rem);
+  font-weight: 600;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.deck-player__back,
+.deck-player__download {
+  color: #c9d2ea;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.deck-player__download {
+  justify-self: end;
+}
+
+.deck-player__back:hover,
+.deck-player__download:hover {
+  color: #ffffff;
+}
+
+.deck-player__viewport {
+  display: grid;
+  min-height: 0;
+  place-items: center;
+}
+
+.deck-player__stage {
+  position: relative;
+  width: min(100%, calc((100dvh - 8.5rem) * var(--deck-ratio, 1.7777778)));
+  max-height: calc(100dvh - 8.5rem);
+  aspect-ratio: var(--deck-ratio, 16 / 9);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 0.35rem;
+  outline: none;
+  background: #000;
+  box-shadow: 0 1.5rem 5rem rgba(0, 0, 0, 0.45);
+  touch-action: pan-y;
+}
+
+.deck-player__stage:focus-visible {
+  box-shadow: 0 0 0 3px #7392ff, 0 1.5rem 5rem rgba(0, 0, 0, 0.45);
+}
+
+.deck-player__slide,
+.deck-player__slide-image {
+  width: 100%;
+  height: 100%;
+}
+
+.deck-player__slide-image {
+  display: block;
+  object-fit: contain;
+  background: #000;
+}
+
+.deck-player__animation,
+.deck-player__video {
+  position: absolute;
+  display: block;
+  object-fit: contain;
+}
+
+.deck-player__animation {
+  pointer-events: none;
+}
+
+.deck-player__video {
+  background: #000;
+}
+
+.deck-player__message {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  margin: 0;
+  padding: 2rem;
+  place-items: center;
+  color: #c9d2ea;
+  text-align: center;
+}
+
+.deck-player__message[hidden] {
+  display: none;
+}
+
+.deck-player__controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+}
+
+.deck-player__button {
+  display: grid;
+  width: 2.75rem;
+  height: 2.5rem;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 0.45rem;
+  color: #f4f6fb;
+  background: rgba(255, 255, 255, 0.07);
+  cursor: pointer;
+  font: inherit;
+  place-items: center;
+}
+
+.deck-player__button:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.deck-player__button:disabled {
+  cursor: default;
+  opacity: 0.35;
+}
+
+.deck-player__counter {
+  min-width: 5rem;
+  color: #c9d2ea;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+}
+
+.deck-player:fullscreen {
+  background: #050608;
+}
+
+.deck-player:fullscreen .deck-player__header {
+  display: none;
+}
+
+.deck-player:fullscreen .deck-player__stage {
+  width: min(100%, calc((100dvh - 4.5rem) * var(--deck-ratio, 1.7777778)));
+  max-height: calc(100dvh - 4.5rem);
+}
+
+@media (max-width: 42rem) {
+  body.deck-page {
+    overflow: auto;
+  }
+
+  .deck-player {
+    grid-template-rows: auto auto auto;
+    align-content: start;
+  }
+
+  .deck-player__header {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: 0.5rem;
+  }
+
+  .deck-player__back,
+  .deck-player__download {
+    font-size: 0.8rem;
+  }
+
+  .deck-player__viewport {
+    place-items: start center;
+  }
+
+  .deck-player__stage {
+    width: 100%;
+    max-height: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+  }
+}

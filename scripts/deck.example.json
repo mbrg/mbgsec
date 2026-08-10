@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "title": "Example presentation",
+  "aspectRatio": "16:9",
+  "slides": [
+    {
+      "image": "slides/001.webp",
+      "alt": "Opening slide"
+    },
+    {
+      "image": "slides/002.webp",
+      "alt": "Demonstration slide",
+      "animations": [
+        {
+          "src": "media/demo.gif",
+          "x": 12.5,
+          "y": 18,
+          "width": 75,
+          "height": 64
+        }
+      ],
+      "videos": [
+        {
+          "src": "media/demo.mp4",
+          "poster": "media/demo-poster.webp",
+          "x": 12.5,
+          "y": 18,
+          "width": 75,
+          "height": 64,
+          "controls": true
+        }
+      ]
+    }
+  ]
+}

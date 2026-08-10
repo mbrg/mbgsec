@@ -6,7 +6,9 @@
   "scripts": {
     "format": "echo \"No formatting configured; skipping.\"",
     "test": "echo \"No tests specified.\"",
-    "ci": "npm run test"
+    "ci": "npm run test",
+    "deck:publish": "node scripts/publish-deck.mjs",
+    "deck:upload": "op run --env-file=.env.op -- node scripts/publish-deck.mjs --upload"
   },
   "repository": {
     "type": "git",
