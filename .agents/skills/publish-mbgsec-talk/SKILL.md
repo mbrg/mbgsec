@@ -46,6 +46,8 @@ Check for collisions in `_pages/decks/`, `_pages/talks.md`, and `https://media.m
 
 Keep original sources under ignored `.deck-sources/` and generated assets under ignored `.deck-build/`. Do not add a large deck, rendered slide, media file, or PDF to Git.
 
+Do not silently downgrade a talk to a static PDF/image experience. If the editable source is unavailable and the PDF, existing page, recording, related deck, or user context suggests embedded video, animation, builds, or interactive demonstrations, stop before publishing or replacing links and ask the user for the original deck/media or explicit approval to publish a disclosed static version. Absence of extractable media in a PDF is not evidence that the talk had no media.
+
 Create a bundle containing `deck.json`, zero-padded slide images, and any media overlays. Prefer WebP slide images at a resolution adequate for desktop fullscreen while keeping each image reasonably sized. Preserve the source aspect ratio in `deck.json`. Give every slide a useful, visually grounded alt string; source text is preferred, but a meaningful screenshot or diagram must be described rather than falling back to only `Slide N`.
 
 Represent embedded or linked videos and animations with manifest overlay entries only when their source files and on-slide bounds can be extracted reliably. Preserve media aspect and use broadly supported web formats. If a source effect cannot be represented faithfully, render the final visual state and disclose the limitation rather than guessing coordinates or silently dropping important content.

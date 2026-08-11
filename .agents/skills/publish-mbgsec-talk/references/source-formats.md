@@ -28,8 +28,10 @@ Select the least lossy route that the current environment supports. Always inspe
 ## PDF or prepared images
 
 1. Use the PDF skill to inspect page count, dimensions, text, and representative renders.
-2. Render one image per page in order. Preserve the original PDF as the downloadable file when it is the authoritative deck.
-3. A PDF cannot reliably reconstruct animation or embedded video behavior. Add media overlays only from separately supplied source files and verified coordinates.
+2. Check the PDF, existing page, recording, related deck versions, and user context for signs of video, animation, builds, or interactive demonstrations.
+3. If media may be missing and no editable source or separate media is available, stop and ask the user for the original deck/media or explicit approval for a disclosed static fallback. Never infer that a PDF-only source means the original talk had no media, and never replace the old links with a static page without that approval.
+4. Only after that check or explicit approval, render one image per page in order and preserve the original PDF as the downloadable file when it is authoritative.
+5. A PDF cannot reliably reconstruct animation or embedded video behavior. Add media overlays only from separately supplied source files and verified coordinates.
 
 ## Existing web bundle
 
