@@ -23,6 +23,6 @@
   },
   "homepage": "https://github.com/mbrg/mbgsec#readme",
   "dependencies": {
-    "@playwright/mcp": "^0.0.37"
+    "@playwright/mcp": "^0.0.79"
   }
 }

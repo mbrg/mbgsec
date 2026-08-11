@@ -10,8 +10,9 @@ gem "logger"
 gem "base64"
 gem "bigdecimal"
 gem "mutex_m"
+gem "ostruct"
 gem "webrick"
-gem "rexml", "~> 3.3.9"
+gem "rexml", "~> 3.4.2"
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do
