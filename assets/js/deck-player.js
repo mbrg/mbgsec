@@ -53,6 +53,22 @@
     const previous = root.querySelector('[data-deck-action="previous"]');
     const next = root.querySelector('[data-deck-action="next"]');
     const fullscreen = root.querySelector('[data-deck-action="fullscreen"]');
+    const resourceToggle = root.querySelector(".deck-player__resource-toggle");
+
+    const setResourcesOpen = (open) => {
+      root.toggleAttribute("data-resources-open", open);
+      resourceToggle?.setAttribute("aria-expanded", String(open));
+    };
+
+    resourceToggle?.addEventListener("click", () => {
+      setResourcesOpen(!root.hasAttribute("data-resources-open"));
+    });
+
+    root.addEventListener("click", (event) => {
+      if (!root.hasAttribute("data-resources-open")) return;
+      if (event.target instanceof Element && event.target.closest(".deck-player__resources, .deck-player__resource-toggle")) return;
+      setResourcesOpen(false);
+    });
 
     if (!pointer) {
       message.textContent = "This presentation has no manifest URL.";
@@ -165,11 +181,18 @@
 
       previous.addEventListener("click", () => goTo(index - 1));
       next.addEventListener("click", () => goTo(index + 1));
+      const canFullscreen = typeof root.requestFullscreen === "function" && typeof document.exitFullscreen === "function";
+      fullscreen.hidden = !canFullscreen;
       fullscreen.addEventListener("click", async () => {
-        if (document.fullscreenElement) {
-          await document.exitFullscreen();
-        } else {
-          await root.requestFullscreen();
+        if (!canFullscreen) return;
+        try {
+          if (document.fullscreenElement) {
+            await document.exitFullscreen();
+          } else {
+            await root.requestFullscreen();
+          }
+        } catch {
+          // Some mobile browsers expose the API but reject it for page elements.
         }
       });
 
@@ -180,7 +203,12 @@
 
       window.addEventListener("hashchange", () => goTo(slideFromHash()));
       window.addEventListener("keydown", (event) => {
-        if (event.target instanceof HTMLVideoElement) return;
+        if (event.key === "Escape" && root.hasAttribute("data-resources-open")) {
+          setResourcesOpen(false);
+          resourceToggle?.focus();
+          return;
+        }
+        if (event.target instanceof Element && event.target.closest("a, button, video, input, select, textarea")) return;
         if (["ArrowRight", "PageDown", " "].includes(event.key)) {
           event.preventDefault();
           goTo(index + 1);

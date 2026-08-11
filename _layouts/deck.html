@@ -1,3 +1,4 @@
+{% capture deck_page_title %}{% if page.talk_date %}{{ page.talk_date | date: "%Y/%m" }} · {% endif %}{% if page.conference %}{{ page.conference }} · {% endif %}{{ page.title }}{% endcapture %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -5,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="color-scheme" content="dark">
     <meta name="theme-color" content="#090b10">
-    <title>{{ page.title | escape }} · {{ site.title | escape }}</title>
+    <title>{{ deck_page_title | strip | escape }} · {{ site.title | escape }}</title>
     <link rel="canonical" href="{{ page.url | absolute_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/deck-player.css' | relative_url }}">
   </head>
@@ -16,12 +17,56 @@
       aria-label="{{ page.title | escape }} presentation"
     >
       <header class="deck-player__header">
-        <a class="deck-player__back" href="{{ '/talks/' | relative_url }}">← Talks</a>
-        <h1 class="deck-player__title">{{ page.title | escape }}</h1>
-        {% if page.pdf_url %}
-          <a class="deck-player__download" href="{{ page.pdf_url | escape }}">PDF</a>
-        {% else %}
-          <span aria-hidden="true"></span>
+        <a class="deck-player__back" href="{{ '/talks/' | relative_url }}" aria-label="Back to talks">
+          <span aria-hidden="true">←</span>
+          <span>Talks</span>
+        </a>
+        <h1 class="deck-player__title">{{ deck_page_title | strip | escape }}</h1>
+        {% if page.pdf_url or page.schedule_url or page.recording_url %}
+          <button
+            class="deck-player__resource-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="talk-resources"
+          >
+            <span>Resources</span>
+            <span aria-hidden="true">▾</span>
+          </button>
+          <nav class="deck-player__resources" id="talk-resources" aria-label="Talk resources">
+            {% if page.pdf_url %}
+              <a
+                class="deck-player__resource deck-player__resource--primary"
+                href="{{ page.pdf_url | escape }}"
+                download
+                aria-label="Download slides as PDF"
+              >
+                <span aria-hidden="true">↓</span>
+                <span>Download PDF</span>
+              </a>
+            {% endif %}
+            {% if page.schedule_url %}
+              <a
+                class="deck-player__resource"
+                href="{{ page.schedule_url | escape }}"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>Schedule</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+            {% endif %}
+            {% if page.recording_url %}
+              <a
+                class="deck-player__resource"
+                href="{{ page.recording_url | escape }}"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span aria-hidden="true">▶</span>
+                <span>Recording</span>
+              </a>
+            {% endif %}
+          </nav>
         {% endif %}
       </header>
 
@@ -37,6 +82,7 @@
         <output class="deck-player__counter" aria-live="polite">– / –</output>
         <button class="deck-player__button" type="button" data-deck-action="next" aria-label="Next slide">→</button>
         <button class="deck-player__button" type="button" data-deck-action="fullscreen" aria-label="Enter fullscreen">⛶</button>
+        <span class="deck-player__hint" aria-hidden="true">Swipe to navigate · Rotate for larger slides</span>
       </nav>
     </main>
 

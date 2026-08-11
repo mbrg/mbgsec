@@ -31,6 +31,7 @@ in `.deck-build/`. A bundle has this shape:
 ```text
 .deck-build/my-talk/
 ├── deck.json
+├── slides.pdf
 ├── slides/
 │   ├── 001.webp
 │   └── 002.webp
@@ -60,6 +61,16 @@ Then upload the planned objects through 1Password:
 npm run deck:upload -- --dir .deck-build/my-talk --slug my-talk
 ```
 
+To publish or replace only the downloadable PDF for an already-hosted deck:
+
+```sh
+npm run deck:publish -- --slug my-talk --pdf /path/to/my-talk.pdf
+npm run deck:upload -- --slug my-talk --pdf /path/to/my-talk.pdf
+```
+
+PDFs are stored at `decks/my-talk/slides.pdf` in R2 with attachment metadata, so
+the cross-origin Download button works without committing a large file to Git.
+
 The publisher uploads all versioned files first and updates
 `decks/my-talk/latest.json` last. An interrupted upload therefore does not break
 the currently published deck.
@@ -79,15 +90,20 @@ Create a small tracked Markdown file such as `_pages/decks/my-talk.md`:
 ```yaml
 ---
 title: My Talk
+talk_date: 2026-08-06
+conference: Example Conference 2026
 permalink: /talks/my-talk/
 layout: deck
 deck_manifest: https://media.mbgsec.com/decks/my-talk/latest.json
-pdf_url: /assets/pdfs/my-talk.pdf
+pdf_url: https://media.mbgsec.com/decks/my-talk/slides.pdf
+schedule_url: https://conference.example.com/schedule/my-talk
+recording_url: https://www.youtube.com/watch?v=example
 ---
 ```
 
-The `pdf_url` field is optional. Link the corresponding row in `_pages/talks.md`
-to `/talks/my-talk/` when the live deck is ready.
+The `pdf_url`, `schedule_url`, and `recording_url` fields are optional. The deck
+page shows only the resource buttons whose URLs are present. Link the corresponding
+row in `_pages/talks.md` to `/talks/my-talk/` when the live deck is ready.
 
 ## Source conversion notes
 
@@ -96,5 +112,5 @@ to `/talks/my-talk/` when the live deck is ready.
 - Google Slides should be exported or copied locally first. Linked YouTube/Drive
   videos need explicit handling because they are references, not embedded files.
 - Use MP4/H.264 for the widest browser support, and WebP or PNG for slide images.
-- Keep the original deck and generated bundle outside Git; only the viewer, page,
-  and optional fallback PDF belong in this repository.
+- Keep the original deck and generated bundle outside Git; only the viewer and
+  page belong in this repository. Publish large PDFs to R2.
