@@ -25,6 +25,14 @@ Use web search for every talk, even when the user provides all metadata and link
 4. Canonicalize the final link and remove playlist, share-session, and tracking parameters unless they are required to identify the recording.
 5. Do not substitute a trailer, short clip, playlist, livestream waiting page, mirror, or search result without explicit user direction.
 
+## Validate shared GitHub source code
+
+1. Search the exact talk title, project name, speaker, and conference with `site:github.com`.
+2. Prefer a public repository owned by the speaker, research team, or their organization, or a repository linked directly from an authoritative talk or project page.
+3. Open the repository or talk-specific source path and confirm its README, description, release notes, or linked materials connect it to the talk's project or demonstration.
+4. Use the narrowest durable URL that contains the shared source. Do not use a generic profile, organization page, search URL, issue, fork, unrelated similarly named project, or repository without a clear identity match.
+5. Omit `github_url` when public source has not been shared or the match cannot be validated.
+
 ## Validate supplied links
 
 - Apply the same checks to user-supplied URLs; user input establishes intent but does not eliminate link or identity validation.
@@ -41,5 +49,6 @@ Keep a compact table or equivalent notes while working:
 | Date/conference | `YYYY-MM-DD`, event name | Official schedule/session | Title, speaker, displayed date |
 | Schedule | Exact deep link | Official conference domain | Correct session entry opens |
 | Recording | Canonical YouTube URL | Official/verified channel | Title, speaker/event context, public availability |
+| Source code | Public GitHub repository/path | Speaker, team, or official project source | README/project identity and talk connection |
 
 Cite the authoritative URLs in the final response next to the values they support. Do not cite search-result pages.

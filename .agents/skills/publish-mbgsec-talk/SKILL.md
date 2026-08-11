@@ -1,6 +1,6 @@
 ---
 name: publish-mbgsec-talk
-description: Publish a new mbgsec talk from a PowerPoint (.pptx), Google Slides deck or URL, Keynote (.key), PDF, or prepared slide bundle. Use when Codex must convert a presentation into the mbgsec live-deck format, accept or determine the talk title, conference, date/year/month, official schedule URL, and YouTube recording URL, upload deck assets and a downloadable PDF to the mbgsec Cloudflare R2 bucket through 1Password, create or update the responsive Jekyll talk page and talks index, validate mobile and desktop behavior, or refresh an existing hosted talk. Always use web search to validate public dates, conference identity, schedule links, and recordings before publication, including values supplied by the user.
+description: Publish a new mbgsec talk from a PowerPoint (.pptx), Google Slides deck or URL, Keynote (.key), PDF, or prepared slide bundle. Use when Codex must convert a presentation into the mbgsec live-deck format, accept or determine the talk title, conference, date/year/month, official schedule URL, YouTube recording URL, and optional GitHub source-code URL, upload deck assets and a downloadable PDF to the mbgsec Cloudflare R2 bucket through 1Password, create or update the responsive Jekyll talk page and talks index, validate mobile and desktop behavior, or refresh an existing hosted talk. Always use web search to validate public dates, conference identity, schedule links, recordings, and shared source repositories before publication, including values supplied by the user.
 ---
 
 # Publish an mbgsec talk
@@ -25,10 +25,11 @@ Collect or determine these values:
 - `conference`: public event name, normally including its year.
 - `schedule_url`: exact official talk or schedule entry when available.
 - `recording_url`: exact official YouTube video when available.
+- `github_url`: exact public GitHub repository or talk-specific source path when shared.
 
-Treat explicit user-provided values and source-deck metadata as candidates, not proof. Always search the web and open authoritative destinations to validate the conference identity, exact session date, schedule entry, and recording. Prefer official conference sources for the date and schedule, and official event/speaker YouTube sources for recordings. Verify that each final page names the same talk or clearly connects the same speaker and event. Do not use search-result URLs, conference home pages, YouTube search pages, guessed video IDs, or placeholder links.
+Treat explicit user-provided values and source-deck metadata as candidates, not proof. Always search the web and open authoritative destinations to validate the conference identity, exact session date, schedule entry, recording, and shared source repository. Prefer official conference sources for the date and schedule, official event/speaker YouTube sources for recordings, and repositories owned or explicitly linked by the speaker, research team, or organizer. Verify that each final resource names the same talk or clearly connects the same speaker, project, and event. Do not use search-result URLs, conference home pages, YouTube search pages, guessed video IDs, generic GitHub profiles, unrelated repositories, or placeholder links.
 
-Maintain a compact validation record containing each field, accepted value, authoritative source URL, and the evidence that matched. Cite these sources in the final handoff. If web evidence conflicts with supplied metadata, report the conflict and resolve it before creating date-derived slugs or publishing. If an optional schedule or recording URL cannot be validated, omit it rather than treating the supplied link as verified.
+Maintain a compact validation record containing each field, accepted value, authoritative source URL, and the evidence that matched. Cite these sources in the final handoff. If web evidence conflicts with supplied metadata, report the conflict and resolve it before creating date-derived slugs or publishing. If an optional schedule, recording, or GitHub URL cannot be validated, omit it rather than treating the supplied link as verified.
 
 Derive the visible year/month from `talk_date`; do not create separate `year` or `month` frontmatter. If sources conflict on the date, title, or conference identity and the conflict changes the URL or storage slug, ask the user before publishing. Omit unavailable optional links and report what was not found.
 
@@ -107,12 +108,13 @@ deck_manifest: https://media.mbgsec.com/decks/<r2-slug>/latest.json
 pdf_url: https://media.mbgsec.com/decks/<r2-slug>/slides.pdf
 schedule_url: https://official.example/talk
 recording_url: https://www.youtube.com/watch?v=verified
+github_url: https://github.com/verified-owner/verified-project
 ---
 ```
 
 Omit optional URL fields that are not available. Keep the title value to the talk title alone: the layout adds `YYYY/MM · Conference ·` to the visible heading and browser title.
 
-Use the deck layout's icon-only resource controls for PDF, schedule, and recording. Keep a visible text equivalent for assistive technology and expose each text label on pointer hover and keyboard focus. Show only the icons whose optional URLs exist.
+Use the deck layout's icon-only resource controls for PDF, schedule, recording, and shared GitHub source code. Keep a visible text equivalent for assistive technology and expose each text label on pointer hover and keyboard focus. Show only the icons whose optional URLs exist.
 
 Find the matching row in `_pages/talks.md`. For a talk onboarded to this live experience, put exactly one combined `Interactive talk page` icon in the Resources cell and link it to the live talk permalink. Do not repeat separate PDF, schedule, or recording icons in that table row; those resources belong inside the talk page. Preserve all legacy rows and their existing individual resource icons, as well as the table's formatting and chronology.
 
@@ -129,7 +131,7 @@ Test at minimum:
 - Resource controls with keyboard focus and touch-sized targets.
 - Icon-only resource controls expose their text on hover/focus and retain accessible names.
 - The onboarded talk's `_pages/talks.md` row contains exactly one combined live-page resource link; legacy rows remain unchanged.
-- Schedule and recording open the exact external resources.
+- Schedule, recording, and GitHub source controls open the exact external resources.
 - Download href targets R2; validate it through response headers instead of causing an automated download.
 - No horizontal overflow, clipped controls, failed manifest requests, or console errors.
 

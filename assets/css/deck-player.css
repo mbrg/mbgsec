@@ -460,8 +460,8 @@ body.deck-page {
   }
 
   .deck-player__resource {
-    width: 2.5rem;
-    min-height: 2.5rem;
+    width: 2.75rem;
+    min-height: 2.75rem;
   }
 
   .deck-player__viewport {

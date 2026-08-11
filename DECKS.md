@@ -98,12 +98,14 @@ deck_manifest: https://media.mbgsec.com/decks/my-talk/latest.json
 pdf_url: https://media.mbgsec.com/decks/my-talk/slides.pdf
 schedule_url: https://conference.example.com/schedule/my-talk
 recording_url: https://www.youtube.com/watch?v=example
+github_url: https://github.com/example/my-talk
 ---
 ```
 
-The `pdf_url`, `schedule_url`, and `recording_url` fields are optional. The deck
-page shows only the resource buttons whose URLs are present. Link the corresponding
-row in `_pages/talks.md` to `/talks/my-talk/` when the live deck is ready.
+The `pdf_url`, `schedule_url`, `recording_url`, and `github_url` fields are optional.
+Use `github_url` for a public source repository shared with the talk. The deck page
+shows only the resource buttons whose URLs are present. Link the corresponding row
+in `_pages/talks.md` to `/talks/my-talk/` when the live deck is ready.
 
 ## Source conversion notes
 
