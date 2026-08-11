@@ -4,6 +4,11 @@ The website contains only the deck viewer and a small page for each presentation
 Slide images, video, captions, and manifests are stored in the Cloudflare R2 bucket
 `mbgsec-media` and served from `https://media.mbgsec.com`.
 
+Official YouTube demos may remain on YouTube and use a click-to-load
+privacy-enhanced embed. Put the validated 11-character `videoId`, an accessible
+`title`, and percentage bounds in a slide's `youtube` array. The player accepts
+video IDs only and constructs the `youtube-nocookie.com` URL itself.
+
 ## One-time uploader setup
 
 Create an R2 API token in the Cloudflare dashboard with:

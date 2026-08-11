@@ -13,6 +13,11 @@
     return new URL(value, manifestUrl).href;
   };
 
+  const youtubeVideoId = (value) => {
+    if (typeof value !== "string" || !/^[A-Za-z0-9_-]{11}$/.test(value)) return null;
+    return value;
+  };
+
   const slideFromHash = () => {
     const match = window.location.hash.match(/^#slide=(\d+)$/);
     return match ? Math.max(0, Number(match[1]) - 1) : 0;
@@ -155,6 +160,49 @@
               // Browsers may require a user gesture; controls remain available.
             });
           }
+        }
+
+        const youtubeVideos = Array.isArray(slide.youtube) ? slide.youtube : slide.youtube ? [slide.youtube] : [];
+        for (const youtubeDefinition of youtubeVideos) {
+          const videoId = youtubeVideoId(youtubeDefinition?.videoId);
+          if (!videoId) continue;
+
+          const title = typeof youtubeDefinition.title === "string" && youtubeDefinition.title.trim()
+            ? youtubeDefinition.title.trim()
+            : `YouTube video for slide ${index + 1}`;
+          const youtube = document.createElement("div");
+          youtube.className = "deck-player__youtube";
+          youtube.style.left = asPercent(youtubeDefinition.x, 0);
+          youtube.style.top = asPercent(youtubeDefinition.y, 0);
+          youtube.style.width = asPercent(youtubeDefinition.width, 100);
+          youtube.style.height = asPercent(youtubeDefinition.height, 100);
+
+          const loadVideo = document.createElement("button");
+          loadVideo.className = "deck-player__youtube-load";
+          loadVideo.type = "button";
+          loadVideo.setAttribute("aria-label", `Play ${title}`);
+          loadVideo.innerHTML = `
+            <svg class="deck-player__youtube-icon" viewBox="0 0 68 48" aria-hidden="true">
+              <path d="M66.5 7.4A8.5 8.5 0 0 0 60.5 1C55.2 0 34 0 34 0S12.8 0 7.5 1a8.5 8.5 0 0 0-6 6.4C0 13 0 24 0 24s0 11 1.5 16.6a8.5 8.5 0 0 0 6 6.4c5.3 1 26.5 1 26.5 1s21.2 0 26.5-1a8.5 8.5 0 0 0 6-6.4C68 35 68 24 68 24s0-11-1.5-16.6Z" />
+              <path class="deck-player__youtube-icon-play" d="m27 34 18-10-18-10Z" />
+            </svg>
+            <span class="deck-player__youtube-label">Play full demo</span>
+          `;
+          loadVideo.addEventListener("click", () => {
+            const frame = document.createElement("iframe");
+            frame.className = "deck-player__youtube-frame";
+            frame.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0`;
+            frame.title = title;
+            frame.loading = "lazy";
+            frame.referrerPolicy = "strict-origin-when-cross-origin";
+            frame.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+            frame.setAttribute("allowfullscreen", "");
+            youtube.replaceChildren(frame);
+            youtube.classList.add("is-loaded");
+          }, { once: true });
+
+          youtube.append(loadVideo);
+          slideHost.append(youtube);
         }
 
         const following = slides[index + 1];
