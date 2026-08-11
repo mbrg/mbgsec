@@ -17,6 +17,11 @@ Create the same live, responsive talk experience as the repository's existing de
 5. Read [references/source-formats.md](references/source-formats.md) for the input-specific conversion route.
 6. Read and follow [references/web-validation.md](references/web-validation.md) before accepting any date or external resource URL.
 
+## Search the known first-party sources
+
+- Search the canonical Zenity conference-deck Drive root before concluding that a raw deck is unavailable: `https://drive.google.com/drive/folders/1AESOa8_2KicVWACM1EIhnUkvFSyyippA`. When Google Drive for desktop is mounted for `michaelb@zenity.io`, also search `/Users/mbg/Library/CloudStorage/GoogleDrive-michaelb@zenity.io/Shared drives/Zenity Thought Leadership/Conferences` so large files can be hydrated locally.
+- Search Zenity's official YouTube channel, `https://www.youtube.com/@ZenitySecurity`, for recordings and research demos. Treat the channel as a trusted discovery location, not automatic proof: validate each exact video against the talk, speaker, conference, or research page using the web-validation protocol.
+
 ## Resolve the talk identity
 
 Collect or determine these values:
