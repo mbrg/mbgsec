@@ -12,6 +12,7 @@ Create the same live, responsive talk experience as the repository's existing de
 1. Locate the mbgsec repository by finding `DECKS.md`, `scripts/publish-deck.mjs`, `_layouts/deck.html`, and `_pages/decks/`.
 2. Read `DECKS.md`, `scripts/deck.example.json`, `scripts/publish-deck.mjs`, the deck layout, and one current deck page before acting. Follow their current fields and commands if they differ from examples here.
 3. Inspect `git status`, the current branch, and existing talk rows. Preserve unrelated user changes.
+   Before replacing a legacy row, record every PDF it currently links and look for a date/title-matched PDF already stored in the repository. Treat those files as regression references even when a newer raw deck is authoritative.
 4. Load the relevant presentation, PDF, Google Drive/Slides, Cloudflare, and browser skills when their trigger conditions apply. Read each selected skill before using it.
 5. Read [references/source-formats.md](references/source-formats.md) for the input-specific conversion route.
 6. Read and follow [references/web-validation.md](references/web-validation.md) before accepting any date or external resource URL.
@@ -45,7 +46,7 @@ Check for collisions in `_pages/decks/`, `_pages/talks.md`, and `https://media.m
 
 Keep original sources under ignored `.deck-sources/` and generated assets under ignored `.deck-build/`. Do not add a large deck, rendered slide, media file, or PDF to Git.
 
-Create a bundle containing `deck.json`, zero-padded slide images, and any media overlays. Prefer WebP slide images at a resolution adequate for desktop fullscreen while keeping each image reasonably sized. Preserve the source aspect ratio in `deck.json`. Give every slide a useful alt string when source text is available; otherwise use `Slide N`.
+Create a bundle containing `deck.json`, zero-padded slide images, and any media overlays. Prefer WebP slide images at a resolution adequate for desktop fullscreen while keeping each image reasonably sized. Preserve the source aspect ratio in `deck.json`. Give every slide a useful, visually grounded alt string; source text is preferred, but a meaningful screenshot or diagram must be described rather than falling back to only `Slide N`.
 
 Represent embedded or linked videos and animations with manifest overlay entries only when their source files and on-slide bounds can be extracted reliably. Preserve media aspect and use broadly supported web formats. If a source effect cannot be represented faithfully, render the final visual state and disclose the limitation rather than guessing coordinates or silently dropping important content.
 
@@ -56,6 +57,7 @@ Validate before upload:
 - Parse `deck.json` and ensure every local asset reference exists and stays inside the bundle.
 - Confirm slide count, ordering, aspect ratio, and representative first/middle/last renders.
 - Inspect the PDF page count and representative pages; it should match the intended slide sequence.
+- When the old Talks row or repository has a prior PDF for this talk, compare it with the new source/render before publication. Check page count and order, render both PDFs consistently, compare first/middle/last and every changed or unmatched page, and use page-image hashes or pixel diffs when practical. Explain expected differences such as a newer revision, inserted/removed slides, animation flattening, or font substitution. Stop on an unexplained identity, ordering, or material-content mismatch.
 - Run the publisher without `--upload` and review every planned key.
 
 ## Publish through 1Password and R2
@@ -133,6 +135,7 @@ Test at minimum:
 - The onboarded talk's `_pages/talks.md` row contains exactly one combined live-page resource link; legacy rows remain unchanged.
 - Schedule, recording, and GitHub source controls open the exact external resources.
 - Download href targets R2; validate it through response headers instead of causing an automated download.
+- If a legacy or repository PDF exists for this talk, independently compare it with the published PDF/slides and fail validation on unexplained page-count, order, identity, or material-content differences. Do not accept the migration agent's comparison as proof.
 - No horizontal overflow, clipped controls, failed manifest requests, or console errors.
 
 Use the in-app browser when available for local responsive verification. Do not claim mobile quality without checking both portrait and landscape.
