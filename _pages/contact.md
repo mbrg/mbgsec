@@ -7,8 +7,7 @@ layout: splash
 ## Hi there 👋
 
 My name is Michael Bargury.
-I'm a hacker, founder and a cybersecurity practitioner. 
-Spent the last decade breaking apart cloud apps and AI agents.
+I'm a hacker, founder and a cybersecurity practitioner focused on cybersecurity and AI.
 
 I'm the Co-founder and CTO at [Zenity](https://www.zenity.io), securing agents everywhere, Review Board member at [BlackHat](https://www.blackhat.com/review-board.html) and [OWASP Agentic Security Initiative](https://genai.owasp.org/initiatives/agentic-security-initiative/), co-lead at [OWASP AIVSS](http://aivss.owasp.org) and [OWASP Citizen Dev Top 10](https://owasp.org/www-project-top-10-low-code-no-code-security-risks/), contributor at [MITRE Atlas](https://atlas.mitre.org), and columnist at [DarkReading](https://www.darkreading.com/author/michael-bargury).
 
