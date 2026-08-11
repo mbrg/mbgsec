@@ -1,6 +1,6 @@
 ---
 title: "Zenity"
-excerpt: "Secure AI Agents Everywhere"
+excerpt: "Secure Agents Everywhere"
 categories:
   - projects
 header:

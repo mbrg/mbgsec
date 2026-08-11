@@ -7,5 +7,5 @@ header:
   teaser: /assets/images/projects/powerpwn.png
   image: /assets/images/projects/powerpwn.png
 priority: 3
-link: https://github.com/mbrg/powerpwn
+link: https://github.com/mbrg/power-pwn
 ---

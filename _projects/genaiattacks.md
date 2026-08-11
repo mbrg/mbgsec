@@ -1,5 +1,5 @@
 ---
-title: "GenAI Attacks Matrix"
+title: "Agent Attacks Matrix"
 excerpt: "Documenting TTPs that can and are used by hackers to attack GenAI systems like copilots and agents"
 categories:
   - projects
