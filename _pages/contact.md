@@ -7,10 +7,10 @@ layout: splash
 ## Hi there 👋
 
 My name is Michael Bargury.
-I'm a hacker, builder and a cybersecurity practitioner. 
-Spent the last decade breaking apart cloud, no-code apps and AI agents.
+I'm a hacker, founder and a cybersecurity practitioner. 
+Spent the last decade breaking apart cloud apps and AI agents.
 
-I'm the Co-founder and CTO at [Zenity](https://www.zenity.io) -- securing AI agents everywhere, contributor at [MITRE Atlas](https://atlas.mitre.org), project co-lead at OWASP [AIVSS](http://aivss.owasp.org) and [OWASP LCNC Top 10](https://owasp.org/www-project-top-10-low-code-no-code-security-risks/), and columnist at [DarkReading](https://www.darkreading.com/author/michael-bargury).
+I'm the Co-founder and CTO at [Zenity](https://www.zenity.io), securing agents everywhere, Review Board member at [BlackHat](https://www.blackhat.com/review-board.html) and [OWASP Agentic Security Initiative](https://genai.owasp.org/initiatives/agentic-security-initiative/), co-lead at [OWASP AIVSS](http://aivss.owasp.org) and [OWASP Citizen Dev Top 10](https://owasp.org/www-project-top-10-low-code-no-code-security-risks/), contributor at [MITRE Atlas](https://atlas.mitre.org), and columnist at [DarkReading](https://www.darkreading.com/author/michael-bargury).
 
 Check out the [projects](/wip) I'm currently working on, my previous and upcoming [talks](/talks), come in and say hi!
 
@@ -40,6 +40,14 @@ Check out the [projects](/wip) I'm currently working on, my previous and upcomin
   <li>
     <span class="fa-li"><i class="fab fa-linkedin"></i></span>
     <a href="https://linkedin.com/in/michaelbargury" target="_blank">LinkedIn</a>
+  </li>
+  <li>
+    <span class="fa-li"><i class="fab fa-spotify"></i></span>
+    <a href="https://open.spotify.com/show/0344FmK1j5JHxsmrSjVQFq?si=9632b968b8594eea" target="_blank">Spotify</a>
+  </li>
+  <li>
+    <span class="fa-li"><i class="fab fa-apple"></i></span>
+    <a href="https://podcasts.apple.com/us/podcast/in-the-wild-with-michael-bargury/id6799913578" target="_blank">Apple</a>
   </li>
 </ul>
 
