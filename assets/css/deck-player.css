@@ -80,19 +80,81 @@ body.deck-page {
 }
 
 .deck-player__resource {
+  position: relative;
   display: inline-flex;
-  min-height: 2.25rem;
+  width: 2.75rem;
+  min-height: 2.75rem;
   align-items: center;
   justify-content: center;
-  gap: 0.35rem;
-  padding: 0 0.7rem;
+  padding: 0;
   border-radius: 0.5rem;
   color: #dce3f4;
-  font-size: 0.82rem;
-  font-weight: 600;
   line-height: 1;
   text-decoration: none;
+}
+
+.deck-player__resource-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.deck-player__resource-icon-fill {
+  fill: currentColor;
+  stroke: none;
+}
+
+.deck-player__resource-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
   white-space: nowrap;
+}
+
+.deck-player__resource::after {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + 0.5rem);
+  left: 50%;
+  padding: 0.42rem 0.58rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 0.4rem;
+  color: #f5f7ff;
+  background: rgba(5, 7, 12, 0.96);
+  box-shadow: 0 0.5rem 1.2rem rgba(0, 0, 0, 0.35);
+  content: attr(data-tooltip);
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -0.2rem);
+  transition: opacity 120ms ease, transform 120ms ease;
+  white-space: nowrap;
+}
+
+.deck-player__resource:hover::after,
+.deck-player__resource:focus-visible::after {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.deck-player__resource:last-child::after {
+  right: 0;
+  left: auto;
+  transform: translateY(-0.2rem);
+}
+
+.deck-player__resource:last-child:hover::after,
+.deck-player__resource:last-child:focus-visible::after {
+  transform: translateY(0);
 }
 
 .deck-player__resource--primary {
@@ -278,14 +340,14 @@ body.deck-page {
   .deck-player__resources {
     grid-column: 1 / -1;
     width: 100%;
+    justify-content: center;
     justify-self: stretch;
   }
 
   .deck-player__resource {
+    width: 2.75rem;
     min-height: 2.75rem;
-    flex: 1 1 auto;
-    padding: 0 0.55rem;
-    font-size: 0.78rem;
+    flex: 0 0 auto;
   }
 
   .deck-player__viewport {
@@ -398,9 +460,8 @@ body.deck-page {
   }
 
   .deck-player__resource {
+    width: 2.5rem;
     min-height: 2.5rem;
-    padding: 0 0.55rem;
-    font-size: 0.75rem;
   }
 
   .deck-player__viewport {

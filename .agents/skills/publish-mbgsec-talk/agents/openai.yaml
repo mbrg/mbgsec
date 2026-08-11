@@ -1,0 +1,4 @@
+interface:
+  display_name: "Publish mbgsec Talk"
+  short_description: "Publish a verified talk deck and resource page"
+  default_prompt: "Use $publish-mbgsec-talk to validate the talk date and links on the web, publish its deck, and create its responsive mbgsec page."
