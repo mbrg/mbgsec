@@ -31,7 +31,7 @@ Use web search for every talk, even when the user provides all metadata and link
 2. Prefer a public repository owned by the speaker, research team, or their organization, or a repository linked directly from an authoritative talk or project page.
 3. Open the repository or talk-specific source path and confirm its README, description, release notes, or linked materials connect it to the talk's project or demonstration.
 4. Use the narrowest durable URL that contains the shared source. Do not use a generic profile, organization page, search URL, issue, fork, unrelated similarly named project, or repository without a clear identity match.
-5. Omit `github_url` when public source has not been shared or the match cannot be validated.
+5. Omit GitHub fields when public source has not been shared or the match cannot be validated. Use `github_url` for one validated repository or a labeled `github_urls` list when multiple distinct repositories are directly shared by the talk.
 
 ## Validate supplied links
 

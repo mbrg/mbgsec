@@ -31,7 +31,8 @@ Collect or determine these values:
 - `conference`: public event name, normally including its year.
 - `schedule_url`: exact official talk or schedule entry when available.
 - `recording_url`: exact official YouTube video when available.
-- `github_url`: exact public GitHub repository or talk-specific source path when shared.
+- `github_url`: exact public GitHub repository or talk-specific source path when one code resource is shared.
+- `github_urls`: labeled list of exact public GitHub repositories or talk-specific source paths when the talk shares more than one distinct code resource. Do not discard a validated repository merely to fit the singular field.
 
 Treat explicit user-provided values and source-deck metadata as candidates, not proof. Always search the web and open authoritative destinations to validate the conference identity, exact session date, schedule entry, recording, and shared source repository. Prefer official conference sources for the date and schedule, official event/speaker YouTube sources for recordings, and repositories owned or explicitly linked by the speaker, research team, or organizer. Verify that each final resource names the same talk or clearly connects the same speaker, project, and event. Do not use search-result URLs, conference home pages, YouTube search pages, guessed video IDs, generic GitHub profiles, unrelated repositories, or placeholder links.
 
@@ -119,12 +120,18 @@ pdf_url: https://media.mbgsec.com/decks/<r2-slug>/slides.pdf
 schedule_url: https://official.example/talk
 recording_url: https://www.youtube.com/watch?v=verified
 github_url: https://github.com/verified-owner/verified-project
+# Or, when multiple distinct repositories are shared:
+github_urls:
+  - label: Project one
+    url: https://github.com/verified-owner/project-one
+  - label: Project two
+    url: https://github.com/verified-owner/project-two
 ---
 ```
 
 Omit optional URL fields that are not available. Keep the title value to the talk title alone: the layout adds `YYYY/MM · Conference ·` to the visible heading and browser title.
 
-Use the deck layout's icon-only resource controls for PDF, schedule, recording, and shared GitHub source code. Keep a visible text equivalent for assistive technology and expose each text label on pointer hover and keyboard focus. Show only the icons whose optional URLs exist.
+Use the deck layout's icon-only resource controls for PDF, schedule, recording, and shared GitHub source code. Use `github_url` for one repository and `github_urls` with concise labels for multiple repositories. Keep a visible text equivalent for assistive technology and expose each text label on pointer hover and keyboard focus. Show only the icons whose optional URLs exist.
 
 Find the matching row in `_pages/talks.md`. For a talk onboarded to this live experience, put exactly one combined `Interactive talk page` icon in the Resources cell and link it to the live talk permalink. Do not repeat separate PDF, schedule, or recording icons in that table row; those resources belong inside the talk page. Preserve all legacy rows and their existing individual resource icons, as well as the table's formatting and chronology.
 
@@ -141,7 +148,7 @@ Test at minimum:
 - Resource controls with keyboard focus and touch-sized targets.
 - Icon-only resource controls expose their text on hover/focus and retain accessible names.
 - The onboarded talk's `_pages/talks.md` row contains exactly one combined live-page resource link; legacy rows remain unchanged.
-- Schedule, recording, and GitHub source controls open the exact external resources.
+- Schedule, recording, and every GitHub source control open the exact external resources; when multiple repositories are present, each has a distinct accessible name and tooltip.
 - Download href targets R2; validate it through response headers instead of causing an automated download.
 - If a legacy or repository PDF exists for this talk, independently compare it with the published PDF/slides and fail validation on unexplained page-count, order, identity, or material-content differences. Do not accept the migration agent's comparison as proof.
 - No horizontal overflow, clipped controls, failed manifest requests, or console errors.
