@@ -222,7 +222,10 @@
 
       const goTo = (requestedIndex) => {
         const target = clamp(requestedIndex, 0, slides.length - 1);
-        if (target === index) return;
+        if (target === index) {
+          updateHash();
+          return;
+        }
         index = target;
         render();
       };
