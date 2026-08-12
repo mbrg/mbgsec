@@ -63,7 +63,7 @@ Create a PDF directly from the source application's PDF export when possible. Fa
 Validate before upload:
 
 - Parse `deck.json` and ensure every local asset reference exists and stays inside the bundle.
-- Inspect the source presentation's hidden-slide flags and record total, hidden, and visible counts. Always exclude hidden slides from slide images, the manifest, and the downloadable PDF; the three published counts must equal the visible count.
+- Inspect the source presentation's hidden-slide flags and record total, hidden, and visible counts. Treat every hidden slide as private: always exclude it from slide images, the manifest, the downloadable PDF, alt text, extracted GIF/video/audio assets, posters, captions, animations, and media overlays. Every published slide count must equal the visible count, and no asset referenced only by a hidden slide may be uploaded.
 - Confirm slide count, ordering, aspect ratio, and representative first/middle/last renders.
 - Inspect the PDF page count and representative pages; it should match the intended slide sequence.
 - When the old Talks row or repository has a prior PDF for this talk, compare it with the new source/render before publication. Check page count and order, render both PDFs consistently, compare first/middle/last and every changed or unmatched page, and use page-image hashes or pixel diffs when practical. Explain expected differences such as a newer revision, inserted/removed slides, animation flattening, or font substitution. Stop on an unexplained identity, ordering, or material-content mismatch.

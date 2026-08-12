@@ -46,6 +46,6 @@ Select the least lossy route that the current environment supports. Always inspe
 - Use the source's true aspect ratio rather than assuming 16:9.
 - Render at sufficient resolution for a large desktop stage; choose image quality by visual comparison, not a fixed byte target.
 - Preserve text legibility, gradients, diagrams, code, and thin lines on representative slides.
-- Always exclude hidden slides from rendered images, the interactive manifest, and the downloadable PDF. Treat hidden status as a publication boundary, not as a visual preference.
+- Always exclude hidden slides from rendered images, the interactive manifest, the downloadable PDF, alt text, and all extracted or overlaid media (including GIF, video, audio, posters, captions, and animations). Treat hidden status as a privacy/publication boundary, not as a visual preference; do not upload an asset referenced only by a hidden slide.
 - Strip sensitive speaker notes, comments, and unused embedded assets unless the user explicitly wants them published.
 - Never publish private URLs, credentials, source-only notes, or hidden material discovered inside the deck.
