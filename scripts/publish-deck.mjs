@@ -14,13 +14,13 @@ const HAS_ENV_CREDENTIALS = Boolean(process.env.AWS_ACCESS_KEY_ID && process.env
 
 function usage() {
   console.log(`Usage:
-  npm run deck:publish -- --slug <slug> [--dir .deck-build/<slug>] [--pdf slides.pdf] [--source source.pptx] [--version <version>] [--upload]
+  npm run deck:publish -- --slug <slug> [--dir .deck-build/<slug>] [--pdf slides.pdf] [--version <version>] [--upload]
 
 Default mode is a dry run. Add --upload only after reviewing the object plan.
 When --dir is present, the source directory must contain deck.json plus every
 relative asset it references. --pdf publishes a stable slides.pdf object for the
-talk and may be used by itself when the deck is already online. --source uploads
-the untouched raw deck to an unlinked, stable source.<extension> object.
+talk and may be used by itself when the deck is already online. Raw source decks
+must remain outside public R2 storage.
 Uploads use credentials injected by 1Password or the bucket-scoped AWS CLI profile
 named by MBGSEC_R2_AWS_PROFILE (default: mbgsec-r2).`);
 }
@@ -31,7 +31,7 @@ function parseArguments(argv) {
     const argument = argv[index];
     if (argument === "--upload") {
       values.upload = true;
-    } else if (["--dir", "--pdf", "--source", "--slug", "--version"].includes(argument)) {
+    } else if (["--dir", "--pdf", "--slug", "--version"].includes(argument)) {
       values[argument.slice(2)] = argv[index + 1];
       index += 1;
     } else if (argument === "--help" || argument === "-h") {
@@ -65,8 +65,6 @@ function mimeType(path) {
     ".jpeg": "image/jpeg",
     ".mp4": "video/mp4",
     ".pdf": "application/pdf",
-    ".pptx": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
-    ".key": "application/x-iwork-keynote-sffkey",
     ".png": "image/png",
     ".svg": "image/svg+xml",
     ".vtt": "text/vtt",
@@ -138,7 +136,7 @@ function uploadObject(source, key, cacheControl, contentDisposition) {
 }
 
 const options = parseArguments(process.argv.slice(2));
-if (!options.slug || (!options.dir && !options.pdf && !options.source)) {
+if (!options.slug || (!options.dir && !options.pdf)) {
   usage();
   process.exitCode = 1;
 } else {
@@ -180,21 +178,6 @@ if (!options.slug || (!options.dir && !options.pdf && !options.source)) {
     });
   }
 
-  if (options.source) {
-    const source = resolve(options.source);
-    if (!existsSync(source) || !statSync(source).isFile()) throw new Error(`Missing source deck: ${source}`);
-    const sourceExtension = extname(source).toLowerCase();
-    if (![".pptx", ".key", ".pdf"].includes(sourceExtension)) {
-      throw new Error("--source must point to a .pptx, .key, or .pdf file.");
-    }
-    objects.push({
-      file: source,
-      key: `decks/${options.slug}/source${sourceExtension}`,
-      cacheControl: "public, max-age=3600",
-      contentDisposition: `attachment; filename="source${sourceExtension}"`
-    });
-  }
-
   console.log(`Bucket: ${BUCKET}`);
   console.log(`Credentials: ${HAS_ENV_CREDENTIALS ? "injected environment" : `AWS profile ${AWS_PROFILE}`}`);
   if (options.dir) console.log(`Version: ${version}`);
@@ -226,8 +209,5 @@ if (!options.slug || (!options.dir && !options.pdf && !options.source)) {
     }
 
     if (options.pdf) console.log(`Published PDF: ${PUBLIC_ORIGIN}/decks/${options.slug}/slides.pdf`);
-    if (options.source) {
-      console.log(`Published unlinked source: ${PUBLIC_ORIGIN}/decks/${options.slug}/source${extname(options.source).toLowerCase()}`);
-    }
   }
 }
