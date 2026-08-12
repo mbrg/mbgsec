@@ -1,0 +1,49 @@
+- name: AI agent security
+  description: Attacks, defenses, identity, permissions, and governance for autonomous agents and copilots.
+  tags:
+    - AI Agents
+    - ai-agents
+    - AI Security
+    - AI security
+    - browser-agents
+    - MCP
+- name: Prompt injection and promptware
+  description: Indirect prompt injection, promptware, guardrail bypasses, and agent hijacking.
+  tags:
+    - Prompt Injection
+    - prompt-injection
+    - Guardrails
+    - promptware
+- name: Threat research and offensive security
+  description: Vulnerability discovery, exploitation, red teaming, supply-chain incidents, and threat intelligence.
+  tags:
+    - Hacking
+    - Threat Intelligence
+    - Red Team
+    - Red Teaming
+    - Vulnerability Discovery
+    - Vulnerability Disclosure
+    - Supply Chain
+- name: Application security
+  description: Secure development, vulnerability management, and practical AppSec programs.
+  tags:
+    - Application Security
+    - application security
+    - Vulnerability Management
+    - Software Engineering
+- name: Low-code, no-code, and citizen development
+  description: Security risks and governance for Power Platform and business-built applications.
+  tags:
+    - Low-Code Development
+    - Low-Code/No-Code
+    - No-Code Development
+    - Citizen Development
+    - Power Apps
+- name: Cloud, SaaS, and identity security
+  description: Cloud services, SaaS applications, enterprise identity, and data access.
+  tags:
+    - Cloud Security
+    - cloud-security
+    - SaaS Security
+    - Identity Management
+    - Microsoft

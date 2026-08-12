@@ -8,8 +8,8 @@ tags:
   - AI Security
   - Threat Intelligence
 header:
-  teaser: /assets/images/assets/images/2026-01-11-first-public-confirmation-of-ta-targeting-ai-systems/aita.png
-  og_image: /assets/images/assets/images/2026-01-11-first-public-confirmation-of-ta-targeting-ai-systems/aita.png
+  teaser: /assets/images/2026-01-11-first-public-confirmation-of-ta-targeting-ai-systems/aita.png
+  og_image: /assets/images/2026-01-11-first-public-confirmation-of-ta-targeting-ai-systems/aita.png
 ---
 
 Over the past year I've been asking people the same question over and over again: **when our AI systems are targeted, will you know?**

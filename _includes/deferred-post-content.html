@@ -1,0 +1,11 @@
+{% assign deferred_post_content = include.post.content
+  | replace: ' loading="lazy"', ''
+  | replace: ' loading="eager"', ''
+  | replace: ' decoding="async"', ''
+  | replace: ' decoding="sync"', ''
+  | replace: ' decoding="auto"', ''
+  | replace: ' fetchpriority="high"', ''
+  | replace: ' fetchpriority="low"', ''
+  | replace: ' fetchpriority="auto"', ''
+  | replace: '<img ', '<img loading="lazy" decoding="async" ' %}
+{{ deferred_post_content }}

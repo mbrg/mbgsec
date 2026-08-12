@@ -1,0 +1,53 @@
+.pagination li span {
+  display: block;
+  margin-bottom: 0.25em;
+  padding: 0.5em 1em;
+  font-family: $sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.5;
+  text-align: center;
+  color: $text-color;
+  border: 1px solid $border-color;
+}
+
+.pagination li span.current {
+  color: #fff;
+  background: #59636a;
+}
+
+.pagination li:first-child span {
+  border-start-start-radius: $border-radius;
+  border-end-start-radius: $border-radius;
+}
+
+.pagination li:last-child span {
+  border-start-end-radius: $border-radius;
+  border-end-end-radius: $border-radius;
+}
+
+.pagination--pager.disabled {
+  color: $text-color;
+}
+
+.btn--primary {
+  color: #fff;
+  background-color: #00747c;
+}
+
+.btn--primary:hover {
+  background-color: #005e65;
+}
+
+.fa-ul .author__subscribe {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: $link-color;
+  font: inherit;
+  cursor: pointer;
+}
+
+.fa-ul .author__subscribe:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,22 @@
+---
+layout: null
+permalink: /weblog/llms.txt
+sitemap: false
+---
+# mbgsec weblog
+
+> Michael Bargury's commentary and reading notes about material published elsewhere, newest first.
+
+Michael wrote the commentary, not necessarily the underlying linked material. Attribute quotations, findings, and source claims to the original author and publisher.
+
+## Commentary
+
+{% assign llms_weblog = site.weblog | sort: 'date' | reverse %}
+{% for entry in llms_weblog %}
+{% unless entry.hidden %}
+{% assign source_url = entry.link %}
+{% assign normalized_weblog_link = entry.link | append: '/' %}
+{% for archived_source in site.archive %}{% if archived_source.url == normalized_weblog_link and archived_source.link %}{% assign source_url = archived_source.link %}{% break %}{% endif %}{% endfor %}
+- [{{ entry.title }}]({{ entry.url | absolute_url }}): Commentary published {{ entry.date | date: "%Y-%m-%d" }}. {{ entry.description | default: entry.excerpt | markdownify | strip_html | normalize_whitespace | replace: '&amp;', '&' | replace: '&lt;', '<' | replace: '&gt;', '>' }}{% if source_url %} [Original source]({{ source_url | absolute_url }}).{% endif %}{% if entry.tags.size > 0 %} Tags: {{ entry.tags | join: ", " }}.{% endif %} [Markdown source]({{ site.repository_raw_url }}/{{ entry.path }}).
+{% endunless %}
+{% endfor %}

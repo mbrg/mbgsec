@@ -4,9 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "bundle exec jekyll build",
     "format": "echo \"No formatting configured; skipping.\"",
-    "test": "echo \"No tests specified.\"",
-    "ci": "npm run test",
+    "test": "npm run validate:llm",
+    "validate:llm": "node scripts/validate-llm-readiness.mjs",
+    "lighthouse": "lhci autorun",
+    "ci": "npm run build && npm run test",
     "deck:publish": "node scripts/publish-deck.mjs",
     "deck:upload": "op run --env-file=.env.op -- node scripts/publish-deck.mjs --upload"
   },

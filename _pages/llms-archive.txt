@@ -1,0 +1,17 @@
+---
+layout: null
+permalink: /archive/llms.txt
+sitemap: false
+---
+# mbgsec external-source archive
+
+> An index of externally published material preserved for reference by mbgsec.
+
+The items below are not necessarily authored by Michael Bargury. Prefer the original URL, and attribute content to the original author and publisher. Local archive copies are excluded from search indexing to avoid authorship and canonical-source confusion.
+
+## Original sources
+
+{% assign llms_archive = site.archive | sort: 'date' | reverse %}
+{% for entry in llms_archive %}{% if entry.link %}
+- [{{ entry.title }}]({{ entry.link }}): Source dated {{ entry.date | date: "%Y-%m-%d" }}. {{ entry.description | default: entry.excerpt | markdownify | strip_html | normalize_whitespace | replace: '&amp;', '&' | replace: '&lt;', '<' | replace: '&gt;', '>' }}
+{% endif %}{% endfor %}

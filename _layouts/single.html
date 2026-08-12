@@ -21,9 +21,16 @@ layout: default
 <div id="main" role="main">
   {% include sidebar.html %}
 
-  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+  {% assign schema_type = 'CreativeWork' %}
+  {% if page.collection == 'posts' or page.collection == 'weblog' %}
+    {% assign schema_type = 'BlogPosting' %}
+  {% elsif page.collection == 'archive' %}
+    {% assign schema_type = 'Article' %}
+  {% endif %}
+  <article class="page h-entry" itemscope itemtype="https://schema.org/{{ schema_type }}">
     {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
-    {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+    {% assign page_description = page.description | default: page.excerpt %}
+    {% if page_description %}<meta itemprop="description" content="{{ page_description | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
     {% if page.date %}<meta itemprop="datePublished" content="{{ page.date | date_to_xmlschema }}">{% endif %}
     {% if page.last_modified_at %}<meta itemprop="dateModified" content="{{ page.last_modified_at | date_to_xmlschema }}">{% endif %}
 
