@@ -66,6 +66,19 @@ Then upload the planned objects through 1Password:
 npm run deck:upload -- --dir .deck-build/my-talk --slug my-talk
 ```
 
+To upload the untouched raw source deck at a stable, unlinked path, add
+`--source`. The basename is always `source` and retains the source extension:
+
+```sh
+npm run deck:publish -- --slug my-talk --source .deck-sources/my-talk/source.pptx
+npm run deck:upload -- --slug my-talk --source .deck-sources/my-talk/source.pptx
+```
+
+For a PowerPoint source, the resulting URL is
+`https://media.mbgsec.com/decks/my-talk/source.pptx`. It is intentionally not
+linked from the talk page or index. It is publicly retrievable by anyone who
+knows the URL, while R2 object listing remains disabled.
+
 To publish or replace only the downloadable PDF for an already-hosted deck:
 
 ```sh

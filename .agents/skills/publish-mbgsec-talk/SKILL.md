@@ -52,6 +52,17 @@ Check for collisions in `_pages/decks/`, `_pages/talks.md`, and `https://media.m
 
 Keep original sources under ignored `.deck-sources/` and generated assets under ignored `.deck-build/`. Do not add a large deck, rendered slide, media file, or PDF to Git.
 
+Publish the untouched authoritative source deck to the same R2 talk prefix with
+the stable basename `source` and its original extension, for example
+`https://media.mbgsec.com/decks/<r2-slug>/source.pptx`. Keep this URL unlinked
+from the page and talks index, and give the exact URL to the user in the final
+handoff. This is obscurity, not access control: anyone who knows the URL can
+download it, while public object enumeration remains disabled. The raw source
+may retain hidden, unfinished, notes-only, or otherwise non-public presentation
+material; the public manifest and PDF must apply the publication boundary
+independently. Never upload a source that contains credentials or material the
+user has not authorized storing in the public bucket.
+
 Do not silently downgrade a talk to a static PDF/image experience. If the editable source is unavailable and the PDF, existing page, recording, related deck, or user context suggests embedded video, animation, builds, or interactive demonstrations, stop before publishing or replacing links and ask the user for the original deck/media or explicit approval to publish a disclosed static version. Absence of extractable media in a PDF is not evidence that the talk had no media.
 
 When an authoritative editable source deck is available, inspect its media objects, relationships, hyperlinks, and slide placements directly. If that inspection proves the deck contains no embedded or linked video, publish it without video overlays. Separate video files in the same conference folder—even when their content is related to the talk—are not required unless the user explicitly asks to add them, and their placements must not be guessed. Record that the source was verified media-free. Ask the user only when the editable deck contains or references video that cannot be mapped faithfully, or when no editable source is available and other evidence suggests missing media.
@@ -95,6 +106,10 @@ Upload only when the user's request authorizes publishing:
 npm run deck:upload -- --dir .deck-build/<bundle> --slug <r2-slug> --version <version> --pdf .deck-build/<r2-slug>.pdf
 ```
 
+Add `--source .deck-sources/<page-slug>/source.<extension>` to both commands
+when publishing a prepared source deck. The uploader writes it to the stable,
+unlinked `decks/<r2-slug>/source.<extension>` object with attachment metadata.
+
 For a PDF-only update, omit `--dir` and `--version`. Before replacing an existing stable PDF for a different talk identity, stop and ask.
 
 Verify public responses after upload:
@@ -103,6 +118,7 @@ Verify public responses after upload:
 - Versioned `deck.json`: HTTP 200 with the expected slide count.
 - Representative slide/media objects: HTTP 200 with correct MIME types.
 - `slides.pdf`: HTTP 200, `Content-Type: application/pdf`, nonzero expected length, byte ranges, and attachment disposition.
+- `source.<extension>`: HTTP 200, expected Office/PDF content type, exact source byte length and SHA-256, byte ranges, and attachment disposition. Do not add it to page frontmatter or any rendered link.
 
 Do not switch the page to a new object until these checks pass.
 
@@ -159,6 +175,6 @@ Use the in-app browser when available for local responsive verification. Do not 
 
 ## Finish safely
 
-Run syntax checks, the repository test/build command, and `git diff --check`. Summarize the normalized metadata, created page, R2 manifest/PDF URLs, links found or omitted, conversion limitations, and verification results. Include citations to the authoritative web sources used to validate the talk date, conference, schedule entry, and recording.
+Run syntax checks, the repository test/build command, and `git diff --check`. Summarize the normalized metadata, created page, R2 manifest/PDF URLs, exact unlinked raw-source URL, links found or omitted, conversion limitations, and verification results. State clearly that the raw-source URL is unlisted rather than private. Include citations to the authoritative web sources used to validate the talk date, conference, schedule entry, and recording.
 
 Commit or push only when the user explicitly requests it. Stage only files belonging to this talk workflow; never stage `.env.op`, source decks, generated bundles, or large PDFs.
