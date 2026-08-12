@@ -14,7 +14,10 @@
       }
     </script>
     <title>{{ deck_page_title | strip | escape }} · {{ site.title | escape }}</title>
+    <meta name="description" content="{{ page.description | default: page.title | markdownify | strip_html | strip_newlines | escape_once }}{% unless page.description %}{% if page.conference %} presentation at {{ page.conference | escape_once }}{% endif %}{% if page.talk_date %} on {{ page.talk_date | date: '%B %-d, %Y' }}{% endif %} by {{ site.author.name | escape_once }}.{% endunless %}">
     <link rel="canonical" href="{{ page.url | absolute_url }}">
+    <link rel="describedby" href="{{ '/talks/llms.txt' | absolute_url }}">
+    <link rel="alternate" type="text/markdown" href="{{ site.repository_raw_url }}/{{ page.path }}">
     <link rel="stylesheet" href="{{ '/assets/css/deck-player.css' | relative_url }}">
   </head>
   <body class="deck-page">

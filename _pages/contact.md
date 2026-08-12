@@ -18,7 +18,7 @@ Check out the [projects](/wip) I'm currently working on, my previous and upcomin
 <ul class="fa-ul">
   <li>
     <span class="fa-li"><i class="fas fa-envelope"></i></span>
-    <a href="javascript:void(0);" onclick="popupNewsletter()" title="Subscribe">Subscribe</a>
+    <button class="author__subscribe" type="button" onclick="popupNewsletter()" aria-haspopup="dialog">Subscribe</button>
   </li>
   <li>
     <span class="fa-li"><i class="fab fa-twitter-square"></i></span>

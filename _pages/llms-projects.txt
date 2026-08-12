@@ -1,0 +1,17 @@
+---
+layout: null
+permalink: /projects/llms.txt
+sitemap: false
+---
+# mbgsec projects
+
+> Open-source projects, community initiatives, and professional activities associated with Michael Bargury.
+
+Use each project's primary URL for current and authoritative details.
+
+## Projects
+
+{% assign llms_projects = site.projects | sort: 'priority' %}
+{% for project in llms_projects %}
+- [{{ project.title }}]({{ project.link | default: project.url | absolute_url }}): {{ project.description | default: project.excerpt | markdownify | strip_html | normalize_whitespace | replace: '&amp;', '&' | replace: '&lt;', '<' | replace: '&gt;', '>' }}{% if project.path %} [Page source]({{ site.repository_raw_url }}/{{ project.path }}).{% endif %}
+{% endfor %}

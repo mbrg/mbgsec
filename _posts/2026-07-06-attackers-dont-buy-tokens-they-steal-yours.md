@@ -11,11 +11,11 @@ tags:
   - Red Team
   - Guardrails
 header:
-  teaser: /assets/images/2026-07-06-attackers-dont-buy-tokens-they-steal-yours/HMNOtsaWYAAjva1.jpeg
+  teaser: /assets/images/2026-07-06-attackers-dont-buy-tokens-they-steal-yours/HMNOtsaWYAAjva1-1200.jpeg
   og_image: /assets/images/2026-07-06-attackers-dont-buy-tokens-they-steal-yours/HMNOtsaWYAAjva1.jpeg
 ---
 
-![Attackers Don't Buy Tokens. They Steal Yours.](/assets/images/2026-07-06-attackers-dont-buy-tokens-they-steal-yours/HMNOtsaWYAAjva1.jpeg)
+![Attackers Don't Buy Tokens. They Steal Yours.](/assets/images/2026-07-06-attackers-dont-buy-tokens-they-steal-yours/HMNOtsaWYAAjva1-1200.jpeg){: width="1200" height="480" srcset="/assets/images/2026-07-06-attackers-dont-buy-tokens-they-steal-yours/HMNOtsaWYAAjva1-760.jpeg 760w, /assets/images/2026-07-06-attackers-dont-buy-tokens-they-steal-yours/HMNOtsaWYAAjva1-1200.jpeg 1200w" sizes="(max-width: 600px) 100vw, 800px" fetchpriority="high" decoding="async" }
 
 We spent the last 6 months building a global network of honeypots with exposed AI inference and agent endpoints. Attackers were quick to find and exploit it ... while we watched.
 

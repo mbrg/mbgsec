@@ -3,9 +3,79 @@
 {% include seo.html %}
 <meta name="msvalidate.01" content="B87DF8E766DF67C8F495661767343AC4" />
 
+{% comment %}Describe the site context that applies to this page (llms.txt v2).{% endcomment %}
+{% assign llms_description_path = '/llms.txt' %}
+{% if page.collection == 'posts' %}
+  {% assign llms_description_path = '/posts/llms.txt' %}
+{% elsif page.collection == 'weblog' %}
+  {% assign llms_description_path = '/weblog/llms.txt' %}
+{% elsif page.collection == 'archive' %}
+  {% assign llms_description_path = '/archive/llms.txt' %}
+{% elsif page.collection == 'projects' %}
+  {% assign llms_description_path = '/projects/llms.txt' %}
+{% elsif page.url contains '/talks/' %}
+  {% assign llms_description_path = '/talks/llms.txt' %}
+{% endif %}
+<link rel="describedby" href="{{ llms_description_path | absolute_url }}">
+
+{% comment %}The repository source is the lossless Markdown representation.{% endcomment %}
+{% if page.collection == 'posts' or page.collection == 'weblog' or page.collection == 'projects' %}
+  <link rel="alternate" type="text/markdown" href="{{ site.repository_raw_url }}/{{ page.path }}">
+{% endif %}
+
+{% if page.collection == 'archive' %}
+  <meta name="robots" content="noindex,follow">
+{% endif %}
+
+{% if page.collection == 'posts' %}
+  <meta name="content-provenance" content="original-research">
+{% elsif page.collection == 'weblog' %}
+  <meta name="content-provenance" content="weblog-commentary">
+{% elsif page.collection == 'archive' %}
+  <meta name="content-provenance" content="external-source-archive">
+{% elsif page.collection == 'projects' %}
+  <meta name="content-provenance" content="project-or-professional-activity">
+{% endif %}
+
+{% if page.collection == 'posts' or page.collection == 'weblog' %}
+  {% assign structured_description = page.description | default: page.excerpt | default: site.description | strip_html | strip_newlines %}
+  {% assign structured_source_url = page.link %}
+  {% if page.collection == 'weblog' %}
+    {% assign normalized_weblog_link = page.link | append: '/' %}
+    {% for archived_source in site.archive %}
+      {% if archived_source.url == normalized_weblog_link and archived_source.link %}
+        {% assign structured_source_url = archived_source.link %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": {{ page.title | jsonify }},
+    "description": {{ structured_description | jsonify }},
+    "url": {{ page.url | absolute_url | jsonify }},
+    "mainEntityOfPage": {{ page.url | absolute_url | jsonify }},
+    "datePublished": {{ page.date | date_to_xmlschema | jsonify }},{% if page.last_modified_at %}
+    "dateModified": {{ page.last_modified_at | date_to_xmlschema | jsonify }},{% endif %}
+    "author": {
+      "@type": "Person",
+      "name": {{ site.author.name | jsonify }},
+      "url": {{ site.url | jsonify }}
+    }{% if page.tags.size > 0 %},
+    "keywords": {{ page.tags | jsonify }}{% endif %}{% if structured_source_url %},
+    "citation": {{ structured_source_url | absolute_url | jsonify }}{% endif %}
+  }
+  </script>
+{% endif %}
+
 {% unless site.atom_feed.hide %}
   <link href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | relative_url }}{% endif %}" type="application/atom+xml" rel="alternate" title="{{ site.title }} Feed">
 {% endunless %}
+{% if page.collection == 'weblog' or page.url == '/weblog/' %}
+  <link href="{{ '/weblog/feed.xml' | relative_url }}" type="application/rss+xml" rel="alternate" title="{{ site.title }} Weblog Feed">
+{% endif %}
 
 <!-- https://t.co/dKP3o1e -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,10 +90,10 @@
 <!-- Dark mode -->
 {% if site.minimal_mistakes_skin_dark %}
   <meta name="color-scheme" content="light dark">
-  <style>
-    @import url("{{ '/assets/css/main2.css' | relative_url }}") (prefers-color-scheme: dark);
-  </style>
+  <link rel="stylesheet" href="{{ '/assets/css/main2.css' | relative_url }}" media="(prefers-color-scheme: dark)">
 {% endif %}
+
+<link rel="icon" type="image/png" sizes="256x256" href="{{ '/assets/images/bio-photo-256.png' | relative_url }}">
 
 <!-- For all browsers -->
 <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -34,5 +104,3 @@
     <script src="{{ script | relative_url }}"></script>
   {% endfor %}
 {% endif %}
-
-{% include email-form.html %}

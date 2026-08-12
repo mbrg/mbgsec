@@ -18,7 +18,9 @@ email: michael.bargury@owasp.org
 description: >- # this means to ignore newlines until "baseurl:"
   The two blog readers would know that it is comprised mostly of unfinished thoughts about breaking AI agents, hacking, cloud security, application security, citizen development and infosec.
 url: "https://www.mbgsec.com"
-logo: "/assets/images/bio-photo.png"
+repository_url: "https://github.com/mbrg/mbgsec"
+repository_raw_url: "https://raw.githubusercontent.com/mbrg/mbgsec/main"
+logo: "/assets/images/bio-photo-256.png"
 social:
   type: Person
   name: Michael Bargury
@@ -37,6 +39,8 @@ search: true
 # Build settings
 markdown: kramdown
 remote_theme: mmistakes/minimal-mistakes
+sass:
+  style: compressed
 
 # Outputting
 permalink: /:categories/:title/
@@ -71,8 +75,8 @@ analytics:
 
 author:
   name   : "Michael Bargury"
-  avatar : "assets/images/bio-photo.png"
-  bio    : "Security research, hacking, AppSec, primarily focused on AI agents."
+  avatar : "assets/images/bio-photo-256.png"
+  bio    : "Breaking AI agents, building in cybsercurity, sharing half-baked ideas."
   links:
     - label: "X"
       icon: "fab fa-fw fa-twitter-square"
@@ -128,11 +132,11 @@ defaults:
       type: archive
     values:
       layout: single
-      author_profile: true
-      read_time: true
-      comments: true
-      share: true
-      related: true
+      author_profile: false
+      read_time: false
+      comments: false
+      share: false
+      related: false
 
 include:
   - _pages

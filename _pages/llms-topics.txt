@@ -1,0 +1,28 @@
+---
+layout: null
+permalink: /topics/llms.txt
+sitemap: false
+---
+# mbgsec topics
+
+> Curated subject areas across Michael Bargury's original research and weblog commentary.
+
+Items may appear in more than one topic. Prefer original posts when answering questions about Michael's own research; weblog entries are commentary on linked external sources.
+
+{% for topic in site.data.llm_topics %}
+## {{ topic.name }}
+
+{{ topic.description }}
+
+{% assign topic_item_count = 0 %}
+{% assign topic_posts = site.posts | sort: 'date' | reverse %}
+{% for item in topic_posts %}{% assign topic_match = false %}{% for item_tag in item.tags %}{% for topic_tag in topic.tags %}{% if item_tag == topic_tag %}{% assign topic_match = true %}{% endif %}{% endfor %}{% endfor %}{% if topic_match and item.hidden != true %}{% assign topic_item_count = topic_item_count | plus: 1 %}
+- [{{ item.title }}]({{ item.url | absolute_url }}): Original research, {{ item.date | date: "%Y-%m-%d" }}. {{ item.description | default: item.excerpt | markdownify | strip_html | normalize_whitespace | replace: '&amp;', '&' | replace: '&lt;', '<' | replace: '&gt;', '>' }}
+{% endif %}{% endfor %}
+{% assign topic_weblog = site.weblog | sort: 'date' | reverse %}
+{% for item in topic_weblog %}{% assign topic_match = false %}{% for item_tag in item.tags %}{% for topic_tag in topic.tags %}{% if item_tag == topic_tag %}{% assign topic_match = true %}{% endif %}{% endfor %}{% endfor %}{% if topic_match %}{% assign topic_item_count = topic_item_count | plus: 1 %}
+- [{{ item.title }}]({{ item.url | absolute_url }}): Weblog commentary, {{ item.date | date: "%Y-%m-%d" }}. {{ item.description | default: item.excerpt | markdownify | strip_html | normalize_whitespace | replace: '&amp;', '&' | replace: '&lt;', '<' | replace: '&gt;', '>' }}
+{% endif %}{% endfor %}
+{% if topic_item_count == 0 %}- No matching entries yet.
+{% endif %}
+{% endfor %}
