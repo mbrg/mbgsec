@@ -93,6 +93,15 @@ function assertHtmlContract(html, { canonical, describedby, markdownSource, prov
   }
 }
 
+function assertImageHintIntegrity(html, pathname) {
+  for (const match of html.matchAll(/<img\b[^>]*>/gi)) {
+    const tag = match[0];
+    const attributeNames = [...tag.matchAll(/\s([A-Za-z_:][\w:.-]*)\s*=/g)].map((attribute) => attribute[1].toLowerCase());
+    assert.equal(new Set(attributeNames).size, attributeNames.length, `${pathname} contains duplicate image attributes: ${tag}`);
+    assert(!(/\bloading="lazy"/i.test(tag) && /\bfetchpriority="high"/i.test(tag)), `${pathname} combines lazy loading with high fetch priority: ${tag}`);
+  }
+}
+
 async function walk(directory) {
   const files = [];
   for (const entry of await readdir(directory, { withFileTypes: true })) {
@@ -137,7 +146,8 @@ try {
   assert(home.indexOf("<body") < home.indexOf('id="email-modal"'), "Subscription dialog must render inside the body");
   assert(!home.includes('href="javascript:void(0);"'), "Homepage contains JavaScript-only links");
   assert(!home.includes('href="#" class="disabled'), "Homepage uses disabled anchors as controls");
-  assert(home.includes('<h1 class="archive__subtitle">'), "Homepage lacks a top-level content heading");
+  assert(home.includes('<h2 class="archive__subtitle">'), "Homepage lacks its Recent Posts section heading");
+  assert.equal((home.match(/<h1\b/g) ?? []).length, 1, "Homepage must have exactly one h1");
 
   const post = await get(postPath, /^text\/html; charset=utf-8$/);
   assertHtmlContract(post, {
@@ -182,6 +192,7 @@ try {
   let jsonLdBlocks = 0;
   for (const file of htmlFiles) {
     const html = await readFile(file, "utf8");
+    assertImageHintIntegrity(html, path.relative(siteRoot, file));
     for (const match of html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) {
       JSON.parse(match[1]);
       jsonLdBlocks += 1;

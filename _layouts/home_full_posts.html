@@ -4,7 +4,7 @@ layout: archive
 
 {{ content }}
 
-<h1 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Posts" }}</h1>
+<h2 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Posts" }}</h2>
 
 {% if paginator %}
   {% assign posts = paginator.posts %}
@@ -13,6 +13,7 @@ layout: archive
 {% endif %}
 
 {% assign entries_layout = page.entries_layout | default: 'list' %}
+{% assign visible_post_index = 0 %}
 <div class="entries-{{ entries_layout }}">
   {% for post in posts %}
     {% unless post.hidden %}
@@ -32,10 +33,10 @@ layout: archive
       {% endif %}
       
       <div class="archive__item-content">
-        {% if forloop.first %}
+        {% if visible_post_index == 0 %}
           {{ post.content }}
         {% else %}
-          {{ post.content | replace: '<img ', '<img loading="lazy" decoding="async" ' }}
+          {% include deferred-post-content.html post=post %}
         {% endif %}
       </div>
       
@@ -48,6 +49,7 @@ layout: archive
         </p>
       {% endif %}
     </article>
+    {% assign visible_post_index = visible_post_index | plus: 1 %}
     {% endunless %}
   {% endfor %}
 </div>
