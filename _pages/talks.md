@@ -13,6 +13,7 @@ layout: splash
 | 2026-08-06 | Black Hat USA 2026 | Promptware EOD: Skillful Agent Detonation | {% include talk-table-resources.html permalink="/talks/2026-08-06-bhusa2026-promptware-eod-skillful-agent-detonation/" %} |
 | 2026-08-05 | Black Hat USA 2026 | Pwning Agentic Browsers with PleaseFix: A New Vulnerability Class for 0-Click Takeover | {% include talk-table-resources.html permalink="/talks/2026-08-05-bhusa2026-pwning-agentic-browsers-with-pleasefix/" %} |
 | 2026-05-27 | AI Agent Security Summit by Zenity Labs @ SF 2026 | No Country for Old Ideas | {% include talk-table-resources.html permalink="/talks/2026-05-27-ai-agent-security-summit-sf2026-no-country-for-old-ideas/" %} |
+| 2026-05-06 | BlueHat USA 2026 | 0click Enterprise Compromise in AI Systems (ft Tamir Ishay Sharbat) | {% include talk-table-resources.html permalink="/talks/2026-05-06-bluehat2026-0click-enterprise-compromise-in-ai-systems/" %} |
 | 2026-04-30 | Founder-Led Growth in Cyber by Vertex | How to ~~Get Fortune 500 Inbounds~~ Create Value in Cybersecurity | {% include talk-table-resources.html permalink="/talks/2026-04-30-vertex-create-value-in-cybersecurity/" %} |
 | 2026-03-23 | RSAC 2026 | Your AI Agents Are My Minions | {% include talk-table-resources.html permalink="/talks/2026-03-23-rsac2026-your-ai-agents-are-my-minions/" %} |
 | 2026-03-04 | [Un]prompted 2026 | Perplexed Browser: PleaseFix (delivered by Gadi Evron) | {% include talk-table-resources.html permalink="/talks/2026-03-04-unprompted2026-perplexed-browser-pleasefix/" %} |
@@ -29,6 +30,7 @@ layout: splash
 | 2025-04-29 | RSAC 2025 | Your Copilot is My Insider | {% include talk-table-resources.html permalink="/talks/2025-04-29-rsac2025-your-copilot-is-my-insider/" %} |
 | 2025-03-31 | AI Agent Security Summit by Zenity Labs @ NYC 2025 | Prompt Injection is Not a Bug For Us to Patch | {% include talk-table-resources.html permalink="/talks/2025-03-31-ai-agent-security-summit-nyc2025-prompt-injection-is-not-a-bug-for-us-to-patch/" %} |
 | 2024-11-28 | DefCamp 2024 | 15 Ways to Break Your Copilot (delivered by Inbar Raz) | {% include talk-table-resources.html permalink="/talks/2024-11-28-defcamp2024-15-ways-to-break-your-copilot/" %} |
+| 2024-11-19 | INTENT 2024 | Living off Microsoft Copilot | {% include talk-table-resources.html permalink="/talks/2024-11-19-intent2024-living-off-microsoft-copilot/" %} |
 | 2024-11-13 | Ekoparty 2024 | 15 Ways to Break Your Copilot (delivered by Inbar Raz) | {% include talk-table-resources.html permalink="/talks/2024-11-13-ekoparty2024-15-ways-to-break-your-copilot/" %} |
 | 2024-10-30 | BlueHat USA 2024 | Scaling AppSec With an SDL for Citizen Development (ft Don Willits) | {% include talk-table-resources.html permalink="/talks/2024-10-30-bluehat2024-scaling-appsec-with-an-sdl-for-citizen-development/" %} |
 | 2024-10-24 | hack.lu 2024 | The good, the bad, and the ugly: Microsoft Copilot (delivered by Inbar Raz) | {% include talk-table-resources.html permalink="/talks/2024-10-24-hacklu2024-the-good-the-bad-and-the-ugly-microsoft-copilot/" %} |
