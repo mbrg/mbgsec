@@ -1,0 +1,33 @@
+---
+layout: single
+---
+
+<p class="page__meta">
+  <strong>{{ page.conference }}</strong>
+  {% if page.talk_date %} · <time datetime="{{ page.talk_date | date: '%Y-%m-%d' }}">{{ page.talk_date | date: "%B %-d, %Y" }}</time>{% endif %}
+  {% if page.presented_by %} · Presented by {{ page.presented_by }}{% endif %}
+</p>
+
+{% if page.recording_url or page.schedule_url or page.project_url %}
+  <nav class="talk-resources" aria-label="Talk resources">
+    {% if page.recording_url %}
+      <a class="btn btn--primary" href="{{ page.recording_url | escape }}" target="_blank" rel="noopener noreferrer">
+        <i class="fas fa-fw fa-video" aria-hidden="true"></i> Watch recording
+      </a>
+    {% endif %}
+    {% if page.schedule_url %}
+      <a class="btn" href="{{ page.schedule_url | escape }}" target="_blank" rel="noopener noreferrer">
+        <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Conference schedule
+      </a>
+    {% endif %}
+    {% if page.project_url %}
+      <a class="btn" href="{{ page.project_url | escape }}" target="_blank" rel="noopener noreferrer">
+        <i class="fas fa-fw fa-link" aria-hidden="true"></i> {{ page.project_label | default: "Project" }}
+      </a>
+    {% endif %}
+  </nav>
+{% endif %}
+
+<p><em>A slide deck is not available for this edition of the talk.</em></p>
+
+{{ content }}

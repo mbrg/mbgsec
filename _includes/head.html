@@ -19,7 +19,7 @@
 <link rel="describedby" href="{{ llms_description_path | absolute_url }}">
 
 {% comment %}The repository source is the lossless Markdown representation.{% endcomment %}
-{% if page.collection == 'posts' or page.collection == 'weblog' or page.collection == 'projects' %}
+{% if page.collection == 'posts' or page.collection == 'weblog' or page.collection == 'projects' or page.url contains '/talks/' %}
   <link rel="alternate" type="text/markdown" href="{{ site.repository_raw_url }}/{{ page.path }}">
 {% endif %}
 

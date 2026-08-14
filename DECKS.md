@@ -116,7 +116,19 @@ github_url: https://github.com/example/my-talk
 The `pdf_url`, `schedule_url`, `recording_url`, and `github_url` fields are optional.
 Use `github_url` for a public source repository shared with the talk. The deck page
 shows only the resource buttons whose URLs are present. Link the corresponding row
-in `_pages/talks.md` to `/talks/my-talk/` when the live deck is ready.
+in `_pages/talks.md` with the `talk-table-resources.html` include when the talk
+page is ready. The include shows the talk-page icon and also shows a generic video
+icon when the page has a `recording_url`:
+
+```liquid
+{% raw %}{% include talk-table-resources.html permalink="/talks/my-talk/" %}{% endraw %}
+```
+
+Every listed talk must have a page, even when no slide deck is available. Use the
+`talk` layout for those resource-only pages and keep their recording, schedule,
+and project links in page frontmatter. Do not pass a recording URL directly from
+the table or put schedule, PDF, GitHub, or other resource icons there. Each
+Resources cell contains the talk-page icon and, when available, the recording icon.
 
 ## Source conversion notes
 

@@ -6,8 +6,9 @@
   "scripts": {
     "build": "bundle exec jekyll build",
     "format": "echo \"No formatting configured; skipping.\"",
-    "test": "npm run validate:llm",
+    "test": "npm run validate:llm && npm run validate:talks",
     "validate:llm": "node scripts/validate-llm-readiness.mjs",
+    "validate:talks": "node scripts/validate-talk-resources.mjs",
     "lighthouse": "lhci autorun",
     "ci": "npm run build && npm run test",
     "deck:publish": "node scripts/publish-deck.mjs",

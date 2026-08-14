@@ -17,11 +17,11 @@ Use web search for every talk, even when the user provides all metadata and link
 3. Open the final deep link and confirm the talk title, speaker or organization, conference, and date. Do not accept a redirect to a generic landing page, an internal search page, or a schedule entry for a similarly named talk.
 4. Preserve a necessary fragment identifier; remove unrelated tracking parameters.
 
-## Validate the YouTube recording
+## Validate the video recording
 
 1. Search the exact talk title plus speaker and conference. Prefer the official conference, organizer, or speaker channel.
-2. Open the final `youtube.com/watch` or `youtu.be` URL. Confirm that the video is public and that its title, channel, description, or visible event context identifies the same talk.
-3. When page rendering is limited, use YouTube's official oEmbed metadata as an additional availability/title/channel check. Do not treat oEmbed alone as proof that a generically titled video is the right session.
+2. Open the final public video URL. Confirm that its title, channel or account, description, or visible event context identifies the same talk. YouTube, Vimeo, and other stable official hosts are equally valid.
+3. When page rendering is limited, use the provider's official oEmbed metadata, when available, as an additional availability/title/channel check. Do not treat oEmbed alone as proof that a generically titled video is the right session.
 4. Canonicalize the final link and remove playlist, share-session, and tracking parameters unless they are required to identify the recording.
 5. Do not substitute a trailer, short clip, playlist, livestream waiting page, mirror, or search result without explicit user direction.
 
@@ -48,7 +48,7 @@ Keep a compact table or equivalent notes while working:
 |---|---|---|---|
 | Date/conference | `YYYY-MM-DD`, event name | Official schedule/session | Title, speaker, displayed date |
 | Schedule | Exact deep link | Official conference domain | Correct session entry opens |
-| Recording | Canonical YouTube URL | Official/verified channel | Title, speaker/event context, public availability |
+| Recording | Canonical public video URL | Official/verified channel or account | Title, speaker/event context, public availability |
 | Source code | Public GitHub repository/path | Speaker, team, or official project source | README/project identity and talk connection |
 
 Cite the authoritative URLs in the final response next to the values they support. Do not cite search-result pages.
