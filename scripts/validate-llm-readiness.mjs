@@ -179,6 +179,28 @@ try {
   assert(deck.includes('<meta name="description"'), "Deck lacks a meta description");
   assert(deck.includes('<link rel="describedby" href="https://www.mbgsec.com/talks/llms.txt">'), "Deck lacks discovery metadata");
   assert(deck.includes('<link rel="alternate" type="text/markdown"'), "Deck lacks a Markdown alternate");
+  assert(deck.includes('class="masthead"'), "Deck no longer retains the site masthead");
+  assert(/<main\b[^>]*class="[^"]*\btalk-page\b[^"]*"[^>]*>/.test(deck), "Deck lacks the talk-page document structure");
+  assert(deck.includes('class="deck-player"'), "Deck lacks its interactive player");
+  assert(deck.includes('/assets/css/deck-player.css?v=20260814-talks-v2'), "Deck lacks its versioned player stylesheet");
+  assert(deck.includes('/assets/js/deck-player.js?v=20260814-talks-v2'), "Deck lacks its versioned player script");
+  assert.equal((deck.match(/<h1\b/g) ?? []).length, 1, "Deck must have exactly one h1");
+  assertHtmlContract(deck, {
+    canonical: `${canonicalOrigin}${deckPath}`,
+    describedby: "/talks/llms.txt",
+    markdownSource: `${canonicalOrigin.replace("www.mbgsec.com", "raw.githubusercontent.com/mbrg/mbgsec/main")}/_pages/decks/${deckPath.split("/").filter(Boolean).at(-1)}.md`,
+    provenance: "conference-presentation",
+    jsonLdType: "PresentationDigitalDocument",
+  });
+
+  const enrichedDeck = await get("/talks/2023-02-15-owasp-global-appsec-dublin-2023-credential-sharing-as-a-service-the-dark-side-of-no-code/", /^text\/html; charset=utf-8$/);
+  assert(enrichedDeck.includes('href="#abstract"') && enrichedDeck.includes("Read the abstract"), "Enriched deck lacks an accurate abstract jump link");
+  assert(enrichedDeck.includes("Read the abstract and transcript"), "Reviewed deck lacks its abstract-and-transcript jump link");
+  assert(enrichedDeck.includes('id="transcript"'), "Reviewed deck lacks its published transcript section");
+
+  const lunrStore = await get("/assets/js/lunr/lunr-store.js", /^text\/javascript; charset=utf-8$/);
+  assert(lunrStore.includes("/talks/"), "Talk pages are missing from the site search index");
+  assert(lunrStore.includes("Why focus on heavily guarded crown jewels"), "Published agenda abstracts are missing from the site search index");
 
   const internalUrls = new Set();
   for (const body of llmsDocuments.values()) {

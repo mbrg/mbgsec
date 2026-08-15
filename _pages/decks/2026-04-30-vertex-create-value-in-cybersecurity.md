@@ -7,4 +7,7 @@ layout: deck
 deck_manifest: https://media.mbgsec.com/decks/2026-04-30_Vertex_CreateValueInCybersecurity/latest.json
 pdf_url: https://media.mbgsec.com/decks/2026-04-30_Vertex_CreateValueInCybersecurity/slides.pdf
 schedule_url: https://luma.com/a76a0481
+abstract_status: source-lacks-abstract
+abstract_status_checked_at: 2026-08-14
+abstract_status_note: "The official Vertex-hosted Luma page confirms Michael Bargury as a participant in the Founder-led Growth for Cyber Startups event, but publishes only an event-level description and no per-speaker abstract."
 ---

@@ -1,0 +1,47 @@
+<header class="talk-page__header">
+  <div>
+    <a class="talk-page__back" href="{{ '/talks/' | relative_url }}"><span aria-hidden="true">←</span> All talks</a>
+    <p class="talk-page__eyebrow">{{ page.conference }}{% if page.talk_date %} · {{ page.talk_date | date: "%Y/%m" }}{% endif %}</p>
+    <h1 class="talk-page__title" itemprop="headline">{{ page.title }}</h1>
+    <p class="talk-page__meta">
+      {% if page.talk_date %}<time datetime="{{ page.talk_date | date: '%Y-%m-%d' }}" itemprop="datePublished">{{ page.talk_date | date: "%B %-d, %Y" }}</time>{% endif %}
+      {% if page.presented_by %} · Presented by <span itemprop="author">{{ page.presented_by }}</span>{% endif %}
+    </p>
+  </div>
+
+  {% if page.pdf_url or page.recording_url or page.schedule_url or page.github_url or page.github_urls or page.project_url %}
+    <nav class="talk-page__resources" aria-label="Talk resources">
+      {% if page.recording_url %}
+        <a class="talk-page__resource talk-page__resource--primary" href="{{ page.recording_url | escape }}" target="_blank" rel="noopener noreferrer">
+          <i class="fas fa-fw fa-video" aria-hidden="true"></i> Watch recording
+        </a>
+      {% endif %}
+      {% if page.pdf_url %}
+        <a class="talk-page__resource" href="{{ page.pdf_url | escape }}" download>
+          <i class="fas fa-fw fa-download" aria-hidden="true"></i> Download slides
+        </a>
+      {% endif %}
+      {% if page.schedule_url %}
+        <a class="talk-page__resource" href="{{ page.schedule_url | escape }}" target="_blank" rel="noopener noreferrer">
+          <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Conference agenda
+        </a>
+      {% endif %}
+      {% if page.github_url %}
+        <a class="talk-page__resource" href="{{ page.github_url | escape }}" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-fw fa-github" aria-hidden="true"></i> Source code
+        </a>
+      {% endif %}
+      {% for source in page.github_urls %}
+        {% assign source_label = source.label | default: 'Source code' %}
+        <a class="talk-page__resource" href="{{ source.url | escape }}" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-fw fa-github" aria-hidden="true"></i> {{ source_label }}
+        </a>
+      {% endfor %}
+      {% if page.project_url %}
+        <a class="talk-page__resource" href="{{ page.project_url | escape }}" target="_blank" rel="noopener noreferrer">
+          <i class="fas fa-fw fa-link" aria-hidden="true"></i> {{ page.project_label | default: "Project" }}
+        </a>
+      {% endif %}
+    </nav>
+  {% endif %}
+</header>
