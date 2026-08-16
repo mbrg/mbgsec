@@ -23,7 +23,7 @@ transcript_candidate_sha256: "a520bb1edf09bdf82d2a5fb5cbe9fe1a3c704ebfeb00c48a70
 <!-- talk-enrichment:start -->
 ## Transcript
 
-> Generated from the talk recording and evaluated by three independent LLM reviewer roles.
+> AI generated from recording.
 
 ### Opening & Event Overview; Agenda & Presenter Introduction; Low‑Code Adoption in the Enterprise
 

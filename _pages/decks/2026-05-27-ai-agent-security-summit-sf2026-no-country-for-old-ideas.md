@@ -30,7 +30,7 @@ _[Official conference abstract](https://zenity.io/resources/events/ai-agent-secu
 
 ## Transcript
 
-> Generated from the talk recording and evaluated by three independent LLM reviewer roles.
+> AI generated from recording.
 
 ### Opening Remarks and Community Appreciation
 

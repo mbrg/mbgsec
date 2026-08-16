@@ -37,7 +37,7 @@ _[Official agenda abstract for this talk, sourced from CARO Workshop 2024](https
 
 ## Transcript
 
-> Generated from the talk recording and evaluated by three independent LLM reviewer roles.
+> AI generated from recording.
 
 ### Opening the Stage; Why Guest Users Matter
 

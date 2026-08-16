@@ -39,7 +39,7 @@ _[Official conference abstract](https://owasp2024globalappsecsanfra.sched.com/ev
 
 ## Transcript
 
-> Generated from the talk recording and evaluated by three independent LLM reviewer roles.
+> AI generated from recording.
 
 ### Introduction to Copilot and the Banking Scenario; The Threat of Email-Based Attacks; Historical Context and the Rise of AI in Enterprise
 

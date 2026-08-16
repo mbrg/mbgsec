@@ -23,7 +23,7 @@ _[Official conference abstract](https://archive.bsideslv.org/2023/talks#all-you-
 
 ## Transcript
 
-> Generated from the talk recording and evaluated by three independent LLM reviewer roles.
+> AI generated from recording.
 
 ### Opening the Door: Guest Accounts and the Power of Collaboration
 

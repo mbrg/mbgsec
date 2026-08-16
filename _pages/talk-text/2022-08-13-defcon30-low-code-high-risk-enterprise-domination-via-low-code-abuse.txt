@@ -17,7 +17,7 @@ _[Official conference abstract](https://forum.defcon.org/node/242003)_
 
 ## Transcript
 
-> Generated from the talk recording and evaluated by three independent LLM reviewer roles.
+> AI generated from recording.
 
 ### Introduction & Low‑Code Overview
 

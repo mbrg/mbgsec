@@ -35,7 +35,7 @@ _[Official conference abstract](https://owasp2023globalappsecdublin.sched.com/ev
 
 ## Transcript
 
-> Generated from the talk recording and evaluated by three independent LLM reviewer roles.
+> AI generated from recording.
 
 ### Introduction to Low‑Code & No‑Code
 

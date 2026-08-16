@@ -17,7 +17,7 @@ _[Official conference abstract](https://bsidessf2023.sched.com/event/1HzuZ/windo
 
 ## Transcript
 
-> Generated from the talk recording and evaluated by three independent LLM reviewer roles.
+> AI generated from recording.
 
 ### Opening Remarks and Speaker Introduction
 

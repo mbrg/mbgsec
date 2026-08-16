@@ -19,7 +19,7 @@ _[Official conference abstract](https://program.why2025.org/why2025/talk/SELH79/
 
 ## Transcript
 
-> Generated from the talk recording and evaluated by three independent LLM reviewer roles.
+> AI generated from recording.
 
 ### Opening Remarks and Context; Threat Landscape: LLMs and Prompt Injection
 

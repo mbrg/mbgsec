@@ -31,7 +31,7 @@ _[Official conference abstract](https://www.rsaconference.com/library/webcast/13
 
 ## Transcript
 
-> Generated from the talk recording and evaluated by three independent LLM reviewer roles.
+> AI generated from recording.
 
 ### Introduction and Context; Low‑Code/No‑Code Landscape; Growth and Pervasiveness; Low‑Code SDLC Overview
 

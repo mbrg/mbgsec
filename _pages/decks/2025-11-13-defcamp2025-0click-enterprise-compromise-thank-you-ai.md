@@ -35,7 +35,7 @@ _[Official agenda abstract for this talk, sourced from What Hackers Yearn 2025](
 
 ## Transcript
 
-> Generated from the talk recording and evaluated by three independent LLM reviewer roles.
+> AI generated from recording.
 
 ### Lightning Talk Overview; Co‑Pilot Threat Landscape
 

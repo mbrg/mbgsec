@@ -38,7 +38,7 @@ _[Official agenda abstract for this talk, sourced from DEFCON30](https://forum.d
 
 ## Transcript
 
-> Generated from the talk recording and evaluated by three independent LLM reviewer roles.
+> AI generated from recording.
 
 ### Introduction to Low‑Code Threat Landscape; Defining Low‑Code and Business User Impact
 

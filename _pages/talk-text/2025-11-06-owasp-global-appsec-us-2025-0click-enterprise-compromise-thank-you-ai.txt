@@ -23,7 +23,7 @@ _[Official conference abstract](https://owaspglobalappsecusa2025.sched.com/event
 
 ## Transcript
 
-> Generated from the talk recording and evaluated by three independent LLM reviewer roles.
+> AI generated from recording.
 
 ### Opening & Context
 

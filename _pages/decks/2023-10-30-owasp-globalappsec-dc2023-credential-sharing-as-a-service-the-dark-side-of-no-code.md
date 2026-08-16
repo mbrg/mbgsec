@@ -34,7 +34,7 @@ _[Official conference abstract](https://owasp2023globalappsecwashin.sched.com/ev
 
 ## Transcript
 
-> Generated from the talk recording and evaluated by three independent LLM reviewer roles.
+> AI generated from recording.
 
 ### Introduction and Defining No‑Code
 

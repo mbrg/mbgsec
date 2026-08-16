@@ -38,7 +38,7 @@ _[Official agenda abstract for this talk, sourced from OWASP Global AppSec Dubli
 
 ## Transcript
 
-> Generated from the talk recording and evaluated by three independent LLM reviewer roles.
+> AI generated from recording.
 
 ### Introduction and Presenter Background
 

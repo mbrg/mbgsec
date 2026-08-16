@@ -17,7 +17,7 @@ _[Official conference abstract](https://www.blackhat.com/sector/2023/briefings/s
 
 ## Transcript
 
-> Generated from the talk recording and evaluated by three independent LLM reviewer roles.
+> AI generated from recording.
 
 ### Introduction & Demo of Guest Access; Understanding Guest Mechanism & Threat Landscape; Why Invite Guests? Business Use Cases; Guest Onboarding & Security Controls
 

@@ -23,7 +23,7 @@ transcript_candidate_sha256: "7a0789c8a495058c62185b38f53e9bef5617700247b7a4ebd0
 <!-- talk-enrichment:start -->
 ## Transcript
 
-> Generated from the talk recording and evaluated by three independent LLM reviewer roles.
+> AI generated from recording.
 
 ### Opening Remarks and Context
 

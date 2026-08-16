@@ -31,7 +31,7 @@ _[Official conference abstract](https://www.blackhat.com/us-23/briefings/schedul
 
 ## Transcript
 
-> Generated from the talk recording and evaluated by three independent LLM reviewer roles.
+> AI generated from recording.
 
 ### Introduction & Guest Access Overview
 

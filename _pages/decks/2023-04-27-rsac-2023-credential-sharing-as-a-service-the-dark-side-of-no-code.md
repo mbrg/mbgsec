@@ -35,7 +35,7 @@ _[Official conference abstract](https://www.rsaconference.com/library/presentati
 
 ## Transcript
 
-> Generated from the talk recording and evaluated by three independent LLM reviewer roles.
+> AI generated from recording.
 
 ### Opening Remarks and Context Setting
 

@@ -35,7 +35,7 @@ _[Official conference abstract](https://owaspglobalappseclisbon2024.sched.com/ev
 
 ## Transcript
 
-> Generated from the talk recording and evaluated by three independent LLM reviewer roles.
+> AI generated from recording.
 
 ### Opening and Context
 

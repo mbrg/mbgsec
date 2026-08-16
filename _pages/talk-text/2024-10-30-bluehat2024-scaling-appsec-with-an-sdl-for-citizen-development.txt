@@ -17,7 +17,7 @@ _[Official conference abstract](https://microsoft.eventsair.com/bluehat2024/agen
 
 ## Transcript
 
-> Generated from the talk recording and evaluated by three independent LLM reviewer roles.
+> AI generated from recording.
 
 ### Opening and Context; Speaker Introductions
 
