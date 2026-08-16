@@ -2,7 +2,7 @@ module.exports = {
   ci: {
     collect: {
       staticDistDir: "./_site",
-      numberOfRuns: 2,
+      numberOfRuns: 5,
       url: [
         "http://localhost/",
         "http://localhost/posts/2026-07-06-attackers-dont-buy-tokens-they-steal-yours/",
@@ -20,8 +20,8 @@ module.exports = {
           matchingUrlPattern: ".*",
           assertions: {
             "categories:accessibility": ["error", { minScore: 0.95 }],
-            "cumulative-layout-shift": ["error", { maxNumericValue: 0.1 }],
-            "total-blocking-time": ["error", { maxNumericValue: 200 }],
+            "cumulative-layout-shift": ["error", { maxNumericValue: 0.1, aggregationMethod: "median" }],
+            "total-blocking-time": ["error", { maxNumericValue: 200, aggregationMethod: "median" }],
           },
         },
         {
@@ -29,11 +29,11 @@ module.exports = {
           // and preserves third-party markup, so gate owned HTML separately.
           matchingUrlPattern: "^https?://[^/]+/(?:$|posts/|weblog/|talks/)",
           assertions: {
-            "categories:performance": ["error", { minScore: 0.9 }],
+            "categories:performance": ["error", { minScore: 0.9, aggregationMethod: "median" }],
             "categories:best-practices": ["error", { minScore: 0.95 }],
             "categories:seo": ["error", { minScore: 0.9 }],
             // Keep the synthetic mobile gate stable around the 2.5 s field-CWV boundary.
-            "largest-contentful-paint": ["error", { maxNumericValue: 2800 }],
+            "largest-contentful-paint": ["error", { maxNumericValue: 2800, aggregationMethod: "median" }],
           },
         },
       ],
