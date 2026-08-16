@@ -1,0 +1,211 @@
+{
+  "generated_by": "sync-talk-text",
+  "source_manifest": "https://media.mbgsec.com/decks/2024-04-15_SANSUK2024_AIIsHereForBusinessUsers_AppSec/latest.json",
+  "manifest": "https://media.mbgsec.com/decks/2024-04-15_SANSUK2024_AIIsHereForBusinessUsers_AppSec/8a90eaa2/deck.json",
+  "title": "AI is here for business users. What does that mean for AppSec?",
+  "slides": [
+    {
+      "number": 1,
+      "text": "Al is here for business users. What does that mean for AppSec? W @inbarraz / @zenitysec NANS — slide 1 of 49"
+    },
+    {
+      "number": 2,
+      "text": "Al is already here — slide 2 of 49"
+    },
+    {
+      "number": 3,
+      "text": "— McKinsi = Digital The eéonomié potential of Udlerative Al: The next ‘Productivity f frontier s a lathe pig EE: =) “asia 273 epee \\ i Ye, & zenity 3 — slide 3 of 49"
+    },
+    {
+      "number": 4,
+      "text": "Al is already here Everywhere you look — i SEE ARTIFICIAL INTELLIGENCE Al is there. EVERYWHERE A Source: Linked — slide 4 of 49"
+    },
+    {
+      "number": 5,
+      "text": "Al is already here Everywhere you look — Al is there. @ Mat Velloso Sy @matvelloso Its a g reat sales pitch aid. Difference between machine learning and Al: If itis written in Python, it's probably machine learning If it is written in PowerPoint, it's… — slide 5 of 49"
+    },
+    {
+      "number": 6,
+      "text": "Al is already here Everywhere you look — Productivity Increases with Al Al is there. It's a great sales pitch aid. It's a major productivity booster. 75% 125% NN/g 100% 50% 25% 0% Customer Support Write Business Documents Programming (Case Study 1) (Case… — slide 6 of 49"
+    },
+    {
+      "number": 7,
+      "text": "fleebal Technologies Generative Al Applications wn reba a Art and Financial Design »\\ ( Forecasting Music Customer Behavior !2p coupes a Analysis aol OF Content «<———_. ro ———» Demand Forecasting Creation Healthcare “N.__s Diagnosis and Prognosis Fashion… — slide 7 of 49"
+    },
+    {
+      "number": 8,
+      "text": "Another form of Shadow IT Shadow IT is already a threat for organizations. Al and GenAl tools are increasing the threat landscape. Pro Developers are a prime suspect. & zenity — slide 8 of 49"
+    },
+    {
+      "number": 9,
+      "text": "&, GitHub Copilot & zenity — slide 9 of 49"
+    },
+    {
+      "number": 10,
+      "text": "Another form of Shadow IT Shadow IT is already a threat for organizations. Al and GenAl tools are increasing the threat landscape. Pro Developers are a prime suspect. ©) / Blog Research: quantifying GitHub Copilot’s impact on developer productivity and… — slide 10 of 49"
+    },
+    {
+      "number": 11,
+      "text": "We recruited & 95 developers, and split them randomly into two groups. We gave them the task of writing a web server in JavaScript &® 45 Used & 50 Did not use GitHub Copilot GitHub Copilot EL 78% FE 70% finished finished © 1hour, 11 minutes © 2hours, 41… — slide 11 of 49"
+    },
+    {
+      "number": 12,
+      "text": "Another form of Shadow IT Shadow IT is already a threat for organizations. Al and GenAl tools are increasing the threat landscape. Pro Developers are a prime suspect. DevOps people are also at the front. & zenity — slide 12 of 49"
+    },
+    {
+      "number": 13,
+      "text": "Another form of Shadow IT Shadow IT is already a threat for organizations. Al and GenAl tools are increasing the threat landscape. Pro Developers are a prime suspect. DevOps people are also at the front. Al-Enabled DevOps: OD) DevOps.com rowmowy Fechsirong… — slide 13 of 49"
+    },
+    {
+      "number": 14,
+      "text": "Shadow IT Discovery Lifecycle Safely adopting cloud apps Continuous monitoring Be alerted when new, risky or high volume apps are discovered in your environment for L continuous monitoring and ongoing control over your cloud apps. Manage cloud apps L&… — slide 14 of 49"
+    },
+    {
+      "number": 15,
+      "text": "Another form of Shadow IT Shadow IT is already a threat for organizations. Al and GenAl tools are increasing the threat landscape. Pro Developers are a prime suspect. DevOps people are also at the front. But what about your Business Users? & zenity — slide 15 of 49"
+    },
+    {
+      "number": 16,
+      "text": "We forgot someone... — slide 16 of 49"
+    },
+    {
+      "number": 17,
+      "text": "Low-Code/No-Code Adoption © Low-Code/No-Code Adoption 240% 200% 190% 100% May 2023 Jun 2023 Jul 2023 Aug 2023 Sep 2023 Oct2023 Nov 2023 Dec 2023 Jan 2024 Feb2024 Mar 2024 Apr 2024 May 2023 Jun 2023 Jul 2023 Aug 2023 Sep 2023 Oct 2023 Nov 2023 Dec 2023 Jan… — slide 17 of 49"
+    },
+    {
+      "number": 18,
+      "text": "Business Users have Needs Business needs >> IT Capacity: It’s a scale problem. It’s a diversity problem. It’s a compliance problem. & zenity — slide 18 of 49"
+    },
+    {
+      "number": 19,
+      "text": "Business Users have Needs If this sounds familiar, it’s because it is: Tech evolution — slide 19 of 49"
+    },
+    {
+      "number": 20,
+      "text": "Your business Is already there an make Zd pier WwW’? mx] mendix ne Microsoft €3 servicenow TB (Y) Appian © outsystems It's time for security to catch up! — slide 20 of 49"
+    },
+    {
+      "number": 21,
+      "text": "Power Apps Copilot demonstration showing an app generated from a natural-language prompt — slide 21 of 49",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2024-04-15_SANSUK2024_AIIsHereForBusinessUsers_AppSec/8a90eaa2/media/slide-021-animation.gif"
+        }
+      ]
+    },
+    {
+      "number": 22,
+      "text": "The New Frontier: Business Users They outnumber Pro Developers by orders of magnitude. They have no training in SDLC or knowledge of the involved risks. They have complete faith in the platforms they use. The introduction of Al and Copilot drastically… — slide 22 of 49"
+    },
+    {
+      "number": 23,
+      "text": "The New Frontier: Business Users There's little to no visibility and governance tools. There's almost no adequate training for non-technical people. Disabling now will break many processes, some without alternatives. > THISIS WHERE YOUR ATTENTION IS MOST… — slide 23 of 49"
+    },
+    {
+      "number": 24,
+      "text": "Welcome to the real world — slide 24 of 49"
+    },
+    {
+      "number": 25,
+      "text": "Build copilots that work for you => Travel and Transport ® Professional Services ii Government Retail © Healthcare © Financial Services © Education elt Manufacturing Manage bookings Lead generation Public programs Manage orders Claims Manage accounts… — slide 25 of 49"
+    },
+    {
+      "number": 26,
+      "text": "Customer Testimonies Blog > Copilot Studio > Customer How early adopters are transforming their organizations with copilots Pawan Taparia, , Thursday, January 18, 2024 rf) iy] © & zenity — slide 26 of 49"
+    },
+    {
+      "number": 27,
+      "text": "Customer Testimonies » > 4 se, City of We Kelowna The City of Kelowna in British Columbia, Canada is building a copilot as part of a solution that makes it easier to apply for building permits. The copilot asks citizens what they want to build, and Power… — slide 27 of 49"
+    },
+    {
+      "number": 28,
+      "text": "Customer Testimonies ® & Pacific Gas and Electric Company (PG&E) is one of the largest combined natural gas and electric energy companies in the United States. To support its IT helpdesk, PG&E built a copilot which today manages 25%-40% of all employee… — slide 28 of 49"
+    },
+    {
+      "number": 29,
+      "text": "Getting off on the Wrong Foot 6 Microsoft Copilot Studio Vulnerabilities in 4 Minutes (Dec 11, 2023): Unauthenticated public access by default. Credential Sharing as a Service. Share with Everyone by default. Sign-in is not required by default. Prompt… — slide 29 of 49"
+    },
+    {
+      "number": 30,
+      "text": "Common Security Issues It's already happening... — slide 30 of 49"
+    },
+    {
+      "number": 31,
+      "text": "Resource Oversharing Remains the leading problem. Productivity environments are aimed at, well, productivity. People are proud of their achievement. Examples: 1. Oversharing Copilots grants access to all transcripts. 2. Sensitive files uploaded to Copilot… — slide 31 of 49"
+    },
+    {
+      "number": 32,
+      "text": "Credential Oversharing Most access to business data requires authenticated access. Many data connectors offer multiple authentication choices. Users are unaware of the significance, GenAl doesn't care. Examples: 1. Hardcoded credentials (yes, it’s still a… — slide 32 of 49"
+    },
+    {
+      "number": 33,
+      "text": "Prompt Injection User-controlled input is a fundamental exploitation element. GenAl actions receive both a prompt and special instructions. Both are susceptible for injection, if user input is used. Copilot might execute using the maker's credentials.… — slide 33 of 49"
+    },
+    {
+      "number": 34,
+      "text": "fe Chat Prompt Injection Sixaciiohear Spee Chevrolet of Watsonville Chat Team: User-controlled input is a fundamental explo Sead aftemeon! Welcome to Chevrolet of Watsonville. How can | assist you GenAl actions receive both a prompt and spe today: in your… — slide 34 of 49"
+    },
+    {
+      "number": 35,
+      "text": "The Nightmare Scenario (Today) As always, it’s a combination of multiple problems: A pre-authenticated connection is used in a Copilot. The connection is used for GenAl data access. The Copilot doesn't include data sanitization steps. The Copilot is… — slide 35 of 49"
+    },
+    {
+      "number": 36,
+      "text": "The Nightmare Scenario (Tomorrow) Currently, Copilots are used for performing persistent and/or predetermined actions within a predefined context (Injection attacks aside): Generate content. Generate LC/NC elements. Generate persistent executable code.… — slide 36 of 49"
+    },
+    {
+      "number": 37,
+      "text": "And let’s not forget: Compliance There are many different regulations that apply to your data: Vertical-specific. Nation-specific. Any data leak is a potential risk of breaching compliance. Limited (and sometimes nonexistent) logging makes it very hard to… — slide 37 of 49"
+    },
+    {
+      "number": 38,
+      "text": "OWASP Top 10 — slide 38 of 49"
+    },
+    {
+      "number": 39,
+      "text": "OWASP Top 10: LC/NC 1 LONC-SEC-O1: Account Impersonation 2. LCNC-SEC-0O2: Authorization Misuse 3, LCNC-SEC-03: Data Leakage and Unexpected Consequences 4. LCNC-SEC-04: Authentication and Secure Communication Failures 5s. LCNC-SEC-O5: Security… — slide 39 of 49"
+    },
+    {
+      "number": 40,
+      "text": "OWASP Top 10: LLM 1 LLMOl: Prompt Injection 2. LLMO2: Insecure Output Handling 3, LLMO3: Data and Model Poisoning 4. LLMO4: Model Denial of Service s. LLMOS: Supply-Chain Vulnerabilities 6. LLMO6: Sensitive Information Disclosure 7, LLMO7: Insecure Plugin… — slide 40 of 49"
+    },
+    {
+      "number": 41,
+      "text": "Relationships © oN DH & zenity LC/NC Account Impersonation Authorization Misuse Data Leakage and Unexpected Consequences Authentication and Secure Communication Failures Security Misconfiguration njection Handling Failures Vulnerable and Untrusted… — slide 41 of 49"
+    },
+    {
+      "number": 42,
+      "text": "Relationships LC/NC LLM 1. Account Impersonation 1. Prompt Injection Authorization Misuse 2. Insecure Output Handling 3. Data and Model Poisoning Consequences Authentication and Secure Communication .. Model Denial of Service Failures Se SSSA Mie soul 5.… — slide 42 of 49"
+    },
+    {
+      "number": 43,
+      "text": "Relationships LC/NC 1. Account Impersonation 2. Authorization Misuse 3. Data Leakage and Unexpected Consequences 4. Authentication and Secure Communication Failures Security Misconfiguration njection Handling Failures Vulnerable and Untrusted Components… — slide 43 of 49"
+    },
+    {
+      "number": 44,
+      "text": "Relationships LC/NC 1. Account Impersonation 3. Data Leakage and Unexpected Consequences 4. Authentication and Secure Communication Failures Security Misconfiguration njection Handling Failures 5. 6. 7. Vulnerable and Untrusted Components 8. Dataand Secret… — slide 44 of 49"
+    },
+    {
+      "number": 45,
+      "text": "Relationships LC/NC LLM 1. Account Impersonation 1. Prompt Injection 2. Authorization Misuse 2. Insecure Output Handling 3. Data Leakage and Unexpected 3. Dataand Model Poisoning Consequences 4. Authentication and Secure Communication . Model Denial of… — slide 45 of 49"
+    },
+    {
+      "number": 46,
+      "text": "Relationships LC/NC 1. Account Impersonation 2. Authorization Misuse 3. Data Leakage and Unexpected Consequences 4. Authentication and Secure Communication Failures 5. Security Misconfiguration njection Handling Failures . Vulnerable and Untrusted… — slide 46 of 49"
+    },
+    {
+      "number": 47,
+      "text": "Summing up section divider — slide 47 of 49"
+    },
+    {
+      "number": 48,
+      "text": "TL;DR> Business Developers are a far bigger and far riskier crowd than Pro Developers. The GenAl market is rushing forward and security, as always, is lagging. Asa result, organizations lose control over their data and risk breaching compliance. Take… — slide 48 of 49"
+    },
+    {
+      "number": 49,
+      "text": "Thank you! W @inbarraz / @zenitysec NANS 49 — slide 49 of 49"
+    }
+  ]
+}

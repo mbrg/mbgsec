@@ -1,0 +1,15 @@
+---
+layout: talk-text
+permalink: /talks/2025-10-08-ai-agent-security-summit-sf2025-making-real-progress-in-security-from-ai/llms.txt
+talk_permalink: /talks/2025-10-08-ai-agent-security-summit-sf2025-making-real-progress-in-security-from-ai/
+talk_slug: 2025-10-08-ai-agent-security-summit-sf2025-making-real-progress-in-security-from-ai
+generated_by: sync-talk-text
+sitemap: false
+---
+<!-- talk-enrichment:start -->
+## Abstract
+
+There's a big discrepancy between our feeling of progress and reality for hackers. AI security and safety benchmarks go up. But hackers don't notice. Their partying like its 1999. Security from AI has been going in the wrong direction, relying on soft boundaries like AI guardrails and safety training. We CAN make progress though. Reverse engineering different flagship AI agent systems reveals design choices that introduce hard boundaries. Ones that attacks cannot cross without a software vulnerability. We'll learn from these choices, and take a step back to offer a better way forward with defense in depth.
+
+_[Official conference abstract](https://zenity.io/resources/events/ai-agent-security-summit-2025)_
+<!-- talk-enrichment:end -->

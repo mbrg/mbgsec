@@ -18,8 +18,10 @@
 {% endif %}
 <link rel="describedby" href="{{ llms_description_path | absolute_url }}">
 
-{% comment %}The repository source is the lossless Markdown representation.{% endcomment %}
-{% if page.collection == 'posts' or page.collection == 'weblog' or page.collection == 'projects' %}
+{% comment %}Talks have a same-origin complete text representation; other pages use repository Markdown.{% endcomment %}
+{% if page.layout == 'deck' or page.layout == 'talk' %}
+  <link rel="alternate" type="text/markdown" href="{{ page.url | append: 'llms.txt' | absolute_url }}">
+{% elsif page.collection == 'posts' or page.collection == 'weblog' or page.collection == 'projects' %}
   <link rel="alternate" type="text/markdown" href="{{ site.repository_raw_url }}/{{ page.path }}">
 {% endif %}
 
@@ -35,6 +37,8 @@
   <meta name="content-provenance" content="external-source-archive">
 {% elsif page.collection == 'projects' %}
   <meta name="content-provenance" content="project-or-professional-activity">
+{% elsif page.layout == 'deck' or page.layout == 'talk' %}
+  <meta name="content-provenance" content="conference-presentation{% if page.transcript_status == 'llm-reviewed' %}-with-reviewed-transcript{% endif %}">
 {% endif %}
 
 {% if page.collection == 'posts' or page.collection == 'weblog' %}
@@ -70,6 +74,38 @@
   </script>
 {% endif %}
 
+{% if page.layout == 'deck' or page.layout == 'talk' %}
+  {% assign talk_description = page.description | default: page.title | strip_html | strip_newlines %}
+  {% assign talk_presenter = page.presented_by | default: site.author.name %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "PresentationDigitalDocument",
+    "name": {{ page.title | jsonify }},
+    "description": {{ talk_description | jsonify }},
+    "url": {{ page.url | absolute_url | jsonify }},
+    "datePublished": {{ page.talk_date | date_to_xmlschema | jsonify }},
+    "author": {
+      "@type": "Person",
+      "name": {{ talk_presenter | jsonify }}
+    }{% if page.conference %},
+    "event": {
+      "@type": "Event",
+      "name": {{ page.conference | jsonify }}{% if page.schedule_url %},
+      "url": {{ page.schedule_url | jsonify }}{% endif %}
+    }{% endif %}{% if page.abstract_source_url %},
+    "citation": {{ page.abstract_source_url | jsonify }}{% endif %}{% if page.recording_url %},
+    "associatedMedia": {
+      "@type": "VideoObject",
+      "name": {{ page.title | append: ' recording' | jsonify }},
+      "contentUrl": {{ page.recording_url | jsonify }}{% if page.transcript_status == 'llm-reviewed' %},
+      "transcript": "A reviewed transcript is available in the page content."
+      {% endif %}
+    }{% endif %}
+  }
+  </script>
+{% endif %}
+
 {% unless site.atom_feed.hide %}
   <link href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | relative_url }}{% endif %}" type="application/atom+xml" rel="alternate" title="{{ site.title }} Feed">
 {% endunless %}
@@ -94,6 +130,10 @@
 {% endif %}
 
 <link rel="icon" type="image/png" sizes="256x256" href="{{ '/assets/images/bio-photo-256.png' | relative_url }}">
+
+{% if page.layout == 'deck' or page.layout == 'talk' %}
+  <link rel="stylesheet" href="{{ '/assets/css/deck-player.css' | relative_url }}?v=20260814-talks-v2">
+{% endif %}
 
 <!-- For all browsers -->
 <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">

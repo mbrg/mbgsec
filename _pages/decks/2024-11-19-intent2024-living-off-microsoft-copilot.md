@@ -1,0 +1,797 @@
+---
+title: "Living off Microsoft Copilot"
+talk_date: 2024-11-19
+conference: INTENT 2024
+permalink: /talks/2024-11-19-intent2024-living-off-microsoft-copilot/
+layout: talk
+schedule_url: https://intentsummit.org/
+recording_url: https://www.youtube.com/watch?v=SDpPPJ00CV8
+description: "Whatever your need as a hacker post-compromise, Microsoft Copilot has got you covered. Covertly search for sensitive data and parse it nicely for your use. Exfiltrate it out without generating logs. Most frightening, Microsoft Copilot will help you phish…"
+abstract_source_url: "https://www.blackhat.com/us-24/briefings/schedule/#living-off-microsoft-copilot-40074"
+abstract_retrieved_at: "2026-08-14"
+abstract_source_scope: "same-talk-official-agenda"
+abstract_source_conference: "Black Hat USA 2024"
+abstract_source_talk_slug: "2024-08-08-bhusa2024-living-off-microsoft-copilot"
+transcript_source_url: "https://www.youtube.com/watch?v=SDpPPJ00CV8"
+transcript_status: "llm-reviewed"
+transcript_method: "machine-generated-and-llm-evaluated"
+transcript_model: "mlx-community/whisper-large-v3-turbo"
+transcript_evaluator_models: "gpt-oss:20b"
+transcript_evaluated_at: "2026-08-14"
+transcript_candidate_sha256: "99971408d48cc84b1d035ffc01f89e97ca37530e2cc778385567db1ce55f8f0d"
+---
+
+
+<!-- talk-enrichment:start -->
+## Abstract
+
+Whatever your need as a hacker post-compromise, Microsoft Copilot has got you covered. Covertly search for sensitive data and parse it nicely for your use. Exfiltrate it out without generating logs. Most frightening, Microsoft Copilot will help you phish to move lately. Heck, it will even social engineer victims for you! This talk is a comprehensive analysis of Microsoft copilot taken to red-team-level practicality. We will show how Copilot plugins can be used to install a backdoor into other user's copilot interactions, allowing for data theft as a starter and AI-based social engineering as the main course. We'll show how hackers can circumvent built-in security controls which focus on files and data by using AI against them. Next, we will drop LOLCopilot, a red-teaming tool for abusing Microsoft Copilot as an ethical hacker to do all of the above. The tool works with default configuration in any M365 copilot-enabled tenant. Finally, we will recommend detection and hardening you can put in place to protect against malicious insiders and threat actors with Copilot access.
+
+_[Official agenda abstract for this talk, sourced from Black Hat USA 2024](https://www.blackhat.com/us-24/briefings/schedule/#living-off-microsoft-copilot-40074)_
+
+## Transcript
+
+> AI generated from recording.
+
+### Opening Remarks and Context
+
+[00:09](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=9s) **Presenter:** Thank you, everyone.
+
+[00:12](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=12s) **Presenter:** So, we have 20 minutes and we have a lot to hack,
+
+[00:15](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=15s) **Presenter:** so I'm just gonna get right into it, if this works.
+
+[00:20](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=20s) **Presenter:** All right, two years ago, this thing happened
+
+[00:24](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=24s) **Presenter:** and our lives changed
+
+[00:25](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=25s) **Presenter:** because instead of doing what we were already doing,
+
+[00:28](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=28s) **Presenter:** we were all stuck in FOMO.
+
+[00:32](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=32s) **Presenter:** And that's basically where we've been up until now, right?
+
+[00:36](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=36s) **Presenter:** We are all struggling to get this thing working,
+
+[00:38](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=38s) **Presenter:** to get the benefit for us.
+
+[00:41](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=41s) **Presenter:** That's true for security researchers.
+
+[00:43](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=43s) **Presenter:** That's also true for the largest enterprises in the world,
+
+[00:47](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=47s) **Presenter:** which is kind of weird.
+
+### Microsoft Copilot’s Rise and Enterprise Adoption
+
+[00:49](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=49s) **Presenter:** So you can see about a year later,
+
+[00:51](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=51s) **Presenter:** Microsoft is pushing all in on this copilot thing,
+
+[00:55](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=55s) **Presenter:** and it's putting that in the hands of every large organization out there.
+
+[01:00](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=60s) **Presenter:** And Copilot is this great thing.
+
+[01:02](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=62s) **Presenter:** Here, look at all of these things, magnificent things that Copilot has access to.
+
+[01:06](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=66s) **Presenter:** Of course, nobody is really thinking thoroughly through this.
+
+[01:11](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=71s) **Presenter:** If you wake up in one of those organizations, imagine like a large bank or a large financial services,
+
+[01:17](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=77s) **Presenter:** you wake up, the business already purchased this, you need to figure out what to do now.
+
+[01:25](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=85s) **Presenter:** tell you is, don't worry, slow risk. It's just a small POC. Nobody will tell you that the CEO
+
+[01:31](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=91s) **Presenter:** is part of the POC because, of course, they want AI as well. And so now we're at a situation where
+
+[01:36](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=96s) **Presenter:** we do need to kind of consider security. This is where you'll get Microsoft reps saying, hey,
+
+[01:43](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=103s) **Presenter:** here are the docs. Look at how much security we have here. So all of this security, like data
+
+[01:48](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=108s) **Presenter:** protection and protecting data, a lot of security is baked into Copilot. Now, this is actually
+
+[01:55](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=115s) **Presenter:** answering an important question because when this thing got started,
+
+[01:58](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=118s) **Presenter:** everybody was concerned about the chat GPT leak, right?
+
+[02:02](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=122s) **Presenter:** My employees pasting data into chat GPT and then data is out, which is really scary.
+
+[02:08](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=128s) **Presenter:** And so people were worried about that angle of Copilot.
+
+[02:11](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=131s) **Presenter:** Are people going to use Copilot and get to information they should not have access to?
+
+[02:18](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=138s) **Presenter:** For example, asking what is the salary of their boss.
+
+[02:22](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=142s) **Presenter:** And so this is where everybody's focused.
+
+[02:25](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=145s) **Presenter:** Our objective is far more than that.
+
+[02:28](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=148s) **Presenter:** We want our CEs, right?
+
+[02:29](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=149s) **Presenter:** Why?
+
+### Security Concerns and Microsoft’s Response
+
+[02:30](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=150s) **Presenter:** Because it's cool, because it's a security conference,
+
+[02:32](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=152s) **Presenter:** so why not?
+
+[02:32](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=152s) **Presenter:** So this is gonna be the focus.
+
+[02:35](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=155s) **Presenter:** Microsoft has a bunch of security controls.
+
+[02:37](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=157s) **Presenter:** I can't go through any of them.
+
+[02:39](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=159s) **Presenter:** If you wanna look into it,
+
+[02:41](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=161s) **Presenter:** my blackhead talk is already out.
+
+[02:43](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=163s) **Presenter:** But there are like tens of different security controls
+
+[02:46](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=166s) **Presenter:** that we identified,
+
+[02:47](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=167s) **Presenter:** and of course bypassed each and every one of them.
+
+[02:50](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=170s) **Presenter:** Here's one example.
+
+[02:51](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=171s) **Presenter:** So if you try to get Copilot
+
+[02:55](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=175s) **Presenter:** base64 encoded and then send it off with a rendered image and a parameter,
+
+[03:02](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=182s) **Presenter:** then you can see that it works up until the point when the image is supposed to be rendered
+
+[03:07](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=187s) **Presenter:** and then something happens. So instead you'll see it in a moment. It will change the URL
+
+[03:13](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=193s) **Presenter:** with this fixed sentence saying that the URL was removed. So actually there's a defense mechanism
+
+[03:20](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=200s) **Presenter:** here on top of the LLM output that's making sure that the LLM is not going to output URLs at all.
+
+[03:27](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=207s) **Presenter:** So this is a challenge. We're up against Microsoft. They are saying everything is fine.
+
+[03:32](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=212s) **Presenter:** They are focusing the conversation on data leakage to our own employees. Let's see how we can break
+
+[03:39](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=219s) **Presenter:** that. So here's what we need in order to get an RCE. First, we need a way in. We need a way to
+
+[03:45](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=225s) **Presenter:** infect a victim's conversation with copilot. So your conversation, I'm the
+
+[03:51](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=231s) **Presenter:** attacker, I'm gonna infect your conversation, your private conversation
+
+[03:54](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=234s) **Presenter:** with copilot. The second thing we need is a jailbreak, which actually just
+
+[03:59](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=239s) **Presenter:** means once the AI gets access to my data, I needed to interpret the data as
+
+[04:04](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=244s) **Presenter:** instructions that override Microsoft instructions, override your intake,
+
+[04:08](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=248s) **Presenter:** override everything. And then on top of that, I need, well, something to do. I
+
+[04:15](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=255s) **Presenter:** of an operation. And together, that's an RCE. Now, if you'll be strict about it, then that's
+
+[04:21](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=261s) **Presenter:** not really an RCE because there's no code here, but who cares? It's the same impact. I can still
+
+[04:26](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=266s) **Presenter:** operate on somebody's behalf with their identity, same kind of thing. It doesn't really matter if
+
+[04:31](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=271s) **Presenter:** it's code writing or English being written. So this is what we're going to do. And so the one
+
+[04:37](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=277s) **Presenter:** thing to get out of this talk is that once you plug tools and capabilities in the hands of AI,
+
+[04:43](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=283s) **Presenter:** and RCE means jailbreak.
+
+[04:45](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=285s) **Presenter:** And jailbreaks are easy to come by,
+
+[04:47](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=287s) **Presenter:** as you'll see in a moment.
+
+[04:48](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=288s) **Presenter:** Let's get a way in.
+
+### Jailbreak Fundamentals and Attack Vectors
+
+[04:50](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=290s) **Presenter:** So this is a threat model of Microsoft Copilot,
+
+[04:52](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=292s) **Presenter:** which we have built.
+
+[04:53](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=293s) **Presenter:** And so on top of that, we can see three ways in.
+
+[04:57](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=297s) **Presenter:** We can get the user to plug in some bad data in there.
+
+[05:01](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=301s) **Presenter:** We can try to infect through a web search
+
+[05:05](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=305s) **Presenter:** with our malicious website.
+
+[05:07](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=307s) **Presenter:** And we can also use the enterprise graph.
+
+[05:09](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=309s) **Presenter:** We'll see that in a moment.
+
+[05:10](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=310s) **Presenter:** And then Clippy comes in.
+
+[05:13](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=313s) **Presenter:** And he's like, hey, through search and user input, it requires social engineering, it's not cool enough.
+
+[05:20](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=320s) **Presenter:** Okay, so we'll be cool.
+
+[05:22](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=322s) **Presenter:** We'll go through the Enterprise Graph.
+
+[05:23](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=323s) **Presenter:** Let's figure out what the Enterprise Graph is.
+
+[05:25](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=325s) **Presenter:** It's a fancy world for a bunch of productivity tools and a bunch of file sharing tools.
+
+[05:31](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=331s) **Presenter:** Okay, so how can we infect that Enterprise Graph?
+
+[05:35](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=335s) **Presenter:** Well, first of all, Enterprise Graph also includes Teams.
+
+[05:39](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=339s) **Presenter:** And Teams is a really nice feature where you can create your own tenant and then plug in
+
+[05:43](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=343s) **Presenter:** somebody else's email.
+
+[05:44](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=344s) **Presenter:** You probably recognize the person on screen and just send them an email externally.
+
+[05:49](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=349s) **Presenter:** Now this is cool.
+
+[05:51](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=351s) **Presenter:** The problem with that, by the way, is that this actually adds them to your tenant and
+
+[05:55](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=355s) **Presenter:** then they can do a whole bunch of shenanigans.
+
+[05:57](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=357s) **Presenter:** And if you're interested in that, last year I showed how you can get from that guest access
+
+[06:01](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=361s) **Presenter:** to full dumps of SQL servers,
+
+[06:05](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=365s) **Presenter:** the equivalent of Azure S3 buckets at Black Hat.
+
+[06:09](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=369s) **Presenter:** But back to our story.
+
+[06:11](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=371s) **Presenter:** Through Teams, what people are actually doing,
+
+[06:14](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=374s) **Presenter:** APTs are actually phishing people through Teams
+
+[06:16](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=376s) **Presenter:** because it just looks more trustworthy.
+
+[06:18](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=378s) **Presenter:** And Microsoft is paying attention.
+
+[06:20](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=380s) **Presenter:** Here's their solution.
+
+[06:21](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=381s) **Presenter:** When you get a message
+
+[06:23](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=383s) **Presenter:** from somebody outside of your organization,
+
+[06:25](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=385s) **Presenter:** you get this thing
+
+[06:27](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=387s) **Presenter:** with a whole bunch of external in it.
+
+[06:29](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=389s) **Presenter:** This is not something to trust.
+
+[06:31](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=391s) **Presenter:** Be careful of phishing, it's really scary, right?
+
+[06:34](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=394s) **Presenter:** What does the AI see?
+
+[06:35](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=395s) **Presenter:** What does Copilot see?
+
+[06:36](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=396s) **Presenter:** None of that.
+
+[06:38](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=398s) **Presenter:** Copilot sees text and it sees who is this from.
+
+[06:42](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=402s) **Presenter:** This is from James Smith.
+
+[06:44](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=404s) **Presenter:** By the way, it doesn't know which James Smith.
+
+[06:48](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=408s) **Presenter:** So is it James Smith in my tenant
+
+[06:50](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=410s) **Presenter:** or James Smith in your tenant?
+
+[06:52](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=412s) **Presenter:** So you see the point now when somebody asks
+
+[06:55](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=415s) **Presenter:** about the summary of a conversation
+
+[06:57](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=417s) **Presenter:** with somebody called Chris Smith,
+
+[06:59](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=419s) **Presenter:** what you're actually seeing on screen,
+
+[07:02](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=422s) **Presenter:** interactions are with the real Chris Smith and some of them is with my
+
+### Rug Poisoning and Email‑Based Exploits
+
+[07:06](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=426s) **Presenter:** malicious Chris Smith because in my tenant I control the names. So what this
+
+[07:10](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=430s) **Presenter:** means is that I can completely take control of what Copilot thinks
+
+[07:13](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=433s) **Presenter:** happened. I can also just send an email. So you send an email to somebody that
+
+[07:21](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=441s) **Presenter:** somebody doesn't have to read that email, they don't have to read that team's
+
+[07:23](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=443s) **Presenter:** message as well, but Copilot reads everything. And so we already have a way
+
+[07:28](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=448s) **Presenter:** Now let's figure out the jailbreak part.
+
+[07:30](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=450s) **Presenter:** And so Microsoft has actually been paying very close attention to jailbreaks.
+
+[07:35](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=455s) **Presenter:** You can see Mark Rosinovich talking about jailbreaks that he found.
+
+[07:39](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=459s) **Presenter:** And they also have a solution.
+
+[07:41](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=461s) **Presenter:** They basically plug an LLM on top of the LLM,
+
+[07:44](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=464s) **Presenter:** and they ask the second LLM to monitor the first LLM.
+
+[07:46](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=466s) **Presenter:** And this works like you expect it to work.
+
+[07:49](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=469s) **Presenter:** It simply doesn't.
+
+[07:50](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=470s) **Presenter:** Because as Simon Wilson put it, the guy who coined prompt injection,
+
+[07:55](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=475s) **Presenter:** You just can't solve AI with more AI.
+
+[07:59](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=479s) **Presenter:** So here's the reaction of the community for this.
+
+[08:02](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=482s) **Presenter:** If you're any way near AI security,
+
+[08:05](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=485s) **Presenter:** then you know who Pliny is.
+
+[08:07](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=487s) **Presenter:** He's like the god of jailbreaking.
+
+[08:09](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=489s) **Presenter:** And he's basically saying,
+
+[08:10](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=490s) **Presenter:** hey, Mark, this is nice.
+
+[08:11](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=491s) **Presenter:** We're breaking models every day.
+
+[08:13](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=493s) **Presenter:** He's absolutely right.
+
+[08:14](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=494s) **Presenter:** There are communities of jailbreakers.
+
+[08:17](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=497s) **Presenter:** They do this for fun.
+
+[08:18](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=498s) **Presenter:** It's like a speedrunning community.
+
+[08:20](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=500s) **Presenter:** I'm sure some of you are in that community.
+
+[08:21](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=501s) **Presenter:** And so just as an example,
+
+[08:25](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=505s) **Presenter:** released on June 21st. On June 20, they already broke it, so somehow they can go back in time as
+
+[08:30](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=510s) **Presenter:** well, which is pretty cool. So again, this jailbreaking thing is going to be easy because
+
+[08:36](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=516s) **Presenter:** we're just going to follow Pliny's full steps. So let's put that aside for now and let's focus on
+
+[08:41](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=521s) **Presenter:** a way out or actually doing something with it. So what is the impact that we can actually perform?
+
+[08:47](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=527s) **Presenter:** Here's the same threat model. Now let's focus on the impact. So three ways to make impact.
+
+[08:52](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=532s) **Presenter:** I can manipulate what Copilot writes to you, which means, again, you trust it, right?
+
+[08:58](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=538s) **Presenter:** I can manipulate the search that it's going to do on your behalf, either in the enterprise graph or in the web.
+
+[09:03](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=543s) **Presenter:** So if I want a way out, I might search for something in my personal website.
+
+[09:08](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=548s) **Presenter:** And there are plugins and actions, and that's a whole world of hurt.
+
+[09:12](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=552s) **Presenter:** But then, Clippy comes along again, and he's like, hey, but plugins and actions, they are opt-in, they are not enabled to everyone.
+
+[09:22](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=562s) **Presenter:** we won't do that. And you need to get them to actually click on the link to the website so that
+
+[09:29](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=569s) **Presenter:** doesn't count. So fine. We'll limit ourselves only to the output of Copilot. Let's see what we can do
+
+[09:35](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=575s) **Presenter:** with that. So here's the problem that I'm going to put in front of you right now. If you ever worked
+
+[09:42](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=582s) **Presenter:** with Microsoft a bit, then you know that finding the right admin center is a difficult challenge.
+
+[09:47](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=587s) **Presenter:** There are whole websites dedicated to help you find the right admin center for you.
+
+[09:52](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=592s) **Presenter:** So here's a scenario.
+
+[09:53](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=593s) **Presenter:** This is a victim, and that victim is asking,
+
+[09:56](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=596s) **Presenter:** hey, where is the Power Platform admin center?
+
+[09:58](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=598s) **Presenter:** And Copilot is going to think for a bit and just give the proper response
+
+[10:02](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=602s) **Presenter:** with the link, with the reference.
+
+[10:04](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=604s) **Presenter:** You click on that reference, you get to the Power Platform admin center.
+
+[10:07](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=607s) **Presenter:** Everything is fine.
+
+### Advanced RUG Injection and Reference Manipulation
+
+[10:10](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=610s) **Presenter:** This is the Power Platform admin center.
+
+[10:11](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=611s) **Presenter:** We're all fine.
+
+[10:12](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=612s) **Presenter:** Now as an attacker, I'm just going to send an email to that person,
+
+[10:17](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=617s) **Presenter:** It's gonna have a bunch of text in it,
+
+[10:19](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=619s) **Presenter:** we'll see that in a moment,
+
+[10:20](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=620s) **Presenter:** and I'm gonna hide the prompt injection
+
+[10:22](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=622s) **Presenter:** inside of an HTML tag there.
+
+[10:25](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=625s) **Presenter:** And the email doesn't really matter,
+
+[10:27](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=627s) **Presenter:** we'll see it in a moment again,
+
+[10:28](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=628s) **Presenter:** but note, the user doesn't have to read this email,
+
+[10:32](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=632s) **Presenter:** this can go to spam, nobody cares, okay?
+
+[10:35](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=635s) **Presenter:** I embed the prompt injection in there,
+
+[10:37](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=637s) **Presenter:** I send it, the user got it,
+
+[10:39](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=639s) **Presenter:** now if you can spot it,
+
+[10:40](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=640s) **Presenter:** you'll see that there's nothing here.
+
+[10:43](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=643s) **Presenter:** I asked the same question of Copilot with the victim,
+
+[10:48](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=648s) **Presenter:** response. It says, hey, here's the PowerPoint from the Running Center, here's the link.
+
+[10:51](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=651s) **Presenter:** You click on the link, everything looks the same. However, this is my phishing website, you are now old.
+
+[11:00](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=660s) **Presenter:** Thank you. This is just the beginning. So we actually have everything. You have just seen both a jailbreak and actually a way to perform to make an impact.
+
+[11:12](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=672s) **Presenter:** And so let's try to deconstruct what you just saw so you can do it yourselves.
+
+[11:17](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=677s) **Presenter:** So first of all, here's the email that the user sees.
+
+[11:20](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=680s) **Presenter:** You can see that there's nothing here.
+
+[11:22](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=682s) **Presenter:** Basically, this email is important for one reason.
+
+[11:26](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=686s) **Presenter:** It's important to get in the context when the user asks,
+
+[11:29](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=689s) **Presenter:** where is the Power Platform Unmin Center?
+
+[11:31](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=691s) **Presenter:** This email needs to pop up in search.
+
+[11:33](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=693s) **Presenter:** That's the only thing that this email is doing.
+
+[11:36](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=696s) **Presenter:** That's called rug poisoning.
+
+[11:37](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=697s) **Presenter:** You can read about it.
+
+[11:38](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=698s) **Presenter:** There are clear ways to do it.
+
+[11:40](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=700s) **Presenter:** The second thing is the payload.
+
+[11:42](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=702s) **Presenter:** prompt injection, that is the place where it gets interesting and we're going to
+
+[11:47](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=707s) **Presenter:** break it down together now. First, there are a bunch of jailbreaking techniques
+
+[11:52](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=712s) **Presenter:** that are generic, they have nothing to do with Microsoft. Basically, you social
+
+[11:57](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=717s) **Presenter:** engineer AI, you ask nicely, you ask very not nicely, you push it strongly, whatever
+
+[12:02](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=722s) **Presenter:** it is, it just works. But if you want to learn about it, just go to
+
+[12:07](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=727s) **Presenter:** to clean his community, that's the way to learn.
+
+[12:10](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=730s) **Presenter:** The second piece is the new instructions.
+
+[12:13](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=733s) **Presenter:** Actually, this entire block of text
+
+[12:15](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=735s) **Presenter:** is just a way for me to inject my payload.
+
+[12:18](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=738s) **Presenter:** This is my payload.
+
+[12:20](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=740s) **Presenter:** And you can see in my payload
+
+[12:21](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=741s) **Presenter:** that I am instructing Copilot exactly what to write,
+
+[12:25](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=745s) **Presenter:** character by character.
+
+[12:26](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=746s) **Presenter:** This means that I have full control.
+
+[12:28](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=748s) **Presenter:** I can get it to do whatever I want,
+
+[12:30](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=750s) **Presenter:** and I can get it to write whatever I want.
+
+[12:33](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=753s) **Presenter:** And you also see the carrot cases there.
+
+[12:37](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=757s) **Presenter:** and we'll talk about that in a moment.
+
+[12:40](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=760s) **Presenter:** But why does this work?
+
+[12:42](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=762s) **Presenter:** Like why didn't Microsoft, why are the AI watchdog,
+
+[12:46](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=766s) **Presenter:** the AI firewalls, why didn't they stop it?
+
+[12:48](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=768s) **Presenter:** Well, that's because I'm using magic.
+
+[12:52](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=772s) **Presenter:** These magic words are the incantations.
+
+[12:55](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=775s) **Presenter:** These are the special words that make co-pilot, co-pilot.
+
+[13:00](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=780s) **Presenter:** This is what makes co-pilot different from GitHub or whatever it is.
+
+[13:04](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=784s) **Presenter:** And so these things, once you use them, you become kind of part of the system prompt.
+
+[13:11](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=791s) **Presenter:** This makes it easier for the jailbreak to actually work.
+
+[13:14](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=794s) **Presenter:** If you don't use them, it simply doesn't work.
+
+[13:17](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=797s) **Presenter:** So let's see, well, how did we get these words?
+
+### Practical Demonstrations of Data Manipulation
+
+[13:20](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=800s) **Presenter:** Of course, it's magic. I'm not going to tell you, right?
+
+[13:24](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=804s) **Presenter:** No, I'm kidding. I'm going to tell you right now.
+
+[13:25](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=805s) **Presenter:** So we get it from the system prompt.
+
+[13:28](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=808s) **Presenter:** What does it mean?
+
+[13:29](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=809s) **Presenter:** So first, we need to extract the system prompt and we'll figure it out together.
+
+[13:34](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=814s) **Presenter:** There's a bunch of things we can do.
+
+[13:36](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=816s) **Presenter:** Most of them don't work because Microsoft has done
+
+[13:39](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=819s) **Presenter:** like a relatively good job.
+
+[13:41](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=821s) **Presenter:** So here's an example.
+
+[13:42](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=822s) **Presenter:** I can say, I can use a prompt injection that actually works
+
+[13:45](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=825s) **Presenter:** to extract the system prompt.
+
+[13:47](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=827s) **Presenter:** You can see that it actually gives me the system prompt
+
+[13:49](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=829s) **Presenter:** and then it disappears
+
+[13:51](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=831s) **Presenter:** because they are actually just looking
+
+[13:53](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=833s) **Presenter:** for their own system prompt in the output,
+
+[13:56](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=836s) **Presenter:** which sucks, right?
+
+[13:58](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=838s) **Presenter:** So we want that.
+
+[13:59](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=839s) **Presenter:** So how would we circumvent that?
+
+[14:02](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=842s) **Presenter:** That's clear.
+
+[14:04](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=844s) **Presenter:** in this case, Base64, but you can use whatever you want.
+
+[14:07](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=847s) **Presenter:** And if they block Base64, then you use binary.
+
+[14:10](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=850s) **Presenter:** And if they block binary, then you invent your own.
+
+[14:12](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=852s) **Presenter:** It's never ending.
+
+[14:14](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=854s) **Presenter:** So here's the full system prompt for Microsoft Copilot.
+
+[14:18](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=858s) **Presenter:** And if you're interested,
+
+[14:19](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=859s) **Presenter:** this is not actually the full system prompt, it's huge.
+
+[14:22](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=862s) **Presenter:** Just go to that blog, it's waiting for you there.
+
+[14:26](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=866s) **Presenter:** Okay, so inside of that system prompt,
+
+[14:28](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=868s) **Presenter:** you'll find these incantations.
+
+[14:29](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=869s) **Presenter:** You'll find these keywords, these magic spells
+
+[14:32](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=872s) **Presenter:** that make this thing happen.
+
+[14:34](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=874s) **Presenter:** Okay, so we can jailbreak, but what about references?
+
+[14:38](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=878s) **Presenter:** And what do I mean by references?
+
+[14:40](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=880s) **Presenter:** If I ask Copilot something like,
+
+[14:41](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=881s) **Presenter:** hey, tell me how to go to the Power Platform Anmin Center,
+
+[14:44](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=884s) **Presenter:** then it should tell me everything it used
+
+[14:47](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=887s) **Presenter:** to create that answer.
+
+[14:48](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=888s) **Presenter:** So in the attack I just showed you,
+
+[14:51](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=891s) **Presenter:** it used an email, right?
+
+[14:52](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=892s) **Presenter:** Because in the email, it found the new instructions,
+
+[14:55](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=895s) **Presenter:** but it didn't show in the references.
+
+[14:57](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=897s) **Presenter:** If those references showed the email,
+
+[14:59](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=899s) **Presenter:** then the users, of course, would notice, right?
+
+[15:02](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=902s) **Presenter:** because users always notice what we put in front of them.
+
+[15:05](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=905s) **Presenter:** They always check their references.
+
+[15:06](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=906s) **Presenter:** We all, of course, do 100% of the time.
+
+[15:10](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=910s) **Presenter:** No, we don't, but security products do.
+
+[15:12](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=912s) **Presenter:** So that's actually a problem for us.
+
+[15:15](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=915s) **Presenter:** So here's how we control the RUG system.
+
+[15:17](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=917s) **Presenter:** Here's how we need to cover to target this RUG system.
+
+### Strategic Implications and Community Guidance
+
+[15:21](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=921s) **Presenter:** Okay, how does RUG work?
+
+[15:23](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=923s) **Presenter:** How does Copilot get access to your data?
+
+[15:26](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=926s) **Presenter:** And so if I ask a question like find information about salaries,
+
+[15:30](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=930s) **Presenter:** then it's gonna give me these references
+
+[15:32](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=932s) **Presenter:** with these nice little icons and everything.
+
+[15:35](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=935s) **Presenter:** And so if you look at the client side,
+
+[15:37](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=937s) **Presenter:** you'll actually see a whole bunch of information.
+
+[15:39](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=939s) **Presenter:** What is the name of the file?
+
+[15:41](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=941s) **Presenter:** Who created that file?
+
+[15:41](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=941s) **Presenter:** Where that file is?
+
+[15:43](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=943s) **Presenter:** The sensitivity label, everything.
+
+[15:45](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=945s) **Presenter:** But from Copilot's perspective, there's nothing.
+
+[15:48](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=948s) **Presenter:** So we've already seen that for teams,
+
+[15:50](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=950s) **Presenter:** but if you look at the same thing here,
+
+[15:53](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=953s) **Presenter:** so you'll see that the entire information
+
+[15:55](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=955s) **Presenter:** that Copilot has is just a bunch of metadata
+
+[15:58](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=958s) **Presenter:** and the text itself.
+
+[16:00](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=960s) **Presenter:** You already saw that with Teams, there is nothing about the identity of the user, only the name.
+
+[16:05](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=965s) **Presenter:** With email, you do have the email address, but that's it.
+
+[16:09](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=969s) **Presenter:** I can change the email address easily, right?
+
+[16:12](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=972s) **Presenter:** So there's nothing talking about the authenticity of that email address.
+
+[16:17](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=977s) **Presenter:** So this is what Copilot sees.
+
+[16:18](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=978s) **Presenter:** And so we put everything that we know together, including all of the defense mechanisms in front of a whiteboard.
+
+[16:25](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=985s) **Presenter:** And this is actually the whiteboard we used.
+
+[16:27](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=987s) **Presenter:** and we try to figure out how do we get across this,
+
+[16:30](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=990s) **Presenter:** and then it hits that what we can do here
+
+[16:33](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=993s) **Presenter:** is because these RUG results are just part of the prompt,
+
+[16:36](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=996s) **Presenter:** they are injectable.
+
+[16:38](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=998s) **Presenter:** So you can create your own RUG result.
+
+[16:40](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=1000s) **Presenter:** You can essentially create new documents in the enterprise
+
+[16:43](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=1003s) **Presenter:** out of thin air with the exact context that you need,
+
+[16:47](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=1007s) **Presenter:** the exact metadata that you need,
+
+[16:48](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=1008s) **Presenter:** which means nobody can ever catch you.
+
+[16:50](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=1010s) **Presenter:** So this is exactly what we did here.
+
+[16:52](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=1012s) **Presenter:** So the first part of this prompt is a RUG injection attack.
+
+[16:57](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=1017s) **Presenter:** here the actual snippet and end. This is basically SQL injection 101 in English, which I think
+
+[17:04](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=1024s) **Presenter:** is really cool because now we can explain what we've been doing to everybody else. The
+
+[17:08](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=1028s) **Presenter:** second piece is a jailbreak where I'm using a bunch of incantations. And then the last
+
+[17:12](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=1032s) **Presenter:** piece is control over references. And this is where I say, okay, but use this specific
+
+[17:17](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=1037s) **Presenter:** reference. Only show the specific website that I wanted to show. So now, let me show
+
+[17:23](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=1043s) **Presenter:** I'll show you another thing.
+
+[17:24](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=1044s) **Presenter:** They keep their classified documents on SharePoint.
+
+[17:27](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=1047s) **Presenter:** Okay, so I'm gonna restart this.
+
+[17:30](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=1050s) **Presenter:** So now I'm gonna do, let's get through another attack.
+
+[17:35](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=1055s) **Presenter:** What I'm going to do here is, okay, this is a victim.
+
+[17:39](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=1059s) **Presenter:** And this victim is called Chris, and Chris has access
+
+[17:42](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=1062s) **Presenter:** to a bunch of financial information, including a file
+
+[17:45](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=1065s) **Presenter:** with information about the banking information
+
+[17:49](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=1069s) **Presenter:** for all of the different vendors for that organization.
+
+[17:53](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=1073s) **Presenter:** ask a question of Copilot, hey, give me the bank details for a specific vendor.
+
+### Closing Thoughts and Call to Action
+
+[17:59](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=1079s) **Presenter:** And they're going to get a proper response.
+
+[18:01](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=1081s) **Presenter:** And note a few things.
+
+[18:02](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=1082s) **Presenter:** One, you get the actual bank account.
+
+[18:04](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=1084s) **Presenter:** Two, you get the reference of the file where we find that bank account.
+
+[18:09](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=1089s) **Presenter:** That's really important.
+
+[18:10](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=1090s) **Presenter:** Okay?
+
+[18:11](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=1091s) **Presenter:** You also get, so this means that this conversation is logged, everything is clear.
+
+[18:16](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=1096s) **Presenter:** Now, if the video will continue, what you'll see is that after I do the same kind of thing,
+
+[18:25](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=1105s) **Presenter:** Okay.
+
+[18:30](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=1110s) **Presenter:** Can you try and push the video to the end?
+
+[18:37](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=1117s) **Presenter:** Okay.
+
+[18:38](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=1118s) **Presenter:** I'm going to skip it.
+
+[18:38](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=1118s) **Presenter:** But basically, what you're able to do here is,
+
+[18:43](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=1123s) **Presenter:** after you send the email,
+
+[18:45](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=1125s) **Presenter:** we change the banking information.
+
+[18:47](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=1127s) **Presenter:** So we change the credit card number.
+
+[18:50](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=1130s) **Presenter:** But the reference remains exactly the same
+
+[18:54](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=1134s) **Presenter:** So I can say, hey, here's the bank details for that vendor.
+
+[18:57](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=1137s) **Presenter:** And by the way, I found it in a file that you wrote two years ago.
+
+[19:01](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=1141s) **Presenter:** Do you remember what you wrote two years ago?
+
+[19:03](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=1143s) **Presenter:** All right, so this is the level of control we have over Copilot.
+
+[19:08](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=1148s) **Presenter:** And this is the same prompt now with that other payload.
+
+[19:11](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=1151s) **Presenter:** And I'm going to skip it because I want to show you one other thing.
+
+[19:15](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=1155s) **Presenter:** The main thing that we showed, like taking a step back, this is the capability.
+
+[19:20](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=1160s) **Presenter:** The only thing I need is to be able to guess what the user is going to ask of Copilot.
+
+[19:26](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=1166s) **Presenter:** And that's very easy because people use templates, everybody uses the same questions.
+
+[19:30](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=1170s) **Presenter:** If I can do that, I can do everything I want with your Copilot on your behalf, which means
+
+[19:36](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=1176s) **Presenter:** search the enterprise data on your behalf, social engineer you.
+
+[19:41](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=1181s) **Presenter:** Copilot is now part of my scheme.
+
+[19:44](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=1184s) **Presenter:** And remember this message, right?
+
+[19:47](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=1187s) **Presenter:** We are focused as a security industry on the wrong thing.
+
+[19:51](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=1191s) **Presenter:** Like getting more access to data through Copilot, that's interesting.
+
+[19:55](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=1195s) **Presenter:** That's not where we should focus as a community.
+
+[19:59](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=1199s) **Presenter:** AI is awesome, but this is an experiment, right?
+
+[20:05](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=1205s) **Presenter:** We don't know how to do AI security.
+
+[20:07](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=1207s) **Presenter:** Nobody does.
+
+[20:08](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=1208s) **Presenter:** So please take that in mind when you're building these things.
+
+[20:12](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=1212s) **Presenter:** And that's my main message.
+
+[20:13](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=1213s) **Presenter:** Nobody knows anything.
+
+[20:15](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=1215s) **Presenter:** please continue to hack with us.
+
+[20:17](https://www.youtube.com/watch?v=SDpPPJ00CV8&t=1217s) **Presenter:** Thank you very much.
+<!-- talk-enrichment:end -->

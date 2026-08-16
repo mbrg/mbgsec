@@ -1,0 +1,4 @@
+interface:
+  display_name: "Enrich mbgsec Talks"
+  short_description: "Generate and review searchable talk content"
+  default_prompt: "Use $enrich-mbgsec-talks to add a sourced abstract and reviewed transcript to an mbgsec talk."

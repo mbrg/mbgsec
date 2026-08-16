@@ -1,0 +1,8 @@
+---
+layout: talk-text
+permalink: /talks/2023-01-23-workato-il-community-event-2023-automated-security-governance/llms.txt
+talk_permalink: /talks/2023-01-23-workato-il-community-event-2023-automated-security-governance/
+talk_slug: 2023-01-23-workato-il-community-event-2023-automated-security-governance
+generated_by: sync-talk-text
+sitemap: false
+---

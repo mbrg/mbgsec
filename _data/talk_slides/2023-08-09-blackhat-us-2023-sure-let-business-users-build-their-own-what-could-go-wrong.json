@@ -1,0 +1,427 @@
+{
+  "generated_by": "sync-talk-text",
+  "source_manifest": "https://media.mbgsec.com/decks/2023-08-09_BHUSA-2023_Sure_Let_Business_Users_Build_Their_Own_What_Could_Go_Wrong/latest.json",
+  "manifest": "https://media.mbgsec.com/decks/2023-08-09_BHUSA-2023_Sure_Let_Business_Users_Build_Their_Own_What_Could_Go_Wrong/548b65e3/deck.json",
+  "title": "Sure, Let Business Users Build Their Own. What Could Go Wrong?",
+  "slides": [
+    {
+      "number": 1,
+      "text": "Slide 1: Sure, Let Business Users Build Their Own. What Could Go Wrong? Michael Bargury @mbrg0 Zenity #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 2,
+      "text": "Slide 2: Hi there👋 • CTO and Co-founder @ Zenity • OWASP LCNC Top 10 project lead • Dark Reading columnist • Defcon, BSides, RSAC, OWASP • Hiring top researchers, engs & pms! @mbrg0 github.com/mbrg darkreading.com/author/michael-bargury #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 3,
+      "text": "Slide 3: Agenda 1. Business users are building their own 2. What could go wrong? 3. Why does it go wrong? 4. How can we fix it? #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 4,
+      "text": "Slide 4: Enterprise LCNC – EVERYONE is a developer @mbrg0 #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 5,
+      "text": "Slide 5: Business Needs ⋙ IT Capacity @mbrg0 #BHUSA @BlackHatEvents #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 6,
+      "text": "Slide 6: If this sounds familiar, its because it is Tech evolution @mbrg0 #BHUSA @BlackHatEvents #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 7,
+      "text": "Slide 7: Source: @RezaDorrani @mbrg0 #BHUSA @BlackHatEvents #BHUSA @BlackHatEvents",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2023-08-09_BHUSA-2023_Sure_Let_Business_Users_Build_Their_Own_What_Could_Go_Wrong/548b65e3/media/build-app-animation.gif"
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "text": "Slide 8: COVID health check app by Microsoft https://aka.ms/healthcheck @mbrg0 #BHUSA @BlackHatEvents #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 9,
+      "text": "Slide 9: Product launch management * This is an example of a business-critical app built by a citizen developer. We did not search for or identify any security vulnerabilities in this app. https://www.microsoft.com/insidetrack/blog/how-citizen-developers-modernized-microsoft-product-launches/ @mbrg0 #BHUSA @BlackHatEvents #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 10,
+      "text": "Slide 10: • Facilitates the process of credit assignment Financial risk • Determines whether or not a person is management assigned credit • Streamlines risk assessment and decision-making * This is an example of a business-critical app built by a citizen developer. We did not search for or identify any security vulnerabilities in this app. @mbrg0 #BHUSA @BlackHatEvents #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 11,
+      "text": "Slide 11: Your business is already there, it’s time for security to keep up. @mbrg0 #BHUSA @BlackHatEvents #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 12,
+      "text": "Slide 12: Is this actually being used? Credential Sharing as a Service: The Dark Side of No Code Michael Bargury RSAC 2023 #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 13,
+      "text": "Slide 13: ~8M active Power devs today! Credential Sharing as a Service: The Dark Side of No Code Michael Bargury RSAC 2023 #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 14,
+      "text": "Slide 14: A single F500 organization Michael Bargury BSidesSF 2023 #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 15,
+      "text": "Slide 15: Recap: You can’t opt out of citizen development • The next big productivity boost (Excel-level impact) • Powers critical business workflows, predicted to power 70% of enterprise apps by 2025 • Available on every major enterprise, yours too • Millions of new (business) developers and growing fast @mbrg0 #BHUSA @BlackHatEvents #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 16,
+      "text": "Slide 16: What could go wrong? @mbrg0 #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 17,
+      "text": "Slide 17: OWASP LCNC Top 10 • LCNC-SEC-01: Account Impersonation • LCNC-SEC-02: Authorization Misuse • LCNC-SEC-03: Data Leakage and Unexpected Consequences • LCNC-SEC-04: Authentication and Secure Communication Failures • LCNC-SEC-05: Security Misconfiguration • LCNC-SEC-06: Injection Handling Failures • LCNC-SEC-07: Vulnerable and Untrusted Components • LCNC-SEC-08: Data and Secret Handling Failures • LCNC-SEC-09: Asset Management Failures • LCNC-SEC-10: Security Logging and Monitoring Failures @mbrg0 #BHUSA @BlackHatEvents #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 18,
+      "text": "Slide 18: Methodology loop Community contribution Community Draft Publish feedback Anonymized statistics >1M apps and automations Ty to all collaborations and >8M credentials contributors! @mbrg0 #BHUSA @BlackHatEvents #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 19,
+      "text": "Slide 19: Real-world stories @mbrg0 #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 20,
+      "text": "Slide 20: Story #1 – employee onboarding @mbrg0 #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 21,
+      "text": "Slide 21: #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 22,
+      "text": "Slide 22: #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 23,
+      "text": "Slide 23: #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 24,
+      "text": "Slide 24: #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 25,
+      "text": "Slide 25: #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 26,
+      "text": "Slide 26: #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 27,
+      "text": "Slide 27: #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 28,
+      "text": "Slide 28: Employee onboarding – findings @mbrg0 #BHUSA @BlackHatEvents #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 29,
+      "text": "Slide 29: #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 30,
+      "text": "Slide 30: #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 31,
+      "text": "Slide 31: #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 32,
+      "text": "Slide 32: #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 33,
+      "text": "Slide 33: Employee onboarding – findings • Data accessible to all (Authorization Misuse) Store App Everyone Data sensitive data has access @mbrg0 #BHUSA @BlackHatEvents #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 34,
+      "text": "Slide 34: Employee onboarding – findings • Data accessible to all (Authorization Misuse) • Sensitive data in plain text (Data and Secret Handling Failures) Submit App Store in User Data sensitive data plaintext @mbrg0 #BHUSA @BlackHatEvents #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 35,
+      "text": "Slide 35: #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 36,
+      "text": "Slide 36: #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 37,
+      "text": "Slide 37: #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 38,
+      "text": "Slide 38: #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 39,
+      "text": "Slide 39: Employee onboarding – findings • Data accessible to all (Authorization Misuse) • Sensitive data in plain text (Data and Secret Handling Failures) • Sensitive data written to logs (Data Leakage) @mbrg0 #BHUSA @BlackHatEvents #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 40,
+      "text": "Slide 40: Employee onboarding – findings • Data accessible to all (Authorization Misuse) • Sensitive data in plain text (Data and Secret Handling Failures) • Sensitive data written to logs (Data Leakage) @mbrg0 #BHUSA @BlackHatEvents #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 41,
+      "text": "Slide 41: Story #2 – productivity sync @mbrg0 #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 42,
+      "text": "Slide 42: #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 43,
+      "text": "Slide 43: Productivity sync – findings @mbrg0 #BHUSA @BlackHatEvents #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 44,
+      "text": "Slide 44: Productivity sync – findings • Business data to personal account (Data Leakage) Fetch corp AApppp Sync to Data Personal data personal account @mbrg0 #BHUSA @BlackHatEvents #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 45,
+      "text": "Slide 45: #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 46,
+      "text": "Slide 46: #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 47,
+      "text": "Slide 47: #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 48,
+      "text": "Slide 48: #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 49,
+      "text": "Slide 49: #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 50,
+      "text": "Slide 50: Productivity sync – findings • Data Business data to personal Everyone means account (Data Leakage) EVERYONE, including • Share with Everyone guests by-default (Authorization Misuse) @mbrg0 #BHUSA @BlackHatEvents #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 51,
+      "text": "Slide 51: Productivity sync – findings • Data Business data to personal Everyone means account (Data Leakage) EVERYONE, including • Share with Everyone guests by-default (Authorization Misuse) Check out the talk All You Need Is Guest for an attacker’s perspective! @mbrg0 #BHUSA @BlackHatEvents #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 52,
+      "text": "Slide 52: #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 53,
+      "text": "Slide 53: #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 54,
+      "text": "Slide 54: #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 55,
+      "text": "Slide 55: #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 56,
+      "text": "Slide 56: Productivity sync – findings • Data Business data to personal account (Data Leakage) • Share with Everyone (Authorization Misuse) • Personal data leaks to logs (Data Leakage) User data App Builder Logs written to logs has direct access @mbrg0 #BHUSA @BlackHatEvents #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 57,
+      "text": "Slide 57: #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 58,
+      "text": "Slide 58: Phishing made easy Low Code High Risk: Enterprise Domination via Low Code Abuse Michael Bargury DEFCON 30 Check out power-pwn on GitHub! #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 59,
+      "text": "Slide 59: Productivity sync – findings • Data Business data to personal account (Data Leakage) • Share with Everyone (Authorization Misuse) • Personal data leaks to logs (Data Leakage) @mbrg0 #BHUSA @BlackHatEvents #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 60,
+      "text": "Slide 60: Story #3 – self-service @mbrg0 #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 61,
+      "text": "Slide 61: What happens when a maker leaves the org? @mbrg0 #BHUSA @BlackHatEvents #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 62,
+      "text": "Slide 62: What happens when a maker leaves the org? • Asset Management Failures @mbrg0 #BHUSA @BlackHatEvents #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 63,
+      "text": "Slide 63: #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 64,
+      "text": "Slide 64: #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 65,
+      "text": "Slide 65: #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 66,
+      "text": "Slide 66: #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 67,
+      "text": "Slide 67: Self-service – findings @mbrg0 #BHUSA @BlackHatEvents #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 68,
+      "text": "Slide 68: Self-service – findings SOC Panics! Admin Admin Customer Admin DB Admin @mbrg0 #BHUSA @BlackHatEvents #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 69,
+      "text": "Slide 69: Self-service – findings • App embedded with admin ID (Account Impersonation) User session Admin session @mbrg0 #BHUSA @BlackHatEvents #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 70,
+      "text": "Slide 70: #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 71,
+      "text": "Slide 71: #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 72,
+      "text": "Slide 72: #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 73,
+      "text": "Slide 73: Self-service – findings • App embedded with admin ID (Account Impersonation) • IDOR (Injection handling failures) Manipulates IDOR input @mbrg0 #BHUSA @BlackHatEvents #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 74,
+      "text": "Slide 74: Self-service – findings • App embedded with admin ID (Account Impersonation) • IDOR (Injection handling failures) @mbrg0 #BHUSA @BlackHatEvents #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 75,
+      "text": "Slide 75: Recap: • We are leaving heavy security decisions in the hands of business users • When choosing between productivity and security, the choice is obvious @mbrg0 #BHUSA @BlackHatEvents #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 76,
+      "text": "Slide 76: Why does it go wrong? @mbrg0 #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 77,
+      "text": "Slide 77: Ops Business Manage Envision Ops Engineering Pro Code Monitor Plan SDLC SDLC Deploy Create Ops Engineering Verify QA @mbrg0 #BHUSA @BlackHatEvents #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 78,
+      "text": "Slide 78: Runtime protection Ops Business Runtime monitoring Manage Envision Security training Ops Engineering Pro Code Threat modeling Vulnerability Monitor Plan scanning SDLC SDLC Security review Security gates Deploy Create Shift-left Ops Engineering Verify Code scanning (SAST/DAST/IAST) Security gates QA @mbrg0 #BHUSA @BlackHatEvents #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 79,
+      "text": "Slide 79: Business Business Manage Envision Business Business No Code Monitor Plan SDLC No SDLC? Deploy Create Business Business Verify Business @mbrg0 #BHUSA @BlackHatEvents #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 80,
+      "text": "Slide 80: We’ve given business users: • Dev-level power • Missing best practice • No controls • No guardrails @mbrg0 #BHUSA @BlackHatEvents #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 81,
+      "text": "Slide 81: We’ve given business users: • Dev-level power • Missing best practice • No controls • No guardrails Could we really expect anything else? @mbrg0 #BHUSA @BlackHatEvents #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 82,
+      "text": "Slide 82: The LCNC Shared Responsibility Model @mbrg0 #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 83,
+      "text": "Slide 83: Serverless Data Biz logic Customer Access Code Identity Platform Runtime … @mbrg0 #BHUSA @BlackHatEvents #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 84,
+      "text": "Slide 84: Serverless LCNC Data Data Biz logic Biz logic Customer Access Access Code Code Identity Identity Platform Runtime Runtime … … @mbrg0 #BHUSA @BlackHatEvents #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 85,
+      "text": "Slide 85: Serverless LCNC We must own Data Data our side of the Biz logic Biz logic Customer Shared Access Access Responsibility Code Code Model Identity Identity Platform Runtime Runtime … … @mbrg0 #BHUSA @BlackHatEvents #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 86,
+      "text": "Slide 86: LCNC Data Biz logic Customer Access Code Identity Platform Runtime … @mbrg0 #BHUSA @BlackHatEvents #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 87,
+      "text": "Slide 87: Platforms have to step up Data Biz logic Customer Access Every SaaS is a Low-Code/No-Code platform today. Code They need to own the code running on their platforms, in addition to the rest of the Shared Responsibility Model. Identity Platform Runtime … @mbrg0 #BHUSA @BlackHatEvents #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 88,
+      "text": "Slide 88: Platforms have to step up Data Biz logic Customer Access Code Identity Platform Runtime https://www.tenable.com/security/research/tra-2023-25 … @mbrg0 #BHUSA @BlackHatEvents #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 89,
+      "text": "Slide 89: Sure, let business users build they own. What could go wrong? Data Biz logic Customer Access Code Identity Platform Runtime … @mbrg0 #BHUSA @BlackHatEvents #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 90,
+      "text": "Slide 90: Sure, let business users build they own. What could go wrong? Data • Are apps moving data outside of the corp boundary? Biz logic Customer • Are users over-sharing data? Access • Are we allowing external access? • Are we properly handling secrets and sensitive data? Code • Do apps have business logic vulns? • … Identity Platform Runtime … @mbrg0 #BHUSA @BlackHatEvents #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 91,
+      "text": "Slide 91: Sure, let business users build they own. What could go wrong? Data • Are apps moving data outside of the corp boundary? Biz logic Customer • Are users over-sharing data? Access • Are we allowing external access? • Are we properly handling secrets and sensitive data? Code • Do apps have business logic vulns? • … Identity Platform Runtime Who owns AppSec for apps built by business users? … @mbrg0 #BHUSA @BlackHatEvents #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 92,
+      "text": "Slide 92: How can we fix it? (Or: LCNC AppSec) @mbrg0 #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 93,
+      "text": "Slide 93: LCNC AppSec is different AppSec for, well, traditional apps AppSec for LCNC apps @mbrg0 #BHUSA @BlackHatEvents #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 94,
+      "text": "Slide 94: LCNC AppSec is different traditional apps LCNC apps AppSec for, well, AppSec for 1. Pro devs w/ some awareness 1. Business users w/ no awareness @mbrg0 #BHUSA @BlackHatEvents #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 95,
+      "text": "Slide 95: LCNC AppSec is different traditional apps LCNC apps AppSec for, well, AppSec for 1. Pro devs w/ some awareness 1. Business users w/ no awareness 2. Secure SDLC 2. No SDLC @mbrg0 #BHUSA @BlackHatEvents #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 96,
+      "text": "Slide 96: LCNC AppSec is different traditional apps LCNC apps AppSec for, well, AppSec for 1. Pro devs w/ some awareness 1. Business users w/ no awareness 2. Secure SDLC 2. No SDLC 3. Secure controls 3. Most controls don’t apply @mbrg0 #BHUSA @BlackHatEvents #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 97,
+      "text": "Slide 97: LCNC AppSec is different traditional apps LCNC apps AppSec for, well, AppSec for 1. Pro devs w/ some awareness 1. Business users w/ no awareness 2. Secure SDLC 2. No SDLC 3. Secure controls 3. Most controls don’t apply 4. Hundreds of apps / year 4. 10x-100x more apps / year @mbrg0 #BHUSA @BlackHatEvents #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 98,
+      "text": "Slide 98: Take the opportunity to champion LCNC security in your org AppSec for LCNC apps 1. Business users w/ no awareness 2. No SDLC 3. Most controls don’t apply 4. 10x-100x more apps / year @mbrg0 #BHUSA @BlackHatEvents #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 99,
+      "text": "Slide 99: Take the opportunity to champion LCNC security in your org AppSec for LCNC apps 1. Business users w/ no awareness 2. No SDLC 3. Most controls don’t apply 4. 10x-100x more apps / year OWASP LCNC Top 10 sections for business users by John McTiernan and Yianna Paris @punk_fairybread #BHUSA @BlackHatEvents #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 100,
+      "text": "Slide 100: Take the opportunity to champion LCNC security in your org AppSec for LCNC apps LCNC Security Standard: 1. Business users w/ no awareness • Approved use cases • SDLC • Environments 2. No SDLC • Testing • Monitoring 3. Most controls don’t apply • SBOM • … 4. 10x-100x more apps / year @mbrg0 #BHUSA @BlackHatEvents #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 101,
+      "text": "Slide 101: Take the opportunity to champion LCNC security in your org AppSec for LCNC apps 1. Business users w/ no awareness LCNC is an opportunity for 2. No SDLC more visibility than ever before 3. Most controls don’t apply 4. 10x-100x more apps / year @mbrg0 #BHUSA @BlackHatEvents #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 102,
+      "text": "Slide 102: Take the opportunity to champion LCNC security in your org AppSec for LCNC apps 1. Business users w/ no awareness LCNC Security 2. No SDLC *The next day* 3. Most controls don’t apply 4. 10x-100x more apps / year * Tries to automate one thing @mbrg0 #BHUSA @BlackHatEvents #BHUSA @BlackHatEvents"
+    },
+    {
+      "number": 103,
+      "text": "Slide 103: Sure, Let Business Users Build Their Own. What Could Go Wrong? Michael Bargury @mbrg0 Zenity #BHUSA @BlackHatEvents"
+    }
+  ]
+}

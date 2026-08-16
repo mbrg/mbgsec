@@ -1,0 +1,821 @@
+{
+  "generated_by": "sync-talk-text",
+  "source_manifest": "https://media.mbgsec.com/decks/2023-10-25_SecTor2023_AllYouNeedIsGuest/latest.json",
+  "manifest": "https://media.mbgsec.com/decks/2023-10-25_SecTor2023_AllYouNeedIsGuest/bc6765f6/deck.json",
+  "title": "All You Need is Guest",
+  "slides": [
+    {
+      "number": 1,
+      "text": "#SECTORCA @ — All You Need Is Guest — Michael Bargury @mbrg0 — Zenity"
+    },
+    {
+      "number": 2,
+      "text": "#SECTORCA @ — DEMO"
+    },
+    {
+      "number": 3,
+      "text": "Presentation visual on slide 3"
+    },
+    {
+      "number": 4,
+      "text": "Presentation visual on slide 4"
+    },
+    {
+      "number": 5,
+      "text": "Presentation visual on slide 5"
+    },
+    {
+      "number": 6,
+      "text": "Presentation visual on slide 6"
+    },
+    {
+      "number": 7,
+      "text": "CTO and Co-founder @ Zenity — OWASP LCNC Top 10 project lead — Dark Reading columnist — BlackHat, Defcon, BSides — , OWASP — Hiring top researchers, engs & pms! — Hi there — 👋 — darkreading.com/author/ — michael-bargury — github.com/mbrg"
+    },
+    {
+      "number": 8,
+      "text": "#SECTORCA @ — WHY invite guests in?"
+    },
+    {
+      "number": 9,
+      "text": "How can two parties collaborate over a bunch of files? — F1000 enterprise — Small vendor"
+    },
+    {
+      "number": 10,
+      "text": "Option 1: just email sensitive files around"
+    },
+    {
+      "number": 11,
+      "text": "Option 2: trust a rando on the internet"
+    },
+    {
+      "number": 12,
+      "text": "Option 2: trust a rando IRL — Source: — deaddrops.com"
+    },
+    {
+      "number": 13,
+      "text": "Option 3: invite them in — Azure AD — F1000 tenant — EntraID"
+    },
+    {
+      "number": 14,
+      "text": "Option 3: invite them in — Azure AD — F1000 tenant — “ — external users can \"bring their own identities.\" ... — and you manage access to your apps … to keep your resources protected. — EntraID"
+    },
+    {
+      "number": 15,
+      "text": "Safe guest access must be: — Easy for vendors to onboard"
+    },
+    {
+      "number": 16,
+      "text": "Safe guest access must be: — Easy for vendors to onboard — Easy for IT/security to control"
+    },
+    {
+      "number": 17,
+      "text": "Safe guest access must be: — Easy for vendors to onboard — Easy for IT/security to control"
+    },
+    {
+      "number": 18,
+      "text": "Embedded demonstration showing how an attacker can obtain a guest account through a Microsoft Teams invitation",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2023-10-25_SecTor2023_AllYouNeedIsGuest/bc6765f6/media/slide-018-demo.mp4"
+        }
+      ]
+    },
+    {
+      "number": 19,
+      "text": "(a) It’s super easy to get a guest account — Source: @_dirkjan at BHUSA 2022"
+    },
+    {
+      "number": 20,
+      "text": "(a) It’s super easy to get a guest account — Perhaps too easy? — Source: @_dirkjan at BHUSA 2022 — * Vulns were fixed."
+    },
+    {
+      "number": 21,
+      "text": "(a) It’s super easy to get a guest account — Perhaps too easy? — Source: @_dirkjan at BHUSA 2022 — * Vulns were fixed."
+    },
+    {
+      "number": 22,
+      "text": "(a) It’s super easy to get a guest account — Perhaps too easy?"
+    },
+    {
+      "number": 23,
+      "text": "Safe guest access must be: — Easy for vendors to onboard — Easy for IT/security to control"
+    },
+    {
+      "number": 24,
+      "text": "(b) Understanding how control works — Partners, vendors, suppliers, other collaborators — Azure AD — F1000 tenant"
+    },
+    {
+      "number": 25,
+      "text": "(b) Understanding how control works — linked — Partners, vendors, suppliers, other collaborators — Azure AD — F1000 tenant"
+    },
+    {
+      "number": 26,
+      "text": "(b) Control guests like employees — linked — Azure AD — Enterprise controls to ensure secure access: MFA, RBAC, CA, device attestation, threat monitoring … — EntraID"
+    },
+    {
+      "number": 27,
+      "text": "(b) Applying security controls to guests — Need guest access —  — Require security controls"
+    },
+    {
+      "number": 28,
+      "text": "(b) Applying security controls to guests — Security controls —  — Require AAD account — Need guest access — Require security controls"
+    },
+    {
+      "number": 29,
+      "text": "(b) Applying security controls to guests — Security controls —  — Require AAD account — Need guest access — Require security controls — AAD account — Grants full access — Q.E.D. …?"
+    },
+    {
+      "number": 30,
+      "text": "(b) Applying security controls to guests — Security controls —  — Require AAD account — Need guest access — Require security controls — AAD account — Grants — full — deny-by-default — access"
+    },
+    {
+      "number": 31,
+      "text": "AAD guests recap — It’s super easy to get a guest account — AAD security controls apply — Access is deny-by-default"
+    },
+    {
+      "number": 32,
+      "text": "#SECTORCA @ — Guest accounts in practice"
+    },
+    {
+      "number": 33,
+      "text": "Presentation visual on slide 33"
+    },
+    {
+      "number": 34,
+      "text": "Presentation visual on slide 34"
+    },
+    {
+      "number": 35,
+      "text": "Presentation visual on slide 35"
+    },
+    {
+      "number": 36,
+      "text": "Presentation visual on slide 36"
+    },
+    {
+      "number": 37,
+      "text": "Presentation visual on slide 37"
+    },
+    {
+      "number": 38,
+      "text": "Presentation visual on slide 38"
+    },
+    {
+      "number": 39,
+      "text": "Presentation visual on slide 39"
+    },
+    {
+      "number": 40,
+      "text": "Guest exploitation state of the art"
+    },
+    {
+      "number": 41,
+      "text": "Guest exploitation state of the art — Phishing via Teams — @DrAzureAD at — youtube.com/ — watch?v — =NN1nIbp-z70"
+    },
+    {
+      "number": 42,
+      "text": "Guest exploitation state of the art — Phishing via Teams — Directory recon — @DrAzureAD at — aadinternals.com/post/ — quest_for_guest — /"
+    },
+    {
+      "number": 43,
+      "text": "State of the art ends here. — But — hackers want more! — Can we access company data? Edit or delete data? Perform operations? — mbrg0"
+    },
+    {
+      "number": 44,
+      "text": "Go have an early lunch — https://make.powerapps.com/environments/ — Default- — fc993b0f-345b-4d01-9f67-9ac4a140dd43 — /connections — mbrg0"
+    },
+    {
+      "number": 45,
+      "text": "Presentation visual on slide 45"
+    },
+    {
+      "number": 46,
+      "text": "Presentation visual on slide 46"
+    },
+    {
+      "number": 47,
+      "text": "Presentation visual on slide 47"
+    },
+    {
+      "number": 48,
+      "text": "Presentation visual on slide 48"
+    },
+    {
+      "number": 49,
+      "text": "Presentation visual on slide 49"
+    },
+    {
+      "number": 50,
+      "text": "Presentation visual on slide 50"
+    },
+    {
+      "number": 51,
+      "text": "Presentation visual on slide 51"
+    },
+    {
+      "number": 52,
+      "text": "Presentation visual on slide 52"
+    },
+    {
+      "number": 53,
+      "text": "Presentation visual on slide 53"
+    },
+    {
+      "number": 54,
+      "text": "Presentation visual on slide 54"
+    },
+    {
+      "number": 55,
+      "text": "Animated demonstration of Power Apps connection sharing and guest access behavior",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2023-10-25_SecTor2023_AllYouNeedIsGuest/bc6765f6/media/slide-055-animation.gif"
+        }
+      ]
+    },
+    {
+      "number": 56,
+      "text": "Presentation visual on slide 56"
+    },
+    {
+      "number": 57,
+      "text": "Presentation visual on slide 57"
+    },
+    {
+      "number": 58,
+      "text": "Presentation visual on slide 58"
+    },
+    {
+      "number": 59,
+      "text": "Presentation visual on slide 59"
+    },
+    {
+      "number": 60,
+      "text": "Linked YouTube short demonstrating Copilot for Power Apps",
+      "media": [
+        {
+          "type": "youtube",
+          "title": "Copilot for Power Apps Demo #shorts",
+          "url": "https://www.youtube.com/watch?v=HG3cbwum0DU"
+        }
+      ]
+    },
+    {
+      "number": 61,
+      "text": "Credential Sharing as a Service: The Dark Side of No Code — Michael Bargury — RSAC 2023 — Is this actually being used?"
+    },
+    {
+      "number": 62,
+      "text": "~8M active Power devs today! — Credential Sharing as a Service: The Dark Side of No Code — Michael Bargury — RSAC 2023"
+    },
+    {
+      "number": 63,
+      "text": "#SECTORCA @ — Exploit"
+    },
+    {
+      "number": 64,
+      "text": "Presentation visual on slide 64"
+    },
+    {
+      "number": 65,
+      "text": "Presentation visual on slide 65"
+    },
+    {
+      "number": 66,
+      "text": "Presentation visual on slide 66"
+    },
+    {
+      "number": 67,
+      "text": "Presentation visual on slide 67"
+    },
+    {
+      "number": 68,
+      "text": "Presentation visual on slide 68"
+    },
+    {
+      "number": 69,
+      "text": "Presentation visual on slide 69"
+    },
+    {
+      "number": 70,
+      "text": "Presentation visual on slide 70"
+    },
+    {
+      "number": 71,
+      "text": "Presentation visual on slide 71"
+    },
+    {
+      "number": 72,
+      "text": "Presentation visual on slide 72"
+    },
+    {
+      "number": 73,
+      "text": "Presentation visual on slide 73"
+    },
+    {
+      "number": 74,
+      "text": "Presentation visual on slide 74"
+    },
+    {
+      "number": 75,
+      "text": "Presentation visual on slide 75"
+    },
+    {
+      "number": 76,
+      "text": "Presentation visual on slide 76"
+    },
+    {
+      "number": 77,
+      "text": "Presentation visual on slide 77"
+    },
+    {
+      "number": 78,
+      "text": "So we were able to bypass the license requirement — But blocked by... DLP? — mbrg0"
+    },
+    {
+      "number": 79,
+      "text": "Presentation visual on slide 79"
+    },
+    {
+      "number": 80,
+      "text": "Presentation visual on slide 80"
+    },
+    {
+      "number": 81,
+      "text": "Presentation visual on slide 81"
+    },
+    {
+      "number": 82,
+      "text": "Presentation visual on slide 82"
+    },
+    {
+      "number": 83,
+      "text": "https://www.zenity.io/microsoft-power-platform-dlp-bypass-uncovered-finding-5-parent-and-child-flow-execution/"
+    },
+    {
+      "number": 84,
+      "text": "https://www.zenity.io/microsoft-power-platform-dlp-bypass-uncovered-finding-5-parent-and-child-flow-execution/"
+    },
+    {
+      "number": 85,
+      "text": "https://www.zenity.io/microsoft-power-platform-dlp-bypass-uncovered-finding-5-parent-and-child-flow-execution/"
+    },
+    {
+      "number": 86,
+      "text": "https://www.zenity.io/microsoft-power-platform-dlp-bypass-uncovered-finding-5-parent-and-child-flow-execution/"
+    },
+    {
+      "number": 87,
+      "text": "https://www.zenity.io/microsoft-power-platform-dlp-bypass-uncovered-finding-5-parent-and-child-flow-execution/"
+    },
+    {
+      "number": 88,
+      "text": "DLP — bypass disclosure in process — Full writeup —  — mbgsec.com — mbrg0"
+    },
+    {
+      "number": 89,
+      "text": "Presentation visual on slide 89"
+    },
+    {
+      "number": 90,
+      "text": "Presentation visual on slide 90"
+    },
+    {
+      "number": 91,
+      "text": "Presentation visual on slide 91"
+    },
+    {
+      "number": 92,
+      "text": "Presentation visual on slide 92"
+    },
+    {
+      "number": 93,
+      "text": "Presentation visual on slide 93"
+    },
+    {
+      "number": 94,
+      "text": "Presentation visual on slide 94"
+    },
+    {
+      "number": 95,
+      "text": "Presentation visual on slide 95"
+    },
+    {
+      "number": 96,
+      "text": "Presentation visual on slide 96"
+    },
+    {
+      "number": 97,
+      "text": "Presentation visual on slide 97"
+    },
+    {
+      "number": 98,
+      "text": "Presentation visual on slide 98"
+    },
+    {
+      "number": 99,
+      "text": "Presentation visual on slide 99"
+    },
+    {
+      "number": 100,
+      "text": "Presentation visual on slide 100"
+    },
+    {
+      "number": 101,
+      "text": "Presentation visual on slide 101"
+    },
+    {
+      "number": 102,
+      "text": "Copy-and-replay browser API Hub"
+    },
+    {
+      "number": 103,
+      "text": "Copy-and-replay browser API Hub"
+    },
+    {
+      "number": 104,
+      "text": "Power App is using azure-apim.net to fetch connection data — GET https://europe-002.azure-apim.net/apim — /sql/ff47194e357e459b8756a5f43f59ccc6 — /v2/datasets/ — customercareinsights.database.windows.net,enterprisecustomers — /tables/%255Bdbo%255D.%255BCustomers%255D/items' — mbrg0"
+    },
+    {
+      "number": 105,
+      "text": "Power App is using azure-apim.net to fetch connection data — GET — https://europe-002.azure-apim.net/apim — /sql/ff47194e357e459b8756a5f43f59ccc6 — /v2/datasets/ — customercareinsights.database.windows.net,enterprisecustomers — /tables/%255Bdbo%255D.%255BCustomers%255D/items — mbrg0"
+    },
+    {
+      "number": 106,
+      "text": "Power App is using azure-apim.net to fetch connection data — GET https://europe-002.azure-apim.net/apim — /sql/ff47194e357e459b8756a5f43f59ccc6 — /v2/datasets/ — customercareinsights.database.windows.net,enterprisecustomers — /tables/%255Bdbo%255D.%255BCustomers%255D/items — mbrg0"
+    },
+    {
+      "number": 107,
+      "text": "Power App is using azure-apim.net to fetch connection data — GET https://europe-002.azure-apim.net/apim — /sql/ff47194e357e459b8756a5f43f59ccc6 — /v2/datasets/ — customercareinsights.database.windows.net,enterprisecustomers — /tables/%255Bdbo%255D.%255BCustomers%255D/items — mbrg0"
+    },
+    {
+      "number": 108,
+      "text": "Power App is using azure-apim.net to fetch connection data — GET https://europe-002.azure-apim.net/apim — /sql/ff47194e357e459b8756a5f43f59ccc6 — /v2/datasets/ — customercareinsights.database.windows.net,enterprisecustomers — /tables/%255Bdbo%255D.%255BCustomers%255D/items — mbrg0"
+    },
+    {
+      "number": 109,
+      "text": "Power App is using azure-apim.net to fetch connection data — GET https://europe-002.azure-apim.net/apim — /sql/ff47194e357e459b8756a5f43f59ccc6 — /v2/datasets/ — customercareinsights.database.windows.net,enterprisecustomers — /tables/[ — dbo — ].[Customers]/items — mbrg0"
+    },
+    {
+      "number": 110,
+      "text": "docs.microsoft.com — mbrg0"
+    },
+    {
+      "number": 111,
+      "text": "docs.microsoft.com — mbrg0"
+    },
+    {
+      "number": 112,
+      "text": "docs.microsoft.com — mbrg0"
+    },
+    {
+      "number": 113,
+      "text": "Let’s take a closer look at this token"
+    },
+    {
+      "number": 114,
+      "text": "Presentation visual on slide 114"
+    },
+    {
+      "number": 115,
+      "text": "A scope away from victory — Can we generate a token to API Hub?"
+    },
+    {
+      "number": 116,
+      "text": "A scope away from victory — Can we generate a token to API Hub? (reminder: — generating tokens is trivial, it’s our user)"
+    },
+    {
+      "number": 117,
+      "text": "A scope away from victory — Can we generate a token to API Hub? (reminder: — generating tokens is trivial, it’s our user)"
+    },
+    {
+      "number": 118,
+      "text": "A scope away from victory — Can we generate a token to API Hub? — (reminder: generating tokens is trivial, it’s our user) — Using a built-in public client app?"
+    },
+    {
+      "number": 119,
+      "text": "A scope away from victory — Can we generate a token to API Hub? — (reminder: generating tokens is trivial, it’s our user) — Using a built-in public client app? — No."
+    },
+    {
+      "number": 120,
+      "text": "A scope away from victory — Can we generate a token to API Hub? — (reminder: generating tokens is trivial, it’s our user) — Using a built-in public client app? — No. — Using our own app?"
+    },
+    {
+      "number": 121,
+      "text": "A scope away from victory — Can we generate a token to API Hub? — (reminder: generating tokens is trivial, it’s our user) — Using a built-in public client app? — No. — Using our own app?"
+    },
+    {
+      "number": 122,
+      "text": "A scope away from victory — Can we generate a token to API Hub? — (reminder: generating tokens is trivial, it’s our user) — Using a built-in public client app? — No. — Using our own app? — mbrg0"
+    },
+    {
+      "number": 123,
+      "text": "Where are — we again? — Got — guest access. — mbrg0"
+    },
+    {
+      "number": 124,
+      "text": "Where are — we again? — Got — guest access. — Found a bunch of creds on PowerApps. — mbrg0"
+    },
+    {
+      "number": 125,
+      "text": "Where are — we again? — Got guest access. — Found a bunch of creds on PowerApps. — Tried to access — mbrg0"
+    },
+    {
+      "number": 126,
+      "text": "Where are — we again? — Got guest access. — Found a bunch of creds on PowerApps. — Tried to access —  Blocked by license — mbrg0"
+    },
+    {
+      "number": 127,
+      "text": "Where are — we again? — Got guest access. — Found a bunch of creds on PowerApps. — Tried to access —  Blocked by license —  Got a license — mbrg0"
+    },
+    {
+      "number": 128,
+      "text": "Where are — we again? — Got guest access. — Found a bunch of creds on PowerApps. — Tried to access —  Blocked by license  Got a license —  Blocked by DLP — mbrg0"
+    },
+    {
+      "number": 129,
+      "text": "Where are — we again? — Got guest access. — Found a bunch of creds on PowerApps. — Tried to access —  Blocked by license  Got a license —  Blocked by DLP —  Pivoted connection — (bypass vuln under disclosure) — mbrg0"
+    },
+    {
+      "number": 130,
+      "text": "Where are — we again? — Got guest access. — Found a bunch of creds on PowerApps. — Tried to access —  Blocked by license  Got a license —  Blocked by DLP  Pivoted connection — (bypass vuln under disclosure) —  Blocked by prog access to API Hub — mbrg0"
+    },
+    {
+      "number": 131,
+      "text": "Solving for scope — We need to find an AAD app that is: — mbrg0"
+    },
+    {
+      "number": 132,
+      "text": "Solving for scope — We need to find an AAD app that is: — On by-default (available on every tenant) — mbrg0"
+    },
+    {
+      "number": 133,
+      "text": "Solving for scope — We need to find an AAD app that is: — On by-default (available on every tenant) — Pre-approved to query API Hub (get internal resource) — mbrg0"
+    },
+    {
+      "number": 134,
+      "text": "Solving for scope — We need to find an AAD app that is: — On by-default (available on every tenant) — Pre-approved to query API Hub (get internal resource) — Public client (generate tokens on demand) — mbrg0"
+    },
+    {
+      "number": 135,
+      "text": "Solving for scope — We need to find an AAD app that is: — On by-default — Pre-approved to query API Hub — Public client — mbrg0"
+    },
+    {
+      "number": 136,
+      "text": "Solving for scope — We need to find an AAD app that is: — On by-default — Pre-approved to query API Hub — Public client — Well, we know about the — PowerApps portal! — mbrg0"
+    },
+    {
+      "number": 137,
+      "text": "Solving for scope — We need to find an AAD app that is: — On by-default — Pre-approved to query API Hub — Public client — Well, we know about the — PowerApps portal — ! — mbrg0"
+    },
+    {
+      "number": 138,
+      "text": "Solving for scope — We need to find an AAD app that is: — On by-default — Pre-approved to query API Hub — Public client — Well, we know about the — PowerApps portal — ! — But we can’t generate — tokens on it’s behalf. — mbrg0"
+    },
+    {
+      "number": 139,
+      "text": "How does — msft — cross-app SSO work? (or –introduction to — family of client IDs) — mbrg0 — @detectdotdev"
+    },
+    {
+      "number": 140,
+      "text": "How does — msft — cross-app SSO work? (or introduction to — family of client IDs)"
+    },
+    {
+      "number": 141,
+      "text": "How does — msft — cross-app SSO work? (or introduction to — family of client IDs)"
+    },
+    {
+      "number": 142,
+      "text": "How does — msft — cross-app SSO work? (or introduction to — family of client IDs)"
+    },
+    {
+      "number": 143,
+      "text": "Family of client IDs — Microsoft Azure CLI — API Hub token — mbrg0"
+    },
+    {
+      "number": 144,
+      "text": "Exchange tokens to win — We need to find an AAD app that is: — On by-default — Pre-approved to query API Hub — Public client — mbrg0"
+    },
+    {
+      "number": 145,
+      "text": "#SECTORCA @ — And now for the fun part"
+    },
+    {
+      "number": 146,
+      "text": "Presentation visual on slide 146"
+    },
+    {
+      "number": 147,
+      "text": "Presentation visual on slide 147"
+    },
+    {
+      "number": 148,
+      "text": "Presentation visual on slide 148"
+    },
+    {
+      "number": 149,
+      "text": "Presentation visual on slide 149"
+    },
+    {
+      "number": 150,
+      "text": "Presentation visual on slide 150"
+    },
+    {
+      "number": 151,
+      "text": "Presentation visual on slide 151"
+    },
+    {
+      "number": 152,
+      "text": "Presentation visual on slide 152"
+    },
+    {
+      "number": 153,
+      "text": "Presentation visual on slide 153"
+    },
+    {
+      "number": 154,
+      "text": "Presentation visual on slide 154"
+    },
+    {
+      "number": 155,
+      "text": "Presentation visual on slide 155"
+    },
+    {
+      "number": 156,
+      "text": "Presentation visual on slide 156"
+    },
+    {
+      "number": 157,
+      "text": "Presentation visual on slide 157"
+    },
+    {
+      "number": 158,
+      "text": "Presentation visual on slide 158"
+    },
+    {
+      "number": 159,
+      "text": "Presentation visual on slide 159"
+    },
+    {
+      "number": 160,
+      "text": "Presentation visual on slide 160"
+    },
+    {
+      "number": 161,
+      "text": "Presentation visual on slide 161"
+    },
+    {
+      "number": 162,
+      "text": "Presentation visual on slide 162"
+    },
+    {
+      "number": 163,
+      "text": "Presentation visual on slide 163"
+    },
+    {
+      "number": 164,
+      "text": "Presentation visual on slide 164"
+    },
+    {
+      "number": 165,
+      "text": "Presentation visual on slide 165"
+    },
+    {
+      "number": 166,
+      "text": "Presentation visual on slide 166"
+    },
+    {
+      "number": 167,
+      "text": "Presentation visual on slide 167"
+    },
+    {
+      "number": 168,
+      "text": "Presentation visual on slide 168"
+    },
+    {
+      "number": 169,
+      "text": "Presentation visual on slide 169"
+    },
+    {
+      "number": 170,
+      "text": "Presentation visual on slide 170"
+    },
+    {
+      "number": 171,
+      "text": "Presentation visual on slide 171"
+    },
+    {
+      "number": 172,
+      "text": "Presentation visual on slide 172"
+    },
+    {
+      "number": 173,
+      "text": "Presentation visual on slide 173"
+    },
+    {
+      "number": 174,
+      "text": "Presentation visual on slide 174"
+    },
+    {
+      "number": 175,
+      "text": "Presentation visual on slide 175"
+    },
+    {
+      "number": 176,
+      "text": "Presentation visual on slide 176"
+    },
+    {
+      "number": 177,
+      "text": "Presentation visual on slide 177"
+    },
+    {
+      "number": 178,
+      "text": "Presentation visual on slide 178"
+    },
+    {
+      "number": 179,
+      "text": "Find us on GitHub! — github.com/mbrg/power- — pwn — mbrg0"
+    },
+    {
+      "number": 180,
+      "text": "#SECTORCA @ — Defense"
+    },
+    {
+      "number": 181,
+      "text": "State of the exploit — Strong collab w/ MSRC — Working together to fix issues and improve defaults — Clarifying mitigation — Currently no vulns"
+    },
+    {
+      "number": 182,
+      "text": "Serverless — Customer — Platform — mbrg0"
+    },
+    {
+      "number": 183,
+      "text": "Serverless — LCNC — Customer — Platform — We must own our side of the Shared — Responsibility Model — mbrg0"
+    },
+    {
+      "number": 184,
+      "text": "Customer — Platform — LCNC — mbrg0"
+    },
+    {
+      "number": 185,
+      "text": "Platforms have to step up — Customer — Platform — Every SaaS is a Low-Code/No-Code platform today. — They need to own the code running on their platforms, in addition to the rest of the Shared Responsibility Model. — mbrg0"
+    },
+    {
+      "number": 186,
+      "text": "Platforms have to step up — Customer — Platform — mbrg0 — https://www.tenable.com/security/research/tra-2023-25"
+    },
+    {
+      "number": 187,
+      "text": "Sure, let business users build they own. What could go wrong? — Customer — Platform — mbrg0"
+    },
+    {
+      "number": 188,
+      "text": "Sure, let business users build they own. What could go wrong? — Are apps moving data outside of the — corp — boundary? — Are users over-sharing data? — Are we allowing external access? — Are we properly handling secrets and sensitive data? — Do apps have business logic vulns? — … — Customer — Platform — mbrg0"
+    },
+    {
+      "number": 189,
+      "text": "Sure, let business users build they own. What could go wrong? — Are apps moving data outside of the — corp — boundary? — Are users over-sharing data? — Are we allowing external access? — Are we properly handling secrets and sensitive data? — Do apps have business logic vulns? — … — Who owns AppSec for apps built by business users? — Customer — Platform —…"
+    },
+    {
+      "number": 190,
+      "text": "Protect your org! — Build secure apps — Code, links and details —  — mbgsec.com/talks — & @mbrg0"
+    },
+    {
+      "number": 191,
+      "text": "Protect your org! — Build secure apps — Don’t overshare — Code, links and details —  — mbgsec.com/talks — & @mbrg0"
+    },
+    {
+      "number": 192,
+      "text": "Protect your org! — Build secure apps — Don’t overshare — OWASP LCNC Top 10 — Code, links and details —  — mbgsec.com/talks — & @mbrg0"
+    },
+    {
+      "number": 193,
+      "text": "Protect your org! — Build secure apps — Don’t overshare — OWASP LCNC Top 10 — Harden your env — Code, links and details —  — mbgsec.com/talks — & @mbrg0"
+    },
+    {
+      "number": 194,
+      "text": "Protect your org! — Build secure apps — Don’t overshare — OWASP LCNC Top 10 — Harden your env — Secure configs — Code, links and details —  — mbgsec.com/talks — & @mbrg0"
+    },
+    {
+      "number": 195,
+      "text": "Protect your org! — Build secure apps — Don’t overshare — OWASP LCNC Top 10 — Harden your env — Secure configs — AppSec — Code, links and details —  — mbgsec.com/talks — & @mbrg0"
+    },
+    {
+      "number": 196,
+      "text": "Protect your org! — Build secure apps — Don’t overshare — OWASP LCNC Top 10 — Harden your env — Secure configs — AppSec — Hack your env — powerpwn — Code, links and details —  — mbgsec.com/talks — & @mbrg0"
+    },
+    {
+      "number": 197,
+      "text": "SecTor — Sound Bytes — Take a deep look at your — EntraID — guest strategy, guests are more powerful than you think — We’re leaving business users alone with security v productivity decisions, what did we expect them to choose? — To get a full dumps of SQL/Azure resources, all you need — is guest — mbrg0"
+    },
+    {
+      "number": 198,
+      "text": "#SECTORCA @ — All You Need Is Guest — Michael Bargury @mbrg0 — Zenity"
+    }
+  ]
+}

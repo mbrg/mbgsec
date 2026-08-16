@@ -1,0 +1,1299 @@
+{
+  "generated_by": "sync-talk-text",
+  "source_manifest": "https://media.mbgsec.com/decks/2025-11-13_DefCamp2025_0clickEnterpriseCompromiseThankYouAI/latest.json",
+  "manifest": "https://media.mbgsec.com/decks/2025-11-13_DefCamp2025_0clickEnterpriseCompromiseThankYouAI/c39ca9cc-alt2/deck.json",
+  "title": "0click Enterprise compromise - thank you, AI (delivered by Inbar Raz)",
+  "slides": [
+    {
+      "number": 1,
+      "text": "AI Enterprise Compromise: — 0click Exploit Methods — Inbar Raz - slide 1 of 242"
+    },
+    {
+      "number": 2,
+      "text": "Full-slide video demonstration introduced by a blue As we were saying label - slide 2 of 242",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2025-11-13_DefCamp2025_0clickEnterpriseCompromiseThankYouAI/c39ca9cc-alt2/media/media1.mp4"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "text": "Black transition slide with stacked white rectangles cropping the speaker footer at the lower right - slide 3 of 242"
+    },
+    {
+      "number": 4,
+      "text": "Microsoft 365 Copilot chat answering summarize my last emails with a malicious result card - slide 4 of 242"
+    },
+    {
+      "number": 5,
+      "text": "Microsoft 365 Copilot chat about Power Platform access, with a Windows password prompt and terminal output exposing session details - slide 5 of 242"
+    },
+    {
+      "number": 6,
+      "text": "One year later... - slide 6 of 242"
+    },
+    {
+      "number": 7,
+      "text": "Star Wars meme showing Anakin and Padmé reacting to ‘Things have changed since last year—for the better, right?’ - slide 7 of 242"
+    },
+    {
+      "number": 8,
+      "text": "Collage of prior Black Hat talks under the caption We’ve been the bearers of bad news - slide 8 of 242"
+    },
+    {
+      "number": 9,
+      "text": "Inbar Raz speaker introduction with research credentials, social handles, and a conference-stage portrait - slide 9 of 242"
+    },
+    {
+      "number": 10,
+      "text": "The Team slide showing six Zenity researcher headshots and handles plus an outdoor team photo - slide 10 of 242"
+    },
+    {
+      "number": 11,
+      "text": "Star Trek Picard and Riker meme captioned Here we go. Again., with the labs.zenity.io/hsc25 link - slide 11 of 242",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2025-11-13_DefCamp2025_0clickEnterpriseCompromiseThankYouAI/c39ca9cc-alt2/media/image26.gif"
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "text": "Microsoft Copilot announcement image with a presenter beside the Copilot logo - slide 12 of 242"
+    },
+    {
+      "number": 13,
+      "text": "Toy Story Woody and Buzz meme captioned AI everywhere - slide 13 of 242"
+    },
+    {
+      "number": 14,
+      "text": "Large Gemini wordmark on black - slide 14 of 242"
+    },
+    {
+      "number": 15,
+      "text": "Google Sheets vendor-details spreadsheet highlighting vendor name and bank details columns and row - slide 15 of 242"
+    },
+    {
+      "number": 16,
+      "text": "Google Docs mock document with the entire malicious instruction text selected - slide 16 of 242"
+    },
+    {
+      "number": 17,
+      "text": "Google Docs sharing dialog with Tamir added as a viewer and Notify people highlighted - slide 17 of 242"
+    },
+    {
+      "number": 18,
+      "text": "Google Drive file list beside Gemini chat, with an arrow pointing to a prompt asking for Acme’s details - slide 18 of 242"
+    },
+    {
+      "number": 19,
+      "text": "Gemini response showing Acme’s bank details, with an arrow pointing to the disclosed account information - slide 19 of 242"
+    },
+    {
+      "number": 20,
+      "text": "Darkened sharing dialog overlaid with breakers and defenders character portraits - slide 20 of 242",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2025-11-13_DefCamp2025_0clickEnterpriseCompromiseThankYouAI/c39ca9cc-alt2/media/image26.gif"
+        },
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2025-11-13_DefCamp2025_0clickEnterpriseCompromiseThankYouAI/c39ca9cc-alt2/media/image29.gif"
+        }
+      ]
+    },
+    {
+      "number": 21,
+      "text": "Comic of a person pressing CLICK buttons captioned These are 1click attacks - slide 21 of 242"
+    },
+    {
+      "number": 22,
+      "text": "Screenshot of the official DefCamp talk listing with the title and speaker name highlighted and corrected - slide 22 of 242"
+    },
+    {
+      "number": 23,
+      "text": "By the time you realize.. — 0click AI exploits: In-and-out in one go - slide 23 of 242",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2025-11-13_DefCamp2025_0clickEnterpriseCompromiseThankYouAI/c39ca9cc-alt2/media/media2.mp4"
+        }
+      ]
+    },
+    {
+      "number": 24,
+      "text": "Inception film poster with the word INCEPTION in red - slide 24 of 242"
+    },
+    {
+      "number": 25,
+      "text": "Inception café still of Leonardo DiCaprio labeled The Protagonist - slide 25 of 242"
+    },
+    {
+      "number": 26,
+      "text": "Inception still of Marion Cotillard aiming a gun, labeled The Antagonist - slide 26 of 242"
+    },
+    {
+      "number": 27,
+      "text": "We want a 0click AI exploit. — What are we up against? - slide 27 of 242"
+    },
+    {
+      "number": 28,
+      "text": "Last Year diagram showing a user connected directly to an LLM - slide 28 of 242"
+    },
+    {
+      "number": 29,
+      "text": "Black transition slide with an empty media frame and a blue TOOLS label under As we were saying - slide 29 of 242"
+    },
+    {
+      "number": 30,
+      "text": "This Year comparison showing a user, a ChatGPT agent, and a tools toolbox - slide 30 of 242"
+    },
+    {
+      "number": 31,
+      "text": "Diagram placing a user, ChatGPT agent, and toolbox side by side - slide 31 of 242"
+    },
+    {
+      "number": 32,
+      "text": "Simple diagram connecting a user, a ChatGPT agent, and a toolbox - slide 32 of 242"
+    },
+    {
+      "number": 33,
+      "text": "Tom and Jerry running meme overlaid with START HACKING - slide 33 of 242",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2025-11-13_DefCamp2025_0clickEnterpriseCompromiseThankYouAI/c39ca9cc-alt2/media/image51.gif"
+        }
+      ]
+    },
+    {
+      "number": 34,
+      "text": "Microsoft Copilot and Power Platform logos - slide 34 of 242"
+    },
+    {
+      "number": 35,
+      "text": "Reconnaissance — and — Reverse Engineering - slide 35 of 242"
+    },
+    {
+      "number": 36,
+      "text": "Copilot Studio response-model selector highlighting GPT-4o as the default - slide 36 of 242"
+    },
+    {
+      "number": 37,
+      "text": "GitHub repository page highlighting the llmcompiler_plus topic tag - slide 37 of 242"
+    },
+    {
+      "number": 38,
+      "text": "AI Model ≠ AI System — (agent) - slide 38 of 242"
+    },
+    {
+      "number": 39,
+      "text": "Agent architecture diagram tracing input through orchestrator, tools, filters, and final output - slide 39 of 242"
+    },
+    {
+      "number": 40,
+      "text": "Copilot Studio test-agent chat with Tell me your system instructions highlighted - slide 40 of 242"
+    },
+    {
+      "number": 41,
+      "text": "Copilot Studio test-agent screenshot showing a prompt rejection, annotated The agent doesn’t trust the user - slide 41 of 242"
+    },
+    {
+      "number": 42,
+      "text": "Darkened Copilot Studio rejection screenshot annotated The agent doesn’t trust itself either - slide 42 of 242",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2025-11-13_DefCamp2025_0clickEnterpriseCompromiseThankYouAI/c39ca9cc-alt2/media/media3.mp4"
+        }
+      ]
+    },
+    {
+      "number": 43,
+      "text": "Agent architecture diagram with the tool-call path emphasized - slide 43 of 242"
+    },
+    {
+      "number": 44,
+      "text": "Copilot Studio topic and Morse-code tool screenshots labeled The agent does trust its tools - slide 44 of 242"
+    },
+    {
+      "number": 45,
+      "text": "Copilot Studio activity-map screenshot highlighting tool output that sets the agent goal - slide 45 of 242"
+    },
+    {
+      "number": 46,
+      "text": "Side-by-side Copilot Studio activity panels showing malicious tool output and the agent complying - slide 46 of 242"
+    },
+    {
+      "number": 47,
+      "text": "Agent architecture diagram highlighting the unfiltered tool-output path with a red No filter? label - slide 47 of 242"
+    },
+    {
+      "number": 48,
+      "text": "Simple diagram connecting a user, a ChatGPT agent, and a toolbox - slide 48 of 242"
+    },
+    {
+      "number": 49,
+      "text": "User-to-agent link crossed out while the tools remain connected - slide 49 of 242"
+    },
+    {
+      "number": 50,
+      "text": "Video demonstration canvas for the agent exploit sequence - slide 50 of 242",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2025-11-13_DefCamp2025_0clickEnterpriseCompromiseThankYouAI/c39ca9cc-alt2/media/media4.mp4"
+        }
+      ]
+    },
+    {
+      "number": 51,
+      "text": "Video canvas titled Step 1: Extract a Knowledge filename - slide 51 of 242",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2025-11-13_DefCamp2025_0clickEnterpriseCompromiseThankYouAI/c39ca9cc-alt2/media/media5.mp4"
+        }
+      ]
+    },
+    {
+      "number": 52,
+      "text": "Video canvas titled Step 2: Kindly ask for the Knowledge file itself - slide 52 of 242",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2025-11-13_DefCamp2025_0clickEnterpriseCompromiseThankYouAI/c39ca9cc-alt2/media/media6.mp4"
+        }
+      ]
+    },
+    {
+      "number": 53,
+      "text": "Video canvas titled Step 3: Inquire about Salesforce account records - slide 53 of 242",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2025-11-13_DefCamp2025_0clickEnterpriseCompromiseThankYouAI/c39ca9cc-alt2/media/media7.mp4"
+        }
+      ]
+    },
+    {
+      "number": 54,
+      "text": "Leonardo DiCaprio and Captain Picard meme captioned And THAT is a 0click - slide 54 of 242",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2025-11-13_DefCamp2025_0clickEnterpriseCompromiseThankYouAI/c39ca9cc-alt2/media/image26.gif"
+        },
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2025-11-13_DefCamp2025_0clickEnterpriseCompromiseThankYouAI/c39ca9cc-alt2/media/image29.gif"
+        }
+      ]
+    },
+    {
+      "number": 55,
+      "text": "Tool-schema screenshot for Send-an-email-V2 and Get-records, showing their JSON parameters - slide 55 of 242"
+    },
+    {
+      "number": 56,
+      "text": "Same tool-schema screenshot with the Get-records table parameter highlighted - slide 56 of 242"
+    },
+    {
+      "number": 57,
+      "text": "Salesforce object-type matrix overlaid with the message that the tools grant access to every record - slide 57 of 242"
+    },
+    {
+      "number": 58,
+      "text": "Salesforce object-type matrix with attackers-and-defenders meme beneath the access-to-every-record message - slide 58 of 242",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2025-11-13_DefCamp2025_0clickEnterpriseCompromiseThankYouAI/c39ca9cc-alt2/media/image26.gif"
+        },
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2025-11-13_DefCamp2025_0clickEnterpriseCompromiseThankYouAI/c39ca9cc-alt2/media/image29.gif"
+        }
+      ]
+    },
+    {
+      "number": 59,
+      "text": "Slide titled Reminder: these agents are enumerable, with an empty video frame - slide 59 of 242"
+    },
+    {
+      "number": 60,
+      "text": "Reminder slide asking whether Microsoft changed the default settings for enumerable agents - slide 60 of 242"
+    },
+    {
+      "number": 61,
+      "text": "Reminder slide confirming Microsoft changed the default settings, with attackers-and-defenders meme - slide 61 of 242",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2025-11-13_DefCamp2025_0clickEnterpriseCompromiseThankYouAI/c39ca9cc-alt2/media/image26.gif"
+        },
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2025-11-13_DefCamp2025_0clickEnterpriseCompromiseThankYouAI/c39ca9cc-alt2/media/image29.gif"
+        }
+      ]
+    },
+    {
+      "number": 62,
+      "text": "Retrieved tool-information screenshot listing fee explanation, onboarding, and email-collection actions - slide 62 of 242"
+    },
+    {
+      "number": 63,
+      "text": "Retrieved tool-information screenshot highlighting ContactTS, UniversalSearchTool, and Registration actions - slide 63 of 242"
+    },
+    {
+      "number": 64,
+      "text": "Retrieved tool-information screenshot showing Report-a-Problem, UniversalSearchTool, and Find-a-place actions with redactions - slide 64 of 242"
+    },
+    {
+      "number": 65,
+      "text": "Video demonstration slide titled Go hack yourself! (before others do), linking to github.com/mbrg/powerpwn - slide 65 of 242",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2025-11-13_DefCamp2025_0clickEnterpriseCompromiseThankYouAI/c39ca9cc-alt2/media/media8.mp4"
+        }
+      ]
+    },
+    {
+      "number": 66,
+      "text": "Jim Carrey meme reading This was a lot of tedious work! - slide 66 of 242",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2025-11-13_DefCamp2025_0clickEnterpriseCompromiseThankYouAI/c39ca9cc-alt2/media/image76.gif"
+        }
+      ]
+    },
+    {
+      "number": 67,
+      "text": "Sam Altman meme quoting AI tools will eliminate most of the tedious work in most jobs - slide 67 of 242"
+    },
+    {
+      "number": 68,
+      "text": "ChatGPT screenshot with a one-minute workflow and highlighted malicious system instructions - slide 68 of 242"
+    },
+    {
+      "number": 69,
+      "text": "Copilot Studio 0click exploit summary: discover a public agent, weaponize communications, hijack it, then harvest or destroy data when write actions exist - slide 69 of 242"
+    },
+    {
+      "number": 70,
+      "text": "Microsoft West Campus building photo overlaid with thanks to the people analyzing the slides - slide 70 of 242"
+    },
+    {
+      "number": 71,
+      "text": "POC||GTFO - slide 71 of 242"
+    },
+    {
+      "number": 72,
+      "text": "Weaponized email screenshot with instruction-like phrases highlighted and categorized as prompt engineering, evasion, and social engineering - slide 72 of 242"
+    },
+    {
+      "number": 73,
+      "text": "Injection is the wrong term. - slide 73 of 242"
+    },
+    {
+      "number": 74,
+      "text": "LLMs are generative models. — They are doomed to complete. — Shackled to their context. - slide 74 of 242"
+    },
+    {
+      "number": 75,
+      "text": "Inception café conversation scene - slide 75 of 242"
+    },
+    {
+      "number": 76,
+      "text": "ChatGPT exploit screenshot beneath the message AI Guardrails are SOFT Boundaries - slide 76 of 242"
+    },
+    {
+      "number": 77,
+      "text": "Power Automate connection-settings screenshot illustrating a hard boundary that blocks access to another system - slide 77 of 242"
+    },
+    {
+      "number": 78,
+      "text": "Forest fight scene with Microsoft and other-vendor logos, captioned that the research has neglected non-Microsoft agents - slide 78 of 242"
+    },
+    {
+      "number": 79,
+      "text": "Agentforce 2.0 conference-stage photo with a seated audience - slide 79 of 242"
+    },
+    {
+      "number": 80,
+      "text": "Reconnaissance — and — Reverse Engineering - slide 80 of 242"
+    },
+    {
+      "number": 81,
+      "text": "Salesforce Einstein conversation preview with find the last 10 deals created highlighted - slide 81 of 242"
+    },
+    {
+      "number": 82,
+      "text": "Salesforce Agentforce reasoning screenshot highlighting the first step: selecting a topic sub-agent - slide 82 of 242"
+    },
+    {
+      "number": 83,
+      "text": "Agentforce topic-instructions screenshot beside a list of topic actions and tools - slide 83 of 242"
+    },
+    {
+      "number": 84,
+      "text": "Agentforce topic-instructions and action-list screenshot annotated that the default configuration has no write actions - slide 84 of 242"
+    },
+    {
+      "number": 85,
+      "text": "Salesforce Add from Asset Library screenshot showing many available actions, annotated that write actions can be added - slide 85 of 242"
+    },
+    {
+      "number": 86,
+      "text": "Salesforce Update Customer Contact action card showing its input and output schema - slide 86 of 242"
+    },
+    {
+      "number": 87,
+      "text": "What about guardrails? - slide 87 of 242"
+    },
+    {
+      "number": 88,
+      "text": "Salesforce Einstein chat refusing to reveal system instructions - slide 88 of 242"
+    },
+    {
+      "number": 89,
+      "text": "Salesforce Einstein refusal beside hidden Prompt Injection topic instructions that implement LLM guardrails - slide 89 of 242"
+    },
+    {
+      "number": 90,
+      "text": "Hidden-topic guardrail screenshot annotated that no guardrail applies after another topic is selected, with an Inception still - slide 90 of 242"
+    },
+    {
+      "number": 91,
+      "text": "Einstein architecture diagram tracing input through topic selection, orchestrator, tool, LLM, and final output - slide 91 of 242"
+    },
+    {
+      "number": 92,
+      "text": "Einstein architecture diagram with red No filter? annotations around the topic and tool paths - slide 92 of 242"
+    },
+    {
+      "number": 93,
+      "text": "😈 — How can we get malicious data into Salesforce? - slide 93 of 242"
+    },
+    {
+      "number": 94,
+      "text": "Salesforce Contact Us form filled with a malicious subject and description - slide 94 of 242"
+    },
+    {
+      "number": 95,
+      "text": "Google search results exposing webto.salesforce.com Contact Us pages - slide 95 of 242"
+    },
+    {
+      "number": 96,
+      "text": "Cartoon time-bomb illustration titled Booby trap Recent cases - slide 96 of 242"
+    },
+    {
+      "number": 97,
+      "text": "Recent-cases time bomb with the caveat We don’t control the timing - slide 97 of 242"
+    },
+    {
+      "number": 98,
+      "text": "Recent-cases time bomb with a randomized timer, emphasizing uncontrolled timing - slide 98 of 242"
+    },
+    {
+      "number": 99,
+      "text": "Black transition canvas with the presentation border and logo - slide 99 of 242"
+    },
+    {
+      "number": 100,
+      "text": "Inception antagonist still captioned Cases are your attack path, eh? - slide 100 of 242"
+    },
+    {
+      "number": 101,
+      "text": "Salesforce case description form with There’s a character limit highlighted - slide 101 of 242"
+    },
+    {
+      "number": 102,
+      "text": "Salesforce case-description form with its character limit highlighted, plus the callout Prompt injection in under 250 chars? - slide 102 of 242"
+    },
+    {
+      "number": 103,
+      "text": "Black transition canvas with the presentation border and logo - slide 103 of 242"
+    },
+    {
+      "number": 104,
+      "text": "Salesforce contacts table titled Step 1: Create multiple cases - slide 104 of 242"
+    },
+    {
+      "number": 105,
+      "text": "Video canvas titled Step 2: Upon triggering: detonate - slide 105 of 242",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2025-11-13_DefCamp2025_0clickEnterpriseCompromiseThankYouAI/c39ca9cc-alt2/media/media9.mp4"
+        }
+      ]
+    },
+    {
+      "number": 106,
+      "text": "Video canvas titled Result: All contact emails have been modified - slide 106 of 242",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2025-11-13_DefCamp2025_0clickEnterpriseCompromiseThankYouAI/c39ca9cc-alt2/media/media10.mp4"
+        }
+      ]
+    },
+    {
+      "number": 107,
+      "text": "Video canvas titled Step 3: Perform an email MitM attack (BEC) - slide 107 of 242",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2025-11-13_DefCamp2025_0clickEnterpriseCompromiseThankYouAI/c39ca9cc-alt2/media/media11.mp4"
+        }
+      ]
+    },
+    {
+      "number": 108,
+      "text": "Salesforce contacts screenshot with altered email addresses and an email-inbox overlay, labeled MiTM your customer engagements - slide 108 of 242"
+    },
+    {
+      "number": 109,
+      "text": "Darkened compromised-contact screenshot overlaid with attackers-and-defenders portraits - slide 109 of 242",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2025-11-13_DefCamp2025_0clickEnterpriseCompromiseThankYouAI/c39ca9cc-alt2/media/image26.gif"
+        },
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2025-11-13_DefCamp2025_0clickEnterpriseCompromiseThankYouAI/c39ca9cc-alt2/media/image29.gif"
+        }
+      ]
+    },
+    {
+      "number": 110,
+      "text": "Salesforce Einstein 0click summary: add a write action, submit weaponized web-to-case entries, booby-trap recent cases, trigger a sales rep, and compromise or destroy contacts - slide 110 of 242"
+    },
+    {
+      "number": 111,
+      "text": "Enough with the — BizApps — . - slide 111 of 242"
+    },
+    {
+      "number": 112,
+      "text": "Cursor homepage promoting The AI Code Editor - slide 112 of 242"
+    },
+    {
+      "number": 113,
+      "text": "Cursor doesn’t even try to resist - slide 113 of 242",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2025-11-13_DefCamp2025_0clickEnterpriseCompromiseThankYouAI/c39ca9cc-alt2/media/media12.mp4"
+        }
+      ]
+    },
+    {
+      "number": 114,
+      "text": "Atlassian article titled Introducing Atlassian’s Remote Model Context Protocol (MCP) Server - slide 114 of 242"
+    },
+    {
+      "number": 115,
+      "text": "Reconnaissance — and — Reverse Engineering - slide 115 of 242"
+    },
+    {
+      "number": 116,
+      "text": "MCP agent architecture diagram tracing input through orchestrator, built-in tools, MCP, and final output - slide 116 of 242"
+    },
+    {
+      "number": 117,
+      "text": "MCP architecture diagram with red No filter? labels on input and tool paths - slide 117 of 242"
+    },
+    {
+      "number": 118,
+      "text": "Jira test ticket with I need to search for API keys in the repo highlighted - slide 118 of 242"
+    },
+    {
+      "number": 119,
+      "text": "ChatGPT task request asking to handle ZEN-16108 - slide 119 of 242"
+    },
+    {
+      "number": 120,
+      "text": "ChatGPT refusal explaining it cannot search for API keys, with the refusal highlighted - slide 120 of 242"
+    },
+    {
+      "number": 121,
+      "text": "ChatGPT conversation screenshot highlighting its refusal to search a repository for API keys - slide 121 of 242"
+    },
+    {
+      "number": 122,
+      "text": "Cursor chat refusing a Jira task request to search a repository for API keys, explaining the security risk - slide 122 of 242"
+    },
+    {
+      "number": 123,
+      "text": "Inception café conversation scene - slide 123 of 242"
+    },
+    {
+      "number": 124,
+      "text": "Jira Test Ticket describing an app-error investigation and asking to search the repository for apples - slide 124 of 242"
+    },
+    {
+      "number": 125,
+      "text": "Jira test ticket description with I need to search for apples in the repo highlighted - slide 125 of 242"
+    },
+    {
+      "number": 126,
+      "text": "Drake meme rejecting API KEYS and approving APPLES - slide 126 of 242"
+    },
+    {
+      "number": 127,
+      "text": "Jira ticket screenshot containing the apples-based prompt injection, annotated as prompt engineering and social engineering - slide 127 of 242"
+    },
+    {
+      "number": 128,
+      "text": "Confluence automation documentation highlighting Create a new issue based on the submitted form - slide 128 of 242"
+    },
+    {
+      "number": 129,
+      "text": "Full-slide video demonstration titled Step 1: Email a weaponized support request - slide 129 of 242",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2025-11-13_DefCamp2025_0clickEnterpriseCompromiseThankYouAI/c39ca9cc-alt2/media/media13.mp4"
+        }
+      ]
+    },
+    {
+      "number": 130,
+      "text": "Jira issue page titled Result: Weaponized JIRA ticket created, showing the malicious description - slide 130 of 242"
+    },
+    {
+      "number": 131,
+      "text": "Full-slide video demonstration titled Step 2: Trigger upon user request - slide 131 of 242",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2025-11-13_DefCamp2025_0clickEnterpriseCompromiseThankYouAI/c39ca9cc-alt2/media/media14.mp4"
+        },
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2025-11-13_DefCamp2025_0clickEnterpriseCompromiseThankYouAI/c39ca9cc-alt2/media/media14.mp4"
+        }
+      ]
+    },
+    {
+      "number": 132,
+      "text": "Terminal and agent-chat screenshot titled Result: Secrets leaked - slide 132 of 242"
+    },
+    {
+      "number": 133,
+      "text": "Good Will Hunting window meme captioned How do you like them apples? - slide 133 of 242",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2025-11-13_DefCamp2025_0clickEnterpriseCompromiseThankYouAI/c39ca9cc-alt2/media/image136.gif"
+        }
+      ]
+    },
+    {
+      "number": 134,
+      "text": "Cursor and Jira MCP 0click summary: public issue trigger, weaponized ticket, victim prompts Cursor, and developer secrets are harvested and exfiltrated - slide 134 of 242"
+    },
+    {
+      "number": 135,
+      "text": "Cartoon corridor of AI agent doors for Gemini, Agentforce, Atlassian, and Jira, with a reaper and red question mark - slide 135 of 242"
+    },
+    {
+      "number": 136,
+      "text": "Cartoon corridor of AI agent doors with a reaper and an additional ChatGPT door - slide 136 of 242"
+    },
+    {
+      "number": 137,
+      "text": "Black Hat Europe talk screenshot about a chat-with-code plugin, annotated Automated tool invocation equals chaos - slide 137 of 242"
+    },
+    {
+      "number": 138,
+      "text": "Black Hat Europe talk screenshot showing SpAIware persistent prompt injection in memory - slide 138 of 242"
+    },
+    {
+      "number": 139,
+      "text": "Black Hat Europe talk screenshot showing a url_safe tool bypass through Azure Blob Storage - slide 139 of 242"
+    },
+    {
+      "number": 140,
+      "text": "Inception antagonist still captioned No one will paste a malicious URL, document, or image into ChatGPT - slide 140 of 242"
+    },
+    {
+      "number": 141,
+      "text": "Black transition slide with an empty media frame and a blue CONNECTORS label under As we were saying - slide 141 of 242"
+    },
+    {
+      "number": 142,
+      "text": "ChatGPT connector settings showing Jira, Box, Dropbox, GitHub, Gmail, Google Calendar, Drive, and other apps - slide 142 of 242"
+    },
+    {
+      "number": 143,
+      "text": "ChatGPT connector settings with Google Drive highlighted - slide 143 of 242"
+    },
+    {
+      "number": 144,
+      "text": "ChatGPT 0click diagram beginning with a Google Drive search notification - slide 144 of 242"
+    },
+    {
+      "number": 145,
+      "text": "ChatGPT 0click diagram adding a booby-trapped file beneath the Drive notification - slide 145 of 242"
+    },
+    {
+      "number": 146,
+      "text": "ChatGPT 0click diagram connecting the booby-trapped file to a second Google Drive search - slide 146 of 242"
+    },
+    {
+      "number": 147,
+      "text": "ChatGPT 0click diagram extending the Drive chain to a file-search result, labeled 1click - slide 147 of 242"
+    },
+    {
+      "number": 148,
+      "text": "ChatGPT 0click diagram where the Drive result also creates an updated saved memory, advancing from 1click to 0click - slide 148 of 242"
+    },
+    {
+      "number": 149,
+      "text": "Bugs Bunny crossing a START line beneath the word HACKING - slide 149 of 242",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2025-11-13_DefCamp2025_0clickEnterpriseCompromiseThankYouAI/c39ca9cc-alt2/media/image51.gif"
+        }
+      ]
+    },
+    {
+      "number": 150,
+      "text": "Reconnaissance — and — Reverse Engineering - slide 150 of 242"
+    },
+    {
+      "number": 151,
+      "text": "File Search tool documentation highlighting search and open files, with a note contrasting msearch and mclick - slide 151 of 242"
+    },
+    {
+      "number": 152,
+      "text": "File Data Search documentation highlighting Google Drive and other connected sources as one tool for every file search - slide 152 of 242"
+    },
+    {
+      "number": 153,
+      "text": "msearch tool response showing file metadata and a content preview - slide 153 of 242"
+    },
+    {
+      "number": 154,
+      "text": "msearch tool response with the metadata source field highlighted - slide 154 of 242"
+    },
+    {
+      "number": 155,
+      "text": "msearch tool response with a numbered content-preview line highlighted - slide 155 of 242"
+    },
+    {
+      "number": 156,
+      "text": "msearch built-in-defense slide showing the complete tool response beside an Inception antagonist still - slide 156 of 242"
+    },
+    {
+      "number": 157,
+      "text": "msearch response highlighting wrapper tags around the entire tool call - slide 157 of 242"
+    },
+    {
+      "number": 158,
+      "text": "msearch response highlighting numbered reference markers as search-result delimiters and citations - slide 158 of 242"
+    },
+    {
+      "number": 159,
+      "text": "msearch response highlighting a prefix on every untrusted content line, with a link to the Spotlighting paper - slide 159 of 242"
+    },
+    {
+      "number": 160,
+      "text": "Black transition slide with an empty media frame under As we were saying - slide 160 of 242"
+    },
+    {
+      "number": 161,
+      "text": "msearch response with every content line numbered, annotated that the numbering is important - slide 161 of 242"
+    },
+    {
+      "number": 162,
+      "text": "Parsed policy-document screenshot highlighting injected instructions that bypassed several delimiters but still failed - slide 162 of 242"
+    },
+    {
+      "number": 163,
+      "text": "ChatGPT refusal screenshot explaining that embedded memory instructions were not a user-directed command - slide 163 of 242"
+    },
+    {
+      "number": 164,
+      "text": "Mortal Kombat-style Finish him scene - slide 164 of 242"
+    },
+    {
+      "number": 165,
+      "text": "Bio tool documentation highlighting that the tool persists information across conversations - slide 165 of 242"
+    },
+    {
+      "number": 166,
+      "text": "Bio tool documentation annotated with the goal of compromising future sessions - slide 166 of 242"
+    },
+    {
+      "number": 167,
+      "text": "ChatGPT screenshot beginning a bio-infection test with untrusted data in context - slide 167 of 242"
+    },
+    {
+      "number": 168,
+      "text": "ChatGPT screenshot asking directly to memorize the number 12 - slide 168 of 242"
+    },
+    {
+      "number": 169,
+      "text": "ChatGPT refusal screenshot stating it cannot permanently store the user’s age because the user is a child - slide 169 of 242"
+    },
+    {
+      "number": 170,
+      "text": "ChatGPT screenshot claiming the bio tool was disabled and the information was not saved - slide 170 of 242"
+    },
+    {
+      "number": 171,
+      "text": "ChatGPT screenshot annotated that untrusted data silently turned off the bio tool - slide 171 of 242"
+    },
+    {
+      "number": 172,
+      "text": "Respect meme captioned Admit defeat. Walk away. - slide 172 of 242",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2025-11-13_DefCamp2025_0clickEnterpriseCompromiseThankYouAI/c39ca9cc-alt2/media/image161.gif"
+        }
+      ]
+    },
+    {
+      "number": 173,
+      "text": "Inception still captioned Admit defeat. Walk away. Said no hacker, ever. - slide 173 of 242"
+    },
+    {
+      "number": 174,
+      "text": "Start small. - slide 174 of 242"
+    },
+    {
+      "number": 175,
+      "text": "Start small diagram showing a booby-trapped Drive file that must be summarized, turning the attack into a 1click exploit - slide 175 of 242"
+    },
+    {
+      "number": 176,
+      "text": "Policy document screenshot highlighting abused control-flow tokens, annotated prompt engineering and social engineering - slide 176 of 242"
+    },
+    {
+      "number": 177,
+      "text": "List of many policy-document revisions beside a Try Again meme - slide 177 of 242",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2025-11-13_DefCamp2025_0clickEnterpriseCompromiseThankYouAI/c39ca9cc-alt2/media/image166.gif"
+        }
+      ]
+    },
+    {
+      "number": 178,
+      "text": "ChatGPT refusal screenshot explaining that embedded instructions were not official policy and lacked direct user consent - slide 178 of 242"
+    },
+    {
+      "number": 179,
+      "text": "Prompt injection — == — Prompt engineering - slide 179 of 242"
+    },
+    {
+      "number": 180,
+      "text": "You know who’s great at prompt — eng — ? - slide 180 of 242"
+    },
+    {
+      "number": 181,
+      "text": "ChatGPT memory-debugging screenshots showing an injected policy document and the model’s hidden reasoning - slide 181 of 242"
+    },
+    {
+      "number": 182,
+      "text": "ChatGPT policy text instructing a memory and tool injection into Internet Use Policy v16.docx, with the malicious block highlighted - slide 182 of 242"
+    },
+    {
+      "number": 183,
+      "text": "Policy injection detail highlighting explicit user-message markup - slide 183 of 242"
+    },
+    {
+      "number": 184,
+      "text": "Drive exploit diagram chaining a booby-trapped file, a second Drive search, and a document result under This is a pretty good 1click - slide 184 of 242"
+    },
+    {
+      "number": 185,
+      "text": "Screenshot of the DefCamp talk listing with title corrections, captioned But this is not the talk’s title - slide 185 of 242"
+    },
+    {
+      "number": 186,
+      "text": "Inception antagonist still captioned No-one will search for your weaponized file. This is lame. - slide 186 of 242"
+    },
+    {
+      "number": 187,
+      "text": "Slide asking why any meeting-summary question cannot be booby-trapped for 0click, with an Inception still - slide 187 of 242"
+    },
+    {
+      "number": 188,
+      "text": "Meeting-summary 0click slide showing increasingly long prompt payload excerpts - slide 188 of 242"
+    },
+    {
+      "number": 189,
+      "text": "Getting that 0click diagram beginning with a booby-trapped Drive file and a summarize-this-file prompt - slide 189 of 242"
+    },
+    {
+      "number": 190,
+      "text": "Getting that 0click diagram adding a second Google Drive search step - slide 190 of 242"
+    },
+    {
+      "number": 191,
+      "text": "Getting that 0click diagram adding a third Drive step and retrieved document content - slide 191 of 242"
+    },
+    {
+      "number": 192,
+      "text": "Video demonstration slide titled Our victim stores API keys in a Google Worksheet - slide 192 of 242",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2025-11-13_DefCamp2025_0clickEnterpriseCompromiseThankYouAI/c39ca9cc-alt2/media/media15.mp4"
+        }
+      ]
+    },
+    {
+      "number": 193,
+      "text": "Video canvas titled Step 1: Share a weaponized document - slide 193 of 242",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2025-11-13_DefCamp2025_0clickEnterpriseCompromiseThankYouAI/c39ca9cc-alt2/media/media16.mp4"
+        }
+      ]
+    },
+    {
+      "number": 194,
+      "text": "Video canvas titled Step 2: Upon triggering, detonate - slide 194 of 242",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2025-11-13_DefCamp2025_0clickEnterpriseCompromiseThankYouAI/c39ca9cc-alt2/media/media17.mp4"
+        }
+      ]
+    },
+    {
+      "number": 195,
+      "text": "Video canvas titled Result: Leaked secrets - slide 195 of 242",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2025-11-13_DefCamp2025_0clickEnterpriseCompromiseThankYouAI/c39ca9cc-alt2/media/media18.mp4"
+        }
+      ]
+    },
+    {
+      "number": 196,
+      "text": "Leonardo DiCaprio and Captain Picard meme labeled ATTACKERS and DEFENDERS - slide 196 of 242",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2025-11-13_DefCamp2025_0clickEnterpriseCompromiseThankYouAI/c39ca9cc-alt2/media/image26.gif"
+        },
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2025-11-13_DefCamp2025_0clickEnterpriseCompromiseThankYouAI/c39ca9cc-alt2/media/image29.gif"
+        }
+      ]
+    },
+    {
+      "number": 197,
+      "text": "Slide stating But we really want that memory implant, with an Inception antagonist still - slide 197 of 242"
+    },
+    {
+      "number": 198,
+      "text": "Memory-implant constraints: a session starts with bio enabled, but untrusted data entering context turns it off - slide 198 of 242"
+    },
+    {
+      "number": 199,
+      "text": "Question asking whether the implant can be injected after untrusted data is read but before it is written into context - slide 199 of 242"
+    },
+    {
+      "number": 200,
+      "text": "ChatGPT prompt asking it to remember the user is 21 and name the latest Google Drive file used - slide 200 of 242"
+    },
+    {
+      "number": 201,
+      "text": "ChatGPT response confirming updated memory and reading Google Drive - slide 201 of 242"
+    },
+    {
+      "number": 202,
+      "text": "ChatGPT screenshot showing saved-memory and Drive-reading indicators, annotated that bio is still on while ChatGPT is thinking - slide 202 of 242"
+    },
+    {
+      "number": 203,
+      "text": "Michael Scott meme reading Now let’s have some fun! - slide 203 of 242"
+    },
+    {
+      "number": 204,
+      "text": "Video demonstration canvas for ChatGPT memory exploitation - slide 204 of 242",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2025-11-13_DefCamp2025_0clickEnterpriseCompromiseThankYouAI/c39ca9cc-alt2/media/media19.mp4"
+        }
+      ]
+    },
+    {
+      "number": 205,
+      "text": "ChatGPT and exfiltration screenshots showing an attacker receiving a live feed of the user’s later interactions - slide 205 of 242"
+    },
+    {
+      "number": 206,
+      "text": "Leonardo DiCaprio and Captain Picard meme captioned And THAT is a 0click - slide 206 of 242",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2025-11-13_DefCamp2025_0clickEnterpriseCompromiseThankYouAI/c39ca9cc-alt2/media/image26.gif"
+        },
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2025-11-13_DefCamp2025_0clickEnterpriseCompromiseThankYouAI/c39ca9cc-alt2/media/image29.gif"
+        }
+      ]
+    },
+    {
+      "number": 207,
+      "text": "Diagram of a user, ChatGPT agent, and toolbox of tools - slide 207 of 242"
+    },
+    {
+      "number": 208,
+      "text": "User-agent-tools diagram with the tools stamped PWNED - slide 208 of 242"
+    },
+    {
+      "number": 209,
+      "text": "User-agent-tools diagram with both the ChatGPT agent and tools stamped PWNED - slide 209 of 242"
+    },
+    {
+      "number": 210,
+      "text": "User-agent-tools diagram with repeated PWNED stamps over tools and a connector-settings screenshot - slide 210 of 242"
+    },
+    {
+      "number": 211,
+      "text": "User-agent-tools diagram showing the agent and tools pwned while the user remains unaffected - slide 211 of 242"
+    },
+    {
+      "number": 212,
+      "text": "Video demonstration canvas for a persistent-memory exploit - slide 212 of 242",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2025-11-13_DefCamp2025_0clickEnterpriseCompromiseThankYouAI/c39ca9cc-alt2/media/media20.mp4"
+        }
+      ]
+    },
+    {
+      "number": 213,
+      "text": "ChatGPT Saved memories page listing two malicious accommodation memories - slide 213 of 242"
+    },
+    {
+      "number": 214,
+      "text": "Saved memories page with an arrow highlighting the injected import openai requirement - slide 214 of 242"
+    },
+    {
+      "number": 215,
+      "text": "Saved memories page with arrows highlighting the malicious ADA meeting-summary requirement - slide 215 of 242"
+    },
+    {
+      "number": 216,
+      "text": "ChatGPT coding response for an OpenAI conversational agent, showing generated Python beginning with import openai - slide 216 of 242"
+    },
+    {
+      "number": 217,
+      "text": "Repeated web article code example showing the compromised conversational agent implementation - slide 217 of 242"
+    },
+    {
+      "number": 218,
+      "text": "Compromised conversational-agent code example overlaid with attackers-and-defenders meme - slide 218 of 242",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2025-11-13_DefCamp2025_0clickEnterpriseCompromiseThankYouAI/c39ca9cc-alt2/media/image26.gif"
+        },
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2025-11-13_DefCamp2025_0clickEnterpriseCompromiseThankYouAI/c39ca9cc-alt2/media/image29.gif"
+        }
+      ]
+    },
+    {
+      "number": 219,
+      "text": "User-agent-tools diagram showing the agent and tools pwned while the user remains unaffected - slide 219 of 242"
+    },
+    {
+      "number": 220,
+      "text": "User-agent-tools diagram with the user, agent, and tools all stamped PWNED - slide 220 of 242"
+    },
+    {
+      "number": 221,
+      "text": "ChatGPT logo on black - slide 221 of 242",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2025-11-13_DefCamp2025_0clickEnterpriseCompromiseThankYouAI/c39ca9cc-alt2/media/media21.mp4"
+        }
+      ]
+    },
+    {
+      "number": 222,
+      "text": "ChatGPT 0click summary: a weaponized document booby-traps meeting-summary questions, harvests connector data, exfiltrates it, and implants persuasive persistent memory - slide 222 of 242"
+    },
+    {
+      "number": 223,
+      "text": "Message that AI guardrails are soft boundaries and will not prevent an attack; attackers use LLMs too - slide 223 of 242"
+    },
+    {
+      "number": 224,
+      "text": "Inception café conversation scene - slide 224 of 242"
+    },
+    {
+      "number": 225,
+      "text": "Hard-boundary examples covering tool chaining, SharePoint selection, bio restrictions, numbered-line injection, image rendering, case length, and external Teams messages - slide 225 of 242"
+    },
+    {
+      "number": 226,
+      "text": "Neon retro graphic reading It’s like the 90th again with a floppy disk, computer, and skull - slide 226 of 242"
+    },
+    {
+      "number": 227,
+      "text": "Neon Black Hat graphic reading It’s like tactical nuke again with ACT NOW overlaid - slide 227 of 242"
+    },
+    {
+      "number": 228,
+      "text": "AI Enterprise Compromise: — 0click Exploit Methods — Inbar Raz - slide 228 of 242"
+    },
+    {
+      "number": 229,
+      "text": "Steve Jobs holding a clicker beside one more thing - slide 229 of 242"
+    },
+    {
+      "number": 230,
+      "text": "Crowded compromise diagram with overlapping PWNED stamps across user, user machine, agent, and tools - slide 230 of 242"
+    },
+    {
+      "number": 231,
+      "text": "Compromise diagram showing the user machine, agent, and tools pwned while the user remains unaffected - slide 231 of 242"
+    },
+    {
+      "number": 232,
+      "text": "Repeated compromise diagram showing the user machine, agent, and tools pwned - slide 232 of 242"
+    },
+    {
+      "number": 233,
+      "text": "Memory implant means more than persistence. - slide 233 of 242"
+    },
+    {
+      "number": 234,
+      "text": "Simpsons meme labeled BADGPT - slide 234 of 242"
+    },
+    {
+      "number": 235,
+      "text": "Video demonstration canvas for the final memory-inception sequence - slide 235 of 242",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2025-11-13_DefCamp2025_0clickEnterpriseCompromiseThankYouAI/c39ca9cc-alt2/media/media22.mp4"
+        }
+      ]
+    },
+    {
+      "number": 236,
+      "text": "ChatGPT Saved memories page with a malicious accommodation and Twitter-related memory highlighted - slide 236 of 242"
+    },
+    {
+      "number": 237,
+      "text": "Compromise diagram with user, user machine, agent, and tools all stamped PWNED - slide 237 of 242"
+    },
+    {
+      "number": 238,
+      "text": "Dark slide with a small blue YOU label near the center and a gold emblem - slide 238 of 242",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2025-11-13_DefCamp2025_0clickEnterpriseCompromiseThankYouAI/c39ca9cc-alt2/media/media21.mp4"
+        }
+      ]
+    },
+    {
+      "number": 239,
+      "text": "Inception café conversation scene - slide 239 of 242"
+    },
+    {
+      "number": 240,
+      "text": "Inception airplane still of Cillian Murphy labeled YOU and INCEPTION - slide 240 of 242"
+    },
+    {
+      "number": 241,
+      "text": "Leonardo DiCaprio and Captain Picard meme labeled ATTACKERS and DEFENDERS - slide 241 of 242",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2025-11-13_DefCamp2025_0clickEnterpriseCompromiseThankYouAI/c39ca9cc-alt2/media/image29.gif"
+        },
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2025-11-13_DefCamp2025_0clickEnterpriseCompromiseThankYouAI/c39ca9cc-alt2/media/image26.gif"
+        }
+      ]
+    },
+    {
+      "number": 242,
+      "text": "Closing title slide for AI Enterprise Compromise: 0click Exploit Methods with the labs.zenity.io/hsc25 link - slide 242 of 242"
+    }
+  ]
+}

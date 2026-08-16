@@ -1,0 +1,302 @@
+{
+  "generated_by": "sync-talk-text",
+  "source_manifest": "https://media.mbgsec.com/decks/2023-04-22_BSidesNYC_Dominating_the_Enterprise_via_Low_Code_Abuse/latest.json",
+  "manifest": "https://media.mbgsec.com/decks/2023-04-22_BSidesNYC_Dominating_the_Enterprise_via_Low_Code_Abuse/d43abfbe/deck.json",
+  "title": "Low Code High Risk: Enterprise Domination via Low Code Abuse",
+  "slides": [
+    {
+      "number": 1,
+      "text": "Low Code High Risk: Enterprise Domination via Low Code Abuse — Michael Bargury, Zenity — BSides NYC 2023 — slide 1 of 70"
+    },
+    {
+      "number": 2,
+      "text": "About me - OWASP LCNC Top 10 project lead - CTO and co-founder @ Zenity - Ex MSFT cloud security - Dark Reading columnist W @mbrg0 De | bit.ly/Icsec — slide 2 of 70"
+    },
+    {
+      "number": 3,
+      "text": "Disclaimer This talk is presented from an attacker's perspective with the goal of raising awareness to the risks of underestimating the security impact of Low Code. Low Code is awesome. — slide 3 of 70"
+    },
+    {
+      "number": 4,
+      "text": "Outline * Low Code in a nutshell * Low Code attacks observed in the wild * Living off the land - account takeover, lateral movement, PrivEsc, data exfil * Hiding in plain sight * Leveraging predictable misconfigs from the outside * How to defend * The latest addition to your red team arsenal — slide 4 of 70"
+    },
+    {
+      "number": 5,
+      "text": "Low Code in a Nutshell — slide 5 of 70"
+    },
+    {
+      "number": 6,
+      "text": "Exponential Growth in Business Development No. Apps lee} oO A 74K Thousands (op) () A iN fo) rN 37K N o} A 9K ~ 2018 2019 2020 2021 2022 — slide 6 of 70"
+    },
+    {
+      "number": 7,
+      "text": "Why Low — Cod e ? ASKED'IT:FOR NEXT QUARTER | — slide 7 of 70"
+    },
+    {
+      "number": 8,
+      "text": "If it sounds familiar, its because it is <a Microsoft Visual Basic - No Elle Edit View Insert Fe M@-dW 4 aaa Normal - NewMacros (Code) een | 5 (General) = &8 Normal cy Sub Macro1() (© (Bl Microsoft Word Obje i = G3 Modules 4 ' Macrol Macro @2 NewMacros * comments & &F Project (Document1) v ' « i… — slide 8 of 70"
+    },
+    {
+      "number": 9,
+      "text": "Build everything - If this than that automation S| - Integrations - Business apps - Whole products - Mobile apps Insert Popular Input ate De tom ‘Choose app & event ‘Choose account choose — slide 9 of 70"
+    },
+    {
+      "number": 10,
+      "text": "Available in every major enterprise Za pier rmx] mendix ak mmake Betty Blocks . F van = Microsoft Ooutsystems pp — slide 10 of 70"
+    },
+    {
+      "number": 11,
+      "text": "Recap V7 Available on every major enterprise JV Has access to business data and powers business processes ¥ Runs as Saas (difficult to monitor) V Underrated by IT/Sec — slide 11 of 70"
+    },
+    {
+      "number": 12,
+      "text": "& zenity Low Code Attacks In The Wild Pe — slide 12 of 70"
+    },
+    {
+      "number": 13,
+      "text": "Demonstration of credential exposure through a collaboration automation; use the embedded YouTube control to play it — slide 13 of 70",
+      "media": [
+        {
+          "type": "youtube",
+          "title": "defcon30 Ohh sorry I'm on another call",
+          "url": "https://www.youtube.com/watch?v=5naPxs0fEJc"
+        }
+      ]
+    },
+    {
+      "number": 14,
+      "text": "Step by step Add a new app connection ‘Add a new app connection | O slack Slack [By Forms for stack Dislack { @ New connection added My connections @ Slack @michaelbargury (pwntoso) C@micnaabarguy Ipwrtos)- added 21 soconds age & Share ° Zane Orv ns, Zapier is requesting permission to access the… — slide 14 of 70"
+    },
+    {
+      "number": 15,
+      "text": "Behind the scenes RESTful API defined in swagger How does the app authenticate to slack? How do different users get authenticated by the same app? https://docs.microsoft.com/en-us/connectors/connectors — slide 15 of 70"
+    },
+    {
+      "number": 16,
+      "text": "Behind the scenes RESTful API =). defined in Credential and metadata store _ bd on swagger 2 Azure API Management Storing and sharing refresh tokens https://docs.microsoft.com/en-us/connectors/connectors — slide 16 of 70"
+    },
+    {
+      "number": 17,
+      "text": "Ready, set, AUTOMATE! > Premium & & Premiun tf) A Create SQL Server rows from new Google Add info to a Google Sheet from new Forms responses Add new Facebook Lead Ads leadstorows wephook POST requests on Google Sheets Google Forms + SQL Server > Webhooks by Zapier + Google Sheets Facebook Lead… — slide 17 of 70"
+    },
+    {
+      "number": 18,
+      "text": "Connections in Zenity Stage (default Name Ey Zenity Zenity oO {BaseResourceUrl} HTTP with Azure AD o ystage.com Microsoft Teams tyio SQL Server ystage.com SQL Server ystage.com SQL Server stagecom SharePoint rstage.com Power Platform for Admins ystage.com Power Platform for Admins ystage.com… — slide 18 of 70"
+    },
+    {
+      "number": 19,
+      "text": "Credential Sharing as a Service Assets ES5 Power Automate ~ : : 5 ory Ooms ° Sth Connections in Zenity Stage (default) +o cr Modified a Monitor veut B rors vans Be ons 2c Shared with me 4 52 2 By coogi shoots 5: = 11Connection [o) — slide 19 of 70"
+    },
+    {
+      "number": 20,
+      "text": "Credential Sharing as a Service Desa epagoa 9) 43 Privilege escalation | (o) —S 2g @gmaiicom — slide 20 of 70"
+    },
+    {
+      "number": 21,
+      "text": "Ransomware thru action connections a8 1a u | u a [ Ransomware — slide 21 of 70"
+    },
+    {
+      "number": 22,
+      "text": "4 Inbox Show advanced options. Ee) Send an email notification (V3) “To finance.external@malicious site * Subject Finance email notification *Body Font ~ Wy BI U Aili from: BY From Subject Show advanced options g @ a <p [O) Exfiltrate email thru the platform’s email account [ Data exfiltration — slide 22 of 70"
+    },
+    {
+      "number": 23,
+      "text": "Move to machine Machines Check the real-time health and status of your machines and the desktop flows running on them. Learn more Machines Machine groups _ VM images (preview) Machine name 1 Gateways Description myrpa ~ myrpa ~ @ wintt = Desktop flows . @ x “Wiggers Actions see more una flow… — slide 23 of 70"
+    },
+    {
+      "number": 24,
+      "text": "Introducing name app.name app_icon _connection created 24 SalesOps 3109:18:36Z ZapCreds connection tit! Bobby.Atkins Lola Bi mycompany rton@my Google Calendar shnw@gmail.com Google Drive bby.Atkinson@mycompar \" ca Sariah.Cote@mycompany.com Sariah, ycompany.c neNote gibsonm@out! — slide 24 of 70"
+    },
+    {
+      "number": 25,
+      "text": "Can we fool users to create connections for us? - Set up a bait app that does something useful - Generate connections on-the-fly - Fool users to use it - Pwn their connection (i.e. account) [ Account takeover | — slide 25 of 70"
+    },
+    {
+      "number": 26,
+      "text": "Power Platform credential harvesting demonstration; use the embedded YouTube control to play it — slide 26 of 70",
+      "media": [
+        {
+          "type": "youtube",
+          "title": "defcon30 Power Platform credential harvesting",
+          "url": "https://www.youtube.com/watch?v=vJZpNJRC_10"
+        }
+      ]
+    },
+    {
+      "number": 27,
+      "text": "Can we get rid of this pesky approve window? — slide 27 of 70"
+    },
+    {
+      "number": 28,
+      "text": "Can we get rid of this pesky approve window? Almost there (Out of Office_1526 needs your permission to use the fellowing, Please allow the permissions to proceed. Office 365 Outlook 1) Office 365 Users Microsoft | Docs pb Set-AdminPowerAppApis ToBypassConsent nit bypass of an app Description The… — slide 28 of 70"
+    },
+    {
+      "number": 29,
+      "text": "& zenity Low Code Attacks In The Wild , — slide 29 of 70"
+    },
+    {
+      "number": 30,
+      "text": "This has been done before incipenr veraits (7 pete a ‘This APT group targets organizations across multiple GE L2a9ing and ausiting non-owner aa industries, including government agencies, nancial 2) aides sccoss would have inaittions, and technology compares. ‘elected malicious behavior, @: 2008… — slide 30 of 70"
+    },
+    {
+      "number": 31,
+      "text": "Dump files and tweet about it on a schedule > . |. =aS » — slide 31 of 70"
+    },
+    {
+      "number": 32,
+      "text": "Encrypt on command o-f-o¢- 6 — slide 32 of 70"
+    },
+    {
+      "number": 33,
+      "text": "Persistency What do we want? Li Remote execution QO Arbitrary payloads LU Maintain access (even if user account access get revokes) UO Avoid detection O Avoid attribution OINo logs — slide 33 of 70"
+    },
+    {
+      "number": 34,
+      "text": "Persistency v1 k Persistency SS — slide 34 of 70"
+    },
+    {
+      "number": 35,
+      "text": "Persistency v1 ee What do we want? — slide 35 of 70"
+    },
+    {
+      "number": 36,
+      "text": "Persistency v1 ricer Lopes What do we want? a a Remote Ss execution i payloads ER crnane — slide 36 of 70"
+    },
+    {
+      "number": 37,
+      "text": "Persistency v1 Triecer What do we want? Workato webhook address © Copy 2 & sear https://www.workato.com/webhooks/rest/4b b9afed-dc92-4b0e-b43c-63a7a80d47ee/rans Remote execution x] Arbitrary seco payloads ann Maintain ig) wnnaavanon access — slide 37 of 70"
+    },
+    {
+      "number": 38,
+      "text": "Persistency v1 Triecer Workato webhook address © Copy Remote wees Somebody else’s cloud execution a x] Arbitrary (Eb) vowinnd ns corres tonne te ay oa d S (i) enseracncsom aintain access Avoid detection — slide 38 of 70"
+    },
+    {
+      "number": 39,
+      "text": "Persistency v1 Triecer o« ) Remote A SS Call endpoint execution lyt : = reer Arbitrary (Q) owe te conten wom cote OY ayl Oa d S eerste oreo aintain access | Avoid detection Avoid attribution — slide 39 of 70"
+    },
+    {
+      "number": 40,
+      "text": "Persistency v1 Workato webhook address © Copy https:/) b9afed What do we want? Remote execution x] Arbitrary ayloads aintain access Avoid detection Avoid WWuU WL attribution x] No logs — slide 40 of 70"
+    },
+    {
+      "number": 41,
+      "text": "Persistency v2 Leak SharePoint @ as Save email attachments from Outlook.com to Dro... HTTP Webhook ® cata x [EM crema > 0° Execute SQL stored procedure and notify via Tea. Button -> Execute a SQL query (V2) @ — slide 41 of 70"
+    },
+    {
+      "number": 42,
+      "text": "Persistency v2 Leak SharePoint @ as Save email attachments from Outlook.com to Dro.. HTTP Webhook Ow > 0° Execute SQL stored procedure and notify via Tea. subscribe ~ Rocky SharePoint Ransomware & What do we want? xJArbitrary payloads ben > ts Sn 0 # xINo logs — slide 42 of 70"
+    },
+    {
+      "number": 43,
+      "text": "Solving persistency Our current state: Remote execution x]Arbitrary payloads Maintain access Avoid detection Avoid attribution x]No logs — slide 43 of 70"
+    },
+    {
+      "number": 44,
+      "text": "Executing arbitrary commands Power Automate Management Power Automate Management connector enables interaction with Power Automate Management service. For example: creating, editing, and updating flows. Administrators who want to perform operations with admin privileges should call actions with… — slide 44 of 70"
+    },
+    {
+      "number": 45,
+      "text": "Introducing Powerful! github.com/mbrg/powerful — slide 45 of 70"
+    },
+    {
+      "number": 46,
+      "text": "© Flow fectory D Undo Redo Fl Comments [El save Q% Fowchecker 2 Test 2 ery 26 aA venom (Bfemmains SC CY vnovdiarnine [Picomnaie = SS™~«@~d; vrowcetnion [ES canmancina. x ] \"Pow Sate TE cenmncsra. x satu Code [= ] suuscoae [eo ] — slide 46 of 70"
+    },
+    {
+      "number": 47,
+      "text": "List authenticated sessions to use Case deleteFiow — slide 47 of 70"
+    },
+    {
+      "number": 48,
+      "text": "© Fowtecory 5 Undo © edo Tl Comments El Save > Fowchesker J Test : oa d EEE D = d on [> ere ear Bo~- eon. Bo oA we * Enirorment [Therein * Enron [Theres —‘i‘ CY vironment [Thomann +*Flow Display Name [Tempe s—~—~S~—sSY “Flow [Theoden iC Cd J Se vous [Efcmmenme SSCS C*SY Erstamcien () | SEREwenS… — slide 48 of 70"
+    },
+    {
+      "number": 49,
+      "text": "from explore.flow factory.client import EXAMPLE, FlowFactory WEBHOOK = “https: //logic.azure.com:443/workflows/<workflow_id>/triggers/manual /paths/invoke? api -version=2016-06-01&sig=<sig>” factory = FlowFactory(webhook=WEBHOOK) connections = factory.get_connections(environment_id=EXxAMPLE[”… — slide 49 of 70"
+    },
+    {
+      "number": 50,
+      "text": "Powerful (persistency v3) 1. Set up your flow factory 2. Control it though API and a Python CLI github.com/mbrg/powerful What do we want? Remote execution Arbitrary ayloads aintain access Avoid detection Avoid | attribution No logs — slide 50 of 70"
+    },
+    {
+      "number": 51,
+      "text": "& zenity Low Code Attacks In The Wild From the outside looking in — slide 51 of 70"
+    },
+    {
+      "number": 52,
+      "text": "Power Portals/Pages? Microsoft Power Platform The low code platform that spans Microsoft 365, Azure, Dynamics 365, and standalone apps. le D> wis Power BI Power Apps — Power Automate Power Virtual Agenjs Power Pages Business analytics App development Process automation Intelligent virtual agent… — slide 52 of 70"
+    },
+    {
+      "number": 53,
+      "text": "© @ zenzen123,powerappsportals.com er > era @ @ M Gmail @B YouTube Maps db dbéfreenet-MySQ... J$ How to Checkif an. Reverse Whois Loo... [Ei Verifying the Email... €) danielmiessler/Sec.... WH How to Hack APIs i © Company name Home | Pages~ | Contactus | Q | Sign Add a call to action here — slide 53 of 70"
+    },
+    {
+      "number": 54,
+      "text": "What’s ODATA and why should we care “An open protocol to allow the creation and consumption of queryable and interoperable RESTful APIs in a simple dnd standard way.” Power portals can be configured to provide access to SQL tables through ODATA using a specific URL:… — slide 54 of 70"
+    },
+    {
+      "number": 55,
+      "text": "What’s ODATA and why should we care “An open protocol to allow the creation and consumption of queryable and interoperable RESTful APIs in a simple dnd standard way.” Power portals can be configured to provide access to SQL tables through ODATA using a specific URL: By Design: How Default… — slide 55 of 70"
+    },
+    {
+      "number": 56,
+      "text": "The fun begins Goal: find misconfigured portals that expose sensitive data w/o auth. Real world example: v<service xmlns=\"http: //www.w3.org/2007/app\" xmlns:atom=\"http: //www.w3.org/20@5/Atom\" xml: base= v<workspace> <atom:title type=\"text\" >Default</atom:title> v<collection… — slide 56 of 70"
+    },
+    {
+      "number": 57,
+      "text": "Nothing to see here /_odata/globalvariables: \"scs_globalvariablesid”:\"24 iii ——'s\",\"scs name\":\"Documents API Auth Token\",\"scs_values\":\"Bearer eyJ0eXAi ‘se: irpose\":\"This variable stores OAuth Token to access Azure API reatedon’ 18:03:39; \"view-id\":\"bcSc3} 9c\", \"entity-permissions-enabled”:\"true’ — slide 57 of 70"
+    },
+    {
+      "number": 58,
+      "text": "Can we scale it? Recall the portal url: @ zenzen123|powerappsportals.com — slide 58 of 70"
+    },
+    {
+      "number": 59,
+      "text": "Can we scale it? Recall the portal url: @ zenzen123|powerappsportals.com Let’s use Bing! EE Microsoft Bing site:powerappsportals.com ALL WORK IMAGES VIDEOS MAPS. 57,200 Results zenity.io/blog/the-microsoft-power-apps-portal-data-leak-revisited-are-you-safe-now/ — slide 59 of 70"
+    },
+    {
+      "number": 60,
+      "text": "ODATA leak - what we found - Vulnerability disclosures are in progress - Found - Pll - emails, names, calendar events - Secrets - API keys, authentication tokens - Business data - sales accounts, business contacts, vendor lists… — slide 60 of 70"
+    },
+    {
+      "number": 61,
+      "text": "Can we find more exposed data? 3 Storage by Zapier integrations i=} Do more with Storage by Zapier integrations Allow Zapier to access your Storage by Zapier Account? Yes Coninue — slide 61 of 70"
+    },
+    {
+      "number": 62,
+      "text": "Can we find more exposed data? rr Storage bv Zanier Integrations Store data from code steps with StoreClient Last updated: July 23, 2020 The StoreClient is a built-in utility available in both Python and JavaScript code steps that lets Limitations secu red by a » Any JSON serializable value can… — slide 62 of 70"
+    },
+    {
+      "number": 63,
+      "text": "Storage by Zapier API “where am i?” “what is it?\": [ “store.zapier.com is a simple storage REST API that “might use to stash a bit of state. we use it to pov “StoreClient’ in our Code steps of Zapier - you car “more docs at https://zapier.com/help/code-python/ ¢ “https: //zapier.com/help/code/.\"… — slide 63 of 70"
+    },
+    {
+      "number": 64,
+      "text": "Storage by Zapier API “where am i?” “what is it?\": [ “store.zapier.com is a simple storage REST API that “might use to stash a bit of state. we use it to pov “StoreClient’ in our Code steps of Zapier - you car “more docs at https://zapier.com/help/code-python/ ¢ “https: //zapier.com/help/code/.\"… — slide 64 of 70"
+    },
+    {
+      "number": 65,
+      "text": "Let’s see what happens.. https://store.zapier.com/api/records?secret= {\"error\": \"Secrets must be valid UUID4s.\"} — slide 65 of 70"
+    },
+    {
+      "number": 66,
+      "text": "Let’s see what happens.. profit 4oos bounty https://store.zapier.com/api/records?secret= {\"error\": \"Secrets must be valid UUID4s.\"} Auth tokens, API keys, emails, phone no., crypto wallet IDs.. zenity.io/blog/zapier-storage-exposes-sensitive-customer-data-due-to-poor-user-choices/ — slide 66 of 70"
+    },
+    {
+      "number": 67,
+      "text": "Summary * Low Code is ° Huge in the enterprise Underrated by security teams * Attackers are taking advantage of it by Living off the land - account takeover, lateral movement, PrivEsc, data exfil Hiding in plain sight Leveraging predictable misconfigs from the outside * The latest addition to… — slide 67 of 70"
+    },
+    {
+      "number": 68,
+      "text": "& zenity — slide 68 of 70"
+    },
+    {
+      "number": 69,
+      "text": "Do these 4 things to reduce your risk 1. Review configuration * Bypass consent flag (Microsoft) * Limit connector usage 2. Review and monitor access for external-facing endpoints * Webhooks * ODATA (Microsoft) * Storage (Zapier) 3. Review connections shared across the entire organization 4.… — slide 69 of 70"
+    },
+    {
+      "number": 70,
+      "text": "Closing slide for Low Code High Risk: Enterprise Domination via Low Code Abuse — slide 70 of 70"
+    }
+  ]
+}

@@ -1,0 +1,219 @@
+{
+  "generated_by": "sync-talk-text",
+  "source_manifest": "https://media.mbgsec.com/decks/2023-04-23_BSidesSF_Sure_Let_Business_Users_Build_Their_Own_What_Could_Go_Wrong/latest.json",
+  "manifest": "https://media.mbgsec.com/decks/2023-04-23_BSidesSF_Sure_Let_Business_Users_Build_Their_Own_What_Could_Go_Wrong/67f8a91a/deck.json",
+  "title": "Sure, Let Business Users Build Their Own. What Could Go Wrong?",
+  "slides": [
+    {
+      "number": 1,
+      "text": "Sure, Let Business Users Build Their Own. What Could Go Wrong? — Michael Bargury @ Zenity — BSidesSF — 2023 — Learn more: — github.com/mbrg/talks — Twitter: @mbrg0 — slide 1 of 51"
+    },
+    {
+      "number": 2,
+      "text": "About me — CTO and co-founder @ Zenity — Ex MSFT cloud security — OWASP — ‘Top 10 LCNC Security Risks’ — project lead — Dark Reading columnist — @mbrg0 — bit.ly/ — lcsec — slide 2 of 51"
+    },
+    {
+      "number": 3,
+      "text": "Outline — Low-Code / No-Code in a nutshell — The “hit-save” SDLC — OWASP Top 10 LCNC Security Risks — Learn more — slide 3 of 51"
+    },
+    {
+      "number": 4,
+      "text": "Low-Code / No-Code in a Nutshell: — EVERYONE is a Developer — Twitter: — @mbrg0 — slide 4 of 51"
+    },
+    {
+      "number": 5,
+      "text": "Business Needs — ⋙ — IT Capacity — slide 5 of 51"
+    },
+    {
+      "number": 6,
+      "text": "If it sounds familiar, its because it is — Tech evolution — slide 6 of 51"
+    },
+    {
+      "number": 7,
+      "text": "COVID health check app by Microsoft — https://aka.ms/healthcheck — slide 7 of 51"
+    },
+    {
+      "number": 8,
+      "text": "Order-to-cash automation by Slack — https://www.workato.com/the-connector/how-slack-automated-order-to-cash/ — slide 8 of 51"
+    },
+    {
+      "number": 9,
+      "text": "https://www.microsoft.com/insidetrack/blog/how-citizen-developers-modernized-microsoft-product-launches/ — “… A Business Operations program manager, and her team, were searching for a way to optimize the launch process for the 150 employees who ran product launches across the company. — … Within months, the app would become a widely used internal tool” — Business users become business developers — slide 9 of 51"
+    },
+    {
+      "number": 10,
+      "text": "Available in every major enterprise — slide 10 of 51"
+    },
+    {
+      "number": 11,
+      "text": "“By 2025, 70% of new applications deployed for the enterprise will use low-code or no-code tools” — “By 2023, the number of active citizen developers at large enterprises will be at least four times the number of professional developers.” — Gartner 2021 — “we are going to have 500 million applications that are going to get created, new, by 2023. Just to put that in perspective, that's more than all of the applications that were created in the last 40 years.” — Satya Nadella, Microsoft Ignite 2019 — The vast majority of enterprise apps — slide 11 of 51"
+    },
+    {
+      "number": 12,
+      "text": "More MSFT low-code devs than .NET devs, today! — Sources: Microsoft Build 2018, Ignite 2019, Build 2020, Protocol 2022 — slide 12 of 51"
+    },
+    {
+      "number": 13,
+      "text": "Exponential Growth in Business Development — slide 13 of 51"
+    },
+    {
+      "number": 14,
+      "text": "The next big productivity boost (Excel-level impact) — Powers critical business workflows, predicted to power 70% of enterprise apps by 2025 — Available on every major enterprise, yours too — Millions of new (business) developers and growing fast — Tens of thousands of apps in a large enterprise — Recap: — you can’t opt out of citizen development — slide 14 of 51"
+    },
+    {
+      "number": 15,
+      "text": "No Code No SDLC? — Twitter: — @mbrg0 — slide 15 of 51"
+    },
+    {
+      "number": 16,
+      "text": "Demo showing credential exposure through a shared low-code connection — slide 16 of 51",
+      "media": [
+        {
+          "type": "youtube",
+          "title": "Ohh sorry I'm on another call — low-code credential exposure demonstration",
+          "url": "https://www.youtube.com/watch?v=5naPxs0fEJc"
+        }
+      ]
+    },
+    {
+      "number": 17,
+      "text": "Software Development Lifecycle — SDLC — slide 17 of 51"
+    },
+    {
+      "number": 18,
+      "text": "Software Development Lifecycle — SDLC — Business — Engineering — Engineering — Ops — Ops — Ops — QA — slide 18 of 51"
+    },
+    {
+      "number": 19,
+      "text": "No Code SDLC? — SDLC — Business — Business — Business — Business — Business — Business — Business — Hit Save to deploy changes — slide 19 of 51"
+    },
+    {
+      "number": 20,
+      "text": "The Shared Responsibility Model — slide 20 of 51"
+    },
+    {
+      "number": 21,
+      "text": "OWASP Top 10 Low-Code/No-Code Security Risks — Twitter: — @mbrg0 — slide 21 of 51"
+    },
+    {
+      "number": 22,
+      "text": "Top 10 Security Risks — https://owasp.org/www-project-top-10-low-code-no-code-security-risks — slide 22 of 51"
+    },
+    {
+      "number": 23,
+      "text": "LCNC-SEC-01: Account Impersonation — LCNC-SEC-02: Authorization Misuse — LCNC-SEC-03: Data Leakage and Unexpected Consequences — LCNC-SEC-04: Authentication and Secure Communication Failures — LCNC-SEC-05: Security Misconfiguration — LCNC-SEC-06: Injection Handling Failures — LCNC-SEC-07: Vulnerable, Unmanaged and Untrusted Components — LCNC-SEC-08: Data and Secret Handling Failures — LCNC-SEC-09: Asset Management Failures — LCNC-SEC-10: Security Logging and Monitoring Failures — https://owasp.org/www-project-top-10-low-code-no-code-security-risks — OWASP Top 10 Security Risks for LCNC — slide 23 of 51"
+    },
+    {
+      "number": 24,
+      "text": "Low-code/no-code applications can be embedded with user identities which are used implicitly by any application user. This creates a direct path towards Privilege Escalation, allows an attacker to hide behind another user's identity, and circumvents traditional security controls. — LCNC-SEC-01: Account Impersonation — slide 24 of 51"
+    },
+    {
+      "number": 25,
+      "text": "The Customer Care team at a large eCommerce company wanted to improve customer service. — Goal — : improve customer service — Method — : build an app that lets relevant company employees view customer support history and latest purchases — Challenge — : employees don’t have permissions to the customer database — Customer care app — Better Customer Care – The Problem — slide 25 of 51"
+    },
+    {
+      "number": 26,
+      "text": "Customer care app — Customer DB — Admin — Better Customer Care – The Solution — Impact: — Employees are happy — Customers are happy — Customer Care team is happy — slide 26 of 51"
+    },
+    {
+      "number": 27,
+      "text": "Impact: — Employees are happy — Customers are happy — Customer Care team is happy — SOC team panics — Customer care app — Customer DB — Admin — Better Customer Care – The Solution — slide 27 of 51"
+    },
+    {
+      "number": 28,
+      "text": "Abnormal activity detected: — Customer DB is being scraped? — Lots of queries — Multiple IPs and hosts — Spread across time — An investigation shows that all connections use single account. Was it compromised? — Customer DB — Admin — Admin — Admin — Admin — Meanwhile, At the SOC — slide 28 of 51"
+    },
+    {
+      "number": 29,
+      "text": "Admin — Admin — User — App — Data — Better Customer Care – Summary — slide 29 of 51"
+    },
+    {
+      "number": 30,
+      "text": "Service connections are first class objects in most low-code/no-code platforms. This means they can be shared between applications, with other users or with entire organizations. — LCNC-SEC-02: Authorization Misuse — slide 30 of 51"
+    },
+    {
+      "number": 31,
+      "text": "Credential Sharing as a Service — slide 31 of 51"
+    },
+    {
+      "number": 32,
+      "text": "Authorization as front-end logic — /user — API — /data — /admin — App — /user — /data — /admin — User — Unauthorized — 200 — App Reader <> API Admin — slide 32 of 51"
+    },
+    {
+      "number": 33,
+      "text": "Low-code/no-code applications often sync data or trigger operations across multiple systems, which creates a path for data to find its way outside the organizational boundary. This means that operations in one system can have unexpected consequences in another. — LCNC-SEC-03: Data Leakage and Unexpected Consequences — slide 33 of 51"
+    },
+    {
+      "number": 34,
+      "text": "Data is being copied between two separate services using two separate identities – — existing defense mechanisms fail — LCNC-SEC-03: Data Leakage and Unexpected Consequences — slide 34 of 51"
+    },
+    {
+      "number": 35,
+      "text": "If <file found> — Then <encrypt file> — LCNC-SEC-03: Data Leakage and Unexpected Consequences — slide 35 of 51"
+    },
+    {
+      "number": 36,
+      "text": "Low-code/no-code applications typically connect to business-critical data via connections set up by business users, which can often result in insecure communication. — LCNC-SEC-04: Authentication and Secure Communication Failures — slide 36 of 51"
+    },
+    {
+      "number": 37,
+      "text": "Misconfigurations can often result in anonymous user access to sensitive data or operations, unprotected public endpoints, unprotected secrets and oversharing. — LCNC-SEC-05: Security Misconfiguration — slide 37 of 51"
+    },
+    {
+      "number": 38,
+      "text": "LCNC-SEC-05: Security Misconfiguration — slide 38 of 51"
+    },
+    {
+      "number": 39,
+      "text": "“An open protocol to allow the creation and consumption of — queryable — and interoperable RESTful APIs in a simple and standard way.” — Power portals can be configured to provide access to SQL tables through ODATA using a specific URL: — portal.powerappsportals.com/_ — odata — Anonymous API Access — slide 39 of 51"
+    },
+    {
+      "number": 40,
+      "text": "Power portals can be configured to provide access to SQL tables through ODATA using a specific URL: — portal.powerappsportals.com/_ — odata — zenity.io/blog/the-microsoft-power-apps-portal-data-leak-revisited-are-you-safe-now/ — Anonymous API Access — slide 40 of 51"
+    },
+    {
+      "number": 41,
+      "text": "/_ — odata — / — globalvariables — : — Nothing to see here — slide 41 of 51"
+    },
+    {
+      "number": 42,
+      "text": "Low-code/no-code applications ingest user provided data in multiple ways, including direct input or retrieving user provided content from various services. Such data can contain malicious payloads that may introduce risk to the application. — App — Query — Data — Fills a form — User — LCNC-SEC-06: Injection Handling Failures — slide 42 of 51"
+    },
+    {
+      "number": 43,
+      "text": "Low-code/no-code applications rely heavily on ready-made components out of the marketplace, the web or custom connectors built by developers. These component are often unmanaged, lack visibility and expose applications to supply chain-based risks. — 3 — rd — party connector — Marketplace widget — App — LCNC-SEC-07: Vulnerable, Unmanaged and Untrusted Components — slide 43 of 51"
+    },
+    {
+      "number": 44,
+      "text": "Low-code/no-code applications often store data or secrets as part of their \"code\" or on managed databases offered by the platform, which needs to be properly stored in compliance with regulation and security requirements. — App — Store in plaintext — Data — Submit sensitive data — User — LCNC-SEC-08: Data and Secret Handling Failures — slide 44 of 51"
+    },
+    {
+      "number": 45,
+      "text": "HR team at a large IT company kicked off a Giveaway campaign — App let’s you choose your donation, charity and plug in your credit card — Cards are stored in plaintext on an environment available to everyone, including tenant guests — Compliance audit — Give-Aware Campaign — slide 45 of 51"
+    },
+    {
+      "number": 46,
+      "text": "Low-code/no-code application are easy to create and have relatively low maintenance costs, which makes them prone to abandonment, while still remaining active. Furthermore, internal applications can gain popularity rapidly, without addressing business continuity concerns. — App — Business users — IT is unaware — LCNC-SEC-09: Asset Management Failures — slide 46 of 51"
+    },
+    {
+      "number": 47,
+      "text": "Low-code/no-code applications often lack a comprehensive audit trail, produce none or insufficient logs, and fail to scrub sensitive data from logs. — LCNC-SEC-10: Security Logging and Monitoring Failures — slide 47 of 51"
+    },
+    {
+      "number": 48,
+      "text": "Summary — Twitter: — @mbrg0 — slide 48 of 51"
+    },
+    {
+      "number": 49,
+      "text": "What have we seen — Low Code / No Code is growing rapidly — Probably already in your org — Shift focus to business users — Missing SDLC — OWASP Top 10 LCNC Security Risks — Get involved — Learn more — slide 49 of 51"
+    },
+    {
+      "number": 50,
+      "text": "Opportunities - Champion Low Code / No Code AppSec in your org — Create a Low Code / No Code Security Framework — No Code SDLC — Approved user cases — Guide business users — Join OWASP Top 10 LCNC Security Risks — Reach out to be @mbrg0 — slide 50 of 51"
+    },
+    {
+      "number": 51,
+      "text": "Sure, Let Business Users Build Their Own. What Could Go Wrong? — Michael Bargury @ Zenity — BSidesSF — 2023 — Learn more: — github.com/mbrg/talks — Twitter: @mbrg0 — slide 51 of 51"
+    }
+  ]
+}

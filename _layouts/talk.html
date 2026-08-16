@@ -1,0 +1,20 @@
+---
+layout: default
+---
+
+<main class="talk-page" role="main">
+  <article itemscope itemtype="https://schema.org/PresentationDigitalDocument">
+    {% include talk-page-header.html %}
+
+    {% assign talk_content = content | strip %}
+    {% if talk_content != "" %}
+      <section class="talk-page__content" id="talk-content" itemprop="text">
+        {{ content }}
+      </section>
+    {% else %}
+      <p class="talk-page__empty">A slide deck, abstract, and transcript are not yet available for this edition of the talk.</p>
+    {% endif %}
+
+    {% include talk-transcript-status.html %}
+  </article>
+</main>

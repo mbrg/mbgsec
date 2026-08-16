@@ -1,0 +1,582 @@
+{
+  "generated_by": "sync-talk-text",
+  "source_manifest": "https://media.mbgsec.com/decks/2025-04-30_Scaling_AppSec_With_an_SDLC_for_Citizen_Development/latest.json",
+  "manifest": "https://media.mbgsec.com/decks/2025-04-30_Scaling_AppSec_With_an_SDLC_for_Citizen_Development/315e9c72/deck.json",
+  "title": "Scaling AppSec With an SDLC for Citizen Development (ft Ryan McDonald)",
+  "slides": [
+    {
+      "number": 1,
+      "text": "RSAC 2025 title slide for Scaling AppSec With an SDLC for Citizen Development, presented by Michael Bargury and Ryan McDonald - slide 1 of 133"
+    },
+    {
+      "number": 2,
+      "text": "Presentations are intended for educational purposes only and do not replace independent professional judgment. Statements of fact and opinions expressed are those of the presenters individually and, unless expressly stated to the contrary, are not the opinion or position of RSA C - slide 2 of 133"
+    },
+    {
+      "number": 3,
+      "text": "55K — devs - slide 3 of 133"
+    },
+    {
+      "number": 4,
+      "text": "55K — devs — 90K copilots & agents - slide 4 of 133"
+    },
+    {
+      "number": 5,
+      "text": "55K — devs — 90K copilots & agents - slide 5 of 133"
+    },
+    {
+      "number": 6,
+      "text": "55K — devs — 90K copilots & agents - slide 6 of 133"
+    },
+    {
+      "number": 7,
+      "text": "55K — devs — 90K copilots & agents - slide 7 of 133"
+    },
+    {
+      "number": 8,
+      "text": "About two million assets and ten million credentials beside a confused Jackie Chan reaction image - slide 8 of 133"
+    },
+    {
+      "number": 9,
+      "text": "Can we apply AppSec at the scale of citizen development? - slide 9 of 133"
+    },
+    {
+      "number": 10,
+      "text": "WHY so many — devs — /apps/ai agents/creds/vulns? - slide 10 of 133"
+    },
+    {
+      "number": 11,
+      "text": "Michael — Bargury - slide 11 of 133"
+    },
+    {
+      "number": 12,
+      "text": "Portraits and names of the Microsoft Security team members who contributed to the program - slide 12 of 133"
+    },
+    {
+      "number": 13,
+      "text": "WHY so many — devs — /apps/ - slide 13 of 133"
+    },
+    {
+      "number": 14,
+      "text": "Power Apps home screen demonstrating that building an app has never been easier - slide 14 of 133",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2025-04-30_Scaling_AppSec_With_an_SDLC_for_Citizen_Development/315e9c72/media/image23.gif"
+        }
+      ]
+    },
+    {
+      "number": 15,
+      "text": "Everyone — is a developer - slide 15 of 133"
+    },
+    {
+      "number": 16,
+      "text": "Microsoft COVID-19 daily health-check app screen - slide 16 of 133"
+    },
+    {
+      "number": 17,
+      "text": "Logos of citizen-development platforms including Microsoft, ServiceNow, Salesforce, Zapier, and Appian - slide 17 of 133"
+    },
+    {
+      "number": 18,
+      "text": "“We are going to have 500 million applications that are going to get created, new, by 2023. Just to put that in perspective, that's more than all of the applications that were created in the last 40 years.” — Satya Nadella, Microsoft Ignite 2019 - slide 18 of 133"
+    },
+    {
+      "number": 19,
+      "text": "LCNC — to “500M apps by 2023” - slide 19 of 133"
+    },
+    {
+      "number": 20,
+      "text": "LCNC — to “500M apps by 2023” — Enters GenAI. - slide 20 of 133"
+    },
+    {
+      "number": 21,
+      "text": "Line chart showing roughly 280 percent growth in low-code and no-code adoption - slide 21 of 133"
+    },
+    {
+      "number": 22,
+      "text": "“The traditional SaaS model is on the brink of a significant transformation, driven by the rise of AI agents. Microsoft now has 70,000 customers worldwide that are already using Copilot Studio.” — Satya Nadella, Q2 2025 Earnings Call - slide 22 of 133"
+    },
+    {
+      "number": 23,
+      "text": "20 — sales & marketing professionals — 3 - slide 23 of 133"
+    },
+    {
+      "number": 24,
+      "text": "Confused man reaction image asking whether the scale of citizen development has the audience's attention - slide 24 of 133",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2025-04-30_Scaling_AppSec_With_an_SDLC_for_Citizen_Development/315e9c72/media/image38.gif"
+        }
+      ]
+    },
+    {
+      "number": 25,
+      "text": "WHY are these important? - slide 25 of 133"
+    },
+    {
+      "number": 26,
+      "text": "Story #1 – Community website - slide 26 of 133"
+    },
+    {
+      "number": 27,
+      "text": "Animated Salesforce Customer Service template used to build a public community website - slide 27 of 133",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2025-04-30_Scaling_AppSec_With_an_SDLC_for_Citizen_Development/315e9c72/media/image39.gif"
+        }
+      ]
+    },
+    {
+      "number": 28,
+      "text": "Public PawnRobotsSpareParts community website created from the Salesforce template - slide 28 of 133"
+    },
+    {
+      "number": 29,
+      "text": "Salesforce site settings with Public Access enabled and outlined - slide 29 of 133"
+    },
+    {
+      "number": 30,
+      "text": "Data-flow diagram from a public-access user to a public site - slide 30 of 133"
+    },
+    {
+      "number": 31,
+      "text": "Screen-flow diagram for a Get Contracts flow that reads Salesforce records - slide 31 of 133"
+    },
+    {
+      "number": 32,
+      "text": "Data-flow diagram showing a public user reaching CRM data through a flow - slide 32 of 133"
+    },
+    {
+      "number": 33,
+      "text": "Salesforce flow version settings with API version and running context outlined - slide 33 of 133"
+    },
+    {
+      "number": 34,
+      "text": "Expanded data-flow diagram showing customer data exposed through the public site's flow - slide 34 of 133"
+    },
+    {
+      "number": 35,
+      "text": "Public Get Contracts flow page displaying customer contract records - slide 35 of 133"
+    },
+    {
+      "number": 36,
+      "text": "Story #2 – AskHR Copilot - slide 36 of 133"
+    },
+    {
+      "number": 37,
+      "text": "Microsoft Ask HR employee portal home page - slide 37 of 133"
+    },
+    {
+      "number": 38,
+      "text": "Copilot Studio test chat for the Ask HR Copilot - slide 38 of 133"
+    },
+    {
+      "number": 39,
+      "text": "AskHR Copilot data-flow diagram beginning with public access - slide 39 of 133"
+    },
+    {
+      "number": 40,
+      "text": "Copilot Studio security authentication settings for the Ask HR Copilot - slide 40 of 133"
+    },
+    {
+      "number": 41,
+      "text": "Ask HR Copilot authentication configured with no authentication - slide 41 of 133"
+    },
+    {
+      "number": 42,
+      "text": "AskHR Copilot data-flow diagram connecting public access to Copilot Studio - slide 42 of 133"
+    },
+    {
+      "number": 43,
+      "text": "Copilot Studio knowledge-source picker with public websites, SharePoint, files, and Dataverse - slide 43 of 133"
+    },
+    {
+      "number": 44,
+      "text": "Microsoft Copilot page with the Create AI skill dialog - slide 44 of 133"
+    },
+    {
+      "number": 45,
+      "text": "Publish AI skill confirmation dialog stating that publishing creates a connectable URL - slide 45 of 133"
+    },
+    {
+      "number": 46,
+      "text": "AskHR Copilot data-flow diagram extended to a published AI skill - slide 46 of 133"
+    },
+    {
+      "number": 47,
+      "text": "AskHR Copilot data-flow diagram extended through Microsoft Graph to business data - slide 47 of 133"
+    },
+    {
+      "number": 48,
+      "text": "AskHR Copilot findings diagram showing public access to sensitive business data - slide 48 of 133"
+    },
+    {
+      "number": 49,
+      "text": "Power Pwn terminal demonstration enumerating and deep-scanning Copilot Studio bots - slide 49 of 133",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2025-04-30_Scaling_AppSec_With_an_SDLC_for_Citizen_Development/315e9c72/media/media1.mp4"
+        }
+      ]
+    },
+    {
+      "number": 50,
+      "text": "Story #3 – Complaint Rerouting Agent - slide 50 of 133"
+    },
+    {
+      "number": 51,
+      "text": "Copilot Studio page for a ready Complaint Rerouting Autonomous Agent - slide 51 of 133"
+    },
+    {
+      "number": 52,
+      "text": "Complaint Rerouting Autonomous Agent instructions in Copilot Studio - slide 52 of 133"
+    },
+    {
+      "number": 53,
+      "text": "Complaint agent knowledge, actions, and trigger settings in Copilot Studio - slide 53 of 133"
+    },
+    {
+      "number": 54,
+      "text": "Salesforce Get records action used by the complaint agent - slide 54 of 133"
+    },
+    {
+      "number": 55,
+      "text": "Salesforce Get records action configured to retrieve account records - slide 55 of 133"
+    },
+    {
+      "number": 56,
+      "text": "Gmail compose window containing prompt-injection text sent to the complaint agent - slide 56 of 133"
+    },
+    {
+      "number": 57,
+      "text": "Email containing an exported list of Salesforce account records - slide 57 of 133"
+    },
+    {
+      "number": 58,
+      "text": "Attack path from an anonymous user through a complaint agent to Salesforce records and email - slide 58 of 133"
+    },
+    {
+      "number": 59,
+      "text": "Copilot Studio run history showing agent misconfiguration exploited for data exfiltration - slide 59 of 133"
+    },
+    {
+      "number": 60,
+      "text": "Story #4 – a persistent vendor - slide 60 of 133"
+    },
+    {
+      "number": 61,
+      "text": "Vendor John’s contract has expired, Entra ID account disabled - slide 61 of 133"
+    },
+    {
+      "number": 62,
+      "text": "Before that happened, John added two identities: — Vendor John’s contract has expired, Entra ID account disabled — Before that happened, John added two identities: - slide 62 of 133"
+    },
+    {
+      "number": 63,
+      "text": "One for his own personal account — Vendor John’s contract has expired, Entra ID account disabled — Before that happened, John added two identities: - slide 63 of 133"
+    },
+    {
+      "number": 64,
+      "text": "Unintended or malicious access to sensitive data — Not exclusive to vendors! — …but a very common “use case” - slide 64 of 133"
+    },
+    {
+      "number": 65,
+      "text": "Recap — We are leaving heavy security decisions in the hands of business users — When choosing between productivity and security, the choice is obvious - slide 65 of 133"
+    },
+    {
+      "number": 66,
+      "text": "HOW to fail at AppSec — Or – what didn’t work - slide 66 of 133"
+    },
+    {
+      "number": 67,
+      "text": "(Blindly) — Follow best practice - slide 67 of 133"
+    },
+    {
+      "number": 68,
+      "text": "Application Security Best Practice — Focus on crown jewels — Get developer buy-in - slide 68 of 133"
+    },
+    {
+      "number": 69,
+      "text": "Application Security Best Practice — Focus on crown jewels - slide 69 of 133"
+    },
+    {
+      "number": 70,
+      "text": "Application Security Best Practice slide listing active credentials across Office 365, SharePoint, Outlook, SQL Server, and other services - slide 70 of 133"
+    },
+    {
+      "number": 71,
+      "text": "Application Security Best Practice — Focus on crown jewels — Get developer buy-in - slide 71 of 133"
+    },
+    {
+      "number": 72,
+      "text": "Best-practice slide questioning whether business users can store credentials securely, beside a Power Apps list of sensitive inputs - slide 72 of 133"
+    },
+    {
+      "number": 73,
+      "text": "Application Security Best Practice — Focus on crown jewels — Get developer buy-in - slide 73 of 133"
+    },
+    {
+      "number": 74,
+      "text": "Secure Development Lifecycle practices crossed out above a Microsoft SDL process diagram - slide 74 of 133"
+    },
+    {
+      "number": 75,
+      "text": "How well does SDL Guidance fit? - slide 75 of 133"
+    },
+    {
+      "number": 76,
+      "text": "Pie chart showing most Power Platform SDL requirements marked not applicable - slide 76 of 133"
+    },
+    {
+      "number": 77,
+      "text": "SDL guidance slide with a Power Automate flow screenshot illustrating why code scanners do not speak low-code - slide 77 of 133"
+    },
+    {
+      "number": 78,
+      "text": "SDL guidance slide with a policy document illustrating guidance written for code developers rather than business users - slide 78 of 133"
+    },
+    {
+      "number": 79,
+      "text": "Circular software development lifecycle diagram dividing responsibilities among engineering, operations, QA, and business - slide 79 of 133"
+    },
+    {
+      "number": 80,
+      "text": "Circular lifecycle diagram showing low-code and no-code development dominated by business responsibilities - slide 80 of 133"
+    },
+    {
+      "number": 81,
+      "text": "SDL guidance limitations summarized beside the software-development lifecycle diagram - slide 81 of 133"
+    },
+    {
+      "number": 82,
+      "text": "Traditional AppSec best practices crossed out under the message Stuck at get-go - slide 82 of 133"
+    },
+    {
+      "number": 83,
+      "text": "Power Apps home screen beside a photo of a person at the base of a high wall, illustrating how easy building has become - slide 83 of 133",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2025-04-30_Scaling_AppSec_With_an_SDLC_for_Citizen_Development/315e9c72/media/image23.gif"
+        }
+      ]
+    },
+    {
+      "number": 84,
+      "text": "If building is easy, shouldn’t fixing vulns be easy too…? - slide 84 of 133"
+    },
+    {
+      "number": 85,
+      "text": "AUTO-FIX — Remove unused credentials — Sanitize logs - slide 85 of 133"
+    },
+    {
+      "number": 86,
+      "text": "Auto-fix — to Early success - slide 86 of 133"
+    },
+    {
+      "number": 87,
+      "text": "Auto-fix — to Early success — Early success - slide 87 of 133"
+    },
+    {
+      "number": 88,
+      "text": "Auto-fix — to Early success — Early success - slide 88 of 133"
+    },
+    {
+      "number": 89,
+      "text": "Auto-fix — to Early success — Early success - slide 89 of 133"
+    },
+    {
+      "number": 90,
+      "text": "Confused man reaction image asking whether the auto-fix success story has the audience's attention - slide 90 of 133",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2025-04-30_Scaling_AppSec_With_an_SDLC_for_Citizen_Development/315e9c72/media/image38.gif"
+        }
+      ]
+    },
+    {
+      "number": 91,
+      "text": "HOW we made it work - slide 91 of 133"
+    },
+    {
+      "number": 92,
+      "text": "Our goals — Remediate all vulnerabilities (Get-to-Green/Stay-Green) - slide 92 of 133"
+    },
+    {
+      "number": 93,
+      "text": "Our goals — Remediate all vulnerabilities (Get-to-Green/Stay-Green) — With 2-3 dedicated headcounts - slide 93 of 133"
+    },
+    {
+      "number": 94,
+      "text": "Our goals — Remediate all vulnerabilities (Get-to-Green/Stay-Green) — With 2-3 dedicated headcounts - slide 94 of 133"
+    },
+    {
+      "number": 95,
+      "text": "Our goals — Remediate all vulnerabilities (Get-to-Green/Stay-Green) — With 2-3 dedicated headcounts - slide 95 of 133"
+    },
+    {
+      "number": 96,
+      "text": "Minimum viable product slide with illustrated remediation guidance for business users - slide 96 of 133"
+    },
+    {
+      "number": 97,
+      "text": "Our goals — Remediate all vulnerabilities (Get-to-Green/Stay-Green) — With 2-3 dedicated headcounts - slide 97 of 133"
+    },
+    {
+      "number": 98,
+      "text": "Minimum Viable Product — Automatic Remediation: Is the security violation auto-fixable? - slide 98 of 133"
+    },
+    {
+      "number": 99,
+      "text": "Minimum Viable Product — Automatic Remediation: Is the security violation auto-fixable? — Do we have enough context? - slide 99 of 133"
+    },
+    {
+      "number": 100,
+      "text": "Minimum Viable Product — Automatic Remediation: Is the security violation auto-fixable? — Do we have enough context? - slide 100 of 133"
+    },
+    {
+      "number": 101,
+      "text": "Minimum Viable Product — Balance a reasonable time to fix before we “shift + delete” in secure assets (Apps, Flows, etc.) — We settled on “30 days-to-fix” as a reasonable compromise providing “just enough time” vs. “not too much time” - slide 101 of 133"
+    },
+    {
+      "number": 102,
+      "text": "Minimum Viable Product — Balance a reasonable time to fix before we “shift + delete” in secure assets (Apps, Flows, etc.) — We settled on “30 days-to-fix” as a reasonable compromise providing “just enough time” vs. “not too much time” - slide 102 of 133"
+    },
+    {
+      "number": 103,
+      "text": "Minimum Viable Product — Brownfield: Pre-existing risk/security violations created on or before Jan 1st, 2024 (when our campaigns started) — a.k.a. “Get to Green” - slide 103 of 133"
+    },
+    {
+      "number": 104,
+      "text": "Brownfield versus greenfield risk slide with a Hulk says stay green image - slide 104 of 133"
+    },
+    {
+      "number": 105,
+      "text": "Violation-remediation process flowchart showing how early success enabled longer campaigns - slide 105 of 133"
+    },
+    {
+      "number": 106,
+      "text": "SharePoint list containing self-service remediation instructions - slide 106 of 133"
+    },
+    {
+      "number": 107,
+      "text": "SharePoint list with step-by-step self-service remediation instructions - slide 107 of 133"
+    },
+    {
+      "number": 108,
+      "text": "Self-service email workflow and screenshot of the first action-required email - slide 108 of 133"
+    },
+    {
+      "number": 109,
+      "text": "Final-warning email telling the owner that an insecure resource is queued for deletion - slide 109 of 133"
+    },
+    {
+      "number": 110,
+      "text": "Power Platform violations dashboard listing detected security violations - slide 110 of 133"
+    },
+    {
+      "number": 111,
+      "text": "Violations dashboard detail view with issue description and remediation guidance - slide 111 of 133"
+    },
+    {
+      "number": 112,
+      "text": "Violations dashboard remediation view with connection replacement controls - slide 112 of 133"
+    },
+    {
+      "number": 113,
+      "text": "Greenfield and brownfield remediation playbooks beside a Copilot workflow screenshot - slide 113 of 133"
+    },
+    {
+      "number": 114,
+      "text": "Results slide listing the program's January-to-April 2024 scale-up objectives - slide 114 of 133"
+    },
+    {
+      "number": 115,
+      "text": "Stacked bar chart showing open violations falling and remediated violations rising across the first half of 2024 - slide 115 of 133"
+    },
+    {
+      "number": 116,
+      "text": "Risk-reduction chart noting that a 30-day fix window prevents reaching 100 percent remediation - slide 116 of 133"
+    },
+    {
+      "number": 117,
+      "text": "Success Kid meme celebrating the remediation program's results - slide 117 of 133"
+    },
+    {
+      "number": 118,
+      "text": "Takeaways - slide 118 of 133"
+    },
+    {
+      "number": 119,
+      "text": "What did we learn from this? — Leverage industry-standard security risk categorization - slide 119 of 133"
+    },
+    {
+      "number": 120,
+      "text": "OWASP Low-Code/No-Code Top 10 — LCNC01: Account Impersonation — LCNC02: Authorization Misuse - slide 120 of 133"
+    },
+    {
+      "number": 121,
+      "text": "OWASP Large Language Models Top 10 — LLM01: Prompt Injection — LLM02: Insecure Output Handling - slide 121 of 133"
+    },
+    {
+      "number": 122,
+      "text": "What did we learn from this? — Leverage industry-standard security risk categorization — Prioritize what we want to fix first - slide 122 of 133"
+    },
+    {
+      "number": 123,
+      "text": "6 Risk Reduction Campaigns — Merged similar OWASP Top 10 categories together & reviewed SDL gap analysis — Also pivoted on Senior Leadership Team priorities - slide 123 of 133"
+    },
+    {
+      "number": 124,
+      "text": "Risk-reduction campaign dashboard with severity chart, category treemap, and campaign matrix - slide 124 of 133"
+    },
+    {
+      "number": 125,
+      "text": "What did we learn from this? — Leverage industry-standard security risk categorization — Prioritize what we want to fix first - slide 125 of 133"
+    },
+    {
+      "number": 126,
+      "text": "Shared-responsibility diagram comparing serverless and low-code platform layers - slide 126 of 133"
+    },
+    {
+      "number": 127,
+      "text": "Shared Responsibility Model for low-code and no-code as a role-accountability matrix - slide 127 of 133"
+    },
+    {
+      "number": 128,
+      "text": "What are the priorities? — Leverage industry-standard security risk categorization — Prioritize what we want to fix first - slide 128 of 133"
+    },
+    {
+      "number": 129,
+      "text": "SDL gap-analysis pie chart revisited beside lessons about automation and de-facto SDL - slide 129 of 133"
+    },
+    {
+      "number": 130,
+      "text": "What did we learn from this? — Leverage industry-standard security risk categorization — Prioritize what we want to fix first - slide 130 of 133"
+    },
+    {
+      "number": 131,
+      "text": "Conclusion - slide 131 of 133"
+    },
+    {
+      "number": 132,
+      "text": "Apply What You Have Learned Today action plan for the next week, three months, and six months - slide 132 of 133"
+    },
+    {
+      "number": 133,
+      "text": "RSAC 2025 closing slide saying Thank you - slide 133 of 133"
+    }
+  ]
+}

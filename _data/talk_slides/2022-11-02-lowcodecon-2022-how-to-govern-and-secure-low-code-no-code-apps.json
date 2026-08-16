@@ -1,0 +1,224 @@
+{
+  "generated_by": "sync-talk-text",
+  "source_manifest": "https://media.mbgsec.com/decks/2022-11-02_LowCodeCon/latest.json",
+  "manifest": "https://media.mbgsec.com/decks/2022-11-02_LowCodeCon/4a66b873/deck.json",
+  "title": "How to Govern and Secure Low-Code/No-Code Apps",
+  "slides": [
+    {
+      "number": 1,
+      "text": "How to Govern and Secure Low Code/No Code Apps — LowCodeCon 2022 — Michael Bargury @ Zenity — slide 1 of 54"
+    },
+    {
+      "number": 2,
+      "text": "About me — CTO and Co-founder @ Zenity — Ex Microsoft cloud — slide 2 of 54"
+    },
+    {
+      "number": 3,
+      "text": "Outline — LCNC in the enterprise — Are LCNC apps secure? — slide 3 of 54"
+    },
+    {
+      "number": 4,
+      "text": "Enterprise Low-Code/No-Code: — Business-Led Development Is Here — slide 4 of 54"
+    },
+    {
+      "number": 5,
+      "text": "Exponential Growth in Business Development — slide 5 of 54"
+    },
+    {
+      "number": 6,
+      "text": "Business Needs — ⋙ — IT Capacity — slide 6 of 54"
+    },
+    {
+      "number": 7,
+      "text": "The latest innovation in businesses enablement — Tech evolution — slide 7 of 54"
+    },
+    {
+      "number": 8,
+      "text": "Available in every major enterprise — slide 8 of 54"
+    },
+    {
+      "number": 9,
+      "text": "Build Business Apps Faster — How low code / no node accelerates development: — Ease of use lowers barrier to entry — slide 9 of 54"
+    },
+    {
+      "number": 10,
+      "text": "“With Dynamics, …, we also launched this very powerful platform, the Power Platform -- … which acts as the extensibility framework for Microsoft Graph, extensibility framework for Dynamics, as well as Microsoft 365, and embeddable by every SaaS ISV.“ — Satya Nadella, Microsoft Bu — slide 10 of 54"
+    },
+    {
+      "number": 11,
+      "text": "“Anyone can be a developer, completely transforming how your business operates” — “… we need to empower citizen developers with tools that are low-code/no-code tools so that they can build out these applications …. In fact, there are already 2.5 million citizen developers using P — slide 11 of 54"
+    },
+    {
+      "number": 12,
+      "text": "“By 2025, 70% of new applications deployed for the enterprise will use low-code or no-code tools, up from less than 25% in 2020.” — “With Power Platform, we have the leading business process automation and productivity suite for domain experts in every industry, with 20 million m — slide 12 of 54"
+    },
+    {
+      "number": 13,
+      "text": "Big vendors have a strong incentive to empower business users — Companies are lacking IT resources and need a solution for accelerated development — The tech is already there – business users are actually using it — slide 13 of 54"
+    },
+    {
+      "number": 14,
+      "text": "A Security Perspective on LCNC — slide 14 of 54"
+    },
+    {
+      "number": 15,
+      "text": "Missing application security practices — No Code -> No tools — New developers — slide 15 of 54"
+    },
+    {
+      "number": 16,
+      "text": "Growing Attention — slide 16 of 54"
+    },
+    {
+      "number": 17,
+      "text": "Maintain security — Apply application-security practices — Ensure business continuity — slide 17 of 54"
+    },
+    {
+      "number": 18,
+      "text": "No Code No SDLC? — slide 18 of 54"
+    },
+    {
+      "number": 19,
+      "text": "Software Development Lifecycle — SDLC — slide 19 of 54"
+    },
+    {
+      "number": 20,
+      "text": "Software Development Lifecycle — SDLC — Business — slide 20 of 54"
+    },
+    {
+      "number": 21,
+      "text": "No Code SDLC? — SDLC — Business — slide 21 of 54"
+    },
+    {
+      "number": 22,
+      "text": "The Shared Responsibility Model — slide 22 of 54"
+    },
+    {
+      "number": 23,
+      "text": "Security can — drive — LCNC adoption — slide 23 of 54"
+    },
+    {
+      "number": 24,
+      "text": "OWASP Top 10 Low-Code/No-Code Security Risks — slide 24 of 54"
+    },
+    {
+      "number": 25,
+      "text": "Top 10 Security Risks — https://owasp.org/www-project-top-10-low-code-no-code-security-risks — slide 25 of 54"
+    },
+    {
+      "number": 26,
+      "text": "LCNC-SEC-01: Account Impersonation — LCNC-SEC-02: Authorization Misuse — LCNC-SEC-03: Data Leakage and Unexpected Consequences — slide 26 of 54"
+    },
+    {
+      "number": 27,
+      "text": "Low-code/no-code applications can be embedded with user identities which are used implicitly by any application user. This creates a direct path towards Privilege Escalation, allows an attacker to hide behind another user's identity, and circumvents traditional security controls. — slide 27 of 54"
+    },
+    {
+      "number": 28,
+      "text": "The Customer Care team at a large eCommerce company wanted to improve customer service. — Goal — : improve customer service — slide 28 of 54"
+    },
+    {
+      "number": 29,
+      "text": "Customer care app — Customer DB — Admin — slide 29 of 54"
+    },
+    {
+      "number": 30,
+      "text": "Impact: — Employees are happy — Customers are happy — slide 30 of 54"
+    },
+    {
+      "number": 31,
+      "text": "Abnormal activity detected: — Customer DB is being scraped? — Lots of queries — slide 31 of 54"
+    },
+    {
+      "number": 32,
+      "text": "Admin — User — App — slide 32 of 54"
+    },
+    {
+      "number": 33,
+      "text": "Service connections are first class objects in most low-code/no-code platforms. This means they can be shared between applications, with other users or with entire organizations. — LCNC-SEC-02: Authorization Misuse — slide 33 of 54"
+    },
+    {
+      "number": 34,
+      "text": "Credential Sharing as a Service — slide 34 of 54"
+    },
+    {
+      "number": 35,
+      "text": "Authorization as front-end logic — /user — API — slide 35 of 54"
+    },
+    {
+      "number": 36,
+      "text": "Low-code/no-code applications often sync data or trigger operations across multiple systems, which creates a path for data to find its way outside the organizational boundary. This means that operations in one system can have unexpected consequences in another. — LCNC-SEC-03: Dat — slide 36 of 54"
+    },
+    {
+      "number": 37,
+      "text": "Data is being copied between two separate services using two separate identities – — existing defense mechanisms fail — LCNC-SEC-03: Data Leakage and Unexpected Consequences — slide 37 of 54"
+    },
+    {
+      "number": 38,
+      "text": "If <file found> — Then <encrypt file> — LCNC-SEC-03: Data Leakage and Unexpected Consequences — slide 38 of 54"
+    },
+    {
+      "number": 39,
+      "text": "Low-code/no-code applications typically connect to business-critical data via connections set up by business users, which can often result in insecure communication. — LCNC-SEC-04: Authentication and Secure Communication Failures — slide 39 of 54"
+    },
+    {
+      "number": 40,
+      "text": "Misconfigurations can often result in anonymous user access to sensitive data or operations, unprotected public endpoints, unprotected secrets and oversharing. — LCNC-SEC-05: Security Misconfiguration — slide 40 of 54"
+    },
+    {
+      "number": 41,
+      "text": "LCNC-SEC-05: Security Misconfiguration — slide 41 of 54"
+    },
+    {
+      "number": 42,
+      "text": "“An open protocol to allow the creation and consumption of — queryable — and interoperable RESTful APIs in a simple and standard way.” — slide 42 of 54"
+    },
+    {
+      "number": 43,
+      "text": "Power portals can be configured to provide access to SQL tables through ODATA using a specific URL: — portal.powerappsportals.com/_ — odata — slide 43 of 54"
+    },
+    {
+      "number": 44,
+      "text": "/_ — odata — / — slide 44 of 54"
+    },
+    {
+      "number": 45,
+      "text": "Low-code/no-code applications ingest user provided data in multiple ways, including direct input or retrieving user provided content from various services. Such data can contain malicious payloads that may introduce risk to the application. — App — Query — slide 45 of 54"
+    },
+    {
+      "number": 46,
+      "text": "Low-code/no-code applications rely heavily on ready-made components out of the marketplace, the web or custom connectors built by developers. These component are often unmanaged, lack visibility and expose applications to supply chain-based risks. — 3 — rd — slide 46 of 54"
+    },
+    {
+      "number": 47,
+      "text": "Low-code/no-code applications often store data or secrets as part of their \"code\" or on managed databases offered by the platform, which needs to be properly stored in compliance with regulation and security requirements. — App — Store in plaintext — slide 47 of 54"
+    },
+    {
+      "number": 48,
+      "text": "HR team at a large IT company kicked off a Giveaway campaign — App let’s you choose your donation, charity and plug in your credit card — Cards are stored in plaintext on an environment available to everyone, including tenant guests — slide 48 of 54"
+    },
+    {
+      "number": 49,
+      "text": "Low-code/no-code application are easy to create and have relatively low maintenance costs, which makes them prone to abandonment, while still remaining active. Furthermore, internal applications can gain popularity rapidly, without addressing business continuity concerns. — App — slide 49 of 54"
+    },
+    {
+      "number": 50,
+      "text": "Low-code/no-code applications often lack a comprehensive audit trail, produce none or insufficient logs, and fail to scrub sensitive data from logs. — LCNC-SEC-10: Security Logging and Monitoring Failures — slide 50 of 54"
+    },
+    {
+      "number": 51,
+      "text": "Summary section divider — slide 51 of 54"
+    },
+    {
+      "number": 52,
+      "text": "What have we seen — Low Code / No Code is growing rapidly — In every major enterprise — slide 52 of 54"
+    },
+    {
+      "number": 53,
+      "text": "Opportunities - Champion Low Code / No Code Security in your org — Create a Low Code / No Code Security Framework — No Code SDLC — slide 53 of 54"
+    },
+    {
+      "number": 54,
+      "text": "How to Govern and Secure Low Code — /No Code Apps — LowCodeCon 2022 — slide 54 of 54"
+    }
+  ]
+}

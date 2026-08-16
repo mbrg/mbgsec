@@ -116,7 +116,36 @@ github_url: https://github.com/example/my-talk
 The `pdf_url`, `schedule_url`, `recording_url`, and `github_url` fields are optional.
 Use `github_url` for a public source repository shared with the talk. The deck page
 shows only the resource buttons whose URLs are present. Link the corresponding row
-in `_pages/talks.md` to `/talks/my-talk/` when the live deck is ready.
+in `_pages/talks.md` with the `talk-table-resources.html` include when the talk
+page is ready. The include shows the talk-page icon and also shows a generic video
+icon when the page has a `recording_url`:
+
+```liquid
+{% raw %}{% include talk-table-resources.html permalink="/talks/my-talk/" %}{% endraw %}
+```
+
+Every listed talk must have a page, even when no slide deck is available. Use the
+`talk` layout for those resource-only pages and keep their recording, schedule,
+and project links in page frontmatter. Do not pass a recording URL directly from
+the table or put schedule, PDF, GitHub, or other resource icons there. Each
+Resources cell contains the talk-page icon and, when available, the recording icon.
+
+Every talk page also has a same-origin Markdown-formatted text route at
+`/talks/<page-slug>/llms.txt`. It contains the page metadata and resources, the
+published abstract and reviewed transcript when available, and slide-by-slide
+accessibility text copied from the public deck manifest. Slide descriptions are
+explicitly labeled as slide text and must never be presented as a transcript.
+
+After adding or changing a talk page or publishing a new deck manifest, regenerate
+the tracked text pages and slide data:
+
+```sh
+npm run talks:text:sync
+```
+
+Commit the resulting `_pages/talk-text/` and `_data/talk_slides/` changes. Do not
+edit those generated files by hand. `npm test` runs `talks:text:check` and fails
+when a talk body, permalink, or deck manifest changes without a matching sync.
 
 ## Source conversion notes
 

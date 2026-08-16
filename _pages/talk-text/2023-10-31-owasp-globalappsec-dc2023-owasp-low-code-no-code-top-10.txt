@@ -1,0 +1,18 @@
+---
+layout: talk-text
+permalink: /talks/2023-10-31-owasp-globalappsec-dc2023-owasp-low-code-no-code-top-10/llms.txt
+talk_permalink: /talks/2023-10-31-owasp-globalappsec-dc2023-owasp-low-code-no-code-top-10/
+talk_slug: 2023-10-31-owasp-globalappsec-dc2023-owasp-low-code-no-code-top-10
+generated_by: sync-talk-text
+sitemap: false
+---
+<!-- talk-enrichment:start -->
+## Abstract
+
+Low-Code/No-Code development platforms provide a development environment used to create application software through a graphical user interface instead of traditional hand-coded computer programming. Such platforms reduce the amount of traditional hand-coding, enabling accelerated delivery of business applications.
+As Low-Code/No-Code platforms proliferate and become widely used by organizations, there is a clear and immediate need to create awareness around security and privacy risks related to applications developed on such platforms.
+
+The primary goal of the "OWASP Low-Code/No-Code Top 10" document is to provide assistance and education for organizations looking to adopt and develop Low-Code/No-Code applications. The guide provides information about what the most prominent security risks are for such applications, the challenges involved, and how to overcome them.
+
+_[Official conference abstract](https://owasp2023globalappsecwashin.sched.com/event/1OUyz/owasp-low-code-no-code-top-10)_
+<!-- talk-enrichment:end -->

@@ -35,6 +35,8 @@ twitter:
 minimal_mistakes_skin: default
 minimal_mistakes_skin_dark: dark
 search: true
+lunr:
+  search_within_pages: true
 
 # Build settings
 markdown: kramdown

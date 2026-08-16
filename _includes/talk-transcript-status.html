@@ -1,0 +1,6 @@
+{% if page.transcript_status == 'recording-quality-unusable' %}
+  <section class="talk-page__content talk-page__transcript-status" id="transcript-status" aria-labelledby="transcript-status-heading">
+    <h2 id="transcript-status-heading">Transcript status</h2>
+    <p>No transcript was published because two independent recording-derived transcription passes failed the machine publication gate.{% if page.transcript_status_note %} {{ page.transcript_status_note }}{% endif %}</p>
+  </section>
+{% endif %}

@@ -1,0 +1,20 @@
+<div
+  class="deck-player"
+  data-deck-manifest="{{ page.deck_manifest | escape }}"
+  aria-label="{{ page.title | escape }} presentation"
+>
+  <section class="deck-player__viewport" aria-label="Slide viewer">
+    <div class="deck-player__stage" tabindex="0">
+      <div class="deck-player__slide"></div>
+      <p class="deck-player__message" role="status" aria-live="polite">Loading presentation…</p>
+    </div>
+  </section>
+
+  <nav class="deck-player__controls" aria-label="Presentation controls">
+    <button class="deck-player__button" type="button" data-deck-action="previous" aria-label="Previous slide">←</button>
+    <output class="deck-player__counter" aria-live="polite">– / –</output>
+    <button class="deck-player__button" type="button" data-deck-action="next" aria-label="Next slide">→</button>
+    <button class="deck-player__button" type="button" data-deck-action="fullscreen" aria-label="Enter fullscreen">⛶</button>
+    <span class="deck-player__hint" aria-hidden="true">Swipe to navigate · Rotate for larger slides</span>
+  </nav>
+</div>

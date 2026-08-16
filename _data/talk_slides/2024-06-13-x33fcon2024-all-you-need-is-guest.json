@@ -1,0 +1,737 @@
+{
+  "generated_by": "sync-talk-text",
+  "source_manifest": "https://media.mbgsec.com/decks/2024-06-13_X33FCON2024_AllYouNeedIsGuest/latest.json",
+  "manifest": "https://media.mbgsec.com/decks/2024-06-13_X33FCON2024_AllYouNeedIsGuest/1f69dc70/deck.json",
+  "title": "All You Need Is Guest",
+  "slides": [
+    {
+      "number": 1,
+      "text": "Learn more: mbgsec.com Twitter: @mbrgO, @inbarraz Peet Nee TS GE Michael Bargury, Inbar Raz @ Zenity x33fcon 2024 — slide 1 of 177"
+    },
+    {
+      "number": 2,
+      "text": "fll tOU NCS GUC ST Hi there V * CTO and Co-founder @ Zenity * OWASP LCNC Top 10 project lead * Dark Reading columnist ¢ BlackHat, Defcon, BSides, OWASP * Hiring top engs & pms! W @mbrgo github.com/mbrg darkreading.com/author/michael-bargury DI — slide 2 of 177"
+    },
+    {
+      "number": 3,
+      "text": "fllstou Needs GCS meee Hi there ¢ VP Research @ Zenity ¢ Hacker of Things ¢ Retro-computing collector and restorer * Defcon, BSides, VB, SAS, CCC, CARO, and more * Hiring top researchers! W@inbarraz — slide 3 of 177"
+    },
+    {
+      "number": 4,
+      "text": "Why invite guests in? ‘Andi the promise.of deny:byrdefault access — slide 4 of 177"
+    },
+    {
+      "number": 5,
+      "text": "Bll tou Needs GUCS te How can two parties collaborate over a bunch of files? POC Kickoff F1000 enterprise Small vendor Success Criteria Order Form POC Agenda — slide 5 of 177"
+    },
+    {
+      "number": 6,
+      "text": "AIR CTA Eel Option 1: just email sensitive files around — slide 6 of 177"
+    },
+    {
+      "number": 7,
+      "text": "AlL You Need_ls Guest — slide 7 of 177"
+    },
+    {
+      "number": 8,
+      "text": "PUA AeTE DS otcte SA Ce a rando IRL V % y . Source: deaddrops.com — slide 8 of 177"
+    },
+    {
+      "number": 9,
+      "text": "ful Rou Needs Guest a Option 3: invite them in & Mass #1 F1000 tenant — slide 9 of 177"
+    },
+    {
+      "number": 10,
+      "text": "Ailstou Needs GUCS tamer Option 3: invite them in HE Microsoft Documentation = Learn / Azure / Active Directory / : } External Identities in Azure Active NI Directory Sitagp external users can \"bring their own identities.\" nomi ... and you manage access to… — slide 10 of 177"
+    },
+    {
+      "number": 11,
+      "text": "GllMou Need. |S GUCSt ms Safe guest access must be: (a) Easy for vendors to onboard — slide 11 of 177"
+    },
+    {
+      "number": 12,
+      "text": "All Vou. Need |S GUC emma Safe guest access must be: (a) Easy for vendors to onboard (b) Easy for IT/security to control — slide 12 of 177"
+    },
+    {
+      "number": 13,
+      "text": "A Microsoft Teams sign-in demonstration showing how easily an attacker can obtain a guest account — slide 13 of 177",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2024-06-13_X33FCON2024_AllYouNeedIsGuest/1f69dc70/media/slide-013-demo.mp4"
+        }
+      ]
+    },
+    {
+      "number": 14,
+      "text": "AlL You Need_ls Guest HJ M invited you to access applications within their organization rw) Microsoft Invitations on behalf of im To: Invite Me it invitations from If you were not expecting this invitation, proceed with caution. Sender: HJ M Organization:… — slide 14 of 177"
+    },
+    {
+      "number": 15,
+      "text": "AlL You Need_ls Guest piseichat USA 20e2 Hijacking invites * Query using AAD Graph: wee cee windows.net/myorganization/users?api-version=1.61-internal&Sfilter=us ance'&Sselect=userPrincipalName, inviteTicket,userType, invitedAsMail Source: @_dirkjan at… — slide 15 of 177"
+    },
+    {
+      "number": 16,
+      "text": "AlL You Need_ls Guest bisekhat USA 20e2 TL;DR ¢ Every user could query for non-redeemed invites. * Could redeem invite without any validation, link to arbitrary external account. * No way for admins to find out which account it was actually linked to.… — slide 16 of 177"
+    },
+    {
+      "number": 17,
+      "text": "Allstou Needs GCS semen (a) It’s super easy to geta guest account Perhaps too easy? bisa hat USA 2022 Backdooring and hijacking AD accounts by abusing Dirk-jan Mollema / @_dirkjan - — slide 17 of 177"
+    },
+    {
+      "number": 18,
+      "text": "All Vou. Need |S GUC emma Safe guest access must be: (a) Easy for vendors to onboard (b) Easy for IT/security to control — slide 18 of 177"
+    },
+    {
+      "number": 19,
+      "text": "Bleu Needs GUCS | eememaan (b) Understanding how control works a ® yN & 9 Partners, vendors, suppliers, F1000 tenant other collaborators — slide 19 of 177"
+    },
+    {
+      "number": 20,
+      "text": "Bleu Needs Cues amen (b) Understanding how control works nF & a G linked Azure AD & 9 Partners, vendors, suppliers, F1000 tenant other collaborators — slide 20 of 177"
+    },
+    {
+      "number": 21,
+      "text": "AlL You Need_ls Guest Vv f Identities Applications { essme, ~“ Microsoft é a ot be ea, Defender for Sj oo “, Cloud Apps : . e zz Zero Trust i, Data Ep ¢ olicy enforcement lo1o10 £ Yi i fa) lolol Re train 9) Microsoft lolol Defender fal 4 Microsoft for… — slide 21 of 177"
+    },
+    {
+      "number": 22,
+      "text": "GllMouNeed.|s GUCSt es (b) Applying security controls to guests Need guest access = Require security controls — slide 22 of 177"
+    },
+    {
+      "number": 23,
+      "text": "GllMouNeed.|s GUCSt es (b) Applying security controls to guests Need guest access = Require security controls Security controls > Require AAD account — slide 23 of 177"
+    },
+    {
+      "number": 24,
+      "text": "Siitou Need |S Guest areca (b) Applying security controls to guests Need guest access = Require security controls Security controls > Require AAD account AAD account = Grants full access Q.ED....? — slide 24 of 177"
+    },
+    {
+      "number": 25,
+      "text": "Sliou Needs GUCS acm (b) Applying security controls to guests Need guest access = Require security controls Security controls > Require AAD account AAD account > Grants full deny-by-default access — slide 25 of 177"
+    },
+    {
+      "number": 26,
+      "text": "Biltou Needs GUCS cmemcmmamn EntralD guest recap * It's super easy to get a guest account ¢ AAD security controls apply ¢ Access is deny-by-default — slide 26 of 177"
+    },
+    {
+      "number": 27,
+      "text": "Guest accounts in practice — slide 27 of 177"
+    },
+    {
+      "number": 28,
+      "text": "All You. Need Is Guest Teams Van Vendor onboarding ~ Vendor onboarding Your teams GBB vendor onboarding tt Members Pending Requests Channels Settings Analytics Apps Tags This team has guests. Search for members Q & Add member G »* Owners (1) Name Title… — slide 28 of 177"
+    },
+    {
+      "number": 29,
+      "text": "All You. Need Is Guest Add members to Vendor onboarding Start typing a name, distribution list, or security group to add to your team. You can also add people outside your organization as guests by typing their email addresses. Start typing a name or group — slide 29 of 177"
+    },
+    {
+      "number": 30,
+      "text": "All You. Need Is Guest Add members to Vendor onboarding Start typing a name, distribution list, or security group to add to your team. You can also add people outside your organization as guests by typing their email addresses. hackerS@… — slide 30 of 177"
+    },
+    {
+      "number": 31,
+      "text": "All You. Need Is Guest Add members to Vendor onboarding Start typing a name, distribution list, or security group to add to your team. You can also add people outside your organization as guests by typing their email addresses. Start typing a name or group… — slide 31 of 177"
+    },
+    {
+      "number": 32,
+      "text": "AlL You Need_ls Guest BE Microsoft Sign in hacker5@pwntoso.onmicrosoft.com No account? Create one Can't access your account? Q Sign-in options — slide 32 of 177"
+    },
+    {
+      "number": 33,
+      "text": "AlL You Need_ls Guest BE Microsoft hacker5@pwntoso.onmicrosoft.com Permissions requested by: Zenity Demo zenitydemo.onmicrosoft.com By accepting, you allow this organization to: \\ Receive your profile data \\Y Collect and log your activity \\Y Use your… — slide 33 of 177"
+    },
+    {
+      "number": 34,
+      "text": "AlL You Need_ls Guest My Apps Apps This is unavailable due to your account permissions and company’s settings & H Zenity Demo Sign out Hacker5 H | hacker5@pwntoso.onmicroso lew accoun| Switch organization Sign in with a different account — slide 34 of 177"
+    },
+    {
+      "number": 35,
+      "text": "Everything works as expected ? — slide 35 of 177"
+    },
+    {
+      "number": 36,
+      "text": "2? Everything works as expected ? — slide 36 of 177"
+    },
+    {
+      "number": 37,
+      "text": "AILYOUNSSC.IS, GUEST Guest exploitation state of the art — slide 37 of 177"
+    },
+    {
+      "number": 38,
+      "text": "AILYOUNEedIs Guest Guest 1. Phishing via Teams exploitation state of the art — slide 38 of 177"
+    },
+    {
+      "number": 39,
+      "text": "Glitou Need |S CCS! cman Guest exploitation 1. Phishing via Teams state of the art New Teams-based phishing activity In July 2023, Storm-0324 began using phishing lures sent over Teams with malicious links leading to a malicious SharePoint-hosted file. For… — slide 39 of 177"
+    },
+    {
+      "number": 40,
+      "text": "Glitou Need |S CCS! cman Guest exploitation state of the art https://www.microsoft.com/en- us/security/blog/2023/09/12/malware-distributor- storm-0324-facilitates-ransomware-access/ 1. Phishing via Teams New Teams-based phishing activity In July 2023,… — slide 40 of 177"
+    },
+    {
+      "number": 41,
+      "text": "Ailstou Needs GUCS tamer Guest exploitation 1. Phishing via Teams state of the art Chat © = & @ phish her 7 REET | ‘Some people in this chat are outside your org. It's possible they have message-related policies that will apply to the chat. Learn more… — slide 41 of 177"
+    },
+    {
+      "number": 42,
+      "text": "Ailtou Needs GCS semen Guest exploitation 1. Phishing via Teams state of the art ® phish her 7:13 PM Phi her Hi Tom, nan effort to improve. Eaama | & phish her (External) added tom dog to the chat. phish her (External) 7:13 PM tom dog (You) 7402 PM You:… — slide 42 of 177"
+    },
+    {
+      "number": 43,
+      "text": "Allstou Needs GCS semen PS @mbrg@\\BHUSA2@23\\Al1-You-Need-Is-Guest> $results.Users | Select-Object displayName, userPrincipalName Guest exploitation <= Jamie Reding Hi Julian Isla Eric Gruber Karen Berg Greg Winston Hackers Alan Steiner Sven Mortensen… — slide 43 of 177"
+    },
+    {
+      "number": 44,
+      "text": "PUA CoE Sere Se State of the art ends here. But hackers want more! Can we access company data? Edit or delete data? Perform operations? — slide 44 of 177"
+    },
+    {
+      "number": 45,
+      "text": "https://make.power ew) —_ apps.com/environm ents/Default- fc993b0f-345b- 4d01-9f67- 9ac4a140dd43/con nections Go have an early lunch 4 et i — slide 45 of 177"
+    },
+    {
+      "number": 46,
+      "text": "AlL You Need_ls Guest 0 Welcome to Power jj 3 Apps vy fr — slide 46 of 177"
+    },
+    {
+      "number": 47,
+      "text": "AlL You Need_ls Guest ; Ci all Sorry, there's been a disconnect The environment ‘Default-fc993b0f-345b-4d01-9167-9ac4a140dd43' could not be found in the tenant '420983fd-32b0-dabd-89e0-c3ef3236fc73' Go to home page — slide 47 of 177"
+    },
+    {
+      "number": 48,
+      "text": "All You. Need Is Guest Environment Power Apps & Pwntoso (default) © Wthe new Power Apps | @ Home ; Welcome, Hacker5! Create apps that connect to data, and work across web and mobile. Apps @ Tables Ways to create an app of Flows Solutions Start with data… — slide 48 of 177"
+    },
+    {
+      "number": 49,
+      "text": "All You. Need Is Guest Environment Power Apps & Pwntoso (default) 1 = ee nares Home Welcome, Hacker5! + Create Create apps that connect to data, and work across web and mobile. Apps @ Tables Ways to create an app of Flows Solutions Start with data Start… — slide 49 of 177"
+    },
+    {
+      "number": 50,
+      "text": "All You. Need Is Guest Environ Power Apps & Puntoso (default) Pwntoso Sign out | @ Home Welcome, Hacker5! + Create Create apps that connect to data, and work across web and mobile. Leam Hacker5 FP Apps { H hacker5 @pwntoso.onmicroso... caees View account —… — slide 50 of 177"
+    },
+    {
+      "number": 51,
+      "text": "au o ise Power Apps Home Create Lear Apps i Tables Sy a Flows Solutions More Power Platform Need_ls Guest Settings Ways to create an app Notifications Start with data prasaies create an app. Your apps Name FB Package Management View FB Solution Health Hub… — slide 51 of 177"
+    },
+    {
+      "number": 52,
+      "text": "All You. Need Is Guest Environment = New connection Pp Search Home Bs , P Connections in Zenity Demo (default) T Create @ Canvas (0) Learn 1 Apps as a Name Modified Status Tables io} https://enterpriseip.blob.core.windows.net/patentarchive 11 min ago… — slide 52 of 177"
+    },
+    {
+      "number": 53,
+      "text": "All You. Need Is Guest Environment + Newconnection £ Edit \\@ Share [li] Delete © Details Ill f Home . 5 . Connections in Zenity Demo (default) Create G Canvas 0) Learn 1 Apps -” in Name Modified Status & Tables o… — slide 53 of 177"
+    },
+    {
+      "number": 54,
+      "text": "All You. Need Is Guest Environment tT New connection 2 edit \\2 Share Ww Delete (0) Details @ Home : : F Connections in Zenity Demo (default) Create GH Canvas 0) Learn 7 Apps - a Name Modified Status Tables io}… — slide 54 of 177"
+    },
+    {
+      "number": 55,
+      "text": "All You. Need Is Guest Share jamieredingcustomerdata.file.core.windows.net Shared with Name 52) Shared with org @ Jamie Reding jamier@zenitydemo.on.. @ jamiercontoso jamiercontoso@outlook.... Permissio — slide 55 of 177"
+    },
+    {
+      "number": 56,
+      "text": "Animated demonstration within the All You Need Is Guest attack sequence — slide 56 of 177",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2024-06-13_X33FCON2024_AllYouNeedIsGuest/1f69dc70/media/slide-056-animation.gif"
+        }
+      ]
+    },
+    {
+      "number": 57,
+      "text": "AlL You Need_ls Guest Environment tT New connection 2 edit \\2 Share Ww Delete (0) Details @ Home . : ; Connections in Zenity Demo (default) Create Canvas ) Learn 1 Apps - a Name Modified Status Tables io}… — slide 57 of 177"
+    },
+    {
+      "number": 58,
+      "text": "All You. Need Is Guest Power Apps Home Create Learn Apps Tables o/” Flows Solutions Connections More Power Platform @ Edit \\@ Share [ll] Delete Connections > jamieredingcustomerdata.file.core.windows.net Details Apps using this connection Flows using this… — slide 58 of 177"
+    },
+    {
+      "number": 59,
+      "text": "AlL You Need_ls Guest Power Apps Home Create Learn Apps Tables o/” Flows Solutions Connections More Power Platform @ Edit \\@ Share [ll] Delete Connections > jamieredingcustomerdata.file.core.windows.net Details Apps using this connection Flows using this… — slide 59 of 177"
+    },
+    {
+      "number": 60,
+      "text": "All You. Need Is Guest Environment @ Edit \\@ Share [ll] Delete Home ee 3 7 7 Connections > jamieredingcustomerdata.file.core.windows.net + Create files Details Apps using this connection Flows using this connection Jamie Reding EP Apps Connector name… — slide 60 of 177"
+    },
+    {
+      "number": 61,
+      "text": "Copilot for Power Apps demonstration by Shane Young, available through the embedded YouTube control — slide 61 of 177",
+      "media": [
+        {
+          "type": "youtube",
+          "title": "Copilot for Power Apps Demo #shorts",
+          "url": "https://www.youtube.com/watch?v=HG3cbwum0DU"
+        }
+      ]
+    },
+    {
+      "number": 62,
+      "text": "All You. Need Is Guest #RSAC Stronger Together 5 PPETESESTISITETET TPIT TTT TTT TTT TTT TTT TTT rere rrr eee rrr reer ree CS! v > [a a - lo) £ = 2 Credential Sharing asa Service: The Dark 12 20 2021-01 2021-07 Side of No Code @ NET Devs +++ Linear (.NET… — slide 62 of 177"
+    },
+    {
+      "number": 63,
+      "text": "AlL You Need_ls Guest #RSAC More MSFT low-code devs than .NET devs, today! q: = wn > vo (a) a fo} = =] 2 Credential Sharing asa Service: The Dark 2018-04 2018-10 2019-05 2019-12 2020-06 2021-01 2021-07 2022-02 2022-08 2023-03 2023-10 Side of No Code @… — slide 63 of 177"
+    },
+    {
+      "number": 64,
+      "text": "AlL You Need_ls Guest Low-Code/No-Code Adoption (i Low-Code/No-Code Adoption (i Jun 2023 Jul 2023 A\\ 3 3 23 Jan 2024 Feb 2024 Mz tion @ Environment Automation © Environment Connection n @ Automation © Automation @ Environment @ Data Storage Application @ Con — slide 64 of 177"
+    },
+    {
+      "number": 65,
+      "text": "Exploit section divider — slide 65 of 177"
+    },
+    {
+      "number": 66,
+      "text": "All You. Need Is Guest Power Apps Home Create Learn Apps Tables o/” Flows Solutions Connections More Power Platform @ Edit \\@ Share [ll] Delete Connections > jamieredingcustomerdata.file.core.windows.net Details Apps using this connection Flows using this… — slide 66 of 177"
+    },
+    {
+      "number": 67,
+      "text": "AlL You Need_ls Guest Environment Power Apps B Teniyoemo (sea) 9 — @ Edit \\@ Share [ll] Delete P Search f Home —— - 5 7 Connections > jamieredingcustomerdata.file.core.windows.net “P Create Learn Details Apps using this connection —_ Flows using this… — slide 67 of 177"
+    },
+    {
+      "number": 68,
+      "text": "AlL You Need_ls Guest Environment Power Apps Zenity Demo (default) — @ Edit \\@ Share [ll] Delete Search Home es , . . Connections > jamieredingcustomerdata.file.core.windows.net Create Learn Details Apps using this connection Flows using this connection EP… — slide 68 of 177"
+    },
+    {
+      "number": 69,
+      "text": "AlL You Need_ls Guest Power Apps Home Create Learn Apps Tables Flows Solutions More Power Platform Environment 0 D Play 1@ cad Apps > Customer Insights Azure Details Versions Connections Flows Owner e Reding Description Created 023, 11:49:44 PM Modified… — slide 69 of 177"
+    },
+    {
+      "number": 70,
+      "text": "AlL You Need_ls Guest Power Apps | You need a Power Apps plan — slide 70 of 177"
+    },
+    {
+      "number": 71,
+      "text": "AlL You Need_ls Guest Power Apps | You need a Power Apps plan — slide 71 of 177"
+    },
+    {
+      "number": 72,
+      "text": "AlL You Need ls Guest Power Apps | You need a Power Apps plan — slide 72 of 177"
+    },
+    {
+      "number": 73,
+      "text": "All You. Need Is Guest EE Microsoft | Power Apps Product » Pricing Partners v Lear » Support » Community v ‘Announcing new conversational Al features in Power Apps, including generative Al bots for your apps > Power Apps Developer Plan Build and test Power… — slide 73 of 177"
+    },
+    {
+      "number": 74,
+      "text": "AlL You Need_ls Guest ga Microsoft You've selected Microsoft Power Apps for Developer G4) Let's get you started Enter your work or school email address, we'll check if you need to create a new account for Microsoft Power Apps for Developer. Email [… — slide 74 of 177"
+    },
+    {
+      "number": 75,
+      "text": "All You. Need Is Guest B= Microsoft You've selected Microsoft Power Apps for Developer 1) Let's get you started 2) Create your account GB) Confirmation details Thanks for signing up for Microsoft Power Apps for Developer Your username is… — slide 75 of 177"
+    },
+    {
+      "number": 76,
+      "text": "AlL You Need_ls Guest A Customer Insights — slide 76 of 177"
+    },
+    {
+      "number": 77,
+      "text": "All You. Need _Is Guest Power Apps | This app isn’t opening correctly It looks like this app isn't compliant with the latest data loss prevention policies. More — slide 77 of 177"
+    },
+    {
+      "number": 78,
+      "text": "All You. Need. Is Guest Power Apps | This app isn’t opening correctly It looks like this app isn't compliant with the latest data loss prevention policies. Less It looks like this app isn't compliant with the latest data loss prevention policies. Policy… — slide 78 of 177"
+    },
+    {
+      "number": 79,
+      "text": "All You. Need. Is Guest Power Apps | This app isn’t opening correctly It looks like this app isn't compliant with the lates It looks like this app isn't compliant with the latest data loss prevention policies. Policy name: Deny Azure File Storage… — slide 79 of 177"
+    },
+    {
+      "number": 80,
+      "text": "So we were able to bypass the license requirement But blocked by... DLP? — slide 80 of 177"
+    },
+    {
+      "number": 81,
+      "text": "Giitou Nee lS GUCS eee 8 Microsoft | Learn Documentation Power Platform Get started v Products v “é Filter by title ¥ Data loss prevention policies Overview Create a DLP policy Manage DLP policies Data loss prevention SDK Basic connector classification… — slide 81 of 177"
+    },
+    {
+      "number": 82,
+      "text": "All You. Need Is Guest Power Platform admin center DLP Policies » New Policy Home @ Policy name Name your policy @ & Environments Start by giving your new policy a name. You can change this later. Analytics a O Prebuilt connectors Ee Billing (Preview) V… — slide 82 of 177"
+    },
+    {
+      "number": 83,
+      "text": "All You. Need Is Guest Power Platform admin center DLP Policies » New Policy Home Policy name Environments Analytics we Prebuilt connectors Billing (Preview) “ Settings Vv Resources Scope Help + support o | @ | © Custom connectors | e) | e) . . Review Data… — slide 83 of 177"
+    },
+    {
+      "number": 84,
+      "text": "RK & ® All You. Need Is Guest Power Platform admin center Home Environments Analytics a Billing (Preview) “ Settings Resources 4 Help + support Data integration Data (preview) Policies “~ Power Platform Conference 2023 Register now DLP Policies » New… — slide 84 of 177"
+    },
+    {
+      "number": 85,
+      "text": "kK & ® All You. Need. Is Guest Power Platform admin center Home Environments Analytics Vv Billing (Preview) “ Settings Resources 4 Help + support Data integration Data (preview) Policies “~ Power Platform Conference 2023 Register now DLP Policies » New… — slide 85 of 177"
+    },
+    {
+      "number": 86,
+      "text": "GulLoU Nee tS GCS Power Platform admin center DLP Policies » New Policy ff Home & Move to Business Configt Set default group @ Policy name Queenuronments @® One or more of the selected connectors can't be blocked. x K Anal Assign connectors © Ee Billiny &… — slide 86 of 177"
+    },
+    {
+      "number": 87,
+      "text": "Gulu Nees GCS Power Platform admin center DLP Policies » New Policy Home & Move to Business Configure connector Set default group @ Policyname led connectors can't be blocked. x Environments kK & ® Anal rs VY) Bilin -business (1056) | Default Blocked (0) P… — slide 87 of 177"
+    },
+    {
+      "number": 88,
+      "text": "BuO Nees GCS Power Platform admin center DLP Policies New Policy Home Set default group Qo Policy name Environments x RK & ® Anal Billir locked (0) P& Search connectors & Setti FR Res: Microsoft Power Platform oup can't share data with connectors in other… — slide 88 of 177"
+    },
+    {
+      "number": 89,
+      "text": "Gu LOU Nes GU SI es Power Platform admin center DLP Policies New Policy Home &3 Set default group (v) Policy name Environments x Anal Billir P Search connectors ® sett Microsoft Power Platform DLP Bypass Uncovered - ir H D tors in other groups. Unassigned… — slide 89 of 177"
+    },
+    {
+      "number": 90,
+      "text": "Gu LOU Nee GU SI Power Platform admin center Home Environments DLP Policies Qo Policy name New Policy Anal Billiry Setti Data Data Poli ~The problem forcing DLP policies | resources Microsoft Power P' DLP Bypass Uncov Finding #1 Microsoft Power P DLP… — slide 90 of 177"
+    },
+    {
+      "number": 91,
+      "text": "All You.Need Is Guest Power Apps | This app isn’t opening correctly It looks like this app isn't compliant with the latest data loss prevention policies. Less It looks like this app isn't compliant with the latest data loss prevention policies. Policy… — slide 91 of 177"
+    },
+    {
+      "number": 92,
+      "text": "e] R & ® & All You. Need Is Guest Power Platform admin center DLP Policies > Edit Policy Home Qo Policy name Environments Deny SQL Analytics wa @ Prebuilt connectors Billing (Preview) “ Qo Custom connectors Settings Resources A @ scope Help + support [v)… — slide 92 of 177"
+    },
+    {
+      "number": 93,
+      "text": "AlL You Need_ls Guest A Customer Insights — slide 93 of 177"
+    },
+    {
+      "number": 94,
+      "text": "AlL You Need_ls Guest — slide 94 of 177"
+    },
+    {
+      "number": 95,
+      "text": "Bl tou Need ls Cues eae Power Apps | Customer Insights aidenb@zenitydemo.OnMicrosoft.com Aiden Brown alexanderw@zenitydemo.OnMicrosoft.co Alexander Gonzalez amandas@zenitydemo.OnMicrosoft.com Amanda Smith ameliaj@zenitydemo.OnMicrosoft.com Amelia Johnson… — slide 95 of 177"
+    },
+    {
+      "number": 96,
+      "text": "Bltou Need lS C06 St ee Power Apps | Customer Insights Customer|lD 55677 Email aidenb@zenitydemo.OnMicrosoft.com FirstName Aiden LastName Brown SocialSecurityNumb: 209-97-8888 — slide 96 of 177"
+    },
+    {
+      "number": 97,
+      "text": "aidenb@zenitydemo.OnMicrosoft.com Aiden Brown alexanderw@zenitydemo.OnMicrosoft.cc Alexander amandas@zenitydemo.OnMicrosoft.com manda ameliaj@zenitydemo.OnMicrosoft.com Amelia Johnson ameliam@zenitydemo.OnMicrosoft.com Amelia… — slide 97 of 177"
+    },
+    {
+      "number": 98,
+      "text": "Search iterr peur: ) invoke aidenb@zenitydemo.OnMicrosoft.com Aiden Bro alexanderw@zenitydemo.OnMicrosoft.cc Alexander Gonzalez amandas@zenitydemo.OnMicrosoft.com Amanda Smith ameliaj@zenitydemo.OnMicrosoft.com Amelia ameliam@zenitydemo.OnMicrosoft.com… — slide 98 of 177"
+    },
+    {
+      "number": 99,
+      "text": "ne Element: fe. le Source: Network Performance © Memory Application Security Lighthouse @3as Mi oy MO © OY 6 | Orrmnetay | O Oiaieade Notwoting » esp Invert © Hide data URLs All Feteh/KHR JS CSS img Media Font Doc WS Wasm Manifest Other C Has blocked… — slide 99 of 177"
+    },
+    {
+      "number": 100,
+      "text": "Bleu Needs Cues meme Power App is using azure-apim.net to fetch connection data GET https://europe-002.azure-apim.net/apim /Sq\\/ff47194e357e459b8756a5f43f59ccc6 /v2/datasets/customercareinsights.database.windows.n et,enterprisecustomers… — slide 100 of 177"
+    },
+    {
+      "number": 101,
+      "text": "Butou Needs CCS ae Power App is using azure-apim.net to fetch connection data GET https://europe-002.azure-apim.net/apim /sql/ff47194e357e459b8756a5f43f59ccc6 /v2/datasets/customercareinsights.database.windows.n et,enterprisecustomers… — slide 101 of 177"
+    },
+    {
+      "number": 102,
+      "text": "Bu ou Need lS CUCS Power App is using azure-apim.net to fetch connection data GET https://europe-002.azure-apim.net/apim /sql/ff47194e357e459b8756a5f43f59ccc6 /v2/datasets/customercareinsights.database.windows.n et,enterprisecustomers… — slide 102 of 177"
+    },
+    {
+      "number": 103,
+      "text": "Bu ou Need lS CUCS Power App is using azure-apim.net to fetch connection data GET https://europe-002.azure-apim.net/apim /sql/ff47194e357e459b8756a5f43f59ccc6 /v2/datasets/customercareinsights.database.windo ws.net,enterprisecustomers… — slide 103 of 177"
+    },
+    {
+      "number": 104,
+      "text": "Bleu Needs Cues meme Power App is using azure-apim.net to fetch connection data GET https://europe-002.azure-apim.net/apim /sql/ff47194e357e459b8756a5f43f59ccc6 /v2/datasets/customercareinsights.database.windows.n et,enterprisecustomers… — slide 104 of 177"
+    },
+    {
+      "number": 105,
+      "text": "Bu ou Need lS CUCS Power App is using azure-apim.net to fetch connection data GET https://europe-002.azure-apim.net/apim /sql/ff47194e357e459b8756a5f43f59ccc6 /v2/datasets/customercareinsights.database.windows.n et,enterprisecustomers… — slide 105 of 177"
+    },
+    {
+      "number": 106,
+      "text": "AlL You Need_ls Guest Wy Power Automate & Power Apps Logic Apps \\ docs.microsoft.com — slide 106 of 177"
+    },
+    {
+      "number": 107,
+      "text": "AlL You Need_ls Guest XD Power Automate user token connector ID operation ID connection ID Power Apps Logic Apps \\ docs.microsoft.com — slide 107 of 177"
+    },
+    {
+      "number": 108,
+      "text": "AlL You Need_ls Guest Credential and metadata store user token connection ID iy Power Automate user token connector ID operation ID connection ID Power Apps Logic Apps \\ docs.microsoft.com — slide 108 of 177"
+    },
+    {
+      "number": 109,
+      "text": "Bleu Needs Cues amen Back to real life, where we’re blocked by Power Platform DLP... — slide 109 of 177"
+    },
+    {
+      "number": 110,
+      "text": "Ru toU Needs CUS Back to real life, where we’re blocked by Power Platform DLP.. Or are we? This app isn’t opening correctly — slide 110 of 177"
+    },
+    {
+      "number": 111,
+      "text": "GiltoU Nee lS GU0 SI Copy-and-replay browser API Hub call to bypass DLP [/@mbrg@/BHUSA2023/A11-You-Need-Is-Guest:] $ curl ‘https://europe-002.azure-apim.net/invoke' \\ -X \"POST' \\ -H ‘authority: europe-002.azure-apim.net' \\ -H ‘accept: application/json' \\… — slide 111 of 177"
+    },
+    {
+      "number": 112,
+      "text": "BilOu Nees GUC St Copy-and-replay browser API Hub call to bypass DLP [/@mbrg@/BHUSA2023/A11-You-Need-Is- i steals europe-002.azure “@odata. context\": \"https: //europe-0@2.az - 4 s \" =i \"| $metadata#datasets('customercareinsights. -H ‘accept:… — slide 112 of 177"
+    },
+    {
+      "number": 113,
+      "text": "Let’s take a closer look at this token 7 Sremnely O Dabieade Nowwotieg + s ° X-Ms-Client-App-Id Iproviders/Microsoft PowerApps/apps/0icdeOab-4650-Ac0f-b73d-63cSeBdSSb9e X-Ms-Client-App-Version: _-2022-07-14T0847:487 X-Ms-Client-Environment-Id: _… — slide 113 of 177"
+    },
+    {
+      "number": 114,
+      "text": "AlL You Need_ls Guest se J WW T - r Libraries ntro on Ask Crafted by ‘autho Encoded Decoded HEADER: PAYLOAD: — slide 114 of 177"
+    },
+    {
+      "number": 115,
+      "text": "Bltou Needs GUCS meme A scope away from victory Can we generate a token to API Hub? — slide 115 of 177"
+    },
+    {
+      "number": 116,
+      "text": "Bleu Needs Cues amen A scope away from victory Can we generate a token to API Hub? (reminder: generating tokens is trivial, it’s our user) >>> azure_cli_client = msal.PublicClientApplication(client_id,… — slide 116 of 177"
+    },
+    {
+      "number": 117,
+      "text": "Bltou Needs GCS | seem A scope away from victory Can we generate a token to API Hub? (reminder: generating tokens is trivial, it’s our user) >>> azure_cli_client = msal.PublicClientApplicaticn(client_id,… — slide 117 of 177"
+    },
+    {
+      "number": 118,
+      "text": "BU Neds CCS eens A scope away from victory Can we generate a token to API Hub? (reminder: generating tokens is trivial, it’s our user) Using a built-in public client app? — slide 118 of 177"
+    },
+    {
+      "number": 119,
+      "text": "AlL You Need_ls Guest Can we generate a token to API Hub? (reminder: generating tokens is trivial, it’s our user) Using a built-in public client app? BE Microsoft Pick an account Sign in — slide 119 of 177"
+    },
+    {
+      "number": 120,
+      "text": "Bl tou Need lS CUS A scope away from victory Can we generate a token to API Hub? (reminder: generating tokens is trivial, it’s our user) Using a built-in public client app? No. Using our own app? — slide 120 of 177"
+    },
+    {
+      "number": 121,
+      "text": "AlL You Need_ls Guest Can we generate a token to API Hub? (reminder: generating tokens is trivial, it’s our user) Using a built-in public client app? Using our own app? BE Microsoft Sign in — slide 121 of 177"
+    },
+    {
+      "number": 122,
+      "text": "Bu tou Need lS CCS A scope away from victory Can we generate a token to API Hub? (reminder: generating tokens is trivial, it’s our user) Using a built-in public client app? No. Using our own app? No. . nar $0 CLOSE — slide 122 of 177"
+    },
+    {
+      "number": 123,
+      "text": "AlL You Need_ls Guest Got guest access. All You. Need.Is Guest. — slide 123 of 177"
+    },
+    {
+      "number": 124,
+      "text": "Let’s recap Got guest access. Found a bunch of creds on PowerApps. — slide 124 of 177"
+    },
+    {
+      "number": 125,
+      "text": "Let’s recap Got guest access. Found a bunch of creds on PowerApps. Tried to access — slide 125 of 177"
+    },
+    {
+      "number": 126,
+      "text": "Let’s recap Got guest access. Found a bunch of creds on PowerApps. Tried to access > Blocked by license — slide 126 of 177"
+    },
+    {
+      "number": 127,
+      "text": "Let’s recap Got guest access. Found a bunch of creds on PowerApps. Tried to access > Blocked by license > Got a license — slide 127 of 177"
+    },
+    {
+      "number": 128,
+      "text": "Let’s recap Got guest access. Found a bunch of creds on PowerApps. Tried to access > Blocked by license > Got a license > Blocked by DLP — slide 128 of 177"
+    },
+    {
+      "number": 129,
+      "text": "Let’s recap Got guest access. Found a bunch of creds on PowerApps. Tried to access > Blocked by license > Got a license > Blocked by DLP > Pivoted connection (vuin disclosed) — slide 129 of 177"
+    },
+    {
+      "number": 130,
+      "text": "Let’s recap Got guest access. Found a bunch of creds on PowerApps. Tried to access > Blocked by license > Got a license > Blocked by DLP ~ Pivoted connection (vuin disclosed) And now: peeianennuienadl Canwe gen pen to API Hub? (reminder: generating tokens… — slide 130 of 177"
+    },
+    {
+      "number": 131,
+      "text": "Solving for scope We need to find an AAD app that is: — slide 131 of 177"
+    },
+    {
+      "number": 132,
+      "text": "Solving for scope We need to find an AAD app that is: 1. On by-default (available on every tenant) — slide 132 of 177"
+    },
+    {
+      "number": 133,
+      "text": "Solving for scope We need to find an AAD app that is: 1. On by-default (available on every tenant) 2. Pre-approved to query API Hub (get internal resource) — slide 133 of 177"
+    },
+    {
+      "number": 134,
+      "text": "Solving for scope We need to find an AAD app that is: 1. On by-default (available on every tenant) 2. Pre-approved to query API Hub (get internal resource) 3. Public client (generate tokens on demand) — slide 134 of 177"
+    },
+    {
+      "number": 135,
+      "text": "Solving for scope We need to find an AAD app that is: 1. On by-default 2. Pre-approved to query API Hub 3. Public client Well, we know about the PowerApps portal! — slide 135 of 177"
+    },
+    {
+      "number": 136,
+      "text": "Solving for scope We need to find an AAD app that is: 1. On by-default 2. Pre-approved to query API Hub 3. Public client Well, we Know about the PowerApps portal! But we can’t generate tokens on its behalf. — slide 136 of 177"
+    },
+    {
+      "number": 137,
+      "text": "Blltou Needs GUC St me How does msft cross-app SSO work? (or: Introduction to family of client IDs) secureworks/family-of- client-ids-research — slide 137 of 177"
+    },
+    {
+      "number": 138,
+      "text": "Biltou Needs GCS ema How does msft cross-app SSO work? (or: Introduction to family of client IDs) () README 4% MIT license G i= Abusing Family Refresh Tokens for Unauthorized Access and Persistence in Azure Active Directory ¢ Ryan Marcotte Cobb, CTU… — slide 138 of 177"
+    },
+    {
+      "number": 139,
+      "text": "All You. Need. Is Guest (©) README 4&8 MIT license oO Abusing Family Refresh Tokens for Unauthorized Access and Persistence in Azure Active Directory ¢ Ryan Marcotte Cobb, CTU Special Operations ¢ Tony Gore, CTU Special Operations Undocumented… — slide 139 of 177"
+    },
+    {
+      "number": 140,
+      "text": "Glkou Need ls Ges rman How does msft cross-app SSO work? (or: Introduction to family of client IDs) application_name Office 365 Management Microsoft Azure CLI Microsoft Azure PowerShell Microsoft Teams Windows Search Outlook Mobile Microsoft Authenticator… — slide 140 of 177"
+    },
+    {
+      "number": 141,
+      "text": "Glow Need Is GUCS| rama How does msft cross-app SSO work? (or: Introduction to family of client IDs) Microsoft Flow application_name Microsoft Planner Office 365 Management Microsoft Intune Company Portal Microsoft Azure CLI Accounts Control Ul Microsoft… — slide 141 of 177"
+    },
+    {
+      "number": 142,
+      "text": "Glkou Need ls Ges rman How does msft cross-app SSO work? (or: Introduction to family of client IDs) application_name Visual Studio Microsoft Flow _ Microsoft Planner Office 365 Management OneDrive iOS App Microsoft Intune Company Portal Microsoft Azure CLI… — slide 142 of 177"
+    },
+    {
+      "number": 143,
+      "text": "Glkou Need ls Ges rman How does msft cross-app SSO work? (or: Introduction to family of client IDs) application_name Visual Studio Microsoft Flow _ Microsoft Planner Office 365 Management OneDrive iOS App Microsoft Intune Company Portal Microsoft Azure CLI… — slide 143 of 177"
+    },
+    {
+      "number": 144,
+      "text": "Family of client IDs secureworks/family- of- Microsoft client-ids-research E a API Hub — slide 144 of 177"
+    },
+    {
+      "number": 145,
+      "text": "Bleu Needs Cues meme Exchange tokens to win We need to find an AAD app that is: 1. On by-default 2. Pre-approved to query API Hub 3. Public client Are you trying to sign in to Microsoft Azure CLI? — slide 145 of 177"
+    },
+    {
+      "number": 146,
+      "text": "And now for the fun part section divider — slide 146 of 177"
+    },
+    {
+      "number": 147,
+      "text": "PPL CSTE DS otcte NC (.venv) @mbrg@:/bhusa23/all-you-need-is-guest$ powerpwn -h | Fo\\WWATT IS ion lL VF WAY | ; MOI VALU low VAM I Ll | usage: powerpwn [-h] [-1 LOG_LEVEL] {dump, gui, backdoor ,nocodemalware, phishing} .. positional arguments: {dump, gui,… — slide 147 of 177"
+    },
+    {
+      "number": 148,
+      "text": "PPL CSTE DS otcte NC (.venv) @mbrg@:/bhusa23/all-you-need-is-guest$ powerpwn -h FO\\VWATT FS | 11D a Q1\\vves | « \\_/ VANS L dump gui backdoor nocodemalware phishing dump gui backdoor nocodemalware phishing optional arguments: -h, --help DANA Fo Hn WAL | _f… — slide 148 of 177"
+    },
+    {
+      "number": 149,
+      "text": "PUA STERN otcre Ne (.venv) @mbrg@:/bhusa23/all-you-need-is-guest$ powerpwn -h TATA TA CL Fo\\WWATT GS | | I) PWV ATT ie | | iD) WOW vi l_ Vie VAY \\ _f CLAY I I command Recon for available data connections and dump their content. Show collected resources and… — slide 149 of 177"
+    },
+    {
+      "number": 150,
+      "text": "PUA Co EN Sterol (.venv) @mbrg@:/bhusa23/all-you-need-is-guest$ powerpwn dump -t fc993bO@f-345b-4d01-9f67-9ac4a140dd43 \"\\ fe OD & - ~\\VA\\S \\[ i Oixv v7] —7) I i Sf VAP SOL TFA A FP OL I\\v v/] ttl b STAT IE Ld — slide 150 of 177"
+    },
+    {
+      "number": 151,
+      "text": "AlL You Need_ls Guest Microsoft Azure Microsoft Pick an account You're signing in to Microsoft Azure Cross- platform Command Line Interface on another device located in Israel. If it's not you, close this page Hacker5S + Use another account Back — slide 151 of 177"
+    },
+    {
+      "number": 152,
+      "text": "AlL You Need_ls Guest powerpwn - Credentials e All Resources © Credentials e Automations © Applications © Connectors Connector Connection Created by fl = shared _azurefile jamieredingcustomerdata.file.core.windows.net jamier@zenitydemo.onmicrosoft.com ©… — slide 152 of 177"
+    },
+    {
+      "number": 153,
+      "text": "AlL You Need_ls Guest powerpwn - Credentials e All Resources © Credentials e Automations ¢ Applications © Connectors Connector Connection Created by Oo B oa fa} shared shared sharea shared azureblob azuretables azurequeues sq… — slide 153 of 177"
+    },
+    {
+      "number": 154,
+      "text": "AlL You Need_ls Guest powerpwn - Credentials e All Resources © Credentials e Automations ¢ Applications © Connectors Connector Connection Created by fl = shared _azurefile jamieredingcustomerdata.file.core.windows.net jamier@zenitydemo.onmicrosoft.com ©… — slide 154 of 177"
+    },
+    {
+      "number": 155,
+      "text": "All You. Need. Is Guest / /D t-fO93bD0345b-4d01-9f67-9ac4ail40dd4s / connections / shared _sqll / ££47194e3S57e459bSTS6aSM4Si59 cee / table Name 1 Mimetype Modified Size CD) default-Customers.json +] application/json 2023.07.28 11:09:35 23.92 KiB C)… — slide 155 of 177"
+    },
+    {
+      "number": 156,
+      "text": "BiptoU Nees CCS [{\"@odata.etag\" “ItemInternalId\": \"7eb41684-4b64-4f39-9eab-90fbe3@ba62c\", \"CustomerID\": 34553, \"FirstName\": “Jamie\", “LastName”: \"Reding\", “Email\": “jamier@zenitydemo.OnMicrosoft.com\", \"SocialSecurityNumber\": \"2@9-97-1111\"}, {\"@odata.etag\":… — slide 156 of 177"
+    },
+    {
+      "number": 157,
+      "text": "AlL You Need_ls Guest powerpwn - Credentials e All Resources © Credentials e Automations © Applications © Connectors Connector Connection Created by fl = shared _azurefile jamieredingcustomerdata.file.core.windows.net jamier@zenitydemo.onmicrosoft.com}… — slide 157 of 177"
+    },
+    {
+      "number": 158,
+      "text": "Bu rou Need lS Ge St ame SqlPassThroughNativeQuery “A POS’ /#£47194e357e459b8756a5F43F59ccc6/datasets({dataset}) /query({language}) aN Parameters Try it out Name Description dataset * ‘suid string (path language * =s¥\"= string (path query * =au\"e object… — slide 158 of 177"
+    },
+    {
+      "number": 159,
+      "text": "Bleu Needs Cues amen Power Pwn Try it for yourself! soar Pun ean oensve ecu github.com/mbrg/power-pwn ower Pwn is an offensive security toolset for Microsoft Power Platform. Install with pip install powerpwn . Check out our Wiki for docs, guides and… — slide 159 of 177"
+    },
+    {
+      "number": 160,
+      "text": "Defense section divider — slide 160 of 177"
+    },
+    {
+      "number": 161,
+      "text": "Cloud Data ae cclis Customer Access Code Identity i Platform Runtime — slide 161 of 177"
+    },
+    {
+      "number": 162,
+      "text": "Cloud We must own our side of the Shared Responsibility Model LCNC Data Biz logic Customer Access Code Identity : Platform Runtime — slide 162 of 177"
+    },
+    {
+      "number": 163,
+      "text": ": LCNC Data Biz logic ewmency Access Code Identity ; Platform Runtime — slide 163 of 177"
+    },
+    {
+      "number": 164,
+      "text": "fllstou Needs GCS meee Data Biz logic Access Code Identity Runtime Platforms must step up Customer Platform Every SaaS is a Low-Code/No-Code platform today. They need to own the code running on their platforms, in addition to the rest of the Shared… — slide 164 of 177"
+    },
+    {
+      "number": 165,
+      "text": "AlL You Need_ls Guest A Unauth Request + Intercept redirected respons pim.net/apimiconnect ensitive Info or Power Apps Ri Azure Function redentials +| Connector (Azure +| running APIM API) ~~ Connector Code Proxied _| External Service ; Platform Ru nt me… — slide 165 of 177"
+    },
+    {
+      "number": 166,
+      "text": ": Sure, let business users build they own. What could go wrong? Data Biz logic Customer Access Code Identity : Platform Runtime — slide 166 of 177"
+    },
+    {
+      "number": 167,
+      "text": ": Sure, let business users build they own. What could go wrong? Data Biz logic Access Code Identity Runtime Customer Platform Are apps moving data outside of the corp boundary? Are users over-sharing data? Are we allowing external access? Are we properly… — slide 167 of 177"
+    },
+    {
+      "number": 168,
+      "text": ": Sure, let business users build they own. What could go wrong? Data ‘ ¢ Are apps moving data outside of the corp boundary? picid Customer , Are users over-sharing data? Access ¢ Are we allowing external access? ¢ Are we properly handling secrets and… — slide 168 of 177"
+    },
+    {
+      "number": 169,
+      "text": "Protect your org! Build secure apps Code, links and details > mbgsec.com/talks — slide 169 of 177"
+    },
+    {
+      "number": 170,
+      "text": "Protect your org! Build secure apps 1. Don’t overshare Code, links and details > mbgsec.comitalks & — slide 170 of 177"
+    },
+    {
+      "number": 171,
+      "text": "Protect your org! @ouwasp, OWASP Low-Code/No-Code Top 10 Build secure apps 1. Don’t overshare 2. OWASP LCNC Top 10 Code, links and details > mbgsec.com/talks — slide 171 of 177"
+    },
+    {
+      "number": 172,
+      "text": "Protect your org! Build secure apps 1. Don’t overshare 2. OWASP LCNC Top 10 Harden your env Code, links and details > mbgsec.com/talks — slide 172 of 177"
+    },
+    {
+      "number": 173,
+      "text": "AlL You Need ls Guest Build secure apps 1. Don’t overshare 2. OWASP LCNC Top 10 Harden your env 3. Secure configs Code, links and details > mbgsec.com/talks — slide 173 of 177"
+    },
+    {
+      "number": 174,
+      "text": "Protect your org! Build secure apps 1. Don’t overshare 2. OWASP LCNC Top 10 Harden your env 3. Secure configs 4. AppSec ~8M active Power devs today! More MSFT low-code devs than .NET devs, today! | Credential Sharing asa Service: The Dark Side of No Code… — slide 174 of 177"
+    },
+    {
+      "number": 175,
+      "text": "Protect your org! Build secure apps 1. Don’t overshare 2. OWASP LCNC Top 10 Harden your env 3. Secure configs 4. AppSec Hack your env 5. powerpwn oN FANS AT Y/N LL! IO Co t\\v vst _/t 1 cof’ Va NA NL TaN NAVA H HI LN I) I\\v vsti cal LANA Mell Ie | Code,… — slide 175 of 177"
+    },
+    {
+      "number": 176,
+      "text": "Sound Bytes Take a deep look at your EntralD guest strategy, guests are more powerful than you think We're left business users alone with security vs. productivity decisions, what did we expect them to choose? To get a full dumps of SQL/Azure resources,… — slide 176 of 177"
+    },
+    {
+      "number": 177,
+      "text": "Learn more: mbgsec.com Twitter: @mbrgO, @inbarraz fllYou Need |s Guest —______> Michael Bargury, Inbar Raz @ Zenity x33fcon 2024 — slide 177 of 177"
+    }
+  ]
+}

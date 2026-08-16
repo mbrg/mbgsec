@@ -20,7 +20,7 @@
 
   const slideFromHash = () => {
     const match = window.location.hash.match(/^#slide=(\d+)$/);
-    return match ? Math.max(0, Number(match[1]) - 1) : 0;
+    return match ? Math.max(0, Number(match[1]) - 1) : null;
   };
 
   async function loadManifest(pointerUrl) {
@@ -86,9 +86,12 @@
       if (slides.length === 0) throw new Error("This presentation does not contain any slides.");
 
       setAspectRatio(root, manifest);
-      let index = clamp(slideFromHash(), 0, slides.length - 1);
+      const initialSlide = slideFromHash();
+      let index = clamp(initialSlide ?? 0, 0, slides.length - 1);
+      let ownsHash = initialSlide !== null;
 
       const updateHash = () => {
+        if (!ownsHash) return;
         const hash = `#slide=${index + 1}`;
         if (window.location.hash !== hash) history.replaceState(null, "", hash);
       };
@@ -220,7 +223,8 @@
         updateHash();
       };
 
-      const goTo = (requestedIndex) => {
+      const goTo = (requestedIndex, writeHash = true) => {
+        if (writeHash) ownsHash = true;
         const target = clamp(requestedIndex, 0, slides.length - 1);
         if (target === index) {
           updateHash();
@@ -252,7 +256,15 @@
         fullscreen.setAttribute("aria-label", active ? "Exit fullscreen" : "Enter fullscreen");
       });
 
-      window.addEventListener("hashchange", () => goTo(slideFromHash()));
+      window.addEventListener("hashchange", () => {
+        const requestedSlide = slideFromHash();
+        if (requestedSlide === null) {
+          ownsHash = false;
+          return;
+        }
+        ownsHash = true;
+        goTo(requestedSlide, false);
+      });
       window.addEventListener("keydown", (event) => {
         if (event.key === "Escape" && root.hasAttribute("data-resources-open")) {
           setResourcesOpen(false);

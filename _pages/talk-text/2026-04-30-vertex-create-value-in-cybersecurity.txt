@@ -1,0 +1,8 @@
+---
+layout: talk-text
+permalink: /talks/2026-04-30-vertex-create-value-in-cybersecurity/llms.txt
+talk_permalink: /talks/2026-04-30-vertex-create-value-in-cybersecurity/
+talk_slug: 2026-04-30-vertex-create-value-in-cybersecurity
+generated_by: sync-talk-text
+sitemap: false
+---

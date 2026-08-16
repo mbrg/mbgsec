@@ -1,6 +1,6 @@
 ---
 name: publish-mbgsec-talk
-description: Publish a new mbgsec talk from a PowerPoint (.pptx), Google Slides deck or URL, Keynote (.key), PDF, or prepared slide bundle. Use when Codex must convert a presentation into the mbgsec live-deck format, accept or determine the talk title, conference, date/year/month, official schedule URL, YouTube recording URL, and optional GitHub source-code URL, upload deck assets and a downloadable PDF to the mbgsec Cloudflare R2 bucket through 1Password, create or update the responsive Jekyll talk page and talks index, validate mobile and desktop behavior, or refresh an existing hosted talk. Always use web search to validate public dates, conference identity, schedule links, recordings, and shared source repositories before publication, including values supplied by the user.
+description: Publish a new mbgsec talk from a PowerPoint (.pptx), Google Slides deck or URL, Keynote (.key), PDF, or prepared slide bundle. Use when Codex must convert a presentation into the mbgsec live-deck format, accept or determine the talk title, conference, date/year/month, official schedule URL, video recording URL, and optional GitHub source-code URL, upload deck assets and a downloadable PDF to the mbgsec Cloudflare R2 bucket through 1Password, create or update the responsive Jekyll talk page and talks index, validate mobile and desktop behavior, or refresh an existing hosted talk. Always use web search to validate public dates, conference identity, schedule links, recordings, and shared source repositories before publication, including values supplied by the user.
 ---
 
 # Publish an mbgsec talk
@@ -30,11 +30,11 @@ Collect or determine these values:
 - `talk_date`: actual presentation date as `YYYY-MM-DD`.
 - `conference`: public event name, normally including its year.
 - `schedule_url`: exact official talk or schedule entry when available.
-- `recording_url`: exact official YouTube video when available.
+- `recording_url`: exact official public video recording when available, regardless of hosting provider.
 - `github_url`: exact public GitHub repository or talk-specific source path when one code resource is shared.
 - `github_urls`: labeled list of exact public GitHub repositories or talk-specific source paths when the talk shares more than one distinct code resource. Do not discard a validated repository merely to fit the singular field.
 
-Treat explicit user-provided values and source-deck metadata as candidates, not proof. Always search the web and open authoritative destinations to validate the conference identity, exact session date, schedule entry, recording, and shared source repository. Prefer official conference sources for the date and schedule, official event/speaker YouTube sources for recordings, and repositories owned or explicitly linked by the speaker, research team, or organizer. Verify that each final resource names the same talk or clearly connects the same speaker, project, and event. Do not use search-result URLs, conference home pages, YouTube search pages, guessed video IDs, generic GitHub profiles, unrelated repositories, or placeholder links.
+Treat explicit user-provided values and source-deck metadata as candidates, not proof. Always search the web and open authoritative destinations to validate the conference identity, exact session date, schedule entry, recording, and shared source repository. Prefer official conference sources for the date and schedule, official event/speaker video sources for recordings, and repositories owned or explicitly linked by the speaker, research team, or organizer. Verify that each final resource names the same talk or clearly connects the same speaker, project, and event. Do not use search-result URLs, conference home pages, video search pages, guessed video IDs, generic GitHub profiles, unrelated repositories, or placeholder links.
 
 Maintain a compact validation record containing each field, accepted value, authoritative source URL, and the evidence that matched. Cite these sources in the final handoff. If web evidence conflicts with supplied metadata, report the conflict and resolve it before creating date-derived slugs or publishing. If an optional schedule, recording, or GitHub URL cannot be validated, omit it rather than treating the supplied link as verified.
 
@@ -145,7 +145,13 @@ Omit optional URL fields that are not available. Keep the title value to the tal
 
 Use the deck layout's icon-only resource controls for PDF, schedule, recording, and shared GitHub source code. Use `github_url` for one repository and `github_urls` with concise labels for multiple repositories. Keep a visible text equivalent for assistive technology and expose each text label on pointer hover and keyboard focus. Show only the icons whose optional URLs exist.
 
-Find the matching row in `_pages/talks.md`. For a talk onboarded to this live experience, put exactly one combined `Interactive talk page` icon in the Resources cell and link it to the live talk permalink. Do not repeat separate PDF, schedule, or recording icons in that table row; those resources belong inside the talk page. Preserve all legacy rows and their existing individual resource icons, as well as the table's formatting and chronology.
+Find the matching row in `_pages/talks.md`. Every listed talk must have a page, even when no slide deck is available; use the `talk` layout for a resource-only page. Use the `talk-table-resources.html` include in the Resources cell and pass it the talk permalink. The include renders the talk-page icon and derives a generic video icon from any `recording_url` in that page's frontmatter. Never pass a recording URL directly from the table. Every Resources cell contains the talk-page icon and, when a recording exists, the recording icon in that order. Do not put PDF, schedule, GitHub, project, or other resource icons in the table; keep them inside the talk page. Preserve the table's formatting and chronology.
+
+Run `npm run talks:text:sync` after the page and public deck manifest are final.
+Commit the generated `_pages/talk-text/` page and `_data/talk_slides/` data so the
+same-origin `/talks/<page-slug>/llms.txt` route contains metadata, all resources,
+the published abstract/transcript, and separately labeled slide accessibility
+text without requiring JavaScript.
 
 ## Verify the experience
 
@@ -159,7 +165,7 @@ Test at minimum:
 - First, middle, and last slides; hash navigation; previous/next; swipe; keyboard; fullscreen when supported.
 - Resource controls with keyboard focus and touch-sized targets.
 - Icon-only resource controls expose their text on hover/focus and retain accessible names.
-- The onboarded talk's `_pages/talks.md` row contains exactly one combined live-page resource link; legacy rows remain unchanged.
+- Every `_pages/talks.md` Resources cell uses `talk-table-resources.html` with a valid talk permalink. It contains a talk-page icon followed by a generic recording icon when the page frontmatter has `recording_url`; the table never supplies the recording directly.
 - Schedule, recording, and every GitHub source control open the exact external resources; when multiple repositories are present, each has a distinct accessible name and tooltip.
 - Download href targets R2; validate it through response headers instead of causing an automated download.
 - If a legacy or repository PDF exists for this talk, independently compare it with the published PDF/slides and fail validation on unexplained page-count, order, identity, or material-content differences. Do not accept the migration agent's comparison as proof.

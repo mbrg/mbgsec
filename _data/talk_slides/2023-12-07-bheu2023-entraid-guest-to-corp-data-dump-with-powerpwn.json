@@ -1,0 +1,307 @@
+{
+  "generated_by": "sync-talk-text",
+  "source_manifest": "https://media.mbgsec.com/decks/2023-12-07_BHEU2023_EntraIDGuestToCorpDataDumpWithPowerpwn/latest.json",
+  "manifest": "https://media.mbgsec.com/decks/2023-12-07_BHEU2023_EntraIDGuestToCorpDataDumpWithPowerpwn/354c779e/deck.json",
+  "title": "EntraID Guest to Corp Data Dump with powerpwn",
+  "slides": [
+    {
+      "number": 1,
+      "text": "Slide 1: powerpwn An offensive security toolset for Microsoft 365 Power Platform"
+    },
+    {
+      "number": 2,
+      "text": "Slide 2: About Them Lana Salameh Team lead @ Zenity Passionate about Cyber security Michael Bargury CTO and Co-founder @ Zenity OWASP LCNC Top 10 project lead Dark Reading columnist Defcon, BSides , RSAC, OWASP @mbrg0 github.com/mbrg darkreading.com/author/michael-bargury @ lana __ salameh linkedin.com /in/ salameh-lana"
+    },
+    {
+      "number": 3,
+      "text": "Slide 3: About Me Inbar Raz VP of Research @ Zenity Hacker of Things Retro-computing collector and restorer Defcon, BSides , VB, SAS, CCC, CARO, and more @ inbarraz"
+    },
+    {
+      "number": 4,
+      "text": "Slide 4: powerpwn is an offensive security toolset for Microsoft 365 Power Platform. Aimed at red teams and penetration testers for making sure their environment is secure. Comprised of multiple different modules. Intro github.com/mbrg/power-pwn"
+    },
+    {
+      "number": 5,
+      "text": "Slide 5: Let the fun begin"
+    },
+    {
+      "number": 6,
+      "text": "Slide 6: pip install powerpwn"
+    },
+    {
+      "number": 7,
+      "text": "Slide 7: More than meets the eye"
+    },
+    {
+      "number": 8,
+      "text": "Slide 8: The assumption that g uest users have limited access to the organization resources is completely wrong. Guest accounts have your corp data https:// xkcd.com /1339/"
+    },
+    {
+      "number": 9,
+      "text": "Slide 9: The assumption that g uest users have limited access to the organization resources is completely wrong. State-of-the-Art attacks are focused on AAD enumeration ( AADInternals ). Guest accounts have your corp data"
+    },
+    {
+      "number": 10,
+      "text": "Slide 10: The assumption that g uest users have limited access to the organization resources is completely wrong. State-of-the-Art attacks are focused on AAD enumeration ( AADInternals ). Guest users actually have access to resources, data, and credentials . You just don’t know it. Guest accounts have your corp data"
+    },
+    {
+      "number": 11,
+      "text": "Slide 11: The assumption that g uest users have limited access to the organization resources is completely wrong. State-of-the-Art attacks are focused on AAD enumeration ( AADInternals ). Guest users actually have access to resources, data, and credentials . You just don’t know it. BlackHat USA 2023 talk: All You Need Is Guest blackhat.com/us-23/briefings/schedule/index.html#all-you-need-is-guest-32647 Guest accounts have your corp data"
+    },
+    {
+      "number": 12,
+      "text": "Slide 12",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2023-12-07_BHEU2023_EntraIDGuestToCorpDataDumpWithPowerpwn/354c779e/media/you-talk-the-talk.mp4"
+        }
+      ]
+    },
+    {
+      "number": 13,
+      "text": "Slide 13: Demo"
+    },
+    {
+      "number": 14,
+      "text": "Slide 14"
+    },
+    {
+      "number": 15,
+      "text": "Slide 15",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2023-12-07_BHEU2023_EntraIDGuestToCorpDataDumpWithPowerpwn/354c779e/media/powerdump.mp4"
+        }
+      ]
+    },
+    {
+      "number": 16,
+      "text": "Slide 16: Connected to a host tenant; R an recon and enumerated on available resources; Harvested stored (and shared) credentials; Executed arbitrary commands on an SQL server. So far, a Guest user has:"
+    },
+    {
+      "number": 17,
+      "text": "Slide 17: Connected to a host tenant; R an recon and enumerated on available resources; Harvested stored (and shared) credentials; Executed arbitrary commands on an SQL server. So far, a Guest user has:"
+    },
+    {
+      "number": 18,
+      "text": "Slide 18",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2023-12-07_BHEU2023_EntraIDGuestToCorpDataDumpWithPowerpwn/354c779e/media/powerdump.mp4"
+        }
+      ]
+    },
+    {
+      "number": 19,
+      "text": "Slide 19: Connected to a host tenant; R an recon and enumerated on available resources; Harvested stored (and shared) credentials; Executed arbitrary commands on an SQL server. So far, a Guest user has:"
+    },
+    {
+      "number": 20,
+      "text": "Slide 20: Connected to a host tenant; R an recon and enumerated on available resources; Harvested stored (and shared) credentials; Executed arbitrary commands on an SQL server ; Executed arbitrary applications on the tenant. So far, a Guest user has:"
+    },
+    {
+      "number": 21,
+      "text": "Slide 21: A user request permission to perform actions; The approved user executes an app; The app triggers an automation to perform some of its tasks ; The oblivious automation carries out its task. But what happens if the app and automations are over-shared? JIT Access:"
+    },
+    {
+      "number": 22,
+      "text": "Slide 22",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2023-12-07_BHEU2023_EntraIDGuestToCorpDataDumpWithPowerpwn/354c779e/media/powerdump.mp4"
+        }
+      ]
+    },
+    {
+      "number": 23,
+      "text": "Slide 23"
+    },
+    {
+      "number": 24,
+      "text": "Slide 24: Connected to a host tenant; R an recon and enumerated on available resources; Harvested stored (and shared) credentials; Executed arbitrary commands on an SQL server ; Executed arbitrary applications on the tenant. So far, a Guest user has:"
+    },
+    {
+      "number": 25,
+      "text": "Slide 25: Connected to a host tenant; R an recon and enumerated on available resources; Harvested stored (and shared) credentials; Executed arbitrary commands on an SQL server ; Executed arbitrary applications on the tenant; Performed Privilege Escalation usin g an Automation. So far, a Guest user has:"
+    },
+    {
+      "number": 26,
+      "text": "Slide 26: Persistence"
+    },
+    {
+      "number": 27,
+      "text": "Slide 27: How to keep a ‘forever’ access DEFCON30 talk: Enterprise Domination via Low Code Abuse youtu.be/D3A62Rzozq4?t=1285 We want to remain persistent within Microsoft 365 even if the user gets deleted or their access is revoked."
+    },
+    {
+      "number": 28,
+      "text": "Slide 28: Demo"
+    },
+    {
+      "number": 29,
+      "text": "Slide 29",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2023-12-07_BHEU2023_EntraIDGuestToCorpDataDumpWithPowerpwn/354c779e/media/powerdoor.mp4"
+        }
+      ]
+    },
+    {
+      "number": 30,
+      "text": "Slide 30: A person whose account was disabled regained access; This was done using a public webhook ; The outsider could be anyone – it doesn’t have to be Jamie Where do we stand now?"
+    },
+    {
+      "number": 31,
+      "text": "Slide 31: Create a new Automation; The Automation will get us access tokens to an Azure blob. What’s next?"
+    },
+    {
+      "number": 32,
+      "text": "Slide 32",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2023-12-07_BHEU2023_EntraIDGuestToCorpDataDumpWithPowerpwn/354c779e/media/powerdoor.mp4"
+        }
+      ]
+    },
+    {
+      "number": 33,
+      "text": "Slide 33: Executing Automations leaves behind logs; Deteting the Automation will delete its execution logs as well. What about OPSEC?"
+    },
+    {
+      "number": 34,
+      "text": "Slide 34",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2023-12-07_BHEU2023_EntraIDGuestToCorpDataDumpWithPowerpwn/354c779e/media/powerdoor.mp4"
+        }
+      ]
+    },
+    {
+      "number": 35,
+      "text": "Slide 35: An active member installed a backdoor; At some later point, despite their account being disabled , the no-longer-member reconnected and gained access ; A new Automation was created, for providing access to a tenant resource ; Free access to the resource was gained from outside the tenant ; The incriminating Automation was deleted along with its logs . To add insult to injury:"
+    },
+    {
+      "number": 36,
+      "text": "Slide 36"
+    },
+    {
+      "number": 37,
+      "text": "Slide 37: Phishing"
+    },
+    {
+      "number": 38,
+      "text": "Slide 38: A trusted Microsoft domain Collect the low-hanging fruits"
+    },
+    {
+      "number": 39,
+      "text": "Slide 39: A trusted Microsoft domain Built-in business SSO Collect the low-hanging fruits +"
+    },
+    {
+      "number": 40,
+      "text": "Slide 40: A trusted Microsoft domain Built-in business SSO Users are familiar with PowerApps Collect the low-hanging fruits + +"
+    },
+    {
+      "number": 41,
+      "text": "Slide 41: A trusted Microsoft domain Built-in business SSO Users are familiar with PowerApps Collect the low-hanging fruits Phishing by a single URL click + + ="
+    },
+    {
+      "number": 42,
+      "text": "Slide 42: A trusted Microsoft domain Built-in business SSO Users are familiar with PowerApps Collect the low-hanging fruits Phishing by a single URL click + + = DEFCON30 talk: Enterprise Domination via Low Code Abuse : youtu.be/D3A62Rzozq4"
+    },
+    {
+      "number": 43,
+      "text": "Slide 43: Demo"
+    },
+    {
+      "number": 44,
+      "text": "Slide 44",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2023-12-07_BHEU2023_EntraIDGuestToCorpDataDumpWithPowerpwn/354c779e/media/phishing.mp4"
+        }
+      ]
+    },
+    {
+      "number": 45,
+      "text": "Slide 45: We delete the sent items and the trash. What about OPSEC?"
+    },
+    {
+      "number": 46,
+      "text": "Slide 46",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2023-12-07_BHEU2023_EntraIDGuestToCorpDataDumpWithPowerpwn/354c779e/media/phishing.mp4"
+        }
+      ]
+    },
+    {
+      "number": 47,
+      "text": "Slide 47: Recap"
+    },
+    {
+      "number": 48,
+      "text": "Slide 48: What did we see today?"
+    },
+    {
+      "number": 49,
+      "text": "Slide 49: What did we see today? A g uest user gaining access to corporate resources and credentials"
+    },
+    {
+      "number": 50,
+      "text": "Slide 50: What did we see today? A guest user gaining access to corporate resources and credentials Execution of arbitrary commands using obtained credentials"
+    },
+    {
+      "number": 51,
+      "text": "Slide 51: What did we see today? A guest user gaining access to corporate resources and credentials Execution of arbitrary commands using obtained credentials Installation of a backdoor using an Automation and achieving persistence"
+    },
+    {
+      "number": 52,
+      "text": "Slide 52: What did we see today? A g uest user gaining access to corporate resources and credentials Execution of arbitrary commands using obtained credentials Installation of a backdoor using an Automation and achieving persistence Carrying out a tenant-wide phishing attack"
+    },
+    {
+      "number": 53,
+      "text": "Slide 53: What did we see today? A guest user gaining access to corporate resources and credentials Execution of arbitrary commands using obtained credentials Installation of a backdoor using an Automation and achieving persistence Carrying out a tenant-wide phishing attack"
+    },
+    {
+      "number": 54,
+      "text": "Slide 54: What can YOU do?"
+    },
+    {
+      "number": 55,
+      "text": "Slide 55: What can YOU do? Don’t over-share your resources (duh!)"
+    },
+    {
+      "number": 56,
+      "text": "Slide 56: What can YOU do? Don’t over-share your resources (duh!) Follow security best-practices – OWASP Top 10 for LCNC"
+    },
+    {
+      "number": 57,
+      "text": "Slide 57: What can YOU do? Don’t over-share your resources (duh!) Follow security best-practices – OWASP Top 10 for LCNC Constantly monitor your environment and go threat-hunting"
+    },
+    {
+      "number": 58,
+      "text": "Slide 58: What can YOU do? Don’t over-share your resources (duh!) Follow security best-practices – OWASP Top 10 for LCNC Constantly monitor your environment and go threat-hunting GO HACK YOURSELF"
+    },
+    {
+      "number": 59,
+      "text": "Slide 59: powerpwn An offensive security toolset for Microsoft 365 Power Platform References : bit.ly/mbrg-bhusa23"
+    }
+  ]
+}

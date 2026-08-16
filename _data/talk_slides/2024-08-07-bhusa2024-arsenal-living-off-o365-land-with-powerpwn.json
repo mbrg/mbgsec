@@ -1,0 +1,112 @@
+{
+  "generated_by": "sync-talk-text",
+  "source_manifest": "https://media.mbgsec.com/decks/2024-08-07_BHUSA2024_Arsenal_Living_off_the_O365_land_with_powerpwn/latest.json",
+  "manifest": "https://media.mbgsec.com/decks/2024-08-07_BHUSA2024_Arsenal_Living_off_the_O365_land_with_powerpwn/1f5541e6/deck.json",
+  "title": "Living off the O365 land with powerpwn",
+  "slides": [
+    {
+      "number": 1,
+      "text": "Copilot Hunter (powerpwn) opening slide for Black Hat USA 2024 Arsenal — slide 1 of 26"
+    },
+    {
+      "number": 2,
+      "text": "Copilot Studio authentication settings showing the one-click-away risk — slide 2 of 26"
+    },
+    {
+      "number": 3,
+      "text": "Copilot Studio action picker showing connectors, flows, skills, and dataverse actions — slide 3 of 26"
+    },
+    {
+      "number": 4,
+      "text": "Copilot Studio environment URL with the environment identifier highlighted — slide 4 of 26"
+    },
+    {
+      "number": 5,
+      "text": "Copilot Studio environment URL with the tenant identifier highlighted — slide 5 of 26"
+    },
+    {
+      "number": 6,
+      "text": "Copilot Studio environment URL with the solution publisher prefix highlighted — slide 6 of 26"
+    },
+    {
+      "number": 7,
+      "text": "Copilot Studio environment URL with the demo website name highlighted — slide 7 of 26"
+    },
+    {
+      "number": 8,
+      "text": "Terminal output enumerating Copilot Studio environment and bot identifiers — slide 8 of 26"
+    },
+    {
+      "number": 9,
+      "text": "Illustration of a robot at the door introducing bot discovery — slide 9 of 26"
+    },
+    {
+      "number": 10,
+      "text": "Browser developer tools showing a Copilot Studio canvas settings API request — slide 10 of 26"
+    },
+    {
+      "number": 11,
+      "text": "Canvas settings JSON response exposing bot ID, bot name, and tenant ID — slide 11 of 26"
+    },
+    {
+      "number": 12,
+      "text": "Finding environment and tenant values in a Copilot Studio URL — slide 12 of 26"
+    },
+    {
+      "number": 13,
+      "text": "Azure AD reconnaissance APIs for finding environment and tenant values — slide 13 of 26"
+    },
+    {
+      "number": 14,
+      "text": "Default solution publisher prefix patterns and discovery constraints — slide 14 of 26"
+    },
+    {
+      "number": 15,
+      "text": "Minimizing the solution publisher prefix wordlist for reconnaissance — slide 15 of 26"
+    },
+    {
+      "number": 16,
+      "text": "Solution publisher prefix candidate wordlist beside a combination lock — slide 16 of 26"
+    },
+    {
+      "number": 17,
+      "text": "Finding the demo website name in a Copilot Studio URL — slide 17 of 26"
+    },
+    {
+      "number": 18,
+      "text": "Copilot Studio URL with the complete demo website path highlighted — slide 18 of 26"
+    },
+    {
+      "number": 19,
+      "text": "Common bot-name candidates illustrated as a slot-machine search — slide 19 of 26"
+    },
+    {
+      "number": 20,
+      "text": "Amass reconnaissance output enumerating Power Platform environment hosts — slide 20 of 26"
+    },
+    {
+      "number": 21,
+      "text": "Reconnaissance output and tenant lookup results for a discovered Power Platform environment — slide 21 of 26"
+    },
+    {
+      "number": 22,
+      "text": "Python, ffuf, and Puppeteer tools used in the Copilot Hunter workflow — slide 22 of 26"
+    },
+    {
+      "number": 23,
+      "text": "Demo title slide — slide 23 of 26"
+    },
+    {
+      "number": 24,
+      "text": "Functionality recap: tenant scanning, environment enumeration, prefix reconnaissance, bot enumeration, and interaction — slide 24 of 26"
+    },
+    {
+      "number": 25,
+      "text": "Next steps: spray scanning and advanced bot interaction — slide 25 of 26"
+    },
+    {
+      "number": 26,
+      "text": "Copilot Hunter (powerpwn) closing slide for Black Hat USA 2024 Arsenal — slide 26 of 26"
+    }
+  ]
+}

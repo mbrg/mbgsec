@@ -1,0 +1,352 @@
+{
+  "generated_by": "sync-talk-text",
+  "source_manifest": "https://media.mbgsec.com/decks/2025-10-08_ActuallyMakingProgressInSecurityFromAI/latest.json",
+  "manifest": "https://media.mbgsec.com/decks/2025-10-08_ActuallyMakingProgressInSecurityFromAI/bc665a58/deck.json",
+  "title": "Making Real Progress In Security From AI",
+  "slides": [
+    {
+      "number": 1,
+      "text": "Title slide: Making Real Progress In Security From AI, Michael Bargury, Zenity."
+    },
+    {
+      "number": 2,
+      "text": "Statement slide: We aren't making real progress."
+    },
+    {
+      "number": 3,
+      "text": "AI security benchmarks from OpenAI and Microsoft shown increasing."
+    },
+    {
+      "number": 4,
+      "text": "Social post screenshot about AI benchmark progress."
+    },
+    {
+      "number": 5,
+      "text": "Collage captioned Hackers partying like it's 1999."
+    },
+    {
+      "number": 6,
+      "text": "Benchmarks go up while hackers party like it's 1999."
+    },
+    {
+      "number": 7,
+      "text": "Reaction image asking But why?"
+    },
+    {
+      "number": 8,
+      "text": "AI characteristics: weird, gullible, non-deterministic, opaque, and confidently wrong."
+    },
+    {
+      "number": 9,
+      "text": "Reaction image saying Yes, but beside AI's difficult characteristics."
+    },
+    {
+      "number": 10,
+      "text": "AI Gold Rush slide."
+    },
+    {
+      "number": 11,
+      "text": "Gold-rush security problems including costly mistakes, herd mentality, and a lower security bar."
+    },
+    {
+      "number": 12,
+      "text": "Section slide: Security in a gold rush."
+    },
+    {
+      "number": 13,
+      "text": "Security in a gold rush with a Good time for that reaction image."
+    },
+    {
+      "number": 14,
+      "text": "Fixed with AI stamp over gold-rush security problems."
+    },
+    {
+      "number": 15,
+      "text": "AI guardrails, safety training, and safety classifiers introduced."
+    },
+    {
+      "number": 16,
+      "text": "Statement: Guardrails are a content moderation technique."
+    },
+    {
+      "number": 17,
+      "text": "Annotated chat example showing instructions, data, prompt engineering, evasion, and social engineering."
+    },
+    {
+      "number": 18,
+      "text": "Statement: Injection is the wrong term."
+    },
+    {
+      "number": 19,
+      "text": "LLMs are generative models doomed to complete and shackled to their context."
+    },
+    {
+      "number": 20,
+      "text": "Movie still illustrating completion of context."
+    },
+    {
+      "number": 21,
+      "text": "Prompt injection is not a vulnerability to patch; like malware, it is a problem to manage."
+    },
+    {
+      "number": 22,
+      "text": "Anthropic report on detecting and countering AI misuse, August 2025."
+    },
+    {
+      "number": 23,
+      "text": "AI guardrails are soft boundaries and attackers use LLMs too."
+    },
+    {
+      "number": 24,
+      "text": "Hard boundaries do work; they make an action unreachable."
+    },
+    {
+      "number": 25,
+      "text": "Case 1 section slide: Supply chain."
+    },
+    {
+      "number": 26,
+      "text": "AI agent illustration."
+    },
+    {
+      "number": 27,
+      "text": "AI agent becomes an AI assistant through connected applications."
+    },
+    {
+      "number": 28,
+      "text": "Screenshot of an AI assistant connected to more than 80 applications."
+    },
+    {
+      "number": 29,
+      "text": "MCP presented as a universal adapter giving an agent access to third-party tools."
+    },
+    {
+      "number": 30,
+      "text": "Supply chain is hard; ask npm."
+    },
+    {
+      "number": 31,
+      "text": "Examples of supply-chain attacks on MCP."
+    },
+    {
+      "number": 32,
+      "text": "MCP contrasted with npm package locks, version pinning, and integrity checks."
+    },
+    {
+      "number": 33,
+      "text": "A2A does the exact same thing, with protocol screenshots."
+    },
+    {
+      "number": 34,
+      "text": "MCP can turn an AI assistant into any agent."
+    },
+    {
+      "number": 35,
+      "text": "Fixed with AI stamp over the MCP agent-transformation diagram."
+    },
+    {
+      "number": 36,
+      "text": "Hard boundaries for MCP: pin versions and require approval for new or updated tools."
+    },
+    {
+      "number": 37,
+      "text": "Case 2 section slide: AI browsers."
+    },
+    {
+      "number": 38,
+      "text": "Computer Use demo screenshot and warning that it is still risky."
+    },
+    {
+      "number": 39,
+      "text": "Question: But browser agents are just fine?"
+    },
+    {
+      "number": 40,
+      "text": "Browser-agent product screenshot."
+    },
+    {
+      "number": 41,
+      "text": "Article screenshot about browser prompt injection and the question: didn't CORS solve this?"
+    },
+    {
+      "number": 42,
+      "text": "AI browsers do not respect robots.txt, CORS, or other web boundaries."
+    },
+    {
+      "number": 43,
+      "text": "Fixed with AI stamp over the AI-browser boundary problem."
+    },
+    {
+      "number": 44,
+      "text": "Hard boundary for AI browsers: respect CORS."
+    },
+    {
+      "number": 45,
+      "text": "Case 3 section slide: Cool designs."
+    },
+    {
+      "number": 46,
+      "text": "Memory is persistence for attacks, illustrated with a ChatGPT example."
+    },
+    {
+      "number": 47,
+      "text": "Zero-click attack on ChatGPT illustrated as a persistent compromise chain."
+    },
+    {
+      "number": 48,
+      "text": "Bio memory tool description showing persistent memory."
+    },
+    {
+      "number": 49,
+      "text": "Bio memory tool can be abused to compromise future sessions."
+    },
+    {
+      "number": 50,
+      "text": "Testing memories with sensitive data in the session context."
+    },
+    {
+      "number": 51,
+      "text": "Testing bio infection by asking directly for memorization."
+    },
+    {
+      "number": 52,
+      "text": "Testing bio infection: the model refuses to memorize untrusted content."
+    },
+    {
+      "number": 53,
+      "text": "Testing bio infection: the bio tool appears disabled."
+    },
+    {
+      "number": 54,
+      "text": "Testing bio infection: untrusted chat data silently disables the bio tool."
+    },
+    {
+      "number": 55,
+      "text": "Hard boundary: shut down memory when untrusted data enters the context."
+    },
+    {
+      "number": 56,
+      "text": "Built-in msearch defense prefixes untrusted content with line numbers."
+    },
+    {
+      "number": 57,
+      "text": "Hard boundary: prefix untrusted context with line numbering to resist line jumps."
+    },
+    {
+      "number": 58,
+      "text": "Black Hat USA 2024 slide: 15 Ways to Break Your Copilot."
+    },
+    {
+      "number": 59,
+      "text": "A human must specify the site because AI cannot dynamically choose which site to access."
+    },
+    {
+      "number": 60,
+      "text": "Hard boundary: do not let AI choose a value that changes environment or tenant scope."
+    },
+    {
+      "number": 61,
+      "text": "Black Hat USA 2024 slide: Living off Microsoft Copilot."
+    },
+    {
+      "number": 62,
+      "text": "Copilot requires explicit acceptance before seeing an external message."
+    },
+    {
+      "number": 63,
+      "text": "Black Hat USA 2025 slide: Invitation Is All You Need."
+    },
+    {
+      "number": 64,
+      "text": "Hard boundary: external messages must not enter RAG without explicit human approval."
+    },
+    {
+      "number": 65,
+      "text": "Invitation Is All You Need example of malicious tool chaining."
+    },
+    {
+      "number": 66,
+      "text": "Hard boundary: tool output cannot invoke another tool."
+    },
+    {
+      "number": 67,
+      "text": "Black Hat USA 2024 example from 15 Ways to Break Your Copilot."
+    },
+    {
+      "number": 68,
+      "text": "Statement: Autonomous agents cannot operate on behalf of users."
+    },
+    {
+      "number": 69,
+      "text": "Question slide: Or can they?"
+    },
+    {
+      "number": 70,
+      "text": "Autonomous agent can run on behalf of the caller ID in an incident record."
+    },
+    {
+      "number": 71,
+      "text": "Hard boundary: only allow autonomous agents to run for the explicit request invoker."
+    },
+    {
+      "number": 72,
+      "text": "Transition slide: Let's do an easy one."
+    },
+    {
+      "number": 73,
+      "text": "Image-rendering attack examples across enterprise AI products."
+    },
+    {
+      "number": 74,
+      "text": "Image-rendering attacks including ForcedLeak and AgentForce data exfiltration."
+    },
+    {
+      "number": 75,
+      "text": "Hard boundaries: do not render arbitrary images or rely on allow lists."
+    },
+    {
+      "number": 76,
+      "text": "Markdown sanitizer examples and linked source repository."
+    },
+    {
+      "number": 77,
+      "text": "Case 4 section slide."
+    },
+    {
+      "number": 78,
+      "text": "Question: Does your agent need to write and execute software at runtime?"
+    },
+    {
+      "number": 79,
+      "text": "A ReAct loop is writing and executing software at runtime."
+    },
+    {
+      "number": 80,
+      "text": "Question: Do we need to regenerate the same automations again and again?"
+    },
+    {
+      "number": 81,
+      "text": "Looking back at how little was known in August 2024."
+    },
+    {
+      "number": 82,
+      "text": "Summary of hard-boundary lessons for MCP, browsers, memory, tools, rendering, and autonomous agents."
+    },
+    {
+      "number": 83,
+      "text": "Two categories: AI-is-weird security problems and AI-gold-rush security problems."
+    },
+    {
+      "number": 84,
+      "text": "IBM 1979 quote: A computer can never be held accountable, so it must never make a management decision."
+    },
+    {
+      "number": 85,
+      "text": "AI will make business decisions, decisions mean risk, and trustworthy AI is needed."
+    },
+    {
+      "number": 86,
+      "text": "Thank-you slide with League of Security Experts artwork."
+    }
+  ]
+}

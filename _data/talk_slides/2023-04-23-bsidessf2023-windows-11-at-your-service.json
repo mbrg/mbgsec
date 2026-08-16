@@ -1,0 +1,324 @@
+{
+  "generated_by": "sync-talk-text",
+  "source_manifest": "https://media.mbgsec.com/decks/2023-04-23_BSidesSF_Windows_11_At_Your_Service/latest.json",
+  "manifest": "https://media.mbgsec.com/decks/2023-04-23_BSidesSF_Windows_11_At_Your_Service/e3e97d8b/deck.json",
+  "title": "Windows 11 At Your Service",
+  "slides": [
+    {
+      "number": 1,
+      "text": "Windows 11 At Your Service — Michael Bargury, Zenity — BSidesSF 2023 — slide 1 of 72"
+    },
+    {
+      "number": 2,
+      "text": "About me CTO and co-founder @ Zenity Ex MSFT cloud security OWASP ‘Top 10 LCNC Security Risks’ project lead Dark Reading columnist Featured on Wired - Speaker at DEFCON, BSides, OWASP, RSAC W @mbrgo or | bit.ly/Icsec — slide 2 of 72"
+    },
+    {
+      "number": 3,
+      "text": "Disclaimer This talk is presented from an attacker's perspective with the goal of raising awareness to the risks of underestimating the security impact of No Code. No Code is awesome. — slide 3 of 72"
+    },
+    {
+      "number": 4,
+      "text": "& zenity Initial access to full operation So you want to build a malware op — slide 4 of 72"
+    },
+    {
+      "number": 5,
+      "text": "You're in. Congrats! Initial access Victim Hacker — slide 5 of 72"
+    },
+    {
+      "number": 6,
+      "text": "In the real world Initial [—7] access L~Y &—— To & Victim Hacker FW Corpnet Internet — slide 6 of 72"
+    },
+    {
+      "number": 7,
+      "text": "In the real world Run malware Initial a 2) = access ah EDR Victim FW Corpnet a Hacker Internet — slide 7 of 72"
+    },
+    {
+      "number": 8,
+      "text": "In the real world C&C Run malware Initial a 2) = access < ah EDR Victim FW Corpnet a Hacker Internet — slide 8 of 72"
+    },
+    {
+      "number": 9,
+      "text": "In the real world Run malware Initial 3) = access C&C a 7 dh : ; Exfiltration EDR Victim FW Corpnet a Hacker Internet — slide 9 of 72"
+    },
+    {
+      "number": 10,
+      "text": "In the real world Defense ( EvaSlOn | Run malware Initial ! ER} access) }, Cac a. : r—™) 4—0— Es Gy Exfiltration EDR Victim Hacker FW Corpnet Internet — slide 10 of 72"
+    },
+    {
+      "number": 11,
+      "text": "In the real world Defense ( EvaSlOn | Run malware Initial ! ER} access |}, Cac A s v 4 4—0— EJs Gy Exfiltration EDR Victim Hacker A Persistency FW Corpnet Internet — slide 11 of 72"
+    },
+    {
+      "number": 12,
+      "text": "We wanted to do hacking, not ops Malw are ———» Initial access Deploy malware C&C Exfiltration Defense evasion Persistency Cleanup Profit - Ops — slide 12 of 72"
+    },
+    {
+      "number": 13,
+      "text": "Introducing.. Robotic Process Automation (RPA)! RPA Management Portal V's or PC’s via VNC or RDP https://www.t-plan.com/rpa-architecture/ — slide 13 of 72"
+    },
+    {
+      "number": 14,
+      "text": "Introducing.. Robotic Process Automation (RPA)! RPA Management Portal V's or PC’s via VNC or RDP Trusted cloud Trusted Trusted services communication executables https://www.t-plan.com/rpa-architecture/ — slide 14 of 72"
+    },
+    {
+      "number": 15,
+      "text": "Power Automate > a RPA is [uilP ath everywhere (in the enterprise) sit winautomation AUTOMATION ANYWHERE €. blueprism — slide 15 of 72"
+    },
+    {
+      "number": 16,
+      "text": "RPA can take care of Ops for us C&C [uiJPath Exfiltration Defense evasion Persistency /\\ asi Cleanup And so much more: Power Automate > 2 Handle errors Support different OS/versions Malware updates + blueprisim Aggregate data across machines — slide 16 of 72"
+    },
+    {
+      "number": 17,
+      "text": "Automation via RPA Why and How? Replace “copy-and-paste integration” Drag & drag builder Emulate user actions (mouse/keyboard) to connect Runs on user machines / dedicated servers — slide 17 of 72"
+    },
+    {
+      "number": 18,
+      "text": "Automation in the enterprise Why and How? Use cases: Replace “copy-and-paste - Customer service routines integration” - Finance payments and Drag & drag builder reporting Emulate user actions - HR onboarding / offboarding (mouse/keyboard) to connect - Supply chain keep inventory up Runs on user… — slide 18 of 72"
+    },
+    {
+      "number": 19,
+      "text": "Outline * Malware Ops motivation * What is RPA? * RPA technical deep dive * Abusing RPA: RCE as a Service * Introducing Power Pwn * Defense: 4 things to do when you get home — slide 19 of 72"
+    },
+    {
+      "number": 20,
+      "text": "& zenity — slide 20 of 72"
+    },
+    {
+      "number": 21,
+      "text": "“included in Windows 11” ny: =” Microsoft | Power Automate | Product » Capabilities » Pricing Partners Learn vy S \\ Community + Sign in Buy now Automate in Windows 11 Boost productivity with desktop automation Get more done by automating daily tasks across your desktop applications with Power… — slide 21 of 72"
+    },
+    {
+      "number": 22,
+      "text": "r Platform, Des! Getting started with Power Automate in & Windows 11 A + 2 minutes tc ieee minutes to Windows 11 allow users to create automations through the preinstalled Power Automate app. Power Automate is a low-code platform that enables home and business users to optimize their workflows… — slide 22 of 72"
+    },
+    {
+      "number": 23,
+      "text": "Power Automate Desktop demonstration from the No-Code Malware research — slide 23 of 72",
+      "media": [
+        {
+          "type": "youtube",
+          "title": "defcon30 Power Automate Desktop",
+          "url": "https://www.youtube.com/watch?v=Kik9oXu_-bI"
+        }
+      ]
+    },
+    {
+      "number": 24,
+      "text": "lagyateltio alge Synced to cloud New flow Teen Settings Help My flows Shared withme Examples ia | Office Refresh o Name Modified “~ Status StealPowerAuto... 1 day ago Not running TheCookieMonster = 1 day ago Not running Ransomware month ago Not running Exfil month ago Not running CodeExec month… — slide 24 of 72"
+    },
+    {
+      "number": 25,
+      "text": "aE Windows 11 | a Office Office cloud services Power Automate On-Prem : MS cloud — slide 25 of 72"
+    },
+    {
+      "number": 26,
+      "text": "ae Windows 11 : Qo Office User ! NT Service\\UIFlowService t Office cloud services Power Automate t Machine Runtime On-Prem : MS cloud — slide 26 of 72"
+    },
+    {
+      "number": 27,
+      "text": "cB cc: ; File Edit Debug MRR View Ip Untitled | Power Automate eC NT Service\\UIFlowS Actions © Recorder Oe Browser extensions > Microsoft Edge by ¥e) Kearch actions k=) [eS ae Windows 11 User 8 Google Chrome > Variables @ Firefox > Conditionals > Loops Power Automate Machine Runtime ———-… — slide 27 of 72"
+    },
+    {
+      "number": 28,
+      "text": "ae Windows 11 | Q Office User : NT Service\\UIFlowService a . Power Automate . Machine Runtime eee Office cloud services On-Prem : MS cloud — slide 28 of 72"
+    },
+    {
+      "number": 29,
+      "text": ", Ice User : NT Service\\UIFlowService : 1 Office cloud services © New » 0 ia} ep TW sot DO view see A Ye Quick access . 5 Mdektop + x Power Automate Machine Runtime ° | | & Downioads Documents # PAAgent —PA.LauncherServi PALogShipper PA\\Notfier PAUpdateService Browser “APIXG “APES Wicues + “e @… — slide 29 of 72"
+    },
+    {
+      "number": 30,
+      "text": "ae Windows 11 | q Office User : NT Service\\UIFlowService : Office cloud services a . Power Automate . Machine Runtime Corp ©6e | @ bounty On-Prem : MS cloud — slide 30 of 72"
+    },
+    {
+      "number": 31,
+      "text": "ae Windows 11 User ; NT Service\\UIFlowService []] Office I Office cloud services a t Power Automate . Machine Runtime >< ; o> ‘outbound conn——> y < Azure Service Bus Corp On-Prem : MS cloud — slide 31 of 72"
+    },
+    {
+      "number": 32,
+      "text": "ae Windows 11 : Qo Office User ; NT Service\\UIFlowService Office cloud services a t Power Automate . Machine Runtime eee >< ; o> outbound conn——> y < Azure Service Bus On-Prem : MS cloud — slide 32 of 72"
+    },
+    {
+      "number": 33,
+      "text": "Your machines Machines Check the real-time health and status of your machines and the desktop flows running on them. Learn more Machines Machine groups —_- VM images (preview) Machine name 7 Y Descrip... “ Version Group ¥ Status Flows run... Flows que... Ac... “ Own hi _ 2.20.141.22151 — ®… — slide 33 of 72"
+    },
+    {
+      "number": 34,
+      "text": "Run from cloud Manually trigger a flow Desktop flows x | < Search connectors and actions Triggers Actions Run a flow built with Power Automate for desktop a Desktop flows Run a flow built with Selenium IDE toa Desktop flows PREMIUM PREMIUM See more — slide 34 of 72"
+    },
+    {
+      "number": 35,
+      "text": "Task status Desktop flow runs Here's a quick overview of the desktop flows you have running. Learn more Requested | Vv Jul 6, 12:48 PM (6 d ago) Jun 30, 10:27 AM (1 wk a... Jun 30, 10:27 AM (1 wk a... Jun 22, 02:55 PM (2 wk a... Jun 19, 04:10 PM (3 wk a... Jun 19, 03:58 PM (3 wk a... Jun 19,… — slide 35 of 72"
+    },
+    {
+      "number": 36,
+      "text": "& zenity RCE as a Service Repurpose RPA to power malware ops — slide 36 of 72"
+    },
+    {
+      "number": 37,
+      "text": "Recall our wish list Malw are Deploy malware Defense evasion Persistency C&C Exfiltration Cleanup - Ops — slide 37 of 72"
+    },
+    {
+      "number": 38,
+      "text": "Azure Active Directory admin center Hello Pwntoso se oe Create a tenant x Azure Active Directory Power Automate [OO =f & 2 & w + create = New machine @® microsoft + contoso ir Oost : @ Home A GJ Images ( Videos Machines [Action items Check the real-time health and status of your machines and the… — slide 38 of 72"
+    },
+    {
+      "number": 39,
+      "text": "Register victim Can we avoid the UI? machines Power Automate Sign in to Microsoft Power Automate It's quicker and easier than ever to automate with the new intuitive Power Automate. Use prebuilt drag-and-drop actions or record your own flows to replay later. hi@pwntoso.onmicrosoft.com — slide 39 of 72"
+    },
+    {
+      "number": 40,
+      "text": "Register victim machines Filter by title iors enema Silently register a new machine > Overview To register silently your machine in Power Automate with the service principal account, > Cloud flows e use the register operation -register with the following arguments: Connection arguments a ! ) W e… — slide 40 of 72"
+    },
+    {
+      "number": 41,
+      "text": "Hello new machine Machines Check the real-time health and status of your machines and the desktop flows running on them. Learn more Machines Machine groups VM images (preview) Machine name | Y Descrip... “ Version Group ¥ Status Flows run... Flows que... Ac... “ Own hi _ 2.20.141.22151 — ®)… — slide 41 of 72"
+    },
+    {
+      "number": 42,
+      "text": "Admin required How to use the Machine registration App? 1. Open Start menu 2. Search for command prompt (or PowerShell) and ther tun it as the administrator 3. Change the directory to the Power Automate install folder (by default: C:\\Program Files (x86)\\Power Automate) BBB Select Administrator:… — slide 42 of 72"
+    },
+    {
+      "number": 43,
+      "text": "PS C:\\Program Files (x86)\\Power Automate Desktop> net user PADUser| User name PADUser Full Name Comment User's comment Country/region code 000 (System Default) Account active Yes Account expires Never Password Last set 13/07/2022 0:25:57 Password expires Never Password changeable 13/07/2022… — slide 43 of 72"
+    },
+    {
+      "number": 44,
+      "text": "Manually trigger a flow mattapttare El Desktop flows @ Connection not found. Please create a new connection and change your application to use the new | © Search connectors and actions Triggers Actions Run a flow built with Power Automate for desktop 7 Desktop flows Fim) Run a flow built with… — slide 44 of 72"
+    },
+    {
+      "number": 45,
+      "text": "How to avoid active machine users Run a flow built with Power Automate for deskto, Desktop flow Select an item Vv in Mode Choose bi running while signed in (attended) or in the backgrounc \\y Attended (runs when you're signed in) f nced options Unattended (runs on a machine that's signed out)… — slide 45 of 72"
+    },
+    {
+      "number": 46,
+      "text": "Recap Deploy malware Defense evasion Persistency C&C Exfiltration Cleanup — slide 46 of 72"
+    },
+    {
+      "number": 47,
+      "text": "& zenity Let the fun begin. eee — slide 47 of 72"
+    },
+    {
+      "number": 48,
+      "text": "Data exfil (start simple) View Help Actions D DL @ 2 Variables x ; 1 9. Set variable > Variables Assign to variable Success the value ‘False’ \\ Input / output variables 3 @® yY > Conditionals > Loops 2 v gy IF file exists (3 FileContents Iffile TargetFile exists > Flow control td Success > Run… — slide 48 of 72"
+    },
+    {
+      "number": 49,
+      "text": "Distribute payload, execute and collect output from cloud Input Output © Data Exfiltration + Ran at 7/18/2022 12:55:38 PM © ‘our ow ran successfully Manually trigger a flow L © Resubmit 2 kdit 4 Run a flow built with Power Automate for desktop Desktop flow Exfil Run Mode attended Show raw inputs… — slide 49 of 72"
+    },
+    {
+      "number": 50,
+      "text": "ae Windows 11 : Qo Office User ; NT Service\\UIFlowService i Office cloud services a t Power Automate . Machine Runtime eee >< ; o> ‘outbound conn——> y < Azure Service Bus On-Prem : MS cloud — slide 50 of 72"
+    },
+    {
+      "number": 51,
+      "text": "mB Windows 11 [omen = []] Office Office cloud services User ; NT Service\\UIFlowService \\Users\\elexg\\bo» 2.Payload : > = ; o> ‘outbound conn——> y < a t Power Automate . Machine Runtime Azure Service BUS) I ctructions v On-Prem : MS cloud — slide 51 of 72"
+    },
+    {
+      "number": 52,
+      "text": "om - Code execution icongie File fit Debug Tools Help Pomer Automate B, Panto (tout Game Actions Ed sae > mun © siop Dl Runnert action | @ Recorder > Search ines the ow Variables x D Search actions | sito v Main [© Seer vosies 0) Set variable ¥ Seripting * ign to varable Seistmer thevalue… — slide 52 of 72"
+    },
+    {
+      "number": 53,
+      "text": "om yl c ‘Sonate Code execution Edit Debug Tools Actions © Seleting Run DOS command GB Run vescipt GB Run Javaserist Run PowerShell zrpt Ed Run Python script > File > Folder > Compression > Ulautomation > HTTP > Groner automation > el > Database > Email > Exchange > Outlook > Mescage boxes >… — slide 53 of 72"
+    },
+    {
+      "number": 54,
+      "text": "Code execution Windows Security - oo x ~ 7178/202210.08 AM - € any conse Gaon (Threat blocked A 7 7718/2022 10.07 AM Severe ® @ This threat or app has been allowed and will not be remediated in the future. 9 Detected: TrojanMSIL/Cryptor ° Status: Removed 6 ‘A threat or app was removed from this… — slide 54 of 72"
+    },
+    {
+      "number": 55,
+      "text": "Code execution — try again @ Windows Security x Windows Security Threats found Microsoft Defender Antivirus found threats. Get details. Dismiss Untrusted — slide 55 of 72"
+    },
+    {
+      "number": 56,
+      "text": "Code execution- try again What can we do fe —=——— with drag & drop a = T primitives only = —- a = — slide 56 of 72"
+    },
+    {
+      "number": 57,
+      "text": "\\ Windows services No Code primitives ams ~ Folder th If folder exists 2& Wait for service Fy Start service £88 Stop service Get files in folder \\ Active Directory £88 Pause service EB, Get subfolders in folder + Create folder Ti] Delete folder B Empty folder [PB Copy folder ’ Browser automation… — slide 57 of 72"
+    },
+    {
+      "number": 58,
+      "text": "ito ay No Code Ransomware Debug Too Main Handlettor > Variables > Conditional > Loops Flow contat un ow System Workstation Setiptng > Fle Folder > Compression > ane > Email > Exchange > Oxtlooe > Message boxes > Clipboard > Tort > Date time > MD session > ocr > Cryptography > Windows services >… — slide 58 of 72"
+    },
+    {
+      "number": 59,
+      "text": "No-Code Ransomware demonstration from the DEF CON 30 research — slide 59 of 72",
+      "media": [
+        {
+          "type": "youtube",
+          "title": "defcon30 No Code Ransomware",
+          "url": "https://www.youtube.com/watch?v=YDull-krSJI"
+        }
+      ]
+    },
+    {
+      "number": 60,
+      "text": "File tat Deb lanup | omer Actions BD » ® 2 Variables x od of Subflows Vv Main [D search vette e oe > Verbs \\ Input /outputvarables 2 @® OY Set variable > Loops HD pasion to variable Logfile ind the vahse 0 ( Logieselted T] > Flow control s : 1) Set variable ‘ Logfesfound Ran flow sgn to vale… — slide 60 of 72"
+    },
+    {
+      "number": 61,
+      "text": "Machine to Cloud via the browser - File Edit Open browser minimized Actions Go to P ewer | flow.microsoft.c » Variables Hit CTRL+U Extract access token from header Debug Tools #AVGY Help © Recorder Untitled | Power Automate Browser extensions >| ® Microsoft Edge @ Google Chrome @ Firefox New Tab… — slide 61 of 72"
+    },
+    {
+      "number": 62,
+      "text": "Demonstration of stealing a cloud token through Power Automate Desktop — slide 62 of 72",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2023-04-23_BSidesSF_Windows_11_At_Your_Service/e3e97d8b/media/steal-browser-token-local.mp4"
+        }
+      ]
+    },
+    {
+      "number": 63,
+      "text": "Demonstration of stealing a Power Automate Desktop token — slide 63 of 72",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2023-04-23_BSidesSF_Windows_11_At_Your_Service/e3e97d8b/media/steal-browser-token-cloud.mp4"
+        }
+      ]
+    },
+    {
+      "number": 64,
+      "text": "Recap Deploy malware Defense evasion Persistency C&C Exfiltration Cleanup And more: Creds access via browser — slide 64 of 72"
+    },
+    {
+      "number": 65,
+      "text": "Introducing Power Pwn! Power Pages Website Development > Power Apps Power Virtual Agents 675+ (o} Application development Intelligent virtual agents Over 675+ Connectors and Dataverse Power BI Power Automate Business analytics Workflow automation — slide 65 of 72"
+    },
+    {
+      "number": 66,
+      "text": "<__ Run Ransomware ‘) Undo [Comments Save Yp Flowchecker J Test T r i gs e a vi a SOM When a HTTP request is received Qos HTTP \" _ =I Try attended 2 Run attended RPA @ -- Powe csp od O Seamlessly r tL handle errors Pwn! F— and edge cases Terminate attended @Q Ca ZB Add an acti © & @¢ Vv Response… — slide 66 of 72"
+    },
+    {
+      "number": 67,
+      "text": "One endpoint to rule them all! POST machine=win1 lent user=alexg payload=ransomware dir=C:\\ encryptionKey=9d0d578115a2734a van arora ese —— a~ n= = oH : o— : a — — : Ms) | a--- a B-— > SUCCESS filesFound=71892 filesProcessed=70497 — slide 67 of 72"
+    },
+    {
+      "number": 68,
+      "text": "Convenience layer in Python 1. Set up a free RPA account & 2. Register machines 3. Profit — slide 68 of 72"
+    },
+    {
+      "number": 69,
+      "text": "Summary * What is RPA? * Available in every major enterprise * Technical deep dive * Abusing RPA: RCE as a Service * Distribute and execute payloads thru trusted services * No Code primitives * Introducing Power Pwn * Defense: 4 things to do when you get home — slide 69 of 72"
+    },
+    {
+      "number": 70,
+      "text": "& zenity — slide 70 of 72"
+    },
+    {
+      "number": 71,
+      "text": "Do these 4 things to reduce your risk 1. Monitor any usage of PAD.MachineRegistration.Silent.exe or PAD.MachineRegistration.Host.exe on local user machines 2. Detect usage of the aforementioned executables with tenant ids that don’t belong to your organization 3. Review you own tenant's Power… — slide 71 of 72"
+    },
+    {
+      "number": 72,
+      "text": "Closing slide for Windows 11 At Your Service — Michael Bargury, Zenity — BSidesSF 2023 — slide 72 of 72"
+    }
+  ]
+}
