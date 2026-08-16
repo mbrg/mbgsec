@@ -51,6 +51,14 @@ _[Official conference abstract](https://official.example/session)_
 
 Do not put raw transcript JSON, audio, evaluator results, or API metadata in the page.
 
+Every talk has a generated same-origin text representation at
+`/talks/<slug>/llms.txt`. It copies the published page body verbatim and may add a
+separately labeled `Slide text` section sourced from the public deck manifest's
+accessibility text. The endpoint must distinguish slide descriptions from spoken
+transcription, expose recording-quality exceptions accurately, and link every
+available talk resource. Regenerate it with `npm run talks:text:sync`; generated
+text pages and slide-data files are tracked and must not be edited manually.
+
 ## Working artifacts
 
 Store ignored artifacts under `.talk-enrichment/<slug>/`:

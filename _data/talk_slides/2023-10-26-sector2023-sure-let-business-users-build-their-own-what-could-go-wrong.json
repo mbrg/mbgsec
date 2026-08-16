@@ -1,0 +1,515 @@
+{
+  "generated_by": "sync-talk-text",
+  "source_manifest": "https://media.mbgsec.com/decks/2023-10-25_Sector-23_SureLetBusinessUsersBuildTheirOwnWhatCouldGoWrong/latest.json",
+  "manifest": "https://media.mbgsec.com/decks/2023-10-25_Sector-23_SureLetBusinessUsersBuildTheirOwnWhatCouldGoWrong/a2dc9602/deck.json",
+  "title": "Sure, Let Business Users Build Their Own. What Could Go Wrong?",
+  "slides": [
+    {
+      "number": 1,
+      "text": "Sure, Let Business Users Build Their Own. What Could Go Wrong? — Michael Bargury @mbrg0 — Zenity"
+    },
+    {
+      "number": 2,
+      "text": "CTO and Co-founder @ Zenity — OWASP LCNC Top 10 project lead — Dark Reading columnist — BlackHat, Defcon, BSides, OWASP — Hiring top researchers, engs & pms! — Hi there — 👋 — @mbrg0 — darkreading.com/author/ — michael-bargury — github.com/mbrg"
+    },
+    {
+      "number": 3,
+      "text": "Business users are building their own — What could go wrong? — Why does it go wrong? — How can we fix it? — Agenda — @mbrg0"
+    },
+    {
+      "number": 4,
+      "text": "Enterprise citizen — devs — – — EVERYONE is a dev — @mbrg0"
+    },
+    {
+      "number": 5,
+      "text": "Business Needs — ⋙ — IT Capacity"
+    },
+    {
+      "number": 6,
+      "text": "If this sounds familiar, its because it is — Tech evolution"
+    },
+    {
+      "number": 7,
+      "text": "Animated Power Apps Copilot demonstration creating and editing an app layout from natural-language prompts",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2023-10-25_Sector-23_SureLetBusinessUsersBuildTheirOwnWhatCouldGoWrong/a2dc9602/media/power-apps-copilot-demo.gif"
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "text": "COVID health check app by Microsoft — https://aka.ms/healthcheck"
+    },
+    {
+      "number": 9,
+      "text": "Product launch management — https://www.microsoft.com/insidetrack/blog/how-citizen-developers-modernized-microsoft-product-launches/ — * This is an example of a business-critical app built by a citizen developer. We did not search for or identify any security vulnerabilities in this app."
+    },
+    {
+      "number": 10,
+      "text": "Financial risk management — Facilitates the process of credit assignment — Determines whether or not a person is assigned credit — Streamlines risk assessment and decision-making"
+    },
+    {
+      "number": 11,
+      "text": "Your business is already there, it’s time for security to keep up."
+    },
+    {
+      "number": 12,
+      "text": "Credential Sharing as a Service: The Dark Side of No Code — Michael Bargury — RSAC 2023 — Is this actually being used?"
+    },
+    {
+      "number": 13,
+      "text": "~8M active Power devs today! — Credential Sharing as a Service: The Dark Side of No Code — Michael Bargury — RSAC 2023"
+    },
+    {
+      "number": 14,
+      "text": "A single F500 organization — Michael Bargury — BSidesSF — 2023 — @mbrg0"
+    },
+    {
+      "number": 15,
+      "text": "The next big productivity boost (Excel-level impact) — Powers critical business workflows, predicted to power 70% of enterprise apps by 2025 — Available on every major enterprise, yours too — Millions of new (business) developers and growing fast — Recap: You can’t opt out of citizen development"
+    },
+    {
+      "number": 16,
+      "text": "What could go wrong? — @mbrg0"
+    },
+    {
+      "number": 17,
+      "text": "OWASP LCNC Top 10 — LCNC-SEC-01: Account Impersonation — LCNC-SEC-02: Authorization Misuse — LCNC-SEC-03: Data Leakage and Unexpected Consequences — LCNC-SEC-04: Authentication and Secure Communication Failures — LCNC-SEC-05: Security Misconfiguration — LCNC-SEC-06: Injection Handling Failures — LCNC-SEC-07: Vulnera…"
+    },
+    {
+      "number": 18,
+      "text": "Methodology loop — Anonymized statistics — Publish — >1M apps and automations — >8M credentials — Draft — Community feedback — Community contribution — Ty to all collaborations and contributors!"
+    },
+    {
+      "number": 19,
+      "text": "Real-world stories — @mbrg0"
+    },
+    {
+      "number": 20,
+      "text": "Story #1 – employee onboarding — @mbrg0"
+    },
+    {
+      "number": 21,
+      "text": "@mbrg0"
+    },
+    {
+      "number": 22,
+      "text": "@mbrg0"
+    },
+    {
+      "number": 23,
+      "text": "@mbrg0"
+    },
+    {
+      "number": 24,
+      "text": "@mbrg0"
+    },
+    {
+      "number": 25,
+      "text": "@mbrg0"
+    },
+    {
+      "number": 26,
+      "text": "@mbrg0"
+    },
+    {
+      "number": 27,
+      "text": "@mbrg0"
+    },
+    {
+      "number": 28,
+      "text": "Employee onboarding – findings"
+    },
+    {
+      "number": 29,
+      "text": "@mbrg0"
+    },
+    {
+      "number": 30,
+      "text": "@mbrg0"
+    },
+    {
+      "number": 31,
+      "text": "@mbrg0"
+    },
+    {
+      "number": 32,
+      "text": "@mbrg0"
+    },
+    {
+      "number": 33,
+      "text": "App — Store sensitive data — Data accessible to all (Authorization Misuse) — Employee onboarding – findings — Data — Everyone has access"
+    },
+    {
+      "number": 34,
+      "text": "App — Store in plaintext — Data — Submit sensitive data — User — Employee onboarding – findings — Data accessible to all (Authorization Misuse) — Sensitive data in plain text (Data and Secret Handling Failures)"
+    },
+    {
+      "number": 35,
+      "text": "@mbrg0"
+    },
+    {
+      "number": 36,
+      "text": "@mbrg0"
+    },
+    {
+      "number": 37,
+      "text": "@mbrg0"
+    },
+    {
+      "number": 38,
+      "text": "@mbrg0"
+    },
+    {
+      "number": 39,
+      "text": "Data accessible to all (Authorization Misuse) — Sensitive data in plain text (Data and Secret Handling Failures) — Sensitive data written to logs — Employee onboarding – findings — (Data Leakage)"
+    },
+    {
+      "number": 40,
+      "text": "Data accessible to all (Authorization Misuse) — Sensitive data in plain text (Data and Secret Handling Failures) — Sensitive data written to logs (Data Leakage) — Employee onboarding – findings"
+    },
+    {
+      "number": 41,
+      "text": "Story #2 – productivity sync — @mbrg0"
+    },
+    {
+      "number": 42,
+      "text": "@mbrg0"
+    },
+    {
+      "number": 43,
+      "text": "Productivity sync – findings"
+    },
+    {
+      "number": 44,
+      "text": "App — Business data to personal account (Data Leakage) — Productivity sync – findings — Sync to personal account — Personal — Fetch corp data — Data"
+    },
+    {
+      "number": 45,
+      "text": "@mbrg0"
+    },
+    {
+      "number": 46,
+      "text": "@mbrg0"
+    },
+    {
+      "number": 47,
+      "text": "@mbrg0"
+    },
+    {
+      "number": 48,
+      "text": "@mbrg0"
+    },
+    {
+      "number": 49,
+      "text": "@mbrg0"
+    },
+    {
+      "number": 50,
+      "text": "Data Business data to personal account (Data Leakage) — Share with Everyone (Authorization Misuse) — Productivity sync – findings — Everyone means EVERYONE, including guests by-default"
+    },
+    {
+      "number": 51,
+      "text": "Productivity sync – findings — Everyone means EVERYONE, including guests by-default — Check out the talk — All You Need Is Guest — for an attacker’s perspective! — Data Business data to personal account (Data Leakage) — Share with Everyone (Authorization Misuse)"
+    },
+    {
+      "number": 52,
+      "text": "@mbrg0"
+    },
+    {
+      "number": 53,
+      "text": "@mbrg0"
+    },
+    {
+      "number": 54,
+      "text": "@mbrg0"
+    },
+    {
+      "number": 55,
+      "text": "@mbrg0"
+    },
+    {
+      "number": 56,
+      "text": "App — User data written to logs — Data Business data to personal account (Data Leakage) — Share with Everyone (Authorization Misuse) — Personal data leaks to logs (Data Leakage) — Productivity sync – findings — Logs — Builder has direct access"
+    },
+    {
+      "number": 57,
+      "text": "@mbrg0"
+    },
+    {
+      "number": 58,
+      "text": "Low Code High Risk: Enterprise Domination via Low Code Abuse — Michael Bargury — DEFCON 30 — Check out — power-pwn — on GitHub! — Phishing made easy"
+    },
+    {
+      "number": 59,
+      "text": "Data Business data to personal account (Data Leakage) — Share with Everyone (Authorization Misuse) — Personal data leaks to logs (Data Leakage) — Productivity sync – findings"
+    },
+    {
+      "number": 60,
+      "text": "Story #3 – self-service — @mbrg0"
+    },
+    {
+      "number": 61,
+      "text": "What happens when a maker leaves the org?"
+    },
+    {
+      "number": 62,
+      "text": "What happens when a maker leaves the org? — Asset Management Failures"
+    },
+    {
+      "number": 63,
+      "text": "@mbrg0"
+    },
+    {
+      "number": 64,
+      "text": "@mbrg0"
+    },
+    {
+      "number": 65,
+      "text": "@mbrg0"
+    },
+    {
+      "number": 66,
+      "text": "@mbrg0"
+    },
+    {
+      "number": 67,
+      "text": "Self-service – findings"
+    },
+    {
+      "number": 68,
+      "text": "Self-service – findings — Power Apps API — Admin — SOC Panics!"
+    },
+    {
+      "number": 69,
+      "text": "User session — App embedded with admin ID (Account Impersonation) — Self-service – findings — Admin session"
+    },
+    {
+      "number": 70,
+      "text": "@mbrg0"
+    },
+    {
+      "number": 71,
+      "text": "@mbrg0"
+    },
+    {
+      "number": 72,
+      "text": "@mbrg0"
+    },
+    {
+      "number": 73,
+      "text": "Manipulates input — App embedded with admin ID (Account Impersonation) — IDOR (Injection handling failures) — Self-service – findings — IDOR"
+    },
+    {
+      "number": 74,
+      "text": "App embedded with admin ID (Account Impersonation) — IDOR (Injection handling failures) — Self-service – findings"
+    },
+    {
+      "number": 75,
+      "text": "Story #4 – customer care — @mbrg0"
+    },
+    {
+      "number": 76,
+      "text": "The Customer Care team at a large eCommerce company wanted to improve customer service. — Goal — : improve customer service — Method — : build an app that lets relevant company employees view customer support history and latest purchases — Challenge — : employees don’t have permissions to the customer database — Cus…"
+    },
+    {
+      "number": 77,
+      "text": "@mbrg0"
+    },
+    {
+      "number": 78,
+      "text": "@mbrg0"
+    },
+    {
+      "number": 79,
+      "text": "@mbrg0"
+    },
+    {
+      "number": 80,
+      "text": "Impact: — Employees are happy — Customers are happy — Customer Care team is happy"
+    },
+    {
+      "number": 81,
+      "text": "Customer care – findings"
+    },
+    {
+      "number": 82,
+      "text": "@mbrg0"
+    },
+    {
+      "number": 83,
+      "text": "Impact: — Employees are happy — Customers are happy — Customer Care team is happy — Customer care app — Customer DB — Admin"
+    },
+    {
+      "number": 84,
+      "text": "Impact: — Employees are happy — Customers are happy — Customer Care team is happy — SOC panics — Customer care app — Customer DB — Admin"
+    },
+    {
+      "number": 85,
+      "text": "Customer care – findings — App embedded with admin ID (Account Impersonation) — Customer DB — Admin"
+    },
+    {
+      "number": 86,
+      "text": "Story #5 – predictable-misconfiguration — @mbrg0"
+    },
+    {
+      "number": 87,
+      "text": "@mbrg0"
+    },
+    {
+      "number": 88,
+      "text": "Anonymous API access"
+    },
+    {
+      "number": 89,
+      "text": "Power portals can be configured to provide access to SQL tables — through ODATA using a specific URL: — portal.powerappsportals.com — / — _odata — Anonymous API access — zenity.io/blog/the-microsoft-power-apps-portal-data-leak-revisited-are-you-safe-now/"
+    },
+    {
+      "number": 90,
+      "text": "/ — _odata — globalvariables — : — Nothing to see here"
+    },
+    {
+      "number": 91,
+      "text": "Story #6 – extendibility — @mbrg0"
+    },
+    {
+      "number": 92,
+      "text": "@mbrg0"
+    },
+    {
+      "number": 93,
+      "text": "@mbrg0"
+    },
+    {
+      "number": 94,
+      "text": "@mbrg0"
+    },
+    {
+      "number": 95,
+      "text": "Extendibility – findings — Vulnerable and Untrusted Components"
+    },
+    {
+      "number": 96,
+      "text": "Recap: — We are leaving heavy security decisions in the hands of business users — When choosing between productivity and security, the choice is obvious"
+    },
+    {
+      "number": 97,
+      "text": "Why does it go wrong? — @mbrg0"
+    },
+    {
+      "number": 98,
+      "text": "Pro Code SDLC — SDLC — Business — Engineering — Ops — QA"
+    },
+    {
+      "number": 99,
+      "text": "Pro Code SDLC — SDLC — Business — Engineering — Ops — QA — Threat modeling — Shift-left — Code scanning (SAST/DAST/IAST) — Security gates — Vulnerability scanning — Runtime monitoring — Runtime protection — Security review — Security training"
+    },
+    {
+      "number": 100,
+      "text": "No Code No SDLC? — SDLC — Business"
+    },
+    {
+      "number": 101,
+      "text": "We’ve given business users: — Dev-level power — Missing best practice — No controls — No guardrails"
+    },
+    {
+      "number": 102,
+      "text": "We’ve given business users: — Dev-level power — Missing best practice — No controls — No guardrails — Could we really expect anything else?"
+    },
+    {
+      "number": 103,
+      "text": "The LCNC Shared Responsibility Model — @mbrg0"
+    },
+    {
+      "number": 104,
+      "text": "Serverless — Customer — Platform"
+    },
+    {
+      "number": 105,
+      "text": "Serverless — LCNC — Customer — Platform"
+    },
+    {
+      "number": 106,
+      "text": "Serverless — LCNC — Customer — Platform — We must own our side of the Shared Responsibility Model"
+    },
+    {
+      "number": 107,
+      "text": "Customer — Platform — LCNC"
+    },
+    {
+      "number": 108,
+      "text": "Platforms have to step up — Customer — Platform — Every SaaS is a Low-Code/No-Code platform today. — They need to own the code running on their platforms, in addition to the rest of the Shared Responsibility Model."
+    },
+    {
+      "number": 109,
+      "text": "Platforms have to step up — Customer — Platform — https://www.tenable.com/security/research/tra-2023-25"
+    },
+    {
+      "number": 110,
+      "text": "Sure, let business users build they own. What could go wrong? — Customer — Platform"
+    },
+    {
+      "number": 111,
+      "text": "Sure, let business users build they own. What could go wrong? — Are apps moving data outside of the — corp — boundary? — Are users over-sharing data? — Are we allowing external access? — Are we properly handling secrets and sensitive data? — Do apps have business logic vulns? — … — Customer — Platform"
+    },
+    {
+      "number": 112,
+      "text": "Sure, let business users build they own. What could go wrong? — Are apps moving data outside of the — corp — boundary? — Are users over-sharing data? — Are we allowing external access? — Are we properly handling secrets and sensitive data? — Do apps have business logic vulns? — … — Who owns AppSec for apps built by…"
+    },
+    {
+      "number": 113,
+      "text": "How can we fix it? — (Or: LCNC AppSec) — @mbrg0"
+    },
+    {
+      "number": 114,
+      "text": "LCNC AppSec is different — AppSec for LCNC apps — AppSec for, well, — traditional — apps"
+    },
+    {
+      "number": 115,
+      "text": "LCNC AppSec is different — AppSec for — LCNC apps — Business users w/ no awareness — AppSec for, well, — traditional — apps — Pro — devs — w/ some awareness"
+    },
+    {
+      "number": 116,
+      "text": "LCNC AppSec is different — AppSec for — LCNC apps — Business users w/ no awareness — No SDLC — AppSec for, well, — traditional — apps — Pro — devs — w/ some awareness — Secure SDLC"
+    },
+    {
+      "number": 117,
+      "text": "LCNC AppSec is different — AppSec for — LCNC apps — Business users w/ no awareness — No SDLC — Most controls don’t apply — AppSec for, well, — traditional — apps — Pro — devs — w/ some awareness — Secure SDLC — Secure controls"
+    },
+    {
+      "number": 118,
+      "text": "LCNC AppSec is different — AppSec for — LCNC apps — Business users w/ no awareness — No SDLC — Most controls don’t apply — 10x-100x more apps / year — AppSec for, well, — traditional — apps — Pro — devs — w/ some awareness — Secure SDLC — Secure controls — Hundreds of apps / year"
+    },
+    {
+      "number": 119,
+      "text": "Take the opportunity to champion LCNC security in your org — AppSec for LCNC apps — Business users w/ no awareness — No SDLC — Most controls don’t apply — 10x-100x more apps / year"
+    },
+    {
+      "number": 120,
+      "text": "Take the opportunity to champion LCNC security in your org — AppSec for LCNC apps — Business users w/ no awareness — No SDLC — Most controls don’t apply — 10x-100x more apps / year — OWASP LCNC Top 10 sections for business users by John — McTiernan — and Yianna Paris @punk_fairybread"
+    },
+    {
+      "number": 121,
+      "text": "Take the opportunity to champion LCNC security in your org — AppSec for LCNC apps — Business users w/ no awareness — No SDLC — Most controls don’t apply — 10x-100x more apps / year — LCNC Security Standard: — Approved use cases — SDLC — Environments — Testing — Monitoring — SBOM — …"
+    },
+    {
+      "number": 122,
+      "text": "Take the opportunity to champion LCNC security in your org — AppSec for LCNC apps — Business users w/ no awareness — No SDLC — Most controls don’t apply — 10x-100x more apps / year — LCNC is an opportunity for more visibility than ever before"
+    },
+    {
+      "number": 123,
+      "text": "Take the opportunity to champion LCNC security in your org — AppSec for LCNC apps — Business users w/ no awareness — No SDLC — Most controls don’t apply — 10x-100x more apps / year — LCNC — Security — * Tries to automate one thing — *The next day*"
+    },
+    {
+      "number": 124,
+      "text": "SecTor — Sound Bytes — We’re leaving business users alone with security v productivity decisions, what did we expect them to choose? — It’s time for AppSec to bring citizen developers under the security umbrella — There are 5M C# — devs — today and over 8M citizen — - we’re neglecting the next generation of (business)"
+    },
+    {
+      "number": 125,
+      "text": "Sure, Let Business Users Build Their Own. What Could Go Wrong? — Michael Bargury @mbrg0 — Zenity"
+    }
+  ]
+}

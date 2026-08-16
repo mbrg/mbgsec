@@ -130,6 +130,23 @@ and project links in page frontmatter. Do not pass a recording URL directly from
 the table or put schedule, PDF, GitHub, or other resource icons there. Each
 Resources cell contains the talk-page icon and, when available, the recording icon.
 
+Every talk page also has a same-origin Markdown-formatted text route at
+`/talks/<page-slug>/llms.txt`. It contains the page metadata and resources, the
+published abstract and reviewed transcript when available, and slide-by-slide
+accessibility text copied from the public deck manifest. Slide descriptions are
+explicitly labeled as slide text and must never be presented as a transcript.
+
+After adding or changing a talk page or publishing a new deck manifest, regenerate
+the tracked text pages and slide data:
+
+```sh
+npm run talks:text:sync
+```
+
+Commit the resulting `_pages/talk-text/` and `_data/talk_slides/` changes. Do not
+edit those generated files by hand. `npm test` runs `talks:text:check` and fails
+when a talk body, permalink, or deck manifest changes without a matching sync.
+
 ## Source conversion notes
 
 - PowerPoint and Keynote need to be rendered to one image per slide while their

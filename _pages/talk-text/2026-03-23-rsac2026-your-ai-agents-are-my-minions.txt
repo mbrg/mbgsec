@@ -1,0 +1,15 @@
+---
+layout: talk-text
+permalink: /talks/2026-03-23-rsac2026-your-ai-agents-are-my-minions/llms.txt
+talk_permalink: /talks/2026-03-23-rsac2026-your-ai-agents-are-my-minions/
+talk_slug: 2026-03-23-rsac2026-your-ai-agents-are-my-minions
+generated_by: sync-talk-text
+sitemap: false
+---
+<!-- talk-enrichment:start -->
+## Abstract
+
+Compromising a well-protected enterprise used to require careful planning, proper resources, and ability to execute. Not anymore! Enter AI. This talk will demo 0click access-to-impact AI vulnerability chains in most flagship enterprise AI assistants: ChatGPT, Gemini, Copilot, Einstein, and their custom agents. Will give practical advice on building hard boundaries to protect the enterprise.
+
+_[Official conference abstract](https://www.rsaconference.com/library/presentation/usa/2026/your-ai-agents-are-my-minions)_
+<!-- talk-enrichment:end -->

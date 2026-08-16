@@ -18,8 +18,10 @@
 {% endif %}
 <link rel="describedby" href="{{ llms_description_path | absolute_url }}">
 
-{% comment %}The repository source is the lossless Markdown representation.{% endcomment %}
-{% if page.collection == 'posts' or page.collection == 'weblog' or page.collection == 'projects' or page.url contains '/talks/' %}
+{% comment %}Talks have a same-origin complete text representation; other pages use repository Markdown.{% endcomment %}
+{% if page.layout == 'deck' or page.layout == 'talk' %}
+  <link rel="alternate" type="text/markdown" href="{{ page.url | append: 'llms.txt' | absolute_url }}">
+{% elsif page.collection == 'posts' or page.collection == 'weblog' or page.collection == 'projects' %}
   <link rel="alternate" type="text/markdown" href="{{ site.repository_raw_url }}/{{ page.path }}">
 {% endif %}
 
@@ -36,7 +38,7 @@
 {% elsif page.collection == 'projects' %}
   <meta name="content-provenance" content="project-or-professional-activity">
 {% elsif page.layout == 'deck' or page.layout == 'talk' %}
-  <meta name="content-provenance" content="conference-presentation{% if page.transcript_status %}-with-reviewed-transcript{% endif %}">
+  <meta name="content-provenance" content="conference-presentation{% if page.transcript_status == 'llm-reviewed' %}-with-reviewed-transcript{% endif %}">
 {% endif %}
 
 {% if page.collection == 'posts' or page.collection == 'weblog' %}
@@ -96,7 +98,7 @@
     "associatedMedia": {
       "@type": "VideoObject",
       "name": {{ page.title | append: ' recording' | jsonify }},
-      "contentUrl": {{ page.recording_url | jsonify }}{% if page.transcript_status %},
+      "contentUrl": {{ page.recording_url | jsonify }}{% if page.transcript_status == 'llm-reviewed' %},
       "transcript": "A reviewed transcript is available in the page content."
       {% endif %}
     }{% endif %}

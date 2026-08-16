@@ -1,0 +1,8 @@
+---
+layout: talk-text
+permalink: /talks/2024-10-23-iss-ohio2024-ai-empowers-your-business-what-does-that-mean-for-security/llms.txt
+talk_permalink: /talks/2024-10-23-iss-ohio2024-ai-empowers-your-business-what-does-that-mean-for-security/
+talk_slug: 2024-10-23-iss-ohio2024-ai-empowers-your-business-what-does-that-mean-for-security
+generated_by: sync-talk-text
+sitemap: false
+---

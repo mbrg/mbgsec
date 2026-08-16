@@ -1,0 +1,1759 @@
+---
+layout: talk-text
+permalink: /talks/2023-04-23-bsidessf-2023-sure-let-business-users-build-their-own-what-could-go-wrong/llms.txt
+talk_permalink: /talks/2023-04-23-bsidessf-2023-sure-let-business-users-build-their-own-what-could-go-wrong/
+talk_slug: 2023-04-23-bsidessf-2023-sure-let-business-users-build-their-own-what-could-go-wrong
+generated_by: sync-talk-text
+sitemap: false
+---
+
+
+<!-- talk-enrichment:start -->
+## Abstract
+
+Business professionals are increasingly building their own applications with Low-Code/No-Code platforms. And so, enterprises are placing *developer-level power* in the hands of 100x *new* business developers. What could go wrong?
+
+_[Official conference abstract](https://bsidessf2023.sched.com/event/1Hztn/sure-let-business-users-build-their-own-what-could-go-wrong)_
+
+## Transcript
+
+> Generated from the talk recording and evaluated by three independent LLM reviewer roles.
+
+### Introduction & Scope; Low‑Code / No‑Code Landscape
+
+[00:00](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=0s) **Presenter:** Hi, everyone. I'm going to promise you one thing before we start this talk. This is going to be different. Now, you get to decide at the end whether it's different good or different bad. That's another thing. But it won't be the same as other talks you'll see today because mostly when we talk about security, we focus on the things that developers are building. But this talk is going to be different. It's going to be focused on what your business users are building and the kind of risks that are exposed by them building their own
+
+[00:30](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=30s) **Presenter:** applications. So briefly about me and why should you listen to me about this space? I've been
+
+[00:37](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=37s) **Presenter:** working on kind of trying to understand the implications, the security implications of
+
+[00:42](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=42s) **Presenter:** low-code, no-code applications, those applications that business users are building. For the last
+
+[00:47](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=47s) **Presenter:** four years or so, I founded a company that's focused on this space called Xenery. I was part
+
+[00:53](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=53s) **Presenter:** of the cloud security team at Microsoft, where I got some initial convulsibility into the space.
+
+[01:00](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=60s) **Presenter:** There is an OWASP group dedicated to top 10 for low-code, no-code.
+
+[01:04](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=64s) **Presenter:** We're going to see some of it today.
+
+[01:05](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=65s) **Presenter:** If you're interested, please reach out afterwards.
+
+[01:09](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=69s) **Presenter:** And actually, most of my time is actually spent on the Red Team side,
+
+[01:14](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=74s) **Presenter:** figuring out how we can use these types of applications to hack the enterprise.
+
+[01:18](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=78s) **Presenter:** So if you're interested in that, there's a bunch more information after it.
+
+[01:21](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=81s) **Presenter:** You can search for my DEF CON talks.
+
+[01:23](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=83s) **Presenter:** I gave a couple of them at the last DEF CON.
+
+[01:28](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=88s) **Presenter:** here's what we're going to do today
+
+[01:30](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=90s) **Presenter:** we're going to start by making sure we're all on the same page
+
+[01:33](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=93s) **Presenter:** on what low-code, no-code actually is
+
+[01:35](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=95s) **Presenter:** and how fast it's growing within the enterprise
+
+[01:40](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=100s) **Presenter:** and I'm hoping to convince you that this is the kind of case
+
+[01:44](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=104s) **Presenter:** like bring your own device or mobile applications
+
+[01:47](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=107s) **Presenter:** where we can't really say this doesn't belong to us
+
+[01:50](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=110s) **Presenter:** or this will not happen in our org
+
+[01:52](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=112s) **Presenter:** we just have to go along with it
+
+[01:56](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=116s) **Presenter:** the SDLC translates or how it doesn't translate to low-code, no-code.
+
+[02:00](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=120s) **Presenter:** And then we're going to focus on the top risks that we see these applications exposing.
+
+[02:06](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=126s) **Presenter:** And this is going to be driven by scanning of more than 100,000 of these types of applications
+
+[02:14](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=134s) **Presenter:** through my company and the OWASP group.
+
+[02:17](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=137s) **Presenter:** All right.
+
+[02:18](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=138s) **Presenter:** So we're going to start by figuring out what low-code, no-code is and why is it...
+
+[02:24](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=144s) **Presenter:** And it's promised to make everyone a developer.
+
+[02:26](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=146s) **Presenter:** And by everyone, I really mean everyone.
+
+[02:28](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=148s) **Presenter:** I mean people from HR and sales and marketing and across the organization.
+
+[02:35](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=155s) **Presenter:** This is kind of a joke, but it's true, right?
+
+[02:38](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=158s) **Presenter:** Business users or business needs always outweigh our capability as IT to actually answer those needs.
+
+[02:45](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=165s) **Presenter:** And this has been a problem since forever.
+
+### Real‑World Examples of Business Apps; Development Lifecycle & Security Gaps
+
+[02:48](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=168s) **Presenter:** We've been, I mean, the business grows and the rate of growth is larger than what IT can provide.
+
+[02:56](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=176s) **Presenter:** And this is not only about lack of developers.
+
+[02:59](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=179s) **Presenter:** It's not only about kind of a shortage in the number of developers.
+
+[03:02](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=182s) **Presenter:** It's just an inherent thing.
+
+[03:06](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=186s) **Presenter:** Also, kind of when you, as a business user, when you want something addressed, you need to convince people.
+
+[03:14](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=194s) **Presenter:** You need to get the right attention.
+
+[03:16](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=196s) **Presenter:** And so you end up waiting.
+
+[03:18](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=198s) **Presenter:** And so this is what local tries to solve.
+
+[03:20](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=200s) **Presenter:** And if this sounds like something that is not new, that's actually that kind of you've heard before, it's not new at all.
+
+[03:29](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=209s) **Presenter:** It's actually part of a larger trend that we've had for many years now that's kind of about IT decentralization, about the capability of the business units to operate on their own without central IT.
+
+[03:42](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=222s) **Presenter:** And there were many different innovations in the past that have actually achieved this.
+
+[03:46](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=226s) **Presenter:** It's the number one thing that people think about.
+
+[03:49](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=229s) **Presenter:** I encourage you to think about kind of when you think about what is the,
+
+[03:52](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=232s) **Presenter:** how fast can this go is things like Excel or Office.
+
+[03:59](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=239s) **Presenter:** So Excel has been like the number one tool,
+
+[04:02](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=242s) **Presenter:** like the single tool that I've been using across my career,
+
+[04:06](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=246s) **Presenter:** no matter how much I've learned other things.
+
+[04:08](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=248s) **Presenter:** Think about the number of jobs that are centered around Excel.
+
+[04:12](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=252s) **Presenter:** This is the ultimate low-code, no-code tool.
+
+[04:14](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=254s) **Presenter:** And of course, Excel came with macros, which are kind of our close friends until today.
+
+[04:20](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=260s) **Presenter:** So low-code is just another iteration on these capabilities that are about empowering business users
+
+[04:26](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=266s) **Presenter:** or empowering everyone to build applications faster.
+
+[04:29](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=269s) **Presenter:** And when we think about it this way, it's easier to understand where is it going.
+
+[04:34](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=274s) **Presenter:** So it's going to a place where the business operates independently
+
+[04:40](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=280s) **Presenter:** and IT can be left outside of the conversation.
+
+[04:44](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=284s) **Presenter:** Now, one thing that it's important for us to figure out is to have just a few, it's important for us for the conversation to have a few concrete examples of applications that were built by business teams or were built with low-code, no-code.
+
+[04:57](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=297s) **Presenter:** So we all agree or we have something to think about when we consider these applications.
+
+[05:04](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=304s) **Presenter:** So let me show you a few of them.
+
+[05:06](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=306s) **Presenter:** Here's one.
+
+[05:06](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=306s) **Presenter:** This is actually an example from Microsoft.
+
+[05:08](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=308s) **Presenter:** If you go and visit or if you went and visit Microsoft offices physically during the pandemic and you had to provide your COVID vaccination proof, this was facilitated through a low-code app.
+
+[05:22](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=322s) **Presenter:** So you open up this.
+
+[05:23](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=323s) **Presenter:** This is just a web portal.
+
+[05:24](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=324s) **Presenter:** You open it up.
+
+[05:25](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=325s) **Presenter:** You need to upload your COVID certificate.
+
+[05:27](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=327s) **Presenter:** Of course, this means that this is handling health data, right?
+
+[05:32](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=332s) **Presenter:** Now, who's building this app?
+
+[05:33](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=333s) **Presenter:** It could be professional developers with low-code.
+
+[05:35](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=335s) **Presenter:** It could be business users.
+
+[05:38](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=338s) **Presenter:** but the main point is that it's built with low codings
+
+[05:42](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=342s) **Presenter:** and it's a critical app.
+
+[05:44](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=344s) **Presenter:** And in most cases,
+
+[05:46](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=346s) **Presenter:** these are not really covered by the security umbrella,
+
+[05:48](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=348s) **Presenter:** but we'll touch on that in a moment.
+
+[05:51](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=351s) **Presenter:** Here's another example.
+
+[05:52](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=352s) **Presenter:** This is a famous example by Workato and Slack.
+
+[05:57](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=357s) **Presenter:** And so Slack is a big Workato customer.
+
+[05:59](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=359s) **Presenter:** Workato is an integration platform.
+
+[06:00](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=360s) **Presenter:** And they are using a bunch of Workato automation
+
+[06:03](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=363s) **Presenter:** to facilitate everything from the order to cache processes.
+
+[06:08](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=368s) **Presenter:** is of course critical, right?
+
+[06:09](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=369s) **Presenter:** There cannot be any mistakes here.
+
+[06:12](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=372s) **Presenter:** And Workato has to be dealt with as a production environment
+
+[06:18](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=378s) **Presenter:** or a production service in this matter.
+
+[06:21](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=381s) **Presenter:** Now, let's see another one, which would be a bit different.
+
+[06:25](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=385s) **Presenter:** This is another example from Microsoft,
+
+[06:27](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=387s) **Presenter:** but this time the developer here is clearly a business user.
+
+[06:31](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=391s) **Presenter:** So here's the use case here.
+
+[06:33](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=393s) **Presenter:** There's the marketing team that is in charge of product launches,
+
+[06:38](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=398s) **Presenter:** there were several different processes ongoing in parallel
+
+[06:41](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=401s) **Presenter:** to actually go through those product launches.
+
+[06:43](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=403s) **Presenter:** So they created an app that facilitated this process,
+
+[06:46](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=406s) **Presenter:** that allowed everybody to kind of go through the same steps
+
+[06:50](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=410s) **Presenter:** to launch their product.
+
+[06:52](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=412s) **Presenter:** This app was developed by the marketing team very quickly
+
+[06:55](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=415s) **Presenter:** and became the go-to app to work on that process.
+
+[06:59](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=419s) **Presenter:** So it's the official app for everybody that wants to launch applications.
+
+[07:05](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=425s) **Presenter:** And again, this is built by a business user.
+
+[07:08](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=428s) **Presenter:** this is really cool, but now let's think about all of the gates,
+
+[07:14](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=434s) **Presenter:** all of the security controls, everything that we have for professional development
+
+[07:18](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=438s) **Presenter:** and whether or not this applies here.
+
+[07:21](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=441s) **Presenter:** Now, one thing you could be thinking right now in order to get yourself off the hook
+
+[07:26](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=446s) **Presenter:** is that this doesn't apply to your organization,
+
+[07:30](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=450s) **Presenter:** that you never have business.
+
+[07:31](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=451s) **Presenter:** Maybe you're a bank or financial service or something,
+
+[07:34](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=454s) **Presenter:** and you're thinking, well, in my organization,
+
+[07:38](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=458s) **Presenter:** build things on their own.
+
+[07:39](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=459s) **Presenter:** And I'm sorry to be the one to say this,
+
+[07:42](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=462s) **Presenter:** but that's a very difficult task to achieve.
+
+[07:45](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=465s) **Presenter:** These things are already there within most enterprises
+
+[07:49](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=469s) **Presenter:** because low code has been packaged
+
+[07:52](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=472s) **Presenter:** into existing SaaS products.
+
+[07:55](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=475s) **Presenter:** And kind of just show me,
+
+[07:57](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=477s) **Presenter:** there aren't many enterprises
+
+[07:59](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=479s) **Presenter:** that don't have one of these vendors
+
+[08:00](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=480s) **Presenter:** as kind of deployed in the organization.
+
+### Top 10 Risks Overview
+
+[08:04](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=484s) **Presenter:** And there are, of course, others.
+
+[08:05](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=485s) **Presenter:** every SaaS platform today is baking in those low-code, no-code capabilities as a way to
+
+[08:12](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=492s) **Presenter:** extend their platform. But it also means that these are no longer single applications. So
+
+[08:18](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=498s) **Presenter:** thinking about Office 365 or about Salesforce as a point solution is kind of outdated. Salesforce
+
+[08:25](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=505s) **Presenter:** is no longer a CRM. It's an application development platform. And we are not really
+
+[08:29](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=509s) **Presenter:** treating it that way in most cases.
+
+[08:33](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=513s) **Presenter:** So if you're using one of those platforms, these are tools that are already there,
+
+[08:38](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=518s) **Presenter:** packaged inside, and they are shipped directly to business users.
+
+[08:42](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=522s) **Presenter:** There's no asking for permission in that process.
+
+[08:46](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=526s) **Presenter:** This means that in a typical enterprise that I got to work with,
+
+[08:50](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=530s) **Presenter:** even though they did not have an official kind of citizen development
+
+[08:54](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=534s) **Presenter:** or business development initiative,
+
+[08:56](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=536s) **Presenter:** they had tens of thousands of these applications.
+
+[09:00](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=540s) **Presenter:** And I'll show you the statistics in a moment.
+
+[09:03](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=543s) **Presenter:** When you watch what people that are leading this space
+
+[09:08](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=548s) **Presenter:** are talking about,
+
+[09:09](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=549s) **Presenter:** they are talking about it as the next big wave
+
+[09:13](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=553s) **Presenter:** of application building.
+
+[09:15](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=555s) **Presenter:** Here are a couple of quotes.
+
+[09:17](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=557s) **Presenter:** You can see quotes from analysts,
+
+[09:20](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=560s) **Presenter:** but the more interesting one is actually the quote
+
+[09:22](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=562s) **Presenter:** for Microsoft, which is sharing kind of their goal in this space.
+
+[09:28](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=568s) **Presenter:** They're basically saying, well, we need to build so many apps in the industry.
+
+[09:32](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=572s) **Presenter:** Developers won't be able to do it.
+
+[09:34](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=574s) **Presenter:** So low-code is the way to move forward.
+
+[09:36](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=576s) **Presenter:** Now, if we think about the fact that these applications are, A, very easy to build, B,
+
+[09:42](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=582s) **Presenter:** more people can build those applications.
+
+[09:44](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=584s) **Presenter:** Well, pretty soon, we're going to be in a situation where most apps, in terms of numbers,
+
+[09:49](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=589s) **Presenter:** will be built with low-code, low-code, will be built outside of IT.
+
+[09:52](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=592s) **Presenter:** could be small apps, but they still have identity, they still move data, they still have those
+
+[09:58](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=598s) **Presenter:** operations that they are doing. And so it's kind of important for us, failing to put them
+
+[10:04](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=604s) **Presenter:** under the security umbrella would leave us in a very tough situation. Now, one thing,
+
+[10:09](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=609s) **Presenter:** I mean, these are quotes that talk about the future, but the more interesting part is whether
+
+[10:16](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=616s) **Presenter:** they are actually truthful, whether they are, what is the situation today? So I want you
+
+[10:22](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=622s) **Presenter:** One statistic that I checked kind of a week before
+
+[10:25](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=625s) **Presenter:** or a few days earlier
+
+[10:27](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=627s) **Presenter:** is how many .NET developers there are right now.
+
+[10:31](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=631s) **Presenter:** And according to Microsoft, there are over 5 million.
+
+[10:33](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=633s) **Presenter:** So I'll take that as meaning less than six.
+
+[10:37](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=637s) **Presenter:** Compared to that number, that's the number today, right?
+
+[10:40](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=640s) **Presenter:** How many low-code developers,
+
+[10:42](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=642s) **Presenter:** just using the Microsoft ecosystem, do you think there are?
+
+[10:45](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=645s) **Presenter:** Just kind of think about it.
+
+[10:47](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=647s) **Presenter:** Have some sort of an answer.
+
+[10:52](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=652s) **Presenter:** All right, so I went through Microsoft's earning reports
+
+[10:56](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=656s) **Presenter:** for the last few years,
+
+[10:58](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=658s) **Presenter:** where they mentioned here and there
+
+[11:00](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=660s) **Presenter:** kind of the number of developers
+
+[11:01](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=661s) **Presenter:** that are using the low-code, no-code platform.
+
+[11:03](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=663s) **Presenter:** And of course, this is just Microsoft
+
+[11:05](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=665s) **Presenter:** because their information is out there,
+
+[11:06](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=666s) **Presenter:** but the market is much bigger than them.
+
+[11:09](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=669s) **Presenter:** Here are the statistics.
+
+[11:11](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=671s) **Presenter:** So they started off with their low-code initiative in 2018.
+
+[11:16](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=676s) **Presenter:** In 2020, sorry, in 2022,
+
+[11:20](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=680s) **Presenter:** publicly mentioned that they have more than 7 million developers
+
+[11:24](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=684s) **Presenter:** that are using their low-code, no-code platform.
+
+[11:26](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=686s) **Presenter:** And you can see the kind of linear regression that I've created here,
+
+[11:32](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=692s) **Presenter:** which puts them, kind of the prediction is that today there are about 8 million.
+
+[11:37](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=697s) **Presenter:** But even if you take the 7 million number,
+
+[11:40](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=700s) **Presenter:** there are more low-code, no-code developers on the Microsoft ecosystem
+
+[11:43](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=703s) **Presenter:** than .NET developers.
+
+[11:44](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=704s) **Presenter:** When I saw this, this kind of really surprised me
+
+[11:48](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=708s) **Presenter:** because we are still thinking of this as a,
+
+[11:50](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=710s) **Presenter:** we might be thinking of this as a niche thing,
+
+[11:52](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=712s) **Presenter:** but it's definitely not, right?
+
+[11:54](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=714s) **Presenter:** Think about all of the control,
+
+[11:57](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=717s) **Presenter:** all of the effort that we put in place
+
+[11:59](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=719s) **Presenter:** to help those .NET developers avoid mistakes
+
+[12:02](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=722s) **Presenter:** to make sure that the applications
+
+[12:03](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=723s) **Presenter:** that they are building are secured.
+
+[12:05](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=725s) **Presenter:** How much effort are we putting
+
+[12:06](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=726s) **Presenter:** into helping those local and local developers?
+
+[12:10](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=730s) **Presenter:** Not a comparable amount at all.
+
+[12:12](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=732s) **Presenter:** All right.
+
+[12:14](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=734s) **Presenter:** So these are statistics
+
+[12:18](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=738s) **Presenter:** Microsoft development ecosystem.
+
+[12:20](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=740s) **Presenter:** But the more important thing for each one of us is
+
+[12:23](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=743s) **Presenter:** how does it look like for a single organization,
+
+[12:26](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=746s) **Presenter:** for our organization, for a typical large enterprise,
+
+### Detailed Risk Cases — Part 1
+
+[12:29](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=749s) **Presenter:** how many applications are actually being developed
+
+[12:32](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=752s) **Presenter:** by these types of platforms?
+
+[12:34](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=754s) **Presenter:** And so let me show you an example.
+
+[12:37](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=757s) **Presenter:** And this would be numbers from a real company,
+
+[12:41](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=761s) **Presenter:** just anonymized.
+
+[12:42](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=762s) **Presenter:** And they represent, again, a single organization.
+
+[12:48](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=768s) **Presenter:** Again, from launch in 2018, you can see how the graph goes.
+
+[12:54](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=774s) **Presenter:** It's about kind of a quadratic growth there.
+
+[12:57](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=777s) **Presenter:** You can see that in an amount of something like two years,
+
+[13:03](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=783s) **Presenter:** they have built about 65,000 applications.
+
+[13:08](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=788s) **Presenter:** 65,000 applications.
+
+[13:10](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=790s) **Presenter:** These are numbers that are unprecedented, right?
+
+[13:13](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=793s) **Presenter:** Nobody is building so many professionally developed applications.
+
+[13:18](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=798s) **Presenter:** Of course, many of these applications, or even most of these applications are very simple.
+
+[13:22](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=802s) **Presenter:** They could be like an if this, then that rule, or they could be a single application that
+
+[13:27](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=807s) **Presenter:** only a user is used, or maybe somebody built an application and never even used it.
+
+[13:32](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=812s) **Presenter:** It doesn't really matter.
+
+[13:33](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=813s) **Presenter:** These applications still have an identity.
+
+[13:35](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=815s) **Presenter:** They still have the ability to move data and they are built on top of business data by
+
+[13:40](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=820s) **Presenter:** definition because they are built with these SaaS platforms that already hold your business
+
+[13:44](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=824s) **Presenter:** data.
+
+[13:44](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=824s) **Presenter:** Okay, so that's why it's important to get on top of this quickly, because the number of applications that are developed is growing really, really, really fast. And again, when you think about when you see this chart, it becomes easier to believe that indeed, most applications, most business applications in the near future would be applications built by the business, rather than applications built by IT, simply because of the of these large numbers.
+
+[14:09](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=849s) **Presenter:** All right. So here's a quick recap of what we've seen so far. A, we've seen that this is a big boost in productivity that is expected to have, or at least the people that are driving it wanted to have at least an Excel level impact.
+
+[14:25](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=865s) **Presenter:** We're talking about business critical applications
+
+[14:27](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=867s) **Presenter:** that are being built here.
+
+[14:29](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=869s) **Presenter:** Not all of them, but some of them.
+
+[14:31](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=871s) **Presenter:** And this is, again, available in every major enterprise,
+
+[14:34](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=874s) **Presenter:** and it doesn't really matter
+
+[14:35](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=875s) **Presenter:** whether we choose to enable it or not.
+
+[14:38](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=878s) **Presenter:** By default, it's already there.
+
+[14:40](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=880s) **Presenter:** Right.
+
+[14:41](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=881s) **Presenter:** So one thing we need to look at,
+
+[14:44](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=884s) **Presenter:** one thing we need to understand
+
+[14:46](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=886s) **Presenter:** in order to understand the kind of risks
+
+[14:48](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=888s) **Presenter:** that these applications expose
+
+[14:49](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=889s) **Presenter:** is how are they being developed?
+
+[14:52](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=892s) **Presenter:** So what is the SDLC?
+
+[14:55](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=895s) **Presenter:** DLC look like for these low-code apps.
+
+[14:57](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=897s) **Presenter:** And so let me show you an example of one application.
+
+[15:00](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=900s) **Presenter:** And this will kind of play out in the background,
+
+[15:04](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=904s) **Presenter:** but this is a very kind of silly example.
+
+[15:06](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=906s) **Presenter:** What I'm doing here is essentially
+
+[15:08](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=908s) **Presenter:** I'm trying to fix my own problem.
+
+[15:10](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=910s) **Presenter:** In my organization, we're using Slack.
+
+[15:12](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=912s) **Presenter:** And there's this feature in Slack
+
+[15:14](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=914s) **Presenter:** where somebody can mention you on a public channel.
+
+[15:16](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=916s) **Presenter:** And then there's this,
+
+[15:18](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=918s) **Presenter:** you are expected to reply really quickly, right?
+
+[15:21](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=921s) **Presenter:** Which is kind of annoying.
+
+[15:22](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=922s) **Presenter:** So what I'm doing here is I'm using an automation in Zapier
+
+[15:26](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=926s) **Presenter:** where every time somebody mentions me on Slack,
+
+[15:29](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=929s) **Presenter:** I'll change my status as if I'm on a call
+
+[15:33](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=933s) **Presenter:** because that helps.
+
+[15:35](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=935s) **Presenter:** And then five minutes later,
+
+[15:37](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=937s) **Presenter:** I'm going to change my status back to available
+
+[15:40](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=940s) **Presenter:** so nobody would suspect me.
+
+[15:43](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=943s) **Presenter:** Okay, this is really cool because it's showing you
+
+[15:47](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=947s) **Presenter:** actually a really sophisticated application
+
+[15:49](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=949s) **Presenter:** that I'm building through Zapier here.
+
+[15:52](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=952s) **Presenter:** through drag and drop. This entire video takes about
+
+[15:54](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=954s) **Presenter:** two minutes, but just think
+
+[15:56](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=956s) **Presenter:** about the level of complexity that this
+
+[15:58](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=958s) **Presenter:** application
+
+[16:00](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=960s) **Presenter:** needs to handle. It needs to
+
+[16:02](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=962s) **Presenter:** reach out to, it needs
+
+[16:04](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=964s) **Presenter:** to authenticate to Slack. It needs
+
+[16:06](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=966s) **Presenter:** to store some sort of a secret,
+
+[16:08](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=968s) **Presenter:** right? It needs to subscribe to
+
+[16:10](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=970s) **Presenter:** Webhook on the Slack side. It needs
+
+[16:12](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=972s) **Presenter:** to support API changes
+
+[16:14](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=974s) **Presenter:** by Slack. It needs to have
+
+[16:16](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=976s) **Presenter:** a state because this delay step, waiting
+
+[16:18](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=978s) **Presenter:** five minutes, I mean, somebody needs to
+
+[16:20](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=980s) **Presenter:** wake up after it. This is a significant
+
+[16:22](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=982s) **Presenter:** of software. And I'm able to build it
+
+[16:24](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=984s) **Presenter:** simply with drag and drop.
+
+[16:26](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=986s) **Presenter:** Now, take
+
+[16:28](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=988s) **Presenter:** this process that you're seeing right now
+
+[16:30](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=990s) **Presenter:** and compare it to the SDLC.
+
+[16:35](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=995s) **Presenter:** I mean, when I'm
+
+[16:36](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=996s) **Presenter:** finished here and you say it in a moment,
+
+[16:38](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=998s) **Presenter:** I'll have a nice little
+
+[16:40](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1000s) **Presenter:** pop-up that would say, publish
+
+[16:42](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1002s) **Presenter:** app. That's it.
+
+[16:44](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1004s) **Presenter:** Some of the platforms would even automatically
+
+[16:46](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1006s) **Presenter:** save applications as you build them
+
+[16:48](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1008s) **Presenter:** and deploy them to production.
+
+[16:51](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1011s) **Presenter:** This is a
+
+[16:52](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1012s) **Presenter:** really, this is a really big challenge
+
+[16:54](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1014s) **Presenter:** because this means that everything
+
+[16:59](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1019s) **Presenter:** that we've baked into the SDLC
+
+[17:01](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1021s) **Presenter:** doesn't really apply here.
+
+[17:03](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1023s) **Presenter:** It gets pushed out of the way.
+
+[17:05](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1025s) **Presenter:** Now, one thing I will mention,
+
+[17:06](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1026s) **Presenter:** which is important,
+
+[17:07](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1027s) **Presenter:** is that in some cases,
+
+[17:08](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1028s) **Presenter:** professional development teams
+
+[17:09](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1029s) **Presenter:** are using low-code with an SDLC,
+
+[17:12](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1032s) **Presenter:** but they are doing this
+
+[17:14](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1034s) **Presenter:** kind of despite of existing capabilities.
+
+[17:18](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1038s) **Presenter:** Their life is not easy at all.
+
+[17:22](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1042s) **Presenter:** So going into the STLC, again, this is just kind of vanilla STLC.
+
+[17:27](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1047s) **Presenter:** And this is the typical thing that we have for professional development.
+
+[17:30](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1050s) **Presenter:** Of course, this could vary a lot, but I'm trying to make a point here about low code.
+
+[17:36](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1056s) **Presenter:** Let's compare it to what you've just seen.
+
+[17:40](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1060s) **Presenter:** So there's no real process here.
+
+[17:43](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1063s) **Presenter:** There's a single user that thinks about the problem and then solves the problem.
+
+[17:48](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1068s) **Presenter:** That means that, one, there's no exchange of hands between different people.
+
+[17:54](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1074s) **Presenter:** There doesn't have to be any planning, any monitoring.
+
+[17:58](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1078s) **Presenter:** Think about what happens if one of these apps get hacked.
+
+[18:02](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1082s) **Presenter:** Will your SOC even be able to identify it?
+
+[18:05](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1085s) **Presenter:** If it was identified, will it be able to actually do something with it, investigate it?
+
+[18:10](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1090s) **Presenter:** I'm not sure.
+
+[18:11](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1091s) **Presenter:** And more than that, this entire process is up to the business user.
+
+[18:18](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1098s) **Presenter:** thing to note here is that this is a good thing. This is the feature that is driving this platform.
+
+[18:22](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1102s) **Presenter:** This is the reason why we have so many apps, because it's easy to create those apps. So this
+
+[18:26](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1106s) **Presenter:** is not going to be easily solved. And one other thing that you could be thinking about to get
+
+[18:32](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1112s) **Presenter:** yourself off the hook is that this is the platform's fault. Is that the platforms that are
+
+[18:37](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1117s) **Presenter:** building, that are allowing users to build these things, they should fix the problem. So I'm not
+
+[18:42](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1122s) **Presenter:** really sure about that because there's something called the shared responsibility model. We've
+
+[18:48](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1128s) **Presenter:** You can't expect a cloud provider to solve your problems for you.
+
+[18:50](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1130s) **Presenter:** When you build an app on top of a platform,
+
+[18:54](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1134s) **Presenter:** you're in charge of that app.
+
+[18:56](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1136s) **Presenter:** The platform is in charge of making secure building blocks,
+
+[18:59](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1139s) **Presenter:** allowing you to use the platform in a secure way.
+
+[19:02](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1142s) **Presenter:** But when you build something, you own that thing,
+
+[19:04](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1144s) **Presenter:** including the security risk of that thing.
+
+[19:07](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1147s) **Presenter:** Okay.
+
+[19:09](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1149s) **Presenter:** And what I'm trying to convince you here
+
+[19:12](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1152s) **Presenter:** is that this must be our problem
+
+[19:15](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1155s) **Presenter:** because nobody else would fix it for us.
+
+[19:18](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1158s) **Presenter:** And with that, the next part or the rest of this talk is going to be focused on the types of problems that we're seeing when these applications actually get developed.
+
+### Detailed Risk Cases — Part 2
+
+[19:29](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1169s) **Presenter:** And what you're going to see when we go through the top 10 here is concrete examples of how these applications go wrong.
+
+[19:40](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1180s) **Presenter:** Now, before I show you the actual list, a few words about this project.
+
+[19:48](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1188s) **Presenter:** years ago. Today, there's a community of about 200 people that are across the industry that have
+
+[19:52](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1192s) **Presenter:** joined kind of the different channels there. These are mostly large enterprises that are part of this
+
+[20:00](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1200s) **Presenter:** group. And if you're interested, we're working on the new version of the 2023 version of the top 10.
+
+[20:08](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1208s) **Presenter:** So if you're interested, we're really looking for feedback reviewers, reach out. We'd be happy to
+
+[20:13](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1213s) **Presenter:** to kind of get you involved.
+
+[20:16](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1216s) **Presenter:** This community is not only about the top 10.
+
+[20:19](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1219s) **Presenter:** We're also doing things that are more on the red teaming side.
+
+[20:22](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1222s) **Presenter:** You'll find a bunch of tools that you can pen test your applications with.
+
+[20:26](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1226s) **Presenter:** So if you're interested, either go to the link,
+
+[20:28](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1228s) **Presenter:** so reach out to me afterwards. I'm happy to direct you.
+
+[20:31](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1231s) **Presenter:** All right.
+
+[20:32](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1232s) **Presenter:** This entire top 10 list is built on,
+
+[20:37](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1237s) **Presenter:** is based on the applications that we're actually seeing in the wild.
+
+[20:40](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1240s) **Presenter:** So the applications that were built by business teams inside of the organizations that are part of the OVS group.
+
+[20:48](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1248s) **Presenter:** This is the top 10.
+
+[20:50](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1250s) **Presenter:** And the top 10 here is, again, different from the kind of regular top 10 for web apps.
+
+[20:55](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1255s) **Presenter:** And it's focused on the business logic that these applications represent.
+
+[20:59](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1259s) **Presenter:** So it's not about the specific building block.
+
+[21:03](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1263s) **Presenter:** This is the platform's fault.
+
+[21:04](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1264s) **Presenter:** No, this is all focused on your part, on the organization's part of the shared responsibility model.
+
+[21:11](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1271s) **Presenter:** All right.
+
+[21:13](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1273s) **Presenter:** The first problem that we're seeing again and again in these local platforms is account impersonation.
+
+[21:21](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1281s) **Presenter:** Let's put yourself in the shoes of a local platform that's trying to expand inside of the enterprise.
+
+[21:29](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1289s) **Presenter:** Again, without asking for permission.
+
+[21:30](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1290s) **Presenter:** What would be the number one thing
+
+[21:32](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1292s) **Presenter:** that would make this graph that we saw earlier
+
+[21:36](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1296s) **Presenter:** kind of not exist,
+
+[21:38](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1298s) **Presenter:** that would block this graph,
+
+[21:39](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1299s) **Presenter:** that would block this growth?
+
+[21:40](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1300s) **Presenter:** The number one thing that would block you
+
+[21:42](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1302s) **Presenter:** is permissions, right?
+
+[21:45](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1305s) **Presenter:** If a user has to ask for permission
+
+[21:47](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1307s) **Presenter:** every time they create an app,
+
+[21:49](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1309s) **Presenter:** you would never see this growth.
+
+[21:50](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1310s) **Presenter:** That would never happen.
+
+[21:52](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1312s) **Presenter:** So how do you circumvent that?
+
+[21:53](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1313s) **Presenter:** How do you allow somebody from the HR team
+
+[21:56](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1316s) **Presenter:** to build an app without asking for a service account?
+
+[22:00](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1320s) **Presenter:** You allow them to use their own identity.
+
+[22:04](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1324s) **Presenter:** And so the way that these platforms work, the way that these platforms go around this
+
+[22:08](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1328s) **Presenter:** problem is that they actually copy the user's refresh tokens and then replay them as part
+
+[22:14](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1334s) **Presenter:** of the app, which means that actually they are completely breaking the OAuth model or
+
+[22:19](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1339s) **Presenter:** the permission model that we're used to inside of the organization.
+
+[22:23](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1343s) **Presenter:** Many of these integrations are actually built on top of user impersonation.
+
+[22:27](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1347s) **Presenter:** So we use the logs in, I copy their token and then I replay it.
+
+[22:30](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1350s) **Presenter:** allow that user to share that token, but we'll see it in a moment. Now, one other thing that
+
+[22:35](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1355s) **Presenter:** typically happens is that when somebody builds an application, it could be an important application,
+
+[22:40](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1360s) **Presenter:** a useful application, they embed their own identity within that application through these
+
+[22:45](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1365s) **Presenter:** refresh tokens. And now when I share this application with you, you can use it, but
+
+[22:50](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1370s) **Presenter:** underlying you're using my own identity. Now, who cares, right? It works. Well, let me show,
+
+[22:57](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1377s) **Presenter:** let me share a story with you of what could happen.
+
+[22:59](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1379s) **Presenter:** So this is a real story where a customer care team
+
+[23:02](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1382s) **Presenter:** in a large organization,
+
+[23:04](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1384s) **Presenter:** they basically had a problem
+
+[23:06](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1386s) **Presenter:** where people didn't have access
+
+[23:08](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1388s) **Presenter:** to the right information about customers
+
+[23:12](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1392s) **Presenter:** when they were part of a support ticket.
+
+[23:16](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1396s) **Presenter:** And so the way that they saw this
+
+[23:17](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1397s) **Presenter:** is that they created an application
+
+[23:18](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1398s) **Presenter:** that used somebody from the customer care team
+
+[23:23](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1403s) **Presenter:** used their own user to go to the customer.
+
+[23:27](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1407s) **Presenter:** and fetch information about that specific customer.
+
+[23:30](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1410s) **Presenter:** And they did bake role-based access control into the app itself.
+
+[23:33](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1413s) **Presenter:** So the app only exposes the customers that you're related to.
+
+[23:40](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1420s) **Presenter:** So employees are happy because they can provide more information.
+
+[23:45](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1425s) **Presenter:** They can do their job better.
+
+### Data Leakage & Authorization Issues — Part 1
+
+[23:47](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1427s) **Presenter:** Customers are happy because they get better service.
+
+[23:49](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1429s) **Presenter:** Customer care team is happy because they fixed their problem.
+
+[23:52](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1432s) **Presenter:** Who's not happy?
+
+[23:54](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1434s) **Presenter:** The SOC.
+
+[23:57](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1437s) **Presenter:** from the SOC's perspective, right?
+
+[23:59](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1439s) **Presenter:** This is not an app.
+
+[24:01](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1441s) **Presenter:** This is just, I don't know,
+
+[24:03](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1443s) **Presenter:** scraping inside of the organization.
+
+[24:05](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1445s) **Presenter:** This is a bunch of different requests
+
+[24:08](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1448s) **Presenter:** across the enterprise,
+
+[24:09](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1449s) **Presenter:** going through multiple queries,
+
+[24:11](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1451s) **Presenter:** multiple IPs, different across time,
+
+[24:14](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1454s) **Presenter:** that are using the same credentials,
+
+[24:15](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1455s) **Presenter:** which are admin credentials to the database, right?
+
+[24:17](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1457s) **Presenter:** And this was actually caught
+
+[24:19](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1459s) **Presenter:** by kind of abnormal activities
+
+[24:21](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1461s) **Presenter:** that were caught inside the SOC.
+
+[24:23](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1463s) **Presenter:** And just imagine the SOC analyst
+
+[24:27](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1467s) **Presenter:** handle this. It took them some time to find that this is actually an application and who's built
+
+[24:33](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1473s) **Presenter:** this application. And then the stock analyst reached out to the person on the customer care team.
+
+[24:37](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1477s) **Presenter:** Imagine that conversation, right? Not an easy conversation. Now, of course, it's obvious why
+
+[24:45](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1485s) **Presenter:** this is a problem, right? You are baking in an identity to an application and everybody can use
+
+[24:51](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1491s) **Presenter:** that identity underlying.
+
+[24:53](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1493s) **Presenter:** And even though in this specific case,
+
+[24:55](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1495s) **Presenter:** role-based access control was baked into the app,
+
+[24:58](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1498s) **Presenter:** in many cases that doesn't happen.
+
+[25:00](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1500s) **Presenter:** Some platforms even have a notion
+
+[25:02](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1502s) **Presenter:** that they call implicit sharing,
+
+[25:04](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1504s) **Presenter:** which essentially means when I share an application with you,
+
+[25:07](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1507s) **Presenter:** you get direct access to the underlying data sets.
+
+[25:10](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1510s) **Presenter:** Even if I revoke access to the app afterwards,
+
+[25:14](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1514s) **Presenter:** you still get access to those data sets.
+
+[25:16](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1516s) **Presenter:** So let's see where that can take us.
+
+[25:17](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1517s) **Presenter:** And this would be the second thing, the second top 10 here, which is about authorization.
+
+[25:23](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1523s) **Presenter:** Now, problems with authorization, they're not new.
+
+[25:28](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1528s) **Presenter:** There's nothing new about low-code here.
+
+[25:29](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1529s) **Presenter:** The only thing that's new is that this has become much, much, much easier
+
+[25:35](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1535s) **Presenter:** because low-code platforms are essentially doing credential sharing as a service.
+
+[25:39](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1539s) **Presenter:** They are providing you with a service that allows you to share your authentication,
+
+[25:44](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1544s) **Presenter:** to share your identity with other users within your organization.
+
+[25:48](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1548s) **Presenter:** snapshots of different platforms you're seeing, Power Automate by Microsoft, Zapier and Wrocato,
+
+[25:53](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1553s) **Presenter:** this is not picking them to them specifically. Others are doing this as well. They all have a
+
+[25:58](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1558s) **Presenter:** notion called kind of a default environment or a default folder. And in this default environment,
+
+[26:06](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1566s) **Presenter:** what you'll find is credentials, connections that have been shared across your entire organization.
+
+[26:11](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1571s) **Presenter:** And when I say across your entire organization, I mean everybody in your AAD tenant, that would
+
+[26:17](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1577s) **Presenter:** example, and this is a single click away when you create those connections. Now, what can a
+
+[26:22](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1582s) **Presenter:** connection be? You can see, you might be able to see on the slides here a few examples, but in many
+
+[26:27](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1587s) **Presenter:** organizations, we're seeing connections to people's own Outlook and Teams users. We're seeing FTP
+
+[26:34](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1594s) **Presenter:** servers, SQL servers. This could also reach out to on-prem through gateways. And so this is just
+
+[26:41](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1601s) **Presenter:** basically a lateral movement waiting to happen, right? If I get access to any user in the
+
+[26:47](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1607s) **Presenter:** I can reach out to those platforms and just find those connections that are waiting for me to use.
+
+[26:53](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1613s) **Presenter:** And we actually have a bunch of tools that could help you identify this within your organization.
+
+[26:57](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1617s) **Presenter:** I'll give links to them afterwards.
+
+[27:00](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1620s) **Presenter:** One other thing that we're seeing with authorization is basically that people are,
+
+[27:07](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1627s) **Presenter:** API permissions can be somewhat difficult, especially if you're not an expert
+
+[27:12](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1632s) **Presenter:** or if you're not a professional developer.
+
+[27:14](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1634s) **Presenter:** And then in many cases, what we're seeing is that all of the users of an app get provisioned with the same permissions, admin level permissions.
+
+[27:22](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1642s) **Presenter:** But then they hide the different screen, the administrative screens on the UI side, on the client side.
+
+[27:27](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1647s) **Presenter:** This is very common, for example, with Salesforce development.
+
+[27:30](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1650s) **Presenter:** We've seen this again and again.
+
+[27:31](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1651s) **Presenter:** And so here, of course, the problem is obvious, right?
+
+[27:34](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1654s) **Presenter:** But this is not something that you think about unless you're aware of the risks.
+
+[27:39](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1659s) **Presenter:** and we've been
+
+[27:42](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1662s) **Presenter:** kind of in recent years
+
+[27:44](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1664s) **Presenter:** we've gotten a long way
+
+[27:46](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1666s) **Presenter:** with professional developers becoming
+
+[27:48](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1668s) **Presenter:** better equipped to
+
+[27:49](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1669s) **Presenter:** work around security. Business users
+
+[27:51](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1671s) **Presenter:** are not there. I'm not sure we can expect them
+
+[27:53](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1673s) **Presenter:** to be there.
+
+[27:55](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1675s) **Presenter:** Okay, let's go to the next one.
+
+[27:58](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1678s) **Presenter:** There are
+
+[27:59](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1679s) **Presenter:** multiple ways in which we are trying
+
+[28:02](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1682s) **Presenter:** as enterprises to
+
+[28:03](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1683s) **Presenter:** block data leakage outside of the org
+
+[28:06](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1686s) **Presenter:** and one of the things that we've been trying
+
+[28:09](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1689s) **Presenter:** is emails going outside of the organization, right?
+
+[28:12](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1692s) **Presenter:** So, for example, one very popular thing to do for all of us
+
+[28:18](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1698s) **Presenter:** is to get the corporate email invites
+
+[28:22](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1702s) **Presenter:** to our personal Gmail account
+
+[28:24](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1704s) **Presenter:** because it's much more comfortable.
+
+[28:26](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1706s) **Presenter:** Now, organizations are trying to combat, to block this,
+
+[28:31](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1711s) **Presenter:** and the way that they do it could be through DLP solutions,
+
+[28:34](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1714s) **Presenter:** could be through something on the email server,
+
+[28:37](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1717s) **Presenter:** But here's what's happening with local platforms.
+
+[28:40](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1720s) **Presenter:** Instead of forwarding an email,
+
+[28:43](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1723s) **Presenter:** instead of doing anything that would work over the network,
+
+[28:47](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1727s) **Presenter:** which would allow a network perimeter appliance to help you,
+
+[28:51](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1731s) **Presenter:** they are simply connecting with one hand,
+
+[28:53](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1733s) **Presenter:** with one account to the corporate account,
+
+[28:56](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1736s) **Presenter:** and with the other hand, with another account
+
+[28:58](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1738s) **Presenter:** to the personal Gmail account,
+
+[28:59](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1739s) **Presenter:** and then copying the content.
+
+[29:01](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1741s) **Presenter:** And this copy operation is being done
+
+[29:06](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1746s) **Presenter:** form that is owned by the vendor. You don't have an agent there. There's no way for you to monitor
+
+[29:10](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1750s) **Presenter:** it. So again, this is a clear way to export data outside of the organization. There hasn't been a
+
+[29:15](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1755s) **Presenter:** single org that I worked with that didn't have some form of this happen inside of the org.
+
+[29:21](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1761s) **Presenter:** This could be about email. This could be about moving data between different drives, so SharePoint
+
+[29:30](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1770s) **Presenter:** and Google Drive, for example. And we also see in many cases that people could build a useful
+
+[29:36](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1776s) **Presenter:** just use the wrong database
+
+[29:39](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1779s) **Presenter:** as the database of that application.
+
+[29:41](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1781s) **Presenter:** Instead of storing it in a corporate database,
+
+[29:43](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1783s) **Presenter:** they'll store it in their own personal OneDrive,
+
+[29:45](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1785s) **Presenter:** for example, or Excel sheet.
+
+[29:48](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1788s) **Presenter:** One other thing that could happen
+
+[29:50](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1790s) **Presenter:** is that these applications could be used
+
+[29:52](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1792s) **Presenter:** to do malicious things.
+
+[29:54](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1794s) **Presenter:** So for example,
+
+[29:55](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1795s) **Presenter:** this is an example of a ransomware
+
+[29:58](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1798s) **Presenter:** for a specific SharePoint site.
+
+[29:59](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1799s) **Presenter:** So I'm iterating over the entire SharePoint site
+
+[30:02](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1802s) **Presenter:** and for each file,
+
+[30:03](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1803s) **Presenter:** I'm simply encrypting that file
+
+[30:06](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1806s) **Presenter:** function that is provided by the platform and overriding it within the site.
+
+[30:11](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1811s) **Presenter:** Now, SharePoint has backups, but this same thing could happen on an on-prem machine through
+
+[30:18](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1818s) **Presenter:** the on-prem connection of those types of platforms.
+
+[30:20](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1820s) **Presenter:** And this is just one case, but we see in many cases where these platforms by mistake cause
+
+[30:26](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1826s) **Presenter:** harm.
+
+[30:27](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1827s) **Presenter:** So there might be conflicting automations that are overriding some files and then things
+
+[30:31](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1831s) **Presenter:** get changed and you need to walk your way through those types of applications again with
+
+[30:35](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1835s) **Presenter:** no visibility into it.
+
+[30:38](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1838s) **Presenter:** one other problem that we're seeing is authentication and secure communication.
+
+[30:42](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1842s) **Presenter:** And this is,
+
+[30:43](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1843s) **Presenter:** this is kind of a silly one,
+
+### Data Leakage & Authorization Issues — Part 2
+
+[30:45](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1845s) **Presenter:** but the power of these platforms is based on the fact that they can connect
+
+[30:49](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1849s) **Presenter:** across your enterprise.
+
+[30:51](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1851s) **Presenter:** They come built in with hundreds of different connectors that connect to
+
+[30:55](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1855s) **Presenter:** SAS and on-prem and others and other places as well.
+
+[30:57](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1857s) **Presenter:** And when you create those connections,
+
+[31:00](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1860s) **Presenter:** you as the business user,
+
+[31:02](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1862s) **Presenter:** you're in charge of configuring them correctly.
+
+[31:04](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1864s) **Presenter:** So one thing that we've seen,
+
+[31:06](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1866s) **Presenter:** of weird because this is something we thought we solved already, is the connections to FTP
+
+[31:11](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1871s) **Presenter:** that are using FTP rather than FTPS.
+
+[31:14](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1874s) **Presenter:** And again, this is up to the user to the side, the business user.
+
+[31:18](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1878s) **Presenter:** They can't really do it on their own.
+
+[31:21](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1881s) **Presenter:** Okay, let me show you another thing which is pretty common, which is misconfiguration.
+
+[31:28](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1888s) **Presenter:** This has been a huge thing in cloud for recent years.
+
+[31:32](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1892s) **Presenter:** And one of the things that you should be thinking about when you think about misconfiguration, as an example, is the open S3 bucket problem with AWS.
+
+[31:42](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1902s) **Presenter:** So AWS has recently changed the default and made it very difficult for you to open up these buckets.
+
+[31:48](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1908s) **Presenter:** But we still have open buckets with private corporate information out there because people are making mistakes.
+
+[31:55](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1915s) **Presenter:** And so it's not only about the default.
+
+[31:56](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1916s) **Presenter:** It's also about helping people not make mistakes.
+
+[32:00](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1920s) **Presenter:** And so let me show you how this pops up again with low code.
+
+[32:04](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1924s) **Presenter:** This is an example from Microsoft's platform.
+
+[32:07](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1927s) **Presenter:** They have something called Portal Apps,
+
+[32:09](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1929s) **Presenter:** which is an application that is basically creating a web app for you.
+
+[32:13](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1933s) **Presenter:** And it allows anonymous users,
+
+[32:17](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1937s) **Presenter:** so users that are unregistered, not logged in,
+
+[32:19](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1939s) **Presenter:** to go into the website because, well, it's a website.
+
+[32:23](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1943s) **Presenter:** Another feature that it has is an API.
+
+[32:26](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1946s) **Presenter:** is basically an API endpoint that it sets up for you
+
+[32:29](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1949s) **Presenter:** that allows you to query all of the different tables
+
+[32:32](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1952s) **Presenter:** behind this application.
+
+[32:35](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1955s) **Presenter:** Now, the problem was that the default configuration
+
+[32:37](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1957s) **Presenter:** was that every user, including anonymous users,
+
+[32:41](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1961s) **Presenter:** could access every table behind this application
+
+[32:45](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1965s) **Presenter:** through this API.
+
+[32:46](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1966s) **Presenter:** And this was actually a problem identified, again,
+
+[32:50](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1970s) **Presenter:** about a year and a half ago, where the default was like this.
+
+[32:53](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1973s) **Presenter:** And so it was very easy to find the information that should not be exposed to everyone just through randomly querying those applications.
+
+[33:02](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1982s) **Presenter:** And so even though the problem has been fixed by Microsoft, the default setting has been changed, this is still happening.
+
+[33:09](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1989s) **Presenter:** So let me show an example from last year.
+
+[33:11](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1991s) **Presenter:** And this is a real example.
+
+[33:12](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1992s) **Presenter:** This is a portal for a company, a financial industry company in the US.
+
+[33:17](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=1997s) **Presenter:** You can see we found this specific portal for that company.
+
+[33:22](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2002s) **Presenter:** I'll share with you in a moment how.
+
+[33:25](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2005s) **Presenter:** And then when you query this API,
+
+[33:27](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2007s) **Presenter:** you get a list of all of the tables that you can query through the API.
+
+[33:30](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2010s) **Presenter:** So the default table doesn't have anything interesting.
+
+[33:34](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2014s) **Presenter:** Entity form set is just form submissions.
+
+[33:36](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2016s) **Presenter:** Global variables is kind of interesting, right?
+
+[33:39](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2019s) **Presenter:** So, of course, it has authentication tokens to Azure and to other services.
+
+[33:46](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2026s) **Presenter:** of course it's close to the specific
+
+[33:48](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2028s) **Presenter:** company where we find this but
+
+[33:51](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2031s) **Presenter:** the main problem
+
+[33:52](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2032s) **Presenter:** here and maybe I'll go back a few
+
+[33:54](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2034s) **Presenter:** slides so you can figure this out on your own
+
+[33:56](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2036s) **Presenter:** look at this domain name
+
+[33:58](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2038s) **Presenter:** all of these applications are
+
+[34:00](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2040s) **Presenter:** stored in
+
+[34:01](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2041s) **Presenter:** are served in different subdomains
+
+[34:04](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2044s) **Presenter:** of this domain so just enumerate this domain
+
+[34:07](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2047s) **Presenter:** enumerate these different subdomains
+
+[34:08](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2048s) **Presenter:** go to this endpoint and it's very
+
+[34:10](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2050s) **Presenter:** easy to find those configurations
+
+[34:13](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2053s) **Presenter:** misconfigurations are very much
+
+[34:14](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2054s) **Presenter:** predictable, which makes this a huge problem.
+
+[34:19](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2059s) **Presenter:** Okay.
+
+[34:20](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2060s) **Presenter:** Another thing that we see pop up with the local platforms is injection attacks or more injection
+
+[34:28](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2068s) **Presenter:** surface.
+
+[34:28](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2068s) **Presenter:** Now, this could be a tricky one because platforms would tell you that injection has been solved
+
+[34:33](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2073s) **Presenter:** because you're using widgets that are provided by the platform.
+
+[34:35](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2075s) **Presenter:** But if you take input from a user and you plug it into a SQL query that goes out to your SQL server and you don't sanitize it on the way, then you have created an injection surface.
+
+[34:51](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2091s) **Presenter:** And again, because this is something that business users are doing or that people that are not part of the security umbrella are doing, then you're not in a really good position to help them catch it.
+
+[35:02](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2102s) **Presenter:** Another problem that is surfacing here again is the supply chain.
+
+[35:06](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2106s) **Presenter:** the only reason why low code is successful
+
+[35:08](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2108s) **Presenter:** is because there's a bunch of tools
+
+[35:11](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2111s) **Presenter:** you can pick up and use from a marketplace
+
+[35:14](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2114s) **Presenter:** in order to build your application.
+
+### Supply Chain, Logging, and Closing — Part 1
+
+[35:16](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2116s) **Presenter:** There are widgets, there are connectors,
+
+[35:18](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2118s) **Presenter:** which are kind of wrappers around APIs.
+
+[35:21](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2121s) **Presenter:** There are different backend operators that you could use.
+
+[35:25](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2125s) **Presenter:** All of those things,
+
+[35:26](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2126s) **Presenter:** some of them are built by the platform themselves,
+
+[35:29](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2129s) **Presenter:** but all of the large platform vendors have a marketplace.
+
+[35:33](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2133s) **Presenter:** if you think that they are doing
+
+[35:36](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2136s) **Presenter:** that they are completely owning the risk
+
+[35:38](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2138s) **Presenter:** of all of the components in their marketplace
+
+[35:40](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2140s) **Presenter:** you're absolutely wrong
+
+[35:41](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2141s) **Presenter:** they might do a single review
+
+[35:44](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2144s) **Presenter:** but they cannot review every change of each one of those widgets
+
+[35:47](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2147s) **Presenter:** and also in many cases
+
+[35:48](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2148s) **Presenter:** the way in which you're using those different cell party widgets
+
+[35:52](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2152s) **Presenter:** is that you can just pick them up from GitHub or something
+
+[35:55](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2155s) **Presenter:** like a zip file
+
+[35:56](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2156s) **Presenter:** and then you upload it somewhere
+
+[35:57](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2157s) **Presenter:** there's no hashing, there's nothing
+
+[36:00](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2160s) **Presenter:** so the problem of
+
+[36:03](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2163s) **Presenter:** supply chain attacks is very difficult to find
+
+[36:10](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2170s) **Presenter:** and actually identify within those local platforms.
+
+[36:12](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2172s) **Presenter:** And again, it's baked in because local platforms
+
+[36:15](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2175s) **Presenter:** without third-party widgets
+
+[36:17](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2177s) **Presenter:** would really don't have a lot of value in them.
+
+[36:21](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2181s) **Presenter:** Let me show you another kind of example
+
+[36:23](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2183s) **Presenter:** that we're seeing a lot.
+
+[36:25](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2185s) **Presenter:** And this is about sensitive data,
+
+[36:27](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2187s) **Presenter:** sensitive data and sensitive secrets.
+
+[36:33](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2193s) **Presenter:** Here's an example, an app that uses some sort of sensitive data.
+
+[36:38](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2198s) **Presenter:** A user submits that sensitive data to the app,
+
+[36:40](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2200s) **Presenter:** and then the app stores the sensitive data on a database in plain text.
+
+[36:45](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2205s) **Presenter:** This is kind of funny, and again, not new,
+
+[36:48](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2208s) **Presenter:** but because business users are building these applications,
+
+[36:50](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2210s) **Presenter:** how would they know how to store credit cards?
+
+[36:52](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2212s) **Presenter:** It's not really their role.
+
+[36:54](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2214s) **Presenter:** So let me show you, let me share a specific example.
+
+[36:57](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2217s) **Presenter:** This is an HR team at a large IT company.
+
+[37:00](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2220s) **Presenter:** Basically, they wanted to do a giveaway campaign
+
+[37:03](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2223s) **Presenter:** where people can donate money to charity.
+
+[37:06](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2226s) **Presenter:** So they created a small application that did a very simple thing.
+
+[37:10](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2230s) **Presenter:** You register to the application, you provide your credit card,
+
+[37:13](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2233s) **Presenter:** and you choose the charity you'd like to donate to,
+
+[37:16](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2236s) **Presenter:** and the company will donate as well.
+
+[37:18](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2238s) **Presenter:** Now, the credit cards that were collected there were stored,
+
+[37:22](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2242s) **Presenter:** A, in plain text, B, in an environment which was kind of a development environment
+
+[37:27](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2247s) **Presenter:** shared across the entire organization.
+
+[37:30](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2250s) **Presenter:** So again, this is very cool that business users are able to do this, but this is kind of a problem.
+
+[37:35](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2255s) **Presenter:** And by the way, they found this when compliance auditors started asking questions, which is kind of a difficult place to be at.
+
+[37:43](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2263s) **Presenter:** And we are seeing this thing about kind of sensitive data that's being handled by these applications a lot.
+
+[37:50](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2270s) **Presenter:** And again, because these platforms are built, these local platforms are built on top of SaaS platforms that contain business data,
+
+[37:58](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2278s) **Presenter:** it's very difficult to create those distinctions to make sure that these applications are not touching business data, for example.
+
+[38:07](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2287s) **Presenter:** One other thing that is clear is that most of these applications are built outside of IT's eye or control.
+
+[38:15](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2295s) **Presenter:** There are so many cases where somebody builds a successful application, other people are using them, and then this person leaves the organization.
+
+[38:23](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2303s) **Presenter:** Okay, what happens now?
+
+[38:24](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2304s) **Presenter:** This application remains, I mean, it's used until it doesn't work anymore.
+
+[38:30](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2310s) **Presenter:** And then who would you call?
+
+[38:32](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2312s) **Presenter:** What would happen if this application gets hacked?
+
+[38:34](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2314s) **Presenter:** Who would own it?
+
+[38:35](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2315s) **Presenter:** I mean, this is a really difficult situation.
+
+[38:39](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2319s) **Presenter:** And this is because we, as the people that are in charge of kind of securing the organization,
+
+[38:44](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2324s) **Presenter:** we're really not aware of them.
+
+[38:45](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2325s) **Presenter:** One of the key things that I see people try to do here is focus on applications that become viral within the organization.
+
+[38:53](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2333s) **Presenter:** So focus on those apps that are not used by one user or a couple of users, but used by a lot of different users within the org.
+
+[39:01](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2341s) **Presenter:** And the last problem that I'll mention here is logging and monitoring.
+
+[39:06](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2346s) **Presenter:** So it's funny, but there are kind of two separate problems here, which are kind of the opposite.
+
+[39:12](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2352s) **Presenter:** One is that in many cases, there are no logs at all.
+
+[39:15](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2355s) **Presenter:** So you won't find, or the logs are not available to the right people.
+
+[39:20](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2360s) **Presenter:** So again, just think about whether you can,
+
+[39:22](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2362s) **Presenter:** if something happens with one of these applications,
+
+[39:25](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2365s) **Presenter:** whether you can actually create an investigation to find out what happened,
+
+[39:28](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2368s) **Presenter:** who is logging into these applications,
+
+[39:30](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2370s) **Presenter:** what data did they provide to those users?
+
+[39:33](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2373s) **Presenter:** So those things don't really exist.
+
+[39:35](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2375s) **Presenter:** But on the other hand, some of these actual components,
+
+[39:39](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2379s) **Presenter:** for example, these automations, have a habit of recording everything.
+
+[39:45](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2385s) **Presenter:** I mean all of the data that goes through those automations.
+
+[39:49](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2389s) **Presenter:** And so one of the issues that we're seeing is that,
+
+[39:52](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2392s) **Presenter:** let's say I build an application
+
+[39:55](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2395s) **Presenter:** that allows you to check your email or something.
+
+[39:58](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2398s) **Presenter:** Okay, now you can use the application,
+
+[40:02](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2402s) **Presenter:** but as the builder of that application,
+
+[40:04](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2404s) **Presenter:** I can access the logs that are available to that application,
+
+[40:08](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2408s) **Presenter:** which can include the actual data that goes through the app.
+
+[40:12](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2412s) **Presenter:** Okay, which is again a very clear path
+
+[40:15](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2415s) **Presenter:** to privilege the escalation of one user
+
+[40:19](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2419s) **Presenter:** to be able to view things by other users.
+
+[40:21](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2421s) **Presenter:** And actually, previously,
+
+[40:25](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2425s) **Presenter:** earlier this year at DefCon,
+
+[40:26](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2426s) **Presenter:** I showed how this specific capability
+
+[40:28](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2428s) **Presenter:** could be used to move laterally across the organization.
+
+[40:32](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2432s) **Presenter:** All right.
+
+[40:33](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2433s) **Presenter:** So we have seen,
+
+[40:36](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2436s) **Presenter:** let's talk about what we've seen so far.
+
+[40:39](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2439s) **Presenter:** We've seen that low-code, no-code
+
+[40:41](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2441s) **Presenter:** is rapidly growing within the organization.
+
+[40:43](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2443s) **Presenter:** and chances are it's already there in your org.
+
+[40:47](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2447s) **Presenter:** And I'm not saying this as,
+
+[40:49](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2449s) **Presenter:** you shouldn't be worried about this.
+
+[40:51](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2451s) **Presenter:** You should bring it under the security umbrella.
+
+[40:54](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2454s) **Presenter:** I mean, security, business users are,
+
+[40:56](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2456s) **Presenter:** in many cases, you'll find that there are teams
+
+[40:59](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2459s) **Presenter:** that have already started developing
+
+[41:00](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2460s) **Presenter:** critical applications on these platforms
+
+[41:02](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2462s) **Presenter:** and they are scared because nobody's helping them
+
+[41:05](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2465s) **Presenter:** to make sure they're doing the right thing.
+
+[41:07](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2467s) **Presenter:** There's a huge opportunity here for us
+
+[41:10](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2470s) **Presenter:** to be part of that conversation.
+
+[41:13](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2473s) **Presenter:** we saw that there's missing SDLC.
+
+[41:15](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2475s) **Presenter:** In some cases, there is some SDLC,
+
+[41:17](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2477s) **Presenter:** but in many cases, you'll find none.
+
+[41:19](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2479s) **Presenter:** And I really encourage you to look at the OWASP top 10.
+
+[41:23](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2483s) **Presenter:** There are a bunch of more examples
+
+[41:24](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2484s) **Presenter:** that I haven't shared here already.
+
+[41:26](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2486s) **Presenter:** And actually, the new version that we're going to share
+
+[41:30](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2490s) **Presenter:** is going to be much deeper.
+
+[41:31](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2491s) **Presenter:** One of the things that we are working on
+
+[41:33](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2493s) **Presenter:** is having those top 10 written in a way
+
+[41:36](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2496s) **Presenter:** that you can actually give your business users
+
+[41:38](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2498s) **Presenter:** and they will understand
+
+[41:39](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2499s) **Presenter:** to help them be closer to the security mindset.
+
+[41:44](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2504s) **Presenter:** The opportunities for you to take,
+
+[41:46](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2506s) **Presenter:** and this might be the most important thing to take out of the slides,
+
+[41:50](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2510s) **Presenter:** out of this talk,
+
+[41:52](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2512s) **Presenter:** there's a huge opportunity for you to be the champion of this space
+
+[41:55](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2515s) **Presenter:** within your organization.
+
+[41:57](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2517s) **Presenter:** AppSec needs to be part of the low-code, no-code conversation
+
+[42:00](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2520s) **Presenter:** or the business development conversation.
+
+[42:02](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2522s) **Presenter:** We are seeing organizations that are creating security frameworks
+
+[42:05](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2525s) **Presenter:** or basically extending the secure development policies
+
+[42:09](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2529s) **Presenter:** they have two business users.
+
+[42:11](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2531s) **Presenter:** And of course, there's a lot of need to think about
+
+[42:14](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2534s) **Presenter:** what exactly do you want to build there?
+
+### Supply Chain, Logging, and Closing — Part 2
+
+[42:16](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2536s) **Presenter:** What use cases are approved?
+
+[42:18](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2538s) **Presenter:** How are you checking those use cases?
+
+[42:21](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2541s) **Presenter:** How are you providing galleries
+
+[42:23](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2543s) **Presenter:** for those users to build correctly?
+
+[42:26](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2546s) **Presenter:** But instead of just thinking,
+
+[42:29](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2549s) **Presenter:** so they don't need to think about security.
+
+[42:31](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2551s) **Presenter:** They can just continue building,
+
+[42:32](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2552s) **Presenter:** but you protect them along the way.
+
+[42:35](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2555s) **Presenter:** If you're interested, please reach out.
+
+[42:38](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2558s) **Presenter:** and I think we have some time for questions
+
+[42:40](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2560s) **Presenter:** so thank you very much
+
+[42:49](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2569s) **Presenter:** I might do this so we have light
+
+[42:54](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2574s) **Presenter:** thank you, I'll be coming around
+
+[42:55](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2575s) **Presenter:** and let's see, okay now I can see
+
+[43:00](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2580s) **Presenter:** you raised your hand?
+
+[43:01](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2581s) **Presenter:** okay, come on
+
+[43:04](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2584s) **Presenter:** wait, wait, I'm going to give you the microphone
+
+[43:10](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2590s) **Presenter:** So something that came to mind for me was when we've seen people whose, say, Office 365 email has been compromised and the bad guys tend to create outlook rules and things like that to forward emails for business email compromise and things like that.
+
+[43:27](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2607s) **Presenter:** I was wondering if you've seen any instances where these automations were used to do that as well, like the email things that you suggested.
+
+[43:34](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2614s) **Presenter:** So, unfortunately, yes. About three years ago, Microsoft published a report where a single organization was attacked by something like four different malware groups.
+
+[43:45](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2625s) **Presenter:** And defenders were looking to clear the network out of malware for like six months.
+
+[43:50](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2630s) **Presenter:** And they weren't able to find what was going on.
+
+[43:55](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2635s) **Presenter:** After six months, they found a single power automation.
+
+[43:59](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2639s) **Presenter:** They did a very simple thing. It was running under administrative permissions.
+
+[44:04](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2644s) **Presenter:** It used the e-discovery tools by Microsoft to find sensitive information, secrets, whatever it could, across the organization, store all of them, and send them to an HTTP endpoint.
+
+[44:16](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2656s) **Presenter:** And this was a single automation that, I mean, just trying to find this automation took so much time.
+
+[44:22](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2662s) **Presenter:** And so this is, I can share a link afterwards if you're interested.
+
+[44:26](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2666s) **Presenter:** Shoot me an email or on Twitter.
+
+[44:29](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2669s) **Presenter:** But this was actually a long time ago.
+
+[44:34](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2674s) **Presenter:** We've seen this happen mostly as mistakes, people that are making mistakes and just moving that outside of the org.
+
+[44:45](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2685s) **Presenter:** Thank you.
+
+[44:46](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2686s) **Presenter:** On to the next question.
+
+[44:52](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2692s) **Presenter:** Any ideas on a strategy for how to detect and find these things in your organization?
+
+[44:58](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2698s) **Presenter:** Yes.
+
+[44:59](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2699s) **Presenter:** So I do have one optimistic message here.
+
+[45:03](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2703s) **Presenter:** we have to remember that these things
+
+[45:07](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2707s) **Presenter:** I mean data that was
+
+[45:09](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2709s) **Presenter:** these low code applications are replacing
+
+[45:11](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2711s) **Presenter:** what you can call copy and paste integration
+
+[45:14](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2714s) **Presenter:** people have been moving files from one place to another
+
+[45:17](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2717s) **Presenter:** since forever and we've been trying to address it with DLP solutions
+
+[45:20](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2720s) **Presenter:** and other things for a long time and we haven't been successful at all
+
+[45:23](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2723s) **Presenter:** but now when business users are using these low code
+
+[45:26](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2726s) **Presenter:** no code platforms there's somebody you can ask
+
+[45:29](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2729s) **Presenter:** tell me you can go to the platform
+
+[45:32](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2732s) **Presenter:** and ask what are all of the applications that are available in your platform
+
+[45:36](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2736s) **Presenter:** that have been built on top of your platform.
+
+[45:38](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2738s) **Presenter:** Now, of course, it does require you to understand what these applications are doing,
+
+[45:43](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2743s) **Presenter:** to scan, for example, the definitions of those applications
+
+[45:47](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2747s) **Presenter:** to actually figure out what data they're attaching.
+
+[45:49](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2749s) **Presenter:** And we are seeing organizations that are actually going through those processes.
+
+[45:54](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2754s) **Presenter:** So you can do it.
+
+[45:55](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2755s) **Presenter:** You can automatically scan those applications, find inventory them,
+
+[45:59](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2759s) **Presenter:** find vulnerabilities, collect logs.
+
+[46:02](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2762s) **Presenter:** of work that you need to do in order to do that, you do have an API for some of it.
+
+[46:08](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2768s) **Presenter:** So you do have, for example, an API to query what all of the applications that exist that
+
+[46:13](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2773s) **Presenter:** is much more than we had when businesses were just copying files.
+
+[46:19](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2779s) **Presenter:** Thank you.
+
+[46:21](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2781s) **Presenter:** We have four minutes more left for questions.
+
+[46:24](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2784s) **Presenter:** Anybody else?
+
+[46:28](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2788s) **Presenter:** Thank you.
+
+[46:29](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2789s) **Presenter:** it seemed like one of the largest issues you mentioned with this was role-based authentication
+
+[46:34](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2794s) **Presenter:** um it seems like largely that's because it's operating outside of the existing structures we
+
+[46:42](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2802s) **Presenter:** have for auditing that you mentioned sock i believe do you think that we would still see benefit
+
+[46:49](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2809s) **Presenter:** in the low code no code solutions if we force them to go through the more standard process
+
+[46:55](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2815s) **Presenter:** of role-based authentication?
+
+[46:58](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2818s) **Presenter:** And how do you see that working
+
+[46:59](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2819s) **Presenter:** when currently they seem to be working
+
+[47:02](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2822s) **Presenter:** around current authorization structures?
+
+[47:06](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2826s) **Presenter:** Do you think, and I know you said
+
+[47:08](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2828s) **Presenter:** that we can't rely on them to,
+
+[47:10](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2830s) **Presenter:** or rely on the tools to fix the problems for us.
+
+[47:15](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2835s) **Presenter:** Do you think it's reasonable
+
+[47:16](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2836s) **Presenter:** that they should be working
+
+[47:17](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2837s) **Presenter:** within current structures such as OAuth?
+
+[47:20](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2840s) **Presenter:** So I think all of the platforms
+
+[47:25](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2845s) **Presenter:** you to build your applications and connect to things with service accounts rather than users,
+
+[47:31](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2851s) **Presenter:** which would be the best case scenario, right? Because then you can provision those accounts,
+
+[47:36](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2856s) **Presenter:** you can monitor them, et cetera. The problem is that this means that somebody needs to ask for
+
+[47:42](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2862s) **Presenter:** permissions, which creates a roadblock, which means that the applications won't get fully adopted,
+
+[47:47](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2867s) **Presenter:** adopted, which means in my, at least in my view, that it would never really happen.
+
+[47:54](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2874s) **Presenter:** I mean, again, these capabilities are available.
+
+[47:57](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2877s) **Presenter:** In some platforms, people are actually using service accounts, but enforcing the use of
+
+[48:02](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2882s) **Presenter:** service accounts, I don't see a way for this to work together with the exponential growth
+
+[48:09](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2889s) **Presenter:** or with the quadratic growth that we've seen earlier.
+
+[48:13](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2893s) **Presenter:** There are cases, and connecting this to the previous question, one of the things that I do see enterprises do is that they make sure that for some use cases, so for example, if you're touching business-sensitive data, if you're touching credit cards, you have to use a service account.
+
+[48:30](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2910s) **Presenter:** But then you need some way to actually enforce that rule.
+
+[48:39](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2919s) **Presenter:** Thank you, and this will be our last question.
+
+[48:42](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2922s) **Presenter:** We have one minute left.
+
+[48:45](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2925s) **Presenter:** Yeah, somebody who is kind of dealing with a new low-code environment coming in, I echo everything you said.
+
+[48:55](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2935s) **Presenter:** One of the things in the security organization, we sort of caught it sort of late into the adoption cycle.
+
+[49:01](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2941s) **Presenter:** and one of the things that we've had to do is basically say that only modules that have been vetted
+
+[49:10](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2950s) **Presenter:** are allowed to be brought into our organization so something equivalent to artifactory kind of a
+
+### Supply Chain, Logging, and Closing — Part 3
+
+[49:16](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2956s) **Presenter:** model and we've also had to work with the vendor applying heavy pressure to allow our sonar cube
+
+[49:26](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2966s) **Presenter:** rules, for example, be applied.
+
+[49:29](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2969s) **Presenter:** And
+
+[49:31](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2971s) **Presenter:** just as a normal
+
+[49:32](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2972s) **Presenter:** sort of thing with hard
+
+[49:34](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2974s) **Presenter:** guard rail mechanisms, it was
+
+[49:36](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2976s) **Presenter:** something that the no-code, low-code
+
+[49:38](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2978s) **Presenter:** vendor was like very, very, very
+
+[49:40](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2980s) **Presenter:** grumpy about. But it's
+
+[49:42](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2982s) **Presenter:** something that we've really twisted the screws
+
+[49:44](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2984s) **Presenter:** on. So we are,
+
+[49:46](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2986s) **Presenter:** you know, I'm not going to say what my organization is
+
+[49:48](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2988s) **Presenter:** obviously, but it's something that
+
+[49:50](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2990s) **Presenter:** everything you said is absolutely 100%.
+
+[49:52](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2992s) **Presenter:** And we've been applying screws on that stuff.
+
+[49:56](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=2996s) **Presenter:** I think that one of the mistakes I think we should avoid,
+
+[50:02](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=3002s) **Presenter:** I mean, we must push the vendors to be better.
+
+[50:06](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=3006s) **Presenter:** However, we need to understand that there's an entire ecosystem
+
+[50:11](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=3011s) **Presenter:** that needs to be built here, right?
+
+[50:13](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=3013s) **Presenter:** When you build a normal app, a ProCode app,
+
+[50:17](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=3017s) **Presenter:** you have shift left, you have runtime monitoring,
+
+[50:21](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=3021s) **Presenter:** you have network perimeter,
+
+[50:23](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=3023s) **Presenter:** you have a bunch of things that are helping you prevent mistakes
+
+[50:26](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=3026s) **Presenter:** prevent attacks. In no code, you don't
+
+[50:28](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=3028s) **Presenter:** really have all of them, and
+
+[50:30](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=3030s) **Presenter:** vendors would solve everything for us, but
+
+[50:32](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=3032s) **Presenter:** vendors need to make it easier for us
+
+[50:34](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=3034s) **Presenter:** to actually solve those problems.
+
+[50:36](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=3036s) **Presenter:** I know we're out of time. Thank you very much.
+
+[50:38](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=3038s) **Presenter:** I'll stay here for questions,
+
+[50:40](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=3040s) **Presenter:** and if you can't catch me here,
+
+[50:42](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=3042s) **Presenter:** reach out on Twitter. Thanks.
+
+[50:44](https://www.youtube.com/watch?v=Z0RvO6s7Jxk&t=3044s) **Presenter:** applause
+<!-- talk-enrichment:end -->

@@ -1,0 +1,1224 @@
+{
+  "generated_by": "sync-talk-text",
+  "source_manifest": "https://media.mbgsec.com/decks/2026-03-23_RSAC2026_YourAIAgentsAreMyMinions/latest.json",
+  "manifest": "https://media.mbgsec.com/decks/2026-03-23_RSAC2026_YourAIAgentsAreMyMinions/ba4b77fe/deck.json",
+  "title": "Your AI Agents Are My Minions",
+  "slides": [
+    {
+      "number": 1,
+      "text": "Michael — Bargury — Your AI Agents Are My Minions"
+    },
+    {
+      "number": 2,
+      "text": "Presentations are intended for educational purposes only and do not replace independent professional judgment. Statements of fact and opinions expressed are those of the presenters individually and, unless expressly stated to the contrary, are not the opinion or position of RSA C"
+    },
+    {
+      "number": 3,
+      "text": "asd — As I was saying.. — Living Off Microsoft Copilot",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-03-23_RSAC2026_YourAIAgentsAreMyMinions/ba4b77fe/media/media1.mp4"
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "text": "One year later..."
+    },
+    {
+      "number": 5,
+      "text": "Your AI Agents Are My Minions - slide 5 of 222"
+    },
+    {
+      "number": 6,
+      "text": "TODO: I’m here on stage so you know where this is headed — I’ve been the bearer of bad news"
+    },
+    {
+      "number": 7,
+      "text": "Hiring — senior security pros — Hi again"
+    },
+    {
+      "number": 8,
+      "text": "Here we go. — Again. — slides, vids, source",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2026-03-23_RSAC2026_YourAIAgentsAreMyMinions/ba4b77fe/media/image14.gif"
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "text": "😈 — Video demo and writeup: — labs.zenity.io",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2026-03-23_RSAC2026_YourAIAgentsAreMyMinions/ba4b77fe/media/image14.gif"
+        },
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2026-03-23_RSAC2026_YourAIAgentsAreMyMinions/ba4b77fe/media/image17.gif"
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "text": "@ — tamirishaysh — 😈",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2026-03-23_RSAC2026_YourAIAgentsAreMyMinions/ba4b77fe/media/image14.gif"
+        },
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2026-03-23_RSAC2026_YourAIAgentsAreMyMinions/ba4b77fe/media/image17.gif"
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "text": "these are 1click attacks — USER — CLICK"
+    },
+    {
+      "number": 12,
+      "text": "0click AI exploits: in-and-out in one go — By the time you realize.. — @mbrg0",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-03-23_RSAC2026_YourAIAgentsAreMyMinions/ba4b77fe/media/media2.mp4"
+        }
+      ]
+    },
+    {
+      "number": 13,
+      "text": "Your AI Agents Are My Minions - slide 13 of 222"
+    },
+    {
+      "number": 14,
+      "text": "Your AI Agents Are My Minions - slide 14 of 222"
+    },
+    {
+      "number": 15,
+      "text": "Your AI Agents Are My Minions - slide 15 of 222"
+    },
+    {
+      "number": 16,
+      "text": "We want a 0click AI exploit. — What are we up against? — @mbrg0"
+    },
+    {
+      "number": 17,
+      "text": "😈 — @mbrg0 — #RSAC"
+    },
+    {
+      "number": 18,
+      "text": "As I was saying.. — asd — Living Off Microsoft Copilot"
+    },
+    {
+      "number": 19,
+      "text": "@mbrg0 — #RSAC"
+    },
+    {
+      "number": 20,
+      "text": "😈 — @mbrg0 — #RSAC"
+    },
+    {
+      "number": 21,
+      "text": "😈 — 🎯 — @mbrg0"
+    },
+    {
+      "number": 22,
+      "text": "HACKING — @mbrg0 — #RSAC",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2026-03-23_RSAC2026_YourAIAgentsAreMyMinions/ba4b77fe/media/image30.gif"
+        }
+      ]
+    },
+    {
+      "number": 23,
+      "text": "@mbrg0 — #RSAC"
+    },
+    {
+      "number": 24,
+      "text": "@mbrg0 — #RSAC — Step one: recon."
+    },
+    {
+      "number": 25,
+      "text": "@mbrg0 — #RSAC"
+    },
+    {
+      "number": 26,
+      "text": "Your AI Agents Are My Minions - slide 26 of 222"
+    },
+    {
+      "number": 27,
+      "text": "AI Model ≠ AI System — (agent) — @mbrg0"
+    },
+    {
+      "number": 28,
+      "text": "Input — Orchestator — Final"
+    },
+    {
+      "number": 29,
+      "text": "@mbrg0 — #RSAC"
+    },
+    {
+      "number": 30,
+      "text": "T — he agent doesn’t trust — the"
+    },
+    {
+      "number": 31,
+      "text": "T — he agent doesn’t trust — itself",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-03-23_RSAC2026_YourAIAgentsAreMyMinions/ba4b77fe/media/media3.mp4"
+        }
+      ]
+    },
+    {
+      "number": 32,
+      "text": "Input — Orchestator — Final"
+    },
+    {
+      "number": 33,
+      "text": "The agent does trust — its tools"
+    },
+    {
+      "number": 34,
+      "text": "Tool output sets agent goal"
+    },
+    {
+      "number": 35,
+      "text": "Agent complies — Tool output sets agent goal"
+    },
+    {
+      "number": 36,
+      "text": "Input — Orchestator — Final"
+    },
+    {
+      "number": 37,
+      "text": "😈 — 🎯 — @mbrg0"
+    },
+    {
+      "number": 38,
+      "text": "😈 — X — 😈"
+    },
+    {
+      "number": 39,
+      "text": "Your AI Agents Are My Minions - slide 39 of 222",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-03-23_RSAC2026_YourAIAgentsAreMyMinions/ba4b77fe/media/media4.mp4"
+        }
+      ]
+    },
+    {
+      "number": 40,
+      "text": "@ — tamirishaysh — 😈",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-03-23_RSAC2026_YourAIAgentsAreMyMinions/ba4b77fe/media/media5.mp4"
+        }
+      ]
+    },
+    {
+      "number": 41,
+      "text": "@ — tamirishaysh — 😈",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-03-23_RSAC2026_YourAIAgentsAreMyMinions/ba4b77fe/media/media6.mp4"
+        }
+      ]
+    },
+    {
+      "number": 42,
+      "text": "@ — tamirishaysh — 😈",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-03-23_RSAC2026_YourAIAgentsAreMyMinions/ba4b77fe/media/media7.mp4"
+        }
+      ]
+    },
+    {
+      "number": 43,
+      "text": "and THAT is a 0click — ATTACKERS — DEFENDERS",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2026-03-23_RSAC2026_YourAIAgentsAreMyMinions/ba4b77fe/media/image14.gif"
+        },
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2026-03-23_RSAC2026_YourAIAgentsAreMyMinions/ba4b77fe/media/image17.gif"
+        }
+      ]
+    },
+    {
+      "number": 44,
+      "text": "😈 — @mbrg0 — #RSAC"
+    },
+    {
+      "number": 45,
+      "text": "😈 — @mbrg0 — #RSAC"
+    },
+    {
+      "number": 46,
+      "text": "that’s access to EVERY Salesforce record"
+    },
+    {
+      "number": 47,
+      "text": "ATTACKERS — DEFENDERS",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2026-03-23_RSAC2026_YourAIAgentsAreMyMinions/ba4b77fe/media/image14.gif"
+        },
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2026-03-23_RSAC2026_YourAIAgentsAreMyMinions/ba4b77fe/media/image17.gif"
+        }
+      ]
+    },
+    {
+      "number": 48,
+      "text": "15 Ways to Break Your Copilot — BHUSA 2024 — 15 Ways to Break Your Copilot"
+    },
+    {
+      "number": 49,
+      "text": "Reminder: these agents are enumerable — Last year we found >1K no-auth agents — Microsoft changed the default"
+    },
+    {
+      "number": 50,
+      "text": "Last year we found >1K no-auth agents — Microsoft changed the default — Naturaly, this is we found >3.5K",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2026-03-23_RSAC2026_YourAIAgentsAreMyMinions/ba4b77fe/media/image14.gif"
+        },
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2026-03-23_RSAC2026_YourAIAgentsAreMyMinions/ba4b77fe/media/image17.gif"
+        }
+      ]
+    },
+    {
+      "number": 51,
+      "text": "😈 — @ — avishai_efrat"
+    },
+    {
+      "number": 52,
+      "text": "😈 — @ — avishai_efrat"
+    },
+    {
+      "number": 53,
+      "text": "😈 — @ — avishai_efrat"
+    },
+    {
+      "number": 54,
+      "text": "github.com — / — mbrg",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-03-23_RSAC2026_YourAIAgentsAreMyMinions/ba4b77fe/media/media8.mp4"
+        }
+      ]
+    },
+    {
+      "number": 55,
+      "text": "Copilot Studio 0click exploit — Summary — Attacker finds public-facing agents"
+    },
+    {
+      "number": 56,
+      "text": "to the folks who’ll end up analyzing these slides -- we appreciate your work 🫡"
+    },
+    {
+      "number": 57,
+      "text": "POC||GTFO — @mbrg0 — #RSAC"
+    },
+    {
+      "number": 58,
+      "text": "Words from system instructions — Instructions -- not data — “Prompt engineering”"
+    },
+    {
+      "number": 59,
+      "text": "Injection is the wrong term. — @mbrg0 — #RSAC"
+    },
+    {
+      "number": 60,
+      "text": "LLMs are generative models. — They are doomed to complete. — Shackled"
+    },
+    {
+      "number": 61,
+      "text": "Your AI Agents Are My Minions - slide 61 of 222"
+    },
+    {
+      "number": 62,
+      "text": "AI — Guardrails are — Soft Boundaries."
+    },
+    {
+      "number": 63,
+      "text": "Hard-boundaries — work. — Hard boundaries mean you CAN’T get there from here"
+    },
+    {
+      "number": 64,
+      "text": "As I was saying.. — @mbrg0 — #RSAC"
+    },
+    {
+      "number": 65,
+      "text": "I’ve been giving a lot of love to Microsoft — I’ve neglected others — @mbrg0"
+    },
+    {
+      "number": 66,
+      "text": "Your AI Agents Are My Minions - slide 66 of 222"
+    },
+    {
+      "number": 67,
+      "text": "@mbrg0 — #RSAC"
+    },
+    {
+      "number": 68,
+      "text": "First: choose a topic — (sub-agent) — @mbrg0"
+    },
+    {
+      "number": 69,
+      "text": "Topics have actions (tools): — @mbrg0 — #RSAC"
+    },
+    {
+      "number": 70,
+      "text": "Hard boundary: default config has no write-actions — @mbrg0 — #RSAC"
+    },
+    {
+      "number": 71,
+      "text": "You can add actions from an asset library... — With plenty of write actions. — @mbrg0"
+    },
+    {
+      "number": 72,
+      "text": "We’ll add the — Update Customer Contact — action."
+    },
+    {
+      "number": 73,
+      "text": "What about guardrails? — @mbrg0 — #RSAC"
+    },
+    {
+      "number": 74,
+      "text": "@mbrg0 — #RSAC"
+    },
+    {
+      "number": 75,
+      "text": "LLM guardrails are implemented as a hidden topic (sub-agent) — @mbrg0 — #RSAC"
+    },
+    {
+      "number": 76,
+      "text": "LLM guardrails are implemented as a hidden topic (sub-agent) — No guardrail once we different topic has been chosen! — @mbrg0"
+    },
+    {
+      "number": 77,
+      "text": "Input — Eistein Orchestator — Final"
+    },
+    {
+      "number": 78,
+      "text": "Input — Eistein Orchestator — Final"
+    },
+    {
+      "number": 79,
+      "text": "How can we get malicious data into Salesforce? — 😈 — @mbrg0"
+    },
+    {
+      "number": 80,
+      "text": "😈 — @mbrg0 — #RSAC"
+    },
+    {
+      "number": 81,
+      "text": "😈"
+    },
+    {
+      "number": 82,
+      "text": "Booby trap “recent cases” — 😈 — @mbrg0"
+    },
+    {
+      "number": 83,
+      "text": "😈 — * we don’t control the timing — Booby trap “recent cases”"
+    },
+    {
+      "number": 84,
+      "text": "😈😈😈😈😈😈😈😈😈😈 — 😈 — @mbrg0"
+    },
+    {
+      "number": 85,
+      "text": "Cases are your attack path, eh? — 😈 — @mbrg0"
+    },
+    {
+      "number": 86,
+      "text": "😈"
+    },
+    {
+      "number": 87,
+      "text": "😈 — Prompt injection in <250 chars??"
+    },
+    {
+      "number": 88,
+      "text": "TODO: send multiple cases pic — 😈"
+    },
+    {
+      "number": 89,
+      "text": "😈"
+    },
+    {
+      "number": 90,
+      "text": "😈 — @ — tamirishaysh",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-03-23_RSAC2026_YourAIAgentsAreMyMinions/ba4b77fe/media/media9.mp4"
+        }
+      ]
+    },
+    {
+      "number": 91,
+      "text": "😈 — @ — tamirishaysh",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-03-23_RSAC2026_YourAIAgentsAreMyMinions/ba4b77fe/media/media10.mp4"
+        }
+      ]
+    },
+    {
+      "number": 92,
+      "text": "😈 — @ — tamirishaysh",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-03-23_RSAC2026_YourAIAgentsAreMyMinions/ba4b77fe/media/media11.mp4"
+        }
+      ]
+    },
+    {
+      "number": 93,
+      "text": "ATTACKERS — DEFENDERS — @mbrg0",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2026-03-23_RSAC2026_YourAIAgentsAreMyMinions/ba4b77fe/media/image14.gif"
+        },
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2026-03-23_RSAC2026_YourAIAgentsAreMyMinions/ba4b77fe/media/image17.gif"
+        }
+      ]
+    },
+    {
+      "number": 94,
+      "text": "Salesforce Einstein 0click exploit — Summary — Customer adds write-action"
+    },
+    {
+      "number": 95,
+      "text": "Enough with the — BizApps — ."
+    },
+    {
+      "number": 96,
+      "text": "@mbrg0 — #RSAC"
+    },
+    {
+      "number": 97,
+      "text": "Cursor doesn’t even try to resist",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-03-23_RSAC2026_YourAIAgentsAreMyMinions/ba4b77fe/media/media12.mp4"
+        }
+      ]
+    },
+    {
+      "number": 98,
+      "text": "@mbrg0 — #RSAC"
+    },
+    {
+      "number": 99,
+      "text": "Input — Orchestator — Final"
+    },
+    {
+      "number": 100,
+      "text": "Input — Orchestator — Final"
+    },
+    {
+      "number": 101,
+      "text": "Your AI Agents Are My Minions - slide 101 of 222"
+    },
+    {
+      "number": 102,
+      "text": "@mbrg0 — #RSAC"
+    },
+    {
+      "number": 103,
+      "text": "@mbrg0 — #RSAC"
+    },
+    {
+      "number": 104,
+      "text": "LLM refusal. — @mbrg0 — #RSAC"
+    },
+    {
+      "number": 105,
+      "text": "LLM refusal. — API keys are a touchy subject.. — @mbrg0"
+    },
+    {
+      "number": 106,
+      "text": "Your AI Agents Are My Minions - slide 106 of 222"
+    },
+    {
+      "number": 107,
+      "text": "@mbrg0 — #RSAC"
+    },
+    {
+      "number": 108,
+      "text": "🍎🍏 — @mbrg0 — #RSAC"
+    },
+    {
+      "number": 109,
+      "text": "API KEYS — APPLES — 🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏"
+    },
+    {
+      "number": 110,
+      "text": "Apples are just fine. — Social engineering — “Prompt engineering”"
+    },
+    {
+      "number": 111,
+      "text": "Creating a ticket in YOUR Jira"
+    },
+    {
+      "number": 112,
+      "text": "😈 — @ — simakov_marina",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-03-23_RSAC2026_YourAIAgentsAreMyMinions/ba4b77fe/media/media13.mp4"
+        }
+      ]
+    },
+    {
+      "number": 113,
+      "text": "😈 — @ — simakov_marina"
+    },
+    {
+      "number": 114,
+      "text": "😈 — @ — simakov_marina",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-03-23_RSAC2026_YourAIAgentsAreMyMinions/ba4b77fe/media/media14.mp4"
+        },
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-03-23_RSAC2026_YourAIAgentsAreMyMinions/ba4b77fe/media/media14.mp4"
+        }
+      ]
+    },
+    {
+      "number": 115,
+      "text": "😈 — @ — simakov_marina"
+    },
+    {
+      "number": 116,
+      "text": "HOW DO YOU LIKE — THEM — APPLES?",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2026-03-23_RSAC2026_YourAIAgentsAreMyMinions/ba4b77fe/media/image113.gif"
+        }
+      ]
+    },
+    {
+      "number": 117,
+      "text": "Cursor + Jira MCP 0click — Summary — Attacker finds public-facing create issue triggers"
+    },
+    {
+      "number": 118,
+      "text": "?"
+    },
+    {
+      "number": 119,
+      "text": "Your AI Agents Are My Minions - slide 119 of 222"
+    },
+    {
+      "number": 120,
+      "text": "As Johann was saying.. — asd — SpAIware"
+    },
+    {
+      "number": 121,
+      "text": "As Johann was saying.. — asd — SpAIware"
+    },
+    {
+      "number": 122,
+      "text": "As Johann was saying.. — asd — SpAIware"
+    },
+    {
+      "number": 123,
+      "text": "No-one will paste a malicious URL/doc/ — img — into ChatGPT"
+    },
+    {
+      "number": 124,
+      "text": "As I was saying.. — asd — Living Off Microsoft Copilot"
+    },
+    {
+      "number": 125,
+      "text": "@mbrg0 — #RSAC"
+    },
+    {
+      "number": 126,
+      "text": "ChatGPT 0click. Is it possible? — share a weaponized file — @mbrg0"
+    },
+    {
+      "number": 127,
+      "text": "ChatGPT 0click. Is it possible? — share a weaponized file — @mbrg0"
+    },
+    {
+      "number": 128,
+      "text": "ChatGPT 0click. Is it possible? — share a weaponized file — @mbrg0"
+    },
+    {
+      "number": 129,
+      "text": "ChatGPT 0click. Is it possible? — share a weaponized file — @mbrg0"
+    },
+    {
+      "number": 130,
+      "text": "ChatGPT 0click. Is it possible? — share a weaponized file — @mbrg0"
+    },
+    {
+      "number": 131,
+      "text": "HACKING — @mbrg0 — #RSAC",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2026-03-23_RSAC2026_YourAIAgentsAreMyMinions/ba4b77fe/media/image30.gif"
+        }
+      ]
+    },
+    {
+      "number": 132,
+      "text": "ChatGPT RE - File Search tool — Note the distinction between — Search –"
+    },
+    {
+      "number": 133,
+      "text": "File — Data Search tool — One tool for EVERY file search"
+    },
+    {
+      "number": 134,
+      "text": "Data Search tool – — msearch — @mbrg0"
+    },
+    {
+      "number": 135,
+      "text": "Data Search tool – — msearch — Metadata"
+    },
+    {
+      "number": 136,
+      "text": "Data Search tool – — msearch — Content preview"
+    },
+    {
+      "number": 137,
+      "text": "msearch — built-in defense — @mbrg0"
+    },
+    {
+      "number": 138,
+      "text": "Tags wrap the entire tool call — msearch — built-in defense"
+    },
+    {
+      "number": 139,
+      "text": "“ — [<num>] # — ” acts as:"
+    },
+    {
+      "number": 140,
+      "text": "msearch — built-in defense — More on Spotlighting:"
+    },
+    {
+      "number": 141,
+      "text": "As I was saying.. — asd — Living Off Microsoft Copilot"
+    },
+    {
+      "number": 142,
+      "text": "msearch — built-in defense — Prefix for each"
+    },
+    {
+      "number": 143,
+      "text": "Defense works — we’ve got delimiters, — line prefix, line numbering, special char escape.."
+    },
+    {
+      "number": 144,
+      "text": "ChatGPT knows what’s up — @mbrg0 — #RSAC"
+    },
+    {
+      "number": 145,
+      "text": "@mbrg0 — #RSAC"
+    },
+    {
+      "number": 146,
+      "text": "Memory tool – — bio — The bio tool provides persistent memory"
+    },
+    {
+      "number": 147,
+      "text": "Memory tool – — bio — The bio tool provides persistent memory"
+    },
+    {
+      "number": 148,
+      "text": "Testing memories — Session with data in context — @mbrg0"
+    },
+    {
+      "number": 149,
+      "text": "Ask for memorization directly — Testing bio infection — @mbrg0"
+    },
+    {
+      "number": 150,
+      "text": "“I can’t” ???? — Testing bio infection — @mbrg0"
+    },
+    {
+      "number": 151,
+      "text": "Testing bio infection — Bio tool has been disabled??? — @mbrg0"
+    },
+    {
+      "number": 152,
+      "text": "Testing bio infection — Once untrusted data enters the chat the bio tool is silently turned-off. — @mbrg0"
+    },
+    {
+      "number": 153,
+      "text": "Admit defeat. Walk away. — @mbrg0 — #RSAC",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2026-03-23_RSAC2026_YourAIAgentsAreMyMinions/ba4b77fe/media/image138.gif"
+        }
+      ]
+    },
+    {
+      "number": 154,
+      "text": "Admit defeat. Walk away. — Said no hacker, ever."
+    },
+    {
+      "number": 155,
+      "text": "Start small. — @mbrg0 — #RSAC"
+    },
+    {
+      "number": 156,
+      "text": "Start small. — booby trap — “meeting summary”"
+    },
+    {
+      "number": 157,
+      "text": "Injecting into — msearch — Social engineering"
+    },
+    {
+      "number": 158,
+      "text": "Try. Fail. Learn. Repeat. — @mbrg0 — #RSAC",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2026-03-23_RSAC2026_YourAIAgentsAreMyMinions/ba4b77fe/media/image143.gif"
+        }
+      ]
+    },
+    {
+      "number": 159,
+      "text": "Every failure leaks model’s internal state — @mbrg0 — #RSAC"
+    },
+    {
+      "number": 160,
+      "text": "Prompt injection == — Prompt engineering — @mbrg0"
+    },
+    {
+      "number": 161,
+      "text": "You know who’s great at prompt — eng — ?"
+    },
+    {
+      "number": 162,
+      "text": "You know who’s great at prompt — eng — ?"
+    },
+    {
+      "number": 163,
+      "text": "@mbrg0 — #RSAC"
+    },
+    {
+      "number": 164,
+      "text": "@mbrg0 — #RSAC"
+    },
+    {
+      "number": 165,
+      "text": "This is a pretty good 1click! — booby trap — “meeting summary”"
+    },
+    {
+      "number": 166,
+      "text": "asd"
+    },
+    {
+      "number": 167,
+      "text": "No-one will search for your weaponized file. This is lame. — @mbrg0 — #RSAC"
+    },
+    {
+      "number": 168,
+      "text": "Why can’t we booby trap ANY question about a “meeting summary” to get a 0click? — @mbrg0 — #RSAC"
+    },
+    {
+      "number": 169,
+      "text": "Why can’t we booby trap ANY question about a “meeting summary” — Our payloads are getting looooooong — Just like your prompts"
+    },
+    {
+      "number": 170,
+      "text": "Getting that 0click! — booby trap — “summarize THIS file”"
+    },
+    {
+      "number": 171,
+      "text": "Getting that 0click! — booby trap — “summarize THIS file”"
+    },
+    {
+      "number": 172,
+      "text": "Getting that 0click! — booby trap — “summarize THIS file”"
+    },
+    {
+      "number": 173,
+      "text": "@ — tamirishaysh",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-03-23_RSAC2026_YourAIAgentsAreMyMinions/ba4b77fe/media/media15.mp4"
+        }
+      ]
+    },
+    {
+      "number": 174,
+      "text": "@ — tamirishaysh — 😈",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-03-23_RSAC2026_YourAIAgentsAreMyMinions/ba4b77fe/media/media16.mp4"
+        }
+      ]
+    },
+    {
+      "number": 175,
+      "text": "@ — tamirishaysh — 😈",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-03-23_RSAC2026_YourAIAgentsAreMyMinions/ba4b77fe/media/media17.mp4"
+        }
+      ]
+    },
+    {
+      "number": 176,
+      "text": "@ — tamirishaysh — 😈",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-03-23_RSAC2026_YourAIAgentsAreMyMinions/ba4b77fe/media/media18.mp4"
+        }
+      ]
+    },
+    {
+      "number": 177,
+      "text": "ATTACKERS — DEFENDERS — @mbrg0",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2026-03-23_RSAC2026_YourAIAgentsAreMyMinions/ba4b77fe/media/image14.gif"
+        },
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2026-03-23_RSAC2026_YourAIAgentsAreMyMinions/ba4b77fe/media/image17.gif"
+        }
+      ]
+    },
+    {
+      "number": 178,
+      "text": "But we really want that memory implant. — @mbrg0 — #RSAC"
+    },
+    {
+      "number": 179,
+      "text": "But we really want that memory implant. — We know that : — Session start with bio tool turned on"
+    },
+    {
+      "number": 180,
+      "text": "Can we inject the implant AFTER untrusted data is read but BEFORE its written into — contex — t?"
+    },
+    {
+      "number": 181,
+      "text": "@mbrg0 — #RSAC"
+    },
+    {
+      "number": 182,
+      "text": "@mbrg0 — #RSAC"
+    },
+    {
+      "number": 183,
+      "text": "bio — is STILL ON when ChatGPT is — thinking!"
+    },
+    {
+      "number": 184,
+      "text": "NOW LET’S HAVE SOME FUN!"
+    },
+    {
+      "number": 185,
+      "text": "@ — tamirishaysh — 😈",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-03-23_RSAC2026_YourAIAgentsAreMyMinions/ba4b77fe/media/media19.mp4"
+        }
+      ]
+    },
+    {
+      "number": 186,
+      "text": "😈 — Attacker gets a live feed of every interaction — User continues to use ChatGPT"
+    },
+    {
+      "number": 187,
+      "text": "ATTACKERS — DEFENDERS — and THAT is a",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2026-03-23_RSAC2026_YourAIAgentsAreMyMinions/ba4b77fe/media/image14.gif"
+        },
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2026-03-23_RSAC2026_YourAIAgentsAreMyMinions/ba4b77fe/media/image17.gif"
+        }
+      ]
+    },
+    {
+      "number": 188,
+      "text": "@mbrg0 — #RSAC"
+    },
+    {
+      "number": 189,
+      "text": "@mbrg0 — #RSAC"
+    },
+    {
+      "number": 190,
+      "text": "@mbrg0 — #RSAC"
+    },
+    {
+      "number": 191,
+      "text": "@mbrg0 — #RSAC"
+    },
+    {
+      "number": 192,
+      "text": "🎯 — @mbrg0 — #RSAC"
+    },
+    {
+      "number": 193,
+      "text": "😈",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-03-23_RSAC2026_YourAIAgentsAreMyMinions/ba4b77fe/media/media20.mp4"
+        }
+      ]
+    },
+    {
+      "number": 194,
+      "text": "Your AI Agents Are My Minions - slide 194 of 222"
+    },
+    {
+      "number": 195,
+      "text": "😈 — No more attackers waiting around for developer mistakes…"
+    },
+    {
+      "number": 196,
+      "text": "😈 — No more attackers waiting around for developer mistakes… — Memory implants can get ChatGPT to recommend malware for you!"
+    },
+    {
+      "number": 197,
+      "text": "ATTACKERS — DEFENDERS",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2026-03-23_RSAC2026_YourAIAgentsAreMyMinions/ba4b77fe/media/image14.gif"
+        },
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2026-03-23_RSAC2026_YourAIAgentsAreMyMinions/ba4b77fe/media/image17.gif"
+        }
+      ]
+    },
+    {
+      "number": 198,
+      "text": "@mbrg0 — #RSAC"
+    },
+    {
+      "number": 199,
+      "text": "@mbrg0 — #RSAC"
+    },
+    {
+      "number": 200,
+      "text": "@mbrg0 — #RSAC",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-03-23_RSAC2026_YourAIAgentsAreMyMinions/ba4b77fe/media/media21.mp4"
+        }
+      ]
+    },
+    {
+      "number": 201,
+      "text": "ChatGPT 0click exploit — Summary — Attacker shares a weaponized doc"
+    },
+    {
+      "number": 202,
+      "text": "@mbrg0 — #RSAC"
+    },
+    {
+      "number": 203,
+      "text": "attackers use LLMs too. — AI Guardrails are SOFT boundaries. — They WON’T help you prevent an attack."
+    },
+    {
+      "number": 204,
+      "text": "HARD boundaries DO work*. — Gemini CAN’T invoke a tool directly from another tool — Copilot Studio CAN’T decide which SharePoint site to fetch content from"
+    },
+    {
+      "number": 205,
+      "text": "Next week you should: — Identify managed agents operating in your environment — In the first three months following this presentation you should:"
+    },
+    {
+      "number": 206,
+      "text": "@mbrg0 — #RSAC"
+    },
+    {
+      "number": 207,
+      "text": "ACT NOW!"
+    },
+    {
+      "number": 208,
+      "text": "Michael — Bargury — Your AI Agents Are My Minions"
+    },
+    {
+      "number": 209,
+      "text": "Your AI Agents Are My Minions - slide 209 of 222"
+    },
+    {
+      "number": 210,
+      "text": "@mbrg0 — #RSAC"
+    },
+    {
+      "number": 211,
+      "text": "@mbrg0 — #RSAC"
+    },
+    {
+      "number": 212,
+      "text": "🎯 — @mbrg0 — #RSAC"
+    },
+    {
+      "number": 213,
+      "text": "Memory implant means more than persistency. — @mbrg0 — #RSAC"
+    },
+    {
+      "number": 214,
+      "text": "You now — trust — BADGPT"
+    },
+    {
+      "number": 215,
+      "text": "😈",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-03-23_RSAC2026_YourAIAgentsAreMyMinions/ba4b77fe/media/media22.mp4"
+        }
+      ]
+    },
+    {
+      "number": 216,
+      "text": "Your AI Agents Are My Minions - slide 216 of 222"
+    },
+    {
+      "number": 217,
+      "text": "@mbrg0 — #RSAC"
+    },
+    {
+      "number": 218,
+      "text": "YOU — @mbrg0 — #RSAC",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-03-23_RSAC2026_YourAIAgentsAreMyMinions/ba4b77fe/media/media21.mp4"
+        }
+      ]
+    },
+    {
+      "number": 219,
+      "text": "Your AI Agents Are My Minions - slide 219 of 222"
+    },
+    {
+      "number": 220,
+      "text": "YOU — INCEPTION."
+    },
+    {
+      "number": 221,
+      "text": "slides, vids, source —  — labs.zenity.io",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2026-03-23_RSAC2026_YourAIAgentsAreMyMinions/ba4b77fe/media/image17.gif"
+        },
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2026-03-23_RSAC2026_YourAIAgentsAreMyMinions/ba4b77fe/media/image14.gif"
+        }
+      ]
+    },
+    {
+      "number": 222,
+      "text": "Michael — Bargury — Your AI Agents Are My Minions"
+    }
+  ]
+}

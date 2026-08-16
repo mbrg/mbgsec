@@ -182,21 +182,51 @@ try {
   assert(deck.includes('class="masthead"'), "Deck no longer retains the site masthead");
   assert(/<main\b[^>]*class="[^"]*\btalk-page\b[^"]*"[^>]*>/.test(deck), "Deck lacks the talk-page document structure");
   assert(deck.includes('class="deck-player"'), "Deck lacks its interactive player");
+  assert(deck.includes('> Full text'), "Deck lacks a visible complete-text link");
+  assert(deck.includes("Read the complete talk text and slide descriptions"), "Deck lacks a useful no-JavaScript fallback");
   assert(deck.includes('/assets/css/deck-player.css?v=20260814-talks-v2'), "Deck lacks its versioned player stylesheet");
   assert(deck.includes('/assets/js/deck-player.js?v=20260814-talks-v2'), "Deck lacks its versioned player script");
   assert.equal((deck.match(/<h1\b/g) ?? []).length, 1, "Deck must have exactly one h1");
   assertHtmlContract(deck, {
     canonical: `${canonicalOrigin}${deckPath}`,
     describedby: "/talks/llms.txt",
-    markdownSource: `${canonicalOrigin.replace("www.mbgsec.com", "raw.githubusercontent.com/mbrg/mbgsec/main")}/_pages/decks/${deckPath.split("/").filter(Boolean).at(-1)}.md`,
+    markdownSource: `${canonicalOrigin}${deckPath}llms.txt`,
     provenance: "conference-presentation",
     jsonLdType: "PresentationDigitalDocument",
   });
 
-  const enrichedDeck = await get("/talks/2023-02-15-owasp-global-appsec-dublin-2023-credential-sharing-as-a-service-the-dark-side-of-no-code/", /^text\/html; charset=utf-8$/);
+  const deckText = await get(`${deckPath}llms.txt`, /^text\/plain; charset=utf-8$/);
+  assert(deckText.startsWith("# "), "Talk text representation lacks its title");
+  assert(deckText.includes("## Resources"), "Talk text representation lacks resources");
+  assert(deckText.includes("## Slide text"), "Talk text representation lacks slide text");
+  assert(!/<(?:html|body|p|h[1-6])\b/i.test(deckText), "Talk text representation contains rendered HTML instead of Markdown");
+  assert(!deckText.match(/\{[{%]|�/), "Talk text representation contains unrendered or malformed text");
+
+  const enrichedPath = "/talks/2023-02-15-owasp-global-appsec-dublin-2023-credential-sharing-as-a-service-the-dark-side-of-no-code/";
+  const enrichedDeck = await get(enrichedPath, /^text\/html; charset=utf-8$/);
   assert(enrichedDeck.includes('href="#abstract"') && enrichedDeck.includes("Read the abstract"), "Enriched deck lacks an accurate abstract jump link");
   assert(enrichedDeck.includes("Read the abstract and transcript"), "Reviewed deck lacks its abstract-and-transcript jump link");
   assert(enrichedDeck.includes('id="transcript"'), "Reviewed deck lacks its published transcript section");
+  const enrichedText = await get(`${enrichedPath}llms.txt`, /^text\/plain; charset=utf-8$/);
+  assert(enrichedText.includes("## Abstract") && enrichedText.includes("## Transcript"), "Complete talk text lacks its abstract or transcript");
+  assert(enrichedText.includes("## Slide text") && enrichedText.includes("### Slide 70"), "Complete talk text lacks all published slide descriptions");
+  assert(enrichedText.includes("About me OWASP LCNC Top 10 project lead"), "Complete talk text lacks manifest-derived slide text");
+  assert(enrichedText.includes("[ZapCreds]") && enrichedText.includes("[Powerful]"), "Complete talk text omits labeled source-code resources");
+
+  const exceptionPath = "/talks/2024-10-24-hacklu2024-the-good-the-bad-and-the-ugly-microsoft-copilot/";
+  const exceptionDeck = await get(exceptionPath, /^text\/html; charset=utf-8$/);
+  assert(exceptionDeck.includes('<meta name="content-provenance" content="conference-presentation">'), "Recording exception has inaccurate provenance");
+  assert(!exceptionDeck.includes("conference-presentation-with-reviewed-transcript"), "Recording exception falsely claims a reviewed transcript");
+  assert(!exceptionDeck.includes('"transcript": "A reviewed transcript'), "Recording exception has false transcript JSON-LD");
+  assert(!exceptionDeck.includes("Read the abstract and transcript"), "Recording exception has a false transcript jump link");
+  assert(exceptionDeck.includes("Transcript status") && exceptionDeck.includes("failed the machine publication gate"), "Recording exception lacks its public status explanation");
+  const exceptionText = await get(`${exceptionPath}llms.txt`, /^text\/plain; charset=utf-8$/);
+  assert(!exceptionText.includes("## Transcript\n"), "Recording exception publishes a transcript section");
+  assert(exceptionText.includes("## Transcript status"), "Recording exception text lacks its status explanation");
+
+  const talksLlms = llmsDocuments.get("/talks/llms.txt");
+  assert(talksLlms.includes("Complete text representation"), "Talk index lacks complete-text routes");
+  assert(talksLlms.includes("https://github.com/mbrg/zapcreds") && talksLlms.includes("https://github.com/mbrg/powerful"), "Talk index omits multi-repository resources");
 
   const lunrStore = await get("/assets/js/lunr/lunr-store.js", /^text\/javascript; charset=utf-8$/);
   assert(lunrStore.includes("/talks/"), "Talk pages are missing from the site search index");

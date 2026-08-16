@@ -1,0 +1,686 @@
+{
+  "generated_by": "sync-talk-text",
+  "source_manifest": "https://media.mbgsec.com/decks/2024-05-06_RSAC2024_All_You_Need_Is_Guest/latest.json",
+  "manifest": "https://media.mbgsec.com/decks/2024-05-06_RSAC2024_All_You_Need_Is_Guest/eb08e5bf/deck.json",
+  "title": "All You Need Is Guest",
+  "slides": [
+    {
+      "number": 1,
+      "text": "Michael Bargury — All You Need Is Guest — Cofounder and CTO - slide 1 of 166"
+    },
+    {
+      "number": 2,
+      "text": "Disclaimer — Presentations are intended for educational purposes only and do not replace independent professional judgment. Statements of fact and opinions expressed are those of the presenters individually and, unless expressly stated to the contrary, are not the opinion or posi - slide 2 of 166"
+    },
+    {
+      "number": 3,
+      "text": "Agenda — Why invite guests in? — Security research and threat actor exploitation, exposing the real attack surface of guests - slide 3 of 166"
+    },
+    {
+      "number": 4,
+      "text": "WHY invite guests in? — And the promise of deny-by-default access - slide 4 of 166"
+    },
+    {
+      "number": 5,
+      "text": "How can two parties collaborate over a bunch of files? — F1000 enterprise — 5 - slide 5 of 166"
+    },
+    {
+      "number": 6,
+      "text": "Safe guest access must be: — 13 — Easy for vendors to onboard - slide 6 of 166"
+    },
+    {
+      "number": 7,
+      "text": "14 — (a) It’s super easy to get a guest account - slide 7 of 166",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2024-05-06_RSAC2024_All_You_Need_Is_Guest/eb08e5bf/media/media1.mp4"
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "text": "21 — (b) Control guests like employees — Enterprise controls to ensure secure access: MFA, RBAC, CA, device attestation, threat monitoring … - slide 8 of 166"
+    },
+    {
+      "number": 9,
+      "text": "22 — (b) Applying security controls to guests — Need guest access - slide 9 of 166"
+    },
+    {
+      "number": 10,
+      "text": "23 — (b) Applying security controls to guests — Security controls - slide 10 of 166"
+    },
+    {
+      "number": 11,
+      "text": "24 — (b) Applying security controls to guests — Security controls - slide 11 of 166"
+    },
+    {
+      "number": 12,
+      "text": "25 — (b) Applying security controls to guests — Security controls - slide 12 of 166"
+    },
+    {
+      "number": 13,
+      "text": "EntraID — guest recap — It’s super easy to get a guest account - slide 13 of 166"
+    },
+    {
+      "number": 14,
+      "text": "Guest accounts in practice — Security research into the real implication of guests - slide 14 of 166"
+    },
+    {
+      "number": 15,
+      "text": "Microsoft Teams vendor-onboarding team showing a guest member and pending requests - slide 15 of 166"
+    },
+    {
+      "number": 16,
+      "text": "Microsoft Teams vendor-onboarding team listing owners, members, and guest users - slide 16 of 166"
+    },
+    {
+      "number": 17,
+      "text": "Microsoft Teams dialog for adding internal members or external guests - slide 17 of 166"
+    },
+    {
+      "number": 18,
+      "text": "Microsoft Teams dialog entering the attacker's address as an external guest - slide 18 of 166"
+    },
+    {
+      "number": 19,
+      "text": "Microsoft Teams confirmation that the attacker account was added as a guest - slide 19 of 166"
+    },
+    {
+      "number": 20,
+      "text": "Microsoft sign-in page for the newly invited guest account - slide 20 of 166"
+    },
+    {
+      "number": 21,
+      "text": "Microsoft consent page requesting permission for the guest to join the Zenity Demo organization - slide 21 of 166"
+    },
+    {
+      "number": 22,
+      "text": "Microsoft My Apps portal after the guest switches into the Zenity Demo organization - slide 22 of 166"
+    },
+    {
+      "number": 23,
+      "text": "Everything works as expected ? — 36 - slide 23 of 166"
+    },
+    {
+      "number": 24,
+      "text": "Everything works as expected ? — 37 — ?? - slide 24 of 166"
+    },
+    {
+      "number": 25,
+      "text": "Teams-based phishing — The real attack surface of guests - slide 25 of 166"
+    },
+    {
+      "number": 26,
+      "text": "Phishing via Teams: exploited by Storm-0324 — 39 — https://www.microsoft.com/en-us/security/blog/2023/09/12/malware-distributor-storm-0324-facilitates-ransomware-access/ - slide 26 of 166"
+    },
+    {
+      "number": 27,
+      "text": "Phishing via Teams — 40 - slide 27 of 166"
+    },
+    {
+      "number": 28,
+      "text": "Phishing via Teams — 41 - slide 28 of 166"
+    },
+    {
+      "number": 29,
+      "text": "Social engineering via Teams: exploited via Midnight Blizzard — 47 — https://www.microsoft.com/en-us/security/blog/2023/08/02/midnight-blizzard-conducts-targeted-social-engineering-over-microsoft-teams/ - slide 29 of 166"
+    },
+    {
+      "number": 30,
+      "text": "Social engineering via Teams: exploited via Midnight Blizzard — 48 - slide 30 of 166"
+    },
+    {
+      "number": 31,
+      "text": "Tenant enumeration — The real attack surface of guests - slide 31 of 166"
+    },
+    {
+      "number": 32,
+      "text": "Guests can’t enumerate your entire tenant, right? — 52 - slide 32 of 166"
+    },
+    {
+      "number": 33,
+      "text": "AADInternals PowerShell output enumerating users in the target tenant from the guest account - slide 33 of 166"
+    },
+    {
+      "number": 34,
+      "text": "Hackers are after more — Can guests access unauthorized company data? — Edit or delete data? - slide 34 of 166"
+    },
+    {
+      "number": 35,
+      "text": "Power- — pwn — The real attack surface of guests - slide 35 of 166"
+    },
+    {
+      "number": 36,
+      "text": "Go have an early lunch — https://make.powerapps.com/environments/ — Default- - slide 36 of 166"
+    },
+    {
+      "number": 37,
+      "text": "Power Apps welcome screen prompting the guest user to choose a country or region - slide 37 of 166"
+    },
+    {
+      "number": 38,
+      "text": "Power Apps error saying the target environment could not be found in the guest tenant - slide 38 of 166"
+    },
+    {
+      "number": 39,
+      "text": "Power Apps home page welcoming the guest account and offering ways to create an app - slide 39 of 166"
+    },
+    {
+      "number": 40,
+      "text": "Power Apps home page after the guest account gains access to the development portal - slide 40 of 166"
+    },
+    {
+      "number": 41,
+      "text": "Power Apps account menu for the guest user highlighting the Switch directory option - slide 41 of 166"
+    },
+    {
+      "number": 42,
+      "text": "Power Apps Directories dialog showing the guest's home tenant and the Zenity Demo tenant - slide 42 of 166"
+    },
+    {
+      "number": 43,
+      "text": "Power Apps connections list in the Zenity Demo default environment - slide 43 of 166"
+    },
+    {
+      "number": 44,
+      "text": "Power Apps connections list with an Azure Blob Storage connection selected - slide 44 of 166"
+    },
+    {
+      "number": 45,
+      "text": "Power Apps connections list highlighting storage connections visible to the guest - slide 45 of 166"
+    },
+    {
+      "number": 46,
+      "text": "Share dialog for an Azure File Storage connection showing organization-wide access - slide 46 of 166"
+    },
+    {
+      "number": 47,
+      "text": "Share dialog showing named users with access to the Azure File Storage connection - slide 47 of 166",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2024-05-06_RSAC2024_All_You_Need_Is_Guest/eb08e5bf/media/image80.gif"
+        }
+      ]
+    },
+    {
+      "number": 48,
+      "text": "Power Apps connections list after inspecting the shared Azure File Storage connection - slide 48 of 166"
+    },
+    {
+      "number": 49,
+      "text": "Azure File Storage connection details page in Power Apps - slide 49 of 166"
+    },
+    {
+      "number": 50,
+      "text": "Azure File Storage connection details describing Microsoft Azure Storage - slide 50 of 166"
+    },
+    {
+      "number": 51,
+      "text": "Azure File Storage connection details annotated with the connection owner's identity - slide 51 of 166"
+    },
+    {
+      "number": 52,
+      "text": "Business users are building their own apps w/ low-code/no-code + — GenAI - slide 52 of 166"
+    },
+    {
+      "number": 53,
+      "text": "Is this actually being used? — Credential Sharing as a Service: The Dark Side of No Code — Michael Bargury - slide 53 of 166"
+    },
+    {
+      "number": 54,
+      "text": "~8M active Power devs today! — Credential Sharing as a Service: The Dark Side of No Code — Michael Bargury - slide 54 of 166"
+    },
+    {
+      "number": 55,
+      "text": "87 — Exploit - slide 55 of 166"
+    },
+    {
+      "number": 56,
+      "text": "Azure File Storage connection details revisited while investigating applications that use it - slide 56 of 166"
+    },
+    {
+      "number": 57,
+      "text": "Apps using this connection tab listing the Customer Insights Azure application - slide 57 of 166"
+    },
+    {
+      "number": 58,
+      "text": "Power Apps connection page with the Customer Insights Azure application selected - slide 58 of 166"
+    },
+    {
+      "number": 59,
+      "text": "Customer Insights Azure application details page showing its owner and connections - slide 59 of 166"
+    },
+    {
+      "number": 60,
+      "text": "Power Apps license error telling the guest that a Power Apps plan is required - slide 60 of 166"
+    },
+    {
+      "number": 61,
+      "text": "Expanded Power Apps license error showing the guest has no eligible plan - slide 61 of 166"
+    },
+    {
+      "number": 62,
+      "text": "Power Apps premium-license error offering the guest a free trial - slide 62 of 166"
+    },
+    {
+      "number": 63,
+      "text": "Power Apps Developer Plan page advertising free development and testing - slide 63 of 166"
+    },
+    {
+      "number": 64,
+      "text": "Microsoft signup form for the Power Apps Developer Plan - slide 64 of 166"
+    },
+    {
+      "number": 65,
+      "text": "Power Apps Developer Plan confirmation for the guest account - slide 65 of 166"
+    },
+    {
+      "number": 66,
+      "text": "Customer Insights application loading screen after the developer-plan signup - slide 66 of 166"
+    },
+    {
+      "number": 67,
+      "text": "Power Apps error saying the app violates current data-loss-prevention policies - slide 67 of 166"
+    },
+    {
+      "number": 68,
+      "text": "Expanded Power Apps error identifying a blocked Azure File Storage connector - slide 68 of 166"
+    },
+    {
+      "number": 69,
+      "text": "Power Apps DLP error highlighting the blocked shared Azure File connector - slide 69 of 166"
+    },
+    {
+      "number": 70,
+      "text": "So we were able to bypass the license requirement — But blocked by... DLP? - slide 70 of 166"
+    },
+    {
+      "number": 71,
+      "text": "Microsoft Learn documentation for Power Platform data-loss-prevention policies - slide 71 of 166"
+    },
+    {
+      "number": 72,
+      "text": "Power Platform admin center creating a DLP policy and searching for a connector - slide 72 of 166"
+    },
+    {
+      "number": 73,
+      "text": "Power Platform DLP policy editor assigning connectors to policy groups - slide 73 of 166"
+    },
+    {
+      "number": 74,
+      "text": "Power Platform DLP policy editor warning that selected connectors cannot be blocked - slide 74 of 166"
+    },
+    {
+      "number": 75,
+      "text": "https://www.zenity.io/microsoft-power-platform-dlp-bypass-uncovered-finding-5-parent-and-child-flow-execution/ - slide 75 of 166"
+    },
+    {
+      "number": 76,
+      "text": "Power Apps DLP error for a blocked SQL connector, shown beneath a Black Hat transition graphic - slide 76 of 166"
+    },
+    {
+      "number": 77,
+      "text": "Power Platform admin center showing the SQL connector in the blocked policy group - slide 77 of 166"
+    },
+    {
+      "number": 78,
+      "text": "Customer Insights application loading after the SQL policy demonstration - slide 78 of 166"
+    },
+    {
+      "number": 79,
+      "text": "Customer Insights permission dialog requesting access to a SQL Server connection - slide 79 of 166"
+    },
+    {
+      "number": 80,
+      "text": "Customer Insights customer table listing employee names and email addresses - slide 80 of 166"
+    },
+    {
+      "number": 81,
+      "text": "Customer Insights customer record exposing a social-security-number field - slide 81 of 166"
+    },
+    {
+      "number": 82,
+      "text": "Browser developer tools showing the customer API response used by the Power App - slide 82 of 166"
+    },
+    {
+      "number": 83,
+      "text": "Browser network inspector showing the Power Apps API gateway request - slide 83 of 166"
+    },
+    {
+      "number": 84,
+      "text": "Browser network inspector highlighting Power Apps client and environment request headers - slide 84 of 166"
+    },
+    {
+      "number": 85,
+      "text": "Power App is using azure-apim.net to fetch connection data — GET — https://europe-002.azure-apim.net/apim - slide 85 of 166"
+    },
+    {
+      "number": 86,
+      "text": "Power App is using azure-apim.net to fetch connection data — GET https://europe-002.azure-apim.net/apim — / - slide 86 of 166"
+    },
+    {
+      "number": 87,
+      "text": "Power App is using azure-apim.net to fetch connection data — GET https://europe-002.azure-apim.net/apim — / - slide 87 of 166"
+    },
+    {
+      "number": 88,
+      "text": "Power App is using azure-apim.net to fetch connection data — GET https://europe-002.azure-apim.net/apim — / - slide 88 of 166"
+    },
+    {
+      "number": 89,
+      "text": "Power App is using azure-apim.net to fetch connection data — GET https://europe-002.azure-apim.net/apim — / - slide 89 of 166"
+    },
+    {
+      "number": 90,
+      "text": "Microsoft Docs - slide 90 of 166"
+    },
+    {
+      "number": 91,
+      "text": "Microsoft Docs - slide 91 of 166"
+    },
+    {
+      "number": 92,
+      "text": "Microsoft Docs - slide 92 of 166"
+    },
+    {
+      "number": 93,
+      "text": "Back to real life, where we’re blocked by Power Platform DLP.. — 129 - slide 93 of 166"
+    },
+    {
+      "number": 94,
+      "text": "Back to real life, where we’re blocked by Power Platform DLP.. — Or are we? — 130 - slide 94 of 166"
+    },
+    {
+      "number": 95,
+      "text": "Copy-and-paste browser API Hub call to bypass DLP — 131 - slide 95 of 166"
+    },
+    {
+      "number": 96,
+      "text": "Copy-and-paste browser API Hub call to bypass DLP — 132 - slide 96 of 166"
+    },
+    {
+      "number": 97,
+      "text": "Let’s take a closer look at this token — 133 - slide 97 of 166"
+    },
+    {
+      "number": 98,
+      "text": "JWT debugger decoding the Power Apps API Hub authentication token - slide 98 of 166"
+    },
+    {
+      "number": 99,
+      "text": "A scope away — Can we generate a token to API Hub? — 135 - slide 99 of 166"
+    },
+    {
+      "number": 100,
+      "text": "A scope away — Can we generate a token to API Hub? (reminder: — generating tokens is trivial, it’s our user) - slide 100 of 166"
+    },
+    {
+      "number": 101,
+      "text": "A scope away — Can we generate a token to API Hub? (reminder: — generating tokens is trivial, it’s our user) - slide 101 of 166"
+    },
+    {
+      "number": 102,
+      "text": "A scope away — Can we generate a token to API Hub? — (reminder: - slide 102 of 166"
+    },
+    {
+      "number": 103,
+      "text": "A scope away — Can we generate a token to API Hub? — (reminder: - slide 103 of 166"
+    },
+    {
+      "number": 104,
+      "text": "A scope away — Can we generate a token to API Hub? — (reminder: - slide 104 of 166"
+    },
+    {
+      "number": 105,
+      "text": "A scope away — Can we generate a token to API Hub? — (reminder: - slide 105 of 166"
+    },
+    {
+      "number": 106,
+      "text": "A scope away — Can we generate a token to API Hub? — (reminder: - slide 106 of 166"
+    },
+    {
+      "number": 107,
+      "text": "Where are we again? — Got guest access. — 143 - slide 107 of 166"
+    },
+    {
+      "number": 108,
+      "text": "Where are we again? — Got guest access. — Found a bunch of creds on Power Apps. - slide 108 of 166"
+    },
+    {
+      "number": 109,
+      "text": "Where are we again? — Got guest access. — Found a bunch of creds on Power Apps. - slide 109 of 166"
+    },
+    {
+      "number": 110,
+      "text": "Where are we again? — Got guest access. — Found a bunch of creds on Power Apps. - slide 110 of 166"
+    },
+    {
+      "number": 111,
+      "text": "Where are we again? — Got guest access. — Found a bunch of creds on Power Apps. - slide 111 of 166"
+    },
+    {
+      "number": 112,
+      "text": "Where are we again? — Got guest access. — Found a bunch of creds on Power Apps. - slide 112 of 166"
+    },
+    {
+      "number": 113,
+      "text": "Where are we again? — Got guest access. — Found a bunch of creds on Power Apps. - slide 113 of 166"
+    },
+    {
+      "number": 114,
+      "text": "Where are we again? — Got guest access. — Found a bunch of creds on Power Apps. - slide 114 of 166"
+    },
+    {
+      "number": 115,
+      "text": "Solving for scope — 151 - slide 115 of 166"
+    },
+    {
+      "number": 116,
+      "text": "A scope away from victory — Can we generate a token to API Hub? - slide 116 of 166"
+    },
+    {
+      "number": 117,
+      "text": "A scope away from victory — Can we generate a token to API Hub? (reminder: — generating tokens is trivial, it’s our user) - slide 117 of 166"
+    },
+    {
+      "number": 118,
+      "text": "A scope away from victory — Can we generate a token to API Hub? (reminder: — generating tokens is trivial, it’s our user) - slide 118 of 166"
+    },
+    {
+      "number": 119,
+      "text": "A scope away from victory — Can we generate a token to API Hub? — (reminder: generating tokens is trivial, it’s our user) - slide 119 of 166"
+    },
+    {
+      "number": 120,
+      "text": "A scope away from victory — Can we generate a token to API Hub? — (reminder: generating tokens is trivial, it’s our user) - slide 120 of 166"
+    },
+    {
+      "number": 121,
+      "text": "A scope away from victory — Can we generate a token to API Hub? — (reminder: generating tokens is trivial, it’s our user) - slide 121 of 166"
+    },
+    {
+      "number": 122,
+      "text": "A scope away from victory — Can we generate a token to API Hub? — (reminder: generating tokens is trivial, it’s our user) - slide 122 of 166"
+    },
+    {
+      "number": 123,
+      "text": "A scope away from victory — Can we generate a token to API Hub? — (reminder: generating tokens is trivial, it’s our user) - slide 123 of 166"
+    },
+    {
+      "number": 124,
+      "text": "Solving for scope — We need to find an AAD app that is: — 168 - slide 124 of 166"
+    },
+    {
+      "number": 125,
+      "text": "Solving for scope — We need to find an AAD app that is: — Is on by-default (available in every tenant) - slide 125 of 166"
+    },
+    {
+      "number": 126,
+      "text": "Solving for scope — We need to find an AAD app that is: — Is on by-default (available in every tenant) - slide 126 of 166"
+    },
+    {
+      "number": 127,
+      "text": "Solving for scope — We need to find an AAD app that is: — Is on by-default (available in every tenant) - slide 127 of 166"
+    },
+    {
+      "number": 128,
+      "text": "Solving for scope — We need to find an AAD app that is: — Is on by-default - slide 128 of 166"
+    },
+    {
+      "number": 129,
+      "text": "Solving for scope — We need to find an AAD app that is: — Is on by-default - slide 129 of 166"
+    },
+    {
+      "number": 130,
+      "text": "Solving for scope — We need to find an AAD app that is: — Is on by-default - slide 130 of 166"
+    },
+    {
+      "number": 131,
+      "text": "Solving for scope — We need to find an AAD app that is: — Is on by-default - slide 131 of 166"
+    },
+    {
+      "number": 132,
+      "text": "How does — msft — cross-app SSO work? (or –introduction to family of client IDs) - slide 132 of 166"
+    },
+    {
+      "number": 133,
+      "text": "How does — msft — cross-app SSO work? (or –introduction to family of client IDs) - slide 133 of 166"
+    },
+    {
+      "number": 134,
+      "text": "How does — msft — cross-app SSO work? (or –introduction to family of client IDs) - slide 134 of 166"
+    },
+    {
+      "number": 135,
+      "text": "How does — msft — cross-app SSO work? (or –introduction to family of client IDs) - slide 135 of 166"
+    },
+    {
+      "number": 136,
+      "text": "Family of client IDs — 180 — Microsoft Azure CLI - slide 136 of 166"
+    },
+    {
+      "number": 137,
+      "text": "Exchange tokens to win — 181 — We need to find an AAD app that is: - slide 137 of 166"
+    },
+    {
+      "number": 138,
+      "text": "182 — Implications - slide 138 of 166"
+    },
+    {
+      "number": 139,
+      "text": "PowerPwn command-line help listing dump, GUI, backdoor, malware, and phishing modules - slide 139 of 166"
+    },
+    {
+      "number": 140,
+      "text": "PowerPwn terminal demonstration highlighting the available offensive-security commands - slide 140 of 166"
+    },
+    {
+      "number": 141,
+      "text": "PowerPwn terminal help annotated to focus on tenant data dumping - slide 141 of 166"
+    },
+    {
+      "number": 142,
+      "text": "PowerPwn terminal transition before authenticating the guest account - slide 142 of 166"
+    },
+    {
+      "number": 143,
+      "text": "Microsoft Azure device-login page selecting the guest account for PowerPwn - slide 143 of 166"
+    },
+    {
+      "number": 144,
+      "text": "PowerPwn web interface listing shared Power Platform connectors and their owners - slide 144 of 166"
+    },
+    {
+      "number": 145,
+      "text": "PowerPwn connector inventory highlighting a shared Azure Blob Storage connection - slide 145 of 166"
+    },
+    {
+      "number": 146,
+      "text": "Expanded PowerPwn connector inventory including Azure Queues and corporate SQL databases - slide 146 of 166"
+    },
+    {
+      "number": 147,
+      "text": "PowerPwn data browser showing JSON dumps from a corporate customer database - slide 147 of 166"
+    },
+    {
+      "number": 148,
+      "text": "Dumped customer JSON containing names, email addresses, and social-security-number fields - slide 148 of 166"
+    },
+    {
+      "number": 149,
+      "text": "PowerPwn connector inventory selecting a shared Azure Tables customer connection - slide 149 of 166"
+    },
+    {
+      "number": 150,
+      "text": "PowerPwn API browser for the SQL pass-through native-query endpoint - slide 150 of 166"
+    },
+    {
+      "number": 151,
+      "text": "Try it for yourself! — github.com/mbrg/power- — pwn - slide 151 of 166"
+    },
+    {
+      "number": 152,
+      "text": "How to protect your org - slide 152 of 166"
+    },
+    {
+      "number": 153,
+      "text": "The Shared Responsibility Model — 197 — Cloud - slide 153 of 166"
+    },
+    {
+      "number": 154,
+      "text": "Platforms must step up — 198 — Customer - slide 154 of 166"
+    },
+    {
+      "number": 155,
+      "text": "Platforms must step up — 199 — Customer - slide 155 of 166"
+    },
+    {
+      "number": 156,
+      "text": "Sure, let business users build they own. What could go wrong? — 201 — Customer - slide 156 of 166"
+    },
+    {
+      "number": 157,
+      "text": "Apply What You Have Learned Today — 202 — configs, links and details - slide 157 of 166"
+    },
+    {
+      "number": 158,
+      "text": "Apply What You Have Learned Today — 203 — Hack your env today - slide 158 of 166"
+    },
+    {
+      "number": 159,
+      "text": "Apply What You Have Learned Today — 204 — Hack your env today - slide 159 of 166"
+    },
+    {
+      "number": 160,
+      "text": "Apply What You Have Learned Today — 205 — Hack your env today - slide 160 of 166"
+    },
+    {
+      "number": 161,
+      "text": "Apply What You Have Learned Today — 206 — Hack your env today - slide 161 of 166"
+    },
+    {
+      "number": 162,
+      "text": "Apply What You Have Learned Today — 207 — Hack your env today - slide 162 of 166"
+    },
+    {
+      "number": 163,
+      "text": "Apply What You Have Learned Today — 208 — Hack your env today - slide 163 of 166"
+    },
+    {
+      "number": 164,
+      "text": "Apply What You Have Learned Today — 209 — Hack your env today - slide 164 of 166"
+    },
+    {
+      "number": 165,
+      "text": "Apply What You Have Learned Today — 210 — Hack your env today - slide 165 of 166"
+    },
+    {
+      "number": 166,
+      "text": "Michael Bargury — All You Need Is Guest — Cofounder and CTO - slide 166 of 166"
+    }
+  ]
+}

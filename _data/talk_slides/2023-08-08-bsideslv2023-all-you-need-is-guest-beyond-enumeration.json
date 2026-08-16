@@ -1,0 +1,833 @@
+{
+  "generated_by": "sync-talk-text",
+  "source_manifest": "https://media.mbgsec.com/decks/2023-08-08_BSidesLV-2023_All_You_Need_is_Guest/latest.json",
+  "manifest": "https://media.mbgsec.com/decks/2023-08-08_BSidesLV-2023_All_You_Need_is_Guest/ac1c749a/deck.json",
+  "title": "All You Need is Guest: Beyond Enumeration",
+  "slides": [
+    {
+      "number": 1,
+      "text": "All You Need Is Guest — Michael Bargury, Zenity — BSidesLV 2023 — slide 1 of 201"
+    },
+    {
+      "number": 2,
+      "text": "& zenity — slide 2 of 201"
+    },
+    {
+      "number": 3,
+      "text": "AlLYou Need ls Guest @mbrgO BSideLV 2023 @* @os8 8 0G 8B Di: 1 of 59 > mr g Zenity Demo invited you to access applications within their organization (ieial) @ @ icrosoft Invitations on behalf of Zeni emo te ft 28, 4:32PM (6 days ag * a ft Invitat behalf of Zenity Di ”~ 4 S © Please only act on… — slide 3 of 201"
+    },
+    {
+      "number": 4,
+      "text": "@mbrgO All You Need Is Guest BSideLV 2029nbrg0 My Apps Zenity Demo Sign out Apps Hacker5 This is unavailable due to your hacker5@pwntoso.onmicroso account permissions and company's settings Switch organization Sign in with a different account — slide 4 of 201"
+    },
+    {
+      "number": 5,
+      "text": "All You. Need ls Guest powerpwn - Credentials e All Resources © Credentials e Automations ¢ Applications © Connectors Connector Connection @mbrgO BSideLV 2023 Created by shared_azurefile shared _azureblob shared _azuretables shared _azurequeues shared sql shared _sql… — slide 5 of 201"
+    },
+    {
+      "number": 6,
+      "text": "@mbrgO ae aS 5 BSideLV 2023 [{\"@odata.etag\": \"\", “ItemInternalId\": \"7eb41684-4b64-4f39-9eab-90fbe3@ba62c\", “CustomerID\": 34553, \"FirstName\": \"Jamie\", \"LastName\": \"Reding\", \"Email\": “jamier@zenitydemo.OnMicrosoft.com\", \"SocialSecurityNumber\": \"2@9-97-1111\"}, {\"“@odata.etag”: “ItemInternalId\":… — slide 6 of 201"
+    },
+    {
+      "number": 7,
+      "text": "BTN See Se Hi there & ¢ CTO and Co-founder @ Zenity ¢ OWASP LCNC Top 10 project lead ¢ Dark Reading columnist * Defcon, BSides, RSAC, OWASP * Hiring top researchers, engs & pms! W @mbrgo rw) github.com/mbrg DR darkreading.com/author/michael-bargury @mbrgO BSideLV 2023 — slide 7 of 201"
+    },
+    {
+      "number": 8,
+      "text": "& zenity — slide 8 of 201"
+    },
+    {
+      "number": 9,
+      "text": "@mbrgO AllYouNeed|sGuest BSideLV 2023 How can two parties collaborate over a bunch of files? POC Kickoff F1000 enterprise Small vendor NDA Success Criteria Order Form POC Agenda — slide 9 of 201"
+    },
+    {
+      "number": 10,
+      "text": "@mbrgO AllYouNeed|IsGuest BSideLV 2023 Option 1: just email sensitive files around — slide 10 of 201"
+    },
+    {
+      "number": 11,
+      "text": "AlLYou Need ls Guest @mbrgO BSideLV 2023 — slide 11 of 201"
+    },
+    {
+      "number": 12,
+      "text": "@mbrgO AllYouNeed|IsGuest BSideLV 2023 Option 2: trust a rando IRL Source: deaddrops.com — slide 12 of 201"
+    },
+    {
+      "number": 13,
+      "text": "@mbrgO AllYouNeedIsGuest BSideLV 2023 Option 3: invite them in F1000 tenant — slide 13 of 201"
+    },
+    {
+      "number": 14,
+      "text": "Option 3: invite them in HE Microsoft Documentation = Learn / Azure / Active Directory / 8 } External Identities in Azure Active NI Directory Bitayp “external users can \"bring their own identities.\" = ... and you manage access to your apps ... to Oi: keep your resources protected. “ F1000 tenant — slide 14 of 201"
+    },
+    {
+      "number": 15,
+      "text": "@mbrgO AllYouNeed|IsGuest BSideLV 2023 Safe guest access must be: (a) Easy for vendors to onboard — slide 15 of 201"
+    },
+    {
+      "number": 16,
+      "text": "@mbrgO AllYouNeed!sGuest BSideLV 2023 Safe guest access must be: (a) Easy for vendors to onboard (b) Easy for IT/security to control — slide 16 of 201"
+    },
+    {
+      "number": 17,
+      "text": "@mbrgO AllYouNeed|IsGuest BSideLV 2023 Safe guest access must be: (a) Easy for vendors to onboard (b) Easy for IT/security to control — slide 17 of 201"
+    },
+    {
+      "number": 18,
+      "text": "Demonstration showing how easy it is to obtain a guest account; use the embedded video controls to play it — slide 18 of 201",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2023-08-08_BSidesLV-2023_All_You_Need_is_Guest/ac1c749a/media/slide-018-demo.mp4"
+        }
+      ]
+    },
+    {
+      "number": 19,
+      "text": "All You. Need ls Guest Source: @_dirkjan at BHUSA 2022 @mbrgO BSideLV 2023 HJ M invited you to access applications within their organization on behalf of iminyourcloud <invites@microsoft.com> s. If you were not Sender: HJ M (dirkian@iminyour.cloud) Organization: iminyourcloud Domain:… — slide 19 of 201"
+    },
+    {
+      "number": 20,
+      "text": "AlLYou Need ls Guest @mbrgO BSideLV 2023 pisek hat USA 20e2 Hijacking invites * Query using AAD Graph: https://graph.windows.net/myorganization/users?api-version=1.61-internal&Sfilter=' &Sselect=userPrincipalName, inviteTicket, userType,invitedAsMail Source: @_dirkjan at BHUSA 2022 *Vulns were… — slide 20 of 201"
+    },
+    {
+      "number": 21,
+      "text": "pisekchat ’ USA 20e2 TL:;DR ¢ Every user could query for non-redeemed invites. * Could redeem invite without any validation, link to arbitrary external account. * No way for admins to find out which account it was actually linked to. Source: @_dirkjan at BHUSA 2022 *Vulns were fixed. — slide 21 of 201"
+    },
+    {
+      "number": 22,
+      "text": "@mbrgO AllYouNeed|sGuest BSideLV 2023 (a) It’s super easy Perhaps too easy? to geta QO guest mere = 4 account Backdooring and hijacking Azure AD accounts by abusing Dirk-jan Mollema / @_dirkjan -_ — slide 22 of 201"
+    },
+    {
+      "number": 23,
+      "text": "@mbrgO AllYouNeed|IsGuest BSideLV 2023 Safe guest access must be: (a) Easy for vendors to onboard (b) Easy for IT/security to control — slide 23 of 201"
+    },
+    {
+      "number": 24,
+      "text": "@mbrgO AllYouNeed|sGuest BSideLV 2023 (b) Understanding how control works a ® yN = El am Partners, vendors, suppliers, F1000 tenant other collaborators — slide 24 of 201"
+    },
+    {
+      "number": 25,
+      "text": "@mbrgO All YouNeed |IsGuest BSideLV 2023 (b) Understanding how control works ae © AG linked Azure AD = El am Partners, vendors, suppliers, F1000 tenant other collaborators — slide 25 of 201"
+    },
+    {
+      "number": 26,
+      "text": "All You. Need ls Guest Identities & 2 Microsoft Azure AD Ra Microsoft Defender for Identity Endpoints Microsoft CSE Endpoint Manager Zero Trust policy enforcement gS elligence ate Microsoft Defender for Cloud Apps a Microsoft Information Protection Microsoft Defender for Cloud Applications… — slide 26 of 201"
+    },
+    {
+      "number": 27,
+      "text": "AllYouNeed|sGuest BSideLV 2023 (b) Applying security controls to guests Need guest access = Require security controls — slide 27 of 201"
+    },
+    {
+      "number": 28,
+      "text": "AllYouNeed|sGuest BSideLV 2023 (b) Applying security controls to guests Need guest access = Require security controls Security controls > Require AAD account — slide 28 of 201"
+    },
+    {
+      "number": 29,
+      "text": "AllYouNeed Is Guest BSideLV 2023 (b) Applying security controls to guests Need guest access = Require security controls Security controls > Require AAD account AAD account = Grants full access Q.E.D....? — slide 29 of 201"
+    },
+    {
+      "number": 30,
+      "text": "AllYouNeed|sGuest BSideLV 2023 (b) Applying security controls to guests Need guest access = Require security controls Security controls > Require AAD account AAD account & Grants full deny-by-default access — slide 30 of 201"
+    },
+    {
+      "number": 31,
+      "text": "@mbrgO ae aS 5 BSideLV 2023 AAD guests recap * It's super easy to get a guest account ¢ AAD security controls apply * Access is deny-by-default — slide 31 of 201"
+    },
+    {
+      "number": 32,
+      "text": "& zenity — slide 32 of 201"
+    },
+    {
+      "number": 33,
+      "text": "All You. Need Is Guest @mbrgO BSideLV 2023 QO P acivty | Teams Vay Vendor onboarding ~ Vendor onboarding ve | Vendor onboarding aa Members Pending Requests Channels Settings Analytics Apps Tags This team has guests. Calendar Search for members Q & Add member & * Owners (1) Calls Name Title… — slide 33 of 201"
+    },
+    {
+      "number": 34,
+      "text": "All You. Need ls Guest Add members to Vendor onboarding Start typing a name, distribution list, or security group to add to your team. You can also add people outside your organization as guests by typing their email addresses. Start typing a name or group @mbrgO BSideLV 2023 — slide 34 of 201"
+    },
+    {
+      "number": 35,
+      "text": "All You. Need ls Guest Add members to Vendor onboarding Start typing a name, distribution list, or security group to add to your team. You can also add people outside your organization as guests by typing their email addresses. hacker5@pwntoso. onmicrosoft.com| Add… — slide 35 of 201"
+    },
+    {
+      "number": 36,
+      "text": "All You. Need ls Guest Add members to Vendor onboarding Start typing a name, distribution list, or security group to add to your team. You can also add people outside your organization as guests by typing their email addresses. Start typing a name or group hacker5 (Guest) H This person has been… — slide 36 of 201"
+    },
+    {
+      "number": 37,
+      "text": "All You. Need ls Guest @mbrgO BSideLV 2023 BE Microsoft Sign in hacker5@pwntoso.onmicrosoft.com No account? Create one! Can't access your account? Q Sign-in options — slide 37 of 201"
+    },
+    {
+      "number": 38,
+      "text": "All You. Need ls Guest BE Microsoft hacker5@pwntoso.onmicrosoft.com Permissions requested by: Zenity Demo zenitydemo.onmicrosoft.com By accepting, you allow this organization to: \\y Receive your profile data \\Y Collect and log your activity \\V_ Use your profile data and activity data You should… — slide 38 of 201"
+    },
+    {
+      "number": 39,
+      "text": "AlLYou Need ls Guest @mbrgO BSideLV 2023 My Apps £ s Apps 7 Zenity Demo Sign out R ® 2 This is unavailable due to your account permissions and Hacker5 company's settings — H hackerS5@pwntoso.onmicroso... iew account Switch organization (A) sign in with a different account — slide 39 of 201"
+    },
+    {
+      "number": 40,
+      "text": "@mbrgO AllYouNeed|sGuest BSideLV 2023 Guest exploitation state of the art — slide 40 of 201"
+    },
+    {
+      "number": 41,
+      "text": "@mbrgO AllYouNeed|sGuest BSideLV 2023 Guest exploitation state of the art 1. Phishing via Teams @DrAzureAD at youtube.com/watch?v=NN1nlbp-z70 — slide 41 of 201"
+    },
+    {
+      "number": 42,
+      "text": "@mbrgO AllYouNeed|sGuest BSideLV 2023 PS @mbrg@\\BHUSA2@23\\A11-You-Need-Is-Guest> $results.Users | Select-Object displayName,userPrincipalName displayName _userPrincipalName ues ‘Any Alberts _amya@zenitydemo.onnicrosoft.com Jamie Reding — jamier@zenitydemo.onmicrosoft.com Hi hi_pwntoso.… — slide 42 of 201"
+    },
+    {
+      "number": 43,
+      "text": "@mbrgO AllYouNeed|sGuest BSideLV 2023 State of the art ends here. But hackers want more! Can we access company data? Edit or delete data? Perform operations? — slide 43 of 201"
+    },
+    {
+      "number": 44,
+      "text": "https://make.power apps.com/environm ents/Default- fc993b0f-345b- 4d01-9f67- 9ac4a140dd43/con nections o~ 4 i @mbrgO BSideLV 2023 Go have an early lunch — slide 44 of 201"
+    },
+    {
+      "number": 45,
+      "text": "All You Need Is Guest @mbrgO BSideLV 2023 Welcome to Power jj F< Apps — slide 45 of 201"
+    },
+    {
+      "number": 46,
+      "text": "AlLYou Need ls Guest @mbrgO BSideLV 2023 Sorry, there's been a disconnect The environment ‘Default-fc993b0f-345b-4d01-9167-9ac4a140dd43' could not be found in the tenant '420983fd-32b0-dabd-89e0-c3ef3236fc73' Go to home page — slide 46 of 201"
+    },
+    {
+      "number": 47,
+      "text": "All You. Need ls Guest Power Apps | @ Home + create Learn BP Apps EE Tables of Flows a Solutions More @ Power Platform Welcome, Hacker5! Create apps that connect to data, and work across web and mobile. Ways to create an app Start with data Start with a page design ©) care tae recon estngco ren… — slide 47 of 201"
+    },
+    {
+      "number": 48,
+      "text": "All You. Need ls Guest @mbrgO BSideLV 2023 Power Apps the new Power Apps Home Welcome, Hacker5! + Create Create apps that connect to data, and work across web and mobile. Learn Apps EH Tables Ways to create an app of Flows Solutions Start with data Start with a page design Start with an app… — slide 48 of 201"
+    },
+    {
+      "number": 49,
+      "text": "All You. Need ls Guest Power Apps | @ Home + Create Learn BP Apps EE Tables of Flows a Solutions More @ Power Platform Ways to create an app Start with data create an app. Your apps Name Package Management View Solution Health Hub See more apps > Learning for every level see ai oe) Get started… — slide 49 of 201"
+    },
+    {
+      "number": 50,
+      "text": "AlLYou Need ls Guest @mbrgO BSideLV 202 Power Apps ®& pwntoso (default) = @®) By the new Power Apps + la le + Welcome, Hacker5! + Create Greate apps that connect to data, and work across web and mobile. @ Lear eae Settings Directories HB Tables ane Ditectonies Ways to create an app c ou choose… — slide 50 of 201"
+    },
+    {
+      "number": 51,
+      "text": "All You. Need Is Guest @mbrgO BSideLV 2023 Environment S + New connection Pp Search Home . + A Connections in Zenity Demo (default) Create @ Canvas Learn EP Apps Name Modified Status Tables O https://enterpriseip.blob.core.windows.net/patentarchive 11min ago Connected Azure Blob Storage o/*… — slide 51 of 201"
+    },
+    {
+      "number": 52,
+      "text": "All You. Need Is Guest @mbrgO BSideLV 2023 Environment => + Newconnection £ Edit \\@ Share [il] Delete © Details fn) Home . . . Connections in Zenity Demo (default) i Create @ Canvas Learn ce Ae Name Status Tables Oo https://enterpriseip.blob.core.windows.net/patentarchive 13 min ago Connected… — slide 52 of 201"
+    },
+    {
+      "number": 53,
+      "text": "All You. Need ls Guest Power Apps {my Home { Create Learn FP Apps EB Tables o/* Flows Solutions Connections More © Power Platform + Newconnection £ Edit \\@ Share [lil] Delete © Details Connections in Zenity Demo (default) # Canvas Name io} https://enterpriseip.blob.core.windows.net/patentarchive… — slide 53 of 201"
+    },
+    {
+      "number": 54,
+      "text": "All You Need ls Guest Share jamieredingcustomerdata.file.core.windows.net Enter nar ail addr e k principal name Shared with Name se) Shared with org @ Jamie Reding jamier@zenitydemo.on.. @ jamiercontoso jamiercontoso@outlook.... Permissio + share V @mbrgO BSideLV 2023 k — slide 54 of 201"
+    },
+    {
+      "number": 55,
+      "text": "Animated demonstration in the guest-account attack sequence — slide 55 of 201",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2023-08-08_BSidesLV-2023_All_You_Need_is_Guest/ac1c749a/media/slide-055-animation.gif"
+        }
+      ]
+    },
+    {
+      "number": 56,
+      "text": "All You. Need Is Guest @mbrgO BSideLV 2023 Environment Power Apps P Search & Zenity Demo (default) => +- Newconnection ££ Edit \\@ Share [li] Delete © Details {my Home . : : Connections in Zenity Demo (default) } Create G Canvas Learn EP Apps Name Modified Status EB Tables io}… — slide 56 of 201"
+    },
+    {
+      "number": 57,
+      "text": "All You. Need ls Guest Power Apps Home + ®» Create Learn FP Apps EB Tables Flows AY solutions | % Connections * More © Power Platform @ tdit \\@ Share [ll] Delete Connections > jamieredingcustomerdata.file.core.windows.net Details Apps using this connection Flows using this connection Connector… — slide 57 of 201"
+    },
+    {
+      "number": 58,
+      "text": "All You. Need ls Guest Power Apps Home + ®» Create Learn FP Apps EB Tables Flows AY solutions | % Connections * More © Power Platform @ tdit \\@ Share [ll] Delete Connections > jamieredingcustomerdata.file.core.windows.net Details Apps using this connection Flows using this connection Connector… — slide 58 of 201"
+    },
+    {
+      "number": 59,
+      "text": "All You. Need Is Guest @mbrgO BSideLV 2023 Environment @ tdit \\@ Share [ll] Delete Home . . . + “ . Connections > jamieredingcustomerdata.file.core.windows.net Create lem Details Apps using this connection Flows using this connection Jamie Reding EP Apps Connector name ervice Re| tion Azure File… — slide 59 of 201"
+    },
+    {
+      "number": 60,
+      "text": "Copilot for Power Apps demonstration by Shane Young; use the embedded YouTube control to play it — slide 60 of 201",
+      "media": [
+        {
+          "type": "youtube",
+          "title": "Copilot for Power Apps Demo #shorts",
+          "url": "https://www.youtube.com/watch?v=HG3cbwum0DU"
+        }
+      ]
+    },
+    {
+      "number": 61,
+      "text": "AlLYou Need ls Guest @mbrgO BSideLV 2023 5 v > o a — 3 £ =] 2 Credential Sharing asa Service: The Dark 0 Side of No Code 2018-04 2018-10 20 9-12 2020-06 2021-01 2021-07 8 2023-03 2023-10 -NET «++ Linear (. . @ .NET Devs Linear (.NET Devs) Michael Bargury . ces: Microsoft Bulld 2018, ign 8, Bulld… — slide 61 of 201"
+    },
+    {
+      "number": 62,
+      "text": "AlLYou Need ls Guest @mbrgO BSideLV 2023 #RSAC More MSFT low-code devs than .NET devs, today! ¢ rm) > oO a a= ° € 5 2 Credential Sharing asa Service: The Dark 2018-04 2018-10 2019-05 2019-12 2020-06 2021-01 2021-07 2022-02 2022-08 2023-03 2023-10 Side of No Code @ Power Platform Devs @ .NET Devs… — slide 62 of 201"
+    },
+    {
+      "number": 63,
+      "text": "& zenity — slide 63 of 201"
+    },
+    {
+      "number": 64,
+      "text": "All You. Need Is Guest Power Apps Home + ®» Create Learn FP Apps EB Tables Flows AY solutions | % Connections * More © Power Platform @ tdit \\@ Share [ll] Delete Connections > jamieredingcustomerdata.file.core.windows.net Details Apps using this connection Flows using this connection Connector… — slide 64 of 201"
+    },
+    {
+      "number": 65,
+      "text": "All You. Need Is Guest @mbrgO BSideLV 2023 Environment = @ Edit \\@ Share [li] Delete Pp Search fy Home . Se : . . Connections > jamieredingcustomerdata.file.core.windows.net } Create Learn Details Apps using this connection —_ Flows using this connection - Apps Name Tables o/ Flows Customer… — slide 65 of 201"
+    },
+    {
+      "number": 66,
+      "text": "All You. Need Is Guest @mbrgO BSideLV 2023 Environment Zenity Demo (default) @ Edit \\@ Share [ll] Delete P Search fy Home we . 7 . Connections > jamieredingcustomerdata.file.core.windows.net } Create Learn Details Apps using this connection _Flows using this connection co Apps Name Tables o/*… — slide 66 of 201"
+    },
+    {
+      "number": 67,
+      "text": "All You. Need Is Guest @mbrgO BSideLV 2023 Environment = 2 D Play 2 bh 3 Addto Teams [9 Monitor 12 & & Ww fy Home : Apps > Customer Insights Azure } Create Details Versions Connections Flows Learn Owner | apps amie Reding Description EB Tables Not provided o/* Flows Created 7/27/2023, 11:49:44… — slide 67 of 201"
+    },
+    {
+      "number": 68,
+      "text": "AlLYou Need ls Guest @mbrgO BSideLV 2023 Power Apps | You need a Power Apps plan — slide 68 of 201"
+    },
+    {
+      "number": 69,
+      "text": "All You Need I: Soriey ‘ou. Need Is Guest BSideLV 2023 Power Apps | You need a Power Apps plan — slide 69 of 201"
+    },
+    {
+      "number": 70,
+      "text": "All You. Need Is Guest @mbrgO BSideLV 2023 Power Apps | You need a Power Apps plan — slide 70 of 201"
+    },
+    {
+      "number": 71,
+      "text": "All You. Need Is Guest HE Microsoft | Power Apps Product » Pricing ‘Announcing new conversational Al features in Power Apps, Power Apps Developer Plan Build and test Power Apps for free Get started free > | Existing user? Add a dev environment > Free for development and testing Create apps and… — slide 71 of 201"
+    },
+    {
+      "number": 72,
+      "text": "AlLYou Need ls Guest @mbrgO BSideLV 2023 ga Microsoft You've selected Microsoft Power Apps for Developer @) Let's get you started Enter your work or school email address, we'll check if you need to create a new account for Microsoft Power Apps for Developer. Email The Developer Plan makes it… — slide 72 of 201"
+    },
+    {
+      "number": 73,
+      "text": "AlLYou Need ls Guest @mbrgO BSideLV 2023 B= Microsoft You've selected Microsoft Power Apps for Developer 1) Let's get you started 2) Create your account G) Confirmation details The Developer Plan makes it easy for anyone to build and test apps with user- Thanks for signing up for Microsoft Power… — slide 73 of 201"
+    },
+    {
+      "number": 74,
+      "text": "AlLYou Need ls Guest @mbrgO BSideLV 2023 a Customer Insights — slide 74 of 201"
+    },
+    {
+      "number": 75,
+      "text": "All You. Need Is Guest @mbrgO BSideLV 2023 Power Apps | This app isn’t opening correctly It looks like this app isn't compliant with the latest data loss prevention policies. More — slide 75 of 201"
+    },
+    {
+      "number": 76,
+      "text": "All You. Need Is Guest @mbrgO BSideLV 2023 Power Apps | This app isn’t opening correctly It looks like this app isn't compliant with the latest data loss prevention policies. Less It looks like this app isn't compliant with the latest data loss prevention policies. Policy name: Deny Azure File… — slide 76 of 201"
+    },
+    {
+      "number": 77,
+      "text": "All You. Need Is Guest @mbrgO BSideLV 2023 Power Apps | This app isn’t opening correctly It looks like this app isn't compliant with the lates It looks like this app isn't compliant with the latest data loss prevention policies. Policy name: Deny Azure File Storage Connector: shared_azurefile… — slide 77 of 201"
+    },
+    {
+      "number": 78,
+      "text": "@mbrgO AllYouNeed|sGuest BSideLV 2023 So we were able to bypass the license requirement But blocked by... DLP? — slide 78 of 201"
+    },
+    {
+      "number": 79,
+      "text": "Le Hi Microsoft | Learn Documentation Power Platform Getstarted v Products v SE Filter by title ¥ Data loss prevention policies Overview Create a DLP policy Manage DLP policies Data loss prevention SDK Basic connector classification Connector action control Connector endpoint filtering (preview)… — slide 79 of 201"
+    },
+    {
+      "number": 80,
+      "text": "All You. Need Is Guest @mbrgO BSideLV 2023 Power Platform admin center DLP Policies » New Policy fry Home @ Policy name Name your policy &, Environments Start by giving your new policy a name. You can change this later. LZ Analytics v O Prebuilt connectors Ee Billing (Preview) V Find SSN & ©… — slide 80 of 201"
+    },
+    {
+      "number": 81,
+      "text": "All You. Need Is Guest @mbrgO BSideLV 2023 Power Platform admin center DLP Policies » New Policy fry Home #8 Set default group @ Policy name &, Environments ; Assign connectors © 2 Analytics 4 @ Prebuilt connectors E% Billing (Preview) V Business (0) Non-business (1056) | Default Blocked (0) A… — slide 81 of 201"
+    },
+    {
+      "number": 82,
+      "text": "All You. Need Is Guest @mbrgO BSideLV 2023 Power Platform admin center DLP Policies » New Policy ff) Home & Move to Business Block Configure connector 83 Set default group @ Policy name ® Environments @® One or more of the selected connectors can't be blocked. x 2 Analytics Y @ Prebuilt… — slide 82 of 201"
+    },
+    {
+      "number": 83,
+      "text": "BSideLV 2023 Power Platform admin center DLP Policies > New Policy fm) Home 5; Move to Business Block Configure c Set default group @ Policy name i © One or more of the selected connectors can't be blocked. x &, Environments k . Assign connectors & Business (0) Non-business (1056) | Default… — slide 83 of 201"
+    },
+    {
+      "number": 84,
+      "text": "BSideLV 2023 Power Platform admin center DLP Policies » New Policy Home =] Move to Business Block Configure co @ Policy name Set default group Environments led connectors can't be blocked. x R&R & ® rs Be Billi & sett -business (1056) | Default Blocked (0) P Search connectors Ee Res sitive data.… — slide 84 of 201"
+    },
+    {
+      "number": 85,
+      "text": "BSideLV 2023 Power Platform admin center DLP Policies » New Policy Home Set default group @ Policy name Environments x R&R & ® a Os nnector: locked (0) » Search connectors & setti EE Res Microsoft Power Platform oup can't share data with connectors in other groups. Unassigned @ Hel Microsoft… — slide 85 of 201"
+    },
+    {
+      "number": 86,
+      "text": "BSideLV 2023 Power Platform admin center & 2 DLP Policies » New Policy fn} Home Set default group @ Policy name & Environments x kv Ge P Search connectors & Microsoft Power Platform a & Microsoft Power P Ss areal tors in other groups. Unassigned @ Held Microsoft Power P oe en ree connectors… — slide 86 of 201"
+    },
+    {
+      "number": 87,
+      "text": "al Rk &® ® il & &] BTN See Se Power Platform admin center Home Environments DLP Policies @ Policy name New Policy Help Data Dat Poli Microsoft Power P' DLP Bypass Uncov Finding #1 Microsoft Power P DLP Bypass Uncov, Finding #2 - HTTP) Microsoft Power P DLP Bypass Unco' Finding #3 - Cust… — slide 87 of 201"
+    },
+    {
+      "number": 88,
+      "text": "@mbrgO AllYouNeed|sGuest BSideLV 2023 DLP bypass disclosure in process Full writeup > bit.ly/mbrg-bhusa23 Move Along °¢ qa — slide 88 of 201"
+    },
+    {
+      "number": 89,
+      "text": "All You Need. ls Guest @mbrgO BSideLV 2023 Environment Zenity Demo (default) +- Newconnection ££ Edit \\@ Share [lil] Delete © Details {ny Home . : : Connections in Zenity Demo (default) + Create @ Canvas Learn EP Apps Name Modified —B Tables O… — slide 89 of 201"
+    },
+    {
+      "number": 90,
+      "text": "All You. Need ls Guest Power Apps BB+ > & FA) Home Create Learn Apps Tables Flows Solutions Connections More Power Platform @ Edit \\@ Share [ll] Delete Connections > enterprisecustomers customercareinsights.database.windows.net Details Apps using this connection Flows using this connection… — slide 90 of 201"
+    },
+    {
+      "number": 91,
+      "text": "All You. Need Is Guest @mbrgO BSideLV 2023 Environment = @ Edit @ Share [li] Delete B® Search fy Home . . se . Connections > enterprisecustomers customercareinsights.database.windows.net + Create lem Details Apps using this connection Flows using this connection E Apps Name 2 Tables o/” Flows… — slide 91 of 201"
+    },
+    {
+      "number": 92,
+      "text": "All You. Need Is Guest @mbrgO BSideLV 2023 Environment Power Apps Zenity Demo (default) = @ Edit @ Share [il] Delete B® Search {my Home . . oe . Connections > enterprisecustomers customercareinsights.database.windows.net + Create (D Learn Details Apps using this connection —_ Flows using this… — slide 92 of 201"
+    },
+    {
+      "number": 93,
+      "text": "All You. Need Is Guest @mbrgO BSideLV 2023 Environment Power Apps & Zenity Demo (default) = o D Play 2 Kb § Addto Teams [A Monitor [2 & & WW {ny Home . Apps > Customer Insights + Create Details Versions Connections Flows Learn Owner |f Apps Jamie Reding Description EB Tables Not provided Flows… — slide 93 of 201"
+    },
+    {
+      "number": 94,
+      "text": "AlLYou Need ls Guest @mbrgO BSideLV 2023 a Customer Insights — slide 94 of 201"
+    },
+    {
+      "number": 95,
+      "text": "AlLYou Need ls Guest @mbrgO BSideLV 2023 — slide 95 of 201"
+    },
+    {
+      "number": 96,
+      "text": "BSideLV 2023 Power Apps | Customer Insights oS aA L & 2 Search items aidenb@zenitydemo.OnMicrosoft.com Aiden Brown alexanderw@zenitydemo.OnMicrosoft.co Alexander Gonzalez amandas@zenitydemo.OnMicrosoft.com Amanda Smith ameliaj@zenitydemo.OnMicrosoft.com Amelia Johnson… — slide 96 of 201"
+    },
+    {
+      "number": 97,
+      "text": "@mbrgO AllYouNeed|sGuest BSideLV 2023 SBS oH +s & ? Power Apps | Customer Insights CustomerID 55677 Email aidenb@zenitydemo.OnMicrosoft.com FirstName Aiden LastName Brown SocialSecurityNumber 209-97-8888 — slide 97 of 201"
+    },
+    {
+      "number": 98,
+      "text": "@mbrgO BSideLV 2023 Console Sour Network {l/Performance Lighthouse ona fo} x Preserve log Disable cache No throttling B “zqsp_—————« DO Irvert © Hide data URLs (All Fetch/XHR JS CSS Img Media Font Doc WS Wasm Manifest Other [) Has blocked cookies (Blocked Requests () 3rd-party requests ———… — slide 98 of 201"
+    },
+    {
+      "number": 99,
+      "text": "BSideLV 2023 R ® @ Y 2 GPreservelog | G Disable cache Nothrotting a fo) Invert ©) Hide data URLs (All FetchyXHR 15. CSS_img Media Font Doc WS Wasm Manifest Other (Has locked cookies Blocked Requests ©) 3rd-pary requests = rch iterr Name X Headers Prev itiator Timing » invoke General : + : 1 REI… — slide 99 of 201"
+    },
+    {
+      "number": 100,
+      "text": "i@ CB Elements Console Sources. Network Performance Memory Application Security _—_ Lighthouse ri] ao L 390 TQ © OY © | Orresenetog | O visable ache Notrotting Si tL Invert © Hide data URLs All| FetchyXHR JS CSS Img Media Font Doc WS Wasm Manifest Other 5000 ms 0000 ms +3000 ms 20000 ms 25000 ms… — slide 100 of 201"
+    },
+    {
+      "number": 101,
+      "text": "BSideLV 2023 z mo Go ano ee Goa Corey Soietn Gach) liters (@2As m1 |g i x 2 © YQ Preserve log Disable cache Nothrotting » = 2 & Invert ©) Hide data URLs (All FetchyXHR 15. CSS_img Media Font Doc WS Wasm Manifest Other (Has locked cookies Blocked Requests ©) 3rd-pary requests = Search item “vs… — slide 101 of 201"
+    },
+    {
+      "number": 102,
+      "text": "@mbrgO AllYouNeed|sGuest BSideLV 2023 Copy-and-replay browser API Hub [/@mbrgQ@/BHUSA2023/A11-You-Need-Is-Guest:] $ curl 'https://europe-002.azure-apim.net/invoke' \\ -X 'POST' \\ -H ‘authority: europe-002.azure-apim.net' \\ -H ‘accept: application/json' \\ -H 'accept-language: en-US' \\ -H… — slide 102 of 201"
+    },
+    {
+      "number": 103,
+      "text": "@mbrgO BSideLV 2023 Copy-and-replay browser API Hub [/@mbrgQ@/BHUSA2023/A11-You-Need-Is-G 2 . 2 =! =ani i 1] > -X 'POST' \\ { b ff) Osuptrarikane -002 “@odata.context\": \"https: //europe-002.azure-apim.net/apim/sql/ff47194e357e459b8756a5f43F59ccc6/ au oraty: europe SoGkATING… — slide 103 of 201"
+    },
+    {
+      "number": 104,
+      "text": "@mbrgO AllYouNeed|IsGuest BSideLV 2023 Power App is using azure-apim.net to fetch connection data GET https://europe-002.azure-apim.net/apim /sql/ff47194e357e459b8756a5f43f59ccc6 /v2/datasets/customercareinsights.database.windows.n et,enterprisecustomers… — slide 104 of 201"
+    },
+    {
+      "number": 105,
+      "text": "@mbrgO AllYouNeed|sGuest BSideLV 2023 Power App is using azure-apim.net to fetch connection data GET https://europe-002.azure-apim.net/apim /sql/ff47194e357e459b8756a5f43f59ccc6 /v2/datasets/customercareinsights.database.windows.n et,enterprisecustomers… — slide 105 of 201"
+    },
+    {
+      "number": 106,
+      "text": "BSideLV 2023 Power App is using azure-apim.net to fetch connection data GET https://europe-002.azure-apim.net/apim /sql/ff47194e357e459b8756a5f43f59ccc6 /v2/datasets/customercareinsights.database.windows.n et,enterprisecustomers /tables/%255Bdb0%255D.%255BCustomers%255D/ite ms — slide 106 of 201"
+    },
+    {
+      "number": 107,
+      "text": "@mbrgO AllYouNeed|sGuest BSideLV 2023 Power App is using azure-apim.net to fetch connection data GET https://europe-002.azure-apim.net/apim /sql/ff47194e357e459b8756a5f43f59ccc6 /v2/datasets/customercareinsights.database.windo ws.net,enterprisecustomers… — slide 107 of 201"
+    },
+    {
+      "number": 108,
+      "text": "@mbrgO AllYouNeed|sGuest BSideLV 2023 Power App is using azure-apim.net to fetch connection data GET https://europe-002.azure-apim.net/apim /sql/ff47194e357e459b8756a5f43f59ccc6 /v2/datasets/customercareinsights.database.windows.n et,enterprisecustomers… — slide 108 of 201"
+    },
+    {
+      "number": 109,
+      "text": "@mbrgO AllYouNeed|sGuest BSideLV 2023 Power App is using azure-apim.net to fetch connection data GET https://europe-002.azure-apim.net/apim /sql/ff47194e357e459b8756a5f43f59ccc6 /v2/datasets/customercareinsights.database.windows.n et,enterprisecustomers /tables/[dbo].[Customers]/items — slide 109 of 201"
+    },
+    {
+      "number": 110,
+      "text": "AlLYou Need ls Guest @mbrgO BSideLV 2023 XD Power Automate & Power Apps 9 Logic Apps \\ docs.microsoft.com — slide 110 of 201"
+    },
+    {
+      "number": 111,
+      "text": "AlLYou Need ls Guest @mbrgO BSideLV 2023 XD Power Automate user token connector ID operation ID connection ID Power Apps Logic Apps \\ docs.microsoft.com — slide 111 of 201"
+    },
+    {
+      "number": 112,
+      "text": "AlLYou Need ls Guest @mbrgO BSideLV 2023 [credeni and metadata sore] user token connection ID Power Automate user token connector ID operation ID connection ID Power Apps Logic Apps \\ docs.microsoft.com — slide 112 of 201"
+    },
+    {
+      "number": 113,
+      "text": "@mbrgO ae aS 5 BSideLV 2023 @mbrgO BSideLV 2023 DO tert 5 Hedin A ech I CE ing Made font Boe WS Winey Minit ihr © Hx ok csi © Rcd Reus Se pry maure t’s take Ee a | — a closer =: = ‘Geer browser coches: mote Address: alexanderw@zenitydemo.OnMicrosoft.cc aa \"on nee aoro-ccr Lems-user-agent… — slide 113 of 201"
+    },
+    {
+      "number": 114,
+      "text": "AllLYou Need. Soriey ‘ou. Need Is Guest BSideLV 2023 se J WW T e er aries Introduction Ask Crafted by ‘autho Encoded Decoded HEADER: PAYLOAD: — slide 114 of 201"
+    },
+    {
+      "number": 115,
+      "text": "AllYou Needs Guest BSideLV 2023 A scope away from victory Can we generate a token to API Hub? — slide 115 of 201"
+    },
+    {
+      "number": 116,
+      "text": "AllYou Needs Guest BSideLV 2023 A scope away from victory Can we generate a token to API Hub? (reminder: generating tokens is trivial, it's our user) >>> azure_cli_client = msal.PubLicClientApplication(client_id, authority=f\"https://login.microsoftonline.com/{tenant}\") . device_flow =… — slide 116 of 201"
+    },
+    {
+      "number": 117,
+      "text": "AllYou Needs Guest BSideLV 2023 A scope away from victory Can we generate a token to API Hub? (reminder: generating tokens is trivial, it's our user) >>> azure_cli_client = msal.PublicClientApplicaticn(client_id, authority=f\"https://login.microsoftonline.com/{tenant}\") . device_flow =… — slide 117 of 201"
+    },
+    {
+      "number": 118,
+      "text": "A scope away from victory Can we generate a token to API Hub? (reminder: generating tokens is trivial, it’s our user) Using a built-in public client app? — slide 118 of 201"
+    },
+    {
+      "number": 119,
+      "text": "AlLYou Need ls Guest @mbrgO BSideLV 2023 Can we generate a token to API Hub? (reminder: generating tokens is trivial, it’s our user) Using a built-in public client app? EE Microsoft EE Microsoft Pick an account ial from the API ner be — slide 119 of 201"
+    },
+    {
+      "number": 120,
+      "text": "A scope away from victory Can we generate a token to API Hub? (reminder: generating tokens is trivial, it’s our user) Using a built-in public client app? No. Using our own app? — slide 120 of 201"
+    },
+    {
+      "number": 121,
+      "text": "AlLYou Need ls Guest @mbrgO BSideLV 2023 Can we generate a token to API Hub? (reminder: generating tokens is trivial, it’s our user) Using a built-in public client app? Using our own app? HE Microsoft Sign in Sorry, but we're having trouble signing you in, — slide 121 of 201"
+    },
+    {
+      "number": 122,
+      "text": "AllYou Needs Guest BSideLV 2023 A scope away from victory Can we generate a token to API Hub? (reminder: generating tokens is trivial, it’s our user) Using a built-in public client app? No. Using our own app? No. . nor $0 CLOSE — slide 122 of 201"
+    },
+    {
+      "number": 123,
+      "text": "AllLYou Need. Soriey ‘ou. Need Is Guest BSideLV 2023 Got guest access. @mbrgo All.You.Need Is. Guest BSideLV 2023 — slide 123 of 201"
+    },
+    {
+      "number": 124,
+      "text": "@mbrgO AllYouNeed|sGuest BSideLV 2023 Where are we again? Got guest access. Found a bunch of creds on PowerApps. — slide 124 of 201"
+    },
+    {
+      "number": 125,
+      "text": "@mbrgO AllYouNeed|sGuest BSideLV 2023 Where are we again? Got guest access. Found a bunch of creds on PowerApps. Tried to access — slide 125 of 201"
+    },
+    {
+      "number": 126,
+      "text": "BSideLV 2023 Where are we again? Got guest access. Found a bunch of creds on PowerApps. Tried to access > Blocked by license — slide 126 of 201"
+    },
+    {
+      "number": 127,
+      "text": "BSideLV 2023 Where are we again? Got guest access. Found a bunch of creds on PowerApps. Tried to access > Blocked by license > Got a license — slide 127 of 201"
+    },
+    {
+      "number": 128,
+      "text": "BSideLV 2023 Where are we again? Got guest access. Found a bunch of creds on PowerApps. Tried to access > Blocked by license > Got a license > Blocked by DLP — slide 128 of 201"
+    },
+    {
+      "number": 129,
+      "text": "BSideLV 2023 Where are we again? Got guest access. Found a bunch of creds on PowerApps. Tried to access > Blocked by license > Got a license > Blocked by DLP > Pivoted connection (bypass vuln under disclosure) — slide 129 of 201"
+    },
+    {
+      "number": 130,
+      "text": "BSideLV 2023 Where are we again? Got guest access. Found a bunch of creds on PowerApps. Tried to access > Blocked by license > Got a license > Blocked by DLP > Pivoted connection (bypass vuln under disclosure) > Blocked by prog access to API Hub = Ascope away from victory a token to API Hub?… — slide 130 of 201"
+    },
+    {
+      "number": 131,
+      "text": "@mbrgO AllYouNeed|sGuest BSideLV 2023 Solving for scope We need to find an AAD app that is: — slide 131 of 201"
+    },
+    {
+      "number": 132,
+      "text": "@mbrgO AllYouNeed|sGuest BSideLV 2023 Solving for scope We need to find an AAD app that is: 1. On by-default (available on every tenant) — slide 132 of 201"
+    },
+    {
+      "number": 133,
+      "text": "@mbrgO AllYouNeed|sGuest BSideLV 2023 Solving for scope We need to find an AAD app that is: 1. On by-default (available on every tenant) 2. Pre-approved to query API Hub (get internal resource) — slide 133 of 201"
+    },
+    {
+      "number": 134,
+      "text": "@mbrgO AllYouNeed|sGuest BSideLV 2023 Solving for scope We need to find an AAD app that is: 1. On by-default (available on every tenant) 2. Pre-approved to query API Hub (get internal resource) 3. Public client (generate tokens on demand) — slide 134 of 201"
+    },
+    {
+      "number": 135,
+      "text": "@mbrgO AllYouNeed|sGuest BSideLV 2023 Solving for scope We need to find an AAD app that is: 1. On by-default 2. Pre-approved to query API Hub 3. Public client — slide 135 of 201"
+    },
+    {
+      "number": 136,
+      "text": "@mbrgO AllYouNeed|sGuest BSideLV 2023 Solving for scope We need to find an AAD app that is: 1. On by-default 2. Pre-approved to query API Hub 3. Public client Well, we know about the PowerApps portal! — slide 136 of 201"
+    },
+    {
+      "number": 137,
+      "text": "@mbrgO AllYouNeed|sGuest BSideLV 2023 Solving for scope We need to find an AAD app that is: 1. On by-default 2. Pre-approved to query API Hub 3. Public client Well, we know about the PowerApps portal! — slide 137 of 201"
+    },
+    {
+      "number": 138,
+      "text": "BSideLV 2023 Solving for scope We need to find an AAD app that is: 1. On by-default 2. Pre-approved to query API Hub 3. Public client Well, we know about the PowerApps portal! But we can’t generate tokens on it’s behalf. — slide 138 of 201"
+    },
+    {
+      "number": 139,
+      "text": "BSideLV 2023 How does msft cross-app SSO work? (or - introduction to family of client IDs) secureworks/family-of- client-ids-research — slide 139 of 201"
+    },
+    {
+      "number": 140,
+      "text": "BTN See Se @mbrgO BSideLV 2023 How does msft cross-app SSO work? (or introduction to family of client IDs) application name Visual Studio Microsoft Flow Office 365 Management Microsoft Azure CLI OneDrive iOS App Microsoft Planner Microsoft Azure PowerShell Microsoft Teams Windows Search… — slide 140 of 201"
+    },
+    {
+      "number": 141,
+      "text": "BTN See Se @mbrgO BSideLV 2023 How does msft cross-app SSO work? (or introduction to family of client IDs) application name Office 365 Management Microsoft Azure CLI Microsoft Azure PowerShell Microsoft Teams Windows Search Outlook Mobile Microsoft Authenticator App OneDrive SyncEngine Microsoft… — slide 141 of 201"
+    },
+    {
+      "number": 142,
+      "text": "BTN See Se @mbrgO BSideLV 2023 How does msft cross-app SSO work? (or introduction to family of client IDs) application name Office 365 Management icrosoft Azure CLI Microsoft Azure PowerShell Microsoft Teams Windows Search Outlook Mobile Microsoft Authenticator App OneDrive SyncEngine Microsoft… — slide 142 of 201"
+    },
+    {
+      "number": 143,
+      "text": "BSideLV 2023 Family of client IDs secureworks/family-of- client-ids-research Microsoft Azure API Hub token CLI — slide 143 of 201"
+    },
+    {
+      "number": 144,
+      "text": "BSideLV 2023 Exchange tokens to win We need to find an AAD app that is: 1. On by-default 2. Pre-approved to query API Hub 3. Public client Are you trying to sign in to Microsoft Azure CLI? Jed the app from a — slide 144 of 201"
+    },
+    {
+      "number": 145,
+      "text": "& zenity — slide 145 of 201"
+    },
+    {
+      "number": 146,
+      "text": "BSideLV 2023 (.venv) @mbrg@:/bhusa23/all-you-need-is-guest$ powerpwn -h J '-\\ JLNNNINISTS_N PTL V\\NVVASTI OLN Pld UW QOQ:\\vy vet 7} Plo t\\yy vez ttt | -/ V/s VANS VII }-/ VAN II I | | — slide 146 of 201"
+    },
+    {
+      "number": 147,
+      "text": "@mbrgO AllYouNeed|sGuest BSideLV 2023 (.venv) @mbrg@:/bhusa23/all-you-need-is-guest$ powerpwn -h “VN JLUNNNINI ST | Ni TANVVAST CL PId UW Ot\\v vst Lt | | j HL | Arann | / \\_s VIN N -/ \\I\\/ II Il usage: powerpwn [-h] [-1 LOG_LEVEL] {dump, gui, backdoor ,nocodemalware, phishing} ... positional… — slide 147 of 201"
+    },
+    {
+      "number": 148,
+      "text": "@mbrgO AllYouNeed|sGuest BSideLV 2023 (.venv) @mbrg@:/bhusa23/all-you-need-is-guest$ powerpwn -h PTL\\ FZLENNNINTA SS _N CLI CLNNAN ANZ 7|_ . Pld) i\\vevet tt HID VW VLE | -/7 VAY VAY NII IL-7 VAN ILI II |_| | a command dump Recon for available data connections and dump their content. gui Show… — slide 148 of 201"
+    },
+    {
+      "number": 149,
+      "text": "@mbrgO AllYouNeed|sGuest BSideLV 2023 (.venv) @mbrg@:/bhusa23/all-you-need-is-guest$ powerpwn -h PTL\\N FLNNNINIT TE I TLA\\VAVATST OL LID UW QOi\\v vet Ppa ve TL | -/ VA NAVY VIL |-7 VANS II ILI | | Recon for available data connections and dump their content. Show collected resources and data via… — slide 149 of 201"
+    },
+    {
+      "number": 150,
+      "text": "@mbrgO AllYouNeed|sGuest BSideLV 2023 (.venv) eg] powerpwn dump -t OE Ot ore | H\\YAV\\AST| LN ~I|\\V v/s i —/ VINI I “NV FLNNNINI IS _N OW IDI UW QOr\\v ve] _/t | J \\/ NIN \\__IILI — slide 150 of 201"
+    },
+    {
+      "number": 151,
+      "text": "@mbrgO All YouNeed |IsGuest BSideLV 2023 (.venv) @mbrg@:/bhusa23/all-you-need-is-guest$ powerpwn dump -t fc993b0f-345b-4d01-9f67-9ac4a140dd43 “NV SLNNNIN/S ST \\l ¢ ID WOW wel lt J \\_/J VAN NIL YIL\\V vs ot ia ~N - ~ 2023-07-28 11:00:52 | powerpwn | INFO | Acquiring token with… — slide 151 of 201"
+    },
+    {
+      "number": 152,
+      "text": "@mbrgO All YouNeed |IsGuest BSideLV 2023 (.venv) @mbrg@:/bhusa23/all-you-need-is-guest$ powerpwn dump -t fc993b0f-345b-4d01-9f67-9ac4a140dd43 “LN JF LNNNINI IT ID 1 QQ i\\v vis | J \\_/ NINN YIL\\V vs ~~ ia ~N - ~ 2023-07-28 11:00:52 | powerpwn | INFO | Acquiring token with… — slide 152 of 201"
+    },
+    {
+      "number": 153,
+      "text": "@mbrgO All YouNeed |IsGuest BSideLV 2023 (.venv) @mbrg@:/bhusa23/all-you-need-is-guest$ powerpwn dump -t fc993b0f-345b-4d01-9f67-9ac4a140dd43 \"AN FLNNNINIT TS _N ID WOW wel lt J \\_/J VAN NIL YIL\\V vs ~~ ia ~N - ~ 2023-07-28 11:00:52 | powerpwn | INFO | Acquiring token with… — slide 153 of 201"
+    },
+    {
+      "number": 154,
+      "text": "AlLYou Need ls Guest @mbrgO BSideLV 2023 ga Microsoft Enter code r device. Enter the code displayed on your a Next — slide 154 of 201"
+    },
+    {
+      "number": 155,
+      "text": "AlLYou Need ls Guest @mbrgO BSideLV 2023 Microsoft Azure BE Microsoft Pick an account You're signing in to Microsoft Azure Cross- platform Command Line Interface on another device located in Israel. If it's not you, close this page ntoso.onmicrosoft.com + Use another account Back — slide 155 of 201"
+    },
+    {
+      "number": 156,
+      "text": "AlLYou Need ls Guest @mbrgO BSideLV 2023 Microsoft Azure Microsoft hacker5@pwntoso.onmicrosoft.com Are you trying to sign in to Microsoft Azure CLI? Only continue if you downloaded the app from a store or website that you trust. Cancel — slide 156 of 201"
+    },
+    {
+      "number": 157,
+      "text": "All You. Need ls Guest BE Microsoft Microsoft Azure Cross-platform Command Line Interface You have signed in to the V platform Command Line Int your device. You r ‘oft Azure Cross- ace application on y now close this window. @mbrgO BSideLV 2023 — slide 157 of 201"
+    },
+    {
+      "number": 158,
+      "text": "@mbrgO All YouNeed |IsGuest BSideLV 2023 (.venv) @mbrg@:/bhusa23/all-you-need-is-guest$ powerpwn dump -t fc993b0f-345b-4d01-9f67-9ac4a140dd43 “NV SLNNNIN/S ST \\l ¢ ID WOW wel lt J \\_/J VAN NIL YIL\\V vs ot ia ~N - ~ 2023-07-28 11:00:52 | powerpwn | INFO | Acquiring token with… — slide 158 of 201"
+    },
+    {
+      "number": 159,
+      "text": "Le @mbrgO BSideLV 2023 (.venv) @mbrg@:/bhusa23/all-you-need-is-guest$ powerpwn dump -t fc993b@f-345b-4d01-9f67-9ac4a140dd43 \"VN JLUNNNINS ST J \\_s \\IN/ N | i PIM Ol\\v vet Lt I ti ILI TANVVASTL CL I) 1 \\v wana -/ VANS II LI 2023-07-28 11:00:52 | powerpwn | token. 2023-07-28 11:00:52 | powerpwn |… — slide 159 of 201"
+    },
+    {
+      "number": 160,
+      "text": "@mbrgO AllYouNeed|sGuest BSideLV 2023 (.venv) @mbrg@:/bhusa23/all-you-need-is-guest$ powerpwn dump -t fc993b@f-345b-4d01-9f67-9ac4a140dd43 \"VN JLUNNNINS ST \\] *_ IW Oly vel ail | | | -/ VY NN NLT IL | 2023-07-28 11:00:52 | powerpwn | token. 2023-07-28 11:00:52 | powerpwn | 2023-07-28 11:00:52 |… — slide 160 of 201"
+    },
+    {
+      "number": 161,
+      "text": "@mbrgO AllYouNeed|sGuest BSideLV 2023 (.venv) @mbrg@:/bhusa23/all-you-need-is-guest$ powerpwn dump -t fc993b@f-345b-4d01-9f67-9ac4a140dd43 “VN JSLUNNNIN/I ST / \\s NINN 2023-07-28 11:00:52 | powerpwn | token. 2023-07-28 11:00:52 | powerpwn | 2023-07-28 11:00:52 | powerpwn | To sign in, use a web… — slide 161 of 201"
+    },
+    {
+      "number": 162,
+      "text": "Le 3bOF-345b-4d01-9F67-9ac4a140dd43 2023-07-28 2023-07-28 2023-07-28 2023-07-28 2023-07-28 2023-07-28 2023-07-28 n. 2023-07-28 2023-07-28 2023-07-28 alilg ililg ililg 11: alilg alilg dlilg iilg dilg ials CEs @3: @3: @3: @3: @3: @3: @3: @3: @3: Q7 08 08 e9 e9 10 10 alah all 24 powerpwn powerpwn… — slide 162 of 201"
+    },
+    {
+      "number": 163,
+      "text": "Le 3bOF-345b-4d01-9F67-9ac4a140dd43 2023-07-28 2023-07-28 2023-07-28 2023-07-28 2023-07-28 2023-07-28 2023-07-28 n. 2023-07-28 2023-07-28 2023-07-28 alilg ililg ililg 11: alilg alilg dlilg iilg dilg ials CEs @3: @3: @3: @3: @3: @3: @3: @3: @3: Q7 08 08 e9 e9 10 10 alah all 24 powerpwn powerpwn… — slide 163 of 201"
+    },
+    {
+      "number": 164,
+      "text": "Le 3bOF-345b-4d01-9F67-9ac4a140dd43 2023-07-28 2023-07-28 2023-07-28 2023-07-28 2023-07-28 2023-07-28 2023-07-28 n. 2023-07-28 2023-07-28 2023-07-28 alilg ililg ililg 11: alilg alilg dlilg iilg dilg ials CEs @3: @3: @3: @3: @3: @3: @3: @3: @3: Q7 08 08 e9 e9 10 10 alah all 24 powerpwn powerpwn… — slide 164 of 201"
+    },
+    {
+      "number": 165,
+      "text": "Le 3bOF-345b-4d01-9F67-9ac4a140dd43 2023-07-28 2023-07-28 2023-07-28 2023-07-28 2023-07-28 2023-07-28 2023-07-28 n. 2023-07-28 2023-07-28 2023-07-28 (.venv) @mbrg@:/bhusa23/all-you-need-i alilg ililg ililg 11: alilg alilg dlilg iilg dilg ials CEs @3: @3: @3: @3: @3: @3: @3: @3: @3: Q7 08 08 e9… — slide 165 of 201"
+    },
+    {
+      "number": 166,
+      "text": "@mbrgO AllYouNeed|sGuest BSideLV 2023 (.venv) @mbrg@:/bhusa23/all-you-need-is-guest$ ls .cache — slide 166 of 201"
+    },
+    {
+      "number": 167,
+      "text": "@mbrgO AllYouNeed|sGuest BSideLV 2023 (.venv) @mbrg@:/bhusa23/all-you-need-is-guest$ ls .cache (.venv) @mbrg@:/bhusa23/all-you-need-is-guest$ ls .cache/resources/Default-fc993bOFf -345b-4d01-967-9ac4a140dd43/connector/ shared_azureblob.json shared_flowmanagement.json shared_office365users.json… — slide 167 of 201"
+    },
+    {
+      "number": 168,
+      "text": "@mbrgO AllYouNeed|sGuest BSideLV 2023 (.venv) @mbrg®:/bhusa23/all-you-need-is-guest$ ls .cache (.venv) @mbrg®:/bhusa23/all-you-need-is-guest$ ls .cache/resources/Default -fc993b@f-345b-4d01-9f67 -9ac4a140dd43/connector/ shared_azureblob.json shared_flowmanagement.json shared_office365users.json… — slide 168 of 201"
+    },
+    {
+      "number": 169,
+      "text": "BSideLV 2023 (.venv) @mbrg@:/bhusa23/all-you-need-is-guest$ powerpwn gui VN JLUNNNINS ST | \\I “TANVYVATST lI) HW Ol\\v vst _/I I] | enw v/ | | It s/ NUS NIN NV —/ \\I\\/ II Il 2023-07-28 11:06:13 | powerpwn | INFO | Application is running on http://127.0.0.1:5000 * Serving Flask app… — slide 169 of 201"
+    },
+    {
+      "number": 170,
+      "text": "All You. Need ls Guest @mbrgO BSideLV 2023 powerpwn - Applications © All Resources © Credentials e Automations © Applications © Connectors Display name Environment Version Created by Created at Last modified at Customer Insights Default- 2022-07- jamier@zenitydemo.onmicrosoft.com 2022-07-14… — slide 170 of 201"
+    },
+    {
+      "number": 171,
+      "text": "All You. Need Is Guest @mbrgO BSideLV 2023 powerpwn - Applications © Applications © Connectors Display name Environment Version Created by Created at Last modified at Customer Insights Default- 2022-07- jamier@zenitydemo.onmicrosoft.com 2022-07-14 2023-07-11 Run Raw fc993b0f-345b- — 14T08:47:48Z… — slide 171 of 201"
+    },
+    {
+      "number": 172,
+      "text": "All You. Need Is Guest @mbrgO BSideLV 2023 powerpwn - Credentials e All Resources © Credentials e Automations © Applications © Connectors Connector Connection Created by — shared azurefile jamieredingcustomerdata.file.core.windows.net jamier@zenitydemo.onmicrosoft.com @ shared azureblob… — slide 172 of 201"
+    },
+    {
+      "number": 173,
+      "text": "All You. Need Is Guest powerpwn - Credentials e All Resources © Credentials e Automations © Applications © Connectors Connector Connection @mbrgO BSideLV 2023 Created by 12 a shared _azureblob shared _azuretables shared_azurequeues shared _sql shared _sql… — slide 173 of 201"
+    },
+    {
+      "number": 174,
+      "text": "All You. Need Is Guest @mbrgO BSideLV 2023 powerpwn - Credentials e All Resources © Credentials e Automations © Applications © Connectors Connector Connection Created by — shared azurefile jamieredingcustomerdata.file.core.windows.net jamier@zenitydemo.onmicrosoft.com @ shared azureblob… — slide 174 of 201"
+    },
+    {
+      "number": 175,
+      "text": "AlLYou Need ls Guest @mbrgO BSideLV 2023 cache / data / Default-f93b0f-345b-4d01-91679ac4al40dd4s / connections / shared_sql / 1f47194e3S7e459bS756aS143159ece 1 Mimetype Modified Size BE table S Z| inode/directory 2023.07.28 11:09:36 — slide 175 of 201"
+    },
+    {
+      "number": 176,
+      "text": "AlLYou Need ls Guest @mbrgO BSideLV 2023 cache / data / Defaullé-fcO93b0f345b-4d01-9f67-9ac4al40dd43 / connections / shared_sql / fi47194e357e459bSTSCaS43i59 cece / table Name 1 Mimetype Modified Size D) default-Customers.json application/json 2023.07.28 11:09:35 23.92 KiB Qo… — slide 176 of 201"
+    },
+    {
+      "number": 177,
+      "text": "@mbrgO ae aS 5 BSideLV 2023 [{\"@odata.etag\": \"\", \"ItemInternalId\": \"7eb41684-4b64-4f39-9eab-90fbe3@ba62c\", \"CustomerID\": 34553, \"FirstName\": \"Jamie\", \"LastName\": \"Reding\", “Email”: “jamier@zenitydemo.OnMicrosoft.com\", “SocialSecurityNumber\": \"209-97-1111\"}, {\"@odata.etag\": “ItemInternaliId\":… — slide 177 of 201"
+    },
+    {
+      "number": 178,
+      "text": "AlLYou Need ls Guest @mbrgO BSideLV 2023 / data / Default-fe993b0f-345b-4d01-9167-9actal40dd4s / commections / shared_sql Name |S Mimetype Modified Size BE 09f5ad0908a497f8abeeaaaSefc5692 inode/directory 2023.07.28 11:09:31 BB ££47194e357e459b8756a5f43f59ccc6 inode/directory 2023.07.28 11:09:35 — slide 178 of 201"
+    },
+    {
+      "number": 179,
+      "text": "AlLYou Need ls Guest @mbrgO BSideLV 2023 powerpwn - Credentials e All Resources © Credentials e Automations © Applications © Connectors Connector Connection Created by — shared azurefile jamieredingcustomerdata.file.core.windows.net jamier@zenitydemo.onmicrosoft.com} Playground | Raw Dump @… — slide 179 of 201"
+    },
+    {
+      "number": 180,
+      "text": "All You. Need Is Guest @mbrgO BSideLV 2023 Swagger /api/shared_sql/ff47 194e357e459b87 56a5f43f59ccc6/swagger.json Explore spported by SMARTBEAR SQL Server@ [ Base URL: europe-002.azure-apim.net/apim/sql ] api/shared_sql/ff47194e357e459b8756a5f43f59ccc6/swagger.json Microsoft SQL Server is a… — slide 180 of 201"
+    },
+    {
+      "number": 181,
+      "text": "AlLYou Need ls Guest @mbrgO BSideLV 2023 SqlProcedure “A /££47194e357e459b8756a5f43f59ccc6/datasets({dataset})/procedures Get stored procedures Vv L_rost | /££47194e357e459b8756a5f43f59ccc6/datasets({dataset})/procedures({procedure}) Execute stored procedure Vv… — slide 181 of 201"
+    },
+    {
+      "number": 182,
+      "text": "@mbrgO BSideLV 2023 SqlPassThroughNativeQuery “A POST /££47194e357e459b8756a5f43f59ccc6/ datasets ({dataset}) /query({language}) nz» Parameters Try it out ) Name Description dataset * ‘sure string dataset (path) language * required string jangu: (path query * \"eauires object Example Value Mode!… — slide 182 of 201"
+    },
+    {
+      "number": 183,
+      "text": "Le Power Pwn Power Pwn is an offensive security toolset for Microsoft Power Platform. Install with pip install powerpwn . Check out our Wiki for docs, guides and related talks! \\ / J_\\\\\\INI JT I) Olvy van \\_/ \\VSN/ VTL TL ANAVATSTE! _/| | PAAnED Ht tes VAY LT LT @mbrgO BSideLV 2023 Find us at… — slide 183 of 201"
+    },
+    {
+      "number": 184,
+      "text": "& zenity — slide 184 of 201"
+    },
+    {
+      "number": 185,
+      "text": "BSideLV 2023 State of the exploit Strong collab w/ MSRC ¢ Working together to fix issues * Clarifying mitigation ¢ Currently no vulns — slide 185 of 201"
+    },
+    {
+      "number": 186,
+      "text": "We must own our side of the Shared Responsibility Serverless Data Biz logic Access Code Identity Runtime LONC Data Biz logic Access Code Identity Runtime @mbrgO BSideLV 2023 Customer Platform — slide 186 of 201"
+    },
+    {
+      "number": 187,
+      "text": "@mbrgO BSideLV 2023 : LONC Data Biz logic Customer Access Code Identity Runtime Platform — slide 187 of 201"
+    },
+    {
+      "number": 188,
+      "text": "@mbrgO BSideLV 2023 : Platforms have to step up Biz logic [etacenncg Access Every SaaS is a Low-Code/No-Code platform today. Code They need to own the code running on their platforms, in Identity addition to the rest of the Shared Responsibility Model. Platform Runtime — slide 188 of 201"
+    },
+    {
+      "number": 189,
+      "text": "All You. Need Is Guest Runtime Platform hitpsifu ire-apim.neapim/connection-xyz Authenticated Reque: Power Apps fa) +| Connector (Azure @ ——] APIM API) +) running @mbrgO BSideLV 2023 A Unauth Request + Intercept redirected itive Info or Azure Function | Credentials .| External Connector Code… — slide 189 of 201"
+    },
+    {
+      "number": 190,
+      "text": "@mbrgO BSideLV 2023 : Sure, let business users build they own. What could go wrong? Data Biz logic Customer Access Code Identity Runtime Platform — slide 190 of 201"
+    },
+    {
+      "number": 191,
+      "text": "@mbrgO BSideLV 2023 : Sure, let business users build they own. What could go wrong? Data Biz logic Are apps moving data outside of the corp boundary* g Customer Are users over-sharing data? Access * Are we allowing external access? * Are we properly handling secrets and sensitive data? Code * Do… — slide 191 of 201"
+    },
+    {
+      "number": 192,
+      "text": "@mbrgO BSideLV 2023 : Sure, let business users build they own. What could go wrong? Data Biz logic Are apps moving data outside of the corp boundary* g Customer Are users over-sharing data? Access * Are we allowing external access? * Are we properly handling secrets and sensitive data? Code * Do… — slide 192 of 201"
+    },
+    {
+      "number": 193,
+      "text": "@mbrgO AllYouNeed|sGuest BSideLV 2023 Protect your org! Build secure apps Code, links and details » github/mbrg/talks — slide 193 of 201"
+    },
+    {
+      "number": 194,
+      "text": "BSideLV 2023 Protect your org! Build secure apps 1. Don’t overshare Code, links and details =» github/mbrag/talks — slide 194 of 201"
+    },
+    {
+      "number": 195,
+      "text": "BSideLV 2023 Protect your org! @ourse OWASP Low-Code/No-Code Top 10 Build secure apps 1. Don’t overshare 2. OWASP LCNC Top 10 Code, links and details » github/mbrg/talks — slide 195 of 201"
+    },
+    {
+      "number": 196,
+      "text": "@mbrgO AllYouNeed|sGuest BSideLV 2023 Protect your org! Build secure apps 1. Don’t overshare 2. OWASP LCNC Top 10 Harden your env Code, links and details » github/mbrg/talks — slide 196 of 201"
+    },
+    {
+      "number": 197,
+      "text": "AllLYou Need. Soriey ‘ou. Need Is Guest BSideLV 2023 Build secure apps 1. Don’t overshare 2. OWASP LCNC Top 10 Harden your env 3. Secure configs xternal collaboration settings Code, links and details » github/mbrg/talks — slide 197 of 201"
+    },
+    {
+      "number": 198,
+      "text": "@mbrgO AllYouNeed|sGuest BSideLV 2023 Protect your org! @mbrgO BSideLV 2023 Build secure apps 1. Don’t overshare 2. OWASP LCNC Top 10 Harden your env 3. Secure configs 4. AppSec ~8M active Power devs today! =e More MSFT low-code devs than .NET devs, today! or Credential Sharing asa Service: The… — slide 198 of 201"
+    },
+    {
+      "number": 199,
+      "text": "@mbrgO AllYouNeed|sGuest BSideLV 2023 Protect your org! Build secure apps 1. Don’t overshare 2. OWASP LCNC Top 10 Harden your env 3. Secure configs 4. AppSec Hack your env Code, links and details » github/mbrg/talks — slide 199 of 201"
+    },
+    {
+      "number": 200,
+      "text": "@mbrgO AllYouNeed|sGuest BSideLV 2023 Protect your org! Build secure apps 1. Don’t overshare 2. OWASP LCNC Top 10 Harden your env PV PINNVASI MIL ANN ATI 3. Secure configs PIQU QOUVV VAL APE PID ENVY Vs TLE bee Ve VANS Vee VAS ed Ll 4. AppSec i II Hack your env 6. powerpwn Code, links and… — slide 200 of 201"
+    },
+    {
+      "number": 201,
+      "text": "Closing slide for All You Need Is Guest — Michael Bargury, Zenity — BSidesLV 2023 — slide 201 of 201"
+    }
+  ]
+}

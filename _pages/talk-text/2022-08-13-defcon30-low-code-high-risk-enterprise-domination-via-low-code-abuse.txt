@@ -1,0 +1,1307 @@
+---
+layout: talk-text
+permalink: /talks/2022-08-13-defcon30-low-code-high-risk-enterprise-domination-via-low-code-abuse/llms.txt
+talk_permalink: /talks/2022-08-13-defcon30-low-code-high-risk-enterprise-domination-via-low-code-abuse/
+talk_slug: 2022-08-13-defcon30-low-code-high-risk-enterprise-domination-via-low-code-abuse
+generated_by: sync-talk-text
+sitemap: false
+---
+
+
+<!-- talk-enrichment:start -->
+## Abstract
+
+Why focus on heavily guarded crown jewels when you can dominate an organization through its shadow IT? Low-Code applications have become a reality in the enterprise, with surveys showing that most enterprise apps are now built outside of IT, with lacking security practices. Unsurprisingly, attackers have figured out ways to leverage these platforms for their gain. In this talk, we demonstrate a host of attack techniques found in the wild, where enterprise No-Code platforms are leveraged and abused for every step in the cyber killchain. You will learn how attackers perform an account takeover by making the user simply click a link, move laterally and escalate privileges with zero network traffic, leave behind an untraceable backdoor, and automate data exfiltration, to name a few capabilities. All capabilities will be demonstrated with POCs, and their source code will be shared. Finally, we will introduce an open-source recon tool that identifies opportunities for lateral movement and privilege escalation through low-code platforms.
+
+_[Official conference abstract](https://forum.defcon.org/node/242003)_
+
+## Transcript
+
+> Generated from the talk recording and evaluated by three independent LLM reviewer roles.
+
+### Introduction & Low‑Code Overview
+
+[00:00](https://www.youtube.com/watch?v=D3A62Rzozq4&t=0s) **Presenter:** Yeah. So please join me in welcoming Michael Bargery for Low Code High Risk Enterprise Domination via Low Code Abuse.
+
+[00:17](https://www.youtube.com/watch?v=D3A62Rzozq4&t=17s) **Presenter:** Hi everyone. So first of all thank you for staying. This is a difficult time. But we're gonna have some fun today. So this talk is
+
+[00:30](https://www.youtube.com/watch?v=D3A62Rzozq4&t=30s) **Presenter:** is gonna focus on how do we take low code,
+
+[00:33](https://www.youtube.com/watch?v=D3A62Rzozq4&t=33s) **Presenter:** which is kind of technology that are about enabling users,
+
+[00:37](https://www.youtube.com/watch?v=D3A62Rzozq4&t=37s) **Presenter:** users to build their own things,
+
+[00:39](https://www.youtube.com/watch?v=D3A62Rzozq4&t=39s) **Presenter:** and seeing how attackers are using that
+
+[00:42](https://www.youtube.com/watch?v=D3A62Rzozq4&t=42s) **Presenter:** to basically own the enterprise.
+
+[00:43](https://www.youtube.com/watch?v=D3A62Rzozq4&t=43s) **Presenter:** And this entire talk is based on attacks
+
+[00:45](https://www.youtube.com/watch?v=D3A62Rzozq4&t=45s) **Presenter:** that we've observed in the wild,
+
+[00:48](https://www.youtube.com/watch?v=D3A62Rzozq4&t=48s) **Presenter:** that we are going to recreate today.
+
+[00:53](https://www.youtube.com/watch?v=D3A62Rzozq4&t=53s) **Presenter:** My name is Michael, I've been doing security
+
+[00:55](https://www.youtube.com/watch?v=D3A62Rzozq4&t=55s) **Presenter:** for a long time now, I spent a few years at Microsoft
+
+[01:00](https://www.youtube.com/watch?v=D3A62Rzozq4&t=60s) **Presenter:** IoT and APIs and cloud.
+
+[01:02](https://www.youtube.com/watch?v=D3A62Rzozq4&t=62s) **Presenter:** If you've seen my first talk this morning,
+
+[01:05](https://www.youtube.com/watch?v=D3A62Rzozq4&t=65s) **Presenter:** so thank you again for coming and I hope I don't bore you.
+
+[01:11](https://www.youtube.com/watch?v=D3A62Rzozq4&t=71s) **Presenter:** Other than that, I've started a company called Zenity
+
+### Low‑Code Definition & Enterprise Adoption
+
+[01:17](https://www.youtube.com/watch?v=D3A62Rzozq4&t=77s) **Presenter:** a year and a half ago, we were focused on
+
+[01:19](https://www.youtube.com/watch?v=D3A62Rzozq4&t=79s) **Presenter:** low-code and no-code security.
+
+[01:20](https://www.youtube.com/watch?v=D3A62Rzozq4&t=80s) **Presenter:** That's how we got to observe this space.
+
+[01:23](https://www.youtube.com/watch?v=D3A62Rzozq4&t=83s) **Presenter:** And this entire research is going to be,
+
+[01:25](https://www.youtube.com/watch?v=D3A62Rzozq4&t=85s) **Presenter:** is featuring research from Riel Zilberberg,
+
+[01:28](https://www.youtube.com/watch?v=D3A62Rzozq4&t=88s) **Presenter:** which is sitting right here.
+
+[01:30](https://www.youtube.com/watch?v=D3A62Rzozq4&t=90s) **Presenter:** him some love. Thank you. And I'm really excited to be here, my first DEFCON, so it's been
+
+[01:38](https://www.youtube.com/watch?v=D3A62Rzozq4&t=98s) **Presenter:** really amazing. A short disclaimer, this talk gives an attacker perspective on low code,
+
+[01:45](https://www.youtube.com/watch?v=D3A62Rzozq4&t=105s) **Presenter:** but of course we are all for low code development. This is the, the, the trend of low code is
+
+[01:51](https://www.youtube.com/watch?v=D3A62Rzozq4&t=111s) **Presenter:** really cool, providing users the ability to build stuff on their own, but it's important
+
+[01:56](https://www.youtube.com/watch?v=D3A62Rzozq4&t=116s) **Presenter:** to do it securely so that's why we're giving this talk.
+
+[02:00](https://www.youtube.com/watch?v=D3A62Rzozq4&t=120s) **Presenter:** Here's what we're gonna do today.
+
+[02:01](https://www.youtube.com/watch?v=D3A62Rzozq4&t=121s) **Presenter:** We'll start off with making sure we all understand
+
+[02:05](https://www.youtube.com/watch?v=D3A62Rzozq4&t=125s) **Presenter:** what low code is.
+
+[02:06](https://www.youtube.com/watch?v=D3A62Rzozq4&t=126s) **Presenter:** We'll then see, we'll then dive into attacks
+
+[02:09](https://www.youtube.com/watch?v=D3A62Rzozq4&t=129s) **Presenter:** that we've observed in the wild on low code platforms.
+
+[02:12](https://www.youtube.com/watch?v=D3A62Rzozq4&t=132s) **Presenter:** We'll start with a living of the land attack.
+
+[02:15](https://www.youtube.com/watch?v=D3A62Rzozq4&t=135s) **Presenter:** So cases where attackers are using low code
+
+[02:18](https://www.youtube.com/watch?v=D3A62Rzozq4&t=138s) **Presenter:** to basically do whatever they want inside the enterprise.
+
+[02:21](https://www.youtube.com/watch?v=D3A62Rzozq4&t=141s) **Presenter:** The second part would be how do you remain
+
+[02:26](https://www.youtube.com/watch?v=D3A62Rzozq4&t=146s) **Presenter:** persistent, how do you establish persistency through local
+
+[02:29](https://www.youtube.com/watch?v=D3A62Rzozq4&t=149s) **Presenter:** platforms, and then we'll go to predictable misconfigurations
+
+[02:34](https://www.youtube.com/watch?v=D3A62Rzozq4&t=154s) **Presenter:** and how those are abused through outside-end scanning.
+
+[02:37](https://www.youtube.com/watch?v=D3A62Rzozq4&t=157s) **Presenter:** We'll finish off with two things.
+
+[02:39](https://www.youtube.com/watch?v=D3A62Rzozq4&t=159s) **Presenter:** One is you'll have a couple more tools in your
+
+[02:42](https://www.youtube.com/watch?v=D3A62Rzozq4&t=162s) **Presenter:** relative arsenal to play around with, and the second thing
+
+[02:45](https://www.youtube.com/watch?v=D3A62Rzozq4&t=165s) **Presenter:** is how to protect your organization.
+
+[02:47](https://www.youtube.com/watch?v=D3A62Rzozq4&t=167s) **Presenter:** So we'll go through that as well.
+
+[02:50](https://www.youtube.com/watch?v=D3A62Rzozq4&t=170s) **Presenter:** So let's start.
+
+[02:52](https://www.youtube.com/watch?v=D3A62Rzozq4&t=172s) **Presenter:** Low code is really all about empowering of business users.
+
+[02:56](https://www.youtube.com/watch?v=D3A62Rzozq4&t=176s) **Presenter:** So the idea, the idea is basically business users are tired
+
+[03:01](https://www.youtube.com/watch?v=D3A62Rzozq4&t=181s) **Presenter:** of waiting for IT, they want to solve their own things,
+
+[03:04](https://www.youtube.com/watch?v=D3A62Rzozq4&t=184s) **Presenter:** their own problems, and so they have these
+
+[03:07](https://www.youtube.com/watch?v=D3A62Rzozq4&t=187s) **Presenter:** drag and drop interfaces which allow them to create
+
+[03:09](https://www.youtube.com/watch?v=D3A62Rzozq4&t=189s) **Presenter:** applications and automations, and the crucial piece here
+
+[03:12](https://www.youtube.com/watch?v=D3A62Rzozq4&t=192s) **Presenter:** is that it's built on top of platforms that you already know
+
+[03:15](https://www.youtube.com/watch?v=D3A62Rzozq4&t=195s) **Presenter:** and we'll see that in a moment.
+
+[03:17](https://www.youtube.com/watch?v=D3A62Rzozq4&t=197s) **Presenter:** If this idea of enabling business users
+
+[03:21](https://www.youtube.com/watch?v=D3A62Rzozq4&t=201s) **Presenter:** own thing sounds familiar, well there's a long history behind it. So there are these, there
+
+[03:27](https://www.youtube.com/watch?v=D3A62Rzozq4&t=207s) **Presenter:** were software that allowed you to record your keyboard and your mouse and then reiterate
+
+[03:34](https://www.youtube.com/watch?v=D3A62Rzozq4&t=214s) **Presenter:** that for automation. There are macros which are of course our close friends. And there's
+
+[03:41](https://www.youtube.com/watch?v=D3A62Rzozq4&t=221s) **Presenter:** low code now that it is on the same axis. And people are building all kinds of things
+
+[03:49](https://www.youtube.com/watch?v=D3A62Rzozq4&t=229s) **Presenter:** with it. So if this then that automation, for example, every time I get an email with an
+
+[03:57](https://www.youtube.com/watch?v=D3A62Rzozq4&t=237s) **Presenter:** attachment, store that attachment in Google Drive, applications like handling receipts
+
+[04:03](https://www.youtube.com/watch?v=D3A62Rzozq4&t=243s) **Presenter:** or onboarding and offboarding users, there's really lots and lots of business cases for
+
+[04:11](https://www.youtube.com/watch?v=D3A62Rzozq4&t=251s) **Presenter:** these kind of applications. And the crucial thing is this is already in all of the enterprises
+
+[04:19](https://www.youtube.com/watch?v=D3A62Rzozq4&t=259s) **Presenter:** they made the kind of conscious choice to do it, it because the vendors, the vendors
+
+[04:24](https://www.youtube.com/watch?v=D3A62Rzozq4&t=264s) **Presenter:** that you're seeing up here but also others, they basically built a low code platform around
+
+[04:31](https://www.youtube.com/watch?v=D3A62Rzozq4&t=271s) **Presenter:** existing services that they already have. So if you're a Microsoft job or if you just
+
+[04:36](https://www.youtube.com/watch?v=D3A62Rzozq4&t=276s) **Presenter:** have Office, every user can build automations and applications based on their own identities
+
+[04:41](https://www.youtube.com/watch?v=D3A62Rzozq4&t=281s) **Presenter:** within Office and this is something that you already have in your organization today. The
+
+[04:45](https://www.youtube.com/watch?v=D3A62Rzozq4&t=285s) **Presenter:** same thing applies for Salesforce and ServiceNow and all of the logos that you're seeing here.
+
+[04:49](https://www.youtube.com/watch?v=D3A62Rzozq4&t=289s) **Presenter:** So this is by definition also already inside your org and touching business data. So here's
+
+[04:58](https://www.youtube.com/watch?v=D3A62Rzozq4&t=298s) **Presenter:** a very quick recap on what low code is. We've seen that it's, we've discussed that it's
+
+[05:03](https://www.youtube.com/watch?v=D3A62Rzozq4&t=303s) **Presenter:** available in every major enterprise. Actually what we're seeing is that in every organization
+
+### Attack Landscape: Living Off the Land
+
+[05:08](https://www.youtube.com/watch?v=D3A62Rzozq4&t=308s) **Presenter:** that we're starting to work with there are tens of thousands of these applications and
+
+[05:12](https://www.youtube.com/watch?v=D3A62Rzozq4&t=312s) **Presenter:** these are not exaggerated numbers.
+
+[05:15](https://www.youtube.com/watch?v=D3A62Rzozq4&t=315s) **Presenter:** Tens of thousands of applications
+
+[05:16](https://www.youtube.com/watch?v=D3A62Rzozq4&t=316s) **Presenter:** being built by business users.
+
+[05:18](https://www.youtube.com/watch?v=D3A62Rzozq4&t=318s) **Presenter:** People in IT, people in HR,
+
+[05:19](https://www.youtube.com/watch?v=D3A62Rzozq4&t=319s) **Presenter:** they are all building their own things
+
+[05:21](https://www.youtube.com/watch?v=D3A62Rzozq4&t=321s) **Presenter:** and you will see in a moment
+
+[05:22](https://www.youtube.com/watch?v=D3A62Rzozq4&t=322s) **Presenter:** that it takes just a couple of minutes.
+
+[05:25](https://www.youtube.com/watch?v=D3A62Rzozq4&t=325s) **Presenter:** We see that, we've seen that this is,
+
+[05:28](https://www.youtube.com/watch?v=D3A62Rzozq4&t=328s) **Presenter:** this allows, this by definition has access to business data
+
+[05:31](https://www.youtube.com/watch?v=D3A62Rzozq4&t=331s) **Presenter:** or powers business processes
+
+[05:32](https://www.youtube.com/watch?v=D3A62Rzozq4&t=332s) **Presenter:** because that's what it's meant for.
+
+[05:34](https://www.youtube.com/watch?v=D3A62Rzozq4&t=334s) **Presenter:** And it runs as SAS, which is important
+
+[05:36](https://www.youtube.com/watch?v=D3A62Rzozq4&t=336s) **Presenter:** because there's all of the controls that you're used to,
+
+[05:39](https://www.youtube.com/watch?v=D3A62Rzozq4&t=339s) **Presenter:** well, they're not there.
+
+[05:42](https://www.youtube.com/watch?v=D3A62Rzozq4&t=342s) **Presenter:** or on Microsoft Cloud, on Salesforce Cloud.
+
+[05:44](https://www.youtube.com/watch?v=D3A62Rzozq4&t=344s) **Presenter:** And the last piece is that this is vastly underrated
+
+[05:48](https://www.youtube.com/watch?v=D3A62Rzozq4&t=348s) **Presenter:** by IT and security teams.
+
+[05:49](https://www.youtube.com/watch?v=D3A62Rzozq4&t=349s) **Presenter:** So people have started noticing this area,
+
+[05:52](https://www.youtube.com/watch?v=D3A62Rzozq4&t=352s) **Presenter:** but there's a lot more to go there.
+
+[05:57](https://www.youtube.com/watch?v=D3A62Rzozq4&t=357s) **Presenter:** So that was the recap.
+
+[05:59](https://www.youtube.com/watch?v=D3A62Rzozq4&t=359s) **Presenter:** That was the kind of figuring out,
+
+[06:01](https://www.youtube.com/watch?v=D3A62Rzozq4&t=361s) **Presenter:** making sure we're all on the same page
+
+[06:02](https://www.youtube.com/watch?v=D3A62Rzozq4&t=362s) **Presenter:** and what low code is.
+
+[06:04](https://www.youtube.com/watch?v=D3A62Rzozq4&t=364s) **Presenter:** The next part is observing attacks.
+
+[06:07](https://www.youtube.com/watch?v=D3A62Rzozq4&t=367s) **Presenter:** And before we are going to,
+
+[06:08](https://www.youtube.com/watch?v=D3A62Rzozq4&t=368s) **Presenter:** and by the way, this part will be heavily focused
+
+[06:12](https://www.youtube.com/watch?v=D3A62Rzozq4&t=372s) **Presenter:** which is built around Office, simply because many people are using it. It's very successful and so
+
+[06:17](https://www.youtube.com/watch?v=D3A62Rzozq4&t=377s) **Presenter:** hackers are using it as well. Before we start figuring out how hackers live off the land of
+
+[06:24](https://www.youtube.com/watch?v=D3A62Rzozq4&t=384s) **Presenter:** low code, no code and specifically Power Platform, let's just make sure that we understand
+
+[06:31](https://www.youtube.com/watch?v=D3A62Rzozq4&t=391s) **Presenter:** how this looks like. So this is going to be a very quick example and let me play while I explain.
+
+[06:38](https://www.youtube.com/watch?v=D3A62Rzozq4&t=398s) **Presenter:** Basically, this is a very simple automation.
+
+[06:41](https://www.youtube.com/watch?v=D3A62Rzozq4&t=401s) **Presenter:** It's gonna be built in a couple of minutes.
+
+[06:44](https://www.youtube.com/watch?v=D3A62Rzozq4&t=404s) **Presenter:** This automation does one thing.
+
+[06:46](https://www.youtube.com/watch?v=D3A62Rzozq4&t=406s) **Presenter:** When I'm in Slack and somebody mentions me
+
+[06:49](https://www.youtube.com/watch?v=D3A62Rzozq4&t=409s) **Presenter:** on a common channel, it's very annoying
+
+[06:51](https://www.youtube.com/watch?v=D3A62Rzozq4&t=411s) **Presenter:** because I always have to respond quickly
+
+[06:54](https://www.youtube.com/watch?v=D3A62Rzozq4&t=414s) **Presenter:** because it's in a common channel and everybody's seeing.
+
+[06:56](https://www.youtube.com/watch?v=D3A62Rzozq4&t=416s) **Presenter:** So this automation, every time that somebody mentions me,
+
+[07:01](https://www.youtube.com/watch?v=D3A62Rzozq4&t=421s) **Presenter:** it changes my status as if I'm on a call.
+
+[07:03](https://www.youtube.com/watch?v=D3A62Rzozq4&t=423s) **Presenter:** Then that person could figure out
+
+[07:06](https://www.youtube.com/watch?v=D3A62Rzozq4&t=426s) **Presenter:** that I'm not available right now.
+
+[07:08](https://www.youtube.com/watch?v=D3A62Rzozq4&t=428s) **Presenter:** And then of course it moves me back to a status that is clear so nobody will suspect anything.
+
+[07:15](https://www.youtube.com/watch?v=D3A62Rzozq4&t=435s) **Presenter:** And you're seeing that in order to build this automation I'm kind of dragging and dropping,
+
+[07:22](https://www.youtube.com/watch?v=D3A62Rzozq4&t=442s) **Presenter:** I'm going through select boxes. These are things that everybody can do. And that's the power of
+
+[07:27](https://www.youtube.com/watch?v=D3A62Rzozq4&t=447s) **Presenter:** this technology. That's also the risk. One of the key parts to notice here and I'm gonna stop it
+
+[07:35](https://www.youtube.com/watch?v=D3A62Rzozq4&t=455s) **Presenter:** somewhere along the way, is the fact that you haven't seen
+
+[07:38](https://www.youtube.com/watch?v=D3A62Rzozq4&t=458s) **Presenter:** any sort of authentication.
+
+[07:39](https://www.youtube.com/watch?v=D3A62Rzozq4&t=459s) **Presenter:** Keep in mind this is Zapier, one of those platforms,
+
+[07:43](https://www.youtube.com/watch?v=D3A62Rzozq4&t=463s) **Presenter:** going out to Slack with my own identity
+
+[07:46](https://www.youtube.com/watch?v=D3A62Rzozq4&t=466s) **Presenter:** and changing stuff, right?
+
+[07:48](https://www.youtube.com/watch?v=D3A62Rzozq4&t=468s) **Presenter:** But you haven't seen any window pop up,
+
+[07:50](https://www.youtube.com/watch?v=D3A62Rzozq4&t=470s) **Presenter:** you haven't seen any overflow,
+
+[07:52](https://www.youtube.com/watch?v=D3A62Rzozq4&t=472s) **Presenter:** so how exactly does this happen?
+
+[07:53](https://www.youtube.com/watch?v=D3A62Rzozq4&t=473s) **Presenter:** This is very important in order to understand
+
+[07:56](https://www.youtube.com/watch?v=D3A62Rzozq4&t=476s) **Presenter:** how attacks are being made on those platforms.
+
+[08:02](https://www.youtube.com/watch?v=D3A62Rzozq4&t=482s) **Presenter:** So here's a step by step of what happens
+
+[08:05](https://www.youtube.com/watch?v=D3A62Rzozq4&t=485s) **Presenter:** create a new automation with low code.
+
+[08:09](https://www.youtube.com/watch?v=D3A62Rzozq4&t=489s) **Presenter:** The first step is that you pick from a list of
+
+[08:12](https://www.youtube.com/watch?v=D3A62Rzozq4&t=492s) **Presenter:** lots and lots of applications.
+
+[08:13](https://www.youtube.com/watch?v=D3A62Rzozq4&t=493s) **Presenter:** Those could be SaaS applications, on-prem connectors.
+
+[08:17](https://www.youtube.com/watch?v=D3A62Rzozq4&t=497s) **Presenter:** Those are basically hundreds and hundreds of connectors
+
+[08:20](https://www.youtube.com/watch?v=D3A62Rzozq4&t=500s) **Presenter:** that are being provided by the platform themselves
+
+[08:23](https://www.youtube.com/watch?v=D3A62Rzozq4&t=503s) **Presenter:** to connect wherever you'd like.
+
+[08:24](https://www.youtube.com/watch?v=D3A62Rzozq4&t=504s) **Presenter:** The second thing is that there is this all of consent flow
+
+[08:27](https://www.youtube.com/watch?v=D3A62Rzozq4&t=507s) **Presenter:** that basically allows the application
+
+[08:29](https://www.youtube.com/watch?v=D3A62Rzozq4&t=509s) **Presenter:** to operate on your behalf as a user.
+
+[08:31](https://www.youtube.com/watch?v=D3A62Rzozq4&t=511s) **Presenter:** but notice the last part and specifically the share button. So something is going on here,
+
+[08:41](https://www.youtube.com/watch?v=D3A62Rzozq4&t=521s) **Presenter:** right? There's an application, it logs in on a user's behalf to Slack and then somehow it's able
+
+[08:47](https://www.youtube.com/watch?v=D3A62Rzozq4&t=527s) **Presenter:** to share that user's authentication with Slack with other users. And so the next thing we're
+
+[08:54](https://www.youtube.com/watch?v=D3A62Rzozq4&t=534s) **Presenter:** going to try and figure out is how does this work. So on one side we have a lot of users
+
+[09:01](https://www.youtube.com/watch?v=D3A62Rzozq4&t=541s) **Presenter:** Zapier or Power Automate or other automation tools that are part of low code and on the other side we
+
+[09:07](https://www.youtube.com/watch?v=D3A62Rzozq4&t=547s) **Presenter:** have Slack and again the idea is to figure out how does this authentication work and especially
+
+[09:11](https://www.youtube.com/watch?v=D3A62Rzozq4&t=551s) **Presenter:** how does connection sharing work. So here's how they do it. Instead of going through the
+
+[09:19](https://www.youtube.com/watch?v=D3A62Rzozq4&t=559s) **Presenter:** usual route of kind of RBAC and asking for permissions for each user separately, they simply
+
+[09:26](https://www.youtube.com/watch?v=D3A62Rzozq4&t=566s) **Presenter:** copy the refresh tokens and then replay them.
+
+[09:29](https://www.youtube.com/watch?v=D3A62Rzozq4&t=569s) **Presenter:** So you plug in, you do the consent flow for Slack,
+
+[09:34](https://www.youtube.com/watch?v=D3A62Rzozq4&t=574s) **Presenter:** Power Automate will store your refresh token
+
+[09:36](https://www.youtube.com/watch?v=D3A62Rzozq4&t=576s) **Presenter:** and then you can share that refresh token
+
+[09:39](https://www.youtube.com/watch?v=D3A62Rzozq4&t=579s) **Presenter:** with other users through Power Automate.
+
+### Persistence & Privilege Escalation via Low‑Code
+
+[09:41](https://www.youtube.com/watch?v=D3A62Rzozq4&t=581s) **Presenter:** Now of course from Slack's perspective
+
+[09:43](https://www.youtube.com/watch?v=D3A62Rzozq4&t=583s) **Presenter:** or from a network security perspective,
+
+[09:47](https://www.youtube.com/watch?v=D3A62Rzozq4&t=587s) **Presenter:** there's no sharing here, right?
+
+[09:48](https://www.youtube.com/watch?v=D3A62Rzozq4&t=588s) **Presenter:** It's the user, the user is always the one
+
+[09:50](https://www.youtube.com/watch?v=D3A62Rzozq4&t=590s) **Presenter:** that's doing the operations.
+
+[09:52](https://www.youtube.com/watch?v=D3A62Rzozq4&t=592s) **Presenter:** It doesn't matter if an application is using it,
+
+[09:54](https://www.youtube.com/watch?v=D3A62Rzozq4&t=594s) **Presenter:** other users are using it, this is a crucial point. These applications are basically blocking,
+
+[10:00](https://www.youtube.com/watch?v=D3A62Rzozq4&t=600s) **Presenter:** are basically breaking the permission model that we're used to in SAS and in connectivity
+
+[10:05](https://www.youtube.com/watch?v=D3A62Rzozq4&t=605s) **Presenter:** between applications. Okay. Now that we figured that out, let's see what attackers are doing
+
+[10:12](https://www.youtube.com/watch?v=D3A62Rzozq4&t=612s) **Presenter:** with it. So the first thing that we need to make, to understand is that because lots of,
+
+[10:18](https://www.youtube.com/watch?v=D3A62Rzozq4&t=618s) **Presenter:** you've seen how easy it is to create these applications, uh, and lots of more, lots more
+
+[10:24](https://www.youtube.com/watch?v=D3A62Rzozq4&t=624s) **Presenter:** that means that you get lots and lots and lots of applications.
+
+[10:28](https://www.youtube.com/watch?v=D3A62Rzozq4&t=628s) **Presenter:** These are all examples from the marketplaces
+
+[10:31](https://www.youtube.com/watch?v=D3A62Rzozq4&t=631s) **Presenter:** of the different vendors and you can,
+
+[10:33](https://www.youtube.com/watch?v=D3A62Rzozq4&t=633s) **Presenter:** maybe you can see the numbers, it might be too small,
+
+[10:35](https://www.youtube.com/watch?v=D3A62Rzozq4&t=635s) **Presenter:** but there are hundreds of thousands of those being deployed
+
+[10:38](https://www.youtube.com/watch?v=D3A62Rzozq4&t=638s) **Presenter:** and again we see that in an enterprise all of the time.
+
+[10:40](https://www.youtube.com/watch?v=D3A62Rzozq4&t=640s) **Presenter:** And the important thing here is actually the logos
+
+[10:43](https://www.youtube.com/watch?v=D3A62Rzozq4&t=643s) **Presenter:** because behind every logo in these processes,
+
+[10:47](https://www.youtube.com/watch?v=D3A62Rzozq4&t=647s) **Presenter:** there's data, there's connection to data,
+
+[10:50](https://www.youtube.com/watch?v=D3A62Rzozq4&t=650s) **Presenter:** or there's the ability to do all sorts of operation.
+
+[10:52](https://www.youtube.com/watch?v=D3A62Rzozq4&t=652s) **Presenter:** So behind every one of those applications,
+
+[10:56](https://www.youtube.com/watch?v=D3A62Rzozq4&t=656s) **Presenter:** those tens of thousands of applications within enterprises,
+
+[10:58](https://www.youtube.com/watch?v=D3A62Rzozq4&t=658s) **Presenter:** there's a trail of connections.
+
+[11:00](https://www.youtube.com/watch?v=D3A62Rzozq4&t=660s) **Presenter:** A trail of connections that can be shared with other users.
+
+[11:03](https://www.youtube.com/watch?v=D3A62Rzozq4&t=663s) **Presenter:** And actually, it's not only that it can be shared,
+
+[11:06](https://www.youtube.com/watch?v=D3A62Rzozq4&t=666s) **Presenter:** in many cases that's the default.
+
+[11:08](https://www.youtube.com/watch?v=D3A62Rzozq4&t=668s) **Presenter:** So if you look at Microsoft Power Platform for example,
+
+[11:12](https://www.youtube.com/watch?v=D3A62Rzozq4&t=672s) **Presenter:** if you look at Zapier or other platforms as well,
+
+[11:15](https://www.youtube.com/watch?v=D3A62Rzozq4&t=675s) **Presenter:** they all have a notion of a default environment.
+
+[11:19](https://www.youtube.com/watch?v=D3A62Rzozq4&t=679s) **Presenter:** Some place where we create an application,
+
+[11:23](https://www.youtube.com/watch?v=D3A62Rzozq4&t=683s) **Presenter:** the connection will go there, and other users can just
+
+[11:26](https://www.youtube.com/watch?v=D3A62Rzozq4&t=686s) **Presenter:** pick it up and use it.
+
+[11:28](https://www.youtube.com/watch?v=D3A62Rzozq4&t=688s) **Presenter:** So those are examples of the default environment
+
+[11:30](https://www.youtube.com/watch?v=D3A62Rzozq4&t=690s) **Presenter:** from different vendors.
+
+[11:31](https://www.youtube.com/watch?v=D3A62Rzozq4&t=691s) **Presenter:** Again, this is not a problem with one platform.
+
+[11:35](https://www.youtube.com/watch?v=D3A62Rzozq4&t=695s) **Presenter:** This is a basic concept of how this technology works.
+
+[11:38](https://www.youtube.com/watch?v=D3A62Rzozq4&t=698s) **Presenter:** And so every platform has their own version
+
+[11:40](https://www.youtube.com/watch?v=D3A62Rzozq4&t=700s) **Presenter:** of this default environment, and when you have access
+
+[11:43](https://www.youtube.com/watch?v=D3A62Rzozq4&t=703s) **Presenter:** to this default environment, you get access to tons
+
+[11:45](https://www.youtube.com/watch?v=D3A62Rzozq4&t=705s) **Presenter:** and tons of connections across the organization.
+
+[11:48](https://www.youtube.com/watch?v=D3A62Rzozq4&t=708s) **Presenter:** And I'm talking about, from what we've seen,
+
+[11:52](https://www.youtube.com/watch?v=D3A62Rzozq4&t=712s) **Presenter:** with root accounts, users, the users own identities
+
+[11:56](https://www.youtube.com/watch?v=D3A62Rzozq4&t=716s) **Presenter:** to Office and to Slack, FTP connections,
+
+[12:01](https://www.youtube.com/watch?v=D3A62Rzozq4&t=721s) **Presenter:** all of the things that you could think about
+
+[12:02](https://www.youtube.com/watch?v=D3A62Rzozq4&t=722s) **Presenter:** that users are using these platforms for.
+
+[12:05](https://www.youtube.com/watch?v=D3A62Rzozq4&t=725s) **Presenter:** So what we're seeing hackers do very easily
+
+[12:09](https://www.youtube.com/watch?v=D3A62Rzozq4&t=729s) **Presenter:** is once they get into an enterprise,
+
+[12:12](https://www.youtube.com/watch?v=D3A62Rzozq4&t=732s) **Presenter:** once they find at least one user's account
+
+[12:14](https://www.youtube.com/watch?v=D3A62Rzozq4&t=734s) **Presenter:** and they're able to log into their SaaS,
+
+[12:16](https://www.youtube.com/watch?v=D3A62Rzozq4&t=736s) **Presenter:** they can very easily escalate their privileges.
+
+[12:19](https://www.youtube.com/watch?v=D3A62Rzozq4&t=739s) **Presenter:** It's already there, it's kind of, it's built in.
+
+[12:22](https://www.youtube.com/watch?v=D3A62Rzozq4&t=742s) **Presenter:** So that's really, really, really simple.
+
+[12:24](https://www.youtube.com/watch?v=D3A62Rzozq4&t=744s) **Presenter:** But the next thing that they'll do is that they'll use
+
+[12:27](https://www.youtube.com/watch?v=D3A62Rzozq4&t=747s) **Presenter:** these connections that are part of the platform
+
+[12:31](https://www.youtube.com/watch?v=D3A62Rzozq4&t=751s) **Presenter:** and they do a bunch of things with it.
+
+[12:33](https://www.youtube.com/watch?v=D3A62Rzozq4&t=753s) **Presenter:** So here's an example of a ransomware attack
+
+[12:35](https://www.youtube.com/watch?v=D3A62Rzozq4&t=755s) **Presenter:** and again these are all attacks that we've observed
+
+[12:37](https://www.youtube.com/watch?v=D3A62Rzozq4&t=757s) **Presenter:** and recreated.
+
+[12:39](https://www.youtube.com/watch?v=D3A62Rzozq4&t=759s) **Presenter:** So in this example I'm going through a SharePoint site
+
+[12:43](https://www.youtube.com/watch?v=D3A62Rzozq4&t=763s) **Presenter:** on a schedule and I'm simply encrypting every file
+
+[12:47](https://www.youtube.com/watch?v=D3A62Rzozq4&t=767s) **Presenter:** on that SharePoint with the comfortably provided
+
+[12:50](https://www.youtube.com/watch?v=D3A62Rzozq4&t=770s) **Presenter:** and encryption function within Power Automate
+
+[12:52](https://www.youtube.com/watch?v=D3A62Rzozq4&t=772s) **Presenter:** Microsoft's platform.
+
+[12:54](https://www.youtube.com/watch?v=D3A62Rzozq4&t=774s) **Presenter:** So again, ransomware here is just really, really easy
+
+[12:58](https://www.youtube.com/watch?v=D3A62Rzozq4&t=778s) **Presenter:** and this is ransomware without installing any agents,
+
+[13:02](https://www.youtube.com/watch?v=D3A62Rzozq4&t=782s) **Presenter:** without going through the network.
+
+[13:04](https://www.youtube.com/watch?v=D3A62Rzozq4&t=784s) **Presenter:** This is all on the SaaS cloud.
+
+[13:09](https://www.youtube.com/watch?v=D3A62Rzozq4&t=789s) **Presenter:** The other thing that we're seeing people do is
+
+[13:12](https://www.youtube.com/watch?v=D3A62Rzozq4&t=792s) **Presenter:** export data outside of the organization.
+
+[13:14](https://www.youtube.com/watch?v=D3A62Rzozq4&t=794s) **Presenter:** This is a crucial piece.
+
+[13:16](https://www.youtube.com/watch?v=D3A62Rzozq4&t=796s) **Presenter:** There's a bunch of, so when you think about
+
+[13:20](https://www.youtube.com/watch?v=D3A62Rzozq4&t=800s) **Presenter:** protect from data leakage, we can go at it through the network,
+
+[13:23](https://www.youtube.com/watch?v=D3A62Rzozq4&t=803s) **Presenter:** we can try and scan storage accounts and cloud accounts,
+
+[13:28](https://www.youtube.com/watch?v=D3A62Rzozq4&t=808s) **Presenter:** but because these platforms, they mix up identities
+
+[13:31](https://www.youtube.com/watch?v=D3A62Rzozq4&t=811s) **Presenter:** of different users and you can also plug in
+
+[13:34](https://www.youtube.com/watch?v=D3A62Rzozq4&t=814s) **Presenter:** your personal identities, then you don't really have access
+
+[13:37](https://www.youtube.com/watch?v=D3A62Rzozq4&t=817s) **Presenter:** to scan everything here.
+
+[13:38](https://www.youtube.com/watch?v=D3A62Rzozq4&t=818s) **Presenter:** So for example, in this example which we've seen,
+
+[13:41](https://www.youtube.com/watch?v=D3A62Rzozq4&t=821s) **Presenter:** I think in every organization that we're working with,
+
+[13:44](https://www.youtube.com/watch?v=D3A62Rzozq4&t=824s) **Presenter:** we find, what people are doing is in order to send
+
+[13:50](https://www.youtube.com/watch?v=D3A62Rzozq4&t=830s) **Presenter:** a corporate email to their Gmail account,
+
+[13:53](https://www.youtube.com/watch?v=D3A62Rzozq4&t=833s) **Presenter:** they're simply copying the content
+
+[13:54](https://www.youtube.com/watch?v=D3A62Rzozq4&t=834s) **Presenter:** instead of forwarding the email.
+
+[13:56](https://www.youtube.com/watch?v=D3A62Rzozq4&t=836s) **Presenter:** And then really there's nothing you can do
+
+[13:58](https://www.youtube.com/watch?v=D3A62Rzozq4&t=838s) **Presenter:** outside of the platform to even catch this
+
+[14:00](https://www.youtube.com/watch?v=D3A62Rzozq4&t=840s) **Presenter:** because remember, this is impersonating the user.
+
+[14:05](https://www.youtube.com/watch?v=D3A62Rzozq4&t=845s) **Presenter:** It's not going through any sort of approval process.
+
+[14:09](https://www.youtube.com/watch?v=D3A62Rzozq4&t=849s) **Presenter:** So data expelation is really easy here.
+
+[14:12](https://www.youtube.com/watch?v=D3A62Rzozq4&t=852s) **Presenter:** We've seen this not only with emails,
+
+[14:14](https://www.youtube.com/watch?v=D3A62Rzozq4&t=854s) **Presenter:** but you can do it with other things as well.
+
+[14:20](https://www.youtube.com/watch?v=D3A62Rzozq4&t=860s) **Presenter:** creating a useful application and then even by mistake, storing its data in your own
+
+[14:25](https://www.youtube.com/watch?v=D3A62Rzozq4&t=865s) **Presenter:** personal Dropbox because you can mix and match these things very easily. So we're seeing this
+
+[14:30](https://www.youtube.com/watch?v=D3A62Rzozq4&t=870s) **Presenter:** again multiple times. Another thing you can do which is actually kind of weird is that you can
+
+[14:37](https://www.youtube.com/watch?v=D3A62Rzozq4&t=877s) **Presenter:** jump from the cloud to people's laptops and that's because these platforms are uh have a
+
+[14:44](https://www.youtube.com/watch?v=D3A62Rzozq4&t=884s) **Presenter:** component that's called RPA which is about automation on the user side, on the laptop
+
+[14:50](https://www.youtube.com/watch?v=D3A62Rzozq4&t=890s) **Presenter:** another talk on this earlier today. So you can, the materials are there in the link and you can
+
+[14:55](https://www.youtube.com/watch?v=D3A62Rzozq4&t=895s) **Presenter:** find it online. But it's very easy once you have access to those shared connections, some of
+
+[15:02](https://www.youtube.com/watch?v=D3A62Rzozq4&t=902s) **Presenter:** those shared connections are actually privileges to execute something, a payload, on a user's
+
+[15:07](https://www.youtube.com/watch?v=D3A62Rzozq4&t=907s) **Presenter:** machine. And then you can just pick it up and use it. Again, the same thing that we've seen
+
+### Misconfigurations & Data Exfiltration
+
+[15:10](https://www.youtube.com/watch?v=D3A62Rzozq4&t=910s) **Presenter:** for lateral movement. Um, so as you can see there's a lot of risk in these overshared
+
+[15:20](https://www.youtube.com/watch?v=D3A62Rzozq4&t=920s) **Presenter:** again recall these are wrappers around authentication, refresh tokens. This means that
+
+[15:26](https://www.youtube.com/watch?v=D3A62Rzozq4&t=926s) **Presenter:** from the outside you won't be able to figure out that there has been a shell. So that's one
+
+[15:32](https://www.youtube.com/watch?v=D3A62Rzozq4&t=932s) **Presenter:** user that's simply reusing that connection again and again. In order to make it easy for us and
+
+[15:39](https://www.youtube.com/watch?v=D3A62Rzozq4&t=939s) **Presenter:** for you as well to kind of figure out whether this happens within your organization and to plug
+
+[15:44](https://www.youtube.com/watch?v=D3A62Rzozq4&t=944s) **Presenter:** it into part of your kind of red team arsenal, we built a small tool that basically allows you
+
+[15:50](https://www.youtube.com/watch?v=D3A62Rzozq4&t=950s) **Presenter:** in a user and get a table with all of the different connections
+
+[15:55](https://www.youtube.com/watch?v=D3A62Rzozq4&t=955s) **Presenter:** that that user has access to, which users are, uh,
+
+[15:59](https://www.youtube.com/watch?v=D3A62Rzozq4&t=959s) **Presenter:** those connections belong to, so that's all available very
+
+[16:03](https://www.youtube.com/watch?v=D3A62Rzozq4&t=963s) **Presenter:** quickly. You'll see that tool is kind of a, it's less than a
+
+[16:07](https://www.youtube.com/watch?v=D3A62Rzozq4&t=967s) **Presenter:** hundred lines of code. It's very, very, very easy. So feel free
+
+[16:10](https://www.youtube.com/watch?v=D3A62Rzozq4&t=970s) **Presenter:** to kind of use it and play around with it. The next piece I
+
+[16:16](https://www.youtube.com/watch?v=D3A62Rzozq4&t=976s) **Presenter:** want to talk about is how do we make, so let's say that we got into an organization and we're
+
+[16:22](https://www.youtube.com/watch?v=D3A62Rzozq4&t=982s) **Presenter:** seeing those shared connections but we want more. We want to find, we want to entice users to
+
+[16:27](https://www.youtube.com/watch?v=D3A62Rzozq4&t=987s) **Presenter:** create those connections and we want to own a specific user identity for example. What we can,
+
+[16:33](https://www.youtube.com/watch?v=D3A62Rzozq4&t=993s) **Presenter:** what we, what we can do here is we can set up a beta application that basically asks for, for
+
+[16:39](https://www.youtube.com/watch?v=D3A62Rzozq4&t=999s) **Presenter:** example your email connection with a good reason for that but then we can use that email
+
+[16:44](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1004s) **Presenter:** connection while the user is connected to do whatever we want. Of course this is not special
+
+[16:49](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1009s) **Presenter:** to low code applications. Every application can do that. The simple, the key thing here is that
+
+[16:55](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1015s) **Presenter:** somebody from HR can create this application. Somebody from finance. So the, the, there's a
+
+[17:01](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1021s) **Presenter:** very, there's a much lower bar to create these applications. And there's also another crucial
+
+[17:06](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1026s) **Presenter:** piece here. This is all run on the vendor's SaaS products. So for example, in the example that
+
+[17:14](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1034s) **Presenter:** Power Plus or Microsoft's local platform, the application will end up in a Microsoft.com
+
+[17:19](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1039s) **Presenter:** domain. So users will trust it. Why not? So let's see how it works. So while this is
+
+[17:29](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1049s) **Presenter:** running, what I'm going to do is I'm picking an application from the template list. I'm
+
+[17:35](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1055s) **Presenter:** specifically taking an application that is about creating an out of office. So you go into the
+
+[17:40](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1060s) **Presenter:** application, you give it access to your email and it will decline emails for you. You've seen
+
+[17:46](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1066s) **Presenter:** briefly that I needed to create those connections to click allow. We'll see it again shortly.
+
+[17:51](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1071s) **Presenter:** So you see I'm picking a date and then I can have, I can configure a few things and the
+
+[17:57](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1077s) **Presenter:** application will do everything for me. And this is a useful application. I didn't create it. I
+
+[18:01](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1081s) **Presenter:** just picked it off the marketplace. What we're going to do is take this useful application and
+
+[18:05](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1085s) **Presenter:** abuse it for our own needs. So I'm hitting the edit button here and I'm going to do a very
+
+[18:11](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1091s) **Presenter:** simple thing. I'm going to use the user's email while it is connected to send myself an email
+
+[18:17](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1097s) **Presenter:** saying hi, I've been pwned. Now of course I could have done other things here but the important
+
+[18:24](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1104s) **Presenter:** thing to note is how simple it is. So it's a single line of code to reuse that user's
+
+[18:30](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1110s) **Presenter:** connection to do anything we'd like and the user don't really
+
+[18:36](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1116s) **Presenter:** have a way to know what's happening here.
+
+[18:41](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1121s) **Presenter:** Okay, so while it takes me a lot of time to type,
+
+[18:46](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1126s) **Presenter:** the next thing that's going to happen here is that I'm going
+
+[18:49](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1129s) **Presenter:** to save the application and by the way, when I click save,
+
+[18:52](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1132s) **Presenter:** it's already deployed so there's no deployment process here
+
+[18:55](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1135s) **Presenter:** and then I'm gonna share it and I'm gonna share it with
+
+[18:57](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1137s) **Presenter:** the entire org because that's a function that's available
+
+[19:00](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1140s) **Presenter:** so why not?
+
+[19:02](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1142s) **Presenter:** Once I create this share, Microsoft provides me
+
+[19:05](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1145s) **Presenter:** with a nice link for my application.
+
+[19:07](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1147s) **Presenter:** So I'm gonna copy that link, and now I'm in another user,
+
+[19:11](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1151s) **Presenter:** and I'm going to plug in that link on the browser,
+
+[19:13](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1153s) **Presenter:** and let's see what happens.
+
+[19:16](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1156s) **Presenter:** First of all, I get this window that's asking me
+
+[19:19](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1159s) **Presenter:** to use my credentials, and it was asking me for two things,
+
+[19:23](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1163s) **Presenter:** for my account to Office and for my calendar.
+
+[19:27](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1167s) **Presenter:** And of course, while I click allow and I use the application,
+
+[19:32](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1172s) **Presenter:** very quickly I get the email that have been pwned.
+
+[19:35](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1175s) **Presenter:** So we've seen how easy it is to do it, but there's one key
+
+[19:43](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1183s) **Presenter:** thing to understand about this example,
+
+[19:44](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1184s) **Presenter:** and that is this window, okay?
+
+[19:47](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1187s) **Presenter:** This window is what allowed the application to take over
+
+[19:52](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1192s) **Presenter:** the user's identity, and as you can see,
+
+[19:54](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1194s) **Presenter:** this is not the usual OAuth window that you're used to.
+
+[19:58](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1198s) **Presenter:** It's not telling you, hey, these are the operations
+
+[20:00](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1200s) **Presenter:** I'm going to use so you'll know that other operations
+
+[20:02](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1202s) **Presenter:** are being created, no.
+
+[20:04](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1204s) **Presenter:** This window is about sharing the connection,
+
+[20:08](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1208s) **Presenter:** the connection that we saw earlier.
+
+[20:11](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1211s) **Presenter:** And so the only thing that gave the user a hint
+
+[20:15](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1215s) **Presenter:** that I might be able to steal their identity
+
+[20:17](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1217s) **Presenter:** is this window.
+
+[20:19](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1219s) **Presenter:** And so naturally, we want to figure out a way
+
+[20:22](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1222s) **Presenter:** to remove this window. Note that if I'm able to do that, I have a link on Microsoft.com and if I
+
+[20:30](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1230s) **Presenter:** share it with anybody in the organization and they click it, that's it. That's game over.
+
+[20:36](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1236s) **Presenter:** So thankfully, this is something that's already available. This is for Microsoft docs so an
+
+[20:43](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1243s) **Presenter:** admin can basically set a flag that means that this window just goes away. And actually people
+
+[20:52](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1252s) **Presenter:** doing this in order to make these applications easier to use.
+
+[20:55](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1255s) **Presenter:** So if you're in an organization that has done this,
+
+[20:58](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1258s) **Presenter:** you might be in big trouble.
+
+[21:01](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1261s) **Presenter:** So we have seen multiple ways in which hackers are living
+
+[21:06](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1266s) **Presenter:** off the land, specifically we've seen things about Microsoft
+
+[21:10](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1270s) **Presenter:** Power Platform and we've seen it about Zapier.
+
+[21:13](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1273s) **Presenter:** We've seen lateral movement, privilege escalation,
+
+[21:15](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1275s) **Presenter:** ransomware, account takeover, and these were all drag and drop,
+
+[21:19](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1279s) **Presenter:** very simple, very easy to use.
+
+[21:22](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1282s) **Presenter:** The next part that I'm going to talk about
+
+[21:25](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1285s) **Presenter:** is how do we stay there?
+
+[21:28](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1288s) **Presenter:** So this has been, as you can see,
+
+[21:31](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1291s) **Presenter:** there are a ton of things that you can do
+
+[21:34](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1294s) **Presenter:** once you get into those applications,
+
+[21:36](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1296s) **Presenter:** into those local platforms.
+
+[21:38](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1298s) **Presenter:** And the next part is how do we make sure
+
+[21:41](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1301s) **Presenter:** that we remain persistent within those platforms?
+
+[21:45](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1305s) **Presenter:** But actually it's more than within those platforms,
+
+[21:47](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1307s) **Presenter:** it's to remain persistent in an organization.
+
+[21:49](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1309s) **Presenter:** Because again, if I'm there, I can use the connections
+
+[21:52](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1312s) **Presenter:** and continue on from there.
+
+[21:54](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1314s) **Presenter:** We are actually not going to invent anything here.
+
+[21:56](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1316s) **Presenter:** This has been done by an APT group about two years ago.
+
+[22:03](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1323s) **Presenter:** So what happened here, and if you follow the link
+
+[22:06](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1326s) **Presenter:** you'll see all of the sources.
+
+[22:08](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1328s) **Presenter:** Basically this is a slide from a Microsoft
+
+[22:10](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1330s) **Presenter:** detection and response team where an APT group
+
+### Tools & Mitigation Strategies
+
+[22:12](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1332s) **Presenter:** was able to stay hidden within an enterprise.
+
+[22:16](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1336s) **Presenter:** They knew that they got hacked and they were looking
+
+[22:19](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1339s) **Presenter:** to find the hackers and it took them six months to find
+
+[22:23](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1343s) **Presenter:** that there was a single automation on Power Platform
+
+[22:28](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1348s) **Presenter:** that did a very simple thing.
+
+[22:30](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1350s) **Presenter:** It used e-discovery to go out and find secrets
+
+[22:34](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1354s) **Presenter:** and find business data in email, in Outlook,
+
+[22:38](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1358s) **Presenter:** in SharePoint and then just send it off to a random endpoint.
+
+[22:42](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1362s) **Presenter:** And nobody was looking for it.
+
+[22:44](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1364s) **Presenter:** You don't really have a network appliance looking
+
+[22:46](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1366s) **Presenter:** at what Microsoft is doing.
+
+[22:49](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1369s) **Presenter:** a long time to find. So what we're going to do now is recreate that and see how it can
+
+[22:55](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1375s) **Presenter:** work, see exactly how it works. Here's the first version. So on a schedule I'm going to go
+
+[23:03](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1383s) **Presenter:** through all of the files in a single SharePoint site. I'm going to encrypt them, send them
+
+[23:09](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1389s) **Presenter:** over to a random endpoint, for example pastebin and I'm going to tweet about it because why
+
+[23:13](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1393s) **Presenter:** Why not?
+
+[23:14](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1394s) **Presenter:** I mean, nobody will find me anyway.
+
+[23:17](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1397s) **Presenter:** You can also apply this to on-prem,
+
+[23:19](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1399s) **Presenter:** you can plug in any one of the connections
+
+[23:21](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1401s) **Presenter:** that we've just, that we saw before.
+
+[23:23](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1403s) **Presenter:** So this is actually exactly what the attackers have done.
+
+[23:26](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1406s) **Presenter:** Now let's take it a step further.
+
+[23:29](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1409s) **Presenter:** So instead of starting with a schedule,
+
+[23:32](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1412s) **Presenter:** let's plug in an HTTP endpoint
+
+[23:35](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1415s) **Presenter:** that you can just call from the outside
+
+[23:37](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1417s) **Presenter:** and in this example what it's going to do
+
+[23:39](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1419s) **Presenter:** is encrypt an entire Google Drive.
+
+[23:42](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1422s) **Presenter:** Again, why not?
+
+[23:43](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1423s) **Presenter:** So this is basically encryption, ransomware for a specific
+
+[23:48](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1428s) **Presenter:** Google Drive that is available through an HTTP endpoint
+
+[23:51](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1431s) **Presenter:** outside of the org.
+
+[23:54](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1434s) **Presenter:** But actually I've mentioned that this part of the talk
+
+[23:57](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1437s) **Presenter:** is about persistency.
+
+[23:58](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1438s) **Presenter:** This is just a very small part of what we need in order
+
+[24:01](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1441s) **Presenter:** to remain persistent so here's a laundry list.
+
+[24:04](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1444s) **Presenter:** Of course this is not everything but there are a few
+
+[24:06](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1446s) **Presenter:** things that we need to be able to do.
+
+[24:08](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1448s) **Presenter:** We need to be able to run code remotely.
+
+[24:11](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1451s) **Presenter:** we want to be able to run arbitrary payloads, not just a fixed list of payloads that we've
+
+[24:16](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1456s) **Presenter:** described earlier. We want to maintain access even if the user that created that gave us the
+
+[24:22](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1462s) **Presenter:** initial access gets blocked or removed or whatever. We want to make sure that we avoid
+
+[24:27](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1467s) **Presenter:** detection and attribution and of course leave no logs behind. So let's see how we can do that.
+
+[24:32](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1472s) **Presenter:** We've already seen a first version of persistency because there's this HTTP end point. Let's try
+
+[24:39](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1479s) **Presenter:** and figure out what does it cover from our laundry list.
+
+[24:43](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1483s) **Presenter:** So, I'm able to execute things remotely,
+
+[24:46](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1486s) **Presenter:** that's pretty obvious, that's an HTTP endpoint.
+
+[24:49](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1489s) **Presenter:** This is definitely not an arbitrary payload,
+
+[24:51](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1491s) **Presenter:** this is a specific payload that I've created
+
+[24:53](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1493s) **Presenter:** and that's the only one that I'm going to be able to run.
+
+[24:57](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1497s) **Presenter:** In terms of maintaining access, that's covered here
+
+[25:01](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1501s) **Presenter:** because that HTTP endpoint comes built in with a secret,
+
+[25:06](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1506s) **Presenter:** So we don't need to be authenticated in order to call
+
+[25:10](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1510s) **Presenter:** that HTTP endpoint, again, something that is the same
+
+[25:13](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1513s) **Presenter:** in every local platform that we've observed.
+
+[25:15](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1515s) **Presenter:** And so I can very easily just call that endpoint
+
+[25:17](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1517s) **Presenter:** and that's all the access I need.
+
+[25:20](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1520s) **Presenter:** Avoiding detection is, again, very easy
+
+[25:23](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1523s) **Presenter:** because it's somebody else's cloud.
+
+[25:24](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1524s) **Presenter:** You have no security controls there.
+
+[25:26](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1526s) **Presenter:** Avoiding attribution is also very easy
+
+[25:28](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1528s) **Presenter:** because that's an endpoint, you can call it from wherever.
+
+[25:32](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1532s) **Presenter:** They're not blocking Tor or anything like that,
+
+[25:37](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1537s) **Presenter:** And in terms of logs, not really. We're kind of in a problem here. Those automations
+
+[25:44](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1544s) **Presenter:** generate a ton of logs. So I'm talking about every single piece of information that goes
+
+[25:51](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1551s) **Presenter:** through those automations is actually being logged there, including the data itself.
+
+[25:56](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1556s) **Presenter:** So we need to figure out how do we tackle those two points, the arbitrary payloads
+
+[26:00](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1560s) **Presenter:** and the logs. Here's one attempt. We're just gonna have a single end point. We're just
+
+[26:06](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1566s) **Presenter:** But this time we will implement a whole bunch of payloads.
+
+[26:09](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1569s) **Presenter:** So there we can think in advance about the payloads
+
+[26:12](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1572s) **Presenter:** that we would like to execute.
+
+[26:14](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1574s) **Presenter:** So one of them is leaking an entire SharePoint site,
+
+[26:18](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1578s) **Presenter:** another is encrypting an entire SharePoint site,
+
+[26:21](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1581s) **Presenter:** executing a SQL on a random database.
+
+[26:24](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1584s) **Presenter:** All of those things are available through a single endpoint.
+
+[26:28](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1588s) **Presenter:** Actually I didn't have, there's no advancement here, right?
+
+[26:32](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1592s) **Presenter:** Still no arbitrary payloads and I really haven't touched
+
+[26:35](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1595s) **Presenter:** the log thing.
+
+[26:36](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1596s) **Presenter:** So let's see how both of these things can get solved.
+
+[26:42](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1602s) **Presenter:** And for that I'm gonna use a very useful piece of,
+
+[26:46](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1606s) **Presenter:** of piece of software from those low code platforms
+
+[26:50](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1610s) **Presenter:** which is the fact that the low code platforms,
+
+[26:53](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1613s) **Presenter:** the low code platforms themselves provide a way for you
+
+[26:57](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1617s) **Presenter:** to manage them through low code.
+
+[26:59](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1619s) **Presenter:** So you can use low code to create new low code applications,
+
+[27:04](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1624s) **Presenter:** you can trigger them, you can delete them.
+
+[27:06](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1626s) **Presenter:** sure you'll see where I'm going with this but I'm going to take you through it anyways.
+
+[27:12](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1632s) **Presenter:** Um, here's, here's what we're going to do. So I'm going to show you exactly how I cover both,
+
+[27:19](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1639s) **Presenter:** both logs and the payloads. This is already out there so you can go ahead and use it. Um,
+
+[27:26](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1646s) **Presenter:** and this tool basically allows you to install this, uh, this back door inside of an organization
+
+[27:32](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1652s) **Presenter:** and then you remain persistent.
+
+[27:35](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1655s) **Presenter:** Here's how it works.
+
+[27:37](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1657s) **Presenter:** I have a single endpoint, an HTTP endpoint,
+
+[27:39](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1659s) **Presenter:** and instead of running a specific payload,
+
+[27:42](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1662s) **Presenter:** it's running a payload that's creating a new payload.
+
+[27:44](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1664s) **Presenter:** So I'm passing through the definition of the automation,
+
+[27:48](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1668s) **Presenter:** which connections it should use,
+
+[27:50](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1670s) **Presenter:** and then what this automation does
+
+[27:54](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1674s) **Presenter:** is creates that new automation and triggers it.
+
+[27:58](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1678s) **Presenter:** I actually need more than that,
+
+[28:02](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1682s) **Presenter:** three different things that this covers.
+
+### External Reconnaissance & Scanning
+
+[28:06](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1686s) **Presenter:** One is creating the automation,
+
+[28:08](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1688s) **Presenter:** the other is deleting the automation,
+
+[28:09](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1689s) **Presenter:** and another crucial piece is just listing those credentials,
+
+[28:13](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1693s) **Presenter:** those connections that are laying out there.
+
+[28:14](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1694s) **Presenter:** So we'll always be able to use fresh ones.
+
+[28:18](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1698s) **Presenter:** And of course this completely covers the general payload,
+
+[28:23](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1703s) **Presenter:** so I can just run whatever I want now.
+
+[28:28](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1708s) **Presenter:** The, sorry, one more thing that we need to,
+
+[28:32](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1712s) **Presenter:** one more thing that's covered here,
+
+[28:35](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1715s) **Presenter:** and I haven't actually specifically described it,
+
+[28:38](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1718s) **Presenter:** is because I can delete the flow after I run it,
+
+[28:42](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1722s) **Presenter:** all of the logs get deleted as well.
+
+[28:45](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1725s) **Presenter:** So the logs are actually maintained
+
+[28:47](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1727s) **Presenter:** as part of the flow itself.
+
+[28:49](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1729s) **Presenter:** And so by deleting, by executing the flow
+
+[28:52](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1732s) **Presenter:** and then deleting it, I'm remaining completely, I leave completely no logs behind. So the only
+
+[28:58](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1738s) **Presenter:** logs that are left are the fact that this flow is running and this can be hidden by basically
+
+[29:05](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1745s) **Presenter:** saying okay this flow, don't remember anything about it. Here's the entire flow, the entire
+
+[29:13](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1753s) **Presenter:** automation. So again, one HTTP endpoint, three main commands, create an automation and trigger
+
+[29:22](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1762s) **Presenter:** so I can create new automations with that new connection
+
+[29:26](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1766s) **Presenter:** and deleting the automation.
+
+[29:28](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1768s) **Presenter:** Here's the same thing with the Python wrapper
+
+[29:30](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1770s) **Presenter:** that makes it easier for you to use it
+
+[29:34](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1774s) **Presenter:** without going through the UI for Microsoft.
+
+[29:36](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1776s) **Presenter:** So this is kind of small so let me make sure
+
+[29:40](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1780s) **Presenter:** that you understand what's going on here.
+
+[29:42](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1782s) **Presenter:** I plug in the web hook that I got
+
+[29:44](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1784s) **Presenter:** from installing this backdoor on Power Platform
+
+[29:48](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1788s) **Presenter:** and then I create a flow, I trigger it
+
+[29:52](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1792s) **Presenter:** I delete it all within the comfort of my Python CLI. And this of course is all available
+
+[29:58](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1798s) **Presenter:** for you to use right now. So I'll describe briefly what this thing, what you need to
+
+[30:04](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1804s) **Presenter:** do in order to use this. Basically once you have access to Power Platform you follow a
+
+[30:11](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1811s) **Presenter:** small guide that I have there that's about installing that vector that's basically
+
+[30:18](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1818s) **Presenter:** uploading that automation that you just see here,
+
+[30:20](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1820s) **Presenter:** and you get in response the webhook,
+
+[30:23](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1823s) **Presenter:** and then you can use it.
+
+[30:25](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1825s) **Presenter:** So, and again, keep in mind, this is far more advanced
+
+[30:31](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1831s) **Presenter:** than what we've seen the threat actor actually do,
+
+[30:33](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1833s) **Presenter:** and the basic thing that the threat actor did
+
+[30:37](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1837s) **Presenter:** took defenders six months to find.
+
+[30:42](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1842s) **Presenter:** So I wonder how much this could take.
+
+[30:46](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1846s) **Presenter:** Okay, so we've seen two subsections right now.
+
+[30:51](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1851s) **Presenter:** We've seen how hackers are living off the land of low code
+
+[30:53](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1853s) **Presenter:** to create or to run their own malicious operations
+
+[30:59](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1859s) **Presenter:** based on the local platforms themselves.
+
+[31:01](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1861s) **Presenter:** We see now you can stay within these local platforms,
+
+[31:04](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1864s) **Presenter:** remain persistent.
+
+[31:05](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1865s) **Presenter:** The last thing I want to cover
+
+[31:07](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1867s) **Presenter:** is how does this look like from the outside?
+
+[31:10](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1870s) **Presenter:** So, sorry.
+
+[31:14](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1874s) **Presenter:** So both of the sections before started off when I have some sort of access to the platform.
+
+[31:20](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1880s) **Presenter:** But actually there's more going on here. Because business users are creating these applications,
+
+[31:27](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1887s) **Presenter:** there are common misconfigurations that we can find, that we can look for, and that are
+
+[31:32](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1892s) **Presenter:** predictable that expose business data outside of the organization. And actually we've seen
+
+[31:38](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1898s) **Presenter:** this with AWS S3 buckets, right, so the default was insecure, every new bucket was public,
+
+[31:45](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1905s) **Presenter:** and then even though the new, they changed the default, we're still finding these public S3
+
+[31:52](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1912s) **Presenter:** buckets today. And so the same, the same thing applies here, but the key difference is that
+
+[31:59](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1919s) **Presenter:** these are not only developers that are building this, these are business users, so there's a
+
+[32:03](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1923s) **Presenter:** lot more of it. We'll see a couple of examples. The first example is Microsoft, and we're
+
+[32:09](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1929s) **Presenter:** Power Pages, which is basically a website that allows you to
+
+[32:15](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1935s) **Presenter:** authenticate, it allows unauthenticated users to observe the website.
+
+[32:20](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1940s) **Presenter:** This is being used for vendor management, contractors that come into your office
+
+[32:25](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1945s) **Presenter:** and that's an entire application that you create with drag and drop. Of course
+
+[32:29](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1949s) **Presenter:** there's a database behind it, there's a bunch of information there that should
+
+[32:32](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1952s) **Presenter:** not be available to the vendors and the contractors. Actually about a year ago
+
+[32:38](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1958s) **Presenter:** the team at AppGuard found that there was an insecure
+
+[32:42](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1962s) **Presenter:** folder that basically meant that the entire database
+
+[32:47](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1967s) **Presenter:** behind that application was available to anonymous users.
+
+[32:50](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1970s) **Presenter:** And this was the default configuration for about a couple
+
+[32:54](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1974s) **Presenter:** of years.
+
+[32:55](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1975s) **Presenter:** Now this was a major thing, about 40 million records were
+
+[33:00](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1980s) **Presenter:** exposed by AppGuard's estimation and Microsoft has actually
+
+[33:04](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1984s) **Presenter:** been very quick to change the default.
+
+[33:08](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1988s) **Presenter:** the default is not everything. So there are still these
+
+[33:11](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1991s) **Presenter:** applications that were created beforehand and users can always
+
+[33:14](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1994s) **Presenter:** make mistakes. What we wanted to do here is to try and find out
+
+[33:18](https://www.youtube.com/watch?v=D3A62Rzozq4&t=1998s) **Presenter:** how many of these mistakes we can find. So how do we do it?
+
+[33:23](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2003s) **Presenter:** Basically we're going to scan the internet looking for portals,
+
+[33:27](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2007s) **Presenter:** these kinds of applications that have, that are exposing
+
+[33:30](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2010s) **Presenter:** business sensitive data without any authentication and here's
+
+### Summary & Recommendations
+
+[33:33](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2013s) **Presenter:** an example and this is actually a real example from a large
+
+[33:38](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2018s) **Presenter:** services company. You can see that by querying the API I get three different objects that I can
+
+[33:44](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2024s) **Presenter:** query. One is the default object, it's not really interesting, it has nothing there. The second
+
+[33:49](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2029s) **Presenter:** thing is an entity form set which is basically the way to store form submissions. So again,
+
+[33:55](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2035s) **Presenter:** not really interesting. But the third part, global variables is kind of interesting. And of
+
+[34:01](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2041s) **Presenter:** course when we look into these global variables what we found was authentication tokens for
+
+[34:08](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2048s) **Presenter:** that were being used by the application itself.
+
+[34:10](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2050s) **Presenter:** And again, this is available to anonymous users.
+
+[34:14](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2054s) **Presenter:** We browse it through Tor.
+
+[34:16](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2056s) **Presenter:** So very, very, very, and the crucial part here
+
+[34:20](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2060s) **Presenter:** is that it's very easy to find.
+
+[34:22](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2062s) **Presenter:** So why is it easy to find?
+
+[34:23](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2063s) **Presenter:** Because it's all in the same subdomain.
+
+[34:26](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2066s) **Presenter:** So every one of those applications is in this subdomain
+
+[34:30](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2070s) **Presenter:** and the endpoint, the API endpoint,
+
+[34:32](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2072s) **Presenter:** is always the same as well.
+
+[34:34](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2074s) **Presenter:** So of course we can do kind of subdomain enumeration here.
+
+[34:38](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2078s) **Presenter:** lazy way to do self domain enumeration, we just use Bing,
+
+[34:42](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2082s) **Presenter:** and Bing because this is Microsoft so it works.
+
+[34:44](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2084s) **Presenter:** So you're seeing about 60,000 different portals
+
+[34:48](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2088s) **Presenter:** that are available out there.
+
+[34:49](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2089s) **Presenter:** And we have actually been going out to people
+
+[34:54](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2094s) **Presenter:** and trying to help them make sure that they are able
+
+[34:57](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2097s) **Presenter:** to kind of solve this issue.
+
+[35:00](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2100s) **Presenter:** Here are the examples of what we found.
+
+[35:02](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2102s) **Presenter:** So lots of, woo, nice.
+
+[35:09](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2109s) **Presenter:** secrets, API keys, authentication tokens and lots of business data. So PDFs, pictures of
+
+[35:17](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2117s) **Presenter:** recipes, of receipts, so a whole bunch of business data. So again, this was a case where there's
+
+[35:25](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2125s) **Presenter:** a misconfiguration that is very predictable and it's very easy to scan for it. Let's see
+
+[35:31](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2131s) **Presenter:** another example. This time we'll focus on Zapier. Zapier is a tool that users, business users
+
+[35:38](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2138s) **Presenter:** are bringing into the enterprise themselves.
+
+[35:40](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2140s) **Presenter:** And Zapier is again an automation tool,
+
+[35:42](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2142s) **Presenter:** you can drag and drop and you create automations.
+
+[35:45](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2145s) **Presenter:** Zapier has a nice feature called storage by Zapier.
+
+[35:50](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2150s) **Presenter:** Basically, what this means is that if you need to store
+
+[35:53](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2153s) **Presenter:** some sort of state for your automation
+
+[35:56](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2156s) **Presenter:** or you need to store secrets for it to operate,
+
+[35:59](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2159s) **Presenter:** then you can use this storage and the way that it's protected
+
+[36:03](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2163s) **Presenter:** is that you need to choose a GUID, some sort of GUID
+
+[36:08](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2168s) **Presenter:** that's a key value store, you get your, uh, your secret back. Now, as you can see, I mean GUID
+
+[36:14](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2174s) **Presenter:** are, GUIDs are not the best but it's still kind of difficult to guess. When we've observed the,
+
+[36:20](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2180s) **Presenter:** kind of the, the API documentation, you can actually see that the, the example that they
+
+[36:25](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2185s) **Presenter:** provide is secret equals one, two, three, four, five. This is definitely not a GUID. So, we
+
+[36:33](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2193s) **Presenter:** are curious, the first thing that we try to do is kind of just try a random secret and that's
+
+[36:39](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2199s) **Presenter:** the error that you're getting if that's not a good. But actually once you go through what we
+
+[36:45](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2205s) **Presenter:** actually did is we iterated through a list of known passwords and what we got was that many of
+
+[36:51](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2211s) **Presenter:** those passwords actually worked. So you're seeing here examples of things that we found again
+
+[36:56](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2216s) **Presenter:** authentication tokens, API keys, emails, phone numbers and actually what happened here was that
+
+[37:05](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2225s) **Presenter:** So up until about two years ago, Zapier was not really
+
+[37:09](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2229s) **Presenter:** making sure that users were using GUIDs.
+
+[37:12](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2232s) **Presenter:** They could use whatever they want, and then they started
+
+[37:15](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2235s) **Presenter:** doing it, but they didn't block the old secrets.
+
+[37:19](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2239s) **Presenter:** So you can still use them, and they are still available,
+
+[37:21](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2241s) **Presenter:** I mean some of them are available today.
+
+[37:23](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2243s) **Presenter:** We are working with, we have been working with Zapier
+
+[37:26](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2246s) **Presenter:** to make sure that this is covered, and actually,
+
+[37:28](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2248s) **Presenter:** the vast majority have already been cleaned up.
+
+[37:31](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2251s) **Presenter:** Okay, so we've seen two examples where platforms allow
+
+[37:36](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2256s) **Presenter:** a predictable misconfiguration and how from the outside
+
+[37:39](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2259s) **Presenter:** looking in without having any access we can go ahead
+
+[37:42](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2262s) **Presenter:** and access business data.
+
+[37:44](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2264s) **Presenter:** Here's a summary of everything that we've seen up until now.
+
+[37:48](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2268s) **Presenter:** So we discussed low code, we understand how it's pervasive
+
+[37:54](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2274s) **Presenter:** in any enterprise and the fact that it's built around
+
+[37:57](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2277s) **Presenter:** business data.
+
+[37:58](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2278s) **Presenter:** We understand it is kind of underrated by IT and security teams which make it a great
+
+[38:02](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2282s) **Presenter:** target for attackers. We're seeing our hackers are taking advantage of it really kind of
+
+[38:08](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2288s) **Presenter:** all around. So living off the land of low code, for lateral movement, for privilege
+
+[38:12](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2292s) **Presenter:** escalation, we've seen everything. We've seen how you can hide within those low code
+
+[38:16](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2296s) **Presenter:** platforms and use that as a way to persist within an organization. And we've seen how
+
+[38:20](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2300s) **Presenter:** you can use those same platforms and the predictable misconfigurations that they create in order
+
+[38:25](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2305s) **Presenter:** to find business data. There are two things and actually we've also seen two tools that
+
+[38:31](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2311s) **Presenter:** we've released today. One is for Zapier that allows you to find those connections, those
+
+[38:37](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2317s) **Presenter:** shared connections and the other is the back door that you can install on Power Platform.
+
+[38:42](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2322s) **Presenter:** So the last thing I want to do is leave you with some tips on how you can secure your
+
+[38:48](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2328s) **Presenter:** organization, how you can protect yourself.
+
+[38:52](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2332s) **Presenter:** So here are very, here are specific things
+
+[38:55](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2335s) **Presenter:** that I really recommend you do quickly.
+
+[38:58](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2338s) **Presenter:** The first thing is that you need to review configuration.
+
+[39:01](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2341s) **Presenter:** For example, the bypass consent flag from Microsoft,
+
+[39:05](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2345s) **Presenter:** make sure that's off.
+
+[39:06](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2346s) **Presenter:** There's also the usage of those connectors,
+
+[39:10](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2350s) **Presenter:** so make sure that connectors that are administrative,
+
+[39:12](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2352s) **Presenter:** for example, couldn't be shared in a default environment.
+
+[39:15](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2355s) **Presenter:** I recommend that you view those end points,
+
+[39:18](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2358s) **Presenter:** those external end points,
+
+[39:19](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2359s) **Presenter:** those platforms are creating for you.
+
+[39:22](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2362s) **Presenter:** So again, you don't have to be fully aware of it,
+
+[39:25](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2365s) **Presenter:** but it's already there.
+
+[39:26](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2366s) **Presenter:** The platforms are exposing these end points for you
+
+[39:29](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2369s) **Presenter:** and you have no easy way to monitor them.
+
+[39:33](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2373s) **Presenter:** The number one thing that you should take out of this talk
+
+[39:36](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2376s) **Presenter:** is go through those shared connections.
+
+[39:38](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2378s) **Presenter:** Go to those different environments,
+
+[39:39](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2379s) **Presenter:** see what users have built.
+
+[39:42](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2382s) **Presenter:** You'll be surprised.
+
+[39:45](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2385s) **Presenter:** that you can use here.
+
+[39:48](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2388s) **Presenter:** There's an OWASP that is dedicated to low code, no code
+
+[39:50](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2390s) **Presenter:** that would help you figure out what are the different risks
+
+[39:53](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2393s) **Presenter:** that are around the space.
+
+[39:54](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2394s) **Presenter:** And there's a whole bunch of articles there
+
+[39:56](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2396s) **Presenter:** that could help you.
+
+[39:58](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2398s) **Presenter:** So thank you everyone for, thank you very much for your time.
+
+[40:02](https://www.youtube.com/watch?v=D3A62Rzozq4&t=2402s) **Presenter:** It's been fun.
+<!-- talk-enrichment:end -->

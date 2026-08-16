@@ -1,0 +1,219 @@
+{
+  "generated_by": "sync-talk-text",
+  "source_manifest": "https://media.mbgsec.com/decks/2023-10-31_OWASP-DC-23_OWASP-LCNC-Top-10/latest.json",
+  "manifest": "https://media.mbgsec.com/decks/2023-10-31_OWASP-DC-23_OWASP-LCNC-Top-10/406b1e38/deck.json",
+  "title": "OWASP Low-Code No-Code Top 10",
+  "slides": [
+    {
+      "number": 1,
+      "text": "Slide 1: visual from the OWASP Low-Code No-Code Top 10 presentation"
+    },
+    {
+      "number": 2,
+      "text": "Slide 2: Michael Bargury (Zenity), Ory Segal (Palo Alto Networks), Don Willits (Microsoft), John McTiernan (DT Group), Yianna Paris ( Xebia ), Ziv Daniel Hagbi (Zenity) and many more! @OWASPNoCode OWASP Low-Code / No-Code Top 10"
+    },
+    {
+      "number": 3,
+      "text": "Slide 3: OWASP LCNC Top 10 @OWASPNoCode OWASP TOP 10"
+    },
+    {
+      "number": 4,
+      "text": "Slide 4: Why LCNC? Why new? @OWASPNoCode"
+    },
+    {
+      "number": 5,
+      "text": "Slide 5: Source: @RezaDorrani OWASP LCNC Top 10 @OWASPNoCode",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2023-10-31_OWASP-DC-23_OWASP-LCNC-Top-10/406b1e38/media/slide-005-animation.gif"
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "text": "Slide 6: OWASP LCNC Top 10 @OWASPNoCode COVID health check app by Microsoft https://aka.ms/healthcheck"
+    },
+    {
+      "number": 7,
+      "text": "Slide 7: OWASP LCNC Top 10 @OWASPNoCode Credential Sharing as a Service: The Dark Side of No Code Michael Bargury RSAC 2023 C# devs today"
+    },
+    {
+      "number": 8,
+      "text": "Slide 8: OWASP LCNC Top 10 @OWASPNoCode ~8M active Power devs today! Credential Sharing as a Service: The Dark Side of No Code Michael Bargury RSAC 2023"
+    },
+    {
+      "number": 9,
+      "text": "Slide 9: OWASP LCNC Top 10 @OWASPNoCode AI implies No Code apps become more complex and more useful"
+    },
+    {
+      "number": 10,
+      "text": "Slide 10: No Code No SDLC @OWASPNoCode"
+    },
+    {
+      "number": 11,
+      "text": "Slide 11: OWASP LCNC Top 10 @OWASPNoCode SDLC Business Engineering Engineering Ops Ops Ops QA The SDLC"
+    },
+    {
+      "number": 12,
+      "text": "Slide 12: OWASP LCNC Top 10 @OWASPNoCode SDLC Business Engineering Engineering Ops Ops Ops QA Threat modeling Shift-left Code scanning (SAST/DAST/IAST) Security gates Security gates Vulnerability scanning Runtime monitoring Runtime protection Security review Security training Secure SDLC"
+    },
+    {
+      "number": 13,
+      "text": "Slide 13: OWASP LCNC Top 10 @OWASPNoCode SDLC Business Business Business Business Business Business Business No Code No SDLC Hit Save to deploy…"
+    },
+    {
+      "number": 14,
+      "text": "Slide 14: OWASP LCNC Top 10 @OWASPNoCode Existing security control Low-code / no-code Security training Can we expect business users to be security savvy? Threat modeling Can’t scale to 000s apps/year Security review Can’t scale to 000s apps/year Code scanning No code to scan Artifact scanning Mostly unavailable, overwhelming FPs Secur…"
+    },
+    {
+      "number": 15,
+      "text": "Slide 15: OWASP LCNC Top 10 @OWASPNoCode Recap – security process and controls are severely lacking Has access to business, health, financial data Runs as SaaS Lacking SDLC Lacking security controls Developers with no security savviness 10-100x the scale of application development"
+    },
+    {
+      "number": 16,
+      "text": "Slide 16: OWASP LCNC Top 10 @OWASPNoCode"
+    },
+    {
+      "number": 17,
+      "text": "Slide 17: OWASP LCNC Top 10 @OWASPNoCode Unique about LCNC Devs can be anyone from a pro dev to a citizen dev No SDLC No security controls 10-100x scale of app development Code is generated (platform owns code-gen vulns) Focused on logical vulns"
+    },
+    {
+      "number": 18,
+      "text": "Slide 18: OWASP LCNC Top 10 @OWASPNoCode OWASP LCNC Top 10 LCNC-SEC-01: Account Impersonation LCNC-SEC-02: Authorization Misuse LCNC-SEC-03: Data Leakage and Unexpected Consequences LCNC-SEC-04: Authentication and Secure Communication Failures LCNC-SEC-05: Security Misconfiguration LCNC-SEC-06: Injection Handling Failures LCNC-SEC-07:…"
+    },
+    {
+      "number": 19,
+      "text": "Slide 19: OWASP LCNC Top 10 @OWASPNoCode OWASP LCNC Top 10 LCNC-SEC-01: Account Impersonation LCNC-SEC-02: Authorization Misuse LCNC-SEC-03: Data Leakage and Unexpected Consequences LCNC-SEC-04: Authentication and Secure Communication Failures LCNC-SEC-05: Security Misconfiguration LCNC-SEC-06: Injection Handling Failures LCNC-SEC-07:…"
+    },
+    {
+      "number": 20,
+      "text": "Slide 20: OWASP LCNC Top 10 @OWASPNoCode LCNC-SEC-01: Account Impersonation"
+    },
+    {
+      "number": 21,
+      "text": "Slide 21: OWASP LCNC Top 10 @OWASPNoCode LCNC-SEC-01: Account Impersonation A short description for security pros A short description for business users contribution by John McTiernan , DT Group and Yianna Paris @punk_fairybread, Xebia A longer description for security pros"
+    },
+    {
+      "number": 22,
+      "text": "Slide 22: OWASP LCNC Top 10 @OWASPNoCode LCNC-SEC-01: Account Impersonation Attack and misuse scenarios for both security pros and business users"
+    },
+    {
+      "number": 23,
+      "text": "Slide 23: OWASP LCNC Top 10 @OWASPNoCode LCNC-SEC-01: Account Impersonation What can you do about it?"
+    },
+    {
+      "number": 24,
+      "text": "Slide 24: OWASP LCNC Top 10 @OWASPNoCode Methodology loop Anonymized statistics Publish >1M apps and automations >8M credentials Draft Community feedback Community contribution Ty to all collaborations and contributors!"
+    },
+    {
+      "number": 25,
+      "text": "Slide 25: Real-world example – employee onboarding @OWASPNoCode"
+    },
+    {
+      "number": 26,
+      "text": "Slide 26: OWASP LCNC Top 10 @OWASPNoCode"
+    },
+    {
+      "number": 27,
+      "text": "Slide 27: OWASP LCNC Top 10 @OWASPNoCode"
+    },
+    {
+      "number": 28,
+      "text": "Slide 28: OWASP LCNC Top 10 @OWASPNoCode"
+    },
+    {
+      "number": 29,
+      "text": "Slide 29: OWASP LCNC Top 10 @OWASPNoCode"
+    },
+    {
+      "number": 30,
+      "text": "Slide 30: OWASP LCNC Top 10 @OWASPNoCode"
+    },
+    {
+      "number": 31,
+      "text": "Slide 31: OWASP LCNC Top 10 @OWASPNoCode"
+    },
+    {
+      "number": 32,
+      "text": "Slide 32: OWASP LCNC Top 10 @OWASPNoCode"
+    },
+    {
+      "number": 33,
+      "text": "Slide 33: OWASP LCNC Top 10 @OWASPNoCode Employee LCNC-SEC-01: Account Impersonation LCNC-SEC-02: Authorization Misuse LCNC-SEC-03: Data Leakage and Unexpected Consequences LCNC-SEC-04: Authentication and Secure Communication Failures LCNC-SEC-05: Security Misconfiguration LCNC-SEC-06: Injection Handling Failures LCNC-SEC-07: Vulnerabl…"
+    },
+    {
+      "number": 34,
+      "text": "Slide 34: Employee onboarding – findings @ mbrg0 #BHUSA @BlackHatEvents OWASP LCNC Top 10 @OWASPNoCode"
+    },
+    {
+      "number": 35,
+      "text": "Slide 35: OWASP LCNC Top 10 @OWASPNoCode"
+    },
+    {
+      "number": 36,
+      "text": "Slide 36: OWASP LCNC Top 10 @OWASPNoCode"
+    },
+    {
+      "number": 37,
+      "text": "Slide 37: OWASP LCNC Top 10 @OWASPNoCode"
+    },
+    {
+      "number": 38,
+      "text": "Slide 38: OWASP LCNC Top 10 @OWASPNoCode"
+    },
+    {
+      "number": 39,
+      "text": "Slide 39: App Store sensitive data Data accessible to all (Authorization Misuse) Employee onboarding – findings Data Everyone has access @ mbrg0 #BHUSA @BlackHatEvents OWASP LCNC Top 10 @OWASPNoCode"
+    },
+    {
+      "number": 40,
+      "text": "Slide 40: App Store in plaintext Data Submit sensitive data User Employee onboarding – findings Data accessible to all (Authorization Misuse) Sensitive data in plain text (Data and Secret Handling Failures) @ mbrg0 #BHUSA @BlackHatEvents OWASP LCNC Top 10 @OWASPNoCode"
+    },
+    {
+      "number": 41,
+      "text": "Slide 41: OWASP LCNC Top 10 @OWASPNoCode"
+    },
+    {
+      "number": 42,
+      "text": "Slide 42: OWASP LCNC Top 10 @OWASPNoCode"
+    },
+    {
+      "number": 43,
+      "text": "Slide 43: OWASP LCNC Top 10 @OWASPNoCode"
+    },
+    {
+      "number": 44,
+      "text": "Slide 44: OWASP LCNC Top 10 @OWASPNoCode"
+    },
+    {
+      "number": 45,
+      "text": "Slide 45: Data accessible to all (Authorization Misuse) Sensitive data in plain text (Data and Secret Handling Failures) Sensitive data written to logs Employee onboarding – findings @ mbrg0 #BHUSA @BlackHatEvents (Data Leakage) OWASP LCNC Top 10 @OWASPNoCode"
+    },
+    {
+      "number": 46,
+      "text": "Slide 46: Data accessible to all (Authorization Misuse) Sensitive data in plain text (Data and Secret Handling Failures) Sensitive data written to logs (Data Leakage) Employee onboarding – findings @ mbrg0 #BHUSA @BlackHatEvents OWASP LCNC Top 10 @OWASPNoCode"
+    },
+    {
+      "number": 47,
+      "text": "Slide 47: 2023 recap and 2024 plans @OWASPNoCode"
+    },
+    {
+      "number": 48,
+      "text": "Slide 48: OWASP LCNC Top 10 @OWASPNoCode 2023 recap Lab project Stable 2023 Top 10 version Better wording, better and more examples, clarity Virtual meetups  youtube.com/@owasplcnc Plain language for business users (contribution by John McTiernan , DT Group and Yianna Paris @punk_fairybread, Xebia )  youtube.com/ watch?v =s3lZ8fsMDDQ"
+    },
+    {
+      "number": 49,
+      "text": "Slide 49: OWASP LCNC Top 10 @OWASPNoCode 2024 plans Top 10 revamp Another look on categories A different treatment for Low Code / RPA / BPA / .. CALL FOR DATA Translation to different languages Collaterals (deck, infographic, ..) Transparency Virtual meetups"
+    },
+    {
+      "number": 50,
+      "text": "Slide 50: OWASP LCNC Top 10 @OWASPNoCode GET INVOLED! CALL FOR DATA PLEASE SHARE YOUR STORIES! JOIN THE DISCUSSION Slack bit.ly/ owasp - lcnc -slack Email group bit.ly/ owasp - lcnc -group CONTRIBUTE Share stories, review, translate, create graphics, help on social… michael.bargury@owasp.org"
+    },
+    {
+      "number": 51,
+      "text": "Slide 51: Get involved! Michael.Bargury@owasp.org @OWASPNoCode CALL FOR DATA PLEASE SHARE YOUR STORIES! JOIN THE DISCUSSION Slack bit.ly/ owasp - lcnc -slack Email group bit.ly/ owasp - lcnc -group CONTRIBUTE Share stories, review, translate, create graphics, help on social…"
+    }
+  ]
+}

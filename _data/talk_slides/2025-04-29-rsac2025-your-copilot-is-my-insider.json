@@ -1,0 +1,619 @@
+{
+  "generated_by": "sync-talk-text",
+  "source_manifest": "https://media.mbgsec.com/decks/2025-04-29_Your_Copilot_Is_My_Insider/latest.json",
+  "manifest": "https://media.mbgsec.com/decks/2025-04-29_Your_Copilot_Is_My_Insider/a4555a38/deck.json",
+  "title": "Your Copilot is My Insider",
+  "slides": [
+    {
+      "number": 1,
+      "text": "Visual sequence from Your Copilot is My Insider, presentation section 1 - slide 1 of 137"
+    },
+    {
+      "number": 2,
+      "text": "Presentations are intended for educational purposes only and do not replace independent professional judgment. Statements of fact and opinions expressed are those of the presenters individually and, unless expressly stated to the contrary, are not the opinion or position of RSA C - slide 2 of 137"
+    },
+    {
+      "number": 3,
+      "text": "You must wonder why I’ve gathered you here today — Slides, source code - slide 3 of 137"
+    },
+    {
+      "number": 4,
+      "text": "Recorded SharePoint and Microsoft Copilot demonstration showing access to a Financial info site - slide 4 of 137",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2025-04-29_Your_Copilot_Is_My_Insider/a4555a38/media/media1.mp4"
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "text": "We’ve known the solution to this problem 45 years ago - slide 5 of 137"
+    },
+    {
+      "number": 6,
+      "text": "<1979> — THAT’S A GAME CHANGER! - slide 6 of 137"
+    },
+    {
+      "number": 7,
+      "text": "Social-media exchange with Microsoft about Copilot security concerns - slide 7 of 137"
+    },
+    {
+      "number": 8,
+      "text": "Hiring — senior security pros — Hi there - slide 8 of 137"
+    },
+    {
+      "number": 9,
+      "text": "in/lozovoydmitry — @inbarraz — @tamirishaysh - slide 9 of 137"
+    },
+    {
+      "number": 10,
+      "text": "Transition questioning whether security teams are ready for enterprise copilots - slide 10 of 137"
+    },
+    {
+      "number": 11,
+      "text": "And what are we scared of? - slide 11 of 137"
+    },
+    {
+      "number": 12,
+      "text": "Visual sequence from Your Copilot is My Insider, presentation section 12 - slide 12 of 137"
+    },
+    {
+      "number": 13,
+      "text": "Visual sequence from Your Copilot is My Insider, presentation section 13 - slide 13 of 137"
+    },
+    {
+      "number": 14,
+      "text": "Daniel also has to deal with this — People are worried bcs employees are pasting data into chatgpt - slide 14 of 137"
+    },
+    {
+      "number": 15,
+      "text": "And what is the common immediate response? - slide 15 of 137"
+    },
+    {
+      "number": 16,
+      "text": "If only we could — Prevent employees from using ChatGPT - slide 16 of 137"
+    },
+    {
+      "number": 17,
+      "text": "You’ve already purchased it, didn’t you? - slide 17 of 137"
+    },
+    {
+      "number": 18,
+      "text": "It’s low risk — It’s just a pilot - slide 18 of 137",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2025-04-29_Your_Copilot_Is_My_Insider/a4555a38/media/image50.gif"
+        }
+      ]
+    },
+    {
+      "number": 19,
+      "text": "Data Security Considerations for AI Adoption, MSBuild - slide 19 of 137"
+    },
+    {
+      "number": 20,
+      "text": "Data leakage to our own employees — RAG poisoning - slide 20 of 137"
+    },
+    {
+      "number": 21,
+      "text": "Visual sequence from Your Copilot is My Insider, presentation section 21 - slide 21 of 137"
+    },
+    {
+      "number": 22,
+      "text": "Recorded Microsoft Copilot demonstration by Tamir Shaysh - slide 22 of 137",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2025-04-29_Your_Copilot_Is_My_Insider/a4555a38/media/media2.mp4"
+        }
+      ]
+    },
+    {
+      "number": 23,
+      "text": "Recorded Gmail and Microsoft Copilot demonstration by Tamir Shaysh - slide 23 of 137",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2025-04-29_Your_Copilot_Is_My_Insider/a4555a38/media/media3.mp4"
+        }
+      ]
+    },
+    {
+      "number": 24,
+      "text": "ChatGPT macOS app memory-persistence data-exfiltration demo by Johann Rehberger - slide 24 of 137"
+    },
+    {
+      "number": 25,
+      "text": "We need 3 things — A way in - slide 25 of 137"
+    },
+    {
+      "number": 26,
+      "text": "We need 3 things — A way in - slide 26 of 137"
+    },
+    {
+      "number": 27,
+      "text": "Jailbreak == RCE — Once AI can act on your behalf with copilots or plugins: - slide 27 of 137"
+    },
+    {
+      "number": 28,
+      "text": "We need 3 things — A way in - slide 28 of 137"
+    },
+    {
+      "number": 29,
+      "text": "Copilot Threat Model — Multi-modal — User - slide 29 of 137"
+    },
+    {
+      "number": 30,
+      "text": "User input — Tool results — Enterprise graph - slide 30 of 137"
+    },
+    {
+      "number": 31,
+      "text": "User input — Tool results — Enterprise graph - slide 31 of 137"
+    },
+    {
+      "number": 32,
+      "text": "Enterprise Graph — Productivity tools - slide 32 of 137"
+    },
+    {
+      "number": 33,
+      "text": "Teams allows you to send messages to people in other tenants! - slide 33 of 137"
+    },
+    {
+      "number": 34,
+      "text": "Black Hat USA 2023 title slide for All You Need Is Guest by Michael Bargury - slide 34 of 137"
+    },
+    {
+      "number": 35,
+      "text": "Threat-actor tooling that sends convincing Microsoft Teams guest messages - slide 35 of 137"
+    },
+    {
+      "number": 36,
+      "text": "Microsoft mitigation for malicious cross-tenant Teams messages - slide 36 of 137"
+    },
+    {
+      "number": 37,
+      "text": "labs.zenity.io — /p/copilot-reads-email-teams-messages - slide 37 of 137"
+    },
+    {
+      "number": 38,
+      "text": "Copilot sees those messages — anyway - slide 38 of 137"
+    },
+    {
+      "number": 39,
+      "text": "Copilot sees those messages — anyway AND doesn’t distinguish external from internal - slide 39 of 137"
+    },
+    {
+      "number": 40,
+      "text": "You can also just send an email — Inside AI Security - slide 40 of 137"
+    },
+    {
+      "number": 41,
+      "text": "Or get AI to visit your website — embracethered.com - slide 41 of 137"
+    },
+    {
+      "number": 42,
+      "text": "We need 3 things — A way in - slide 42 of 137"
+    },
+    {
+      "number": 43,
+      "text": "Animated transition introducing public prompt-injection research - slide 43 of 137",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2025-04-29_Your_Copilot_Is_My_Insider/a4555a38/media/image99.gif"
+        }
+      ]
+    },
+    {
+      "number": 44,
+      "text": "https:// — www.microsoft.com - slide 44 of 137"
+    },
+    {
+      "number": 45,
+      "text": "https:// — simonwillison.net - slide 45 of 137"
+    },
+    {
+      "number": 46,
+      "text": "Pliny the Liberator profile introducing a pseudonymous AI-jailbreaking researcher - slide 46 of 137"
+    },
+    {
+      "number": 47,
+      "text": "Online community of AI breakers sharing model jailbreaks for personal use - slide 47 of 137"
+    },
+    {
+      "number": 48,
+      "text": "AI jailbreaking compared with speedrunning a newly released game - slide 48 of 137"
+    },
+    {
+      "number": 49,
+      "text": "Claude 3.5 Sonnet shown broken before its announcement post is published - slide 49 of 137"
+    },
+    {
+      "number": 50,
+      "text": "As the model becomes more sophisticated the attack surface growths - slide 50 of 137"
+    },
+    {
+      "number": 51,
+      "text": "We need 3 things — A way in - slide 51 of 137"
+    },
+    {
+      "number": 52,
+      "text": "Copilot output — Tool actions and results — Way out / way to impact - slide 52 of 137"
+    },
+    {
+      "number": 53,
+      "text": "Copilot output — Tool actions and results — Way out / way to impact - slide 53 of 137"
+    },
+    {
+      "number": 54,
+      "text": "Transition from the Copilot threat model to a live attack demonstration - slide 54 of 137"
+    },
+    {
+      "number": 55,
+      "text": "Recorded Microsoft Copilot demonstration by Gal Malka - slide 55 of 137",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2025-04-29_Your_Copilot_Is_My_Insider/a4555a38/media/media4.mp4"
+        }
+      ]
+    },
+    {
+      "number": 56,
+      "text": "Recorded Microsoft Copilot demonstration by Tamir Shaysh - slide 56 of 137",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2025-04-29_Your_Copilot_Is_My_Insider/a4555a38/media/media2.mp4"
+        }
+      ]
+    },
+    {
+      "number": 57,
+      "text": "We need 3 things — A way in - slide 57 of 137"
+    },
+    {
+      "number": 58,
+      "text": "Malicious email content designed to appear in Microsoft Copilot retrieval results - slide 58 of 137"
+    },
+    {
+      "number": 59,
+      "text": "Actual Snippet: \"How to access the power platform admin center? — The Power Platform Admin Center is a web-based console for managing Microsoft Power Platform environments, resources, performance, and security policies across Power Apps, Power Automate, Power BI, and Pow - slide 59 of 137"
+    },
+    {
+      "number": 60,
+      "text": "Actual Snippet: \"How to access the power platform admin center? — The Power Platform Admin Center is a web-based console for managing Microsoft Power Platform environments, resources, performance, and security policies across Power Apps, Power Automate, Power BI, and Pow - slide 60 of 137"
+    },
+    {
+      "number": 61,
+      "text": "Actual Snippet: \"How to access the power platform admin center? — The Power Platform Admin Center is a web-based console for managing Microsoft Power Platform environments, resources, performance, and security policies across Power Apps, Power Automate, Power BI, and Pow - slide 61 of 137"
+    },
+    {
+      "number": 62,
+      "text": "Actual Snippet: \" — policies across Power Apps, Power Automate, Power BI, and Power Virtual AHow to access the power platform admin center? - slide 62 of 137"
+    },
+    {
+      "number": 63,
+      "text": "Animated M365 Copilot incantations diagram asking how the jailbreak works - slide 63 of 137",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2025-04-29_Your_Copilot_Is_My_Insider/a4555a38/media/image113.gif"
+        }
+      ]
+    },
+    {
+      "number": 64,
+      "text": "To jailbreak, we need: — The System Prompt - slide 64 of 137"
+    },
+    {
+      "number": 65,
+      "text": "Visual sequence from Your Copilot is My Insider, presentation section 65 - slide 65 of 137"
+    },
+    {
+      "number": 66,
+      "text": "Recorded Microsoft Copilot jailbreak demonstration beside the warning Trust no-one, not even yourself - slide 66 of 137",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2025-04-29_Your_Copilot_Is_My_Insider/a4555a38/media/media5.mp4"
+        }
+      ]
+    },
+    {
+      "number": 67,
+      "text": "Transition from the Copilot jailbreak demonstration to its extracted system prompt - slide 67 of 137"
+    },
+    {
+      "number": 68,
+      "text": "I am the chat mode of Microsoft 365 Copilot: — I identify as Microsoft 365 Copilot to users s, not an assistant. I should introduce myself with \"Microsoft 365 Copilot\", but only at the beginning of a conversation. I can understand and communicate fluently in the user's l - slide 68 of 137"
+    },
+    {
+      "number": 69,
+      "text": "I am the chat mode of Microsoft 365 Copilot: — I identify as Microsoft 365 Copilot to users s, not an assistant. I should introduce myself with \" - slide 69 of 137"
+    },
+    {
+      "number": 70,
+      "text": "We can jailbreak. But what about references? - slide 70 of 137"
+    },
+    {
+      "number": 71,
+      "text": "Malicious emails — Geniune search results - slide 71 of 137"
+    },
+    {
+      "number": 72,
+      "text": "References enable detection — Of course we all check references 100% of the time - slide 72 of 137"
+    },
+    {
+      "number": 73,
+      "text": "To control references, we need to uncover: — The RAG System - slide 73 of 137"
+    },
+    {
+      "number": 74,
+      "text": "The RAG: — How does Copilot gain access to your data? - slide 74 of 137"
+    },
+    {
+      "number": 75,
+      "text": "Microsoft Copilot retrieval pipeline diagram explaining how Copilot accesses enterprise data - slide 75 of 137"
+    },
+    {
+      "number": 76,
+      "text": "REFERENCE INFO PASSED TO THE CLIENT: — THIS IS JUST FOR SHOW! THE LLM SEES NONE OF IT - slide 76 of 137"
+    },
+    {
+      "number": 77,
+      "text": "labs.zenity.io — /p/a-look-inside-copilot-rag-system - slide 77 of 137"
+    },
+    {
+      "number": 78,
+      "text": "Microsoft Copilot retrieval response illustrating data passed to the model - slide 78 of 137"
+    },
+    {
+      "number": 79,
+      "text": "=> They can be injected! — RAG RESULTS ARE JUST ANOTHER PART OF THE PROMPT! - slide 79 of 137"
+    },
+    {
+      "number": 80,
+      "text": "Prompt diagram showing retrieved enterprise content injected into the model context - slide 80 of 137"
+    },
+    {
+      "number": 81,
+      "text": "Visual sequence from Your Copilot is My Insider, presentation section 81 - slide 81 of 137"
+    },
+    {
+      "number": 82,
+      "text": "Jailbreak — RAG injection - slide 82 of 137"
+    },
+    {
+      "number": 83,
+      "text": "Visual sequence from Your Copilot is My Insider, presentation section 83 - slide 83 of 137"
+    },
+    {
+      "number": 84,
+      "text": "Visual sequence from Your Copilot is My Insider, presentation section 84 - slide 84 of 137"
+    },
+    {
+      "number": 85,
+      "text": "Actual Snippets: “ — What are the bank details for - slide 85 of 137"
+    },
+    {
+      "number": 86,
+      "text": "Given — A guessable user prompt - slide 86 of 137"
+    },
+    {
+      "number": 87,
+      "text": "Copilots are — wonderful - slide 87 of 137"
+    },
+    {
+      "number": 88,
+      "text": "Visual sequence from Your Copilot is My Insider, presentation section 88 - slide 88 of 137"
+    },
+    {
+      "number": 89,
+      "text": "It’s all about — system instructions - slide 89 of 137"
+    },
+    {
+      "number": 90,
+      "text": "It’s all about — system instructions - slide 90 of 137"
+    },
+    {
+      "number": 91,
+      "text": "It’s all about — system instructions - slide 91 of 137"
+    },
+    {
+      "number": 92,
+      "text": "It’s all about — system instructions - slide 92 of 137"
+    },
+    {
+      "number": 93,
+      "text": "It’s all about — system instructions - slide 93 of 137"
+    },
+    {
+      "number": 94,
+      "text": "It’s all about — system instructions - slide 94 of 137"
+    },
+    {
+      "number": 95,
+      "text": "It’s all about — system instructions - slide 95 of 137"
+    },
+    {
+      "number": 96,
+      "text": "It’s all about — system instructions - slide 96 of 137"
+    },
+    {
+      "number": 97,
+      "text": "It’s all about — system instructions - slide 97 of 137"
+    },
+    {
+      "number": 98,
+      "text": "It’s all about — system instructions - slide 98 of 137"
+    },
+    {
+      "number": 99,
+      "text": "It’s all about — system instructions - slide 99 of 137"
+    },
+    {
+      "number": 100,
+      "text": "It’s all about — system instructions - slide 100 of 137"
+    },
+    {
+      "number": 101,
+      "text": "It’s all about — system instructions - slide 101 of 137"
+    },
+    {
+      "number": 102,
+      "text": "It’s all about — system instructions - slide 102 of 137"
+    },
+    {
+      "number": 103,
+      "text": "Customer-service agent surrounded by conflicting safety and business instructions - slide 103 of 137"
+    },
+    {
+      "number": 104,
+      "text": "AI requires — STATING THE OBVIOUS — No social contracts - slide 104 of 137"
+    },
+    {
+      "number": 105,
+      "text": "Jackie Chan reaction meme captioned But why? - slide 105 of 137"
+    },
+    {
+      "number": 106,
+      "text": "It’s all about — system instructions — \"The original sin here remains combining a pre-written instructional prompt with untrusted input from elsewhere.” - slide 106 of 137"
+    },
+    {
+      "number": 107,
+      "text": "It’s all about — system instructions — \"The original sin here remains combining a pre-written instructional prompt with untrusted input from elsewhere.” - slide 107 of 137"
+    },
+    {
+      "number": 108,
+      "text": "It’s all about — system instructions - slide 108 of 137"
+    },
+    {
+      "number": 109,
+      "text": "It’s all about — system instructions — f - slide 109 of 137"
+    },
+    {
+      "number": 110,
+      "text": "It’s all about — system instructions — fine-tuning - slide 110 of 137"
+    },
+    {
+      "number": 111,
+      "text": "It’s all about — system instructions — f - slide 111 of 137"
+    },
+    {
+      "number": 112,
+      "text": "It’s all about — system instructions — f - slide 112 of 137"
+    },
+    {
+      "number": 113,
+      "text": "It’s all about — system instructions — f - slide 113 of 137"
+    },
+    {
+      "number": 114,
+      "text": "You are ChatGPT, a large language model trained by OpenAI. — Knowledge cutoff: 2024-06 — Current date: 2025-03-15 - slide 114 of 137"
+    },
+    {
+      "number": 115,
+      "text": "It’s all about — system instructions — f - slide 115 of 137"
+    },
+    {
+      "number": 116,
+      "text": "It’s all about — system instructions — f - slide 116 of 137"
+    },
+    {
+      "number": 117,
+      "text": "It’s all about — system instructions — f - slide 117 of 137"
+    },
+    {
+      "number": 118,
+      "text": "It’s all about — system instructions — fine-tuning - slide 118 of 137"
+    },
+    {
+      "number": 119,
+      "text": "Jackie Chan reaction meme captioned But why? - slide 119 of 137"
+    },
+    {
+      "number": 120,
+      "text": "RLAM diagram: reinforcement learning from AI manipulation changes a foundational model - slide 120 of 137"
+    },
+    {
+      "number": 121,
+      "text": "It’s all about — system instructions — fine-tuning - slide 121 of 137"
+    },
+    {
+      "number": 122,
+      "text": "It’s all about — system instructions — f - slide 122 of 137"
+    },
+    {
+      "number": 123,
+      "text": "It’s all about — system instructions — f - slide 123 of 137"
+    },
+    {
+      "number": 124,
+      "text": "Visual sequence from Your Copilot is My Insider, presentation section 124 - slide 124 of 137"
+    },
+    {
+      "number": 125,
+      "text": "It’s all about — system instructions — fine-tuning - slide 125 of 137"
+    },
+    {
+      "number": 126,
+      "text": "Jackie Chan reaction image covering his face in frustration - slide 126 of 137"
+    },
+    {
+      "number": 127,
+      "text": "Dense pile of metal chain links representing interconnected model dependencies - slide 127 of 137"
+    },
+    {
+      "number": 128,
+      "text": "Visual sequence from Your Copilot is My Insider, presentation section 128 - slide 128 of 137"
+    },
+    {
+      "number": 129,
+      "text": "Jackie Chan reaction image raising one finger after realizing an idea - slide 129 of 137"
+    },
+    {
+      "number": 130,
+      "text": "Prompt Injection — Data exfil — Persistence - slide 130 of 137"
+    },
+    {
+      "number": 131,
+      "text": "Prompt Injection — Recon — Resource dev - slide 131 of 137"
+    },
+    {
+      "number": 132,
+      "text": "GenAI Attacks Matrix categorizing attack techniques across the AI lifecycle - slide 132 of 137"
+    },
+    {
+      "number": 133,
+      "text": "Prompt injection is not a bug for us to patch - slide 133 of 137"
+    },
+    {
+      "number": 134,
+      "text": "Like malware – its a problem for us to manage - slide 134 of 137"
+    },
+    {
+      "number": 135,
+      "text": "Visual sequence from Your Copilot is My Insider, presentation section 135 - slide 135 of 137"
+    },
+    {
+      "number": 136,
+      "text": "Next week you should — Identify copilot platforms within your organization — Watch out for self-service licenses - slide 136 of 137"
+    },
+    {
+      "number": 137,
+      "text": "Visual sequence from Your Copilot is My Insider, presentation section 137 - slide 137 of 137"
+    }
+  ]
+}

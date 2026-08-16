@@ -152,11 +152,15 @@
   font-size: 0.92rem;
 }
 
-.talk-page__empty {
+.talk-page__empty,
+.talk-page__noscript {
   width: min(100% - 2rem, 52rem);
   margin: 0 auto;
   padding: 3rem 0 5rem;
   color: #64748b;
+}
+
+.talk-page__empty {
   font-style: italic;
 }
 
@@ -455,7 +459,8 @@
 @media (prefers-color-scheme: dark) {
   .talk-page__eyebrow,
   .talk-page__meta,
-  .talk-page__empty {
+  .talk-page__empty,
+  .talk-page__noscript {
     color: #a8b1c2;
   }
 

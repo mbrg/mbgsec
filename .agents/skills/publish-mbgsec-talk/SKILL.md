@@ -147,6 +147,12 @@ Use the deck layout's icon-only resource controls for PDF, schedule, recording, 
 
 Find the matching row in `_pages/talks.md`. Every listed talk must have a page, even when no slide deck is available; use the `talk` layout for a resource-only page. Use the `talk-table-resources.html` include in the Resources cell and pass it the talk permalink. The include renders the talk-page icon and derives a generic video icon from any `recording_url` in that page's frontmatter. Never pass a recording URL directly from the table. Every Resources cell contains the talk-page icon and, when a recording exists, the recording icon in that order. Do not put PDF, schedule, GitHub, project, or other resource icons in the table; keep them inside the talk page. Preserve the table's formatting and chronology.
 
+Run `npm run talks:text:sync` after the page and public deck manifest are final.
+Commit the generated `_pages/talk-text/` page and `_data/talk_slides/` data so the
+same-origin `/talks/<page-slug>/llms.txt` route contains metadata, all resources,
+the published abstract/transcript, and separately labeled slide accessibility
+text without requiring JavaScript.
+
 ## Verify the experience
 
 Build using the repository's supported dependency workflow without rewriting its lockfile. Serve the generated site from `127.0.0.1`, not `localhost`, when R2 CORS is origin-specific.

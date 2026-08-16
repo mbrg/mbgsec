@@ -1,0 +1,8 @@
+---
+layout: talk-text
+permalink: /talks/2022-09-01-owasp-global-appsec-apac-2022-no-code-risk-what-happens-when-we-leave-no-code-up-for-grabs/llms.txt
+talk_permalink: /talks/2022-09-01-owasp-global-appsec-apac-2022-no-code-risk-what-happens-when-we-leave-no-code-up-for-grabs/
+talk_slug: 2022-09-01-owasp-global-appsec-apac-2022-no-code-risk-what-happens-when-we-leave-no-code-up-for-grabs
+generated_by: sync-talk-text
+sitemap: false
+---

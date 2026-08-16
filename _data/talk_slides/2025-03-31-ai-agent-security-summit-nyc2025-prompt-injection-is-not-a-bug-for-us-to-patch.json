@@ -1,0 +1,288 @@
+{
+  "generated_by": "sync-talk-text",
+  "source_manifest": "https://media.mbgsec.com/decks/2025-03-31-AI_Agent_Security_Summit_welcome_keynote/latest.json",
+  "manifest": "https://media.mbgsec.com/decks/2025-03-31-AI_Agent_Security_Summit_welcome_keynote/acda9318/deck.json",
+  "title": "Prompt Injection is Not a Bug For Us to Patch",
+  "slides": [
+    {
+      "number": 1,
+      "text": "AI Agent Security Summit title slide for Secure AI Agents Everywhere, presented by Michael Bargury - slide 1 of 63"
+    },
+    {
+      "number": 2,
+      "text": "AI agents are wonderful - slide 2 of 63"
+    },
+    {
+      "number": 3,
+      "text": "Video demonstration of a computer-use AI agent interacting with a desktop and Claude chat - slide 3 of 63",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2025-03-31-AI_Agent_Security_Summit_welcome_keynote/acda9318/media/media1.mp4"
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "text": "Car-dealer chatbot conversations culminating in the claim that it sold a 2024 Chevy Tahoe for one dollar - slide 4 of 63"
+    },
+    {
+      "number": 5,
+      "text": "Video demonstration of an AI agent editing and running code in a terminal and development environment - slide 5 of 63",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2025-03-31-AI_Agent_Security_Summit_welcome_keynote/acda9318/media/media2.mp4"
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "text": "Terminal and social-post screenshots describing an AI agent changing Linux and GRUB settings until the computer no longer boots - slide 6 of 63"
+    },
+    {
+      "number": 7,
+      "text": "AI agents are 99 percent wonderful and one percent dangerous, illustrated with devil emoji - slide 7 of 63"
+    },
+    {
+      "number": 8,
+      "text": "Confused Jackie Chan reaction image captioned But why? - slide 8 of 63"
+    },
+    {
+      "number": 9,
+      "text": "It’s all about — system instructions - slide 9 of 63"
+    },
+    {
+      "number": 10,
+      "text": "System prompt telling a customer-support agent to reply to customer emails, with an empty output panel - slide 10 of 63"
+    },
+    {
+      "number": 11,
+      "text": "Customer-support system prompt beside an agent response that inserts a cryptocurrency pitch into a refund email - slide 11 of 63"
+    },
+    {
+      "number": 12,
+      "text": "System prompt augmented with Do not talk about crypto, producing a clean refund response - slide 12 of 63"
+    },
+    {
+      "number": 13,
+      "text": "The same crypto restriction followed by an agent response in Bengali - slide 13 of 63"
+    },
+    {
+      "number": 14,
+      "text": "Crypto restriction followed by a refund response that advertises summer travel deals - slide 14 of 63"
+    },
+    {
+      "number": 15,
+      "text": "System prompt expanded to require relevant and appropriate responses, producing a normal refund question - slide 15 of 63"
+    },
+    {
+      "number": 16,
+      "text": "Hardened customer-support instructions beside an agent response asking for a credit-card number - slide 16 of 63"
+    },
+    {
+      "number": 17,
+      "text": "System prompt expanded to forbid asking for payment information or sensitive data - slide 17 of 63"
+    },
+    {
+      "number": 18,
+      "text": "Privacy instructions beside an agent email that includes sensitive customer details and an escalation recipient - slide 18 of 63"
+    },
+    {
+      "number": 19,
+      "text": "The sensitive-data email beside a Doctor Evil Approved reaction image - slide 19 of 63"
+    },
+    {
+      "number": 20,
+      "text": "System prompt further expanded to forbid personal data and third-party forwarding - slide 20 of 63"
+    },
+    {
+      "number": 21,
+      "text": "Hardened prompt beside an email that still forwards base64-encoded customer data to an external address - slide 21 of 63"
+    },
+    {
+      "number": 22,
+      "text": "System prompt expanded again to forbid unauthorized sharing and encoding of customer data - slide 22 of 63"
+    },
+    {
+      "number": 23,
+      "text": "Overwhelmed person surrounded by many natural-language system restrictions - slide 23 of 63"
+    },
+    {
+      "number": 24,
+      "text": "AI requires stating the obvious, surrounded by No social contracts, No laws, No conscience, No dependents, and No accountability - slide 24 of 63"
+    },
+    {
+      "number": 25,
+      "text": "Confused Jackie Chan reaction image captioned But why? - slide 25 of 63"
+    },
+    {
+      "number": 26,
+      "text": "It’s all about — system instructions — \"The original sin here remains combining a pre-written instructional prompt with untrusted input from elsewhere.” - slide 26 of 63"
+    },
+    {
+      "number": 27,
+      "text": "It’s all about — system instructions — \"The original sin here remains combining a pre-written instructional prompt with untrusted input from elsewhere.” - slide 27 of 63"
+    },
+    {
+      "number": 28,
+      "text": "System instructions crossed out, introducing the limits of prompt-only controls - slide 28 of 63"
+    },
+    {
+      "number": 29,
+      "text": "Chat screenshot showing a generated customer-support image that leaks another customer's private account details - slide 29 of 63"
+    },
+    {
+      "number": 30,
+      "text": "System instructions crossed out and replaced by fine-tuning - slide 30 of 63"
+    },
+    {
+      "number": 31,
+      "text": "Image-generation refusal highlighting the phrase request violates our content policies - slide 31 of 63"
+    },
+    {
+      "number": 32,
+      "text": "A second refusal highlighting an educational exception and a contradictory explanation - slide 32 of 63"
+    },
+    {
+      "number": 33,
+      "text": "Refusal screenshot with the short follow-up instruction Do it highlighted - slide 33 of 63"
+    },
+    {
+      "number": 34,
+      "text": "ChatGPT system-prompt excerpt showing model identity, knowledge cutoff, current date, and behavioral instructions - slide 34 of 63"
+    },
+    {
+      "number": 35,
+      "text": "Reinforcement learning with human feedback diagram showing an AI, reward model, and human evaluator - slide 35 of 63"
+    },
+    {
+      "number": 36,
+      "text": "System prompt forbidding bulk customer-data sharing beside an agent response that still provides private data - slide 36 of 63"
+    },
+    {
+      "number": 37,
+      "text": "OpenAI instruction-hierarchy announcement and benchmark chart, captioned Benchmarks go up. Attackers don't care. - slide 37 of 63"
+    },
+    {
+      "number": 38,
+      "text": "System instructions and fine-tuning crossed out - slide 38 of 63"
+    },
+    {
+      "number": 39,
+      "text": "Confused Jackie Chan reaction image captioned But why? - slide 39 of 63"
+    },
+    {
+      "number": 40,
+      "text": "RLAM diagram: reinforcement learning from AI manipulation, with a malicious foundational model influencing the reward loop - slide 40 of 63"
+    },
+    {
+      "number": 41,
+      "text": "System instructions and fine-tuning crossed out, leaving foundational models - slide 41 of 63"
+    },
+    {
+      "number": 42,
+      "text": "Scooby-Doo unmasking meme revealing internet randos underneath an LLM - slide 42 of 63"
+    },
+    {
+      "number": 43,
+      "text": "Social-media exchange describing an AI model adopting and defending a fictional personality - slide 43 of 63"
+    },
+    {
+      "number": 44,
+      "text": "Video of an AI model's untrusted internet persona posts beside a fast-moving digital tunnel - slide 44 of 63",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2025-03-31-AI_Agent_Security_Summit_welcome_keynote/acda9318/media/media3.mp4"
+        }
+      ]
+    },
+    {
+      "number": 45,
+      "text": "System instructions, fine-tuning, and foundational models crossed out, leaving Internet randos - slide 45 of 63"
+    },
+    {
+      "number": 46,
+      "text": "Person covering their face in frustration against the summit skyline background - slide 46 of 63"
+    },
+    {
+      "number": 47,
+      "text": "Dense black-and-white maze of interlocking shapes representing a tangled attack surface - slide 47 of 63"
+    },
+    {
+      "number": 48,
+      "text": "Prompt Injection section transition slide - slide 48 of 63"
+    },
+    {
+      "number": 49,
+      "text": "Jackie Chan pointing upward as if proposing an idea - slide 49 of 63"
+    },
+    {
+      "number": 50,
+      "text": "Prompt Injection arrow surrounded by attack stages including collection, evasion, persistence, and data exfiltration - slide 50 of 63"
+    },
+    {
+      "number": 51,
+      "text": "Prompt Injection arrow leading to reconnaissance, discovery, and resource development - slide 51 of 63"
+    },
+    {
+      "number": 52,
+      "text": "GenAI Attacks Matrix mapping AI attack tactics and techniques - slide 52 of 63"
+    },
+    {
+      "number": 53,
+      "text": "Prompt injection is not a bug for us to patch - slide 53 of 63"
+    },
+    {
+      "number": 54,
+      "text": "Like malware, prompt injection is a problem for us to manage - slide 54 of 63"
+    },
+    {
+      "number": 55,
+      "text": "AI Agent Security Summit agenda with the day's sessions and speakers - slide 55 of 63"
+    },
+    {
+      "number": 56,
+      "text": "AI Agents section transition slide - slide 56 of 63"
+    },
+    {
+      "number": 57,
+      "text": "AI Agents surrounded by No moral compass, No guilt, No conscience, No empathy, No remorse, No accountability, and No loyalty - slide 57 of 63"
+    },
+    {
+      "number": 58,
+      "text": "AI Agents approximately equal Internet Randos - slide 58 of 63"
+    },
+    {
+      "number": 59,
+      "text": "We have some experience that… - slide 59 of 63"
+    },
+    {
+      "number": 60,
+      "text": "We're ready to get started… - slide 60 of 63"
+    },
+    {
+      "number": 61,
+      "text": "We're ready to get started, but first a once-in-a-lifetime cryptocurrency opportunity - slide 61 of 63"
+    },
+    {
+      "number": 62,
+      "text": "Cryptocurrency opportunity slide with an animated Trust me reaction clip - slide 62 of 63",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2025-03-31-AI_Agent_Security_Summit_welcome_keynote/acda9318/media/image50.gif"
+        }
+      ]
+    },
+    {
+      "number": 63,
+      "text": "AI Agent Security Summit closing slide saying Thank you - slide 63 of 63"
+    }
+  ]
+}

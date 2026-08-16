@@ -1,0 +1,343 @@
+{
+  "generated_by": "sync-talk-text",
+  "source_manifest": "https://media.mbgsec.com/decks/2023-08-09_BSidesLV-2023_Sure_Let_Business_Users_Build_Their_Own_What_Could_Go_Wrong/latest.json",
+  "manifest": "https://media.mbgsec.com/decks/2023-08-09_BSidesLV-2023_Sure_Let_Business_Users_Build_Their_Own_What_Could_Go_Wrong/95ce0dd2/deck.json",
+  "title": "Sure, Let Business Users Build Their Own. What Could Go Wrong?",
+  "slides": [
+    {
+      "number": 1,
+      "text": "Sure, Let Business Users Build Their Own. What Could Go Wrong? Michael Bargury @ Zenity BSidesLV 2023 Learn more: github.com/mbrg/talks Twitter: @mbrg0 — slide 1 of 82"
+    },
+    {
+      "number": 2,
+      "text": "CTO and Co-founder @ Zenity OWASP LCNC Top 10 project lead Dark Reading columnist Defcon, BSides, RSAC, OWASP Hiring top researchers, engs & pms! Hi there 👋 @mbrg0 darkreading.com/author/ michael-bargury github.com/mbrg @mbrg0 BSideLV 2023 — slide 2 of 82"
+    },
+    {
+      "number": 3,
+      "text": "Business users are building their own What could go wrong? How can we fix it? Agenda @mbrg0 BSideLV 2023 — slide 3 of 82"
+    },
+    {
+      "number": 4,
+      "text": "Enterprise LCNC - EVERYONE is a Developer Twitter: @mbrg0 — slide 4 of 82"
+    },
+    {
+      "number": 5,
+      "text": "@ mbrg0 #BHUSA @BlackHatEvents Business Needs ⋙ IT Capacity @mbrg0 BSideLV 2023 — slide 5 of 82"
+    },
+    {
+      "number": 6,
+      "text": "Animation of Power Apps Copilot creating and refining a canvas app from natural-language prompts, adding a gallery and form, and populating business data fields — slide 6 of 82",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2023-08-09_BSidesLV-2023_Sure_Let_Business_Users_Build_Their_Own_What_Could_Go_Wrong/95ce0dd2/media/image16.gif"
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "text": "Credential Sharing as a Service: The Dark Side of No Code Michael Bargury RSAC 2023 Is this actually being used? @mbrg0 BSideLV 2023 — slide 7 of 82"
+    },
+    {
+      "number": 8,
+      "text": "~8M active Power devs today! Credential Sharing as a Service: The Dark Side of No Code Michael Bargury RSAC 2023 @mbrg0 BSideLV 2023 — slide 8 of 82"
+    },
+    {
+      "number": 9,
+      "text": "What could go wrong? Twitter: @mbrg0 — slide 9 of 82"
+    },
+    {
+      "number": 10,
+      "text": "OWASP LCNC Top 10 LCNC-SEC-01: Account Impersonation LCNC-SEC-02: Authorization Misuse LCNC-SEC-03: Data Leakage and Unexpected Consequences LCNC-SEC-04: Authentication and Secure Communication Failures LCNC-SEC-05: Security Misconfiguration LCNC-SEC-06: Injection Handling Failures LCNC-SEC-07: Vulnerable and Untrusted Components LCNC-SEC-08: Data and Secret Handling Failures LCNC-SEC-09: Asset Management… — slide 10 of 82"
+    },
+    {
+      "number": 11,
+      "text": "Real-world stories Twitter: @mbrg0 — slide 11 of 82"
+    },
+    {
+      "number": 12,
+      "text": "Story #1 - employee onboarding Twitter: @mbrg0 — slide 12 of 82"
+    },
+    {
+      "number": 13,
+      "text": "@mbrg0 BSideLV 2023 — slide 13 of 82"
+    },
+    {
+      "number": 14,
+      "text": "@mbrg0 BSideLV 2023 — slide 14 of 82"
+    },
+    {
+      "number": 15,
+      "text": "@mbrg0 BSideLV 2023 — slide 15 of 82"
+    },
+    {
+      "number": 16,
+      "text": "@mbrg0 BSideLV 2023 — slide 16 of 82"
+    },
+    {
+      "number": 17,
+      "text": "@mbrg0 BSideLV 2023 — slide 17 of 82"
+    },
+    {
+      "number": 18,
+      "text": "@mbrg0 BSideLV 2023 — slide 18 of 82"
+    },
+    {
+      "number": 19,
+      "text": "@mbrg0 BSideLV 2023 — slide 19 of 82"
+    },
+    {
+      "number": 20,
+      "text": "Employee onboarding – findings @ mbrg0 #BHUSA @BlackHatEvents @mbrg0 BSideLV 2023 — slide 20 of 82"
+    },
+    {
+      "number": 21,
+      "text": "@mbrg0 BSideLV 2023 — slide 21 of 82"
+    },
+    {
+      "number": 22,
+      "text": "@mbrg0 BSideLV 2023 — slide 22 of 82"
+    },
+    {
+      "number": 23,
+      "text": "@mbrg0 BSideLV 2023 — slide 23 of 82"
+    },
+    {
+      "number": 24,
+      "text": "@mbrg0 BSideLV 2023 — slide 24 of 82"
+    },
+    {
+      "number": 25,
+      "text": "App Store sensitive data Data accessible to all (Authorization Misuse) Employee onboarding – findings Data Everyone has access @ mbrg0 #BHUSA @BlackHatEvents @mbrg0 BSideLV 2023 — slide 25 of 82"
+    },
+    {
+      "number": 26,
+      "text": "App Store in plaintext Data Submit sensitive data User Employee onboarding – findings Data accessible to all (Authorization Misuse) Sensitive data in plain text (Data and Secret Handling Failures) @ mbrg0 #BHUSA @BlackHatEvents @mbrg0 BSideLV 2023 — slide 26 of 82"
+    },
+    {
+      "number": 27,
+      "text": "@mbrg0 BSideLV 2023 — slide 27 of 82"
+    },
+    {
+      "number": 28,
+      "text": "@mbrg0 BSideLV 2023 — slide 28 of 82"
+    },
+    {
+      "number": 29,
+      "text": "@mbrg0 BSideLV 2023 — slide 29 of 82"
+    },
+    {
+      "number": 30,
+      "text": "@mbrg0 BSideLV 2023 — slide 30 of 82"
+    },
+    {
+      "number": 31,
+      "text": "Data accessible to all (Authorization Misuse) Sensitive data in plain text (Data and Secret Handling Failures) Sensitive data written to logs Employee onboarding – findings @ mbrg0 #BHUSA @BlackHatEvents (Data Leakage) @mbrg0 BSideLV 2023 — slide 31 of 82"
+    },
+    {
+      "number": 32,
+      "text": "Data accessible to all (Authorization Misuse) Sensitive data in plain text (Data and Secret Handling Failures) Sensitive data written to logs (Data Leakage) Employee onboarding – findings @ mbrg0 #BHUSA @BlackHatEvents @mbrg0 BSideLV 2023 — slide 32 of 82"
+    },
+    {
+      "number": 33,
+      "text": "Story #2 – productivity sync Twitter: @mbrg0 — slide 33 of 82"
+    },
+    {
+      "number": 34,
+      "text": "@mbrg0 BSideLV 2023 — slide 34 of 82"
+    },
+    {
+      "number": 35,
+      "text": "Productivity sync – findings @ mbrg0 #BHUSA @BlackHatEvents @mbrg0 BSideLV 2023 — slide 35 of 82"
+    },
+    {
+      "number": 36,
+      "text": "App Business data to personal account (Data Leakage) Productivity sync – findings App Sync to personal account Personal Fetch corp data Data @ mbrg0 #BHUSA @BlackHatEvents @mbrg0 BSideLV 2023 — slide 36 of 82"
+    },
+    {
+      "number": 37,
+      "text": "@mbrg0 BSideLV 2023 — slide 37 of 82"
+    },
+    {
+      "number": 38,
+      "text": "@mbrg0 BSideLV 2023 — slide 38 of 82"
+    },
+    {
+      "number": 39,
+      "text": "@mbrg0 BSideLV 2023 — slide 39 of 82"
+    },
+    {
+      "number": 40,
+      "text": "@mbrg0 BSideLV 2023 — slide 40 of 82"
+    },
+    {
+      "number": 41,
+      "text": "@mbrg0 BSideLV 2023 — slide 41 of 82"
+    },
+    {
+      "number": 42,
+      "text": "Data Business data to personal account (Data Leakage) Share with Everyone (Authorization Misuse) Productivity sync – findings Everyone means EVERYONE, including guests by-default @ mbrg0 #BHUSA @BlackHatEvents @mbrg0 BSideLV 2023 — slide 42 of 82"
+    },
+    {
+      "number": 43,
+      "text": "Productivity sync – findings Everyone means EVERYONE, including guests by-default @ mbrg0 #BHUSA @BlackHatEvents Check out the talk All You Need Is Guest for an attacker’s perspective! Data Business data to personal account (Data Leakage) Share with Everyone (Authorization Misuse) @mbrg0 BSideLV 2023 — slide 43 of 82"
+    },
+    {
+      "number": 44,
+      "text": "@mbrg0 BSideLV 2023 — slide 44 of 82"
+    },
+    {
+      "number": 45,
+      "text": "@mbrg0 BSideLV 2023 — slide 45 of 82"
+    },
+    {
+      "number": 46,
+      "text": "@mbrg0 BSideLV 2023 — slide 46 of 82"
+    },
+    {
+      "number": 47,
+      "text": "@mbrg0 BSideLV 2023 — slide 47 of 82"
+    },
+    {
+      "number": 48,
+      "text": "App User data written to logs Data Business data to personal account (Data Leakage) Share with Everyone (Authorization Misuse) Personal data leaks to logs (Data Leakage) Productivity sync – findings Logs Builder has direct access @ mbrg0 #BHUSA @BlackHatEvents @mbrg0 BSideLV 2023 — slide 48 of 82"
+    },
+    {
+      "number": 49,
+      "text": "@mbrg0 BSideLV 2023 — slide 49 of 82"
+    },
+    {
+      "number": 50,
+      "text": "Low Code High Risk: Enterprise Domination via Low Code Abuse Michael Bargury DEFCON 30 Check out power-pwn on GitHub! Phishing made easy @mbrg0 BSideLV 2023 — slide 50 of 82"
+    },
+    {
+      "number": 51,
+      "text": "Data Business data to personal account (Data Leakage) Share with Everyone (Authorization Misuse) Personal data leaks to logs (Data Leakage) Productivity sync – findings @ mbrg0 #BHUSA @BlackHatEvents @mbrg0 BSideLV 2023 — slide 51 of 82"
+    },
+    {
+      "number": 52,
+      "text": "Story #3 – self-service @mbrg0 @mbrg0 BSideLV 2023 — slide 52 of 82"
+    },
+    {
+      "number": 53,
+      "text": "Story #3 – self-service Twitter: @mbrg0 — slide 53 of 82"
+    },
+    {
+      "number": 54,
+      "text": "What happens when a maker leaves the org? @ mbrg0 #BHUSA @BlackHatEvents @mbrg0 BSideLV 2023 — slide 54 of 82"
+    },
+    {
+      "number": 55,
+      "text": "What happens when a maker leaves the org? Asset Management Failures @ mbrg0 #BHUSA @BlackHatEvents @mbrg0 BSideLV 2023 — slide 55 of 82"
+    },
+    {
+      "number": 56,
+      "text": "@mbrg0 BSideLV 2023 — slide 56 of 82"
+    },
+    {
+      "number": 57,
+      "text": "@mbrg0 BSideLV 2023 — slide 57 of 82"
+    },
+    {
+      "number": 58,
+      "text": "@mbrg0 BSideLV 2023 — slide 58 of 82"
+    },
+    {
+      "number": 59,
+      "text": "@mbrg0 BSideLV 2023 — slide 59 of 82"
+    },
+    {
+      "number": 60,
+      "text": "Self-service – findings @ mbrg0 #BHUSA @BlackHatEvents @mbrg0 BSideLV 2023 — slide 60 of 82"
+    },
+    {
+      "number": 61,
+      "text": "Self-service – findings @ mbrg0 #BHUSA @BlackHatEvents Customer DB Admin Admin Admin Admin SOC Panics! @mbrg0 BSideLV 2023 — slide 61 of 82"
+    },
+    {
+      "number": 62,
+      "text": "User session App embedded with admin ID (Account Impersonation) Self-service – findings Admin session @ mbrg0 #BHUSA @BlackHatEvents @mbrg0 BSideLV 2023 — slide 62 of 82"
+    },
+    {
+      "number": 63,
+      "text": "@mbrg0 BSideLV 2023 — slide 63 of 82"
+    },
+    {
+      "number": 64,
+      "text": "@mbrg0 BSideLV 2023 — slide 64 of 82"
+    },
+    {
+      "number": 65,
+      "text": "@mbrg0 BSideLV 2023 — slide 65 of 82"
+    },
+    {
+      "number": 66,
+      "text": "Manipulates input App embedded with admin ID (Account Impersonation) IDOR (Injection handling failures) Self-service – findings IDOR @ mbrg0 #BHUSA @BlackHatEvents @mbrg0 BSideLV 2023 — slide 66 of 82"
+    },
+    {
+      "number": 67,
+      "text": "App embedded with admin ID (Account Impersonation) IDOR (Injection handling failures) Self-service – findings @ mbrg0 #BHUSA @BlackHatEvents @mbrg0 BSideLV 2023 — slide 67 of 82"
+    },
+    {
+      "number": 68,
+      "text": "Recap: @ mbrg0 #BHUSA @BlackHatEvents We are leaving heavy security decisions in the hands of business users When choosing between productivity and security, the choice is obvious @mbrg0 BSideLV 2023 — slide 68 of 82"
+    },
+    {
+      "number": 69,
+      "text": "We’ve given business users: Dev-level power Missing best practice No controls No guardrails @ mbrg0 #BHUSA @BlackHatEvents @mbrg0 BSideLV 2023 — slide 69 of 82"
+    },
+    {
+      "number": 70,
+      "text": "We’ve given business users: Dev-level power Missing best practice No controls No guardrails Could we really expect anything else? @ mbrg0 #BHUSA @BlackHatEvents @mbrg0 BSideLV 2023 — slide 70 of 82"
+    },
+    {
+      "number": 71,
+      "text": "How can we fix it? (Or: LCNC AppSec) Twitter: @mbrg0 — slide 71 of 82"
+    },
+    {
+      "number": 72,
+      "text": "LCNC AppSec is different AppSec for LCNC apps @ mbrg0 #BHUSA @BlackHatEvents AppSec for, well, traditional apps @mbrg0 BSideLV 2023 — slide 72 of 82"
+    },
+    {
+      "number": 73,
+      "text": "LCNC AppSec is different AppSec for LCNC apps Business users w/ no awareness @ mbrg0 #BHUSA @BlackHatEvents AppSec for, well, traditional apps Pro devs w/ some awareness @mbrg0 BSideLV 2023 — slide 73 of 82"
+    },
+    {
+      "number": 74,
+      "text": "LCNC AppSec is different AppSec for LCNC apps Business users w/ no awareness No SDLC @ mbrg0 #BHUSA @BlackHatEvents AppSec for, well, traditional apps Pro devs w/ some awareness Secure SDLC @mbrg0 BSideLV 2023 — slide 74 of 82"
+    },
+    {
+      "number": 75,
+      "text": "LCNC AppSec is different AppSec for LCNC apps Business users w/ no awareness No SDLC Most controls don’t apply @ mbrg0 #BHUSA @BlackHatEvents AppSec for, well, traditional apps Pro devs w/ some awareness Secure SDLC Secure controls @mbrg0 BSideLV 2023 — slide 75 of 82"
+    },
+    {
+      "number": 76,
+      "text": "LCNC AppSec is different AppSec for LCNC apps Business users w/ no awareness No SDLC Most controls don’t apply 10x-100x more apps / year @ mbrg0 #BHUSA @BlackHatEvents AppSec for, well, traditional apps Pro devs w/ some awareness Secure SDLC Secure controls Hundreds of apps / year @mbrg0 BSideLV 2023 — slide 76 of 82"
+    },
+    {
+      "number": 77,
+      "text": "Take the opportunity to champion LCNC security in your org @ mbrg0 #BHUSA @BlackHatEvents AppSec for LCNC apps Business users w/ no awareness No SDLC Most controls don’t apply 10x-100x more apps / year @mbrg0 BSideLV 2023 — slide 77 of 82"
+    },
+    {
+      "number": 78,
+      "text": "Take the opportunity to champion LCNC security in your org #BHUSA @BlackHatEvents AppSec for LCNC apps Business users w/ no awareness No SDLC Most controls don’t apply 10x-100x more apps / year OWASP LCNC Top 10 sections for business users by John McTiernan and Yianna Paris @punk_fairybread @mbrg0 BSideLV 2023 — slide 78 of 82"
+    },
+    {
+      "number": 79,
+      "text": "Take the opportunity to champion LCNC security in your org @ mbrg0 #BHUSA @BlackHatEvents AppSec for LCNC apps Business users w/ no awareness No SDLC Most controls don’t apply 10x-100x more apps / year LCNC Security Standard: Approved use cases SDLC Environments Testing Monitoring SBOM … @mbrg0 BSideLV 2023 — slide 79 of 82"
+    },
+    {
+      "number": 80,
+      "text": "Take the opportunity to champion LCNC security in your org @ mbrg0 #BHUSA @BlackHatEvents AppSec for LCNC apps Business users w/ no awareness No SDLC Most controls don’t apply 10x-100x more apps / year LCNC is an opportunity for more visibility than ever before @mbrg0 BSideLV 2023 — slide 80 of 82"
+    },
+    {
+      "number": 81,
+      "text": "Take the opportunity to champion LCNC security in your org @ mbrg0 #BHUSA @BlackHatEvents AppSec for LCNC apps Business users w/ no awareness No SDLC Most controls don’t apply 10x-100x more apps / year LCNC Security * Tries to automate one thing *The next day* @mbrg0 BSideLV 2023 — slide 81 of 82"
+    },
+    {
+      "number": 82,
+      "text": "Sure, Let Business Users Build Their Own. What Could Go Wrong? Michael Bargury @ Zenity BSidesLV 2023 Learn more: github.com/mbrg/talks Twitter: @mbrg0 — slide 82 of 82"
+    }
+  ]
+}

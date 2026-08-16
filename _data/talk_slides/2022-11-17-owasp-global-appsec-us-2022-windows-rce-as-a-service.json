@@ -1,0 +1,387 @@
+{
+  "generated_by": "sync-talk-text",
+  "source_manifest": "https://media.mbgsec.com/decks/2022-11-17_OWASP-US-2022_Windows_RCE_as_a_Service/latest.json",
+  "manifest": "https://media.mbgsec.com/decks/2022-11-17_OWASP-US-2022_Windows_RCE_as_a_Service/fc3e9de9/deck.json",
+  "title": "Windows RCE as a Service",
+  "slides": [
+    {
+      "number": 1,
+      "text": "Michael Bargury (@mbrg0) Windows RCE as a Service github.com/mbrg/talks Zenity — slide 1 of 86"
+    },
+    {
+      "number": 2,
+      "text": "About me CTO and co-founder @ Zenity Ex MSFT cloud security OWASP ‘Top 10 LCNC Security Risks’ project lead Dark Reading columnist @mbrg0 ft. @UZisReal123 bit.ly/ lcsec — slide 2 of 86"
+    },
+    {
+      "number": 3,
+      "text": "Disclaimer This talk is presented from an attacker’s perspective with the goal of raising awareness to the risks of underestimating the security impact of No Code. No Code is awesome. — slide 3 of 86"
+    },
+    {
+      "number": 4,
+      "text": "No Code Malware: Windows RCE as a Service 01 Initial access to full operation : So you want to build a malware op — slide 4 of 86"
+    },
+    {
+      "number": 5,
+      "text": "You’re in. Congrats! Victim Hacker Initial access — slide 5 of 86"
+    },
+    {
+      "number": 6,
+      "text": "In the real world Victim Hacker EDR 🔥🔥🔥🔥🔥🔥🔥🔥 FW Corpnet Internet Initial access — slide 6 of 86"
+    },
+    {
+      "number": 7,
+      "text": "In the real world Victim Hacker EDR 🔥🔥🔥🔥🔥🔥🔥🔥 FW Corpnet Internet Initial access Run malware — slide 7 of 86"
+    },
+    {
+      "number": 8,
+      "text": "In the real world Victim Hacker EDR C&C 🔥🔥🔥🔥🔥🔥🔥🔥 FW Internet Corpnet Initial access Run malware — slide 8 of 86"
+    },
+    {
+      "number": 9,
+      "text": "In the real world Victim Hacker EDR C&C Exfiltration 🔥🔥🔥🔥🔥🔥🔥🔥 FW Internet Corpnet Initial access Run malware — slide 9 of 86"
+    },
+    {
+      "number": 10,
+      "text": "In the real world Victim Hacker EDR Defense evasion C&C Exfiltration 🔥🔥🔥🔥🔥🔥🔥🔥 FW Internet Corpnet Initial access Run malware — slide 10 of 86"
+    },
+    {
+      "number": 11,
+      "text": "In the real world Victim Hacker Initial access Persistency EDR Defense evasion C&C Exfiltration 🔥🔥🔥🔥🔥🔥🔥🔥 FW Internet Corpnet Run malware — slide 11 of 86"
+    },
+    {
+      "number": 12,
+      "text": "We wanted to do hacking, not ops Initial access Deploy malware C&C Exfiltration Defense evasion Persistency Cleanup … .. Profit Malware Ops — slide 12 of 86"
+    },
+    {
+      "number": 13,
+      "text": "Introducing.. Robotic Process Automation (RPA)! https://www.t-plan.com/rpa-architecture/ — slide 13 of 86"
+    },
+    {
+      "number": 14,
+      "text": "Introducing.. Robotic Process Automation (RPA)! Trusted executables Trusted cloud services Trusted communication https://www.t-plan.com/rpa-architecture/ — slide 14 of 86"
+    },
+    {
+      "number": 15,
+      "text": "RPA is everywhere (in the enterprise) — slide 15 of 86"
+    },
+    {
+      "number": 16,
+      "text": "RPA can take care of Ops for us C&C Exfiltration Defense evasion Persistency Cleanup And so much more: Handle errors Support different OS/versions Malware updates Aggregate data across machines … — slide 16 of 86"
+    },
+    {
+      "number": 17,
+      "text": "Outline Malware Ops motivation What is RPA? RPA technical deep dive Abusing RPA: RCE as a Service Introducing Power Pwn Defense: 4 things to do when you get home — slide 17 of 86"
+    },
+    {
+      "number": 18,
+      "text": "Windows RCE as a Service 0 2 What is RPA? How anyone can automate mundane prcesses — slide 18 of 86"
+    },
+    {
+      "number": 19,
+      "text": "Teenage (MMORPG) life — slide 19 of 86"
+    },
+    {
+      "number": 20,
+      "text": "Grunt work required — slide 20 of 86"
+    },
+    {
+      "number": 21,
+      "text": "Grunt work required — slide 21 of 86"
+    },
+    {
+      "number": 22,
+      "text": "Grunt work required — slide 22 of 86"
+    },
+    {
+      "number": 23,
+      "text": "Grunt work required — slide 23 of 86"
+    },
+    {
+      "number": 24,
+      "text": "Grunt work required — slide 24 of 86"
+    },
+    {
+      "number": 25,
+      "text": "Profit! — slide 25 of 86"
+    },
+    {
+      "number": 26,
+      "text": "Automation!! — slide 26 of 86"
+    },
+    {
+      "number": 27,
+      "text": "Automation for real — slide 27 of 86"
+    },
+    {
+      "number": 28,
+      "text": "https://youtube.com/clip/UgkxqPRYueIjN24IqUs5iw13meeh7mm3KdNr Automation for real — slide 28 of 86",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2022-11-17_OWASP-US-2022_Windows_RCE_as_a_Service/fc3e9de9/media/automation-for-real.gif"
+        }
+      ]
+    },
+    {
+      "number": 29,
+      "text": "Automation via RPA Why and How? Replace “copy-and-paste integration” Drag & drag builder Emulate user actions (mouse/keyboard) to connect Runs on user machines / dedicated servers — slide 29 of 86"
+    },
+    {
+      "number": 30,
+      "text": "Automation in the enterprise Use cases: Customer service routines Finance payments and reporting HR onboarding / offboarding Supply chain keep inventory up to date Procurement invoice processing Why and How? Replace “copy-and-paste integration” Drag & drag builder Emulate user actions (mouse/keyboard) to connect Runs on user machines / dedicated servers — slide 30 of 86"
+    },
+    {
+      "number": 31,
+      "text": "Windows RCE as a Service 0 3 RPA Deep Dive — slide 31 of 86"
+    },
+    {
+      "number": 32,
+      "text": "“included in Windows 11” https://powerautomate.microsoft.com/en-us/power-automate-and-windows-11/ — slide 32 of 86"
+    },
+    {
+      "number": 33,
+      "text": "Windows 11 desktop showing Power Automate search results beside Microsoft documentation that Power Automate is preinstalled in Windows 11 — slide 33 of 86"
+    },
+    {
+      "number": 34,
+      "text": "youtu.be/Kik9oXu_-bI — slide 34 of 86",
+      "media": [
+        {
+          "type": "youtube",
+          "title": "defcon30 Power Automate Desktop",
+          "url": "https://www.youtube.com/watch?v=Kik9oXu_-bI"
+        }
+      ]
+    },
+    {
+      "number": 35,
+      "text": "Synced to cloud — slide 35 of 86"
+    },
+    {
+      "number": 36,
+      "text": "Architecture diagram with Power Automate on Windows 11 and Office cloud services separated by the on-premises and Microsoft cloud boundary — slide 36 of 86"
+    },
+    {
+      "number": 37,
+      "text": "Architecture diagram showing the UIFlowService user connecting Power Automate to the machine runtime on Windows 11 — slide 37 of 86"
+    },
+    {
+      "number": 38,
+      "text": "Architecture diagram with Power Automate browser-extension setup screenshots for Microsoft Edge — slide 38 of 86"
+    },
+    {
+      "number": 39,
+      "text": "Architecture diagram showing Power Automate connected to Chrome, Firefox, and Edge through the machine runtime — slide 39 of 86"
+    },
+    {
+      "number": 40,
+      "text": "Architecture diagram with Windows Explorer highlighting Power Automate Desktop application executables — slide 40 of 86"
+    },
+    {
+      "number": 41,
+      "text": "Corp network boundary 🔥💀🔥💀🔥💀🔥💀 — slide 41 of 86"
+    },
+    {
+      "number": 42,
+      "text": "🔥💀🔥💀🔥💀🔥💀 Corp network boundary — slide 42 of 86"
+    },
+    {
+      "number": 43,
+      "text": "Architecture diagram showing the machine runtime making an outbound connection through the corporate network boundary to Azure Service Bus and Office cloud services — slide 43 of 86"
+    },
+    {
+      "number": 44,
+      "text": "Your machines — slide 44 of 86"
+    },
+    {
+      "number": 45,
+      "text": "Run from cloud — slide 45 of 86"
+    },
+    {
+      "number": 46,
+      "text": "Task status — slide 46 of 86"
+    },
+    {
+      "number": 47,
+      "text": "Architecture diagram showing Power Automate and browsers connecting through the machine runtime and Azure Service Bus to Office cloud services — slide 47 of 86"
+    },
+    {
+      "number": 48,
+      "text": "Architecture diagram adding the machine private key and Office cloud public key to the Power Automate connection — slide 48 of 86"
+    },
+    {
+      "number": 49,
+      "text": "Architecture diagram adding local credentials and an RPA task to the Azure Service Bus connection — slide 49 of 86"
+    },
+    {
+      "number": 50,
+      "text": "Windows RCE as a Service 0 4 RCE as a Service Repurpose RPA to power malware ops — slide 50 of 86"
+    },
+    {
+      "number": 51,
+      "text": "Recall our wish list Initial access Deploy malware Defense evasion Persistency C&C Exfiltration Cleanup … .. Profit Malware Ops — slide 51 of 86"
+    },
+    {
+      "number": 52,
+      "text": "Hello Pwntoso — slide 52 of 86"
+    },
+    {
+      "number": 53,
+      "text": "Register victim machines Can we avoid the UI? — slide 53 of 86"
+    },
+    {
+      "number": 54,
+      "text": "Register victim machines https://docs.microsoft.com/en-us/power-automate/desktop-flows/machines-silent-registration#silently-register-a-new-machine Sure! Can we avoid the UI? — slide 54 of 86"
+    },
+    {
+      "number": 55,
+      "text": "Hello new machine — slide 55 of 86"
+    },
+    {
+      "number": 56,
+      "text": "Admin required https://docs.microsoft.com/en-us/power-automate/desktop-flows/machines-silent-registration#silently-register-a-new-machine 😞 — slide 56 of 86"
+    },
+    {
+      "number": 57,
+      "text": "Admin NOT required 🤓 — slide 57 of 86"
+    },
+    {
+      "number": 58,
+      "text": "Trigger from cloud Set up connection Distribute payload Cloud setup — slide 58 of 86"
+    },
+    {
+      "number": 59,
+      "text": "How to avoid active machine users Attended RPA 💻🙂 Unattended RPA 🤖 Create a new local user session Leverage an existing local user session — slide 59 of 86"
+    },
+    {
+      "number": 60,
+      "text": "Recap Deploy malware Defense evasion Persistency C&C Exfiltration Cleanup — slide 60 of 86"
+    },
+    {
+      "number": 61,
+      "text": "Windows RCE as a Service 0 5 Let the fun being. — slide 61 of 86"
+    },
+    {
+      "number": 62,
+      "text": "Data exfil (start simple) Data exfiltrated as flow output — slide 62 of 86"
+    },
+    {
+      "number": 63,
+      "text": "Distribute payload, execute and collect output from cloud Input Output — slide 63 of 86"
+    },
+    {
+      "number": 64,
+      "text": "Architecture diagram of Power Automate and browsers on Windows 11 connecting through the machine runtime and Azure Service Bus to Office cloud services — slide 64 of 86"
+    },
+    {
+      "number": 65,
+      "text": "1.Instructions 2.Payload 3.Output — slide 65 of 86"
+    },
+    {
+      "number": 66,
+      "text": "Code execution — slide 66 of 86"
+    },
+    {
+      "number": 67,
+      "text": "Oops Code execution — slide 67 of 86"
+    },
+    {
+      "number": 68,
+      "text": "Code execution Oops — slide 68 of 86"
+    },
+    {
+      "number": 69,
+      "text": "Code execution – try again Untrusted Trusted — slide 69 of 86"
+    },
+    {
+      "number": 70,
+      "text": "Code execution– try again What can we do with drag & drop primitives only (No Code)? — slide 70 of 86"
+    },
+    {
+      "number": 71,
+      "text": "No Code primitives — slide 71 of 86"
+    },
+    {
+      "number": 72,
+      "text": "No Code Ransomware — slide 72 of 86"
+    },
+    {
+      "number": 73,
+      "text": "youtu.be/ YDull-krSJI — slide 73 of 86",
+      "media": [
+        {
+          "type": "youtube",
+          "title": "defcon30 No Code Ransomware",
+          "url": "https://www.youtube.com/watch?v=YDull-krSJI"
+        }
+      ]
+    },
+    {
+      "number": 74,
+      "text": "No Code Cleanup — slide 74 of 86"
+    },
+    {
+      "number": 75,
+      "text": "Machine to Cloud via the browser https://docs.microsoft.com/en-in/power-automate/desktop-flows/using-browsers Open browser minimized Go to flow.microsoft.com Hit CTRL+U Extract access token from header — slide 75 of 86"
+    },
+    {
+      "number": 76,
+      "text": "youtu.be/lY_RzV-4BdI — slide 76 of 86",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2022-11-17_OWASP-US-2022_Windows_RCE_as_a_Service/fc3e9de9/media/steal-browser-token-local.mp4"
+        }
+      ]
+    },
+    {
+      "number": 77,
+      "text": "youtu.be/zlF7np18oGI — slide 77 of 86",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2022-11-17_OWASP-US-2022_Windows_RCE_as_a_Service/fc3e9de9/media/steal-browser-token-cloud.mp4"
+        }
+      ]
+    },
+    {
+      "number": 78,
+      "text": "Recap Deploy malware Defense evasion Persistency C&C Exfiltration Cleanup And more: Creds access via browser — slide 78 of 86"
+    },
+    {
+      "number": 79,
+      "text": "Introducing Power Pwn ! — slide 79 of 86"
+    },
+    {
+      "number": 80,
+      "text": "Power Pwn ! Trigger via HTTP Seamlessly handle errors and edge cases — slide 80 of 86"
+    },
+    {
+      "number": 81,
+      "text": "One endpoint to rule them all! POST machine=win11ent user= alexg payload=ransomware dir =C:\\ encryptionKey =9d0d578115a2734a SUCCESS filesFound =71892 filesProcessed =70497 — slide 81 of 86"
+    },
+    {
+      "number": 82,
+      "text": "Convenience layer in Python Set up a free RPA account Register machines Profit github.com/mbrg/power-pwn — slide 82 of 86"
+    },
+    {
+      "number": 83,
+      "text": "Summary What is RPA? Available in every major enterprise Technical deep dive Abusing RPA: RCE as a Service Distribute and execute payloads thru trusted services No Code primitives Introducing Power Pwn Defense: 4 things to do when you get home — slide 83 of 86"
+    },
+    {
+      "number": 84,
+      "text": "Windows RCE as a Service 0 6 How to Stay Safe? — slide 84 of 86"
+    },
+    {
+      "number": 85,
+      "text": "Do these 4 things to reduce your risk Monitor any usage of PAD.MachineRegistration.Silent.exe or PAD.MachineRegistration.Host.exe on local user machines Detect usage of the aforementioned executables with tenant ids that don’t belong to your organization Review you own tenant’s Power Automate environment and Microsoft best practice . If you’re a Microsoft shop, your users are probably already using it! Learn more at OWASP , Dark Reading , Zenity blog — slide 85 of 86"
+    },
+    {
+      "number": 86,
+      "text": "Michael Bargury (@mbrg0) Windows RCE as a Service github.com/mbrg/talks Zenity — slide 86 of 86"
+    }
+  ]
+}

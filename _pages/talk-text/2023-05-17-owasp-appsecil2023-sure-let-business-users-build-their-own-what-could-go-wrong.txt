@@ -1,0 +1,15 @@
+---
+layout: talk-text
+permalink: /talks/2023-05-17-owasp-appsecil2023-sure-let-business-users-build-their-own-what-could-go-wrong/llms.txt
+talk_permalink: /talks/2023-05-17-owasp-appsecil2023-sure-let-business-users-build-their-own-what-could-go-wrong/
+talk_slug: 2023-05-17-owasp-appsecil2023-sure-let-business-users-build-their-own-what-could-go-wrong
+generated_by: sync-talk-text
+sitemap: false
+---
+<!-- talk-enrichment:start -->
+## Abstract
+
+Business professionals are increasingly building their own applications with Low-Code/No-Code platforms. And so, enterprises are placing *developer-level power* in the hands of 100x *new* business developers. What could go wrong?
+
+_[Official agenda abstract for this talk, sourced from BSidesSF 2023](https://bsidessf2023.sched.com/event/1Hztn/sure-let-business-users-build-their-own-what-could-go-wrong)_
+<!-- talk-enrichment:end -->

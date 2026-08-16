@@ -3,9 +3,7 @@ title: "Living off Microsoft Copilot"
 talk_date: 2024-11-19
 conference: INTENT 2024
 permalink: /talks/2024-11-19-intent2024-living-off-microsoft-copilot/
-layout: deck
-deck_manifest: https://media.mbgsec.com/decks/2024-11-19_INTENT2024_Living-Off-Microsoft-Copilot/latest.json
-pdf_url: https://media.mbgsec.com/decks/2024-11-19_INTENT2024_Living-Off-Microsoft-Copilot/slides.pdf
+layout: talk
 schedule_url: https://intentsummit.org/
 recording_url: https://www.youtube.com/watch?v=SDpPPJ00CV8
 description: "Whatever your need as a hacker post-compromise, Microsoft Copilot has got you covered. Covertly search for sensitive data and parse it nicely for your use. Exfiltrate it out without generating logs. Most frightening, Microsoft Copilot will help you phish…"

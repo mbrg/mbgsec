@@ -1,0 +1,638 @@
+{
+  "generated_by": "sync-talk-text",
+  "source_manifest": "https://media.mbgsec.com/decks/2024-10-30_Scaling_AppSec_With_an_SDL_for_Cit_Dev/latest.json",
+  "manifest": "https://media.mbgsec.com/decks/2024-10-30_Scaling_AppSec_With_an_SDL_for_Cit_Dev/facc2a4f/deck.json",
+  "title": "Scaling AppSec With an SDL for Citizen Development (ft Don Willits)",
+  "slides": [
+    {
+      "number": 1,
+      "text": "BlueHat 2024 title slide for Scaling AppSec With an SDL for Citizen Development, presented by Michael Bargury and Don Willits - slide 1 of 147"
+    },
+    {
+      "number": 2,
+      "text": "55K — devs - slide 2 of 147"
+    },
+    {
+      "number": 3,
+      "text": "90K copilots — 55K devs — 90K copilots - slide 3 of 147"
+    },
+    {
+      "number": 4,
+      "text": "500K — apps — 55K devs - slide 4 of 147"
+    },
+    {
+      "number": 5,
+      "text": "1.1M — automations — 55K devs - slide 5 of 147"
+    },
+    {
+      "number": 6,
+      "text": "10M — creds — 55K devs - slide 6 of 147"
+    },
+    {
+      "number": 7,
+      "text": "About two million apps and ten million credentials beside a confused Jackie Chan reaction image - slide 7 of 147"
+    },
+    {
+      "number": 8,
+      "text": "Agenda — WHY so many devs/apps/creds/vulns? — WHY are these important? - slide 8 of 147"
+    },
+    {
+      "number": 9,
+      "text": "Microsoft Security team members who contributed to the citizen-development security program - slide 9 of 147"
+    },
+    {
+      "number": 10,
+      "text": "Don Willits and Michael Bargury speaker introductions - slide 10 of 147"
+    },
+    {
+      "number": 11,
+      "text": "Our team — Applying AppSec to citizen development within the Microsoft environment — Have been working together for >2y - slide 11 of 147"
+    },
+    {
+      "number": 12,
+      "text": "WHY so many devs/apps/creds? - slide 12 of 147"
+    },
+    {
+      "number": 13,
+      "text": "Video demonstration of building an application from a Power Apps template - slide 13 of 147",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2024-10-30_Scaling_AppSec_With_an_SDL_for_Cit_Dev/facc2a4f/media/media1.mp4"
+        }
+      ]
+    },
+    {
+      "number": 14,
+      "text": "Everyone — is a developer - slide 14 of 147"
+    },
+    {
+      "number": 15,
+      "text": "Microsoft COVID-19 daily health-check application screen - slide 15 of 147"
+    },
+    {
+      "number": 16,
+      "text": "Citizen-development platform logos illustrating that the business is already using low-code and no-code tools - slide 16 of 147"
+    },
+    {
+      "number": 17,
+      "text": "“We are going to have 500 million applications that are going to get created, new, by 2023. Just to put that in perspective, that's more than all of the applications that were created in the last 40 years.” — Satya Nadella, Microsoft Ignite 2019 - slide 17 of 147"
+    },
+    {
+      "number": 18,
+      "text": "LCNC — to “500M apps by 2023” - slide 18 of 147"
+    },
+    {
+      "number": 19,
+      "text": "Enters — GenAI — LCNC - slide 19 of 147"
+    },
+    {
+      "number": 20,
+      "text": "Low-code and no-code adoption chart showing approximately 280 percent growth - slide 20 of 147"
+    },
+    {
+      "number": 21,
+      "text": "LCNC — to “500M apps by 2023” — Enters GenAI. - slide 21 of 147"
+    },
+    {
+      "number": 22,
+      "text": "Animated confused reaction asking whether citizen-development scale has the audience's attention - slide 22 of 147",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2024-10-30_Scaling_AppSec_With_an_SDL_for_Cit_Dev/facc2a4f/media/image41.gif"
+        }
+      ]
+    },
+    {
+      "number": 23,
+      "text": "WHY are these important? - slide 23 of 147"
+    },
+    {
+      "number": 24,
+      "text": "Story #1 – Community website - slide 24 of 147"
+    },
+    {
+      "number": 25,
+      "text": "Animated Salesforce Customer Service template used to build a public community website - slide 25 of 147",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2024-10-30_Scaling_AppSec_With_an_SDL_for_Cit_Dev/facc2a4f/media/image42.gif"
+        }
+      ]
+    },
+    {
+      "number": 26,
+      "text": "Public PawnRobotsSpareParts community website created from the Salesforce template - slide 26 of 147"
+    },
+    {
+      "number": 27,
+      "text": "Salesforce site settings with Public Access enabled - slide 27 of 147"
+    },
+    {
+      "number": 28,
+      "text": "Attack-path diagram from an anonymous user to a public Salesforce site - slide 28 of 147"
+    },
+    {
+      "number": 29,
+      "text": "Salesforce Get Contracts screen flow - slide 29 of 147"
+    },
+    {
+      "number": 30,
+      "text": "Attack-path diagram extending the public site to a flow that reads CRM data - slide 30 of 147"
+    },
+    {
+      "number": 31,
+      "text": "Salesforce flow version settings with system-context execution highlighted - slide 31 of 147"
+    },
+    {
+      "number": 32,
+      "text": "Attack-path diagram showing customer data exposed through the public site's flow - slide 32 of 147"
+    },
+    {
+      "number": 33,
+      "text": "Public Get Contracts flow displaying customer contract records - slide 33 of 147"
+    },
+    {
+      "number": 34,
+      "text": "Story #2 – AskHR Copilot - slide 34 of 147"
+    },
+    {
+      "number": 35,
+      "text": "Microsoft Ask HR employee portal home page - slide 35 of 147"
+    },
+    {
+      "number": 36,
+      "text": "Ask HR Copilot chat answering an employee question - slide 36 of 147"
+    },
+    {
+      "number": 37,
+      "text": "Initial AskHR Copilot data-flow diagram - slide 37 of 147"
+    },
+    {
+      "number": 38,
+      "text": "Copilot Studio test chat and authentication settings - slide 38 of 147"
+    },
+    {
+      "number": 39,
+      "text": "Copilot Studio authentication set to No authentication - slide 39 of 147"
+    },
+    {
+      "number": 40,
+      "text": "AskHR data-flow diagram connecting public access to Copilot Studio - slide 40 of 147"
+    },
+    {
+      "number": 41,
+      "text": "Copilot Studio knowledge-source picker for public websites, SharePoint, files, and Dataverse - slide 41 of 147"
+    },
+    {
+      "number": 42,
+      "text": "Create AI skill dialog in Microsoft Copilot - slide 42 of 147"
+    },
+    {
+      "number": 43,
+      "text": "Publish AI skill confirmation explaining that publishing creates a connectable URL - slide 43 of 147"
+    },
+    {
+      "number": 44,
+      "text": "AskHR data-flow diagram extended to a published AI skill - slide 44 of 147"
+    },
+    {
+      "number": 45,
+      "text": "AskHR data-flow diagram extended through Microsoft Graph to business data - slide 45 of 147"
+    },
+    {
+      "number": 46,
+      "text": "AskHR findings diagram showing public access to sensitive business data - slide 46 of 147"
+    },
+    {
+      "number": 47,
+      "text": "Video demonstration of Power Pwn enumerating and deep-scanning Copilot Studio bots - slide 47 of 147",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2024-10-30_Scaling_AppSec_With_an_SDL_for_Cit_Dev/facc2a4f/media/media2.mp4"
+        }
+      ]
+    },
+    {
+      "number": 48,
+      "text": "Story #3 – productivity sync - slide 48 of 147"
+    },
+    {
+      "number": 49,
+      "text": "Power Automate flow that copies incoming Outlook email to Gmail - slide 49 of 147"
+    },
+    {
+      "number": 50,
+      "text": "Productivity sync – findings - slide 50 of 147"
+    },
+    {
+      "number": 51,
+      "text": "Business data to personal account (Data Leakage) — Productivity sync – findings — Data - slide 51 of 147"
+    },
+    {
+      "number": 52,
+      "text": "Power Apps editor for the Sync Outlook history to Gmail application - slide 52 of 147"
+    },
+    {
+      "number": 53,
+      "text": "Sync Outlook history to Gmail application form - slide 53 of 147"
+    },
+    {
+      "number": 54,
+      "text": "Power Automate flow that loops over emails and sends them to a personal account - slide 54 of 147"
+    },
+    {
+      "number": 55,
+      "text": "Power Apps sharing dialog granting access to Everyone in CloudCore - slide 55 of 147"
+    },
+    {
+      "number": 56,
+      "text": "Power Apps sharing dialog exposing active Office 365 Outlook and Gmail connections - slide 56 of 147"
+    },
+    {
+      "number": 57,
+      "text": "Business data to personal account (Data Leakage) — Share with Everyone (Authorization Misuse) — Productivity sync – findings - slide 57 of 147"
+    },
+    {
+      "number": 58,
+      "text": "Business data to personal account (Data Leakage) — Share with Everyone (Authorization Misuse) — Productivity sync – findings - slide 58 of 147"
+    },
+    {
+      "number": 59,
+      "text": "Power Apps consent prompt requesting Outlook and Gmail permissions - slide 59 of 147"
+    },
+    {
+      "number": 60,
+      "text": "Sync Outlook history to Gmail application populated with a personal address - slide 60 of 147"
+    },
+    {
+      "number": 61,
+      "text": "Successful Power Automate run showing the loop over email messages - slide 61 of 147"
+    },
+    {
+      "number": 62,
+      "text": "Power Automate run input containing email content written into logs - slide 62 of 147"
+    },
+    {
+      "number": 63,
+      "text": "Business data to personal account (Data Leakage) — Share with Everyone (Authorization Misuse) — Personal data leaks to logs (Data Leakage) - slide 63 of 147"
+    },
+    {
+      "number": 64,
+      "text": "Power Apps consent prompt showing the Outlook connection switched to an administrator account - slide 64 of 147"
+    },
+    {
+      "number": 65,
+      "text": "Video demonstration of Power Pwn phishing through a Power Platform application - slide 65 of 147",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2024-10-30_Scaling_AppSec_With_an_SDL_for_Cit_Dev/facc2a4f/media/media3.mp4"
+        }
+      ]
+    },
+    {
+      "number": 66,
+      "text": "Business data to personal account (Data Leakage) — Share with Everyone (Authorization Misuse) — Personal data leaks to logs (Data Leakage) - slide 66 of 147"
+    },
+    {
+      "number": 67,
+      "text": "Productivity sync – findings — Business data to personal account (Data Leakage) — Share with Everyone (Authorization Misuse) - slide 67 of 147"
+    },
+    {
+      "number": 68,
+      "text": "Productivity-sync attack graph showing privileged, business, and personal identities - slide 68 of 147"
+    },
+    {
+      "number": 69,
+      "text": "Story #4 – a persistent vendor - slide 69 of 147"
+    },
+    {
+      "number": 70,
+      "text": "Persistent-vendor diagram after the vendor's Entra ID account is disabled - slide 70 of 147"
+    },
+    {
+      "number": 71,
+      "text": "Persistent-vendor diagram showing a second business identity retaining edit access - slide 71 of 147"
+    },
+    {
+      "number": 72,
+      "text": "Persistent-vendor diagram showing a personal identity retaining access to run the flow - slide 72 of 147"
+    },
+    {
+      "number": 73,
+      "text": "A persistent vendor – findings — Unintended or malicious access to sensitive data — Not exclusive to vendors! - slide 73 of 147"
+    },
+    {
+      "number": 74,
+      "text": "Recap — We are leaving heavy security decisions in the hands of business users — When choosing between productivity and security, the choice is obvious - slide 74 of 147"
+    },
+    {
+      "number": 75,
+      "text": "HOW to fail at AppSec — Or – what didn’t work - slide 75 of 147"
+    },
+    {
+      "number": 76,
+      "text": "(Blindly) — Follow best practice - slide 76 of 147"
+    },
+    {
+      "number": 77,
+      "text": "Application Security Best Practice — Focus on crown jewels — Get developer buy-in - slide 77 of 147"
+    },
+    {
+      "number": 78,
+      "text": "Application Security Best Practice — Focus on crown jewels - slide 78 of 147"
+    },
+    {
+      "number": 79,
+      "text": "Application Security Best Practice — Focus on crown jewels — Everything is connected to critical business apps.. - slide 79 of 147"
+    },
+    {
+      "number": 80,
+      "text": "Application Security Best Practice — Focus on crown jewels — Get developer buy-in - slide 80 of 147"
+    },
+    {
+      "number": 81,
+      "text": "Power Apps list of sensitive inputs asking whether business users can safely store credentials - slide 81 of 147"
+    },
+    {
+      "number": 82,
+      "text": "Application Security Best Practice — Focus on crown jewels — Get developer buy-in - slide 82 of 147"
+    },
+    {
+      "number": 83,
+      "text": "Microsoft SDL process diagram illustrating traditional secure-development guidance - slide 83 of 147"
+    },
+    {
+      "number": 84,
+      "text": "How well does SDL Guidance fit? - slide 84 of 147"
+    },
+    {
+      "number": 85,
+      "text": "Pie chart showing most Power Platform SDL requirements marked not applicable - slide 85 of 147"
+    },
+    {
+      "number": 86,
+      "text": "Power Automate workflow illustrating why code-analysis tools do not understand low-code - slide 86 of 147"
+    },
+    {
+      "number": 87,
+      "text": "Microsoft SDL guidance page illustrating documentation written for code developers - slide 87 of 147"
+    },
+    {
+      "number": 88,
+      "text": "Traditional software-development lifecycle divided among engineering, operations, QA, and business - slide 88 of 147"
+    },
+    {
+      "number": 89,
+      "text": "Low-code lifecycle diagram showing business users responsible across the entire cycle - slide 89 of 147"
+    },
+    {
+      "number": 90,
+      "text": "How well does SDL Guidance fit? — Written for Code – LC/NC hides the complexity (and power!) of these tools — CodeQL - slide 90 of 147"
+    },
+    {
+      "number": 91,
+      "text": "Traditional AppSec practices crossed out beside the message Stuck at get-go - slide 91 of 147"
+    },
+    {
+      "number": 92,
+      "text": "Power Apps template gallery beside a person looking up from the bottom of a high wall - slide 92 of 147"
+    },
+    {
+      "number": 93,
+      "text": "If building is easy, shouldn’t fixing vulns be easy too…? - slide 93 of 147"
+    },
+    {
+      "number": 94,
+      "text": "AUTO-FIX — Remove unused credentials — Sanitize logs - slide 94 of 147"
+    },
+    {
+      "number": 95,
+      "text": "Auto-fix — to Early success - slide 95 of 147"
+    },
+    {
+      "number": 96,
+      "text": "Early success — to Buy-in — Auto-fix - slide 96 of 147"
+    },
+    {
+      "number": 97,
+      "text": "Buy-in to World domination ;) — Auto-fix — to Early success - slide 97 of 147"
+    },
+    {
+      "number": 98,
+      "text": "Buy-in to — World domination — Scale it - slide 98 of 147"
+    },
+    {
+      "number": 99,
+      "text": "Animated confused reaction asking whether the auto-fix results have the audience's attention - slide 99 of 147",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2024-10-30_Scaling_AppSec_With_an_SDL_for_Cit_Dev/facc2a4f/media/image41.gif"
+        }
+      ]
+    },
+    {
+      "number": 100,
+      "text": "HOW we made it work - slide 100 of 147"
+    },
+    {
+      "number": 101,
+      "text": "Our goals — Remediate all vulnerabilities (Get-to-Green/Stay-Green) - slide 101 of 147"
+    },
+    {
+      "number": 102,
+      "text": "Our goals — Remediate all vulnerabilities — With 2-3 dedicated headcounts - slide 102 of 147"
+    },
+    {
+      "number": 103,
+      "text": "Our goals — Remediate all vulnerabilities — With 2-3 dedicated headcounts - slide 103 of 147"
+    },
+    {
+      "number": 104,
+      "text": "Our goals — Remediate all vulnerabilities — With 2-3 dedicated headcounts - slide 104 of 147"
+    },
+    {
+      "number": 105,
+      "text": "Minimum viable product remediation guidance written for business users - slide 105 of 147"
+    },
+    {
+      "number": 106,
+      "text": "Our goals — Remediate all vulnerabilities — With 2-3 dedicated headcounts - slide 106 of 147"
+    },
+    {
+      "number": 107,
+      "text": "Minimum Viable Product — Automatic Remediation: Is the security violation auto-fixable? - slide 107 of 147"
+    },
+    {
+      "number": 108,
+      "text": "Minimum Viable Product — Automatic Remediation: Is the security violation auto-fixable? — Do we have enough context? - slide 108 of 147"
+    },
+    {
+      "number": 109,
+      "text": "Minimum Viable Product — Automatic Remediation: Is the security violation auto-fixable? — Do we have enough context? - slide 109 of 147"
+    },
+    {
+      "number": 110,
+      "text": "Minimum Viable Product — Balance a reasonable time to fix before we “shift + delete” in secure assets (Apps, Flows, etc.) — We settled on “30 days-to-fix” as a reasonable compromise providing “just enough time” vs. “not too much time” - slide 110 of 147"
+    },
+    {
+      "number": 111,
+      "text": "Minimum Viable Product — Brownfield: Pre-existing risk/security violations created on or before Jan 1st, 2024 (when our campaigns started) — a.k.a. “Get to Green” - slide 111 of 147"
+    },
+    {
+      "number": 112,
+      "text": "Brownfield and greenfield remediation goals beside a Hulk says stay green image - slide 112 of 147"
+    },
+    {
+      "number": 113,
+      "text": "Violation-remediation process showing how early success led to longer campaigns - slide 113 of 147"
+    },
+    {
+      "number": 114,
+      "text": "SharePoint list containing self-service remediation instructions - slide 114 of 147"
+    },
+    {
+      "number": 115,
+      "text": "SharePoint list with step-by-step self-service remediation guidance - slide 115 of 147"
+    },
+    {
+      "number": 116,
+      "text": "First action-required email directing an owner to the violations dashboard - slide 116 of 147"
+    },
+    {
+      "number": 117,
+      "text": "Final-warning email saying an insecure resource is queued for deletion - slide 117 of 147"
+    },
+    {
+      "number": 118,
+      "text": "Power Platform violations dashboard listing detected security violations - slide 118 of 147"
+    },
+    {
+      "number": 119,
+      "text": "Violations dashboard detail view with issue description and remediation guidance - slide 119 of 147"
+    },
+    {
+      "number": 120,
+      "text": "Violations dashboard remediation view with connection-replacement controls - slide 120 of 147"
+    },
+    {
+      "number": 121,
+      "text": "Greenfield and brownfield remediation playbooks beside a Copilot workflow - slide 121 of 147"
+    },
+    {
+      "number": 122,
+      "text": "Results — Jan 18 — th - slide 122 of 147"
+    },
+    {
+      "number": 123,
+      "text": "Stacked bar chart showing open violations falling and remediated violations rising during 2024 - slide 123 of 147"
+    },
+    {
+      "number": 124,
+      "text": "Risk-reduction chart noting that a 30-day fix window prevents reaching 100 percent remediation - slide 124 of 147"
+    },
+    {
+      "number": 125,
+      "text": "Success Kid reaction image celebrating the remediation program - slide 125 of 147"
+    },
+    {
+      "number": 126,
+      "text": "Takeaways - slide 126 of 147"
+    },
+    {
+      "number": 127,
+      "text": "What did we learn from this? — Leverage industry-standard security risk categorization - slide 127 of 147"
+    },
+    {
+      "number": 128,
+      "text": "OWASP Top 10 for Low-Code/No-Code — LCNC01: Account Impersonation — LCNC02: Authorization Misuse - slide 128 of 147"
+    },
+    {
+      "number": 129,
+      "text": "OWASP Top 10 for Large Language Models — LLM01: Prompt Injection — LLM02: Insecure Output Handling - slide 129 of 147"
+    },
+    {
+      "number": 130,
+      "text": "What did we learn from this? — Leverage industry-standard security risk categorization — Prioritize what we want to fix first - slide 130 of 147"
+    },
+    {
+      "number": 131,
+      "text": "6 Risk Reduction Campaigns — Merged similar OWASP Top 10 categories together & reviewed SDL gap analysis — Also pivoted on Senior Leadership Team priorities - slide 131 of 147"
+    },
+    {
+      "number": 132,
+      "text": "Risk-reduction campaign dashboard with severity chart, category treemap, and campaign matrix - slide 132 of 147"
+    },
+    {
+      "number": 133,
+      "text": "What did we learn from this? — Leverage industry-standard security risk categorization — Prioritize what we want to fix first - slide 133 of 147"
+    },
+    {
+      "number": 134,
+      "text": "Serverless shared-responsibility stack separating customer and platform layers - slide 134 of 147"
+    },
+    {
+      "number": 135,
+      "text": "Serverless and low-code shared-responsibility stacks compared side by side - slide 135 of 147"
+    },
+    {
+      "number": 136,
+      "text": "Shared-responsibility comparison emphasizing that customers must own their side - slide 136 of 147"
+    },
+    {
+      "number": 137,
+      "text": "Low-code responsibility stack asking what could go wrong when business users build applications - slide 137 of 147"
+    },
+    {
+      "number": 138,
+      "text": "Low-code responsibility stack beside questions about data movement, sharing, external access, credentials, and business logic - slide 138 of 147"
+    },
+    {
+      "number": 139,
+      "text": "Expanded low-code responsibility questions asking who owns AppSec for applications built by business users - slide 139 of 147"
+    },
+    {
+      "number": 140,
+      "text": "Shared Responsibility Model for low-code and no-code as a role-accountability matrix - slide 140 of 147"
+    },
+    {
+      "number": 141,
+      "text": "What are the priorities? — Leverage industry-standard security risk categorization — Prioritize what we want to fix first - slide 141 of 147"
+    },
+    {
+      "number": 142,
+      "text": "SDL gap-analysis pie chart revisited beside lessons about automation and de-facto SDL - slide 142 of 147"
+    },
+    {
+      "number": 143,
+      "text": "What did we learn from this? — Leverage industry-standard security risk categorization — Prioritize what we want to fix first - slide 143 of 147"
+    },
+    {
+      "number": 144,
+      "text": "Conclusion - slide 144 of 147"
+    },
+    {
+      "number": 145,
+      "text": "Resources for product documentation, Microsoft SDL, OWASP Low-Code No-Code and LLM Top 10, and the full talk write-up - slide 145 of 147"
+    },
+    {
+      "number": 146,
+      "text": "In conclusion… — Low-Code/No-Code is a powerful and prolific tool in an Enterprise — But the shared responsibility model is not necessarily recognized - slide 146 of 147"
+    },
+    {
+      "number": 147,
+      "text": "BlueHat closing slide saying Thank you - slide 147 of 147"
+    }
+  ]
+}

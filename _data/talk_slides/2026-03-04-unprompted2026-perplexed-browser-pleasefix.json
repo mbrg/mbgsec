@@ -1,0 +1,110 @@
+{
+  "generated_by": "sync-talk-text",
+  "source_manifest": "https://media.mbgsec.com/decks/2026-03-04_PerplexedBrowser/latest.json",
+  "manifest": "https://media.mbgsec.com/decks/2026-03-04_PerplexedBrowser/ac112588-youtube-alt1/deck.json",
+  "title": "Perplexed Browser: PleaseFix (delivered by Gadi Evron)",
+  "slides": [
+    {
+      "number": 1,
+      "text": "Slide 1: PleaseFix (Perplexed Browser) Read More: https://labs.zenity.io/"
+    },
+    {
+      "number": 2,
+      "text": "Slide 2: Agentic Browsers - Are Everywhere"
+    },
+    {
+      "number": 3,
+      "text": "Slide 3: Intent Collision Prompt Injections are ever-evolving. We are at a new stage where the attacker goal is agent to merge a benign user request with attacker-controlled instructions from untrusted web data into a single exec"
+    },
+    {
+      "number": 4,
+      "text": "Slide 4: The Payload ● Hides in a calendar invite ● “Rewrites” the accept button with our instructions ● Abuse Comet internals (system reminders)"
+    },
+    {
+      "number": 5,
+      "text": "Slide 5: Attack No.1 - File System Exﬁl 📅 ➝ 📁 💀"
+    },
+    {
+      "number": 6,
+      "text": "Slide 6: Attacker sends a calendar invite, with a control to play the full file-system exfiltration demo.",
+      "media": [
+        {
+          "type": "youtube",
+          "title": "PerplexedBrowser file-system exfiltration demonstration",
+          "url": "https://www.youtube.com/watch?v=tJV6tfiK-5g"
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "text": "Slide 7: Comet Navigates to Attacker Controlled site - More malicious instructions 😈"
+    },
+    {
+      "number": 8,
+      "text": "Slide 8: File:///"
+    },
+    {
+      "number": 9,
+      "text": "Slide 9: Comet Autonomously ﬁnds sensitive ﬁles"
+    },
+    {
+      "number": 10,
+      "text": "Slide 10: Comet Exﬁltrates them to the attacker"
+    },
+    {
+      "number": 11,
+      "text": "Slide 11: Attack No.2 - 1Password Credential Leak 📅 ➝ 🔓 🔑 💀"
+    },
+    {
+      "number": 12,
+      "text": "Slide 12: 1Password credential leak attack begins from a calendar invite, with a control to play the full account-takeover demo.",
+      "media": [
+        {
+          "type": "youtube",
+          "title": "PerplexedBrowser 1Password credential theft and account takeover demonstration",
+          "url": "https://www.youtube.com/watch?v=K51XvfxwC28"
+        }
+      ]
+    },
+    {
+      "number": 13,
+      "text": "Slide 13: Comet Assistant follows injected instructions while a 1Password account chooser is open beside a password-security guide."
+    },
+    {
+      "number": 14,
+      "text": "Slide 14: A 1Password account chooser is open beside Comet Assistant as it follows instructions from the injected calendar task."
+    },
+    {
+      "number": 15,
+      "text": "Slide 15: Comet Assistant opens a 1Password vault item in edit mode, exposing the highlighted username and password fields."
+    },
+    {
+      "number": 16,
+      "text": "Slide 16: Request Catcher logs a GET request containing the username and password exfiltrated from the 1Password vault."
+    },
+    {
+      "number": 17,
+      "text": "Slide 17: The 1Password Manage Account page shows the account email, masked Secret Key, and Emergency Kit controls while Comet Assistant proceeds."
+    },
+    {
+      "number": 18,
+      "text": "Slide 18: A 1Password Change Password dialog is filled with an attacker-chosen new password while Comet Assistant follows the injected task."
+    },
+    {
+      "number": 19,
+      "text": "Slide 19: A downloaded 1Password Emergency Kit PDF reveals the account email and Secret Key beside the Comet Assistant panel."
+    },
+    {
+      "number": 20,
+      "text": "Slide 20: Request Catcher logs a GET request containing the exfiltrated 1Password account email and Secret Key."
+    },
+    {
+      "number": 21,
+      "text": "Slide 21: Conclusion ● Agentic Browsers are untrusted entities. ● Logged in? The browser is acting under YOUR identity. ● Browser Security Model? Think again."
+    },
+    {
+      "number": 22,
+      "text": "Slide 22: Thank you for your time! Intrigued? Wanna see more? Scan the QR to read it all and watch the end to end videos!"
+    }
+  ]
+}

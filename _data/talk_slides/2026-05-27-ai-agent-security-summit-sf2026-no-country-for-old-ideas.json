@@ -1,0 +1,120 @@
+{
+  "generated_by": "sync-talk-text",
+  "source_manifest": "https://media.mbgsec.com/decks/2026-05-27_AgentSecuritySummit_NoCountryForOldIdeas/latest.json",
+  "manifest": "https://media.mbgsec.com/decks/2026-05-27_AgentSecuritySummit_NoCountryForOldIdeas/82d09fc4/deck.json",
+  "title": "No Country for Old Ideas",
+  "slides": [
+    {
+      "number": 1,
+      "text": "No Country for Old Ideas title slide, presented by Michael Bargury at the AI Agent Security Summit - slide 1 of 28"
+    },
+    {
+      "number": 2,
+      "text": "Benchmarks improve while agent-security attacks keep arriving, contrasting a robustness chart with recent exploit videos - slide 2 of 28"
+    },
+    {
+      "number": 3,
+      "text": "Today's view: benchmarks improve while agent-security attacks keep arriving, reframing the claim as little real progress - slide 3 of 28"
+    },
+    {
+      "number": 4,
+      "text": "Burying Our Heads in the Sand retrospective for 2022 and 2023: prompt injection and early data-control distractions - slide 4 of 28"
+    },
+    {
+      "number": 5,
+      "text": "Burying Our Heads in the Sand retrospective for 2024: enterprise Copilot, data leakage, and guardrail distractions - slide 5 of 28"
+    },
+    {
+      "number": 6,
+      "text": "Burying Our Heads in the Sand retrospective for 2025: coding agents, destructive autonomy, guardrails, and agent inventory - slide 6 of 28"
+    },
+    {
+      "number": 7,
+      "text": "Burying Our Heads in the Sand retrospective for 2026: OpenClaw and Claude Mythos - slide 7 of 28"
+    },
+    {
+      "number": 8,
+      "text": "Social post and agent confession describing an AI agent deleting production data without verifying scope - slide 8 of 28"
+    },
+    {
+      "number": 9,
+      "text": "AI-written blog post accusing an open-source maintainer of gatekeeping despite the maintainer's prior contributions - slide 9 of 28"
+    },
+    {
+      "number": 10,
+      "text": "2026 retrospective combining the destructive production-data incident with the AI-generated gatekeeping article - slide 10 of 28"
+    },
+    {
+      "number": 11,
+      "text": "Misalignment and intent frame security from AI as more than shadow IT, data, inventory, cloud, or identity - slide 11 of 28"
+    },
+    {
+      "number": 12,
+      "text": "Intent-Aware Authorization, with the caveat that we have no idea what intent means - slide 12 of 28"
+    },
+    {
+      "number": 13,
+      "text": "Section prompt asking what misalignment and intent mean - slide 13 of 28"
+    },
+    {
+      "number": 14,
+      "text": "Product Security Engineer job posting mapped to the intent to strengthen SDLC and AppSec programs - slide 14 of 28"
+    },
+    {
+      "number": 15,
+      "text": "Product Security Engineer job posting mapped to an in-person culture and proximity to engineering - slide 15 of 28"
+    },
+    {
+      "number": 16,
+      "text": "Product Security Engineer responsibilities mapped to a figure-it-out culture - slide 16 of 28"
+    },
+    {
+      "number": 17,
+      "text": "Product Security Engineer responsibilities mapped to automation-first, data-driven work without slowing engineering - slide 17 of 28"
+    },
+    {
+      "number": 18,
+      "text": "Zenity job listings mapped to the intent to expand the team - slide 18 of 28"
+    },
+    {
+      "number": 19,
+      "text": "A football player aiming at a one-percent target illustrates the chance one Product Security Engineer can do everything - slide 19 of 28"
+    },
+    {
+      "number": 20,
+      "text": "The one-percent football target reframed: a Product Security Engineer can mostly do the next quarter's work - slide 20 of 28"
+    },
+    {
+      "number": 21,
+      "text": "Coding-agent session proposing a benchmark harness and making many implementation decisions from a short prompt - slide 21 of 28"
+    },
+    {
+      "number": 22,
+      "text": "Intent changes over time and must change in a complex domain - slide 22 of 28"
+    },
+    {
+      "number": 23,
+      "text": "Roughdraft landing page: easier local collaboration with an agent through comments and suggestions - slide 23 of 28"
+    },
+    {
+      "number": 24,
+      "text": "Roughdraft installation prompt raises unanswered questions about destination, conflicts, and required secrets - slide 24 of 28"
+    },
+    {
+      "number": 25,
+      "text": "Roughdraft setup instructions highlighted to append persistent guidance to CLAUDE.md - slide 25 of 28"
+    },
+    {
+      "number": 26,
+      "text": "Ambiguity everywhere is also good because it is a main feature of human language compared with code and math - slide 26 of 28"
+    },
+    {
+      "number": 27,
+      "text": "A 48-minute, 285-thousand-token agent session illustrates the many small and large decisions that must align with the user - slide 27 of 28"
+    },
+    {
+      "number": 28,
+      "text": "Intent is knowing why - slide 28 of 28"
+    }
+  ]
+}

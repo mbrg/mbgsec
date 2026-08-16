@@ -1,0 +1,333 @@
+{
+  "generated_by": "sync-talk-text",
+  "source_manifest": "https://media.mbgsec.com/decks/2024-06-27_OWASP-Lisbon-24_OWASP-LCNC-Top-10/latest.json",
+  "manifest": "https://media.mbgsec.com/decks/2024-06-27_OWASP-Lisbon-24_OWASP-LCNC-Top-10/97b0700f/deck.json",
+  "title": "OWASP Low-Code/No-Code Top 10",
+  "slides": [
+    {
+      "number": 1,
+      "text": "Slide 1: Title slide for OWASP LCNC Top 10 at Global AppSec Lisbon 2024, with the subtitle 'ohh the times, they are a-chang'n'."
+    },
+    {
+      "number": 2,
+      "text": "Slide 2: Michael Bargury introduction and agenda, covering LCNC security research, Zenity, OWASP, and breaking business applications."
+    },
+    {
+      "number": 3,
+      "text": "Slide 3: Animated Power Apps canvas showing Microsoft Copilot generating an app from a natural-language prompt.",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2024-06-27_OWASP-Lisbon-24_OWASP-LCNC-Top-10/97b0700f/media/slide-003-animation.gif"
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "text": "Slide 4: Copilot Studio screen for adding available knowledge sources and configuring connections."
+    },
+    {
+      "number": 5,
+      "text": "Slide 5: Pega interface demonstrating a recording assistant and quick-start workflow."
+    },
+    {
+      "number": 6,
+      "text": "Slide 6: Full-screen demonstration collage introducing AI-assisted low-code/no-code application creation."
+    },
+    {
+      "number": 7,
+      "text": "Slide 7: Embedded video demonstration of a Claude-powered memory game.",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2024-06-27_OWASP-Lisbon-24_OWASP-LCNC-Top-10/97b0700f/media/slide-007-demo.mp4"
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "text": "Slide 8: Linked Microsoft Developer video, What's new with Microsoft Copilot Studio | BRK210, starting at the referenced 28-minute segment.",
+      "media": [
+        {
+          "type": "youtube",
+          "title": "What's new with Microsoft Copilot Studio | BRK210",
+          "url": "https://www.youtube.com/watch?v=Ihet_fgoC8c"
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "text": "Slide 9: Divider slide asking, 'What do we produce?'"
+    },
+    {
+      "number": 10,
+      "text": "Slide 10: OWASP LCNC Top 10 Unique about LCNC * Devs can be anyone from a pro dev to a citizen dev *No SDLC ¢ No security controls * 10-100x scale of app development * Code is generated (platform owns code-gen vulns) * Focused on logical vulns"
+    },
+    {
+      "number": 11,
+      "text": "Slide 11: OWASP. LCNC Top.10 OWASP LCNC Top 10 LCNC-SEC-01: Account Impersonation * —LCNC-SEC-02: Authorization Misuse e —LCNC-SEC-03: Data Leakage and Unexpected Consequences ¢ —LCNC-SEC-04: Authentication and Secure Communication Failures ¢ —LCNC-SEC-05: Security Misconfiguration ¢ —LCNC-SEC-06: Injection Handling Failures ¢ —LCNC-SE…"
+    },
+    {
+      "number": 12,
+      "text": "Slide 12: OWASP LCNC Top 10 Methodology loop Community contribution Soran P | e Draft feedback | Publish | Anonymized Statistics >10M apps, automations, Ty to all collaborations bots, components, ... and contributors!"
+    },
+    {
+      "number": 13,
+      "text": "Slide 13: OWASP _LCNC Top.10 i @OWASPNoCode / CALL FOR DATA IS OPEN NOW - michael.bargury@owasp.org We are looking for: 1. Stories about vulnerable LCNC apps 2. Categories of LCNC security vulns"
+    },
+    {
+      "number": 14,
+      "text": "Slide 14: Divider introducing LCNC-SEC-01, Account Impersonation."
+    },
+    {
+      "number": 15,
+      "text": "Slide 15: OWASP LCNC Top 10 LCNC-SEC-01: Account Impersonation"
+    },
+    {
+      "number": 16,
+      "text": "Slide 16: OWASP. LCNC Top.10 LCNC-SEC-01: Account Impersonation The Gist oo A short description for security pros Low-code/no-code applications can be embedded with a developer account which is used implicitly by any application user. This creates a direct path towards Privilege Escalation, allowing an attacker to hide behind another u…"
+    },
+    {
+      "number": 17,
+      "text": "Slide 17: OWASP. LCNC Top.10 LCNC-SEC-01: Account Impersonation Attack and misuse scenarios for both security pros and Example Attack Scenarios : business users Scenario #1 A developer creates a simple application to view records from a database. They use their identity to log into the database, creating a connection embedded within th…"
+    },
+    {
+      "number": 18,
+      "text": "Slide 18: OWASP. LCNC Top.10 LCNC-SEC-01: Account Impersonation What can you do about it? How to Prevent ¢ Adhere to the principle of least privilege when provisioning connections to databases/services/SaaS ¢ Ensure applications use dedicated service or application accounts rather than user accounts « Ensure applications use a single c…"
+    },
+    {
+      "number": 19,
+      "text": "Slide 19: Divider introducing the Ask HR Copilot story."
+    },
+    {
+      "number": 20,
+      "text": "Slide 20: OWASP. LCNC Top.10 Let’s create an Ask HR Copilot"
+    },
+    {
+      "number": 21,
+      "text": "Slide 21: ® @ SharePoint %_zenitystage.sharepoint.com/sites/ASkHR + New {i Page details i] Analytics Take the employee poll =_— _ Compensation View information about salaries, stock, rewards, and ployee onboarding HRFAQ Edit Interviewing: How to‘ind the right fit for your team Career Find links to resources to support you on your Q Sea…"
+    },
+    {
+      "number": 22,
+      "text": "Slide 22: Home | Microsoft Copilot studio Environment Copilot Studio & alProd Create a copilot x Step 1 of 2 Copilot name * O . AskHR Copilot Set up the copilot Start fresh with a new copilot, and start making it yours. What language do you want your copilot to speak? * © English Vv %> Boost your conversations with generative answers ©…"
+    },
+    {
+      "number": 23,
+      "text": "Slide 23: Home Ask HR Copilot| Microsoft cop xX + ie) farniaaranranssiasm cna 7 ” : Environment Copilot Studio | Ask HR Copilot ® aiProd ~ Test copilot x . co P Ask HR Copilot ts ) \\@ Share 66 Copilots Track between topics © G View Solution (Common rvi fault Solution) © ®&) Topics : Set up your generative Al ' 8 Entities Give your copi…"
+    },
+    {
+      "number": 24,
+      "text": "Slide 24: Plugins (preview) -ASkHR copilot Mi Xt copilotstudio,.microsoft.com/envi . . | Environment Copilot Studio | Ask HR Copilot ® aiProd = F Plugins > i v a Test copilot x Plugins > Untitled ts] 6’ 2 8 90 it 60 Copilots @_) Track between topics © G how Q\\yv % © YF @© | & Plugins (preview) © Trigger ; £8 Entities Dynamic chaining (…"
+    },
+    {
+      "number": 25,
+      "text": "Slide 25: Plugins (preview) -ASkHR copilot Mi Xt copilotstudio,.microsoft.com/envi . . . Environment Copilot Studio | Ask HR Copilot ® aiProd = . Plugins > i v B Test copilot x Plugins > Untitled Cis) Oo&% & B oo = 60 Copilots @_) Track between topics © G how D7 | X% Ww % ©) YF @© I =] ~ | &) Plugins (preview) % — Connector action £8 E…"
+    },
+    {
+      "number": 26,
+      "text": "Slide 26: Plugins (preview) -ASkHR copilot Mi Xt © copilotstudio,.microsoft.com/envi Environment Copilot Studio | Ask HR Copilot & alProd = ; Plugins > Untitled v Test copilot x Hlugins @oes oo A 60 Copilots @_) Track between topics © CG +, D7 | X% Ww % ©) YF @© © Crevice! Getltems | & Plugins (preview) SharePoint Entities 8 Outputs (1…"
+    },
+    {
+      "number": 27,
+      "text": "Slide 27: copilotstudio.microsoft.com/environment: Environment Copilot Studio | Ask HR Copilot & alProd = . © Publishing to Microsoft Copilot is turned off. Talk to your admin to publish extensions to Microsoft Copilot in this environment. Learn more x Test copilot x Fs oo - 88 Copilots @_) Track between topics O Gwe o« Publish © eon E…"
+    },
+    {
+      "number": 28,
+      "text": "Slide 28: =\" Demo website - Ask HR copilot] Mio Xe aoe TS copitotstudio microsoft com/environments/9139c593-708b-e141-8f24-d895735032 12/bots/cr2fb askHrCopilot/canvas?_version_=2 Q Ef Microsoft Power Platform € Learn more about Microsoft Copilot Studio Try out the chatbot we made! Here are some things my bot can help you with: Hello S…"
+    },
+    {
+      "number": 29,
+      "text": "Slide 29: [New Private Tab _ + doe H (al For quick acces, place your bookmarks hereon the bookmarks ba. Inport bookmarks now, ® brave Search the web privately Private Window with Tor x connectivity Brave doesn't store browsing activity from Private Windows. With Tor connectivity, it becomes more difficult for sites to see your true IP…"
+    },
+    {
+      "number": 30,
+      "text": "Slide 30: = Demo website Ask HR Copilot| Mico Xt . a doe TI % copilotstudio microsoft. com/environ 4 ale Tor Microsoft Power Platform #9 Learn more about Microsoft Copilot Studio Ask HR Copilot Try out the chatbot we made! Here are some things my bot can help you with: Hello you Start over qu Talk to a person nd competenc ma Privacy &…"
+    },
+    {
+      "number": 31,
+      "text": "Slide 31: utity ASK HR Copilot| Microsoft Xt Copilot Studio | Ask HR Copilot Authentication = Verify a user's identity during a conversation. The bot receives secure access to the user's data Test copilot x Secu rity and is able to take actions on their behalf, resulting in a more personalized experience. Learn more 88 Copilots ») Trac…"
+    },
+    {
+      "number": 32,
+      "text": "Slide 32: = Demo website Ask HR Copilot| Mico Xt qd e Q = % copilotstudio.microsoft.com, GE Microsoft Power Platform ® Lear more about Microsoft Copilot Studio Try out the chatbot we made! Here are some things my bot can help you with: Hello Start over Talk to a person Security issue #2: Credential Sharing as a Service BE Q Search sigu…"
+    },
+    {
+      "number": 33,
+      "text": "Slide 33: Copilot Studio | Ask HR Copilot Authentication = . more Test copilot x Security \" 00 —_ © Manual (for custom website) 6a) Copilots @ ) Track between topics O Set up additional security measures for the (@ __) Track between topics jet Up a s fy meas Support AAD or any OAuth? identity provider. Authentication variables are avai…"
+    },
+    {
+      "number": 34,
+      "text": "Slide 34: d ‘Apps | Microsoft Teams dassic ie Q ‘teams.microsoft.com/_#/apps?intent=28icat Ask HR Copilot red by Power Virtual Ag ‘Overview Perm Built by Power Virtual Agents. Create your own at aka.ms/pvaforteams. Help employees stay informed, productive, and connected. Create bots and add important topics for your organization usi in…"
+    },
+    {
+      "number": 35,
+      "text": "Slide 35: Ask HR Copilot 1:56PM fol Dy Hell im Ask HR Copilot a virtual assistant. Just so you are aviare, | sometimes use Al to answer your questions. How can | Teams help? 3:15 PM How can | apply for internal job postings? Ask HR Copilot 3:15 PM i) 200s interajos pra sing your employe cede ad browse the avslabl potions. Apply by suit…"
+    },
+    {
+      "number": 36,
+      "text": "Slide 36: zenitystage.sharepoint.com, ts/HR%20Link D Search this ist ASkHR tone HR Links ¥* Title Vv ® ® oc ®@ @» “Internal Job Postings “annual Performance Review Guidelines “Incident Reporting System “Remote Work Policy “Time-Off Request Portal ~ professional Conduct Code “Employee Benefits Information “Expense Claim System *Payrall…"
+    },
+    {
+      "number": 37,
+      "text": "Slide 37: Home Ask HR Copilot| Microsoft cop xX + ie) farniaaranranssiasm cna 7 ” : Environment Copilot Studio | Ask HR Copilot ® aiProd ~ Test copilot x . co P Ask HR Copilot ts ) \\@ Share 66 Copilots Track between topics © G View Solution (Common rvi fault Solution) © ®&) Topics : Set up your generative Al ' 8 Entities Give your copi…"
+    },
+    {
+      "number": 38,
+      "text": "Slide 38: x + Q copilotstudio.microsoft.com) Add an action (preview) @ Action @ Connection details Review and finish Connector Connectors let data move from a system or service to Microsoft Copilot Studio. Create a link toa connector by signing in. Connect to SharePoint v_ kris@zenitystage.com +Add new connection"
+    },
+    {
+      "number": 39,
+      "text": "Slide 39: oS + Q copilotstudio.microsoft.cor, Add an action (preview) @ Action @ Connection details @ Review and finish Required inputs need to be filled in for an action to run Dataset How will the bot fill this input? Dynamically fill with best option (default) Display name © Identify as O Site Address EB User's entire response > Des…"
+    },
+    {
+      "number": 40,
+      "text": "Slide 40: Ask HR Copllot| Microsoft Teams class) Xe at & & Gi ce §B_ Try the new Teams Ask HR Copilot chat About ‘teams.microsoft.com, 5067-59cf >6/sections/conversations?slug=28:bbddf3a6-22f5-41f1-b28 Ask HR Copilot 1:56PM Hello, 'm Ask HR Copilot, a virtual assistant. Just so you are aware, | sometimes use Al to answer your questions…"
+    },
+    {
+      "number": 41,
+      "text": "Slide 41: A) Ask HR copilot | Microsoft Teams class) Xe © ms. microsoft.com, 3ebb6/sections/con Ask HR Copilot chat About at Ask HR Copilot 1:56 PM Fy Hello, I'm Ask HR Copilot, a virtual assistant. Just so you are aware, | sometimes use Al to answer your questions. How can | reams help? 315 PM How can | apply for internal job postings…"
+    },
+    {
+      "number": 42,
+      "text": "Slide 42: ‘Overview - ASKHR Copilot| Microsoft: X copilotstudio,.microsoft.com/er Copilot Studio | Ask HR Copilot Share copilot = . Share with users to collaborate or with security groups to use your copilot. Learn more Test copilot x —_— Lilia 88 Copilots @) Track b C+ & Current authentication settings allow everyone to use the bot. I…"
+    },
+    {
+      "number": 43,
+      "text": "Slide 43: [New Private Tab _ + doe H (al For quick acces, place your bookmarks hereon the bookmarks ba. Inport bookmarks now, ® brave Search the web privately Private Window with Tor x connectivity Brave doesn't store browsing activity from Private Windows. With Tor connectivity, it becomes more difficult for sites to see your true IP…"
+    },
+    {
+      "number": 44,
+      "text": "Slide 44: = Demo website Ask HR Copilot| Mico Xt aoe [ & web,powervamicrosoft.com/en 4 < : ale Ter HIE Microsoft Power Platform #8 Learn more about Microsoft Copilot Studio Ask HR Copilot Try out the chatbot we made! Here are some things my bot can help you with: Hello Start over Talk to a person 5 a We set up authentication but the bo…"
+    },
+    {
+      "number": 45,
+      "text": "Slide 45: copilotstudio.microsoft.com, Copilot Studio | Ask HR Copilot Authentication = more Test copilot x Security © Manat orcs - 8B Copilots @_) Track between topics O GQ « Set up additional security measures for tht anual (for custom website) ~_/ track between topics © eEUp a deemealic Ail Support AAD or any OAuth2 identity provide…"
+    },
+    {
+      "number": 46,
+      "text": "Slide 46: = Demo website Ask HR Copilot| Mico Xt ww aoe [ & web,powervamicrosoft.com/en 4 < : ale Ter HIE Microsoft Power Platform #8 Learn more about Microsoft Copilot Studio Ask HR Copilot Try out the chatbot we made! Here are some things my bot can help you with: Hello Start over Talk to a person Legal Privacy & cookies © Microsoft…"
+    },
+    {
+      "number": 47,
+      "text": "Slide 47: Demo website Ask HR Copilot| Micro Xb qd e Q & web.powerva.microsoft.com, Microsoft Power Platform Learn more about Microsoft Copilot Studio Try out the chatbot we made! Here are some things my bot can help you with: Hello Start over Talk to a person b 4 jb C a a\\® Tor Ask HR Copilot Privacy &cookies © Microsoft 2023 @ Search…"
+    },
+    {
+      "number": 48,
+      "text": "Slide 48: = Demo website Ask HR Copilot| Mico Xt qd e Q & web.powerva.microsoft.com, Microsoft Power Platform Learn more about Microsoft Copilot Studio Try out the chatbot we made! Here are some things my bot can help you with: Hello Start over Talk to a person SSemeoaKr Keen Ea Ask HR Copilot Al to answer your s instructions. Tell n i…"
+    },
+    {
+      "number": 49,
+      "text": "Slide 49: = Demo website Ask HR Copilot| Mico Xt qd e Q % web.powerva.microsoft.com/en\\ HIE Microsoft Power Platform #8 Learn more about Microsoft Copilot Studio Try out the chatbot we made! Here are some things my bot can help you with: Hello Start over Talk to a person Security issue #5: prompt injection leads to sensitive data leak…"
+    },
+    {
+      "number": 50,
+      "text": "Slide 50: Analytics ~ ASK HR Copilot| Microsoft Xt © ervamicrosoft. nme 593-708! 8f24-4895735 ots/bac 99. .e37-6045bddba0s Environment Al Prod Copilot Studio | Ask HR Copilot Analytics oo = 60 Copilots Updated about one hour ago @ Overview Summary Customer Satisfaction Sessions _Billing__ Boost conversations @ Plugins (preview) 12/1/20…"
+    },
+    {
+      "number": 51,
+      "text": "Slide 51: Analytics ~ ASK HR Copilot| Microsoft Xt microsoft.com) Environment Al Prod Copilot Studio Analytics Updated about one hour ago 90 oo Copilots @ Overview Summary Customer Satisfaction Sessions __Billing Boost conversations @ Plugins (preview) 12/1/2023 £3 |-| 12/7/2023 fi Entities Download sessions from the past 28 days, up t…"
+    },
+    {
+      "number": 52,
+      "text": "Slide 52: @ Power apps x + vo- oOo x aqdoe Q — % make.powerapps.com/e/9f39c593-708b-e141-8f24-d89573503212/s/00000001 -0000-0000-0001 -00000000009b/t/conversationtranscript ae CA aes Power Apps © Back -+ Newrow Y -++ Newcolumn (©) Refresh EH Create anapp & Edit table properties E} Update forms and views” ConversationTranscripts 7 [© co…"
+    },
+    {
+      "number": 53,
+      "text": "Slide 53: @ Power apps x + vo- oOo x qd ° LT) % make,powerapps.com/e/9f39c593-708b-e141-8f24-d89573503212/s/00000001-0000-0000-0001-00000000009b/t/conversationtranscript ac PA aes Power Apps < Back -+ Newrow Y + Newcolumn ©) Refresh HH Createanapp £ Edit table properties E} Update forms and views. ConversationTranscripts 7 [© conversat…"
+    },
+    {
+      "number": 54,
+      "text": "Slide 54: Divider asking, 'Can it get any worse?'"
+    },
+    {
+      "number": 55,
+      "text": "Slide 55: Divider introducing the Employee Onboarding story."
+    },
+    {
+      "number": 56,
+      "text": "Slide 56: GB+ ® 4a -+ % OWASP. LCNC Top.10 Start from Power Apps Home Create Learn Apps Tables Connections Solutions Flows More Power Platform Aeb arnrtiial anant Blank app Create an app from scratch and then add your data ® Watch video Excel Start from an Excel file to create a three-screen app Dataverse Start from a Dataverse table t…"
+    },
+    {
+      "number": 57,
+      "text": "Slide 57: GB+ ® 4a -+ % OWASP. LCNC Top.10 Start from Power Apps Home Create Learn Apps Tables Connections Solutions Flows More Power Platform Aeb arnrtiial anant Blank app Create an app from scratch and then add your data ® Watch video Excel Start from an Excel file to create a three-screen app Dataverse Start from a Dataverse table t…"
+    },
+    {
+      "number": 58,
+      "text": "Slide 58: OWASP. LCNC Top.10 a4 < Bak YD |v (0 | Vv = + Insert Y & Add data os 2 editing @ YW OO CP vy 6 Fill Vv = fy White Vv = ; ; = Tree view x Employee onboarding form SRE @ > Screen! gZ Screens Components Full legal name +4 | D Search address Properties Advanced _— Ideas Date of birth -+ New screen Fill % 8 Personal email EP app —…"
+    },
+    {
+      "number": 59,
+      "text": "Slide 59: OWASP. LCNC Top.10 oA i$! Power Apps | Employee Onboarding & Oo & ? < pak) D|V (Al Y. + insert &B Adddatav 2 editing @ YW OC PD Vv 6 Fill v= fxv White Vv = Data x Employee onboarding form “screen @ > 2 Screen1 PD Search Full legal name Properties Advanced _|deas a + Add data Address 8 © Sensitive Inputs ex Background image No…"
+    },
+    {
+      "number": 60,
+      "text": "Slide 60: OWASP. LCNC Top.10 oA i$! Power Apps | Employee Onboarding & Oo & ? < pak) D|V (Al Y. + insert &B Adddatav 2 editing @ YW OC PD Vv 6 Fill v= fxv White Vv = Data x Employee onboarding form “screen @ > gS Screen1 ze) Search Full legal name Properties Advanced _Ideas a ++ Add data Address a Sensitive Inputs ex Background image N…"
+    },
+    {
+      "number": 61,
+      "text": "Slide 61: OWASP. LCNC Top.10 S a4 < Back ) | Vv (0 | Vv + Insert & Add data Vv os a Editing @ Qs oO > Vv 6 Fil . Vv = Data y ES D Search Microsoft Power Platform Ideas a + Add data The low code platform that spans Microsoft 365, Azure, Dynamics 365, and standalone apps. % 5 Sensitive Input: “ Microsoft Dataver: None Vv & * > a ar v D P…"
+    },
+    {
+      "number": 62,
+      "text": "Slide 62: OWASP. LCNC Top.10 Environments & Zenity Stage (default) S Data Vv ® Monitor v B Al Builder v Dg Process mining Solutions Learn Update Employee Info in HR system || When a row is added, modified or deleted © brorg@cious ject New Employee Update info ecom X a2 Font y Ruy BIUA?: sare Save Flow checke"
+    },
+    {
+      "number": 63,
+      "text": "Slide 63: OWASP LCNC Top 10 at i Employee onboarding - findings"
+    },
+    {
+      "number": 64,
+      "text": "Slide 64: OWASP. LCNC Top.10 9A Employee onboarding form x Full legal name es) Address a Date of birth ~ Personal email Phone number Social Security Number Save"
+    },
+    {
+      "number": 65,
+      "text": "Slide 65: OWASP. LCNC Top.10 Ss INA Environment Power Apps & reniysiage fa) BP — + Newtable v Import Y '~ Export Y P Search ny Home == ‘Create Tables earn Recommended Custom All FP Apps = Table } Vv Name © Type v Managed Vv Customizable v Tags Y | Tables Account Standard Yes Yes bo] Connections Address : customeraddress Standard Yes Ye…"
+    },
+    {
+      "number": 66,
+      "text": "Slide 66: OWASP. LCNC Top.10 @OWASPNoCode * 9A Environment Power Apps B Leniysoge(dean) OB? — -++ New table v Open Vv 0 edit) vy Import Y '~ Export v $3 Properties -** P Search fm) Home Position Yes es + Create Query : cr6e4_querytest Ste No Yes Custom Learn . 7 Recurring Appointment ngappoint. Yes Yes Standard om Apps res Standard No…"
+    },
+    {
+      "number": 67,
+      "text": "Slide 67: OWASP. LCNC Top.10 S NA Environment < Back -+ Newrow Y -+ Newcolumn (©) Refresh H# Create an app @ Edit table properties } Update forms and views 7 Sensitive Inputs 7 Data saved abe Employee Name* 7 v SSN ¥ Address ¥ Contact ¥ +19 more Y + Jamie Reading 209-97-1111 jamier@zenitydemo.OnMicrosott.... Brooklyn Gonzalez 209-97-98…"
+    },
+    {
+      "number": 68,
+      "text": "Slide 68: GIUASE LCN 100 1 eres _ GOWASPNOCode Employee onboarding - findings Store sensitive Everyone ' . data Data has access"
+    },
+    {
+      "number": 69,
+      "text": "Slide 69: OWASP LCNC Top.10 i Employee onboarding - findings ¢ Data accessible to all (Authorization Misuse) Submit Store in User sensitive data plaintext Data"
+    },
+    {
+      "number": 70,
+      "text": "Slide 70: OWAsP CNC Top 10 Power Apps | Employee Onboarding &_Tenity Stage (default) o @ ? ) Employee onboarding form Full legal name Daniel Wood | 2 ———— g Address New York 3rd street Date of birth 11 Jan 1990 Personal email Danielw124@gmail.co1 Phone number 202-555-0117 Social Security 78-05-1120 Number"
+    },
+    {
+      "number": 71,
+      "text": "Slide 71: OWASP. LCNC Top.10 Environments & Zenity Stage (default) S Data Vv ® Monitor v B Al Builder v Dg Process mining Solutions Learn Update Employee Info in HR system || When a row is added, modified or deleted © brorg@cious ject New Employee Update info ecom X a2 Font y Ruy BIUA?: sare Save Flow checke"
+    },
+    {
+      "number": 72,
+      "text": "Slide 72: OWASP. LCNC Top.10 When a row is added, modified or deleted “cr6e4_email” \"_owningbusini alue@Microsoft .Dynamics.CRM.lookuplogicalname”: “bu *owningbusini \"cr6e4_contact \"_createdby value” a7c-c17d £7647\", \"“ownerid_type musers\", \"modi fiedon’ 07716:4) “RowVersion’"
+    },
+    {
+      "number": 73,
+      "text": "Slide 73: te Employee Info in HR system Home © Approve Owners ner gives them ful of My flows fer gives them fu of this flow, so n owners, access the run history Zi update, edit or delete this Monitor (B Al Builder Embedded connections Connections in use e list a Solutions will have nections and will only be able to use them in this fl"
+    },
+    {
+      "number": 74,
+      "text": "Slide 74: OwasP l CNC Top 10 ~ i Employee onboarding - findings ¢ Data accessible to all (Authorization Misuse) * Sensitive data in plain text (Data and Secret Handling Failures)"
+    },
+    {
+      "number": 75,
+      "text": "Slide 75: Employee onboarding findings summary showing data access, secrets, and sensitive-data risks."
+    },
+    {
+      "number": 76,
+      "text": "Slide 76: Resources for the OWASP Low-Code/No-Code project, virtual meetups, business-user AppSec material, and project updates."
+    }
+  ]
+}

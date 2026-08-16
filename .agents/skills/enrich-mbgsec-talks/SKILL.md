@@ -140,12 +140,14 @@ Use `talk:publish-content -- --slug <slug> --abstract-artifact` rather than hand
 Then run:
 
 ```sh
+npm run talks:text:sync
 npm run build
 npm run test
 git diff --check
 ```
 
 Verify the deck controls, header, abstract, transcript headings, timestamp links, mobile layout, canonical metadata, Markdown alternate, and talks `llms.txt` entry. Do not upload or deploy unless explicitly requested.
+The text sync copies the published page body without editing it and derives a separately labeled slide-text section from the public deck manifest. Commit its generated `_pages/talk-text/` and `_data/talk_slides/` outputs; never describe slide text as a transcript.
 
 Regenerate `docs/talk-enrichment-coverage.md` with `npm run talks:enrichment:report` after each batch. The report enumerates every talk page, its abstract state, recording, transcript stage, and next action. Treat published frontmatter—not ignored work artifacts—as the public source of truth.
 

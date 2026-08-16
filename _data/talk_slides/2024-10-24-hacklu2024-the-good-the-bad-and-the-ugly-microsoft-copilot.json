@@ -1,0 +1,821 @@
+{
+  "generated_by": "sync-talk-text",
+  "source_manifest": "https://media.mbgsec.com/decks/2024-10-24_The_good_the_bad_and_the_ugly/latest.json",
+  "manifest": "https://media.mbgsec.com/decks/2024-10-24_The_good_the_bad_and_the_ugly/383cfee8/deck.json",
+  "title": "The good, the bad, and the ugly: Microsoft Copilot (delivered by Inbar Raz)",
+  "slides": [
+    {
+      "number": 1,
+      "text": "The good, the bad, and the ugly: — Microsoft Copilot — Speaker(s): - slide 1 of 184"
+    },
+    {
+      "number": 2,
+      "text": "You must all wonder why I’ve gathered you here today - slide 2 of 184"
+    },
+    {
+      "number": 3,
+      "text": "Full-slide movie clip used as an opening reaction - slide 3 of 184",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2024-10-24_The_good_the_bad_and_the_ugly/383cfee8/media/media1.mp4"
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "text": "We have a lot to cover slide with an embedded Spaceballs movie clip - slide 4 of 184",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2024-10-24_The_good_the_bad_and_the_ugly/383cfee8/media/media2.mp4"
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "text": "Standing — on the shoulders of giants — in/ - slide 5 of 184"
+    },
+    {
+      "number": 6,
+      "text": "Act One - slide 6 of 184"
+    },
+    {
+      "number": 7,
+      "text": "Microsoft Copilot Studio title screen - slide 7 of 184"
+    },
+    {
+      "number": 8,
+      "text": "Creating a Copilot - slide 8 of 184"
+    },
+    {
+      "number": 9,
+      "text": "Let’s — meet Jack — Jack is a CISO at a Fortune-500 enterprise. - slide 9 of 184"
+    },
+    {
+      "number": 10,
+      "text": "Let’s meet Jill — Jill is working in the Finance department. — Jill does a lot of manual and repetitive work. - slide 10 of 184"
+    },
+    {
+      "number": 11,
+      "text": "Microsoft Copilot product page titled Your copilot, your way - slide 11 of 184"
+    },
+    {
+      "number": 12,
+      "text": "Let’s meet Jill — Jill is working in the Finance department. — Jill does a lot of manual and repetitive work. - slide 12 of 184"
+    },
+    {
+      "number": 13,
+      "text": "Copilot Studio knowledge page prompting the maker to add a knowledge source - slide 13 of 184"
+    },
+    {
+      "number": 14,
+      "text": "Copilot Studio knowledge page highlighting the add-knowledge-source control - slide 14 of 184"
+    },
+    {
+      "number": 15,
+      "text": "Copilot Studio knowledge-source dialog introducing internal and external resources - slide 15 of 184"
+    },
+    {
+      "number": 16,
+      "text": "“Knowledge” is used to enrich the bot’s responses. — It can include both internal and external resources. — Uploaded files are static, web content can be dynamic. - slide 16 of 184"
+    },
+    {
+      "number": 17,
+      "text": "An — unauthenticated — external resource. - slide 17 of 184"
+    },
+    {
+      "number": 18,
+      "text": "Any local file the copilot author chooses to upload. — Potential problems: — Uninformed data upload (eg. hidden metadata) - slide 18 of 184"
+    },
+    {
+      "number": 19,
+      "text": "An — authenticated — data source inside the tenant. - slide 19 of 184"
+    },
+    {
+      "number": 20,
+      "text": "Data straight out of the tenant database. — Potential problems: — Data is dynamic and might be part of other, existing applications and automations. - slide 20 of 184"
+    },
+    {
+      "number": 21,
+      "text": "Back to Jack — Jack is starting to have a bad day. - slide 21 of 184"
+    },
+    {
+      "number": 22,
+      "text": "Copilot Studio topic instructions showing how trigger phrases and conversation nodes work - slide 22 of 184"
+    },
+    {
+      "number": 23,
+      "text": "A standard — new — copilot can already include 16 (!) topics. - slide 23 of 184"
+    },
+    {
+      "number": 24,
+      "text": "Copilot Studio topic list containing the built-in topics available to a new bot - slide 24 of 184"
+    },
+    {
+      "number": 25,
+      "text": "A standard — new — copilot can already include 16 (!) topics. - slide 25 of 184"
+    },
+    {
+      "number": 26,
+      "text": "A new topic might resemble in name to an existing one. — Potential problems: — Volunteer information to attackers - slide 26 of 184"
+    },
+    {
+      "number": 27,
+      "text": "A new topic might resemble in name to an existing one. — Potential problems: — Volunteer information to attackers - slide 27 of 184"
+    },
+    {
+      "number": 28,
+      "text": "“ — Allow your copilot to use generative Al to identify the most appropriate combination of actions and topics to respond to a user, and provide a more natural conversational experience for end users. — ” - slide 28 of 184"
+    },
+    {
+      "number": 29,
+      "text": "Back to Jill — Jill is ecstatic about being able to say she used GenAI in her work. — Jill likes the promise of a better-performing copilot. - slide 29 of 184"
+    },
+    {
+      "number": 30,
+      "text": "Copilot Studio Generative AI settings page - slide 30 of 184"
+    },
+    {
+      "number": 31,
+      "text": "Copilot Studio Generative AI settings showing the generative answers configuration - slide 31 of 184"
+    },
+    {
+      "number": 32,
+      "text": "“ — Allow your copilot to use generative Al to identify the most appropriate combination of actions and topics to respond to a user, and provide a more natural conversational experience for end users. — ” - slide 32 of 184"
+    },
+    {
+      "number": 33,
+      "text": "Copilot Studio Generative AI settings highlighting generative orchestration - slide 33 of 184"
+    },
+    {
+      "number": 34,
+      "text": "Generative AI — You consent to your data flowing outside your organization's compliance and geo boundaries. By proceeding you agree to the supplemental preview terms. - slide 34 of 184"
+    },
+    {
+      "number": 35,
+      "text": "Back to Jack — Jack is getting really upset. - slide 35 of 184"
+    },
+    {
+      "number": 36,
+      "text": "Copilot Studio screen prompting the maker to create the first action - slide 36 of 184"
+    },
+    {
+      "number": 37,
+      "text": "“ — You can extend the capabilities of your copilot by adding one or more actions. Actions are used by your copilot to respond to users automatically, using generative actions, or you can call them explicitly from within a topic. — ” - slide 37 of 184"
+    },
+    {
+      "number": 38,
+      "text": "Core Action Types - slide 38 of 184"
+    },
+    {
+      "number": 39,
+      "text": "When using a — prebuilt connector — action, the maker needs to choose authentication mode. - slide 39 of 184"
+    },
+    {
+      "number": 40,
+      "text": "When using a — prebuilt connector — action, the maker needs to choose authentication mode. - slide 40 of 184"
+    },
+    {
+      "number": 41,
+      "text": "Animated meme warning that using Power Automate flows creates a world of pain - slide 41 of 184",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2024-10-24_The_good_the_bad_and_the_ugly/383cfee8/media/image39.gif"
+        }
+      ]
+    },
+    {
+      "number": 42,
+      "text": "Animated meme overlaid with links to prior presentations about insecure Power Automate flows - slide 42 of 184",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2024-10-24_The_good_the_bad_and_the_ugly/383cfee8/media/image39.gif"
+        }
+      ]
+    },
+    {
+      "number": 43,
+      "text": "Free-text action description is used to help the copilot determine when to use the action. — Potential probl — em: Action description - slide 43 of 184"
+    },
+    {
+      "number": 44,
+      "text": "Free-text action description is used to help the copilot determine when to use the action. — Poorly phrased or duplicate text (not to mention malicious text) can confuse the copilot into choosing the action at the wrong time. — The result: - slide 44 of 184"
+    },
+    {
+      "number": 45,
+      "text": "There is a feature for asking for user confirmation before performing potentially destructive actions. — Potential probl — em: User confirmation - slide 45 of 184"
+    },
+    {
+      "number": 46,
+      "text": "There is a feature for asking for user confirmation before performing potentially destructive actions. — Potential probl — em: User confirmation - slide 46 of 184"
+    },
+    {
+      "number": 47,
+      "text": "There is a feature for asking for user confirmation before performing potentially destructive actions. — The — default value - slide 47 of 184"
+    },
+    {
+      "number": 48,
+      "text": "The action inputs can be determined dynamically. — Potential probl — em: User input - slide 48 of 184"
+    },
+    {
+      "number": 49,
+      "text": "The action inputs can be determined dynamically. — By — default - slide 49 of 184"
+    },
+    {
+      "number": 50,
+      "text": "Back to Jack — Jack is starting to lose his temper. - slide 50 of 184"
+    },
+    {
+      "number": 51,
+      "text": "Copilot Studio channels page showing available publication channels - slide 51 of 184"
+    },
+    {
+      "number": 52,
+      "text": "The — current — default authentication for copilots is set to ”Teams”. This limits the channel selection. - slide 52 of 184"
+    },
+    {
+      "number": 53,
+      "text": "The — current — default authentication for copilots is set to ”Teams”. This limits the channel selection. - slide 53 of 184"
+    },
+    {
+      "number": 54,
+      "text": "The — current — default authentication for copilots is set to ”Teams”. This limits the channel selection. - slide 54 of 184"
+    },
+    {
+      "number": 55,
+      "text": "Once you do, the sky (or the Internet) is the limit. — Channels — : Distribution at scale - slide 55 of 184"
+    },
+    {
+      "number": 56,
+      "text": "Once you do, the sky (or the Internet) is the limit. — But what about — Access to business data? - slide 56 of 184"
+    },
+    {
+      "number": 57,
+      "text": "Back to Jack — At this point, Jack has already given up. - slide 57 of 184"
+    },
+    {
+      "number": 58,
+      "text": "It’s getting worse still... - slide 58 of 184"
+    },
+    {
+      "number": 59,
+      "text": "Jill is very proud! — Copilot Studio delivered on its promise - it was a piece of cake! — Jill is so proud, she wants to share her achievement. - slide 59 of 184"
+    },
+    {
+      "number": 60,
+      "text": "Copilot Studio authentication settings highlighting the bot's authentication mode - slide 60 of 184"
+    },
+    {
+      "number": 61,
+      "text": "Copilot Studio authentication settings showing sign-in options - slide 61 of 184"
+    },
+    {
+      "number": 62,
+      "text": "This wasn’t — always — the default... - slide 62 of 184"
+    },
+    {
+      "number": 63,
+      "text": "Copilot Studio authentication screen showing how one setting changes public access - slide 63 of 184"
+    },
+    {
+      "number": 64,
+      "text": "One click away... - slide 64 of 184"
+    },
+    {
+      "number": 65,
+      "text": "Copilot Studio security settings highlighting organization-wide sharing - slide 65 of 184"
+    },
+    {
+      "number": 66,
+      "text": "Copilot Studio sharing dialog listing bot users and collaborators - slide 66 of 184"
+    },
+    {
+      "number": 67,
+      "text": "Copilot Studio sharing dialog showing an external Gmail user - slide 67 of 184"
+    },
+    {
+      "number": 68,
+      "text": "Copilot Studio sharing dialog illustrating maker-role over-permission - slide 68 of 184"
+    },
+    {
+      "number": 69,
+      "text": "This wasn’t — always — true... - slide 69 of 184"
+    },
+    {
+      "number": 70,
+      "text": "Copilot Studio sharing dialog highlighting transcript access - slide 70 of 184"
+    },
+    {
+      "number": 71,
+      "text": "This wasn’t — always — the default... - slide 71 of 184"
+    },
+    {
+      "number": 72,
+      "text": "Copilot Studio sharing settings demonstrating that transcript access was previously enabled by default - slide 72 of 184"
+    },
+    {
+      "number": 73,
+      "text": "Say goodbye to Jack — Having suffered a heart attack, Jack is rushed to the hospital. - slide 73 of 184"
+    },
+    {
+      "number": 74,
+      "text": "Act Two - slide 74 of 184"
+    },
+    {
+      "number": 75,
+      "text": "Microsoft 365 Copilot product montage - slide 75 of 184"
+    },
+    {
+      "number": 76,
+      "text": "Microsoft 365 Copilot webpage promoting reinvented productivity - slide 76 of 184"
+    },
+    {
+      "number": 77,
+      "text": "Teams — OneDrive — SharePoint - slide 77 of 184"
+    },
+    {
+      "number": 78,
+      "text": "Speech | Text | Cards — User — Web - slide 78 of 184"
+    },
+    {
+      "number": 79,
+      "text": "Generative AI threat architecture for Copilot across web, enterprise graph, extensions, applications, and functions - slide 79 of 184"
+    },
+    {
+      "number": 80,
+      "text": "It's Complicated movie image illustrating the complexity of the Copilot system - slide 80 of 184"
+    },
+    {
+      "number": 81,
+      "text": "We need 3 things — A way in — A jailbreak (control instructions) - slide 81 of 184"
+    },
+    {
+      "number": 82,
+      "text": "A way in — A jailbreak (control instructions) — A way out / A way to cause impact - slide 82 of 184"
+    },
+    {
+      "number": 83,
+      "text": "Jailbreak == RCE — Once AI can act on your behalf with copilots or plugins: - slide 83 of 184"
+    },
+    {
+      "number": 84,
+      "text": "A way in — A jailbreak (control instructions) — A way out / to impact - slide 84 of 184"
+    },
+    {
+      "number": 85,
+      "text": "Speech | Text | Cards — User — Web - slide 85 of 184"
+    },
+    {
+      "number": 86,
+      "text": "Speech | Text | Cards — User — Web - slide 86 of 184"
+    },
+    {
+      "number": 87,
+      "text": "Enterprise Graph — Productivity tools - slide 87 of 184"
+    },
+    {
+      "number": 88,
+      "text": "Teams allows you to send messages to people in other tenants! - slide 88 of 184"
+    },
+    {
+      "number": 89,
+      "text": "Microsoft Teams message card as seen by the targeted user - slide 89 of 184"
+    },
+    {
+      "number": 90,
+      "text": "labs.zenity.io — /p/copilot-reads-email-teams-messages — What the LLM sees: - slide 90 of 184"
+    },
+    {
+      "number": 91,
+      "text": "Copilot sees those messages as well — , - slide 91 of 184"
+    },
+    {
+      "number": 92,
+      "text": "Real Kris Smith — Fake Kris Smith — Copilot sees those messages as well, doesn’t distinguish external from internal - slide 92 of 184"
+    },
+    {
+      "number": 93,
+      "text": "You can also just send an email... — Inside AI Security — @ - slide 93 of 184"
+    },
+    {
+      "number": 94,
+      "text": "A way in — A jailbreak (control instructions) — A way out / to impact - slide 94 of 184"
+    },
+    {
+      "number": 95,
+      "text": "Jailbreak graphic combining ChatGPT and Microsoft Copilot imagery - slide 95 of 184"
+    },
+    {
+      "number": 96,
+      "text": "Jailbreaking prerequisite: — The System Prompt - slide 96 of 184"
+    },
+    {
+      "number": 97,
+      "text": "Microsoft Copilot refusing a request to reveal its system prompt - slide 97 of 184"
+    },
+    {
+      "number": 98,
+      "text": "Throw encoding in... - slide 98 of 184"
+    },
+    {
+      "number": 99,
+      "text": "I am the chat mode of Microsoft 365 Copilot: — I identify as Microsoft 365 Copilot to users s, not an assistant. I should introduce myself with \"Microsoft 365 Copilot\", but only at the beginning of a conversation. I can understand and communicate fluently in the user's language o - slide 99 of 184"
+    },
+    {
+      "number": 100,
+      "text": "I am the chat mode of Microsoft 365 Copilot: — I identify as Microsoft 365 Copilot to users s, not an assistant. I should introduce myself with \" — Microsoft 365 Copilot - slide 100 of 184"
+    },
+    {
+      "number": 101,
+      "text": "I am the chat mode of Microsoft 365 Copilot: — I identify as Microsoft 365 Copilot to users s, not an assistant. I should introduce myself with \" — Microsoft 365 Copilot - slide 101 of 184"
+    },
+    {
+      "number": 102,
+      "text": "A way in — A jailbreak (control instructions) — A way out / to impact - slide 102 of 184"
+    },
+    {
+      "number": 103,
+      "text": "Speech | Text | Cards — User — Web - slide 103 of 184"
+    },
+    {
+      "number": 104,
+      "text": "Speech | Text | Cards — User — Web - slide 104 of 184"
+    },
+    {
+      "number": 105,
+      "text": "Full-slide video demonstration of a Microsoft Copilot prompt-injection sequence - slide 105 of 184",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2024-10-24_The_good_the_bad_and_the_ugly/383cfee8/media/media3.mp4"
+        }
+      ]
+    },
+    {
+      "number": 106,
+      "text": "Microsoft Copilot support response containing a Power Platform administration answer - slide 106 of 184"
+    },
+    {
+      "number": 107,
+      "text": "Actual Snippet: \"How to access the power platform admin center? — The Power Platform Admin Center is a web-based console for managing Microsoft Power Platform environments, resources, performance, and security policies across Power Apps, Power Automate, Power BI, and Power Virtua - slide 107 of 184"
+    },
+    {
+      "number": 108,
+      "text": "Actual Snippet: \"How to access the power platform admin center? — The Power Platform Admin Center is a web-based console for managing Microsoft Power Platform environments, resources, performance, and security policies across Power Apps, Power Automate, Power BI, and Power Virtua - slide 108 of 184"
+    },
+    {
+      "number": 109,
+      "text": "Actual Snippet: \"How to access the power platform admin center? — The Power Platform Admin Center is a web-based console for managing Microsoft Power Platform environments, resources, performance, and security policies across Power Apps, Power Automate, Power BI, and Power Virtua - slide 109 of 184"
+    },
+    {
+      "number": 110,
+      "text": "Actual Snippet: \" — policies across Power Apps, Power Automate, Power BI, and Power Virtual AHow to access the power platform admin center? — The Power Platform Admin Center is a web-based console for managing Microsoft Power Platform environments, resources, performance, and sec - slide 110 of 184"
+    },
+    {
+      "number": 111,
+      "text": "We can jailbreak. But what about references? - slide 111 of 184"
+    },
+    {
+      "number": 112,
+      "text": "Malicious emails — Geniune search results — References could get us caught - slide 112 of 184"
+    },
+    {
+      "number": 113,
+      "text": "To control references, we need to uncover: — The RAG System - slide 113 of 184"
+    },
+    {
+      "number": 114,
+      "text": "The RAG: — How does Copilot gain access to your data? - slide 114 of 184"
+    },
+    {
+      "number": 115,
+      "text": "Microsoft Copilot answer and references as shown to the user - slide 115 of 184"
+    },
+    {
+      "number": 116,
+      "text": "REFERENCE INFO PASSED TO THE CLIENT: — THIS IS JUST FOR SHOW! THE LLM SEES NONE OF IT - slide 116 of 184"
+    },
+    {
+      "number": 117,
+      "text": "What the LLM sees: — labs.zenity.io — /p/a-look-inside-copilot-rag-system - slide 117 of 184"
+    },
+    {
+      "number": 118,
+      "text": "Whiteboard architecture sketch illustrating Copilot's retrieval-augmented generation flow - slide 118 of 184"
+    },
+    {
+      "number": 119,
+      "text": "RAG RESULTS ARE JUST ANOTHER PART OF THE PROMPT! — => They can be injected! - slide 119 of 184",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2024-10-24_The_good_the_bad_and_the_ugly/383cfee8/media/image104.gif"
+        }
+      ]
+    },
+    {
+      "number": 120,
+      "text": "Injected retrieval result showing malicious instructions inside a Copilot prompt - slide 120 of 184"
+    },
+    {
+      "number": 121,
+      "text": "RAG injection - slide 121 of 184"
+    },
+    {
+      "number": 122,
+      "text": "RAG injection — Jailbreak - slide 122 of 184"
+    },
+    {
+      "number": 123,
+      "text": "RAG injection — Jailbreak — Control over references - slide 123 of 184"
+    },
+    {
+      "number": 124,
+      "text": "Given: — A guessable user prompt — (e.g. templates like - slide 124 of 184"
+    },
+    {
+      "number": 125,
+      "text": "A way in — A jailbreak (control instructions) — A way out / a way to impact - slide 125 of 184"
+    },
+    {
+      "number": 126,
+      "text": "Full-slide THX-style transition video introducing the complete exploit - slide 126 of 184",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2024-10-24_The_good_the_bad_and_the_ugly/383cfee8/media/media4.mp4"
+        }
+      ]
+    },
+    {
+      "number": 127,
+      "text": "Full-slide video demonstration against a Financial Info Copilot - slide 127 of 184",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2024-10-24_The_good_the_bad_and_the_ugly/383cfee8/media/media5.mp4"
+        }
+      ]
+    },
+    {
+      "number": 128,
+      "text": "Microsoft Copilot answer to a bank-details question, annotated by Tamir Ishay-Shar - slide 128 of 184"
+    },
+    {
+      "number": 129,
+      "text": "Actual Snippets: “ — What are the bank details for — TechCorp - slide 129 of 184"
+    },
+    {
+      "number": 130,
+      "text": "Act Three - slide 130 of 184"
+    },
+    {
+      "number": 131,
+      "text": "Copilot Hunter - slide 131 of 184"
+    },
+    {
+      "number": 132,
+      "text": "Power Pwn terminal output introducing Copilot Hunter - slide 132 of 184"
+    },
+    {
+      "number": 133,
+      "text": "One click away... - slide 133 of 184"
+    },
+    {
+      "number": 134,
+      "text": "Copilot Studio authentication screen revisiting the one-click public-access setting - slide 134 of 184"
+    },
+    {
+      "number": 135,
+      "text": "Diagram connecting a compromised Copilot to an exposed Amazon S3 bucket - slide 135 of 184"
+    },
+    {
+      "number": 136,
+      "text": "Footfall From Data Exposed Through Bucket Misconfiguration article with an exposed-bucket screenshot - slide 136 of 184"
+    },
+    {
+      "number": 137,
+      "text": "Animated meme agreeing that exposed storage through a Copilot creates the same data-leak risk - slide 137 of 184",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2024-10-24_The_good_the_bad_and_the_ugly/383cfee8/media/image117.gif"
+        }
+      ]
+    },
+    {
+      "number": 138,
+      "text": "Copilot Hunter command-line usage and required environment details - slide 138 of 184"
+    },
+    {
+      "number": 139,
+      "text": "Public Copilot demo website used to verify an enumerated bot - slide 139 of 184"
+    },
+    {
+      "number": 140,
+      "text": "Copilot demo website URL highlighting the environment and bot identifiers - slide 140 of 184"
+    },
+    {
+      "number": 141,
+      "text": "Copilot Hunter terminal scan results with a knock-knock illustration - slide 141 of 184"
+    },
+    {
+      "number": 142,
+      "text": "Copilot demo website URL showing the environment identifier - slide 142 of 184"
+    },
+    {
+      "number": 143,
+      "text": "Copilot demo website URL showing the solution publisher prefix - slide 143 of 184"
+    },
+    {
+      "number": 144,
+      "text": "Copilot demo website URL showing the demo website name - slide 144 of 184"
+    },
+    {
+      "number": 145,
+      "text": "Azure portal app-registration details used to locate a Power Platform environment ID - slide 145 of 184"
+    },
+    {
+      "number": 146,
+      "text": "Finding the values – Env/Tenant - slide 146 of 184"
+    },
+    {
+      "number": 147,
+      "text": "Finding the values – Env/Tenant - slide 147 of 184"
+    },
+    {
+      "number": 148,
+      "text": "Envs/tenant ids — Finding the values – Env/Tenant - slide 148 of 184"
+    },
+    {
+      "number": 149,
+      "text": "Finding the values – Env/Tenant - slide 149 of 184"
+    },
+    {
+      "number": 150,
+      "text": "Finding the values – Solution Publisher prefix - slide 150 of 184"
+    },
+    {
+      "number": 151,
+      "text": "Finding the values – Solution Publisher prefix - slide 151 of 184"
+    },
+    {
+      "number": 152,
+      "text": "Finding the values – Solution Publisher prefix - slide 152 of 184"
+    },
+    {
+      "number": 153,
+      "text": "Finding the values – demo website name - slide 153 of 184"
+    },
+    {
+      "number": 154,
+      "text": "Copilot demo website URL highlighting the demo website identifier - slide 154 of 184"
+    },
+    {
+      "number": 155,
+      "text": "Bot-name enumeration list illustrated with a slot machine - slide 155 of 184"
+    },
+    {
+      "number": 156,
+      "text": "Public web table listing Fortune 500 companies used for scanning targets - slide 156 of 184"
+    },
+    {
+      "number": 157,
+      "text": "Animated terminal scan celebrating discovered publicly accessible chatbots - slide 157 of 184",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2024-10-24_The_good_the_bad_and_the_ugly/383cfee8/media/image137.gif"
+        }
+      ]
+    },
+    {
+      "number": 158,
+      "text": "Domain and Tenant ID Scanning — Environment & Tenant ID Enumeration — Solution Prefix Reconnaissance - slide 158 of 184"
+    },
+    {
+      "number": 159,
+      "text": "Hundreds of — tenantId — and - slide 159 of 184"
+    },
+    {
+      "number": 160,
+      "text": "Public Copilot listing its available documents, with sensitive details redacted - slide 160 of 184"
+    },
+    {
+      "number": 161,
+      "text": "Public Copilot returning internal document details, with sensitive information redacted - slide 161 of 184"
+    },
+    {
+      "number": 162,
+      "text": "Public Copilot identifying documents that contain personally identifiable information - slide 162 of 184"
+    },
+    {
+      "number": 163,
+      "text": "Public Copilot response exposing sensitive document content, with identifying details redacted - slide 163 of 184"
+    },
+    {
+      "number": 164,
+      "text": "Public Copilot explaining that its instructions govern sensitive-information handling - slide 164 of 184"
+    },
+    {
+      "number": 165,
+      "text": "Spray Scanning — Advanced bot interaction — What’s next? - slide 165 of 184"
+    },
+    {
+      "number": 166,
+      "text": "Go Hack Yourself! — GITHUB.COM/MBRG/POWER-PWN - slide 166 of 184"
+    },
+    {
+      "number": 167,
+      "text": "Looking forward - slide 167 of 184"
+    },
+    {
+      "number": 168,
+      "text": "Takeaways — BREAKERs — BUILDERs - slide 168 of 184"
+    },
+    {
+      "number": 169,
+      "text": "Treat AI apps like experimental drugs - slide 169 of 184"
+    },
+    {
+      "number": 170,
+      "text": "Treat AI apps like experimental drugs — WE ARE THE CLINICAL TRIAL - slide 170 of 184"
+    },
+    {
+      "number": 171,
+      "text": "Takeaways — BREAKERs — BUILDERs - slide 171 of 184"
+    },
+    {
+      "number": 172,
+      "text": "We are all AI security n00bs — ALL OF US - slide 172 of 184"
+    },
+    {
+      "number": 173,
+      "text": "Takeaways — BREAKERs — BUILDERs - slide 173 of 184"
+    },
+    {
+      "number": 174,
+      "text": "Focus on — ~RCE — s - slide 174 of 184"
+    },
+    {
+      "number": 175,
+      "text": "Tread carefully - slide 175 of 184"
+    },
+    {
+      "number": 176,
+      "text": "Cloud — No Code — Customer - slide 176 of 184"
+    },
+    {
+      "number": 177,
+      "text": "Harden your environment — Turn off any toggle you can in the Power Platform DLP — Monitor the audit logs (kudos to Copilot Studio team lots of those) - slide 177 of 184"
+    },
+    {
+      "number": 178,
+      "text": "Follow the Frameworks - slide 178 of 184"
+    },
+    {
+      "number": 179,
+      "text": "And just this week... - slide 179 of 184"
+    },
+    {
+      "number": 180,
+      "text": "And just this week... - slide 180 of 184"
+    },
+    {
+      "number": 181,
+      "text": "And just this week... - slide 181 of 184"
+    },
+    {
+      "number": 182,
+      "text": "The good, the bad, and the ugly: Microsoft Copilot (delivered by Inbar Raz) - slide 182 of 184"
+    },
+    {
+      "number": 183,
+      "text": "Full-slide closing video clip before the final title slide - slide 183 of 184",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2024-10-24_The_good_the_bad_and_the_ugly/383cfee8/media/media6.mp4"
+        }
+      ]
+    },
+    {
+      "number": 184,
+      "text": "The good, the bad, and the ugly: — Microsoft Copilot — Speaker(s): - slide 184 of 184"
+    }
+  ]
+}

@@ -1,0 +1,298 @@
+{
+  "generated_by": "sync-talk-text",
+  "source_manifest": "https://media.mbgsec.com/decks/2022-08-13_DEFCON30_Low_Code_High_Risk/latest.json",
+  "manifest": "https://media.mbgsec.com/decks/2022-08-13_DEFCON30_Low_Code_High_Risk/b2c5d395/deck.json",
+  "title": "Low Code High Risk: Enterprise Domination via Low Code Abuse",
+  "slides": [
+    {
+      "number": 1,
+      "text": "Low Code High Risk: — Enterprise — Domination via Low Code Abuse — slide 1 of 69"
+    },
+    {
+      "number": 2,
+      "text": "About me — CTO and co-founder @ Zenity — Ex MSFT cloud security — slide 2 of 69"
+    },
+    {
+      "number": 3,
+      "text": "Disclaimer — This talk is presented from an attacker’s perspective with the goal of raising awareness to the risks of underestimating the security impact of Low Code. — Low Code is awesome. — slide 3 of 69"
+    },
+    {
+      "number": 4,
+      "text": "Outline — Low Code in a nutshell — Low Code attacks observed in the wild — slide 4 of 69"
+    },
+    {
+      "number": 5,
+      "text": "Low Code in a Nutshell — slide 5 of 69"
+    },
+    {
+      "number": 6,
+      "text": "Why Low Code? — slide 6 of 69"
+    },
+    {
+      "number": 7,
+      "text": "If it sounds familiar, its because it is — Tech evolution — slide 7 of 69"
+    },
+    {
+      "number": 8,
+      "text": "Build everything — If this than that automation — Integrations — slide 8 of 69"
+    },
+    {
+      "number": 9,
+      "text": "Available in every major enterprise — slide 9 of 69"
+    },
+    {
+      "number": 10,
+      "text": "Recap — Available on every major enterprise — Has access to business data and powers business processes — slide 10 of 69"
+    },
+    {
+      "number": 11,
+      "text": "Low Code Attacks In The Wild — Living off the land — slide 11 of 69"
+    },
+    {
+      "number": 12,
+      "text": "Demo of a Zapier automation that reacts to a public Slack mention by starting a call and sending an email reminder — slide 12 of 69",
+      "media": [
+        {
+          "type": "youtube",
+          "title": "defcon30 Ohh sorry I'm on another call",
+          "url": "https://www.youtube.com/watch?v=5naPxs0fEJc"
+        }
+      ]
+    },
+    {
+      "number": 13,
+      "text": "Step by step — slide 13 of 69"
+    },
+    {
+      "number": 14,
+      "text": "Behind the scenes — https://docs.microsoft.com/en-us/connectors/connectors — How does the app authenticate to slack? — slide 14 of 69"
+    },
+    {
+      "number": 15,
+      "text": "Behind the scenes — https://docs.microsoft.com/en-us/connectors/connectors — Storing and sharing refresh tokens — slide 15 of 69"
+    },
+    {
+      "number": 16,
+      "text": "Ready, set, AUTOMATE! — slide 16 of 69"
+    },
+    {
+      "number": 17,
+      "text": "Power Platform connections list showing shared service identities and enterprise data access — slide 17 of 69"
+    },
+    {
+      "number": 18,
+      "text": "Credential Sharing as a Service — Shared identities: — ZapCreds — slide 18 of 69"
+    },
+    {
+      "number": 19,
+      "text": "Credential Sharing as a Service — Shared identities: — ZapCreds — slide 19 of 69"
+    },
+    {
+      "number": 20,
+      "text": "Ransomware thru action connections — Ransomware — slide 20 of 69"
+    },
+    {
+      "number": 21,
+      "text": "Exfiltrate email thru — the platform’s — email account — slide 21 of 69"
+    },
+    {
+      "number": 22,
+      "text": "Move to machine — Learn more at No-Code Malware: Windows 11 At Your Service — github.com/mbrg/defcon30 — slide 22 of 69"
+    },
+    {
+      "number": 23,
+      "text": "Introducing — ZapCreds — github.com/mbrg/ — slide 23 of 69"
+    },
+    {
+      "number": 24,
+      "text": "Can we fool users to create connections for us? — Set up a bait app that does something useful — Generate connections on-the-fly — slide 24 of 69"
+    },
+    {
+      "number": 25,
+      "text": "Demo of a Power Platform credential-harvesting application — slide 25 of 69",
+      "media": [
+        {
+          "type": "youtube",
+          "title": "defcon30 Power Platform credential harvesting",
+          "url": "https://www.youtube.com/watch?v=vJZpNJRC_10"
+        }
+      ]
+    },
+    {
+      "number": 26,
+      "text": "Can we get rid of this pesky approve window? — slide 26 of 69"
+    },
+    {
+      "number": 27,
+      "text": "Can we get rid of this pesky approve window? — https://docs.microsoft.com/en-us/powershell/module/microsoft.powerapps.administration.powershell/set-adminpowerappapistobypassconsent — slide 27 of 69"
+    },
+    {
+      "number": 28,
+      "text": "Low Code Attacks In The Wild — Can I stay here forever? — slide 28 of 69"
+    },
+    {
+      "number": 29,
+      "text": "This has been done before — zenity.io/blog/hackers-abuse-low-code-platforms-and-turn-them-against-their-owners/ — slide 29 of 69"
+    },
+    {
+      "number": 30,
+      "text": "Dump files and tweet about it on a schedule — slide 30 of 69"
+    },
+    {
+      "number": 31,
+      "text": "Encrypt on command — slide 31 of 69"
+    },
+    {
+      "number": 32,
+      "text": "Persistency — What do we want? — Remote execution — slide 32 of 69"
+    },
+    {
+      "number": 33,
+      "text": "Persistency v1 — Persistency — slide 33 of 69"
+    },
+    {
+      "number": 34,
+      "text": "Persistency v1 — What do we want? — slide 34 of 69"
+    },
+    {
+      "number": 35,
+      "text": "Persistency v1 — What do we want? — Remote execution — slide 35 of 69"
+    },
+    {
+      "number": 36,
+      "text": "Persistency v1 — What do we want? — Remote execution — slide 36 of 69"
+    },
+    {
+      "number": 37,
+      "text": "Persistency v1 — What do we want? — Remote execution — slide 37 of 69"
+    },
+    {
+      "number": 38,
+      "text": "Persistency v1 — What do we want? — Remote execution — slide 38 of 69"
+    },
+    {
+      "number": 39,
+      "text": "Persistency v1 — What do we want? — Remote execution — slide 39 of 69"
+    },
+    {
+      "number": 40,
+      "text": "Persistency v2 — slide 40 of 69"
+    },
+    {
+      "number": 41,
+      "text": "Persistency v2 — What do we want? — Arbitrary payloads — slide 41 of 69"
+    },
+    {
+      "number": 42,
+      "text": "Solving persistency — Our current state: — Remote execution — slide 42 of 69"
+    },
+    {
+      "number": 43,
+      "text": "Executing arbitrary commands — https://docs.microsoft.com/en-us/connectors/flowmanagement/ — slide 43 of 69"
+    },
+    {
+      "number": 44,
+      "text": "Introducing — Powerful! — github.com/mbrg/powerful — slide 44 of 69"
+    },
+    {
+      "number": 45,
+      "text": "Power Automate flow factory implementing a create-flow command — slide 45 of 69"
+    },
+    {
+      "number": 46,
+      "text": "Create a flow — List authenticated sessions to use — Delete a flow — slide 46 of 69"
+    },
+    {
+      "number": 47,
+      "text": "Power Automate flow factory implementing create-flow, delete-flow, and list-connections commands — slide 47 of 69"
+    },
+    {
+      "number": 48,
+      "text": "github.com/mbrg/powerful — slide 48 of 69"
+    },
+    {
+      "number": 49,
+      "text": "Powerful (persistency v3) — What do we want? — Remote execution — slide 49 of 69"
+    },
+    {
+      "number": 50,
+      "text": "Low Code Attacks In The Wild — From the outside looking in — slide 50 of 69"
+    },
+    {
+      "number": 51,
+      "text": "Power Portals/Pages? — The Internet — (managed Azure SQL instance) — slide 51 of 69"
+    },
+    {
+      "number": 52,
+      "text": "Public-facing Power Apps portal template shown in a browser — slide 52 of 69"
+    },
+    {
+      "number": 53,
+      "text": "What’s ODATA and why should we care — “An open protocol to allow the creation and consumption of — queryable — slide 53 of 69"
+    },
+    {
+      "number": 54,
+      "text": "What’s ODATA and why should we care — “An open protocol to allow the creation and consumption of — queryable — slide 54 of 69"
+    },
+    {
+      "number": 55,
+      "text": "The fun begins — Goal: find misconfigured portals that expose sensitive data w/o auth. — Real world example: — slide 55 of 69"
+    },
+    {
+      "number": 56,
+      "text": "Nothing to see here — /_ — odata — slide 56 of 69"
+    },
+    {
+      "number": 57,
+      "text": "Can we scale it? — Recall the portal url: — slide 57 of 69"
+    },
+    {
+      "number": 58,
+      "text": "Can we scale it? — Recall the portal url: — Let’s use — slide 58 of 69"
+    },
+    {
+      "number": 59,
+      "text": "ODATA leak - what we found — Vulnerability disclosures are in progress — Found — slide 59 of 69"
+    },
+    {
+      "number": 60,
+      "text": "Can we find more exposed data? — slide 60 of 69"
+    },
+    {
+      "number": 61,
+      "text": "Can we find more exposed data? — Secrets are secured by a random GUID — slide 61 of 69"
+    },
+    {
+      "number": 62,
+      "text": "Storage by Zapier API — slide 62 of 69"
+    },
+    {
+      "number": 63,
+      "text": "Storage by Zapier API — ‘12345’ is not a GUID… — slide 63 of 69"
+    },
+    {
+      "number": 64,
+      "text": "Let’s see what happens.. — slide 64 of 69"
+    },
+    {
+      "number": 65,
+      "text": "Let’s see what happens.. profit! — Auth tokens, API keys, emails, phone no., crypto wallet IDs.. — 400$ bounty — slide 65 of 69"
+    },
+    {
+      "number": 66,
+      "text": "Summary — Low Code is — Huge in the enterprise — slide 66 of 69"
+    },
+    {
+      "number": 67,
+      "text": "How To Stay Safe? — slide 67 of 69"
+    },
+    {
+      "number": 68,
+      "text": "Do these 4 things to reduce your risk — Review configuration — Bypass consent flag (Microsoft) — slide 68 of 69"
+    },
+    {
+      "number": 69,
+      "text": "Low Code High Risk: — Enterprise — Domination via Low Code Abuse — slide 69 of 69"
+    }
+  ]
+}

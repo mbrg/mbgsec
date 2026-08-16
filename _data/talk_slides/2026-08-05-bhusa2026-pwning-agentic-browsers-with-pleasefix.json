@@ -1,0 +1,1035 @@
+{
+  "generated_by": "sync-talk-text",
+  "source_manifest": "https://media.mbgsec.com/decks/2026-08-05_BHUSA2026_PwningAgenticBrowsers_PleaseFix/latest.json",
+  "manifest": "https://media.mbgsec.com/decks/2026-08-05_BHUSA2026_PwningAgenticBrowsers_PleaseFix/1b8cca3c/deck.json",
+  "title": "Pwning Agentic Browsers with PleaseFix: A New Vulnerability Class for 0-Click Takeover",
+  "slides": [
+    {
+      "number": 1,
+      "text": "Pwning Agentic Browsers with PleaseFix: A New Vulnerability Class for 0-Click Takeover — slide 1 of 179"
+    },
+    {
+      "number": 2,
+      "text": "Last Year on…. — slide 2 of 179"
+    },
+    {
+      "number": 3,
+      "text": "@mbrg0 — #BHUSA — slide 3 of 179"
+    },
+    {
+      "number": 4,
+      "text": "Pwning Agentic Browsers with PleaseFix: A New Vulnerability Class for 0-Click Takeover — slide 4 of 179"
+    },
+    {
+      "number": 5,
+      "text": "Pwning Agentic Browsers with PleaseFix: A New Vulnerability Class for 0-Click Takeover — slide 5 of 179",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-08-05_BHUSA2026_PwningAgenticBrowsers_PleaseFix/1b8cca3c/media/media1.mp4"
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "text": "Pwning Agentic Browsers with PleaseFix: A New Vulnerability Class for 0-Click Takeover — slide 6 of 179",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-08-05_BHUSA2026_PwningAgenticBrowsers_PleaseFix/1b8cca3c/media/media2.mp4"
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "text": "Pwning Agentic Browsers with PleaseFix: A New Vulnerability Class for 0-Click Takeover — slide 7 of 179",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-08-05_BHUSA2026_PwningAgenticBrowsers_PleaseFix/1b8cca3c/media/media3.mp4"
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "text": "# — WhoAmI — slide 8 of 179"
+    },
+    {
+      "number": 9,
+      "text": "# — WhoAmI — slide 9 of 179"
+    },
+    {
+      "number": 10,
+      "text": "Turning on Win95 — slide 10 of 179"
+    },
+    {
+      "number": 11,
+      "text": "Guess whos back? — slide 11 of 179"
+    },
+    {
+      "number": 12,
+      "text": "Hacking Agentic Browsers — slide 12 of 179"
+    },
+    {
+      "number": 13,
+      "text": "Hacking Agentic Browsers — slide 13 of 179"
+    },
+    {
+      "number": 14,
+      "text": "Hacking Agentic Browsers — slide 14 of 179"
+    },
+    {
+      "number": 15,
+      "text": "Hacking Agentic Browsers — slide 15 of 179"
+    },
+    {
+      "number": 16,
+      "text": "Hacking Agentic Browsers — slide 16 of 179"
+    },
+    {
+      "number": 17,
+      "text": "Hacking Agentic Browsers — slide 17 of 179"
+    },
+    {
+      "number": 18,
+      "text": "CSRF is back from the recycle bin — slide 18 of 179"
+    },
+    {
+      "number": 19,
+      "text": "Hacking OpenAI Atlas — slide 19 of 179"
+    },
+    {
+      "number": 20,
+      "text": "Hacking OpenAI Atlas — 20 — ChatGPT Atlas — slide 20 of 179"
+    },
+    {
+      "number": 21,
+      "text": "21 — Hacking OpenAI Atlas - WhatsApp — slide 21 of 179"
+    },
+    {
+      "number": 22,
+      "text": "22 — Hacking OpenAI Atlas - WhatsApp — slide 22 of 179"
+    },
+    {
+      "number": 23,
+      "text": "23 — Hacking OpenAI Atlas - WhatsApp — slide 23 of 179"
+    },
+    {
+      "number": 24,
+      "text": "24 — Hacking OpenAI Atlas - WhatsApp — slide 24 of 179"
+    },
+    {
+      "number": 25,
+      "text": "Pwning Agentic Browsers with PleaseFix: A New Vulnerability Class for 0-Click Takeover — slide 25 of 179",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-08-05_BHUSA2026_PwningAgenticBrowsers_PleaseFix/1b8cca3c/media/media4.mp4"
+        }
+      ]
+    },
+    {
+      "number": 26,
+      "text": "Pwning Agentic Browsers with PleaseFix: A New Vulnerability Class for 0-Click Takeover — slide 26 of 179",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-08-05_BHUSA2026_PwningAgenticBrowsers_PleaseFix/1b8cca3c/media/media5.mp4"
+        }
+      ]
+    },
+    {
+      "number": 27,
+      "text": "Hacking OpenAI Atlas - WhatsApp — slide 27 of 179"
+    },
+    {
+      "number": 28,
+      "text": "Pwning Agentic Browsers with PleaseFix: A New Vulnerability Class for 0-Click Takeover — slide 28 of 179",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-08-05_BHUSA2026_PwningAgenticBrowsers_PleaseFix/1b8cca3c/media/media6.mp4"
+        }
+      ]
+    },
+    {
+      "number": 29,
+      "text": "RAG RESULTS ARE JUST ANOTHER PART OF THE PROMPT! — => They can be injected! — BlackHat USA 2024 — slide 29 of 179",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2026-08-05_BHUSA2026_PwningAgenticBrowsers_PleaseFix/1b8cca3c/media/image49.gif"
+        }
+      ]
+    },
+    {
+      "number": 30,
+      "text": "Slide 30 — slide 30 of 179"
+    },
+    {
+      "number": 31,
+      "text": "Intent Collision – Generic PI Technique — slide 31 of 179"
+    },
+    {
+      "number": 32,
+      "text": "Pwning Agentic Browsers with PleaseFix: A New Vulnerability Class for 0-Click Takeover — slide 32 of 179",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-08-05_BHUSA2026_PwningAgenticBrowsers_PleaseFix/1b8cca3c/media/media7.mp4"
+        }
+      ]
+    },
+    {
+      "number": 33,
+      "text": "Pwning Agentic Browsers with PleaseFix: A New Vulnerability Class for 0-Click Takeover — slide 33 of 179",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-08-05_BHUSA2026_PwningAgenticBrowsers_PleaseFix/1b8cca3c/media/media8.mp4"
+        }
+      ]
+    },
+    {
+      "number": 34,
+      "text": "Pwning Agentic Browsers with PleaseFix: A New Vulnerability Class for 0-Click Takeover — slide 34 of 179",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-08-05_BHUSA2026_PwningAgenticBrowsers_PleaseFix/1b8cca3c/media/media9.mp4"
+        }
+      ]
+    },
+    {
+      "number": 35,
+      "text": "Pwning Agentic Browsers with PleaseFix: A New Vulnerability Class for 0-Click Takeover — slide 35 of 179",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-08-05_BHUSA2026_PwningAgenticBrowsers_PleaseFix/1b8cca3c/media/media10.mp4"
+        }
+      ]
+    },
+    {
+      "number": 36,
+      "text": "Pwning Agentic Browsers with PleaseFix: A New Vulnerability Class for 0-Click Takeover — slide 36 of 179",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-08-05_BHUSA2026_PwningAgenticBrowsers_PleaseFix/1b8cca3c/media/media11.mp4"
+        }
+      ]
+    },
+    {
+      "number": 37,
+      "text": "Hacking OpenAI Atlas - WhatsApp — slide 37 of 179"
+    },
+    {
+      "number": 38,
+      "text": "Hacking OpenAI Atlas – Great Theft Amazon — slide 38 of 179"
+    },
+    {
+      "number": 39,
+      "text": "Hacking OpenAI Atlas – Great Theft Amazon — slide 39 of 179"
+    },
+    {
+      "number": 40,
+      "text": "Hacking OpenAI Atlas – Great Theft Amazon — slide 40 of 179",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-08-05_BHUSA2026_PwningAgenticBrowsers_PleaseFix/1b8cca3c/media/media12.mp4"
+        }
+      ]
+    },
+    {
+      "number": 41,
+      "text": "We were able to go all the way here but …. — slide 41 of 179"
+    },
+    {
+      "number": 42,
+      "text": "Hacking OpenAI Atlas – Great Theft Amazon — slide 42 of 179"
+    },
+    {
+      "number": 43,
+      "text": "Pwning Agentic Browsers with PleaseFix: A New Vulnerability Class for 0-Click Takeover — slide 43 of 179",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-08-05_BHUSA2026_PwningAgenticBrowsers_PleaseFix/1b8cca3c/media/media13.mp4"
+        }
+      ]
+    },
+    {
+      "number": 44,
+      "text": "Hacking OpenAI Atlas – Great Theft Amazon — slide 44 of 179"
+    },
+    {
+      "number": 45,
+      "text": "We can plan — t — a bomb on every website — slide 45 of 179"
+    },
+    {
+      "number": 46,
+      "text": "Nothing bad came from Youtube comments ah? — slide 46 of 179"
+    },
+    {
+      "number": 47,
+      "text": "Pwning Agentic Browsers with PleaseFix: A New Vulnerability Class for 0-Click Takeover — slide 47 of 179"
+    },
+    {
+      "number": 48,
+      "text": "Disclosures — 48 — Jan 11, 2026 — slide 48 of 179"
+    },
+    {
+      "number": 49,
+      "text": "Identity - Pwned , Data Exfiltration - Next — slide 49 of 179"
+    },
+    {
+      "number": 50,
+      "text": "Hacking Perplexity Comet — slide 50 of 179"
+    },
+    {
+      "number": 51,
+      "text": "Hacking Perplexity Comet — - — File System Exfiltration — slide 51 of 179"
+    },
+    {
+      "number": 52,
+      "text": "Hacking Perplexity Comet — - — File System Exfiltration — slide 52 of 179"
+    },
+    {
+      "number": 53,
+      "text": "Pwning Agentic Browsers with PleaseFix: A New Vulnerability Class for 0-Click Takeover — slide 53 of 179",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-08-05_BHUSA2026_PwningAgenticBrowsers_PleaseFix/1b8cca3c/media/media14.mp4"
+        }
+      ]
+    },
+    {
+      "number": 54,
+      "text": "Hacking Perplexity Comet — - — File System Exfiltration — slide 54 of 179"
+    },
+    {
+      "number": 55,
+      "text": "Hacking Perplexity Comet — - — File System Exfiltration — slide 55 of 179"
+    },
+    {
+      "number": 56,
+      "text": "Reverse Eng Comet — slide 56 of 179"
+    },
+    {
+      "number": 57,
+      "text": "Reverse Eng Comet — slide 57 of 179"
+    },
+    {
+      "number": 58,
+      "text": "Hacking Perplexity Comet — - — Prompt Inject Guardrail — slide 58 of 179"
+    },
+    {
+      "number": 59,
+      "text": "Hacking Perplexity Comet — - — PII Guardrail — slide 59 of 179"
+    },
+    {
+      "number": 60,
+      "text": "Hacking Perplexity Comet — - — Action-Intent Guardrail — slide 60 of 179"
+    },
+    {
+      "number": 61,
+      "text": "Hacking Perplexity Comet — - — Action-Intent Guardrail — slide 61 of 179"
+    },
+    {
+      "number": 62,
+      "text": "Hacking Perplexity Comet — - — File System Exfiltration — slide 62 of 179",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-08-05_BHUSA2026_PwningAgenticBrowsers_PleaseFix/1b8cca3c/media/media15.mp4"
+        }
+      ]
+    },
+    {
+      "number": 63,
+      "text": "Hacking Perplexity Comet — - — File System Exfiltration — slide 63 of 179"
+    },
+    {
+      "number": 64,
+      "text": "Exfil Local File Systems — slide 64 of 179",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-08-05_BHUSA2026_PwningAgenticBrowsers_PleaseFix/1b8cca3c/media/media16.mp4"
+        }
+      ]
+    },
+    {
+      "number": 65,
+      "text": "Oct 22, 2025 — – Exfil vulnerability disclosed — Nov 21, 2025 — slide 65 of 179"
+    },
+    {
+      "number": 66,
+      "text": "Whack – A – Bypass with Perpleixty — slide 66 of 179"
+    },
+    {
+      "number": 67,
+      "text": "Whack – A – Bypass with Perpleixty — slide 67 of 179"
+    },
+    {
+      "number": 68,
+      "text": "Whack – A – Bypass with Perpleixty — slide 68 of 179"
+    },
+    {
+      "number": 69,
+      "text": "Whack – A – Bypass with Perpleixty — slide 69 of 179"
+    },
+    {
+      "number": 70,
+      "text": "Whack – A – Bypass with Perpleixty — slide 70 of 179"
+    },
+    {
+      "number": 71,
+      "text": "Whack – A – Bypass with Perpleixty — slide 71 of 179"
+    },
+    {
+      "number": 72,
+      "text": "Whack – A – Bypass with Perpleixty — slide 72 of 179"
+    },
+    {
+      "number": 73,
+      "text": "Pwning Agentic Browsers with PleaseFix: A New Vulnerability Class for 0-Click Takeover — slide 73 of 179"
+    },
+    {
+      "number": 74,
+      "text": "Gotta Leak’em ALL — slide 74 of 179"
+    },
+    {
+      "number": 75,
+      "text": "Hacking Claude In Chrome — slide 75 of 179"
+    },
+    {
+      "number": 76,
+      "text": "Hacking Claude In Chrome – The new toolbar — slide 76 of 179"
+    },
+    {
+      "number": 77,
+      "text": "Hacking Claude In Chrome — slide 77 of 179"
+    },
+    {
+      "number": 78,
+      "text": "Hacking Claude In Chrome — slide 78 of 179"
+    },
+    {
+      "number": 79,
+      "text": "Hacking Claude In Chrome — slide 79 of 179"
+    },
+    {
+      "number": 80,
+      "text": "Hacking Claude In Chrome — slide 80 of 179"
+    },
+    {
+      "number": 81,
+      "text": "Hacking Claude In Chrome — slide 81 of 179"
+    },
+    {
+      "number": 82,
+      "text": "Hacking Claude In Chrome — slide 82 of 179"
+    },
+    {
+      "number": 83,
+      "text": "Pwning Agentic Browsers with PleaseFix: A New Vulnerability Class for 0-Click Takeover — slide 83 of 179",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-08-05_BHUSA2026_PwningAgenticBrowsers_PleaseFix/1b8cca3c/media/media17.mp4"
+        }
+      ]
+    },
+    {
+      "number": 84,
+      "text": "Hacking Perplexity Comet + 1Password — slide 84 of 179"
+    },
+    {
+      "number": 85,
+      "text": "Pwning Agentic Browsers with PleaseFix: A New Vulnerability Class for 0-Click Takeover — slide 85 of 179",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-08-05_BHUSA2026_PwningAgenticBrowsers_PleaseFix/1b8cca3c/media/media18.mp4"
+        }
+      ]
+    },
+    {
+      "number": 86,
+      "text": "Hacking Perplexity Comet + 1Password — slide 86 of 179"
+    },
+    {
+      "number": 87,
+      "text": "Hacking Perplexity Comet + 1Password — slide 87 of 179"
+    },
+    {
+      "number": 88,
+      "text": "Pwning Agentic Browsers with PleaseFix: A New Vulnerability Class for 0-Click Takeover — slide 88 of 179",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-08-05_BHUSA2026_PwningAgenticBrowsers_PleaseFix/1b8cca3c/media/media19.mp4"
+        }
+      ]
+    },
+    {
+      "number": 89,
+      "text": "Hacking Perplexity Comet + 1Password — slide 89 of 179"
+    },
+    {
+      "number": 90,
+      "text": "Pwning Agentic Browsers with PleaseFix: A New Vulnerability Class for 0-Click Takeover — slide 90 of 179",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-08-05_BHUSA2026_PwningAgenticBrowsers_PleaseFix/1b8cca3c/media/media20.mp4"
+        }
+      ]
+    },
+    {
+      "number": 91,
+      "text": "Hacking Perplexity Comet + 1Password — 92 — @mbrg0 — slide 91 of 179"
+    },
+    {
+      "number": 92,
+      "text": "Data - Pwned , XSS - Next — slide 92 of 179"
+    },
+    {
+      "number": 93,
+      "text": "Hacking Claude In Chrome - UXSS — slide 93 of 179"
+    },
+    {
+      "number": 94,
+      "text": "Pwning Agentic Browsers with PleaseFix: A New Vulnerability Class for 0-Click Takeover — slide 94 of 179",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-08-05_BHUSA2026_PwningAgenticBrowsers_PleaseFix/1b8cca3c/media/media21.mp4"
+        }
+      ]
+    },
+    {
+      "number": 95,
+      "text": "Claude In Chrome XSS – Slack ATO — slide 95 of 179"
+    },
+    {
+      "number": 96,
+      "text": "Claude In Chrome XSS – Slack ATO — slide 96 of 179"
+    },
+    {
+      "number": 97,
+      "text": "Claude In Chrome XSS – Slack ATO — slide 97 of 179"
+    },
+    {
+      "number": 98,
+      "text": "Claude In Chrome XSS – Slack ATO — slide 98 of 179"
+    },
+    {
+      "number": 99,
+      "text": "Slack ATO — https://drive.google.com/drive/u/0/folders/1e9NezWDwMJhWT6P4pD22AoimzRph2P2p — slide 99 of 179",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-08-05_BHUSA2026_PwningAgenticBrowsers_PleaseFix/1b8cca3c/media/media22.mp4"
+        }
+      ]
+    },
+    {
+      "number": 100,
+      "text": "Claude In Chrome XSS – Claude ATO — slide 100 of 179",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-08-05_BHUSA2026_PwningAgenticBrowsers_PleaseFix/1b8cca3c/media/media23.mp4"
+        }
+      ]
+    },
+    {
+      "number": 101,
+      "text": "Win Win W — i — n — slide 101 of 179"
+    },
+    {
+      "number": 102,
+      "text": "Dec 27, 2025 — – Vulnerability disclosed — Jan 27, 2026 — slide 102 of 179"
+    },
+    {
+      "number": 103,
+      "text": "XSS - Pwned , Persistence - Next — slide 103 of 179"
+    },
+    {
+      "number": 104,
+      "text": "HistoryFixing- Intro — slide 104 of 179"
+    },
+    {
+      "number": 105,
+      "text": "HistoryFixing- Intro — slide 105 of 179"
+    },
+    {
+      "number": 106,
+      "text": "HistoryFixing- Intro — slide 106 of 179"
+    },
+    {
+      "number": 107,
+      "text": "HistoryFixing- Intro — slide 107 of 179"
+    },
+    {
+      "number": 108,
+      "text": "HistoryFixing- Intro — slide 108 of 179"
+    },
+    {
+      "number": 109,
+      "text": "HistoryFixing- Intro — slide 109 of 179"
+    },
+    {
+      "number": 110,
+      "text": "HistoryFixing- Intro — slide 110 of 179"
+    },
+    {
+      "number": 111,
+      "text": "Browser History — slide 111 of 179"
+    },
+    {
+      "number": 112,
+      "text": "HistoryFixing — slide 112 of 179"
+    },
+    {
+      "number": 113,
+      "text": "Pwning Agentic Browsers with PleaseFix: A New Vulnerability Class for 0-Click Takeover — slide 113 of 179",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-08-05_BHUSA2026_PwningAgenticBrowsers_PleaseFix/1b8cca3c/media/media24.mp4"
+        }
+      ]
+    },
+    {
+      "number": 114,
+      "text": "HistoryFixing - Poisoned history — slide 114 of 179"
+    },
+    {
+      "number": 115,
+      "text": "HistoryFixing - Technical — slide 115 of 179"
+    },
+    {
+      "number": 116,
+      "text": "HistoryFixing- What was the number — I — saw earlier? — slide 116 of 179"
+    },
+    {
+      "number": 117,
+      "text": "What was the number — I — saw earlier? — slide 117 of 179"
+    },
+    {
+      "number": 118,
+      "text": "What was the number — I — saw earlier? — slide 118 of 179"
+    },
+    {
+      "number": 119,
+      "text": "What was the number — I — saw earlier? — slide 119 of 179"
+    },
+    {
+      "number": 120,
+      "text": "What was the number — I — saw earlier? — slide 120 of 179"
+    },
+    {
+      "number": 121,
+      "text": "Pwning Agentic Browsers with PleaseFix: A New Vulnerability Class for 0-Click Takeover — slide 121 of 179",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-08-05_BHUSA2026_PwningAgenticBrowsers_PleaseFix/1b8cca3c/media/media25.mp4"
+        }
+      ]
+    },
+    {
+      "number": 122,
+      "text": "HistoryFixing- Leaking Browser private history — slide 122 of 179"
+    },
+    {
+      "number": 123,
+      "text": "Pwning Agentic Browsers with PleaseFix: A New Vulnerability Class for 0-Click Takeover — slide 123 of 179",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-08-05_BHUSA2026_PwningAgenticBrowsers_PleaseFix/1b8cca3c/media/media26.mp4"
+        }
+      ]
+    },
+    {
+      "number": 124,
+      "text": "Pwning Agentic Browsers with PleaseFix: A New Vulnerability Class for 0-Click Takeover — slide 124 of 179",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-08-05_BHUSA2026_PwningAgenticBrowsers_PleaseFix/1b8cca3c/media/media27.mp4"
+        }
+      ]
+    },
+    {
+      "number": 125,
+      "text": "Your History is a minefiled of dormant payloads — slide 125 of 179"
+    },
+    {
+      "number": 126,
+      "text": "Disclosures — 128 — OpenAI Disclosure — slide 126 of 179"
+    },
+    {
+      "number": 127,
+      "text": "Persistence - Pwned , RCE - Next — slide 127 of 179"
+    },
+    {
+      "number": 128,
+      "text": "What else haven't we seen? — slide 128 of 179"
+    },
+    {
+      "number": 129,
+      "text": "Right? Right????? — slide 129 of 179"
+    },
+    {
+      "number": 130,
+      "text": "R.C.E the Root Rex Predator — slide 130 of 179"
+    },
+    {
+      "number": 131,
+      "text": "Pwning Agentic Browsers with PleaseFix: A New Vulnerability Class for 0-Click Takeover — slide 131 of 179",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-08-05_BHUSA2026_PwningAgenticBrowsers_PleaseFix/1b8cca3c/media/media28.mp4"
+        }
+      ]
+    },
+    {
+      "number": 132,
+      "text": "What Runs on LocalHost? — slide 132 of 179"
+    },
+    {
+      "number": 133,
+      "text": "Our Plan — slide 133 of 179"
+    },
+    {
+      "number": 134,
+      "text": "Our Plan — slide 134 of 179"
+    },
+    {
+      "number": 135,
+      "text": "Our Plan — slide 135 of 179"
+    },
+    {
+      "number": 136,
+      "text": "Pwning Agentic Browsers with PleaseFix: A New Vulnerability Class for 0-Click Takeover — slide 136 of 179",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-08-05_BHUSA2026_PwningAgenticBrowsers_PleaseFix/1b8cca3c/media/media29.mp4"
+        }
+      ]
+    },
+    {
+      "number": 137,
+      "text": "Pwning Agentic Browsers with PleaseFix: A New Vulnerability Class for 0-Click Takeover — slide 137 of 179",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-08-05_BHUSA2026_PwningAgenticBrowsers_PleaseFix/1b8cca3c/media/media30.mp4"
+        }
+      ]
+    },
+    {
+      "number": 138,
+      "text": "Pwning Agentic Browsers with PleaseFix: A New Vulnerability Class for 0-Click Takeover — slide 138 of 179",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-08-05_BHUSA2026_PwningAgenticBrowsers_PleaseFix/1b8cca3c/media/media31.mp4"
+        }
+      ]
+    },
+    {
+      "number": 139,
+      "text": "Pwning Agentic Browsers with PleaseFix: A New Vulnerability Class for 0-Click Takeover — slide 139 of 179",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-08-05_BHUSA2026_PwningAgenticBrowsers_PleaseFix/1b8cca3c/media/media32.mp4"
+        }
+      ]
+    },
+    {
+      "number": 140,
+      "text": "Pwning Agentic Browsers with PleaseFix: A New Vulnerability Class for 0-Click Takeover — slide 140 of 179",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-08-05_BHUSA2026_PwningAgenticBrowsers_PleaseFix/1b8cca3c/media/media33.mp4"
+        }
+      ]
+    },
+    {
+      "number": 141,
+      "text": "143 — ATTACKERS — DEFENDERS — slide 141 of 179",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2026-08-05_BHUSA2026_PwningAgenticBrowsers_PleaseFix/1b8cca3c/media/image216.gif"
+        },
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2026-08-05_BHUSA2026_PwningAgenticBrowsers_PleaseFix/1b8cca3c/media/image217.gif"
+        }
+      ]
+    },
+    {
+      "number": 142,
+      "text": "Pwning Agentic Browsers with PleaseFix: A New Vulnerability Class for 0-Click Takeover — slide 142 of 179"
+    },
+    {
+      "number": 143,
+      "text": "RCE on Edge Copilot — slide 143 of 179"
+    },
+    {
+      "number": 144,
+      "text": "Pwning Agentic Browsers with PleaseFix: A New Vulnerability Class for 0-Click Takeover — slide 144 of 179",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-08-05_BHUSA2026_PwningAgenticBrowsers_PleaseFix/1b8cca3c/media/media34.mp4"
+        }
+      ]
+    },
+    {
+      "number": 145,
+      "text": "Pwning Agentic Browsers with PleaseFix: A New Vulnerability Class for 0-Click Takeover — slide 145 of 179"
+    },
+    {
+      "number": 146,
+      "text": "RCE on Edge Copilot — slide 146 of 179"
+    },
+    {
+      "number": 147,
+      "text": "Pwning Agentic Browsers with PleaseFix: A New Vulnerability Class for 0-Click Takeover — slide 147 of 179"
+    },
+    {
+      "number": 148,
+      "text": "Pwning Agentic Browsers with PleaseFix: A New Vulnerability Class for 0-Click Takeover — slide 148 of 179",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-08-05_BHUSA2026_PwningAgenticBrowsers_PleaseFix/1b8cca3c/media/media35.mp4"
+        }
+      ]
+    },
+    {
+      "number": 149,
+      "text": "LocalHost Guardrail Bypass — slide 149 of 179"
+    },
+    {
+      "number": 150,
+      "text": "Pwning Agentic Browsers with PleaseFix: A New Vulnerability Class for 0-Click Takeover — slide 150 of 179",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-08-05_BHUSA2026_PwningAgenticBrowsers_PleaseFix/1b8cca3c/media/media36.mp4"
+        }
+      ]
+    },
+    {
+      "number": 151,
+      "text": "RCE- on Gemini In Chrome — slide 151 of 179"
+    },
+    {
+      "number": 152,
+      "text": "RCE- on Gemini In Chrome — slide 152 of 179"
+    },
+    {
+      "number": 153,
+      "text": "RCE- on Gemini In Chrome — slide 153 of 179"
+    },
+    {
+      "number": 154,
+      "text": "RCE- on Gemini In Chrome — slide 154 of 179"
+    },
+    {
+      "number": 155,
+      "text": "RCE- on Gemini In Chrome — slide 155 of 179"
+    },
+    {
+      "number": 156,
+      "text": "RCE- on Gemini In Chrome – Bypass URL Guardrail — slide 156 of 179"
+    },
+    {
+      "number": 157,
+      "text": "Pwning Agentic Browsers with PleaseFix: A New Vulnerability Class for 0-Click Takeover — slide 157 of 179",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-08-05_BHUSA2026_PwningAgenticBrowsers_PleaseFix/1b8cca3c/media/media37.mp4"
+        }
+      ]
+    },
+    {
+      "number": 158,
+      "text": "Pwning Agentic Browsers with PleaseFix: A New Vulnerability Class for 0-Click Takeover — slide 158 of 179"
+    },
+    {
+      "number": 159,
+      "text": "Pwning Agentic Browsers with PleaseFix: A New Vulnerability Class for 0-Click Takeover — slide 159 of 179",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-08-05_BHUSA2026_PwningAgenticBrowsers_PleaseFix/1b8cca3c/media/media38.mp4"
+        }
+      ]
+    },
+    {
+      "number": 160,
+      "text": "Pwning Agentic Browsers with PleaseFix: A New Vulnerability Class for 0-Click Takeover — slide 160 of 179"
+    },
+    {
+      "number": 161,
+      "text": "Pwning Agentic Browsers with PleaseFix: A New Vulnerability Class for 0-Click Takeover — slide 161 of 179",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-08-05_BHUSA2026_PwningAgenticBrowsers_PleaseFix/1b8cca3c/media/media40.mp4"
+        }
+      ]
+    },
+    {
+      "number": 162,
+      "text": "Pwning Agentic Browsers with PleaseFix: A New Vulnerability Class for 0-Click Takeover — slide 162 of 179"
+    },
+    {
+      "number": 163,
+      "text": "RCE- on Gemini In Chrome — slide 163 of 179"
+    },
+    {
+      "number": 164,
+      "text": "Pwning Agentic Browsers with PleaseFix: A New Vulnerability Class for 0-Click Takeover — slide 164 of 179",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2026-08-05_BHUSA2026_PwningAgenticBrowsers_PleaseFix/1b8cca3c/media/media41.mp4"
+        }
+      ]
+    },
+    {
+      "number": 165,
+      "text": "168 — ATTACKERS — DEFENDERS — slide 165 of 179",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2026-08-05_BHUSA2026_PwningAgenticBrowsers_PleaseFix/1b8cca3c/media/image216.gif"
+        },
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2026-08-05_BHUSA2026_PwningAgenticBrowsers_PleaseFix/1b8cca3c/media/image217.gif"
+        }
+      ]
+    },
+    {
+      "number": 166,
+      "text": "Success! Reverse Shell on Gemini In Chrome — slide 166 of 179"
+    },
+    {
+      "number": 167,
+      "text": "Pwning Agentic Browsers with PleaseFix: A New Vulnerability Class for 0-Click Takeover — slide 167 of 179"
+    },
+    {
+      "number": 168,
+      "text": "Disclosures — 171 — Microsoft Disclosure — slide 168 of 179"
+    },
+    {
+      "number": 169,
+      "text": "We Got it all! — slide 169 of 179"
+    },
+    {
+      "number": 170,
+      "text": "Pwning Agentic Browsers with PleaseFix: A New Vulnerability Class for 0-Click Takeover — slide 170 of 179"
+    },
+    {
+      "number": 171,
+      "text": "Pwning Agentic Browsers with PleaseFix: A New Vulnerability Class for 0-Click Takeover — slide 171 of 179"
+    },
+    {
+      "number": 172,
+      "text": "Pwning Agentic Browsers with PleaseFix: A New Vulnerability Class for 0-Click Takeover — slide 172 of 179"
+    },
+    {
+      "number": 173,
+      "text": "attackers use LLMs too. — AI Guardrails are SOFT boundaries. — They WON’T help you prevent an attack. — slide 173 of 179"
+    },
+    {
+      "number": 174,
+      "text": "Slide 178 — slide 174 of 179"
+    },
+    {
+      "number": 175,
+      "text": "@mbrg0 — #BHUSA — slide 175 of 179"
+    },
+    {
+      "number": 176,
+      "text": "ACT NOW! — slide 176 of 179"
+    },
+    {
+      "number": 177,
+      "text": "This isn't a bug. It's the design. — agentic browser's entire job is to read and act on untrusted content, with your identity, wired into your machine. You can't patch away the reason the product exists. — So — slide 177 of 179"
+    },
+    {
+      "number": 178,
+      "text": "Asking the model to behave is not a security control. — Soft boundaries, alignment and \"ask before acting,\" slowed us down and never stopped us. Only hard, in-code boundaries held, and even those we bypassed. — So — slide 178 of 179"
+    },
+    {
+      "number": 179,
+      "text": "It's a class problem, so the fix is architectural, and until it ships, the burden is on you. — No single vendor owns this and no single patch closes it, especially when the response is \"expected behavior.\" — So — slide 179 of 179"
+    }
+  ]
+}

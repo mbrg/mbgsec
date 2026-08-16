@@ -1,0 +1,15 @@
+---
+layout: talk-text
+permalink: /talks/2024-04-15-sans-uk2024-ai-is-here-for-business-users/llms.txt
+talk_permalink: /talks/2024-04-15-sans-uk2024-ai-is-here-for-business-users/
+talk_slug: 2024-04-15-sans-uk2024-ai-is-here-for-business-users
+generated_by: sync-talk-text
+sitemap: false
+---
+<!-- talk-enrichment:start -->
+## Abstract
+
+Generative AI empowers citizen developers to build power business apps, automations, and data flows, quicker and easier than ever. A key problem, however, is that shadow app development is running rampant. Join us for a look at how complex these apps are and what controls are needed to manage citizen development without hindering innovation. There's no doubt that advancements in AI are changing the way business gets done. Nearly every technology platform now touts some form of Gen AI or LLM to bolster its capabilities and bring people closer to technology; notably within democratizing application development to users of all technical backgrounds. In this ongoing technology revolution, it is business users, rather than developers, who are best equipped to define where we are headed. Indeed, citizen development empowers more and more business users to address their own needs without waiting around for IT by cheating business automations and applications on top of business data. Supercharged by Gen AI, these applications are now simultaneously easier to build and far more complex. As security practitioners and leaders, we are mainly focused on what developers build and how they build it. We are also conditioned to think about what business users are building as shadow IT and/or personal productivity apps. Are we ready for a world where business users generate complex business applications at 100x the rate of traditional development? Because that 'future' looks a lot like today. In this talk, we'll understand how citizen development, powered by AI, empowers business users to build applications easier and faster than ever. We will share results from the first-ever security survey into these AI-enabled apps created by business users, with insights about their complexity, the rate of application development and the technical skills (or lack thereof) required to be a citizen developer. Next, we will dive into common security issues with AI-powered apps built by business users. We will share real-world examples of security vulnerabilities observed in enterprise environments. Finally, we will share a framework that leading organizations are adopting to bring AI-enabled citizen development under the security umbrella based on the OWASP LCNC Top 10.
+
+_[Official conference abstract](https://web.archive.org/web/20240305062325/https://www.sans.org/cyber-security-training-events/cybersecurity-leadership-uk-summit-2024/)_
+<!-- talk-enrichment:end -->

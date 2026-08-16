@@ -1,0 +1,104 @@
+{
+  "generated_by": "sync-talk-text",
+  "source_manifest": "https://media.mbgsec.com/decks/2023-01-23_Workato_Automated_Security_Governance/latest.json",
+  "manifest": "https://media.mbgsec.com/decks/2023-01-23_Workato_Automated_Security_Governance/0ef8158a/deck.json",
+  "title": "Automated Security Governance",
+  "slides": [
+    {
+      "number": 1,
+      "text": "Automated Security Governance Workato Community Event 2023 Michael Bargury @ Zenity Learn more: github.com/mbrg/talks Twitter: @mbrg0 — slide 1 of 24"
+    },
+    {
+      "number": 2,
+      "text": "About me CTO and Co-founder @ Zenity Ex Microsoft cloud OWASP ‘Top 10 LCNC Security Risks’ project lead Dark Reading columnist @mbrg0 bit.ly/ lcsec — slide 2 of 24"
+    },
+    {
+      "number": 3,
+      "text": "Outline LCNC SDLC and AppSec A security perspective on Citizen Integrators Security governance to enable Citizen Integrators and LCNC AppSec Learn more — slide 3 of 24"
+    },
+    {
+      "number": 4,
+      "text": "Low-Code/No-Code SDLC — slide 4 of 24"
+    },
+    {
+      "number": 5,
+      "text": "Software Development Lifecycle SDLC — slide 5 of 24"
+    },
+    {
+      "number": 6,
+      "text": "Software Development Lifecycle SDLC Business Engineering Engineering Ops Ops Ops QA — slide 6 of 24"
+    },
+    {
+      "number": 7,
+      "text": "Secure Software Development Lifecycle SDLC Business Engineering Engineering Ops Ops Ops QA Code scanning (SAST/DAST/IAST) Shift-left Security gates Threat modeling Runtime monitoring Runtime protection Security review Vulnerability scanning — slide 7 of 24"
+    },
+    {
+      "number": 8,
+      "text": "The Shared Responsibility Model — slide 8 of 24"
+    },
+    {
+      "number": 9,
+      "text": "Low-code/no-code applications can store data or secrets as part of their \"code\" or on managed databases offered by the platform, which needs to be properly stored in compliance with regulation and security requirements. LCNC-SEC-08: Data and Secret Handling Failures — slide 9 of 24"
+    },
+    {
+      "number": 10,
+      "text": "LCNC-SEC-01: Account Impersonation LCNC-SEC-02: Authorization Misuse LCNC-SEC-03: Data Leakage and Unexpected Consequences LCNC-SEC-04: Authentication and Secure Communication Failures LCNC-SEC-05: Security Misconfiguration LCNC-SEC-06: Injection Handling Failures LCNC-SEC-07: Vulnerable, Unmanaged and Untrusted Components LCNC-SEC-08: Data and Secret Handling Failures LCNC-SEC-09: Asset Management Failures LCNC-SEC-10: Security Logging and Monitoring Failures https://owasp.org/www-project-top-10-low-code-no-code-security-risks OWASP Top 10 Security Risks for LCNC — slide 10 of 24"
+    },
+    {
+      "number": 11,
+      "text": "A Security Perspective on Citizen Integrators — slide 11 of 24"
+    },
+    {
+      "number": 12,
+      "text": "Gartner chart: the rise of business technologists, comparing 41% business technologists, 49% technology end users, and 10% corporate or business-unit IT staff — slide 12 of 24"
+    },
+    {
+      "number": 13,
+      "text": "Software Development Lifecycle SDLC Business Engineering Engineering Ops Ops Ops QA — slide 13 of 24"
+    },
+    {
+      "number": 14,
+      "text": "No Code SDLC? SDLC Business Business Business Business Business Business Business — slide 14 of 24"
+    },
+    {
+      "number": 15,
+      "text": "LCNC-SEC-03: Data Leakage and Unexpected Consequences Low-code/no-code applications can sync data or trigger operations across multiple systems, which creates a path for data to find its way outside the organizational boundary. This means that operations in one system can have unexpected consequences in another. — slide 15 of 24"
+    },
+    {
+      "number": 16,
+      "text": "Security should drive LCNC adoption Extended visibility into an existing problem “ Copy-paste” integration leads to the Shadow-IT problem LCNC replaces manual processes with automated workflows The potential for improved visibility is huge Security teams and LCNC leaders need for a common language to seize this opportunity Secure configuration Permissions Audit logs API Identity Secret mgmt. — slide 16 of 24"
+    },
+    {
+      "number": 17,
+      "text": "Security Governance to Enable Citizen Integrators and LCNC AppSec — slide 17 of 24"
+    },
+    {
+      "number": 18,
+      "text": "Security governance strategy Business criticality Security risk Green zone –playground and personal productivity Red zone – Production, managed centrally, policy enforced — slide 18 of 24"
+    },
+    {
+      "number": 19,
+      "text": "Green zone – playground and personal productivity No business connectors or data Vendors can access No custom components Permissive roles OWASP top 10 security controls enforced with grace period (alert mode) Security governance strategy Red zone – production, managed centrally, policy enforced No personal connectors, data or accounts No vendor access Custom components allowed Strict roles OWASP top 10 security controls strictly enforced (block mode) — slide 19 of 24"
+    },
+    {
+      "number": 20,
+      "text": "Secure CI/CD Incorporate security review into the Peer Review process Leverage security scanning to support approval decision Security controls as deployment gates Security governance strategy — slide 20 of 24"
+    },
+    {
+      "number": 21,
+      "text": "Remediation Facilitate a remediation process with RecipeOps Notify developer / security Wait for mitigation Stop recipe if not resolved in allocated time — slide 21 of 24"
+    },
+    {
+      "number": 22,
+      "text": "Summary — slide 22 of 24"
+    },
+    {
+      "number": 23,
+      "text": "What have we seen Low Code / No Code SDLC Security needs to be built into the process The builder’s part of the Shared Responsibility Model OWASP Top 10 LCNC Security Risks Enable Citizen Integrators with Security Governance Security should drive wide LCNC adoption Security governance strategy Implement governance with automation — slide 23 of 24"
+    },
+    {
+      "number": 24,
+      "text": "Automated Security Governance Workato Community Event 2023 Michael Bargury @ Zenity Learn more: github.com/mbrg/talks Twitter: @mbrg0 — slide 24 of 24"
+    }
+  ]
+}

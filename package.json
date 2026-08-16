@@ -6,10 +6,12 @@
   "scripts": {
     "build": "bundle exec jekyll build",
     "format": "echo \"No formatting configured; skipping.\"",
-    "test": "npm run validate:llm && npm run validate:talks && npm run validate:talk-enrichment && npm run test:talk-enrichment",
+    "test": "npm run talks:text:check && npm run validate:llm && npm run validate:talks && npm run validate:talk-enrichment && npm run test:talk-enrichment",
     "validate:llm": "node scripts/validate-llm-readiness.mjs",
     "validate:talks": "node scripts/validate-talk-resources.mjs",
     "validate:talk-enrichment": "node .agents/skills/enrich-mbgsec-talks/scripts/enrich_talks.mjs validate",
+    "talks:text:check": "node scripts/sync-talk-text.mjs --check",
+    "talks:text:sync": "node scripts/sync-talk-text.mjs",
     "test:talk-enrichment": "node scripts/test-talk-enrichment.mjs",
     "talks:enrichment:inventory": "node .agents/skills/enrich-mbgsec-talks/scripts/enrich_talks.mjs inventory",
     "talks:enrichment:report": "node .agents/skills/enrich-mbgsec-talks/scripts/enrich_talks.mjs report",

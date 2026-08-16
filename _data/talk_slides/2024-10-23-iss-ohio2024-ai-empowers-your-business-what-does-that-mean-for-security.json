@@ -1,0 +1,300 @@
+{
+  "generated_by": "sync-talk-text",
+  "source_manifest": "https://media.mbgsec.com/decks/2024-10-23_AI_Empowers_Your_Business_What_Does_that_Mean_for_Security_Steve_Shanko/latest.json",
+  "manifest": "https://media.mbgsec.com/decks/2024-10-23_AI_Empowers_Your_Business_What_Does_that_Mean_for_Security_Steve_Shanko/ba316866/deck.json",
+  "title": "AI Empowers Your Business. What Does that Mean for Security? (delivered by Stephen Shanko)",
+  "slides": [
+    {
+      "number": 1,
+      "text": "Title slide: AI is here for business users - what does that mean for security? - slide 1 of 66"
+    },
+    {
+      "number": 2,
+      "text": "About Steve Shanko photo collage - slide 2 of 66"
+    },
+    {
+      "number": 3,
+      "text": "Section title: AI is here - slide 3 of 66"
+    },
+    {
+      "number": 4,
+      "text": "Generative AI is here, with the word Generative struck through - slide 4 of 66"
+    },
+    {
+      "number": 5,
+      "text": "McKinsey report graphic about the economic potential of generative AI - slide 5 of 66"
+    },
+    {
+      "number": 6,
+      "text": "Photograph of a vintage rotary telephone - slide 6 of 66"
+    },
+    {
+      "number": 7,
+      "text": "McKinsey report cover: The economic potential of generative AI - slide 7 of 66"
+    },
+    {
+      "number": 8,
+      "text": "AI is everywhere meme featuring a child recognizing artificial intelligence - slide 8 of 66"
+    },
+    {
+      "number": 9,
+      "text": "Social post joking that machine learning and AI appear everywhere - slide 9 of 66"
+    },
+    {
+      "number": 10,
+      "text": "News article about Salesforce unveiling Agentforce - slide 10 of 66"
+    },
+    {
+      "number": 11,
+      "text": "Microsoft Power Platform adoption statistics infographic - slide 11 of 66"
+    },
+    {
+      "number": 12,
+      "text": "Chart showing productivity gains increasing with AI adoption - slide 12 of 66"
+    },
+    {
+      "number": 13,
+      "text": "Section title: What are people doing with it? - slide 13 of 66"
+    },
+    {
+      "number": 14,
+      "text": "Microsoft diagram of Copilot use cases across industries and departments - slide 14 of 66"
+    },
+    {
+      "number": 15,
+      "text": "City of Kelowna customer testimonial about building a Copilot - slide 15 of 66"
+    },
+    {
+      "number": 16,
+      "text": "Pacific Gas and Electric customer testimonial about generative answers - slide 16 of 66"
+    },
+    {
+      "number": 17,
+      "text": "Animated reaction meme expressing surprise at Copilot adoption - slide 17 of 66",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2024-10-23_AI_Empowers_Your_Business_What_Does_that_Mean_for_Security_Steve_Shanko/ba316866/media/animated-copilot-demo.gif"
+        }
+      ]
+    },
+    {
+      "number": 18,
+      "text": "Section title: Who is building these copilots? - slide 18 of 66"
+    },
+    {
+      "number": 19,
+      "text": "Inc. article and Microsoft Copilot advertisement about AI adoption - slide 19 of 66"
+    },
+    {
+      "number": 20,
+      "text": "Four charts showing rapid growth in business application use - slide 20 of 66"
+    },
+    {
+      "number": 21,
+      "text": "Business users have needs meme about waiting for a new tool - slide 21 of 66"
+    },
+    {
+      "number": 22,
+      "text": "Business tools evolving from desktop software to low-code and AI interfaces - slide 22 of 66"
+    },
+    {
+      "number": 23,
+      "text": "Logos of low-code, automation, and enterprise application platforms - slide 23 of 66"
+    },
+    {
+      "number": 24,
+      "text": "Video demonstration of an engineering request tracker in Excel - slide 24 of 66",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2024-10-23_AI_Empowers_Your_Business_What_Does_that_Mean_for_Security_Steve_Shanko/ba316866/media/shadow-it-demo.mp4"
+        }
+      ]
+    },
+    {
+      "number": 25,
+      "text": "Section title: What could go wrong? - slide 25 of 66"
+    },
+    {
+      "number": 26,
+      "text": "AI-generated image illustrating people crossing a city street - slide 26 of 66"
+    },
+    {
+      "number": 27,
+      "text": "Prompt asking an AI assistant to write a Python remote-command service - slide 27 of 66"
+    },
+    {
+      "number": 28,
+      "text": "AI productivity slide repeated before the security example - slide 28 of 66"
+    },
+    {
+      "number": 29,
+      "text": "AI-generated Flask code containing a shell-command execution flaw - slide 29 of 66"
+    },
+    {
+      "number": 30,
+      "text": "AI assistant warning that the generated shell-command code is dangerous - slide 30 of 66"
+    },
+    {
+      "number": 31,
+      "text": "Cloud of major LLM application risks including prompt injection and excessive agency - slide 31 of 66"
+    },
+    {
+      "number": 32,
+      "text": "Expanding-brain comic about adding sensitive data to a Copilot - slide 32 of 66"
+    },
+    {
+      "number": 33,
+      "text": "Section title: It gets worse - slide 33 of 66"
+    },
+    {
+      "number": 34,
+      "text": "Video demonstration of a Copilot accessing a Financial Info SharePoint site - slide 34 of 66",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2024-10-23_AI_Empowers_Your_Business_What_Does_that_Mean_for_Security_Steve_Shanko/ba316866/media/copilot-data-demo.mp4"
+        }
+      ]
+    },
+    {
+      "number": 35,
+      "text": "Reaction meme of a concerned audience member - slide 35 of 66"
+    },
+    {
+      "number": 36,
+      "text": "AI-generated city crossing image used in the prompt-injection scenario - slide 36 of 66"
+    },
+    {
+      "number": 37,
+      "text": "Reuters article about lawyers sanctioned for fake ChatGPT citations - slide 37 of 66"
+    },
+    {
+      "number": 38,
+      "text": "Statement: This isn't hallucination - slide 38 of 66"
+    },
+    {
+      "number": 39,
+      "text": "AI system architecture showing data, grounding, extensions, applications, and agents - slide 39 of 66"
+    },
+    {
+      "number": 40,
+      "text": "Fortune cookie containing a malicious prompt-injection instruction - slide 40 of 66"
+    },
+    {
+      "number": 41,
+      "text": "Definition of promptware as malicious grounding data that influences an AI application - slide 41 of 66"
+    },
+    {
+      "number": 42,
+      "text": "Definition of Remote Copilot Execution as promptware-driven malicious behavior - slide 42 of 66"
+    },
+    {
+      "number": 43,
+      "text": "What attackers see in an AI architecture: remote command execution and data exfiltration - slide 43 of 66"
+    },
+    {
+      "number": 44,
+      "text": "Video demonstration of prompt injection against a Financial Info SharePoint Copilot - slide 44 of 66",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2024-10-23_AI_Empowers_Your_Business_What_Does_that_Mean_for_Security_Steve_Shanko/ba316866/media/prompt-injection-demo.mp4"
+        }
+      ]
+    },
+    {
+      "number": 45,
+      "text": "School bus meme contrasting an ordinary day with Steve's talk - slide 45 of 66"
+    },
+    {
+      "number": 46,
+      "text": "Section title: What's next? - slide 46 of 66"
+    },
+    {
+      "number": 47,
+      "text": "Crossed-out shadow IT and this-is-fine memes - slide 47 of 66"
+    },
+    {
+      "number": 48,
+      "text": "Moon-landing image captioned AI is the new frontier - slide 48 of 66"
+    },
+    {
+      "number": 49,
+      "text": "The new frontier: business users vastly outnumber professional developers - slide 49 of 66"
+    },
+    {
+      "number": 50,
+      "text": "The new frontier: platform administrators need security support, speed, and funding - slide 50 of 66"
+    },
+    {
+      "number": 51,
+      "text": "Section title: Things you should do today - slide 51 of 66"
+    },
+    {
+      "number": 52,
+      "text": "Recommendations to inventory platforms, identify critical assets, and set AI standards - slide 52 of 66"
+    },
+    {
+      "number": 53,
+      "text": "Compliance is not security illustration - slide 53 of 66"
+    },
+    {
+      "number": 54,
+      "text": "Expanded recommendations for governance, AppSec, monitoring, feedback, and automation - slide 54 of 66"
+    },
+    {
+      "number": 55,
+      "text": "OWASP Top 10 for LLM applications - slide 55 of 66"
+    },
+    {
+      "number": 56,
+      "text": "OWASP Top 10 for low-code and no-code applications - slide 56 of 66"
+    },
+    {
+      "number": 57,
+      "text": "GenAI Attacks Matrix and ttps.ai website - slide 57 of 66"
+    },
+    {
+      "number": 58,
+      "text": "Collage connecting early automobiles with early supercomputing - slide 58 of 66"
+    },
+    {
+      "number": 59,
+      "text": "Section title: Summing up - slide 59 of 66"
+    },
+    {
+      "number": 60,
+      "text": "Conclusion: Gen AI is here - slide 60 of 66"
+    },
+    {
+      "number": 61,
+      "text": "Conclusion: Gen AI is business critical - slide 61 of 66"
+    },
+    {
+      "number": 62,
+      "text": "Conclusion: Everyone is enabled - slide 62 of 66"
+    },
+    {
+      "number": 63,
+      "text": "Conclusion: Promptware and remote Copilot execution are the real threats - slide 63 of 66"
+    },
+    {
+      "number": 64,
+      "text": "Conclusion: We have a tremendous opportunity - slide 64 of 66"
+    },
+    {
+      "number": 65,
+      "text": "Celebratory cartoon character - slide 65 of 66"
+    },
+    {
+      "number": 66,
+      "text": "Thank-you slide crediting Michael Bargury and Inbar Raz - slide 66 of 66"
+    }
+  ]
+}

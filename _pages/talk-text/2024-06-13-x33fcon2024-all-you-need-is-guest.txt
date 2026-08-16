@@ -1,0 +1,1319 @@
+---
+layout: talk-text
+permalink: /talks/2024-06-13-x33fcon2024-all-you-need-is-guest/llms.txt
+talk_permalink: /talks/2024-06-13-x33fcon2024-all-you-need-is-guest/
+talk_slug: 2024-06-13-x33fcon2024-all-you-need-is-guest
+generated_by: sync-talk-text
+sitemap: false
+---
+
+
+<!-- talk-enrichment:start -->
+## Abstract
+
+EntraID guests are assumed to have restricted access and deny-by-default.. this assumption is dangerously wrong. We will show how guests can gain unauthorized access to sensitive data including SQL servers and Azure resources, set up internal phishing apps and deploy persistent backdoors. In this presentation, we'll embark on a comprehensive exploration of Office 365 security, unveiling potential vulnerabilities, abuse scenarios and protective measures. Starting with a demonstration, attendees will witness the disparity between a guest user's limited access and what more you can get by using various methods, including SQL server dump, accessing SharePoint sites, OneDrive, KeyVault credentials and more! Moving beyond the surface, we'll delve into Azure AD guests, examining their role in securely sharing resources while maintaining essential controls like conditional access policies. A brief introduction to Power Platform follows, highlighting its transformative potential for business applications and the accompanying security mechanisms. We will uncover potential abuses of Power Platform, showcasing how configuration oversights can inadvertently expose sensitive data and facilitate internal phishing attacks. Concluding with proactive defense strategies, attendees will gain actionable insights into fortifying their Office 365 environments against emerging threats. And here's something special: attendees will gain access to the newly released tool, allowing them to apply the concepts explored during the presentation right away :)
+
+_[Official conference abstract](https://www.x33fcon.com/#!archive/2024/s/InbarRazMichaelBargury.md#Abstract)_
+
+## Transcript
+
+> Generated from the talk recording and evaluated by three independent LLM reviewer roles.
+
+### Introduction and Guest Strategy Overview
+
+[00:08](https://www.youtube.com/watch?v=7u_lYuySzWk&t=8s) **Presenter:** Thank you for coming to this talk. I'm going to prep you for lunch. Hopefully that will relax you later. I'm here replacing my CTO, Michael, who sadly couldn't come here. So I'm going to show you work that's mostly his. I'm not going to take credit for that, but I will be presenting.
+
+[00:30](https://www.youtube.com/watch?v=7u_lYuySzWk&t=30s) **Presenter:** This is Michael. Michael is our CTO, and he's actually almost the father of low-code, no-code security.
+
+[00:37](https://www.youtube.com/watch?v=7u_lYuySzWk&t=37s) **Presenter:** Most of what you'll see on the Internet comes from him.
+
+[00:40](https://www.youtube.com/watch?v=7u_lYuySzWk&t=40s) **Presenter:** And he spoke at many conferences. He's a regular columnist online, and he's hiring, and that's Michael.
+
+[00:50](https://www.youtube.com/watch?v=7u_lYuySzWk&t=50s) **Presenter:** Me, however, I am out of range, apparently.
+
+[00:55](https://www.youtube.com/watch?v=7u_lYuySzWk&t=55s) **Presenter:** There you go. So that's me.
+
+[00:59](https://www.youtube.com/watch?v=7u_lYuySzWk&t=59s) **Presenter:** I'm a hacker of things which mean I hack pretty much everything I'm not limited to software or
+
+[01:04](https://www.youtube.com/watch?v=7u_lYuySzWk&t=64s) **Presenter:** hardware I'm a collector and restorer of all computers I also spoke at some conferences and
+
+[01:09](https://www.youtube.com/watch?v=7u_lYuySzWk&t=69s) **Presenter:** I'm also hiring so if you're an exceptional researcher and this talk made you think then
+
+[01:15](https://www.youtube.com/watch?v=7u_lYuySzWk&t=75s) **Presenter:** let's talk so why should we invite guests into our organization in the first place and
+
+[01:23](https://www.youtube.com/watch?v=7u_lYuySzWk&t=83s) **Presenter:** And what is the promise of deny-by-default access?
+
+[01:28](https://www.youtube.com/watch?v=7u_lYuySzWk&t=88s) **Presenter:** Today, when you're a Microsoft shop, if you're a big Fortune 1000 company and you're working with a Microsoft infrastructure,
+
+[01:35](https://www.youtube.com/watch?v=7u_lYuySzWk&t=95s) **Presenter:** there are a very limited number of ways with which you can share information with external factors.
+
+[01:43](https://www.youtube.com/watch?v=7u_lYuySzWk&t=103s) **Presenter:** Let's say a vendor or even a candidate, like if you want to send them a home assignment or something like that.
+
+[01:51](https://www.youtube.com/watch?v=7u_lYuySzWk&t=111s) **Presenter:** Okay, so first option is just send them the sensitive emails, right?
+
+[01:56](https://www.youtube.com/watch?v=7u_lYuySzWk&t=116s) **Presenter:** And we really don't want to do that.
+
+[01:59](https://www.youtube.com/watch?v=7u_lYuySzWk&t=119s) **Presenter:** We're security people.
+
+[02:00](https://www.youtube.com/watch?v=7u_lYuySzWk&t=120s) **Presenter:** So that's not really a good option, although it does sometimes happen.
+
+[02:05](https://www.youtube.com/watch?v=7u_lYuySzWk&t=125s) **Presenter:** Okay, another thing you can do is use some service online.
+
+[02:11](https://www.youtube.com/watch?v=7u_lYuySzWk&t=131s) **Presenter:** There are all kinds of file drop sites, so you can also use that.
+
+[02:14](https://www.youtube.com/watch?v=7u_lYuySzWk&t=134s) **Presenter:** But then your content is being seen by somebody else.
+
+[02:20](https://www.youtube.com/watch?v=7u_lYuySzWk&t=140s) **Presenter:** Or you can also just trust a random person on real life.
+
+[02:24](https://www.youtube.com/watch?v=7u_lYuySzWk&t=144s) **Presenter:** This is like a real thing.
+
+[02:26](https://www.youtube.com/watch?v=7u_lYuySzWk&t=146s) **Presenter:** I'm sure you've seen that.
+
+[02:28](https://www.youtube.com/watch?v=7u_lYuySzWk&t=148s) **Presenter:** So it's sort of a thing.
+
+[02:30](https://www.youtube.com/watch?v=7u_lYuySzWk&t=150s) **Presenter:** People do that on purpose and share files and it's a surprise.
+
+[02:33](https://www.youtube.com/watch?v=7u_lYuySzWk&t=153s) **Presenter:** And I think I've heard of at least one time that this thing was actually the USB killer.
+
+[02:38](https://www.youtube.com/watch?v=7u_lYuySzWk&t=158s) **Presenter:** So don't do that.
+
+[02:39](https://www.youtube.com/watch?v=7u_lYuySzWk&t=159s) **Presenter:** It's not nice.
+
+[02:41](https://www.youtube.com/watch?v=7u_lYuySzWk&t=161s) **Presenter:** Or option three, if you're a Microsoft shop, you can invite them into your tenant.
+
+[02:46](https://www.youtube.com/watch?v=7u_lYuySzWk&t=166s) **Presenter:** This is the most reasonable option for you to use.
+
+[02:51](https://www.youtube.com/watch?v=7u_lYuySzWk&t=171s) **Presenter:** And the concept is of an external user that you invite into your tenant,
+
+[02:56](https://www.youtube.com/watch?v=7u_lYuySzWk&t=176s) **Presenter:** and then you can share things with them.
+
+[02:59](https://www.youtube.com/watch?v=7u_lYuySzWk&t=179s) **Presenter:** And I want to remind you that most of the Microsoft platforms
+
+[03:04](https://www.youtube.com/watch?v=7u_lYuySzWk&t=184s) **Presenter:** are oriented at collaboration and sharing.
+
+[03:07](https://www.youtube.com/watch?v=7u_lYuySzWk&t=187s) **Presenter:** So this is a very important factor in all the design decisions that were made.
+
+[03:12](https://www.youtube.com/watch?v=7u_lYuySzWk&t=192s) **Presenter:** So in order to have a safe solution to invite guests,
+
+[03:16](https://www.youtube.com/watch?v=7u_lYuySzWk&t=196s) **Presenter:** conditions that you need to follow the first one is that it has to be easy for vendors to onboard
+
+[03:21](https://www.youtube.com/watch?v=7u_lYuySzWk&t=201s) **Presenter:** if it's too complicated for you to add a new vendor then it's not going to happen it's just
+
+[03:27](https://www.youtube.com/watch?v=7u_lYuySzWk&t=207s) **Presenter:** it's going to break you're going to suffer all kinds of consequences your vendors are not going
+
+[03:31](https://www.youtube.com/watch?v=7u_lYuySzWk&t=211s) **Presenter:** to want to work for you and let's say that you did that then it has to be controllable okay your it
+
+[03:39](https://www.youtube.com/watch?v=7u_lYuySzWk&t=219s) **Presenter:** security needs to be able to understand it and control it because otherwise you're inviting
+
+[03:46](https://www.youtube.com/watch?v=7u_lYuySzWk&t=226s) **Presenter:** And they're not really, you know, a member of the tenant.
+
+[03:50](https://www.youtube.com/watch?v=7u_lYuySzWk&t=230s) **Presenter:** They're external.
+
+[03:51](https://www.youtube.com/watch?v=7u_lYuySzWk&t=231s) **Presenter:** They're guests, right?
+
+[03:52](https://www.youtube.com/watch?v=7u_lYuySzWk&t=232s) **Presenter:** So let's look at what we see.
+
+[03:54](https://www.youtube.com/watch?v=7u_lYuySzWk&t=234s) **Presenter:** So it's super easy, okay, to get a guest account.
+
+[04:00](https://www.youtube.com/watch?v=7u_lYuySzWk&t=240s) **Presenter:** What you see here, this online video, is of how you invite someone into your tenant.
+
+[04:07](https://www.youtube.com/watch?v=7u_lYuySzWk&t=247s) **Presenter:** You just send them an invitation.
+
+[04:11](https://www.youtube.com/watch?v=7u_lYuySzWk&t=251s) **Presenter:** That's it.
+
+[04:11](https://www.youtube.com/watch?v=7u_lYuySzWk&t=251s) **Presenter:** That's all you do on the inviting side.
+
+[04:14](https://www.youtube.com/watch?v=7u_lYuySzWk&t=254s) **Presenter:** So that's super easy.
+
+[04:15](https://www.youtube.com/watch?v=7u_lYuySzWk&t=255s) **Presenter:** That's very good.
+
+[04:16](https://www.youtube.com/watch?v=7u_lYuySzWk&t=256s) **Presenter:** okay um however on the receiving side you get the invitation you can click it you can go online but
+
+[04:26](https://www.youtube.com/watch?v=7u_lYuySzWk&t=266s) **Presenter:** a very talented researcher by the name of dear kian discovered that you can actually enumerate on
+
+[04:34](https://www.youtube.com/watch?v=7u_lYuySzWk&t=274s) **Presenter:** invite invitations that the organization has sent and has not been used yet so if you scan an
+
+[04:41](https://www.youtube.com/watch?v=7u_lYuySzWk&t=281s) **Presenter:** organization and you find a few invitations you can just grab one of them and use the token
+
+[04:46](https://www.youtube.com/watch?v=7u_lYuySzWk&t=286s) **Presenter:** And you're going to be given credentials to use, but under the identity of the person that originally received the invitation.
+
+[04:53](https://www.youtube.com/watch?v=7u_lYuySzWk&t=293s) **Presenter:** Right?
+
+[04:54](https://www.youtube.com/watch?v=7u_lYuySzWk&t=294s) **Presenter:** So you're not just getting access to somebody else's tenant.
+
+[04:58](https://www.youtube.com/watch?v=7u_lYuySzWk&t=298s) **Presenter:** You're also doing that under their assumed identity.
+
+[05:01](https://www.youtube.com/watch?v=7u_lYuySzWk&t=301s) **Presenter:** That's not even you.
+
+[05:03](https://www.youtube.com/watch?v=7u_lYuySzWk&t=303s) **Presenter:** And this is a very nice research.
+
+[05:05](https://www.youtube.com/watch?v=7u_lYuySzWk&t=305s) **Presenter:** It was published.
+
+[05:06](https://www.youtube.com/watch?v=7u_lYuySzWk&t=306s) **Presenter:** It was disclosed.
+
+[05:08](https://www.youtube.com/watch?v=7u_lYuySzWk&t=308s) **Presenter:** And it was fixed.
+
+[05:09](https://www.youtube.com/watch?v=7u_lYuySzWk&t=309s) **Presenter:** Very, very nice talk.
+
+[05:12](https://www.youtube.com/watch?v=7u_lYuySzWk&t=312s) **Presenter:** Yeah.
+
+[05:13](https://www.youtube.com/watch?v=7u_lYuySzWk&t=313s) **Presenter:** So it's called non-redeemed invites, and you could do pretty much whatever you want with it.
+
+[05:20](https://www.youtube.com/watch?v=7u_lYuySzWk&t=320s) **Presenter:** After you do that, there's another problem.
+
+[05:25](https://www.youtube.com/watch?v=7u_lYuySzWk&t=325s) **Presenter:** Okay, so you're a guest in the tenant, and now how do you control what you can do in the tenant?
+
+[05:31](https://www.youtube.com/watch?v=7u_lYuySzWk&t=331s) **Presenter:** So this is a Microsoft shop, and there is a way that you can bring your other identities as a way of getting into the tenant.
+
+[05:43](https://www.youtube.com/watch?v=7u_lYuySzWk&t=343s) **Presenter:** this whole ecosystem of services by Microsoft,
+
+[05:45](https://www.youtube.com/watch?v=7u_lYuySzWk&t=345s) **Presenter:** which says, okay, I will trust this third-party IDP,
+
+[05:50](https://www.youtube.com/watch?v=7u_lYuySzWk&t=350s) **Presenter:** identity provider,
+
+[05:51](https://www.youtube.com/watch?v=7u_lYuySzWk&t=351s) **Presenter:** and once they say that you are who you say you are,
+
+[05:54](https://www.youtube.com/watch?v=7u_lYuySzWk&t=354s) **Presenter:** and if that matches the invitation,
+
+[05:56](https://www.youtube.com/watch?v=7u_lYuySzWk&t=356s) **Presenter:** then I'm going to let you in.
+
+[05:57](https://www.youtube.com/watch?v=7u_lYuySzWk&t=357s) **Presenter:** And of course, once you have this entire system by Microsoft,
+
+[06:01](https://www.youtube.com/watch?v=7u_lYuySzWk&t=361s) **Presenter:** then this is what the entire Microsoft tenant
+
+### Microsoft Tenant Guest Management and Security Foundations
+
+[06:04](https://www.youtube.com/watch?v=7u_lYuySzWk&t=364s) **Presenter:** uses for access control.
+
+[06:05](https://www.youtube.com/watch?v=7u_lYuySzWk&t=365s) **Presenter:** So as a benefit, you automatically get
+
+[06:08](https://www.youtube.com/watch?v=7u_lYuySzWk&t=368s) **Presenter:** all the benefits of the Microsoft.
+
+[06:11](https://www.youtube.com/watch?v=7u_lYuySzWk&t=371s) **Presenter:** You get the multi-factor authentication,
+
+[06:13](https://www.youtube.com/watch?v=7u_lYuySzWk&t=373s) **Presenter:** the role-based access control, certificate authorities,
+
+[06:16](https://www.youtube.com/watch?v=7u_lYuySzWk&t=376s) **Presenter:** anything you already have in Microsoft can be applied to you
+
+[06:19](https://www.youtube.com/watch?v=7u_lYuySzWk&t=379s) **Presenter:** even if you identify through Google.
+
+[06:23](https://www.youtube.com/watch?v=7u_lYuySzWk&t=383s) **Presenter:** And that is very nice.
+
+[06:24](https://www.youtube.com/watch?v=7u_lYuySzWk&t=384s) **Presenter:** This sort of solves the problem.
+
+[06:27](https://www.youtube.com/watch?v=7u_lYuySzWk&t=387s) **Presenter:** So you need guest access.
+
+[06:29](https://www.youtube.com/watch?v=7u_lYuySzWk&t=389s) **Presenter:** You get the required security controls.
+
+[06:32](https://www.youtube.com/watch?v=7u_lYuySzWk&t=392s) **Presenter:** And those require an AAD account.
+
+[06:35](https://www.youtube.com/watch?v=7u_lYuySzWk&t=395s) **Presenter:** Otherwise, you can't do the enforcement
+
+[06:36](https://www.youtube.com/watch?v=7u_lYuySzWk&t=396s) **Presenter:** because Microsoft's services work on top of the AAD,
+
+[06:40](https://www.youtube.com/watch?v=7u_lYuySzWk&t=400s) **Presenter:** now called Entra ID.
+
+[06:44](https://www.youtube.com/watch?v=7u_lYuySzWk&t=404s) **Presenter:** Theoretically, if you have an AAD account, that would give you full access.
+
+[06:48](https://www.youtube.com/watch?v=7u_lYuySzWk&t=408s) **Presenter:** You're a member of the tenant and we don't want that because you're a guest.
+
+[06:54](https://www.youtube.com/watch?v=7u_lYuySzWk&t=414s) **Presenter:** You're only here because I need you to be here.
+
+[06:56](https://www.youtube.com/watch?v=7u_lYuySzWk&t=416s) **Presenter:** I need to share something with you.
+
+[06:58](https://www.youtube.com/watch?v=7u_lYuySzWk&t=418s) **Presenter:** So that's all the problem?
+
+[07:01](https://www.youtube.com/watch?v=7u_lYuySzWk&t=421s) **Presenter:** No.
+
+[07:01](https://www.youtube.com/watch?v=7u_lYuySzWk&t=421s) **Presenter:** What you want to do is to make sure that the...
+
+[07:05](https://www.youtube.com/watch?v=7u_lYuySzWk&t=425s) **Presenter:** OK, I need to learn what this range is.
+
+[07:08](https://www.youtube.com/watch?v=7u_lYuySzWk&t=428s) **Presenter:** you need to do a policy where guests by definition can't see anything and then you can give them
+
+[07:16](https://www.youtube.com/watch?v=7u_lYuySzWk&t=436s) **Presenter:** whatever you want right so that that would sort of solve the problem now allegedly that's what's
+
+[07:25](https://www.youtube.com/watch?v=7u_lYuySzWk&t=445s) **Presenter:** happening okay you get an invitation you join the tenant and you don't access anything that should
+
+[07:34](https://www.youtube.com/watch?v=7u_lYuySzWk&t=454s) **Presenter:** solve the problem. However, let's see what actually happens because as we all know what
+
+[07:40](https://www.youtube.com/watch?v=7u_lYuySzWk&t=460s) **Presenter:** you plan is one thing and what happens is another. So from now on I want you to notice
+
+[07:46](https://www.youtube.com/watch?v=7u_lYuySzWk&t=466s) **Presenter:** this area. This little icon is going to tell you whether I'm the inviting organization
+
+[07:54](https://www.youtube.com/watch?v=7u_lYuySzWk&t=474s) **Presenter:** and that is going to be green or whether I'm the hacker and then that's going to be red.
+
+[08:00](https://www.youtube.com/watch?v=7u_lYuySzWk&t=480s) **Presenter:** okay so this is the vendor and the vendor would like to invite someone and that would be me i
+
+[08:08](https://www.youtube.com/watch?v=7u_lYuySzWk&t=488s) **Presenter:** would be hacker5 at pontoso so you send the invitation to the hacker as a guest okay it's
+
+[08:16](https://www.youtube.com/watch?v=7u_lYuySzWk&t=496s) **Presenter:** important as a guest by the way guest versus member is a property of the entra id and it's
+
+[08:22](https://www.youtube.com/watch?v=7u_lYuySzWk&t=502s) **Presenter:** important to understand because it has implication on everything in your tenant not just power
+
+[08:30](https://www.youtube.com/watch?v=7u_lYuySzWk&t=510s) **Presenter:** showing here today, but everything else in your tenant.
+
+[08:34](https://www.youtube.com/watch?v=7u_lYuySzWk&t=514s) **Presenter:** Now, I've switched the icons.
+
+[08:36](https://www.youtube.com/watch?v=7u_lYuySzWk&t=516s) **Presenter:** Now I'm the bad guy.
+
+[08:38](https://www.youtube.com/watch?v=7u_lYuySzWk&t=518s) **Presenter:** I'm logging into my own tenant.
+
+[08:40](https://www.youtube.com/watch?v=7u_lYuySzWk&t=520s) **Presenter:** Everybody can have a tenant. It's free.
+
+[08:42](https://www.youtube.com/watch?v=7u_lYuySzWk&t=522s) **Presenter:** So I'm logging into my own tenant.
+
+[08:44](https://www.youtube.com/watch?v=7u_lYuySzWk&t=524s) **Presenter:** And then it says, you've been invited by somebody else.
+
+[08:48](https://www.youtube.com/watch?v=7u_lYuySzWk&t=528s) **Presenter:** And please approve all the conditions.
+
+[08:51](https://www.youtube.com/watch?v=7u_lYuySzWk&t=531s) **Presenter:** And once you do that, here I am.
+
+[08:54](https://www.youtube.com/watch?v=7u_lYuySzWk&t=534s) **Presenter:** And as you can see, there's nothing here.
+
+[08:56](https://www.youtube.com/watch?v=7u_lYuySzWk&t=536s) **Presenter:** Right?
+
+[08:58](https://www.youtube.com/watch?v=7u_lYuySzWk&t=538s) **Presenter:** I'm a guest, so my access is very limited.
+
+[09:01](https://www.youtube.com/watch?v=7u_lYuySzWk&t=541s) **Presenter:** Absolutely nothing for me to do.
+
+[09:03](https://www.youtube.com/watch?v=7u_lYuySzWk&t=543s) **Presenter:** So you would think that it works.
+
+[09:05](https://www.youtube.com/watch?v=7u_lYuySzWk&t=545s) **Presenter:** And most people that don't like saying, but what if, that's what they see.
+
+[09:09](https://www.youtube.com/watch?v=7u_lYuySzWk&t=549s) **Presenter:** This is where they stop.
+
+[09:13](https://www.youtube.com/watch?v=7u_lYuySzWk&t=553s) **Presenter:** But not really.
+
+[09:16](https://www.youtube.com/watch?v=7u_lYuySzWk&t=556s) **Presenter:** So right up until this talk, there was the state-of-the-art guest exploitation.
+
+[09:22](https://www.youtube.com/watch?v=7u_lYuySzWk&t=562s) **Presenter:** And what did it include?
+
+[09:23](https://www.youtube.com/watch?v=7u_lYuySzWk&t=563s) **Presenter:** Well, the first thing that you could do is you could do phishing via Teams.
+
+[09:27](https://www.youtube.com/watch?v=7u_lYuySzWk&t=567s) **Presenter:** Now, Teams is also sort of a sharing and collaboration platform.
+
+[09:33](https://www.youtube.com/watch?v=7u_lYuySzWk&t=573s) **Presenter:** And it turns out that any tenant member can send a Teams message to any other tenant member.
+
+[09:40](https://www.youtube.com/watch?v=7u_lYuySzWk&t=580s) **Presenter:** And that is a problem because many people in their perception look at Teams as something that is internal to the organization, like Slack or something.
+
+[09:48](https://www.youtube.com/watch?v=7u_lYuySzWk&t=588s) **Presenter:** If you get a message on your Slack, which is logged on to your organization, you're automatically assuming that it is someone from the organization because you got a direct message.
+
+[09:57](https://www.youtube.com/watch?v=7u_lYuySzWk&t=597s) **Presenter:** And you don't necessarily realize that it could have come from another tenant, right?
+
+[10:03](https://www.youtube.com/watch?v=7u_lYuySzWk&t=603s) **Presenter:** And it turned out that not only that, but through some bypass and some overlook of policies, you were able to send a file attachment.
+
+[10:13](https://www.youtube.com/watch?v=7u_lYuySzWk&t=613s) **Presenter:** Again, from the outside tenant to the victim tenant.
+
+[10:16](https://www.youtube.com/watch?v=7u_lYuySzWk&t=616s) **Presenter:** And that should not happen, but it could happen.
+
+[10:19](https://www.youtube.com/watch?v=7u_lYuySzWk&t=619s) **Presenter:** And that opened the door for phishing campaigns over Teams.
+
+[10:24](https://www.youtube.com/watch?v=7u_lYuySzWk&t=624s) **Presenter:** And since the medium Teams is trusted, then we have what we call the trust by proxy.
+
+[10:30](https://www.youtube.com/watch?v=7u_lYuySzWk&t=630s) **Presenter:** You trust Teams, so everything on Teams is trusted.
+
+[10:33](https://www.youtube.com/watch?v=7u_lYuySzWk&t=633s) **Presenter:** And you don't even notice that it's an external message.
+
+[10:36](https://www.youtube.com/watch?v=7u_lYuySzWk&t=636s) **Presenter:** And there's also a tool to do that.
+
+[10:38](https://www.youtube.com/watch?v=7u_lYuySzWk&t=638s) **Presenter:** This, by the way, is from Microsoft's own blog, right?
+
+[10:41](https://www.youtube.com/watch?v=7u_lYuySzWk&t=641s) **Presenter:** which lets you fish by attachment from external users.
+
+[10:47](https://www.youtube.com/watch?v=7u_lYuySzWk&t=647s) **Presenter:** And then you get this message.
+
+[10:48](https://www.youtube.com/watch?v=7u_lYuySzWk&t=648s) **Presenter:** And how can you even tell it's from someone who's not in your organization?
+
+[10:52](https://www.youtube.com/watch?v=7u_lYuySzWk&t=652s) **Presenter:** Because it looks exactly the same, right?
+
+[10:54](https://www.youtube.com/watch?v=7u_lYuySzWk&t=654s) **Presenter:** Let me help you.
+
+[10:57](https://www.youtube.com/watch?v=7u_lYuySzWk&t=657s) **Presenter:** Here it says external, right?
+
+[11:00](https://www.youtube.com/watch?v=7u_lYuySzWk&t=660s) **Presenter:** So if you miss that little tiny font and on top of everything,
+
+[11:07](https://www.youtube.com/watch?v=7u_lYuySzWk&t=667s) **Presenter:** it's not even in the content, right?
+
+[11:08](https://www.youtube.com/watch?v=7u_lYuySzWk&t=668s) **Presenter:** It's on top.
+
+[11:09](https://www.youtube.com/watch?v=7u_lYuySzWk&t=669s) **Presenter:** You didn't notice it was an external user.
+
+[11:11](https://www.youtube.com/watch?v=7u_lYuySzWk&t=671s) **Presenter:** file attachment you clicked it and you're done second thing it turns out that
+
+[11:18](https://www.youtube.com/watch?v=7u_lYuySzWk&t=678s) **Presenter:** guests are able to do recon on the tenant now you shouldn't be allowed to
+
+### Guest Access Exploitation: Phishing and Reconnaissance
+
+[11:23](https://www.youtube.com/watch?v=7u_lYuySzWk&t=683s) **Presenter:** do that but again another tool and another talk and you have a ad internals
+
+[11:30](https://www.youtube.com/watch?v=7u_lYuySzWk&t=690s) **Presenter:** and what you can do is you can enumerate on all the people that are
+
+[11:35](https://www.youtube.com/watch?v=7u_lYuySzWk&t=695s) **Presenter:** guests and you get a list and then you can enumerate on the groups that they
+
+[11:41](https://www.youtube.com/watch?v=7u_lYuySzWk&t=701s) **Presenter:** turns out that some of those groups also have lists inside them.
+
+[11:45](https://www.youtube.com/watch?v=7u_lYuySzWk&t=705s) **Presenter:** And then you do this iteratively and you end up getting a recon of your victim tenant and you're a guest.
+
+[11:51](https://www.youtube.com/watch?v=7u_lYuySzWk&t=711s) **Presenter:** Now, it's true that you didn't access anything yet, but you do have the list.
+
+[11:55](https://www.youtube.com/watch?v=7u_lYuySzWk&t=715s) **Presenter:** And that's already a big advantage for an attacker.
+
+[11:58](https://www.youtube.com/watch?v=7u_lYuySzWk&t=718s) **Presenter:** But that's not enough.
+
+[11:59](https://www.youtube.com/watch?v=7u_lYuySzWk&t=719s) **Presenter:** That was the state of the art until recently.
+
+[12:01](https://www.youtube.com/watch?v=7u_lYuySzWk&t=721s) **Presenter:** But hackers want more, right?
+
+[12:03](https://www.youtube.com/watch?v=7u_lYuySzWk&t=723s) **Presenter:** What do we want to do?
+
+[12:04](https://www.youtube.com/watch?v=7u_lYuySzWk&t=724s) **Presenter:** We want to get data we're not supposed to have.
+
+[12:07](https://www.youtube.com/watch?v=7u_lYuySzWk&t=727s) **Presenter:** We might want to change the data or just cause damage, right?
+
+[12:12](https://www.youtube.com/watch?v=7u_lYuySzWk&t=732s) **Presenter:** IT security, CIA, confidentiality, integrity, and availability.
+
+[12:17](https://www.youtube.com/watch?v=7u_lYuySzWk&t=737s) **Presenter:** Any damage to any one of those, great success for the hacker,
+
+[12:20](https://www.youtube.com/watch?v=7u_lYuySzWk&t=740s) **Presenter:** tough luck for the victim.
+
+[12:22](https://www.youtube.com/watch?v=7u_lYuySzWk&t=742s) **Presenter:** So let's see what we're doing.
+
+[12:24](https://www.youtube.com/watch?v=7u_lYuySzWk&t=744s) **Presenter:** Now, at this point, you get the opportunity to say,
+
+[12:30](https://www.youtube.com/watch?v=7u_lYuySzWk&t=750s) **Presenter:** I don't want to know.
+
+[12:31](https://www.youtube.com/watch?v=7u_lYuySzWk&t=751s) **Presenter:** I'm going to go outside, have a drink, start lunch early,
+
+[12:35](https://www.youtube.com/watch?v=7u_lYuySzWk&t=755s) **Presenter:** because when I go forward, I'm going to ruin your day,
+
+[12:39](https://www.youtube.com/watch?v=7u_lYuySzWk&t=759s) **Presenter:** especially if you use Microsoft software so anybody leaving no okay so if I click
+
+[12:49](https://www.youtube.com/watch?v=7u_lYuySzWk&t=769s) **Presenter:** this link and now you can see that I'm the attacker now I'm logging into power
+
+[12:56](https://www.youtube.com/watch?v=7u_lYuySzWk&t=776s) **Presenter:** apps and it doesn't work why because it's not my tenant so what do I do so
+
+[13:04](https://www.youtube.com/watch?v=7u_lYuySzWk&t=784s) **Presenter:** So this is my tenant.
+
+[13:05](https://www.youtube.com/watch?v=7u_lYuySzWk&t=785s) **Presenter:** Okay, you can see it up here.
+
+[13:08](https://www.youtube.com/watch?v=7u_lYuySzWk&t=788s) **Presenter:** Okay.
+
+[13:09](https://www.youtube.com/watch?v=7u_lYuySzWk&t=789s) **Presenter:** And if you work with that, you know that if you are a member of more than one tenant,
+
+[13:13](https://www.youtube.com/watch?v=7u_lYuySzWk&t=793s) **Presenter:** you can switch directory.
+
+[13:15](https://www.youtube.com/watch?v=7u_lYuySzWk&t=795s) **Presenter:** So if I switch directory, you can see that I also have the other one.
+
+[13:20](https://www.youtube.com/watch?v=7u_lYuySzWk&t=800s) **Presenter:** I'm currently on Pontoso.
+
+[13:22](https://www.youtube.com/watch?v=7u_lYuySzWk&t=802s) **Presenter:** I don't know why the resolution is not good here.
+
+[13:25](https://www.youtube.com/watch?v=7u_lYuySzWk&t=805s) **Presenter:** It's kind of good on my screen.
+
+[13:27](https://www.youtube.com/watch?v=7u_lYuySzWk&t=807s) **Presenter:** You want me to turn this around for you?
+
+[13:30](https://www.youtube.com/watch?v=7u_lYuySzWk&t=810s) **Presenter:** Okay.
+
+[13:31](https://www.youtube.com/watch?v=7u_lYuySzWk&t=811s) **Presenter:** and I can switch directory to the
+
+[13:34](https://www.youtube.com/watch?v=7u_lYuySzWk&t=814s) **Presenter:** Zenity demo. This says
+
+[13:35](https://www.youtube.com/watch?v=7u_lYuySzWk&t=815s) **Presenter:** Zenity demo.
+
+[13:37](https://www.youtube.com/watch?v=7u_lYuySzWk&t=817s) **Presenter:** And when you switch the tenant, once you're
+
+[13:39](https://www.youtube.com/watch?v=7u_lYuySzWk&t=819s) **Presenter:** already logged in,
+
+[13:42](https://www.youtube.com/watch?v=7u_lYuySzWk&t=822s) **Presenter:** then
+
+[13:42](https://www.youtube.com/watch?v=7u_lYuySzWk&t=822s) **Presenter:** all of a sudden, I have a list
+
+[13:45](https://www.youtube.com/watch?v=7u_lYuySzWk&t=825s) **Presenter:** of things. One of these things.
+
+[13:47](https://www.youtube.com/watch?v=7u_lYuySzWk&t=827s) **Presenter:** If you look at the side, you will see that
+
+[13:49](https://www.youtube.com/watch?v=7u_lYuySzWk&t=829s) **Presenter:** this is a list of connections.
+
+[13:51](https://www.youtube.com/watch?v=7u_lYuySzWk&t=831s) **Presenter:** What do we have here? We have an
+
+[13:53](https://www.youtube.com/watch?v=7u_lYuySzWk&t=833s) **Presenter:** Azure blob storage, Azure file storage,
+
+[13:56](https://www.youtube.com/watch?v=7u_lYuySzWk&t=836s) **Presenter:** Azure queues,
+
+[13:57](https://www.youtube.com/watch?v=7u_lYuySzWk&t=837s) **Presenter:** table storage, and two SQL
+
+[13:59](https://www.youtube.com/watch?v=7u_lYuySzWk&t=839s) **Presenter:** servers.
+
+[14:01](https://www.youtube.com/watch?v=7u_lYuySzWk&t=841s) **Presenter:** Why am I seeing those?
+
+[14:03](https://www.youtube.com/watch?v=7u_lYuySzWk&t=843s) **Presenter:** Let's look.
+
+[14:04](https://www.youtube.com/watch?v=7u_lYuySzWk&t=844s) **Presenter:** Okay.
+
+[14:05](https://www.youtube.com/watch?v=7u_lYuySzWk&t=845s) **Presenter:** Let's look at this one.
+
+[14:06](https://www.youtube.com/watch?v=7u_lYuySzWk&t=846s) **Presenter:** Azure file storage.
+
+[14:08](https://www.youtube.com/watch?v=7u_lYuySzWk&t=848s) **Presenter:** It was modified 12 minutes ago and it's connected.
+
+[14:12](https://www.youtube.com/watch?v=7u_lYuySzWk&t=852s) **Presenter:** Everybody knows the distinction between connector and connection.
+
+[14:16](https://www.youtube.com/watch?v=7u_lYuySzWk&t=856s) **Presenter:** I'll just do it quickly.
+
+[14:17](https://www.youtube.com/watch?v=7u_lYuySzWk&t=857s) **Presenter:** A connector is a mechanism to connect between two locations.
+
+[14:23](https://www.youtube.com/watch?v=7u_lYuySzWk&t=863s) **Presenter:** For example, your service and some external data.
+
+[14:25](https://www.youtube.com/watch?v=7u_lYuySzWk&t=865s) **Presenter:** And this is just the mechanism.
+
+[14:27](https://www.youtube.com/watch?v=7u_lYuySzWk&t=867s) **Presenter:** It's like a translator.
+
+[14:30](https://www.youtube.com/watch?v=7u_lYuySzWk&t=870s) **Presenter:** a pair of credentials and you authenticate on top of that connector, you now have a connection,
+
+[14:36](https://www.youtube.com/watch?v=7u_lYuySzWk&t=876s) **Presenter:** right?
+
+[14:36](https://www.youtube.com/watch?v=7u_lYuySzWk&t=876s) **Presenter:** So a connection is basically an authenticated session of the type of the connector.
+
+[14:42](https://www.youtube.com/watch?v=7u_lYuySzWk&t=882s) **Presenter:** And these are connections, which means they are authenticated, especially because they're
+
+[14:46](https://www.youtube.com/watch?v=7u_lYuySzWk&t=886s) **Presenter:** still connected, right?
+
+[14:47](https://www.youtube.com/watch?v=7u_lYuySzWk&t=887s) **Presenter:** So if we look at it, I can do the share.
+
+[14:51](https://www.youtube.com/watch?v=7u_lYuySzWk&t=891s) **Presenter:** You can always go to the share menu, even if you're not an owner, you just won't be
+
+[14:54](https://www.youtube.com/watch?v=7u_lYuySzWk&t=894s) **Presenter:** able to do anything.
+
+[14:55](https://www.youtube.com/watch?v=7u_lYuySzWk&t=895s) **Presenter:** And we can see that Jamie is the owner and also has the access of use and share.
+
+[15:03](https://www.youtube.com/watch?v=7u_lYuySzWk&t=903s) **Presenter:** I don't, right?
+
+[15:05](https://www.youtube.com/watch?v=7u_lYuySzWk&t=905s) **Presenter:** But look at this.
+
+[15:07](https://www.youtube.com/watch?v=7u_lYuySzWk&t=907s) **Presenter:** Shared with org.
+
+[15:08](https://www.youtube.com/watch?v=7u_lYuySzWk&t=908s) **Presenter:** It means this connection was shared with the entire organization.
+
+[15:13](https://www.youtube.com/watch?v=7u_lYuySzWk&t=913s) **Presenter:** Now, going back to the concepts of tenant and guests, a guest is now inside the tenant.
+
+[15:20](https://www.youtube.com/watch?v=7u_lYuySzWk&t=920s) **Presenter:** When you share something with the organization, you're sharing it with the entire tenant.
+
+[15:25](https://www.youtube.com/watch?v=7u_lYuySzWk&t=925s) **Presenter:** anybody in it. So that's your employees, contractors, guests, anyone. So anyone in the tenant now has
+
+[15:33](https://www.youtube.com/watch?v=7u_lYuySzWk&t=933s) **Presenter:** access to this connection. Okay. If we look at the details, so these are the details of the connection.
+
+[15:40](https://www.youtube.com/watch?v=7u_lYuySzWk&t=940s) **Presenter:** We can also look at this tab that says apps using this connection. This is Jamie, by the way,
+
+### Low‑Code/No‑Code Platforms and Shared Connections
+
+[15:47](https://www.youtube.com/watch?v=7u_lYuySzWk&t=947s) **Presenter:** the owner of the connection, who is Jamie. Jamie is customer service representative. It's nice to
+
+[15:55](https://www.youtube.com/watch?v=7u_lYuySzWk&t=955s) **Presenter:** recon you did earlier right and why does this happen
+
+[16:05](https://www.youtube.com/watch?v=7u_lYuySzWk&t=965s) **Presenter:** okay I'm gonna skip the video the reason it happens is that now people are using
+
+[16:10](https://www.youtube.com/watch?v=7u_lYuySzWk&t=970s) **Presenter:** a lot of local local platforms and ever since November when Microsoft published
+
+[16:16](https://www.youtube.com/watch?v=7u_lYuySzWk&t=976s) **Presenter:** the co-pilots people are no longer actually making decisions they use
+
+[16:22](https://www.youtube.com/watch?v=7u_lYuySzWk&t=982s) **Presenter:** co-pilots and then they create the whole application on top of connections and other
+
+[16:27](https://www.youtube.com/watch?v=7u_lYuySzWk&t=987s) **Presenter:** resources in like five minutes and the decisions of what is shared to whom are being made by the
+
+[16:33](https://www.youtube.com/watch?v=7u_lYuySzWk&t=993s) **Presenter:** automation platforms by the co-pilots now even before the co-pilots i mentioned a number of
+
+[16:39](https://www.youtube.com/watch?v=7u_lYuySzWk&t=999s) **Presenter:** times already that these platforms are meant for collaboration so when people create something
+
+[16:44](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1004s) **Presenter:** that they think is useful they want to share it right they want to share i wrote an app to manage
+
+[16:52](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1012s) **Presenter:** I wrote an app to get movie tickets.
+
+[16:54](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1014s) **Presenter:** I want to share it with all my friends and colleagues.
+
+[16:56](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1016s) **Presenter:** So when you create something with a co-pilot,
+
+[16:59](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1019s) **Presenter:** if you're not paying attention and you're just clicking all the forward
+
+[17:02](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1022s) **Presenter:** and doing all the defaults,
+
+[17:04](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1024s) **Presenter:** you're going to end up creating something that is shared with the entire organization.
+
+[17:08](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1028s) **Presenter:** Now, at this point, usually a lot of people say,
+
+[17:11](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1031s) **Presenter:** okay, this sounds serious, but we don't have that problem.
+
+[17:15](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1035s) **Presenter:** We didn't teach anybody to do low-code, no-code,
+
+[17:19](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1039s) **Presenter:** so this is not really our problem.
+
+[17:22](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1042s) **Presenter:** that is that it's just not true. One of the things that we're seeing is that the system administrators,
+
+[17:28](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1048s) **Presenter:** the CISOs in organizations, don't realize and don't know the extent of the use of low-code,
+
+[17:34](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1054s) **Presenter:** no-code. Now, Microsoft estimated that the number of C-sharp, this is from last year,
+
+[17:40](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1060s) **Presenter:** the number of C-sharp developers in the entire world is roughly 5 million. Okay, that's really
+
+[17:46](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1066s) **Presenter:** nice. How many people, according to Microsoft, were using the low-code, no-code services of
+
+[17:52](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1072s) **Presenter:** Power Apps? Roughly 8 million. Now, how many resources are you familiar with that go to
+
+[18:00](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1080s) **Presenter:** teaching and educating C-sharp developers versus what we call the citizen developers,
+
+[18:05](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1085s) **Presenter:** the regular people of your organization that just do what they're supposed to do? Almost none,
+
+[18:11](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1091s) **Presenter:** right? Now, if you argue with this graph and you can do that, then what I have here for you
+
+[18:16](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1096s) **Presenter:** is the low-code, no-code adoption rate of just four of our customers.
+
+[18:23](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1103s) **Presenter:** They're not named here, and it doesn't matter.
+
+[18:25](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1105s) **Presenter:** But what I want you to see are not just the numbers, but the rate.
+
+[18:29](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1109s) **Presenter:** Because when somebody all of a sudden succeeds in writing an application,
+
+[18:34](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1114s) **Presenter:** and they're not a developer, maybe they're an accountant, and it works,
+
+[18:37](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1117s) **Presenter:** they get so excited, they tell their friends, and then this spreads exponentially.
+
+[18:42](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1122s) **Presenter:** People create more resources, more connections, more applications, more automations.
+
+[18:46](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1126s) **Presenter:** And this goes really fast, right?
+
+[18:49](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1129s) **Presenter:** So these are real-world graphs from two months ago.
+
+[18:55](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1135s) **Presenter:** Now, how do we exploit that?
+
+[18:57](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1137s) **Presenter:** Let's see.
+
+[18:59](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1139s) **Presenter:** So this is the connection, right?
+
+[19:02](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1142s) **Presenter:** And what I would want to do is look at the application that is using it.
+
+[19:07](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1147s) **Presenter:** So apps using this connection, you can see there's an app called Customer Insights Azure.
+
+[19:13](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1153s) **Presenter:** Now, let's try to execute that.
+
+[19:16](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1156s) **Presenter:** as you can see.
+
+[19:18](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1158s) **Presenter:** And if I try to execute it,
+
+[19:20](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1160s) **Presenter:** I get blocked.
+
+[19:22](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1162s) **Presenter:** Why?
+
+[19:22](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1162s) **Presenter:** It says here,
+
+[19:24](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1164s) **Presenter:** you don't have the current plan
+
+[19:26](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1166s) **Presenter:** to access this app.
+
+[19:28](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1168s) **Presenter:** Right?
+
+[19:29](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1169s) **Presenter:** So,
+
+[19:31](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1171s) **Presenter:** yeah.
+
+[19:32](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1172s) **Presenter:** Let me read that for you.
+
+[19:34](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1174s) **Presenter:** It says,
+
+[19:35](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1175s) **Presenter:** you don't have the correct plan
+
+[19:36](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1176s) **Presenter:** to access this app.
+
+[19:37](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1177s) **Presenter:** Ask your admin for one
+
+[19:38](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1178s) **Presenter:** or ask the admin at the organization
+
+[19:40](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1180s) **Presenter:** in which you're a guest.
+
+[19:43](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1183s) **Presenter:** Wait.
+
+[19:44](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1184s) **Presenter:** You notice the distinction here?
+
+[19:47](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1187s) **Presenter:** you can ask your admin or the one where you're a guest.
+
+[19:54](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1194s) **Presenter:** But I have my own tenant, right?
+
+[19:56](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1196s) **Presenter:** I am the admin and my tenant.
+
+[19:58](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1198s) **Presenter:** So let's see how that goes.
+
+[20:01](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1201s) **Presenter:** I'm going to Microsoft and I'm saying,
+
+[20:03](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1203s) **Presenter:** hi, can I please have a license?
+
+[20:05](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1205s) **Presenter:** And Microsoft is like, of course, why not?
+
+[20:08](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1208s) **Presenter:** It's your tenant.
+
+[20:09](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1209s) **Presenter:** Go ahead.
+
+[20:10](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1210s) **Presenter:** And now you have it, right?
+
+[20:13](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1213s) **Presenter:** So I can go back and now I have the plan.
+
+[20:16](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1216s) **Presenter:** can run the application.
+
+[20:18](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1218s) **Presenter:** But now there's another problem.
+
+[20:20](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1220s) **Presenter:** Now it says, it looks like this app isn't compliant
+
+[20:23](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1223s) **Presenter:** with the latest data loss prevention policies.
+
+[20:27](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1227s) **Presenter:** So apparently Microsoft has DLP policies which
+
+[20:32](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1232s) **Presenter:** prevent stuff from happening.
+
+### Data Loss Prevention Misconfigurations and API Hub Access
+
+[20:35](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1235s) **Presenter:** It says they're the same.
+
+[20:36](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1236s) **Presenter:** And the question is, what's going on here?
+
+[20:43](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1243s) **Presenter:** So, data loss prevention is supposed to be a service that lets you tag information and define what can go where and who is allowed to do what.
+
+[20:53](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1253s) **Presenter:** And it turns out that in Microsoft, it's not exactly that.
+
+[20:56](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1256s) **Presenter:** So if I were to create a new DLP policy, okay, let's say find social security numbers, then what I will do is I will get to choose the connectors.
+
+[21:08](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1268s) **Presenter:** And in Microsoft Power Platform, every data has a connector to it.
+
+[21:13](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1273s) **Presenter:** And this includes internal Microsoft services like Office 365, but also pretty much anything else outside.
+
+[21:20](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1280s) **Presenter:** I don't know if you see the number, but there are over a thousand connectors.
+
+[21:24](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1284s) **Presenter:** So any sort of data that you're aware of has a connector, and you can even develop your own.
+
+[21:29](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1289s) **Presenter:** It's called a custom connector.
+
+[21:30](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1290s) **Presenter:** But let's put that aside.
+
+[21:32](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1292s) **Presenter:** So here, I can say, okay, I want to block SharePoint, but there's a problem.
+
+[21:38](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1298s) **Presenter:** One or more of the selected connectors cannot be blocked.
+
+[21:42](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1302s) **Presenter:** Is it blockable?
+
+[21:43](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1303s) **Presenter:** No.
+
+[21:44](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1304s) **Presenter:** So wait.
+
+[21:45](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1305s) **Presenter:** What's going on here?
+
+[21:47](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1307s) **Presenter:** So here's the thing.
+
+[21:48](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1308s) **Presenter:** If you also notice, it says SharePoint, but it doesn't say who's SharePoint, whose credentials, which site.
+
+[21:58](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1318s) **Presenter:** It's just saying SharePoint.
+
+[22:00](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1320s) **Presenter:** This is actually not associated to a user.
+
+[22:04](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1324s) **Presenter:** So this is generic.
+
+[22:05](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1325s) **Presenter:** And you can also tell that by understanding this is a connector.
+
+[22:10](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1330s) **Presenter:** So I'm reminding you that a connector is just a mechanism, and without the association with an authentication, it doesn't mean anything.
+
+[22:18](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1338s) **Presenter:** So this is talking about the connector, and you're not allowed to block the connector SharePoint.
+
+[22:24](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1344s) **Presenter:** So how is the DLP even working?
+
+[22:26](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1346s) **Presenter:** Well, it turns out that it doesn't really.
+
+[22:29](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1349s) **Presenter:** One of the things that we like doing is finding problems in the DLP.
+
+[22:33](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1353s) **Presenter:** These have all been published.
+
+[22:34](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1354s) **Presenter:** They're all on our blogs.
+
+[22:36](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1356s) **Presenter:** And to make a long story short, the DLP is not really DLP.
+
+[22:41](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1361s) **Presenter:** What it actually is, is sort of an access control list on applications and automations.
+
+[22:49](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1369s) **Presenter:** They somehow forgot the connections.
+
+[22:52](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1372s) **Presenter:** And this means that I couldn't execute the application because it was in the DLP.
+
+[22:58](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1378s) **Presenter:** But the connection, what is the connection?
+
+[23:02](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1382s) **Presenter:** The connection is a SQL server.
+
+[23:04](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1384s) **Presenter:** Okay, now if the good guy tries to execute the app, then they have to permit Power Apps to use their identification together with the connector and establish a connection.
+
+[23:20](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1400s) **Presenter:** Right?
+
+[23:20](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1400s) **Presenter:** So once you do that, then you can access the application.
+
+[23:25](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1405s) **Presenter:** This is the application.
+
+[23:26](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1406s) **Presenter:** That's what it looks like.
+
+[23:28](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1408s) **Presenter:** Specifically, this was built to work on a mobile phone, but you can also run it on your laptop.
+
+[23:33](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1413s) **Presenter:** It doesn't matter.
+
+[23:34](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1414s) **Presenter:** Okay, so you can see there's a database here and these are a list of customers and everything is working well.
+
+[23:40](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1420s) **Presenter:** Okay, that's a specific customer.
+
+[23:42](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1422s) **Presenter:** This is all, by the way, chat GPT generated, so don't worry, no PII is here.
+
+[23:48](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1428s) **Presenter:** Now, if you look in the browser data behind the scenes, you will see all this information.
+
+[23:56](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1436s) **Presenter:** You will see that there is an actual API call that brings that data.
+
+[24:02](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1442s) **Presenter:** Now, because the application runs half in the back-end server and half on my computer,
+
+[24:07](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1447s) **Presenter:** the API calls that fetch the data originate in my browser.
+
+[24:11](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1451s) **Presenter:** I can actually see them.
+
+[24:13](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1453s) **Presenter:** And if you look at that, it looks like this.
+
+[24:17](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1457s) **Presenter:** And it has a few components.
+
+[24:19](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1459s) **Presenter:** This is the service that you're calling.
+
+[24:22](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1462s) **Presenter:** This is actually the API hub that lets you work on top of Microsoft services.
+
+[24:28](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1468s) **Presenter:** and this is the specific connection that I'm using.
+
+[24:33](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1473s) **Presenter:** This is the connection ID.
+
+[24:34](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1474s) **Presenter:** Again, not connector, connection.
+
+[24:37](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1477s) **Presenter:** It's an authenticated connector.
+
+[24:39](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1479s) **Presenter:** It is attached to a session and an identity.
+
+[24:42](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1482s) **Presenter:** And this is the particular service
+
+[24:45](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1485s) **Presenter:** that the connection gives me, right?
+
+[24:48](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1488s) **Presenter:** Because if you have a connector to an SQL server,
+
+[24:51](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1491s) **Presenter:** everything that the SQL server is able to do
+
+[24:53](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1493s) **Presenter:** is being published as a service.
+
+[24:58](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1498s) **Presenter:** This is the actual, let's call it payload of the command to get.
+
+[25:03](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1503s) **Presenter:** Now here I'm getting data, but I could just as well delete data, change data, whatever.
+
+[25:08](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1508s) **Presenter:** It doesn't matter.
+
+[25:09](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1509s) **Presenter:** It's all on top of what you already have.
+
+[25:11](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1511s) **Presenter:** That was just encoding.
+
+[25:12](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1512s) **Presenter:** This is the exact same thing that you saw in the application earlier.
+
+[25:15](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1515s) **Presenter:** Now how does that work?
+
+[25:18](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1518s) **Presenter:** When you work with the Azure API management and it asks you for your permission to use your credentials,
+
+[25:24](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1524s) **Presenter:** what it does is it takes your credentials and it stores them in its own little secret place
+
+[25:32](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1532s) **Presenter:** now it doesn't share your credentials per se no one else gets them but the code that actually
+
+[25:38](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1538s) **Presenter:** connects to the sql server that's not running on your computer that's running in the back end
+
+[25:42](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1542s) **Presenter:** of the api so what happens here is that microsoft takes your credentials puts them aside and then
+
+[25:49](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1549s) **Presenter:** when you try to execute operations,
+
+[25:52](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1552s) **Presenter:** it takes the credentials that you gave it
+
+[25:54](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1554s) **Presenter:** and it attaches them to the operation.
+
+### Credential Harvesting via Power Apps and Azure CLI
+
+[25:56](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1556s) **Presenter:** And the end result is you,
+
+[25:59](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1559s) **Presenter:** or as far as the backend is concerned,
+
+[26:02](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1562s) **Presenter:** someone that looks like you and identifies as you
+
+[26:05](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1565s) **Presenter:** is carrying out the operations.
+
+[26:07](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1567s) **Presenter:** This makes sure that only the privileges that you have
+
+[26:12](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1572s) **Presenter:** are being used.
+
+[26:14](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1574s) **Presenter:** Okay, this makes a lot of sense.
+
+[26:17](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1577s) **Presenter:** but you remember where this all started right we were sharing this so if you're allowed to
+
+[26:23](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1583s) **Presenter:** share an application or share a connection and the connection is authenticated then if somebody else
+
+[26:29](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1589s) **Presenter:** is using that connection unless they had to authenticate themselves the connection is using
+
+[26:35](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1595s) **Presenter:** the original credentials so if i'm using this connection as far as the back end is concerned
+
+[26:40](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1600s) **Presenter:** it's jamie it's not hacker 5 i didn't authenticate so this is a big problem right so back in real
+
+[26:47](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1607s) **Presenter:** life we got blocked and if you look inside you will see that the reason we got blocked is because
+
+[26:56](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1616s) **Presenter:** we didn't have the permissions right we talked about that the dlp blocks applications but when
+
+[27:02](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1622s) **Presenter:** you run that in the browsers as a permitted user right not the hacker the good guy it actually
+
+[27:07](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1627s) **Presenter:** works and if you look at this information behind the scenes and you look at the api call then you
+
+[27:15](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1635s) **Presenter:** see that this is when you convert it to c url right you can look at the network traffic in your
+
+[27:22](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1642s) **Presenter:** browser developer tools and you can convert that to a c url command and it turns out that
+
+[27:29](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1649s) **Presenter:** the browser on your side is using a bearer token that performs these things for you, right?
+
+[27:39](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1659s) **Presenter:** And of course, it probably all makes sense because you're the good user.
+
+[27:42](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1662s) **Presenter:** But what happens if you're not a good user?
+
+[27:45](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1665s) **Presenter:** What happens if you copy that little query and you execute that as the bad user?
+
+[27:52](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1672s) **Presenter:** It also works.
+
+[27:54](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1674s) **Presenter:** And that is kind of interesting.
+
+[27:56](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1676s) **Presenter:** Like, why would this work?
+
+[27:59](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1679s) **Presenter:** I'm not using the app.
+
+[28:02](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1682s) **Presenter:** I'm not Jamie.
+
+[28:04](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1684s) **Presenter:** But remember what I said before.
+
+[28:06](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1686s) **Presenter:** The backend takes Jamie's credentials,
+
+[28:09](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1689s) **Presenter:** stored in the secret place,
+
+[28:10](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1690s) **Presenter:** attaches them to whatever action you're going to do,
+
+[28:13](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1693s) **Presenter:** and then lets you execute it.
+
+[28:15](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1695s) **Presenter:** And it is here in this bearer token.
+
+[28:21](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1701s) **Presenter:** Now, if we look at the bearer token,
+
+[28:23](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1703s) **Presenter:** we will see that the audience is indeed the API hub,
+
+[28:26](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1706s) **Presenter:** and the issuer is Microsoft.
+
+[28:28](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1708s) **Presenter:** So somehow the credentials let me access the API hub.
+
+[28:36](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1716s) **Presenter:** All right.
+
+[28:37](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1717s) **Presenter:** Now, how can I generate a token for the API hub?
+
+[28:40](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1720s) **Presenter:** You can generate any token
+
+[28:42](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1722s) **Presenter:** because you can do it with the command line interface,
+
+[28:44](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1724s) **Presenter:** but there are some limitations.
+
+[28:49](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1729s) **Presenter:** You can't do it with a built-in public client app
+
+[28:52](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1732s) **Presenter:** because the list of apps that are allowed to create this token is limited.
+
+[28:59](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1739s) **Presenter:** It's whitelisted, so you can't just do that.
+
+[29:02](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1742s) **Presenter:** Can you do your own app?
+
+[29:04](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1744s) **Presenter:** Well, no, because of the same reason.
+
+[29:06](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1746s) **Presenter:** You're not allowed to do that.
+
+[29:08](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1748s) **Presenter:** So we were so close.
+
+[29:10](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1750s) **Presenter:** So we know that if we manage to generate the bearer token,
+
+[29:14](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1754s) **Presenter:** then we wouldn't need the whole interface, the user interface.
+
+[29:18](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1758s) **Presenter:** We could just issue our own API call programmatically using the bearer token and bypass the whole thing.
+
+[29:24](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1764s) **Presenter:** So what do we have so far?
+
+[29:26](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1766s) **Presenter:** We got guest access.
+
+[29:27](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1767s) **Presenter:** We found a bunch of credentials on Power Apps.
+
+[29:30](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1770s) **Presenter:** These are the connections.
+
+[29:31](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1771s) **Presenter:** I'm reminding you a connection is connector plus credentials.
+
+[29:35](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1775s) **Presenter:** And these are shared with me so I can use them.
+
+[29:38](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1778s) **Presenter:** We tried to access.
+
+[29:39](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1779s) **Presenter:** We got blocked by a license.
+
+[29:41](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1781s) **Presenter:** We got a license.
+
+[29:42](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1782s) **Presenter:** And then we got blocked by DLP.
+
+[29:45](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1785s) **Presenter:** And we used the pivoted connection.
+
+[29:48](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1788s) **Presenter:** past that as well.
+
+[29:49](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1789s) **Presenter:** And now we are blocked by programmatic access to the API hub.
+
+[29:54](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1794s) **Presenter:** So how do we solve that?
+
+[29:56](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1796s) **Presenter:** We need to find some app on the AAD that we can access to,
+
+[30:02](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1802s) **Presenter:** right, which is on by default, because we want it to exist
+
+[30:06](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1806s) **Presenter:** and work in every tenant that we attack.
+
+[30:09](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1809s) **Presenter:** It has to be pre-approved to query the API hub.
+
+[30:12](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1812s) **Presenter:** So that's a limited list of apps that are allowed to do that.
+
+[30:15](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1815s) **Presenter:** because if you remember my app and the customer list app,
+
+[30:21](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1821s) **Presenter:** they were not allowed to do that.
+
+[30:23](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1823s) **Presenter:** And it has to be public
+
+[30:26](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1826s) **Presenter:** because otherwise I wouldn't be able to access it as a guest.
+
+[30:30](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1830s) **Presenter:** Now, we know that the Power Apps portal can do it.
+
+[30:36](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1836s) **Presenter:** When we execute an app on our browser,
+
+[30:39](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1839s) **Presenter:** we're doing that through the Power Apps portal
+
+[30:41](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1841s) **Presenter:** and we've just seen that that works.
+
+[30:45](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1845s) **Presenter:** token from the browser session and use it outside and that worked.
+
+### Automated Reconnaissance Tool (Zenity) and Attack Surface Expansion
+
+[30:49](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1849s) **Presenter:** So that's a very good connection.
+
+[30:51](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1851s) **Presenter:** But we can't generate tokens on its behalf.
+
+[30:55](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1855s) **Presenter:** So we have to be the good user which generates the token and then we can use the token as
+
+[31:00](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1860s) **Presenter:** the bad user.
+
+[31:01](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1861s) **Presenter:** So that's not a solution to our problem.
+
+[31:03](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1863s) **Presenter:** And here comes an excellent research done by the guys at SecureWorks.
+
+[31:08](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1868s) **Presenter:** It's called Family of Client IDs.
+
+[31:11](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1871s) **Presenter:** and it turns out that there is a list of pre-approved applications which if you
+
+[31:22](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1882s) **Presenter:** authenticated to one of them Microsoft lets you trade your access token with
+
+[31:29](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1889s) **Presenter:** an access token to the other one okay and it's undocumented the researchers
+
+[31:37](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1897s) **Presenter:** found it. As always, like all researchers do,
+
+[31:41](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1901s) **Presenter:** they saw that they can move between applications and they weren't asked to
+
+[31:44](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1904s) **Presenter:** re-authenticate and they started asking why. And that's how they found it. So it's really
+
+[31:49](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1909s) **Presenter:** cool. And this is the list. These are all members of
+
+[31:53](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1913s) **Presenter:** the one big happy family. And the two
+
+[31:56](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1916s) **Presenter:** that are interesting to us is the Power Apps, which is the interface that
+
+[32:01](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1921s) **Presenter:** we're reusing, and the Azure CLI, because that
+
+[32:07](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1927s) **Presenter:** anywhere particularly on my my own tenant right so what we're gonna do is
+
+[32:14](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1934s) **Presenter:** we're gonna use the Microsoft Azure CLI to get a token and then we're gonna use
+
+[32:19](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1939s) **Presenter:** this undocumented method to trade that's token to the API hub token through the
+
+[32:25](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1945s) **Presenter:** power apps that we're not supposed to have but it turns out that you can
+
+[32:30](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1950s) **Presenter:** exchanges. So this is sort of
+
+[32:31](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1951s) **Presenter:** a privilege escalation thing.
+
+[32:35](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1955s) **Presenter:** Now,
+
+[32:36](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1956s) **Presenter:** when you try to do that,
+
+[32:38](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1958s) **Presenter:** it's going to say you need to
+
+[32:39](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1959s) **Presenter:** authenticate. So I authenticate to the
+
+[32:42](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1962s) **Presenter:** Azure CLI
+
+[32:44](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1964s) **Presenter:** and then we go from there.
+
+[32:45](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1965s) **Presenter:** What happens there?
+
+[32:48](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1968s) **Presenter:** This is a tool that we
+
+[32:49](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1969s) **Presenter:** created as Zenity. It is open source.
+
+[32:51](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1971s) **Presenter:** You can download it, play around with it,
+
+[32:54](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1974s) **Presenter:** contribute to it.
+
+[32:55](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1975s) **Presenter:** We would appreciate that a lot.
+
+[32:57](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1977s) **Presenter:** and it can do a lot of things on top of domains that you are a guest at.
+
+[33:03](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1983s) **Presenter:** And here we're just going to cover two, the dump and the GUI.
+
+[33:09](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1989s) **Presenter:** The dump lets you do the recon
+
+[33:11](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1991s) **Presenter:** and basically enumerate on all the resources of the tenant
+
+[33:14](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1994s) **Presenter:** and that gives you a lot of attack surface when you're a guest.
+
+[33:19](https://www.youtube.com/watch?v=7u_lYuySzWk&t=1999s) **Presenter:** And the GUI, the graphical user interface,
+
+[33:23](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2003s) **Presenter:** is just an easy way that we created for you to analyze your loot,
+
+[33:27](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2007s) **Presenter:** what you actually created.
+
+[33:28](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2008s) **Presenter:** Now, you execute it as a command line,
+
+[33:32](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2012s) **Presenter:** and this is the tenant ID,
+
+[33:34](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2014s) **Presenter:** and this is the victim tenant, okay,
+
+[33:36](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2016s) **Presenter:** the Zenity demo for our purposes.
+
+[33:40](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2020s) **Presenter:** And once you do that, you will be asked to authenticate.
+
+[33:43](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2023s) **Presenter:** Okay, and of course, I am a guest at the Zenity demo tenant,
+
+[33:46](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2026s) **Presenter:** so I can do that.
+
+[33:48](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2028s) **Presenter:** and this is the result of the data collection.
+
+[33:53](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2033s) **Presenter:** We have credentials, automations, applications, and connectors.
+
+[33:59](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2039s) **Presenter:** And of course, the things that we are interested in the most
+
+[34:01](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2041s) **Presenter:** are the connections because they include credentials.
+
+[34:06](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2046s) **Presenter:** Remember, I keep saying that because it's very important to understand that.
+
+[34:09](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2049s) **Presenter:** A connection is connector plus credentials.
+
+[34:12](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2052s) **Presenter:** And these are the connections that we found.
+
+[34:14](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2054s) **Presenter:** If you remember the list from the beginning,
+
+[34:16](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2056s) **Presenter:** This is the exact same list that I saw when I first logged into the tenant.
+
+[34:21](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2061s) **Presenter:** These are shared with the entire organization.
+
+[34:23](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2063s) **Presenter:** This is why our tool was able to access them and download them.
+
+[34:27](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2067s) **Presenter:** And you can see here that each one of them has an option of dumping.
+
+[34:32](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2072s) **Presenter:** This is something we provide to you.
+
+[34:34](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2074s) **Presenter:** So if you look at the SQL and you look at dump, you will get to the dump of the database.
+
+[34:41](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2081s) **Presenter:** Our tool already did that for you.
+
+[34:43](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2083s) **Presenter:** So there's a dump of all the values in that SQL database because there is an authenticated connection.
+
+[34:51](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2091s) **Presenter:** There's a session, a live session with that database and it is shared with us as guests.
+
+[34:57](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2097s) **Presenter:** So we just used it and we just read the whole database.
+
+[35:01](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2101s) **Presenter:** You can also use the playground.
+
+[35:03](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2103s) **Presenter:** The playground lets you generate the swagger and you can pretty much do anything you want.
+
+[35:09](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2109s) **Presenter:** So this is not just read.
+
+[35:10](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2110s) **Presenter:** anything that the connector exposes as a functionality you can now use so SQL you
+
+[35:18](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2118s) **Presenter:** can generate and execute any arbitrary query you can do basically whatever you
+
+[35:22](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2122s) **Presenter:** want now how do you protect against that because it's easy to say how to attack
+
+[35:28](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2128s) **Presenter:** but how do you defend there's a big problem in the past this was the
+
+[35:33](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2133s) **Presenter:** division of responsibility between the platform and the customer right the
+
+[35:37](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2137s) **Presenter:** platform took care of the runtime idea identity and the customer was in charge of code access
+
+[35:43](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2143s) **Presenter:** business logic and data but now in loco noco this is changing because people are using the platform
+
+[35:50](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2150s) **Presenter:** to generate code they're not aware of it they don't really know okay business users are by
+
+[35:56](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2156s) **Presenter:** definition people who are not developers they're not familiar with the secure development life
+
+### Defense Strategies, Governance, and Closing Remarks
+
+[36:01](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2161s) **Presenter:** cycles they don't know this the risks in development they don't even know anything
+
+[36:05](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2165s) **Presenter:** about cyber security they are people from accountant from hr from business from sales
+
+[36:11](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2171s) **Presenter:** they don't know any any of that and no one is taking care of that code in the middle because
+
+[36:17](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2177s) **Presenter:** everybody thought that it was the users but now the platforms create that but the vendors
+
+[36:24](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2184s) **Presenter:** didn't take the responsibility of that as well so we have a gap here okay um and that means that
+
+[36:32](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2192s) **Presenter:** the platforms need to step up to decide what you need to do which we'll talk about in a second
+
+[36:38](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2198s) **Presenter:** we're saying here the platforms that let you generate low-code no-code applications they need
+
+[36:44](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2204s) **Presenter:** to step up because they are creating the problems because this is all brand new low-code no-code
+
+[36:51](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2211s) **Presenter:** and power platform this is i don't know six six years ago started it's brand new it's not like
+
+[36:58](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2218s) **Presenter:** EDR where everybody knows the risks and it's all like a little bit more of the same.
+
+[37:02](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2222s) **Presenter:** This is brand new and no one is completely aware.
+
+[37:04](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2224s) **Presenter:** And Microsoft platform is built on top of many different layers.
+
+[37:08](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2228s) **Presenter:** And it's just a mess.
+
+[37:11](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2231s) **Presenter:** Okay.
+
+[37:12](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2232s) **Presenter:** This is another research done by another company that showed by Tenable how they found a vulnerability
+
+[37:19](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2239s) **Presenter:** that you can use across tenants.
+
+[37:21](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2241s) **Presenter:** So that's even worse than just getting access to one tenant.
+
+[37:24](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2244s) **Presenter:** And as long as you let business users build whatever they want, they're unaware of the choices.
+
+[37:31](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2251s) **Presenter:** They just make all the easy choices.
+
+[37:34](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2254s) **Presenter:** And what happens with that?
+
+[37:36](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2256s) **Presenter:** Who's taking care of it?
+
+[37:37](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2257s) **Presenter:** Who's supervising that?
+
+[37:38](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2258s) **Presenter:** And the answer is no one.
+
+[37:40](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2260s) **Presenter:** Because CISOs are not familiar with that and they don't even have the governance tools for that.
+
+[37:47](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2267s) **Presenter:** Now, how do you do better?
+
+[37:49](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2269s) **Presenter:** You need to build secure applications.
+
+[37:51](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2271s) **Presenter:** How do you do that?
+
+[37:53](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2273s) **Presenter:** First, don't overshare.
+
+[37:54](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2274s) **Presenter:** That is the number one problem with all the low-code, no-code platforms.
+
+[37:58](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2278s) **Presenter:** Default sharing is either everybody in the organization or the entire world.
+
+[38:04](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2284s) **Presenter:** Don't do that.
+
+[38:05](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2285s) **Presenter:** You have to really be aware of what you're doing
+
+[38:07](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2287s) **Presenter:** and use the OWASP low-code, no-code top 10 framework.
+
+[38:11](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2291s) **Presenter:** It prioritizes the things that you need to be aware of.
+
+[38:15](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2295s) **Presenter:** And if you're a...
+
+[38:19](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2299s) **Presenter:** Now?
+
+[38:20](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2300s) **Presenter:** I've been talking for 40 minutes.
+
+[38:24](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2304s) **Presenter:** Did you hear anything?
+
+[38:28](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2308s) **Presenter:** Okay.
+
+[38:29](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2309s) **Presenter:** So it lets you prioritize and it gives you tools to understand the risks and deal with them.
+
+[38:34](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2314s) **Presenter:** You need to harden your environment.
+
+[38:37](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2317s) **Presenter:** Secure configurations.
+
+[38:38](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2318s) **Presenter:** You have all the options.
+
+[38:40](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2320s) **Presenter:** It's just that no one is aware of them or looking at them or setting them.
+
+[38:44](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2324s) **Presenter:** And the last thing is application security.
+
+[38:47](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2327s) **Presenter:** It's a discipline and it needs to exist in your apps as well.
+
+[38:52](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2332s) **Presenter:** Hack your own environment.
+
+[38:53](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2333s) **Presenter:** The tool that we're releasing, it's open source.
+
+[38:56](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2336s) **Presenter:** Use it.
+
+[38:57](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2337s) **Presenter:** Find the problems in your own organization.
+
+[39:00](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2340s) **Presenter:** Report them and fix them.
+
+[39:03](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2343s) **Presenter:** So TLDR.
+
+[39:05](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2345s) **Presenter:** Ah, there's even a timer here.
+
+[39:07](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2347s) **Presenter:** Take a deep look at your Enter ID guest strategy.
+
+[39:10](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2350s) **Presenter:** Guests are more powerful than you think.
+
+[39:12](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2352s) **Presenter:** It's not just access what I sent you.
+
+[39:15](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2355s) **Presenter:** There might be a lot more in your tenant that is accessible to the guests.
+
+[39:19](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2359s) **Presenter:** we left business users along with security versus productivity decisions what did you expect them to
+
+[39:25](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2365s) **Presenter:** choose they're not even aware of security so as long as they're making the decisions it's never
+
+[39:30](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2370s) **Presenter:** going to be in the benefit of the security of the data of our organization and to get a full dumps
+
+[39:36](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2376s) **Presenter:** of sql and azure resources all you need is guest so that is confidential business data that is being
+
+[39:45](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2385s) **Presenter:** shared with guests and we are in Europe now. This has implications, financial implications,
+
+[39:51](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2391s) **Presenter:** reputational implications, and this happens without you even being aware of it.
+
+[39:55](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2395s) **Presenter:** So with this, ah, by the way, one last thing because I made a mental note.
+
+[40:01](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2401s) **Presenter:** Where's Pavel who spoke before me? Is he here?
+
+[40:06](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2406s) **Presenter:** So Pavel, you mentioned in your talk that the way to stop the attack
+
+[40:10](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2410s) **Presenter:** was to disable the account in the AAD that was infected.
+
+[40:15](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2415s) **Presenter:** One of the things that our tool PowerPawn lets you do
+
+[40:18](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2418s) **Presenter:** is you can install a backdoor
+
+[40:20](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2420s) **Presenter:** that lets you access the organizational resources
+
+[40:23](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2423s) **Presenter:** even after the account is disabled.
+
+[40:25](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2425s) **Presenter:** So if the attacker that Pavel was talking about
+
+[40:28](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2428s) **Presenter:** had PowerPawn, they could have kept their access
+
+[40:31](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2431s) **Presenter:** even after the original account that they infected
+
+[40:34](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2434s) **Presenter:** was blocked.
+
+[40:35](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2435s) **Presenter:** So please go play with PowerPawn.
+
+[40:38](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2438s) **Presenter:** There's also another talk about that on the internet.
+
+[40:40](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2440s) **Presenter:** Google PowerPoint.
+
+[40:41](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2441s) **Presenter:** It's really nice.
+
+[40:42](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2442s) **Presenter:** And thank you for bringing that up, Pavel.
+
+[40:44](https://www.youtube.com/watch?v=7u_lYuySzWk&t=2444s) **Presenter:** That was very good.
+<!-- talk-enrichment:end -->

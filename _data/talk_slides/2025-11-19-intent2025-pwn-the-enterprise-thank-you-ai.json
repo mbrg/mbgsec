@@ -1,0 +1,1040 @@
+{
+  "generated_by": "sync-talk-text",
+  "source_manifest": "https://media.mbgsec.com/decks/2025-11-19_INTENT-2025_Pwn-the-Enterprise-Thank-You-AI/latest.json",
+  "manifest": "https://media.mbgsec.com/decks/2025-11-19_INTENT-2025_Pwn-the-Enterprise-Thank-You-AI/3daade46/deck.json",
+  "title": "Pwn the Enterprise - Thank You AI!",
+  "slides": [
+    {
+      "number": 1,
+      "text": "Pwn the Enterprise - Thank You AI! Michael Bargury @mbrg0 Zenity - slide 1 of 192"
+    },
+    {
+      "number": 2,
+      "text": "As I was saying.. Living Off Microsoft Copilot Michael Bargury BHUSA 2024 - slide 2 of 192",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2025-11-19_INTENT-2025_Pwn-the-Enterprise-Thank-You-AI/3daade46/media/media1.mp4"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "text": "One year later... - slide 3 of 192"
+    },
+    {
+      "number": 4,
+      "text": "Anakin and Padme meme asking whether things changed for the better since last year - slide 4 of 192"
+    },
+    {
+      "number": 5,
+      "text": "AI AI EVERYWHERE - slide 5 of 192"
+    },
+    {
+      "number": 6,
+      "text": "TODO: I’m here on stage so you know where this is headed We’ve been the bearer of bad news - slide 6 of 192"
+    },
+    {
+      "number": 7,
+      "text": "Hiring senior security pros Hi again 👋 mbgsec.com @mbrg0 CTO and Co-founder @ Zenity Project lead OWASP Agentic Init, AIVSS, CitDev T10 90s hacker blog mbgsec.com Frequent speaker BH, DC, other nerd confs - slide 7 of 192"
+    },
+    {
+      "number": 8,
+      "text": "@_d1voy @ avishai_efrat @ lana __ salameh @ inbarraz @ simakov_marina @ HalubaShay labs.zenity.io /p/hsc25 @ Ofri_Nachfolger @ tamirishaysh - slide 8 of 192"
+    },
+    {
+      "number": 9,
+      "text": "Here we go. Again. slides, vids, source  labs.zenity.io /p/hsc25 - slide 9 of 192",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2025-11-19_INTENT-2025_Pwn-the-Enterprise-Thank-You-AI/3daade46/media/image49.gif"
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "text": "Last year we had 1click attacks USER CLICK CLICK - slide 10 of 192"
+    },
+    {
+      "number": 11,
+      "text": "Two-panel comic illustrating a user clicking through security warnings - slide 11 of 192"
+    },
+    {
+      "number": 12,
+      "text": "0click AI exploits: in-and-out in one go By the time you realize.. - slide 12 of 192",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2025-11-19_INTENT-2025_Pwn-the-Enterprise-Thank-You-AI/3daade46/media/media2.mp4"
+        }
+      ]
+    },
+    {
+      "number": 13,
+      "text": "Transition slide introducing 0click AI exploits from initial access through impact - slide 13 of 192"
+    },
+    {
+      "number": 14,
+      "text": "Dark transition slide stating that the compromise is noticed only after it is too late - slide 14 of 192"
+    },
+    {
+      "number": 15,
+      "text": "Inception movie poster introducing the talk's recurring metaphor - slide 15 of 192"
+    },
+    {
+      "number": 16,
+      "text": "We want a 0click AI exploit. What are we up against? - slide 16 of 192"
+    },
+    {
+      "number": 17,
+      "text": "Inception film still of the antagonist aiming a gun - slide 17 of 192"
+    },
+    {
+      "number": 18,
+      "text": "Inception film still of the antagonist seated at a cafe table - slide 18 of 192"
+    },
+    {
+      "number": 19,
+      "text": "Portrait of the Inception antagonist representing the attacker - slide 19 of 192"
+    },
+    {
+      "number": 20,
+      "text": "Question slide asking what stands between an attacker and a 0click AI exploit - slide 20 of 192"
+    },
+    {
+      "number": 21,
+      "text": "Diagram showing a user connected to an AI agent - slide 21 of 192"
+    },
+    {
+      "number": 22,
+      "text": "Diagram showing a user, an AI agent, and a toolbox of connected tools - slide 22 of 192"
+    },
+    {
+      "number": 23,
+      "text": "User-agent-tools diagram emphasizing the expanded agent attack surface - slide 23 of 192"
+    },
+    {
+      "number": 24,
+      "text": "AI Model ≠ AI System (agent) - slide 24 of 192"
+    },
+    {
+      "number": 25,
+      "text": "Input Orchestrator Final output LLM Call tool w/ params + append to context LLM Tool Knowledge Temp o utput (debug) LLM Hard-coded topics >1k connectors Refusal filter Filter Filter labs.zenity.io /p/hsc25 - slide 25 of 192"
+    },
+    {
+      "number": 26,
+      "text": "Input Orchestator Final output LLM Call tool w/ params + append to context LLM Tool Knowledge Temp o utput (debug) LLM Hard-coded topics >1k connectors Refusal filter Filter Filter More: labs.zenity.io /p/hsc25 No filter? - slide 26 of 192"
+    },
+    {
+      "number": 27,
+      "text": "Statement that an AI model is not the same thing as an AI system or agent - slide 27 of 192"
+    },
+    {
+      "number": 28,
+      "text": "Agent architecture diagram tracing input through filters, orchestrator, model, and tools - slide 28 of 192"
+    },
+    {
+      "number": 29,
+      "text": "Agent architecture diagram highlighting an unfiltered tool-output path - slide 29 of 192",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2025-11-19_INTENT-2025_Pwn-the-Enterprise-Thank-You-AI/3daade46/media/media4.mp4"
+        }
+      ]
+    },
+    {
+      "number": 30,
+      "text": "@ tamirishaysh 😈 - slide 30 of 192",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2025-11-19_INTENT-2025_Pwn-the-Enterprise-Thank-You-AI/3daade46/media/media5.mp4"
+        }
+      ]
+    },
+    {
+      "number": 31,
+      "text": "😈 @ tamirishaysh - slide 31 of 192",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2025-11-19_INTENT-2025_Pwn-the-Enterprise-Thank-You-AI/3daade46/media/media6.mp4"
+        }
+      ]
+    },
+    {
+      "number": 32,
+      "text": "@ tamirishaysh 😈 @ tamirishaysh - slide 32 of 192",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2025-11-19_INTENT-2025_Pwn-the-Enterprise-Thank-You-AI/3daade46/media/media7.mp4"
+        }
+      ]
+    },
+    {
+      "number": 33,
+      "text": "and THAT is a 0click ATTACKERS DEFENDERS - slide 33 of 192",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2025-11-19_INTENT-2025_Pwn-the-Enterprise-Thank-You-AI/3daade46/media/image49.gif"
+        },
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2025-11-19_INTENT-2025_Pwn-the-Enterprise-Thank-You-AI/3daade46/media/image58.gif"
+        }
+      ]
+    },
+    {
+      "number": 34,
+      "text": "Full-slide Copilot Studio exploit video demonstration - slide 34 of 192"
+    },
+    {
+      "number": 35,
+      "text": "Full-slide Copilot Studio data-access video demonstration - slide 35 of 192"
+    },
+    {
+      "number": 36,
+      "text": "that’s access to EVERY Salesforce record - slide 36 of 192"
+    },
+    {
+      "number": 37,
+      "text": "ATTACKERS DEFENDERS - slide 37 of 192",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2025-11-19_INTENT-2025_Pwn-the-Enterprise-Thank-You-AI/3daade46/media/image49.gif"
+        },
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2025-11-19_INTENT-2025_Pwn-the-Enterprise-Thank-You-AI/3daade46/media/image58.gif"
+        }
+      ]
+    },
+    {
+      "number": 38,
+      "text": "Copilot Studio 0click exploit Summary Attacker finds public-facing agents Weaponizes an email or direct comms Hijacks agent 0click harvesting, exfiltration of sensitive data, destruction if agent has write-actions Status: fixed More: labs.zenity - slide 38 of 192"
+    },
+    {
+      "number": 39,
+      "text": "Injection is the wrong term. - slide 39 of 192"
+    },
+    {
+      "number": 40,
+      "text": "AI Guardrails are Soft Boundaries. A persistent attacker will find a way around them - slide 40 of 192"
+    },
+    {
+      "number": 41,
+      "text": "Hard-boundaries work. Hard boundaries mean you CAN’T get there from here - slide 41 of 192"
+    },
+    {
+      "number": 42,
+      "text": "Dark slide stating that injection is the wrong term for the broader system compromise - slide 42 of 192"
+    },
+    {
+      "number": 43,
+      "text": "Guardrails document screenshot explaining that AI guardrails are soft boundaries - slide 43 of 192"
+    },
+    {
+      "number": 44,
+      "text": "First: choose a topic (sub-agent) - slide 44 of 192"
+    },
+    {
+      "number": 45,
+      "text": "Topics have actions (tools): - slide 45 of 192"
+    },
+    {
+      "number": 46,
+      "text": "Hard boundary: default config has no write-actions - slide 46 of 192"
+    },
+    {
+      "number": 47,
+      "text": "You can add actions from an asset library... With plenty of write actions. - slide 47 of 192"
+    },
+    {
+      "number": 48,
+      "text": "We’ll add the Update Customer Contact action. - slide 48 of 192"
+    },
+    {
+      "number": 49,
+      "text": "What about guardrails? - slide 49 of 192"
+    },
+    {
+      "number": 50,
+      "text": "Salesforce Einstein chat refusing to reveal its system instructions - slide 50 of 192"
+    },
+    {
+      "number": 51,
+      "text": "LLM guardrails are implemented as a hidden topic (sub-agent) - slide 51 of 192"
+    },
+    {
+      "number": 52,
+      "text": "LLM guardrails are implemented as a hidden topic (sub-agent) No guardrail once we different topic has been chosen! - slide 52 of 192"
+    },
+    {
+      "number": 53,
+      "text": "Input Eistein Orchestator Final output Topic (sub-agent) Tool LLM + append to context LLM query -> prompt LLM t opic output -> output Topic as filter More: labs.zenity.io /p/hsc25 - slide 53 of 192"
+    },
+    {
+      "number": 54,
+      "text": "Input Eistein Orchestator Final output Topic (sub-agent) Tool LLM + append to context LLM query -> prompt LLM t opic output -> output No filter? No filter? Topic as filter More: labs.zenity.io /p/hsc25 - slide 54 of 192"
+    },
+    {
+      "number": 55,
+      "text": "How can we get malicious data into Salesforce? 😈 - slide 55 of 192"
+    },
+    {
+      "number": 56,
+      "text": "Salesforce public contact form used as the attacker-controlled input path - slide 56 of 192"
+    },
+    {
+      "number": 57,
+      "text": "Search results exposing public Salesforce web-to-case forms - slide 57 of 192"
+    },
+    {
+      "number": 58,
+      "text": "Booby trap “recent cases” 😈 - slide 58 of 192"
+    },
+    {
+      "number": 59,
+      "text": "Booby trap “recent cases” 😈 * we don’t control the timing - slide 59 of 192"
+    },
+    {
+      "number": 60,
+      "text": "Row of attacker icons representing repeated weaponized Salesforce cases - slide 60 of 192"
+    },
+    {
+      "number": 61,
+      "text": "Cases are your attack path, eh? 😈 - slide 61 of 192"
+    },
+    {
+      "number": 62,
+      "text": "Salesforce case form highlighting the description character limit - slide 62 of 192"
+    },
+    {
+      "number": 63,
+      "text": "Prompt injection in <250 chars?? 😈 - slide 63 of 192"
+    },
+    {
+      "number": 64,
+      "text": "TODO: send multiple cases pic 😈 - slide 64 of 192"
+    },
+    {
+      "number": 65,
+      "text": "Salesforce contacts table used in the compromise demonstration - slide 65 of 192"
+    },
+    {
+      "number": 66,
+      "text": "😈 @ tamirishaysh @ Ofri_Nachfolger - slide 66 of 192",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2025-11-19_INTENT-2025_Pwn-the-Enterprise-Thank-You-AI/3daade46/media/media8.mp4"
+        }
+      ]
+    },
+    {
+      "number": 67,
+      "text": "😈 @ tamirishaysh @ Ofri_Nachfolger - slide 67 of 192",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2025-11-19_INTENT-2025_Pwn-the-Enterprise-Thank-You-AI/3daade46/media/media9.mp4"
+        }
+      ]
+    },
+    {
+      "number": 68,
+      "text": "😈 @ tamirishaysh @ Ofri_Nachfolger - slide 68 of 192",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2025-11-19_INTENT-2025_Pwn-the-Enterprise-Thank-You-AI/3daade46/media/media10.mp4"
+        }
+      ]
+    },
+    {
+      "number": 69,
+      "text": "😈 MiTM your customer engagements MITM your customer engagements - slide 69 of 192"
+    },
+    {
+      "number": 70,
+      "text": "ATTACKERS DEFENDERS MITM your customer engagements - slide 70 of 192",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2025-11-19_INTENT-2025_Pwn-the-Enterprise-Thank-You-AI/3daade46/media/image49.gif"
+        },
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2025-11-19_INTENT-2025_Pwn-the-Enterprise-Thank-You-AI/3daade46/media/image58.gif"
+        }
+      ]
+    },
+    {
+      "number": 71,
+      "text": "Salesforce Einstein 0click exploit Summary Customer adds write-action Attacker finds web-to-case forms and submits multiple weaponized cases Booby trap “recent cases” Sales rep trips on the time bomb 0click customer contact 0click destruction if - slide 71 of 192"
+    },
+    {
+      "number": 72,
+      "text": "Enough with the BizApps . - slide 72 of 192"
+    },
+    {
+      "number": 73,
+      "text": "Cursor website introducing the AI code editor target - slide 73 of 192"
+    },
+    {
+      "number": 74,
+      "text": "Cursor doesn’t even try to resist - slide 74 of 192",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2025-11-19_INTENT-2025_Pwn-the-Enterprise-Thank-You-AI/3daade46/media/media11.mp4"
+        }
+      ]
+    },
+    {
+      "number": 75,
+      "text": "Atlassian announcement for its remote Model Context Protocol server - slide 75 of 192"
+    },
+    {
+      "number": 76,
+      "text": "Input Orchestator Final output Call tool w/ params + append to context Tool LLM Built-in tools MCP More: labs.zenity.io /p/hsc25 - slide 76 of 192"
+    },
+    {
+      "number": 77,
+      "text": "Input Orchestator Final output Call tool w/ params + append to context Tool LLM Built-in tools MCP No filter? No filter? No filter? More: labs.zenity.io /p/hsc25 - slide 77 of 192"
+    },
+    {
+      "number": 78,
+      "text": "Jira issue page showing a support ticket created from an external request - slide 78 of 192"
+    },
+    {
+      "number": 79,
+      "text": "AI assistant refusal to search a repository for API keys - slide 79 of 192"
+    },
+    {
+      "number": 80,
+      "text": "Jira ticket containing a request that attempts to steer the coding agent - slide 80 of 192"
+    },
+    {
+      "number": 81,
+      "text": "LLM refusal. - slide 81 of 192"
+    },
+    {
+      "number": 82,
+      "text": "LLM refusal. API keys are a touchy subject.. - slide 82 of 192"
+    },
+    {
+      "number": 83,
+      "text": "Inception cafe scene representing the attacker shaping the agent's behavior - slide 83 of 192"
+    },
+    {
+      "number": 84,
+      "text": "Jira test ticket containing an apparently harmless repository-search request - slide 84 of 192"
+    },
+    {
+      "number": 85,
+      "text": "Jira ticket with the word apples highlighted as a prompt-engineering substitute - slide 85 of 192"
+    },
+    {
+      "number": 86,
+      "text": "API KEYS APPLES 🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏 🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏🍎🍏 - slide 86 of 192"
+    },
+    {
+      "number": 87,
+      "text": "Apples are just fine Social engineering “Prompt engineering” Evasion 🍎🍏 😈 @ simakov_marina - slide 87 of 192"
+    },
+    {
+      "number": 88,
+      "text": "@ simakov_marina #BHUSA 2025 Creating a ticket in YOUR Jira - slide 88 of 192"
+    },
+    {
+      "number": 89,
+      "text": "😈 @ simakov_marina Step 1: Email a weaponized support request - slide 89 of 192",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2025-11-19_INTENT-2025_Pwn-the-Enterprise-Thank-You-AI/3daade46/media/media12.mp4"
+        }
+      ]
+    },
+    {
+      "number": 90,
+      "text": "😈 @ simakov_marina Result: Weaponized JIRA ticket created - slide 90 of 192"
+    },
+    {
+      "number": 91,
+      "text": "😈 @ simakov_marina - slide 91 of 192",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2025-11-19_INTENT-2025_Pwn-the-Enterprise-Thank-You-AI/3daade46/media/media14.mp4"
+        },
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2025-11-19_INTENT-2025_Pwn-the-Enterprise-Thank-You-AI/3daade46/media/media14.mp4"
+        }
+      ]
+    },
+    {
+      "number": 92,
+      "text": "😈 @ simakov_marina - slide 92 of 192"
+    },
+    {
+      "number": 93,
+      "text": "HOW DO YOU LIKE THEM APPLES? - slide 93 of 192",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2025-11-19_INTENT-2025_Pwn-the-Enterprise-Thank-You-AI/3daade46/media/image150.gif"
+        }
+      ]
+    },
+    {
+      "number": 94,
+      "text": "Cursor + Jira MCP 0click Summary Attacker finds public-facing create issue triggers Attacker weaponizes a Jira ticket Victim prompts Cursor to work the ticket 0click harvesting and exfiltration of dev secrets Status: closed More: labs.zenity.io - slide 94 of 192"
+    },
+    {
+      "number": 95,
+      "text": "Cartoon corridor of AI-agent doors with a reaper moving between targets - slide 95 of 192"
+    },
+    {
+      "number": 96,
+      "text": "ChatGPT connector settings showing connected enterprise data sources - slide 96 of 192"
+    },
+    {
+      "number": 97,
+      "text": "ChatGPT connector settings with Google Drive highlighted - slide 97 of 192"
+    },
+    {
+      "number": 98,
+      "text": "ChatGPT 0click. Is it possible? - slide 98 of 192"
+    },
+    {
+      "number": 99,
+      "text": "ChatGPT RE - File Search tool Note the distinction between Search – msearch Open file – mclick - slide 99 of 192"
+    },
+    {
+      "number": 100,
+      "text": "File Data Search tool One tool for EVERY file search - slide 100 of 192"
+    },
+    {
+      "number": 101,
+      "text": "Data Search tool – msearch - slide 101 of 192"
+    },
+    {
+      "number": 102,
+      "text": "Data Search tool – msearch Metadata - slide 102 of 192"
+    },
+    {
+      "number": 103,
+      "text": "Data Search tool – msearch Content preview Metadata - slide 103 of 192"
+    },
+    {
+      "number": 104,
+      "text": "msearch built-in defense - slide 104 of 192"
+    },
+    {
+      "number": 105,
+      "text": "Tags wrap the entire tool call msearch built-in defense - slide 105 of 192"
+    },
+    {
+      "number": 106,
+      "text": "“ [<num>] # ” acts as: Delimiter between search results Used later for citation msearch built-in defense - slide 106 of 192"
+    },
+    {
+      "number": 107,
+      "text": "msearch built-in defense More on Spotlighting: arxiv.org /abs/2403.14720 Prefix for each untrusted line - slide 107 of 192"
+    },
+    {
+      "number": 108,
+      "text": "As I was saying.. asd Living Off Microsoft Copilot Michael Bargury BHUSA 2024 - slide 108 of 192"
+    },
+    {
+      "number": 109,
+      "text": "msearch built-in defense Prefix for each untrusted line the numbering is REALLY important - slide 109 of 192"
+    },
+    {
+      "number": 110,
+      "text": "Defense works we’ve got delimiters, line prefix, line numbering, special char escape.. A failed attempt - slide 110 of 192"
+    },
+    {
+      "number": 111,
+      "text": "ChatGPT knows what’s up - slide 111 of 192"
+    },
+    {
+      "number": 112,
+      "text": "Mortal Kombat-style Finish him scene introducing the memory attack - slide 112 of 192"
+    },
+    {
+      "number": 113,
+      "text": "Memory tool – bio The bio tool provides persistent memory - slide 113 of 192"
+    },
+    {
+      "number": 114,
+      "text": "Memory tool – bio The bio tool provides persistent memory We want to use it to compromise future sessions - slide 114 of 192"
+    },
+    {
+      "number": 115,
+      "text": "Testing memories Session with data in context - slide 115 of 192"
+    },
+    {
+      "number": 116,
+      "text": "Ask for memorization directly Testing bio infection - slide 116 of 192"
+    },
+    {
+      "number": 117,
+      "text": "“I can’t” ???? Testing bio infection - slide 117 of 192"
+    },
+    {
+      "number": 118,
+      "text": "Testing bio infection Bio tool has been disabled??? - slide 118 of 192"
+    },
+    {
+      "number": 119,
+      "text": "Testing bio infection Once untrusted data enters the chat the bio tool is silently turned-off. - slide 119 of 192"
+    },
+    {
+      "number": 120,
+      "text": "Admit defeat. Walk away. - slide 120 of 192",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2025-11-19_INTENT-2025_Pwn-the-Enterprise-Thank-You-AI/3daade46/media/image177.gif"
+        }
+      ]
+    },
+    {
+      "number": 121,
+      "text": "Admit defeat. Walk away. Said no hacker, ever. - slide 121 of 192"
+    },
+    {
+      "number": 122,
+      "text": "Start small. - slide 122 of 192"
+    },
+    {
+      "number": 123,
+      "text": "Start small. booby trap “meeting summary” “summarize THIS file” User must summarize a weaponized file --> this is now a 1click exploit - slide 123 of 192"
+    },
+    {
+      "number": 124,
+      "text": "Injecting into msearch Social engineering “Prompt engineering” Abusing control flow tokens - slide 124 of 192"
+    },
+    {
+      "number": 125,
+      "text": "Try. Fail. Learn. Repeat. - slide 125 of 192",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2025-11-19_INTENT-2025_Pwn-the-Enterprise-Thank-You-AI/3daade46/media/image182.gif"
+        }
+      ]
+    },
+    {
+      "number": 126,
+      "text": "Every failure leaks model’s internal state - slide 126 of 192"
+    },
+    {
+      "number": 127,
+      "text": "Prompt injection == Prompt engineering - slide 127 of 192"
+    },
+    {
+      "number": 128,
+      "text": "You know who’s great at prompt eng ? - slide 128 of 192"
+    },
+    {
+      "number": 129,
+      "text": "You know who’s great at prompt eng ? LLMs. - slide 129 of 192"
+    },
+    {
+      "number": 130,
+      "text": "ChatGPT conversation used to test whether document instructions reach memory - slide 130 of 192"
+    },
+    {
+      "number": 131,
+      "text": "Weaponized policy-document screenshot with injected instructions highlighted - slide 131 of 192"
+    },
+    {
+      "number": 132,
+      "text": "This is a pretty good 1click! booby trap “meeting summary” “summarize THIS file” harvest creds, sensitive data exfiltrate it all - slide 132 of 192"
+    },
+    {
+      "number": 133,
+      "text": "Transition slide returning to the attack sequence - slide 133 of 192"
+    },
+    {
+      "number": 134,
+      "text": "No-one will search for your weaponized file. This is lame. - slide 134 of 192"
+    },
+    {
+      "number": 135,
+      "text": "Why can’t we booby trap ANY question about a “meeting summary” to get a 0click? - slide 135 of 192"
+    },
+    {
+      "number": 136,
+      "text": "Why can’t we booby trap ANY question about a “meeting summary” Our payloads are getting looooooong Just like your prompts - slide 136 of 192"
+    },
+    {
+      "number": 137,
+      "text": "Getting that 0click! booby trap “summarize THIS file” “meeting summary” - slide 137 of 192"
+    },
+    {
+      "number": 138,
+      "text": "Getting that 0click! booby trap “summarize THIS file” “meeting summary” mclick to “summarize THIS file” - slide 138 of 192"
+    },
+    {
+      "number": 139,
+      "text": "Getting that 0click! booby trap “summarize THIS file” “meeting summary” mclick to “summarize THIS file” harvest creds, sensitive data exfiltrate it all - slide 139 of 192"
+    },
+    {
+      "number": 140,
+      "text": "@ tamirishaysh Our victim stores API keys in a Google Worksheet - slide 140 of 192",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2025-11-19_INTENT-2025_Pwn-the-Enterprise-Thank-You-AI/3daade46/media/media15.mp4"
+        }
+      ]
+    },
+    {
+      "number": 141,
+      "text": "@ tamirishaysh 😈 - slide 141 of 192",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2025-11-19_INTENT-2025_Pwn-the-Enterprise-Thank-You-AI/3daade46/media/media16.mp4"
+        }
+      ]
+    },
+    {
+      "number": 142,
+      "text": "@ tamirishaysh 😈 - slide 142 of 192",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2025-11-19_INTENT-2025_Pwn-the-Enterprise-Thank-You-AI/3daade46/media/media17.mp4"
+        }
+      ]
+    },
+    {
+      "number": 143,
+      "text": "@ tamirishaysh 😈 - slide 143 of 192",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2025-11-19_INTENT-2025_Pwn-the-Enterprise-Thank-You-AI/3daade46/media/media18.mp4"
+        }
+      ]
+    },
+    {
+      "number": 144,
+      "text": "and THAT is a 0click ATTACKERS DEFENDERS - slide 144 of 192",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2025-11-19_INTENT-2025_Pwn-the-Enterprise-Thank-You-AI/3daade46/media/image49.gif"
+        },
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2025-11-19_INTENT-2025_Pwn-the-Enterprise-Thank-You-AI/3daade46/media/image58.gif"
+        }
+      ]
+    },
+    {
+      "number": 145,
+      "text": "But we really want that memory implant. - slide 145 of 192"
+    },
+    {
+      "number": 146,
+      "text": "We know that : Session start with bio tool turned on Once untrusted data enters the context, the bio tool is turned off But we really want that memory implant. - slide 146 of 192"
+    },
+    {
+      "number": 147,
+      "text": "Can we inject the implant AFTER untrusted data is read but BEFORE its written into contex t? We know that : Session start with bio tool turned on Once untrusted data enters the context, the bio tool is turned off But we really want that memory i - slide 147 of 192"
+    },
+    {
+      "number": 148,
+      "text": "ChatGPT interface showing a saved-memory update while processing connected data - slide 148 of 192"
+    },
+    {
+      "number": 149,
+      "text": "ChatGPT interface showing connected Google Drive access during the attack - slide 149 of 192"
+    },
+    {
+      "number": 150,
+      "text": "bio is STILL ON when ChatGPT is thinking! - slide 150 of 192"
+    },
+    {
+      "number": 151,
+      "text": "NOW LET’S HAVE SOME FUN! - slide 151 of 192"
+    },
+    {
+      "number": 152,
+      "text": "@ tamirishaysh 😈 - slide 152 of 192",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2025-11-19_INTENT-2025_Pwn-the-Enterprise-Thank-You-AI/3daade46/media/media19.mp4"
+        }
+      ]
+    },
+    {
+      "number": 153,
+      "text": "😈 Attacker gets a live feed of every interaction User continues to use ChatGPT - slide 153 of 192"
+    },
+    {
+      "number": 154,
+      "text": "and THAT is a PERSISTENT 0click ATTACKERS DEFENDERS - slide 154 of 192",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2025-11-19_INTENT-2025_Pwn-the-Enterprise-Thank-You-AI/3daade46/media/image49.gif"
+        },
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2025-11-19_INTENT-2025_Pwn-the-Enterprise-Thank-You-AI/3daade46/media/image58.gif"
+        }
+      ]
+    },
+    {
+      "number": 155,
+      "text": "Diagram showing a user, AI agent, and connected tools - slide 155 of 192"
+    },
+    {
+      "number": 156,
+      "text": "User-agent-tools diagram with the tools stamped PWNED - slide 156 of 192"
+    },
+    {
+      "number": 157,
+      "text": "User-agent-tools diagram with the agent and tools stamped PWNED - slide 157 of 192"
+    },
+    {
+      "number": 158,
+      "text": "User-agent-tools diagram showing repeated compromise stamps on agent tools - slide 158 of 192"
+    },
+    {
+      "number": 159,
+      "text": "User-agent-tools diagram emphasizing persistent control over the compromised tools - slide 159 of 192"
+    },
+    {
+      "number": 160,
+      "text": "Dark transition slide between the exploit demonstration and its impact - slide 160 of 192",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2025-11-19_INTENT-2025_Pwn-the-Enterprise-Thank-You-AI/3daade46/media/media20.mp4"
+        }
+      ]
+    },
+    {
+      "number": 161,
+      "text": "ChatGPT saved-memories page showing attacker-influenced persistent instructions - slide 161 of 192"
+    },
+    {
+      "number": 162,
+      "text": "{Pick a disease} - slide 162 of 192"
+    },
+    {
+      "number": 163,
+      "text": "{Pick a disease} - slide 163 of 192"
+    },
+    {
+      "number": 164,
+      "text": "😈 No more attackers waiting around for developer mistakes… - slide 164 of 192"
+    },
+    {
+      "number": 165,
+      "text": "😈 No more attackers waiting around for developer mistakes… Memory implants can get ChatGPT to recommend malware for you! - slide 165 of 192"
+    },
+    {
+      "number": 166,
+      "text": "ATTACKERS DEFENDERS No more attackers waiting around for developer mistakes… Memory implants can get ChatGPT to recommend malware for you! - slide 166 of 192",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2025-11-19_INTENT-2025_Pwn-the-Enterprise-Thank-You-AI/3daade46/media/image49.gif"
+        },
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2025-11-19_INTENT-2025_Pwn-the-Enterprise-Thank-You-AI/3daade46/media/image58.gif"
+        }
+      ]
+    },
+    {
+      "number": 167,
+      "text": "User-agent-tools diagram with the agent and tools compromised - slide 167 of 192"
+    },
+    {
+      "number": 168,
+      "text": "User-agent-tools diagram with the user, agent, and tools all compromised - slide 168 of 192"
+    },
+    {
+      "number": 169,
+      "text": "Large ChatGPT logo on a black background - slide 169 of 192",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2025-11-19_INTENT-2025_Pwn-the-Enterprise-Thank-You-AI/3daade46/media/media21.mp4"
+        }
+      ]
+    },
+    {
+      "number": 170,
+      "text": "ChatGPT 0click exploit Summary Attacker shares a weaponized doc Booby traps any “meeting summary” question Harvests data from connectors. Exfiltrates data thru invisible pixels. Embeds memory implant that causes (1) persistence, (2) persuasion. - slide 170 of 192"
+    },
+    {
+      "number": 171,
+      "text": "attackers use LLMs too. AI Guardrails are SOFT boundaries. They WON’T help you prevent an attack. - slide 171 of 192"
+    },
+    {
+      "number": 172,
+      "text": "Bart Simpson chalkboard meme repeating that prompt injection is not only a model vulnerability - slide 172 of 192"
+    },
+    {
+      "number": 173,
+      "text": "Inception cafe scene representing the attacker creating the target's reality - slide 173 of 192"
+    },
+    {
+      "number": 174,
+      "text": "HARD boundaries DO work*. Gemini CAN’T invoke a tool directly from another tool Copilot Studio CAN’T decide which SharePoint site to fetch content from ChatGPT CAN’T use the bio tool after untrusted data entered the context Docs that ChatGPT rea - slide 174 of 192"
+    },
+    {
+      "number": 175,
+      "text": "@mbrg0 #BHUSA 2025 - slide 175 of 192"
+    },
+    {
+      "number": 176,
+      "text": "ACT NOW! - slide 176 of 192"
+    },
+    {
+      "number": 177,
+      "text": "Pwn the Enterprise - Thank You AI! Michael Bargury @mbrg0 Zenity - slide 177 of 192"
+    },
+    {
+      "number": 178,
+      "text": "INTENT 2025 Security Summit logo on a black background - slide 178 of 192"
+    },
+    {
+      "number": 179,
+      "text": "Steve Jobs on stage beside the words one more thing - slide 179 of 192"
+    },
+    {
+      "number": 180,
+      "text": "User-agent-tools diagram with every component stamped PWNED - slide 180 of 192"
+    },
+    {
+      "number": 181,
+      "text": "Diagram adding the user's machine to the compromised user-agent-tools chain - slide 181 of 192"
+    },
+    {
+      "number": 182,
+      "text": "Statement that a memory implant creates impact beyond persistence - slide 182 of 192"
+    },
+    {
+      "number": 183,
+      "text": "Memory implant means more than persistency. - slide 183 of 192"
+    },
+    {
+      "number": 184,
+      "text": "You now trust BADGPT - slide 184 of 192"
+    },
+    {
+      "number": 185,
+      "text": "ChatGPT saved-memory screenshot highlighting malicious long-term instructions - slide 185 of 192",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2025-11-19_INTENT-2025_Pwn-the-Enterprise-Thank-You-AI/3daade46/media/media22.mp4"
+        }
+      ]
+    },
+    {
+      "number": 186,
+      "text": "User-machine-agent-tools diagram with every component stamped PWNED - slide 186 of 192"
+    },
+    {
+      "number": 187,
+      "text": "Dark slide with a small YOU label identifying the victim - slide 187 of 192"
+    },
+    {
+      "number": 188,
+      "text": "Inception cafe scene representing the victim's manipulated reality - slide 188 of 192",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2025-11-19_INTENT-2025_Pwn-the-Enterprise-Thank-You-AI/3daade46/media/media21.mp4"
+        }
+      ]
+    },
+    {
+      "number": 189,
+      "text": "Inception airplane scene labeling the sleeping passenger as YOU - slide 189 of 192"
+    },
+    {
+      "number": 190,
+      "text": "YOU INCEPTION. - slide 190 of 192"
+    },
+    {
+      "number": 191,
+      "text": "slides, vids, source  labs.zenity.io /p/hsc25 ATTACKERS DEFENDERS - slide 191 of 192",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2025-11-19_INTENT-2025_Pwn-the-Enterprise-Thank-You-AI/3daade46/media/image58.gif"
+        },
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2025-11-19_INTENT-2025_Pwn-the-Enterprise-Thank-You-AI/3daade46/media/image49.gif"
+        }
+      ]
+    },
+    {
+      "number": 192,
+      "text": "Pwn the Enterprise - Thank You AI! Michael Bargury @mbrg0 Zenity labs.zenity.io /p/hsc25 - slide 192 of 192"
+    }
+  ]
+}

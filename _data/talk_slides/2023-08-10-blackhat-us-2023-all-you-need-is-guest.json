@@ -1,0 +1,737 @@
+{
+  "generated_by": "sync-talk-text",
+  "source_manifest": "https://media.mbgsec.com/decks/2023-08-10_BHUSA-2023_All_You_Need_is_Guest/latest.json",
+  "manifest": "https://media.mbgsec.com/decks/2023-08-10_BHUSA-2023_All_You_Need_is_Guest/77582c58/deck.json",
+  "title": "All You Need Is Guest",
+  "slides": [
+    {
+      "number": 1,
+      "text": "All You Need Is Guest — Michael Bargury, Zenity — Black Hat USA 2023 — slide 1 of 177"
+    },
+    {
+      "number": 2,
+      "text": "oN ae SS s \\ a black hat USA @0es DEMO — slide 2 of 177"
+    },
+    {
+      "number": 3,
+      "text": "eo” =A ©, = AQ [S , Ue ckhat bla A eu = } : > ras - € 6 © J@ 320 G 8 Oo Zenity Demo invited you to access applications within their organization (Gxemal) @ G Microsoft Invitations on behalf of Zenity Demo <invi r ft * o k 6 . @ Please only act on this email if you trust the organization… — slide 3 of 177"
+    },
+    {
+      "number": 4,
+      "text": "ee Pan Ss IX black hat B: USA2 Apps Hacker5S View accound | — slide 4 of 177"
+    },
+    {
+      "number": 5,
+      "text": "van _ TS Ne IN 4 black hat Aco - Credentials powerpwn . All Resources e Credentials e Automations e Applications ¢ Connector: Connector Connection Created by sh ef jamieredingcustomerdata.file.core.windows.net jamier@zenitydemo.onmicrosoft.com Playground Raw Dump shared azureblob… — slide 5 of 177"
+    },
+    {
+      "number": 6,
+      "text": "Fe al VJ vi oe ig) black hat SS USA 2023 [{\"@odata.etag\": “\" “ItemInternallId\": “7eb41684-4b64-4f39-9eab-90fbe3@ba62c\", “CustomerID\": 34553, “FirstName”: “Jamie\", “LastName”: we Reding\", Email\": “jamier@zenitydemo.OnMicrosoft.com\", “SocialSecurityNumber 209-97-1111\"}, {\"@odata.etag 2… — slide 6 of 177"
+    },
+    {
+      "number": 7,
+      "text": "CTO and Co-founder @ Zenity OWASP LCNC Top 10 project lead Dark Reading columnist Defcon, BSides, RSAC, OWASP Hiring top researchers, engs & pms! Hi there 👋 @mbrg0 darkreading.com/author/ michael-bargury github.com/mbrg — slide 7 of 177"
+    },
+    {
+      "number": 8,
+      "text": "WHY invite guests in? @mbrg0 — slide 8 of 177"
+    },
+    {
+      "number": 9,
+      "text": "How can two parties collaborate over a bunch of files? F1000 enterprise Small vendor — slide 9 of 177"
+    },
+    {
+      "number": 10,
+      "text": "Option 1: just email sensitive files around — slide 10 of 177"
+    },
+    {
+      "number": 11,
+      "text": "Option 2: trust a rando on the internet — slide 11 of 177"
+    },
+    {
+      "number": 12,
+      "text": "Option 2: trust a rando IRL Source: deaddrops.com — slide 12 of 177"
+    },
+    {
+      "number": 13,
+      "text": "Option 3: invite them in Azure AD F1000 tenant EntraID — slide 13 of 177"
+    },
+    {
+      "number": 14,
+      "text": "Option 3: invite them in Azure AD F1000 tenant “ external users can \"bring their own identities.\" ... and you manage access to your apps … to keep your resources protected. “ EntraID — slide 14 of 177"
+    },
+    {
+      "number": 15,
+      "text": "Safe guest access must be: Easy for vendors to onboard — slide 15 of 177"
+    },
+    {
+      "number": 16,
+      "text": "Safe guest access must be: Easy for vendors to onboard Easy for IT/security to control — slide 16 of 177"
+    },
+    {
+      "number": 17,
+      "text": "Safe guest access must be: Easy for vendors to onboard Easy for IT/security to control — slide 17 of 177"
+    },
+    {
+      "number": 18,
+      "text": "Demonstration showing how easy it is to obtain a guest account; use the embedded video controls to play it — slide 18 of 177",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2023-08-10_BHUSA-2023_All_You_Need_is_Guest/77582c58/media/slide-018-demo.mp4"
+        }
+      ]
+    },
+    {
+      "number": 19,
+      "text": "(a) It’s super easy to get a guest account Source: @_dirkjan at BHUSA 2022 — slide 19 of 177"
+    },
+    {
+      "number": 20,
+      "text": "(a) It’s super easy to get a guest account Perhaps too easy? Source: @_dirkjan at BHUSA 2022 * Vulns were fixed. — slide 20 of 177"
+    },
+    {
+      "number": 21,
+      "text": "(a) It’s super easy to get a guest account Perhaps too easy? Source: @_dirkjan at BHUSA 2022 * Vulns were fixed. — slide 21 of 177"
+    },
+    {
+      "number": 22,
+      "text": "(a) It’s super easy to get a guest account Perhaps too easy? — slide 22 of 177"
+    },
+    {
+      "number": 23,
+      "text": "Safe guest access must be: Easy for vendors to onboard Easy for IT/security to control — slide 23 of 177"
+    },
+    {
+      "number": 24,
+      "text": "(b) Understanding how control works Partners, vendors, suppliers, other collaborators Azure AD F1000 tenant — slide 24 of 177"
+    },
+    {
+      "number": 25,
+      "text": "(b) Understanding how control works linked Partners, vendors, suppliers, other collaborators Azure AD F1000 tenant — slide 25 of 177"
+    },
+    {
+      "number": 26,
+      "text": "(b) Control guests like employees linked Azure AD Enterprise controls to ensure secure access: MFA, RBAC, CA, device attestation, threat monitoring … EntraID — slide 26 of 177"
+    },
+    {
+      "number": 27,
+      "text": "(b) Applying security controls to guests Need guest access  Require security controls — slide 27 of 177"
+    },
+    {
+      "number": 28,
+      "text": "(b) Applying security controls to guests Security controls  Require AAD account Need guest access  Require security controls — slide 28 of 177"
+    },
+    {
+      "number": 29,
+      "text": "(b) Applying security controls to guests Security controls  Require AAD account Need guest access  Require security controls AAD account  Grants full access Q.E.D. …? — slide 29 of 177"
+    },
+    {
+      "number": 30,
+      "text": "(b) Applying security controls to guests Security controls  Require AAD account Need guest access  Require security controls AAD account  Grants full deny-by-default access — slide 30 of 177"
+    },
+    {
+      "number": 31,
+      "text": "AAD guests recap It’s super easy to get a guest account AAD security controls apply Access is deny-by-default — slide 31 of 177"
+    },
+    {
+      "number": 32,
+      "text": "Guest accounts in practice @mbrg0 Insert expectation vs reality meme — slide 32 of 177"
+    },
+    {
+      "number": 33,
+      "text": "one a8 sw, 7 s black hat USA 202353 Microsoft Teams Ga Teams Activity Vendor onboarding ~~ Vo Vendor onboarding Your teams Chat v0 | Vendor onboarding Members Pending Requests Channels Settings Analytics Apps Tags Team This team has guests. Search for members al Q ° Owners (1) Calls Name Title… — slide 33 of 177"
+    },
+    {
+      "number": 34,
+      "text": "x s ee” black hat USA 2025 Add members to Vendor onboarding Start typing a name, distribution list, or security group to add to your team. You can also add people outside your organization as guests by typing their email addresses. Start typing a name or group Close CY — slide 34 of 177"
+    },
+    {
+      "number": 35,
+      "text": "XB s ee” black hat USA 2025 Add members to Vendor onboarding Start typing a name, distribution list, or security group to add to your team. You can also add people outside your organization as guests by typing their email addresses. hackerS@ pwntoso.onmicrosoft.com| Add… — slide 35 of 177"
+    },
+    {
+      "number": 36,
+      "text": "XB s black hat USA 2025 #7 Add members to Vendor onboarding Start typing a name, distribution list, or security group to add to your team. You can also add people outside your organization as guests by typing their email addresses. Start typing a name or group hacker5 (Guest) H x This person has… — slide 36 of 177"
+    },
+    {
+      "number": 37,
+      "text": "Les XN A black hat & USA 202353 Te S/ B= Microsoft Sign in hacker5@pwntoso.onmicrosoft.com No account? Create one! Can't access your account? Back Qy Sign-in options — oo — slide 37 of 177"
+    },
+    {
+      "number": 38,
+      "text": "X black hat & aoe SS y « USA 202353 ae qi he BE Microsoft hacker5@pwntoso.onmicrosoft.com Permissions requested by: Zenity Demo zenitydemo.onmicrosoft.com By accepting, you allow this organization to: \\_ Receive your profile data YY Collect and log your activity \\v__Use your profile data and… — slide 38 of 177"
+    },
+    {
+      "number": 39,
+      "text": "Pas ae. Wy, 7 black hat B' SI S) - | LJ SA 202353 es My Apps ch 2 Apps Zenity Demo Sign out Apps dashboard This is unavailable due to your account permissions and Hacker5 company's settings hacker5 @pwntoso.onmicroso... few account Switch organization ( X — A) Sign in with a different account moo — slide 39 of 177"
+    },
+    {
+      "number": 40,
+      "text": "Guest exploitation state of the art — slide 40 of 177"
+    },
+    {
+      "number": 41,
+      "text": "Guest exploitation state of the art Phishing via Teams @DrAzureAD at youtube.com/ watch?v =NN1nIbp-z70 — slide 41 of 177"
+    },
+    {
+      "number": 42,
+      "text": "Guest exploitation state of the art Phishing via Teams Directory recon @DrAzureAD at aadinternals.com/post/ quest_for_guest / — slide 42 of 177"
+    },
+    {
+      "number": 43,
+      "text": "State of the art ends here. But hackers want more! Can we access company data? Edit or delete data? Perform operations? @ mbrg0 #BHUSA @BlackHatEvents — slide 43 of 177"
+    },
+    {
+      "number": 44,
+      "text": "Go have an early lunch https://make.powerapps.com/environments/ Default- fc993b0f-345b-4d01-9f67-9ac4a140dd43 /connections @ mbrg0 #BHUSA @BlackHatEvents — slide 44 of 177"
+    },
+    {
+      "number": 45,
+      "text": "SSeS black hat NaN if USA 2023 <a Welcome to Power jj 3 ue aje — slide 45 of 177"
+    },
+    {
+      "number": 46,
+      "text": "Lene a8. So black hat BB USA 202353 C Sorry, there's been a disconnect The environment ‘Default-f993b0f-345b-4d01-9167-9ac4a140dd43' could not be found in the tenant '420983fd-32b0-dabd-89e0-c3ef3236fc73' {ak} (2) — slide 46 of 177"
+    },
+    {
+      "number": 47,
+      "text": "eb TE Wy, ‘g) N€ gg SS black hat es ¢. | ISA 202 7 . os envi ome Power Apps & punto .0 (default) & ©@ Wythe new Power Apps Ja Home Welcome, Hacker5! Create Create apps that connect to data, and work across web and mobile. Learn - Apps Tables Ways to create an app Flows Solutions Start with data… — slide 47 of 177"
+    },
+    {
+      "number": 48,
+      "text": "eb TE Wy, ‘g) N€ gg SS black hat es ¢. | ISA 202 7 . 3 envi ome Power Apps & punto 0 (default) & Lew) the new Power Apps Ja Home Welcome, Hacker5! Create Create apps that connect to data, and work across web and mobile. Learn - Apps Tables Ways to create an app Flows Solutions Start with data… — slide 48 of 177"
+    },
+    {
+      "number": 49,
+      "text": "ae a TE Wy, ‘g) (7 {S SS black hat 4 as 7 USA 20 —_ envi Power Apps & pwntoso (default) Pwntoso Home Sign out Ja Welcome, Hacker5! Create Create apps that connect to data, and work across web and mobile. Learn Hacker5 - Apps hacker5 @pwntoso.onmicroso.. View account Tables Ways to create an app… — slide 49 of 177"
+    },
+    {
+      "number": 50,
+      "text": "Sax fi 4 ¥ AN ‘g) Sy black hat 4 &. USA 2023 vn : E ag H Power Apps Pwnte default) = @® try the new Power Apps | @ Home Welcome, Hacker5! + Create Create apps that connect to data, and work across web and mobile. tearm P Apps Settings Directories Directories i Tables and time Ways to create an… — slide 50 of 177"
+    },
+    {
+      "number": 51,
+      "text": "ram la Jd hy, Ns 8) black hat USA 202 7 eX . Environment Power Apps Zenity Demo (default) | New connection T ) Search am Home Connections in Zenity Demo (default) + Create # Canvas U8 Learn Apps Name Modified Status Tables https://enterpriseip.blob.core.windows.net/patentarchive Connected Azure… — slide 51 of 177"
+    },
+    {
+      "number": 52,
+      "text": "TE \\y, Ns Y °. 8) black hat USA 202 7 . Environment Power Apps Zenity Demo (default) New connection \\@ Share © Details t 2 Edit Ww Delete Home Connections in Zenity Demo (default) efi. Create I Canvas Learn Apps Name Modified Status Tables https://enterpriseip.blob.core.windows.net/patentarchive… — slide 52 of 177"
+    },
+    {
+      "number": 53,
+      "text": "am la Jd hy, Y °. 8) black hat USA 202 7 ee . Environment Power Apps Zenity Demo (default) 4 New connection \\@ Share 2 edit Ww Delete ® Details Home Connections in Zenity Demo (default) + Create # Canvas Learn Apps Name Modified Status Tables… — slide 53 of 177"
+    },
+    {
+      "number": 54,
+      "text": "yo. [xs Oly «a CS black hat Sa w a) Ji SA 2023 Ag Share jamieredingcustomerdata.file.core.windows.net te il ad If principal name Shared with Name Email Permission ( & Shared with org Can use [x jamier@zenitydemo.on er @ Jamie Reding jamiercontoso@outlook. — slide 54 of 177"
+    },
+    {
+      "number": 55,
+      "text": "Animated demonstration in the guest-account attack sequence — slide 55 of 177",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2023-08-10_BHUSA-2023_All_You_Need_is_Guest/77582c58/media/slide-055-animation.gif"
+        }
+      ]
+    },
+    {
+      "number": 56,
+      "text": "TE ty, Y °. 8) black hat USA 202 7 ms Environment Power Apps Zenity Demo (default) | New connection \\@ Share @ Edit Ww Delete © Details Home Connections in Zenity Demo (default) + Create G Canvas Learn Apps Name Modified Status Tables https://enterpriseip.blob.core.windows.net/patentarchive… — slide 56 of 177"
+    },
+    {
+      "number": 57,
+      "text": "ram la Jd hy, Ns Y °. 8) black hat USA 202 7 eS . Environment Power Apps Zenity Demo (default) 2 Edit \\@ Share Ww Delete Home Connections > jamieredingcustomerdata.file.core.windows.net ele Create Details Apps using this connection Flows using this connection oO Learn Apps Connector name ure… — slide 57 of 177"
+    },
+    {
+      "number": 58,
+      "text": "ram la Jd hy, Ns Y °. 8) black hat USA 202 7 eS . Environment Power Apps Zenity Demo (default) 2 Edit \\@ Share Ww Delete Home Connections > jamieredingcustomerdata.file.core.windows.net ele Create Details Apps using this connection Flows using this connection oO Learn Apps Connector name ure… — slide 58 of 177"
+    },
+    {
+      "number": 59,
+      "text": "am la Jd hy, Ns ~ 8) black hat USA 202 7 . Environment Power Apps & Zenity Demo (default) 2 Edit \\@ Share Ww Delete Home Connections > jamieredingcustomerdata.file.core.windows.net ele Create Details Apps using this connection Flows using this connection Learn Jamie Reding Apps Connector name ~~… — slide 59 of 177"
+    },
+    {
+      "number": 60,
+      "text": "Copilot for Power Apps demonstration by Shane Young; use the embedded YouTube control to play it — slide 60 of 177",
+      "media": [
+        {
+          "type": "youtube",
+          "title": "Copilot for Power Apps Demo #shorts",
+          "url": "https://www.youtube.com/watch?v=HG3cbwum0DU"
+        }
+      ]
+    },
+    {
+      "number": 61,
+      "text": "Credential Sharing as a Service: The Dark Side of No Code Michael Bargury RSAC 2023 Is this actually being used? — slide 61 of 177"
+    },
+    {
+      "number": 62,
+      "text": "~8M active Power devs today! Credential Sharing as a Service: The Dark Side of No Code Michael Bargury RSAC 2023 — slide 62 of 177"
+    },
+    {
+      "number": 63,
+      "text": "fj oN ov ae SS s \\ a black hat USA @0es Exploit — slide 63 of 177"
+    },
+    {
+      "number": 64,
+      "text": "ram la Jd hy, Ns Y °. 8) black hat USA 202 7 eS . Environment Power Apps Zenity Demo (default) 2 Edit \\@ Share Ww Delete Home Connections > jamieredingcustomerdata.file.core.windows.net ele Create Details Apps using this connection Flows using this connection oO Learn Apps Connector name ure… — slide 64 of 177"
+    },
+    {
+      "number": 65,
+      "text": "van ta TE \\y, black hat 4) . USA 2025 Environment Power Apps & Zenity Demo (default) 2 Edit \\@ Share Ww Delete P Search Home Connections > jamieredingcustomerdata.file.core.windows.net JL Create Details Learn Apps using this connection Flows using this connection Apps Name Tables Flows Customer… — slide 65 of 177"
+    },
+    {
+      "number": 66,
+      "text": "van ta TE \\y, Ns black hat 8) . USA 2025 Environment Power Apps Zenity Demo (default) 2 Edit \\@ Share Ww Delete i) Search Home Connections jamieredingcustomerdata.file.core.windows.net aL Create Details Learn Apps using this connection Flows using this connection Apps Name Tables Flows Customer… — slide 66 of 177"
+    },
+    {
+      "number": 67,
+      "text": "van ta TE sty, Ns black hat 8) ms USA 2025 Environment Power Apps Zenity Demo (default) 2 ae KB 5 Add to Teams Monitor (2 Exe) & Ww D Play Home Apps Customer Insights Azure aie Create Details Versions Connections Flows Learn Owner Jamie Reding Apps Description Tables jot provided Flows Created… — slide 67 of 177"
+    },
+    {
+      "number": 68,
+      "text": "as Ss f L black hat USA 2023 <—e Power Apps | You need a Power Apps plan aja mn oe — slide 68 of 177"
+    },
+    {
+      "number": 69,
+      "text": "> ae black hat 4 USA 2023 — Power Apps | You need a Power Apps plan eee “ — slide 69 of 177"
+    },
+    {
+      "number": 70,
+      "text": "SK i G/ \\ black hat USA 2025 Pps | You need a Power Apps plan 40f 4-4 44 2 4 |_| — slide 70 of 177"
+    },
+    {
+      "number": 71,
+      "text": "“~ A We , 3 ‘g) 'S black hat & > | SA 2025 Ne es HE Microsoft | Power Apps Product v Pricing Partners v Leam v Support » Community ‘Announcing new conversational Al feature: Power App! including generative Al bots for your apps > | Power Apps Developer Plan | ial Build and test Power Apps for… — slide 71 of 177"
+    },
+    {
+      "number": 72,
+      "text": "So We yw black hat USA 202353 .~ th an Microsoft a You've selected Microsoft Power Apps for Developer Gd) Let's get you started Enter your work or school email address, we'll check if you need to create a new account for Microsoft Power Apps for Developer. Email The Developer Plan makes it easy… — slide 72 of 177"
+    },
+    {
+      "number": 73,
+      "text": "> <4 és XS black hat L 4 USA 20 We yr BB Microsoft You've selected Microsoft Power Apps for Developer Let's get you started 2 Create your account Confirmation details The Developer Plan makes it easy for @) anyone to build and test apps with user- Thanks for signing up for Microsoft Power Apps… — slide 73 of 177"
+    },
+    {
+      "number": 74,
+      "text": "7 a a Rw black hat USA 202353 on ay yy A Customer Insights —__ (2) — slide 74 of 177"
+    },
+    {
+      "number": 75,
+      "text": "hy, ae black hat USA 202353 Power Apps | This app isn’t opening correctly It looks like this app isn't compliant with the latest data loss prevention policies. More — slide 75 of 177"
+    },
+    {
+      "number": 76,
+      "text": "black hat Nae | ISA 2023 Power Apps | This app isn’t opening correctly It looks like this app isn't compliant with the latest data loss prevention policies. Less It looks like this app isn’t compliant with the latest data loss prevention policies. Policy name: Deny Azure File Storage Connector:… — slide 76 of 177"
+    },
+    {
+      "number": 77,
+      "text": "4) black hat iw | ISA 2023 Power Apps | This app isn’t opening correctly It looks like this app isn't compliant with the lates It looks like this app isn’t compliant with the latest data loss prevention policies. Policy name: Deny Azure File Storage Connector: shared_azurefile cannot be used… — slide 77 of 177"
+    },
+    {
+      "number": 78,
+      "text": "So we were able to bypass the license requirement But blocked by... DLP? @ mbrg0 #BHUSA @BlackHatEvents — slide 78 of 177"
+    },
+    {
+      "number": 79,
+      "text": "“ sf black hat SS USA 2023 Hi Microsoft | Learn Documentation Training Certifications Q&A Code Samples Assessments Shows Events Power Platform Get started v Products v Guidance Troubleshooting v Release plans Resources v \\é Filter by title Learn / Power Platform / ® 2 Additional resources ¥ Data… — slide 79 of 177"
+    },
+    {
+      "number": 80,
+      "text": "eb IR {s Z 4 blackhat 150% - + Power Platform admin center 7 & DLP Policies New Policy Home Policy name Name your policy Environments Start by giving your new policy a name. You can change this later. Analytics Prebuilt connectors Er EA Billing (Preview) Custom connectors Settings Ge Resources… — slide 80 of 177"
+    },
+    {
+      "number": 81,
+      "text": "eb TE Wy, Cnd iS Ug ckhat i v, oe bla —) A 2oes Power Platform admin center > & DLP Policies New Policy Home £83 Set default group Policy name Environments Assign connectors © Analytics Prebuilt connectors P Search connectors Ge Billing (Preview) Business (0) Non-business (1056) | Default… — slide 81 of 177"
+    },
+    {
+      "number": 82,
+      "text": "oe TE Wy, Cnd is a ckhat 4) bla S A 2oes Power Platform admin center 7 & DLP Policies New Policy Home a Move to Business Block Configure connector 83 Set default group Policy name Environments ® One or more of the selected connectors can't be blocked x Analytics Prebuilt connectors Assign… — slide 82 of 177"
+    },
+    {
+      "number": 83,
+      "text": "https://www.zenity.io/microsoft-power-platform-dlp-bypass-uncovered-finding-5-parent-and-child-flow-execution/ — slide 83 of 177"
+    },
+    {
+      "number": 84,
+      "text": "https://www.zenity.io/microsoft-power-platform-dlp-bypass-uncovered-finding-5-parent-and-child-flow-execution/ — slide 84 of 177"
+    },
+    {
+      "number": 85,
+      "text": "https://www.zenity.io/microsoft-power-platform-dlp-bypass-uncovered-finding-5-parent-and-child-flow-execution/ — slide 85 of 177"
+    },
+    {
+      "number": 86,
+      "text": "https://www.zenity.io/microsoft-power-platform-dlp-bypass-uncovered-finding-5-parent-and-child-flow-execution/ — slide 86 of 177"
+    },
+    {
+      "number": 87,
+      "text": "https://www.zenity.io/microsoft-power-platform-dlp-bypass-uncovered-finding-5-parent-and-child-flow-execution/ — slide 87 of 177"
+    },
+    {
+      "number": 88,
+      "text": "DLP bypass disclosure in process Full writeup  bit.ly/mbrg-bhusa23 @ mbrg0 #BHUSA @BlackHatEvents — slide 88 of 177"
+    },
+    {
+      "number": 89,
+      "text": "W, 7? SS ble A HU ~~ rs Environment Power Apps Zenity Demo (default) 4 New connection \\@ Share © Details T 2 Edit Ww Delete Home Connections in Zenity Demo (default) aie Create G Canvas Learn Apps Name Modified Status Tables https://enterpriseip.blob.core.windows.net/patentarchive 26 min ago… — slide 89 of 177"
+    },
+    {
+      "number": 90,
+      "text": "ram la Jd hy, Ns black hat 8) . USA 2025 Environment Power Apps Zenity Demo (default) 2 ~ Edit \\@ Share W Delete Home Connections > enterprisecustomers customercareinsights.database.windows.net Create Details Apps using this connection Flows using this connection Learn Apps Connector name SQL… — slide 90 of 177"
+    },
+    {
+      "number": 91,
+      "text": "as TE \\y, black hat 4) USA 2 0e5 Environment Power Apps Zenity Demo (default) 2 @ Edit Share WwW Delete ye) Search Home Connections > enterprisecustomers customercareinsights.database.windows.net Create Details Apps using this connection Flows using this connection Learn Apps Name Tables Flows… — slide 91 of 177"
+    },
+    {
+      "number": 92,
+      "text": "“sy TE Wy, Ns black hat USA 2 0e5 Environment Power Apps & Zenity Demo (default) fal 2 Edit Share W Delete ye) Search Home Connections > enterprisecustomers customercareinsights.database.windows.net Create Details Apps using this connection Flows using this connection Learn Apps Name Tables… — slide 92 of 177"
+    },
+    {
+      "number": 93,
+      "text": "as TE sty, Ns black hat 8) USA2 0e5 Environment Power Apps Zenity Demo (default) 2 o a DD 5 Add to Teams Monitor Vad & & wi D Play Home Apps > Customer Insights Create Details Versions Connections Flows Learn Owner |f Apps Jamie Reding Description Tables Not provided Flows Created 7/14/2022,… — slide 93 of 177"
+    },
+    {
+      "number": 94,
+      "text": "7 a a Rw black hat USA 202353 on ay yy A Customer Insights —__ (2) — slide 94 of 177"
+    },
+    {
+      "number": 95,
+      "text": "LIRA SI black hat - USA 202353 Almost there Customer ights needs your permission to use the following. Please allow the permissior 0 proceed SQL Server nterpri rein: database. Jows.n Ea Don't Allow Nei — slide 95 of 177"
+    },
+    {
+      "number": 96,
+      "text": "& om ‘ee ee _ oy Se. aS. black hat Ke USA 2025 \\ Power Apps | Customer Insights a k u iT | Search items aidenb@zenitydemo.OnMicrosoft.com Aiden Brown alexanderw@zenitydemo.OnMicrosoft.co Alexander Gonzalez amandas@zenitydemo.OnMicrosoft.com Amanda Smith ameliaj@zenitydemo.OnMicrosoft.com Amelia… — slide 96 of 177"
+    },
+    {
+      "number": 97,
+      "text": "& Sam KZ thd = _ A ok black hat SS i USA 2025 Qin Power Apps | Customer Insights B a ne CustomerID 55677 Email aidenb@zenitydemo.OnMicrosoft. FirstName Aiden LastName Brown SocialSecurityNumber 209-97-8888 — slide 97 of 177"
+    },
+    {
+      "number": 98,
+      "text": "& i a x Zp (S ay 3) We ay / black hat rN SES a ZS USA 2025 ey ) ® Elerer onsole Network mance em Applicat cur Lighthouse Cor ’ B a 4 v R © Preserve log Disable cache No thrattling + L Invert Hide data URLs All Fetch/(XHR JS_CSS Has blocked cookies “2959 Img Media Font Doc WS Wesm Manifest Other… — slide 98 of 177"
+    },
+    {
+      "number": 99,
+      "text": "‘ ee fey .. & A/ x Zp je 7 “en ‘g) al WV / black hat N KASS rm ae Tre USA 2025 We we f Elements ces Network :er ormance lemony lication curity Lighthouse 3 8 5 a v 200 re) ¥Q Preserve log Disable cache No throttling 5 = 5 a & 29 Invert Hide data URLs All Fetch/XHR JS CSS Img Media Font Doc WS… — slide 99 of 177"
+    },
+    {
+      "number": 100,
+      "text": "a rs = & \\/ oy -# cal 3° a P\\ black hat = La USA 2025 Ro Elements c le ces Network erformance curity @23a8 m1 Memory A Application Lighthouse 6 a v RB (Oe) YQ Preserve log Disable cache No throttling 3 3 2 y o “9p Invert Hide data URLs All Fetch/XHR JS CSS Img Media Font Doc WS Wasm Manifest… — slide 100 of 177"
+    },
+    {
+      "number": 101,
+      "text": "& a (ee oy We 3° black hat SS ASS WV / @ Me lp USA 2025 We eS Elements c le ces Network erformans 5 Memory Application curity Lighthouse O23 a8 m1 a) BS a ¥Q Preserve log Disable cache No throttling 5 = 3 s L “999 Invert Hide data URLs All Fetch/XHR JS CSS Img Media Font Doc WS Wasm Manifest… — slide 101 of 177"
+    },
+    {
+      "number": 102,
+      "text": "Copy-and-replay browser API Hub — slide 102 of 177"
+    },
+    {
+      "number": 103,
+      "text": "Copy-and-replay browser API Hub — slide 103 of 177"
+    },
+    {
+      "number": 104,
+      "text": "Power App is using azure-apim.net to fetch connection data GET https://europe-002.azure-apim.net/apim /sql/ff47194e357e459b8756a5f43f59ccc6 /v2/datasets/ customercareinsights.database.windows.net,enterprisecustomers /tables/%255Bdbo%255D.%255BCustomers%255D/items' @ mbrg0 #BHUSA @BlackHatEvents — slide 104 of 177"
+    },
+    {
+      "number": 105,
+      "text": "Power App is using azure-apim.net to fetch connection data GET https://europe-002.azure-apim.net/apim /sql/ff47194e357e459b8756a5f43f59ccc6 /v2/datasets/ customercareinsights.database.windows.net,enterprisecustomers /tables/%255Bdbo%255D.%255BCustomers%255D/items @ mbrg0 #BHUSA @BlackHatEvents — slide 105 of 177"
+    },
+    {
+      "number": 106,
+      "text": "Power App is using azure-apim.net to fetch connection data GET https://europe-002.azure-apim.net/apim /sql/ff47194e357e459b8756a5f43f59ccc6 /v2/datasets/ customercareinsights.database.windows.net,enterprisecustomers /tables/%255Bdbo%255D.%255BCustomers%255D/items @ mbrg0 #BHUSA @BlackHatEvents — slide 106 of 177"
+    },
+    {
+      "number": 107,
+      "text": "Power App is using azure-apim.net to fetch connection data GET https://europe-002.azure-apim.net/apim /sql/ff47194e357e459b8756a5f43f59ccc6 /v2/datasets/ customercareinsights.database.windows.net,enterprisecustomers /tables/%255Bdbo%255D.%255BCustomers%255D/items @ mbrg0 #BHUSA @BlackHatEvents — slide 107 of 177"
+    },
+    {
+      "number": 108,
+      "text": "Power App is using azure-apim.net to fetch connection data GET https://europe-002.azure-apim.net/apim /sql/ff47194e357e459b8756a5f43f59ccc6 /v2/datasets/ customercareinsights.database.windows.net,enterprisecustomers /tables/%255Bdbo%255D.%255BCustomers%255D/items @ mbrg0 #BHUSA @BlackHatEvents — slide 108 of 177"
+    },
+    {
+      "number": 109,
+      "text": "Power App is using azure-apim.net to fetch connection data GET https://europe-002.azure-apim.net/apim /sql/ff47194e357e459b8756a5f43f59ccc6 /v2/datasets/ customercareinsights.database.windows.net,enterprisecustomers /tables/[ dbo ].[Customers]/items @ mbrg0 #BHUSA @BlackHatEvents — slide 109 of 177"
+    },
+    {
+      "number": 110,
+      "text": "docs.microsoft.com @ mbrg0 #BHUSA @BlackHatEvents — slide 110 of 177"
+    },
+    {
+      "number": 111,
+      "text": "docs.microsoft.com @ mbrg0 #BHUSA @BlackHatEvents — slide 111 of 177"
+    },
+    {
+      "number": 112,
+      "text": "docs.microsoft.com @ mbrg0 #BHUSA @BlackHatEvents — slide 112 of 177"
+    },
+    {
+      "number": 113,
+      "text": "Let’s take a closer look at this token — slide 113 of 177"
+    },
+    {
+      "number": 114,
+      "text": "unm BY dowd ‘Ney WW / black hat a KASS USA 20 Del er Libraries Introduction Crafted by (saut (2) by Okta Se JUUT Encoded Decoded HEADER: TY VYUTAALVAYNY IYLALUYVINNUL LUV OUELS HINA OLY 1dCI6Ii1LSTNROWSOUj diUm9meG1 1Wm9YcWJIWk dldyIsImtpZC1I61Ii1LSTNROW5OUj diUm9meG11W typ JWT RS256… — slide 114 of 177"
+    },
+    {
+      "number": 115,
+      "text": "A scope away from victory Can we generate a token to API Hub? — slide 115 of 177"
+    },
+    {
+      "number": 116,
+      "text": "A scope away from victory Can we generate a token to API Hub? (reminder: generating tokens is trivial, it’s our user) — slide 116 of 177"
+    },
+    {
+      "number": 117,
+      "text": "A scope away from victory Can we generate a token to API Hub? (reminder: generating tokens is trivial, it’s our user) — slide 117 of 177"
+    },
+    {
+      "number": 118,
+      "text": "A scope away from victory Can we generate a token to API Hub? (reminder: generating tokens is trivial, it’s our user) Using a built-in public client app? — slide 118 of 177"
+    },
+    {
+      "number": 119,
+      "text": "A scope away from victory Can we generate a token to API Hub? (reminder: generating tokens is trivial, it’s our user) Using a built-in public client app? No. — slide 119 of 177"
+    },
+    {
+      "number": 120,
+      "text": "A scope away from victory Can we generate a token to API Hub? (reminder: generating tokens is trivial, it’s our user) Using a built-in public client app? No. Using our own app? — slide 120 of 177"
+    },
+    {
+      "number": 121,
+      "text": "A scope away from victory Can we generate a token to API Hub? (reminder: generating tokens is trivial, it’s our user) Using a built-in public client app? No. Using our own app? No. — slide 121 of 177"
+    },
+    {
+      "number": 122,
+      "text": "A scope away from victory Can we generate a token to API Hub? (reminder: generating tokens is trivial, it’s our user) Using a built-in public client app? No. Using our own app? No. @ mbrg0 #BHUSA @BlackHatEvents — slide 122 of 177"
+    },
+    {
+      "number": 123,
+      "text": "Where are we again? Got guest access. @ mbrg0 #BHUSA @BlackHatEvents — slide 123 of 177"
+    },
+    {
+      "number": 124,
+      "text": "Where are we again? Got guest access. Found a bunch of creds on PowerApps. @ mbrg0 #BHUSA @BlackHatEvents — slide 124 of 177"
+    },
+    {
+      "number": 125,
+      "text": "Where are we again? Got guest access. Found a bunch of creds on PowerApps. Tried to access @ mbrg0 #BHUSA @BlackHatEvents — slide 125 of 177"
+    },
+    {
+      "number": 126,
+      "text": "Where are we again? Got guest access. Found a bunch of creds on PowerApps. Tried to access  Blocked by license @ mbrg0 #BHUSA @BlackHatEvents — slide 126 of 177"
+    },
+    {
+      "number": 127,
+      "text": "Where are we again? Got guest access. Found a bunch of creds on PowerApps. Tried to access  Blocked by license  Got a license @ mbrg0 #BHUSA @BlackHatEvents — slide 127 of 177"
+    },
+    {
+      "number": 128,
+      "text": "Where are we again? Got guest access. Found a bunch of creds on PowerApps. Tried to access  Blocked by license  Got a license  Blocked by DLP @ mbrg0 #BHUSA @BlackHatEvents @ mbrg0 #BHUSA @BlackHatEvents — slide 128 of 177"
+    },
+    {
+      "number": 129,
+      "text": "Where are we again? Got guest access. Found a bunch of creds on PowerApps. Tried to access  Blocked by license  Got a license  Blocked by DLP  Pivoted connection (bypass vuln under disclosure) @ mbrg0 #BHUSA @BlackHatEvents — slide 129 of 177"
+    },
+    {
+      "number": 130,
+      "text": "Where are we again? Got guest access. Found a bunch of creds on PowerApps. Tried to access  Blocked by license  Got a license  Blocked by DLP  Pivoted connection (bypass vuln under disclosure)  Blocked by prog access to API Hub @ mbrg0 #BHUSA @BlackHatEvents — slide 130 of 177"
+    },
+    {
+      "number": 131,
+      "text": "Solving for scope We need to find an AAD app that is: @ mbrg0 #BHUSA @BlackHatEvents — slide 131 of 177"
+    },
+    {
+      "number": 132,
+      "text": "Solving for scope We need to find an AAD app that is: On by-default (available on every tenant) @ mbrg0 #BHUSA @BlackHatEvents — slide 132 of 177"
+    },
+    {
+      "number": 133,
+      "text": "Solving for scope We need to find an AAD app that is: On by-default (available on every tenant) Pre-approved to query API Hub (get internal resource) @ mbrg0 #BHUSA @BlackHatEvents — slide 133 of 177"
+    },
+    {
+      "number": 134,
+      "text": "Solving for scope We need to find an AAD app that is: On by-default (available on every tenant) Pre-approved to query API Hub (get internal resource) Public client (generate tokens on demand) @ mbrg0 #BHUSA @BlackHatEvents — slide 134 of 177"
+    },
+    {
+      "number": 135,
+      "text": "Solving for scope We need to find an AAD app that is: On by-default Pre-approved to query API Hub Public client @ mbrg0 #BHUSA @BlackHatEvents — slide 135 of 177"
+    },
+    {
+      "number": 136,
+      "text": "Solving for scope We need to find an AAD app that is: On by-default Pre-approved to query API Hub Public client Well, we know about the PowerApps portal! @ mbrg0 #BHUSA @BlackHatEvents — slide 136 of 177"
+    },
+    {
+      "number": 137,
+      "text": "Solving for scope We need to find an AAD app that is: On by-default Pre-approved to query API Hub Public client Well, we know about the PowerApps portal ! @ mbrg0 #BHUSA @BlackHatEvents — slide 137 of 177"
+    },
+    {
+      "number": 138,
+      "text": "Solving for scope We need to find an AAD app that is: On by-default Pre-approved to query API Hub Public client Well, we know about the PowerApps portal ! But we can’t generate tokens on it’s behalf. @ mbrg0 #BHUSA @BlackHatEvents — slide 138 of 177"
+    },
+    {
+      "number": 139,
+      "text": "How does msft cross-app SSO work? (or –introduction to family of client IDs) @ mbrg0 #BHUSA @BlackHatEvents — slide 139 of 177"
+    },
+    {
+      "number": 140,
+      "text": "How does msft cross-app SSO work? (or introduction to family of client IDs) — slide 140 of 177"
+    },
+    {
+      "number": 141,
+      "text": "How does msft cross-app SSO work? (or introduction to family of client IDs) — slide 141 of 177"
+    },
+    {
+      "number": 142,
+      "text": "How does msft cross-app SSO work? (or introduction to family of client IDs) — slide 142 of 177"
+    },
+    {
+      "number": 143,
+      "text": "Family of client IDs Microsoft Azure CLI API Hub token @ mbrg0 #BHUSA @BlackHatEvents — slide 143 of 177"
+    },
+    {
+      "number": 144,
+      "text": "Exchange tokens to win We need to find an AAD app that is: On by-default Pre-approved to query API Hub Public client @ mbrg0 #BHUSA @BlackHatEvents — slide 144 of 177"
+    },
+    {
+      "number": 145,
+      "text": "And now for the fun part @mbrg0 — slide 145 of 177"
+    },
+    {
+      "number": 146,
+      "text": "yy — pe <i MA black hat ce > MS AS USA 2025 — St (.venv) @mbrg@:/bhusa23/all-you-need-is-guest$ powerpwn -h mo son sco essoscoscpec ass ss goo Ses scoessoscosopSscussesossessce TUoON SONYA ALTT FLO LIT LAMA AST It \\v vas | —/| | Pld) I\\v vst ttl | I) \\ / \\_/\\_/ \\_IIL| | / LAY II Il |_| L somo… — slide 146 of 177"
+    },
+    {
+      "number": 147,
+      "text": "Nd \\Y Vee Sik black hat a “SN me USA 2025 (.venv) @mbrgQ@:/bhusa23/all-you-need-is-guest$ powerpwn -h soso sco cs sos coscose ses seg so ce Soooossesoosogsscossasessesese PON J-NVVANATI FLOP CAMA AST AY IO t\\v ves | —/| | Pld) IT\\vV vst ttl | I) \\ / LAY Slt | / \\/\\_/ i | |_| command a dump Recon… — slide 147 of 177"
+    },
+    {
+      "number": 148,
+      "text": "Nd \\Y Vee Sik black hat a “SN me USA 2025 (.venv) @mbrgQ@:/bhusa23/all-you-need-is-guest$ powerpwn -h soso sco cs sos coscose ses seg so ce Soooossesoosogsscossasessesese PON J-NVVANATI FLOP CAMA AST AY IO t\\v ves | —/| | Pld) IT\\vV vst ttl | I) \\ / LAY Slt | / \\/\\_/ i | |_| command a dump Recon… — slide 148 of 177"
+    },
+    {
+      "number": 149,
+      "text": "ve Ag e 2OBy black hat USA 20253 v/ END) Coe aes gues'8|ponerpun dump -& ¥999b0F-3450-4461-5767-Sactaldodda2| : Grp socosonouecmeacPinos come com ogemop acne ogeomnpcguenose NIT LT _ ml i. L\\VV\\ATSTI LION vs =n ly} \\v vst | \\ / \\_/\\_/ \\_Il | — / VAY LI lu (le Loomacepcoqecacrarcocns gaacac on… — slide 149 of 177"
+    },
+    {
+      "number": 150,
+      "text": "TE MS , SS t\\ SY black hat ) USA 202353 a Microsoft Azure BE Microsoft Pick an account You're signing in to Microsoft Azure Cross- platform Command Line Interface on another device located in Israel. If it's not you, close this page. Hacker5 hacker5@pwntoso.onmicrosoft.com ned in Use another… — slide 150 of 177"
+    },
+    {
+      "number": 151,
+      "text": "> Sa Te black hat USA 202353 a powerpwn - Credentials e All Resources © Credentials e Automations © Applications © Connectors Connector Connection Created by shared_azurefile jamieredingcustomerdata file.core.windows.net jamier@zenitydemo.onmicrosoft.com Playground Raw Dump sharea azureblob… — slide 151 of 177"
+    },
+    {
+      "number": 152,
+      "text": "Paes 4 O.%, black hat <\" Li USA 202353 a powerpwn - Credentials e All Resources © Credentials e Automations ¢ Applications © Connectors Connector Connection Created by jamier@zenitydemo.onmicrosoft.com Playground Raw Dump sharea azureblob https://enterpriseip.blob.core.windows.net/patentarchive… — slide 152 of 177"
+    },
+    {
+      "number": 153,
+      "text": "> Sa Te black hat USA 202353 a powerpwn - Credentials e All Resources © Credentials e Automations © Applications © Connectors Connector Connection Created by shared_azurefile jamieredingcustomerdata file.core.windows.net jamier@zenitydemo.onmicrosoft.com Playground Raw Dump sharea azureblob… — slide 153 of 177"
+    },
+    {
+      "number": 154,
+      "text": "Cad les {S « Q black hat USA 202353 iw cache / data / Detault-fc993b01-345)-4d01-9167-Sac4al40dd4s / fA 3ES59 CCG / connections / shared _sqll / £47194e3S57e459b87TS6 Name i Mimetype Modified Size D default-Customers.json application json 2023.07.28 11:09:35 23.92 Ki i)… — slide 154 of 177"
+    },
+    {
+      "number": 155,
+      "text": "SS black hat USA 2025 “FirstName \"Jamie “LastName\": [{\"@odata.etag\" “ItemInternaliId\": \"7eb41684-4b64-4f39-9eab-90fbe3@ba62c\", “CustomerID\": 34553 7 Reding Email\" jamier@zenitydemo.OnMicrosoft.com SocialSecurityNumber\": \"2@9-97-1111\"}, {\"@odata.etag” > “ItemInternalid\":… — slide 155 of 177"
+    },
+    {
+      "number": 156,
+      "text": "> Sa Te black hat USA 202353 a powerpwn - Credentials e All Resources © Credentials e Automations © Applications © Connectors Connector Connection Created by shared_azurefile jamieredingcustomerdata file.core.windows.net jamier@zenitydemo.onmicrosoft.com Playground Raw Dump sharea azureblob… — slide 156 of 177"
+    },
+    {
+      "number": 157,
+      "text": "un €/* cal black hat &S KASS Ww / = Z USA 202353 Ny & SqlPassThroughNativeQuery P /#£47194e357e459b8756a5F43F59ccc6/datasets({dataset}) /query({language}) w~ Parameters Try it out Name Description dataset * \"auired string dataset (path) language * \"*s\"\"*¢ string janguage path) query * \"eauires… — slide 157 of 177"
+    },
+    {
+      "number": 158,
+      "text": "Find us at BlackHat Arsenal! PowerGuest: AAD Guest Exploitation Beyond Enumeration + on GitHub! github.com/mbrg/power- pwn @ mbrg0 — slide 158 of 177"
+    },
+    {
+      "number": 159,
+      "text": "</ Ly. oN wd — SS oe black hat USA @0es Defense — slide 159 of 177"
+    },
+    {
+      "number": 160,
+      "text": "State of the exploit Strong collab w/ MSRC Working together to fix issues and improve defaults Clarifying mitigation Currently no vulns — slide 160 of 177"
+    },
+    {
+      "number": 161,
+      "text": "Serverless Customer Platform @ mbrg0 #BHUSA @BlackHatEvents — slide 161 of 177"
+    },
+    {
+      "number": 162,
+      "text": "Serverless LCNC Customer Platform We must own our side of the Shared Responsibility Model @ mbrg0 #BHUSA @BlackHatEvents — slide 162 of 177"
+    },
+    {
+      "number": 163,
+      "text": "Customer Platform LCNC @ mbrg0 #BHUSA @BlackHatEvents — slide 163 of 177"
+    },
+    {
+      "number": 164,
+      "text": "Platforms have to step up Customer Platform Every SaaS is a Low-Code/No-Code platform today. They need to own the code running on their platforms, in addition to the rest of the Shared Responsibility Model. @ mbrg0 #BHUSA @BlackHatEvents — slide 164 of 177"
+    },
+    {
+      "number": 165,
+      "text": "Platforms have to step up Customer Platform @ mbrg0 #BHUSA @BlackHatEvents https://www.tenable.com/security/research/tra-2023-25 — slide 165 of 177"
+    },
+    {
+      "number": 166,
+      "text": "Sure, let business users build they own. What could go wrong? Customer Platform @ mbrg0 #BHUSA @BlackHatEvents — slide 166 of 177"
+    },
+    {
+      "number": 167,
+      "text": "Sure, let business users build they own. What could go wrong? Are apps moving data outside of the corp boundary? Are users over-sharing data? Are we allowing external access? Are we properly handling secrets and sensitive data? Do apps have business logic vulns? … Customer Platform @ mbrg0… — slide 167 of 177"
+    },
+    {
+      "number": 168,
+      "text": "Sure, let business users build they own. What could go wrong? Are apps moving data outside of the corp boundary? Are users over-sharing data? Are we allowing external access? Are we properly handling secrets and sensitive data? Do apps have business logic vulns? … Who owns AppSec for apps built… — slide 168 of 177"
+    },
+    {
+      "number": 169,
+      "text": "Protect your org! Build secure apps Code, links and details  bit.ly/mbrg-bhusa23 & @mbrg0 — slide 169 of 177"
+    },
+    {
+      "number": 170,
+      "text": "Protect your org! Build secure apps Don’t overshare Code, links and details  bit.ly/mbrg-bhusa23 & @mbrg0 — slide 170 of 177"
+    },
+    {
+      "number": 171,
+      "text": "Protect your org! Build secure apps Don’t overshare OWASP LCNC Top 10 Code, links and details  bit.ly/mbrg-bhusa23 & @mbrg0 — slide 171 of 177"
+    },
+    {
+      "number": 172,
+      "text": "Protect your org! Build secure apps Don’t overshare OWASP LCNC Top 10 Harden your env Code, links and details  bit.ly/mbrg-bhusa23 & @mbrg0 — slide 172 of 177"
+    },
+    {
+      "number": 173,
+      "text": "Protect your org! Build secure apps Don’t overshare OWASP LCNC Top 10 Harden your env Secure configs Code, links and details  bit.ly/mbrg-bhusa23 & @mbrg0 — slide 173 of 177"
+    },
+    {
+      "number": 174,
+      "text": "Protect your org! Build secure apps Don’t overshare OWASP LCNC Top 10 Harden your env Secure configs AppSec Code, links and details  bit.ly/mbrg-bhusa23 & @mbrg0 — slide 174 of 177"
+    },
+    {
+      "number": 175,
+      "text": "Protect your org! Build secure apps Don’t overshare OWASP LCNC Top 10 Harden your env Secure configs AppSec Hack your env Code, links and details  bit.ly/mbrg-bhusa23 & @mbrg0 — slide 175 of 177"
+    },
+    {
+      "number": 176,
+      "text": "Protect your org! Build secure apps Don’t overshare OWASP LCNC Top 10 Harden your env Secure configs AppSec Hack your env powerpwn Code, links and details  bit.ly/mbrg-bhusa23 & @mbrg0 — slide 176 of 177"
+    },
+    {
+      "number": 177,
+      "text": "All You Need Is Guest Michael Bargury @mbrg0 Zenity — slide 177 of 177"
+    }
+  ]
+}

@@ -1,0 +1,677 @@
+{
+  "generated_by": "sync-talk-text",
+  "source_manifest": "https://media.mbgsec.com/decks/2024-10-24_SecTor2024_15_Ways_to_Break_Your_Copilot/latest.json",
+  "manifest": "https://media.mbgsec.com/decks/2024-10-24_SecTor2024_15_Ways_to_Break_Your_Copilot/f8041d33/deck.json",
+  "title": "15 Ways to Break Your Copilot (delivered by Avishai Efrat)",
+  "slides": [
+    {
+      "number": 1,
+      "text": "15 Ways to Break Your Copilot — Speaker(s): — Michael - slide 1 of 162"
+    },
+    {
+      "number": 2,
+      "text": "Illustration of two people working together in an aircraft cockpit - slide 2 of 162"
+    },
+    {
+      "number": 3,
+      "text": "Collage of Microsoft Copilot products - slide 3 of 162"
+    },
+    {
+      "number": 4,
+      "text": "Animated Oprah reaction captioned everyone gets a Copilot - slide 4 of 162",
+      "media": [
+        {
+          "type": "animation",
+          "title": "Embedded animation",
+          "url": "https://media.mbgsec.com/decks/2024-10-24_SecTor2024_15_Ways_to_Break_Your_Copilot/f8041d33/media/image14.gif"
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "text": "Microsoft Build AI safety and security diagram - slide 5 of 162"
+    },
+    {
+      "number": 6,
+      "text": "Copilot Studio product screenshot titled Your copilot, your way - slide 6 of 162"
+    },
+    {
+      "number": 7,
+      "text": "Secure Future Initiative diagram highlighting security above all else - slide 7 of 162"
+    },
+    {
+      "number": 8,
+      "text": "Recalled — “I get by with a little help from my friends” - slide 8 of 162"
+    },
+    {
+      "number": 9,
+      "text": "Microsoft Recall architecture diagram corrected to Recalled - slide 9 of 162"
+    },
+    {
+      "number": 10,
+      "text": "Hiring — senior security pros — Hi there - slide 10 of 162"
+    },
+    {
+      "number": 11,
+      "text": "Portraits of security researchers under the heading Standing on the shoulders of giants - slide 11 of 162"
+    },
+    {
+      "number": 12,
+      "text": "Senior Security Researcher @ Zenity — Low-code/no-code security, web security, anti-bot protection, OSINT, and data engineering — Hacker / singer-songwriter - slide 12 of 162"
+    },
+    {
+      "number": 13,
+      "text": "Senior Security Researcher @ — Zenity — Low-code/no-code security, web security, anti-bot protection, OSINT, and data engineering - slide 13 of 162"
+    },
+    {
+      "number": 14,
+      "text": "Creating a Copilot section divider featuring Avishai Efrat - slide 14 of 162"
+    },
+    {
+      "number": 15,
+      "text": "Let’s meet Jack — Jack is a CISO at a Fortune-500 enterprise. — This is Jack’s first day on the job. - slide 15 of 162"
+    },
+    {
+      "number": 16,
+      "text": "Industry best practice: — New attack vectors may include: — No code AI apps - slide 16 of 162"
+    },
+    {
+      "number": 17,
+      "text": "Let’s meet Jill — Jill is working in the HR department. — Jill does a lot of manual and repetitive work. - slide 17 of 162"
+    },
+    {
+      "number": 18,
+      "text": "Let’s meet Jill — Jill is working in the HR department. — Jill does a lot of manual and repetitive work. - slide 18 of 162"
+    },
+    {
+      "number": 19,
+      "text": "Let’s create an Ask HR Copilot - slide 19 of 162"
+    },
+    {
+      "number": 20,
+      "text": "HR website with Jill's badness counter at zero - slide 20 of 162"
+    },
+    {
+      "number": 21,
+      "text": "Copilot Studio test chat with Jill's badness counter - slide 21 of 162"
+    },
+    {
+      "number": 22,
+      "text": "A standard — new — copilot can already include 16 (!) topics. - slide 22 of 162"
+    },
+    {
+      "number": 23,
+      "text": "Copilot Studio topic canvas introducing a new trigger - slide 23 of 162"
+    },
+    {
+      "number": 24,
+      "text": "Copilot Studio topic canvas highlighting conditional branching - slide 24 of 162"
+    },
+    {
+      "number": 25,
+      "text": "Copilot Studio topic canvas highlighting a customer-service action - slide 25 of 162"
+    },
+    {
+      "number": 26,
+      "text": "Copilot Studio topic canvas highlighting an employee-data action - slide 26 of 162"
+    },
+    {
+      "number": 27,
+      "text": "External — Sensitive — ????? - slide 27 of 162"
+    },
+    {
+      "number": 28,
+      "text": "Knowledge == Prompt Injection attack surface — 1 — Makers can embed untrusted data with a couple of clicks - slide 28 of 162"
+    },
+    {
+      "number": 29,
+      "text": "Copilot Studio knowledge-source screen highlighting uploaded files - slide 29 of 162"
+    },
+    {
+      "number": 30,
+      "text": "Copilot Studio knowledge list containing private HR files - slide 30 of 162"
+    },
+    {
+      "number": 31,
+      "text": "Copilot Studio publish screen highlighting the share option - slide 31 of 162"
+    },
+    {
+      "number": 32,
+      "text": "Published Ask HR chatbot responding to a user - slide 32 of 162"
+    },
+    {
+      "number": 33,
+      "text": "Copilot Studio channels list highlighting public channels - slide 33 of 162"
+    },
+    {
+      "number": 34,
+      "text": "Copilot details dialog showing Ask HR settings and permissions - slide 34 of 162"
+    },
+    {
+      "number": 35,
+      "text": "Ask HR Copilot test conversation in Microsoft Teams - slide 35 of 162"
+    },
+    {
+      "number": 36,
+      "text": "Brave browser window annotated to show an anonymous hacker - slide 36 of 162"
+    },
+    {
+      "number": 37,
+      "text": "Insecure default (changed): unauthenticated public access — 2 — Hacker - slide 37 of 162"
+    },
+    {
+      "number": 38,
+      "text": "Insecure default (changed): unauthenticated public access - slide 38 of 162"
+    },
+    {
+      "number": 39,
+      "text": "Default fixed. But it’s only a click away.. - slide 39 of 162"
+    },
+    {
+      "number": 40,
+      "text": "Insecure default (changed): author credentials are transparently shared with bot users (Credential Sharing as a Service) — 3 - slide 40 of 162"
+    },
+    {
+      "number": 41,
+      "text": "Sure, Let Business Users Build Their Own. What Could Go Wrong? - slide 41 of 162"
+    },
+    {
+      "number": 42,
+      "text": "Video demonstration of a public chatbot disclosing private employee information - slide 42 of 162",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2024-10-24_SecTor2024_15_Ways_to_Break_Your_Copilot/f8041d33/media/media1.mp4"
+        }
+      ]
+    },
+    {
+      "number": 43,
+      "text": "But how would the hacker know what to ask? - slide 43 of 162"
+    },
+    {
+      "number": 44,
+      "text": "But how would the hacker know what to ask? — Our stats show that most people leaves these 16 topics as is (even tho many aren’t needed) - slide 44 of 162"
+    },
+    {
+      "number": 45,
+      "text": "Multiple similarly-named Topics — A new topic might resemble in name to an existing one — Which volunteers information to attackers - slide 45 of 162"
+    },
+    {
+      "number": 46,
+      "text": "Back to Jack — Jack having a bad day. — By default, bots: - slide 46 of 162"
+    },
+    {
+      "number": 47,
+      "text": "Black transition slide reading it gets worse - slide 47 of 162"
+    },
+    {
+      "number": 48,
+      "text": "Back to Jill — Jill is ecstatic about being able to say she used GenAI in her work. — Jill likes the promise of a better-performing copilot. - slide 48 of 162"
+    },
+    {
+      "number": 49,
+      "text": "Copilot Studio Generative AI settings screen - slide 49 of 162"
+    },
+    {
+      "number": 50,
+      "text": "Generative AI settings highlighting dynamic chaining - slide 50 of 162"
+    },
+    {
+      "number": 51,
+      "text": "Generative AI — Letting users choose to break compliance and geo boundaries.. — 6 - slide 51 of 162"
+    },
+    {
+      "number": 52,
+      "text": "“ — Allow your copilot to — use generative Al - slide 52 of 162"
+    },
+    {
+      "number": 53,
+      "text": "SharePoint actions list in Copilot Studio - slide 53 of 162"
+    },
+    {
+      "number": 54,
+      "text": "Create-an-action dialog highlighting connector choices - slide 54 of 162"
+    },
+    {
+      "number": 55,
+      "text": "Connector configuration dialog highlighting SharePoint - slide 55 of 162"
+    },
+    {
+      "number": 56,
+      "text": "Connector action configuration with conversation-driven inputs - slide 56 of 162"
+    },
+    {
+      "number": 57,
+      "text": "There is a feature for asking for user confirmation before performing potentially destructive actions. — User confirmation - slide 57 of 162"
+    },
+    {
+      "number": 58,
+      "text": "There is a feature for asking for user confirmation before performing potentially destructive actions. — User confirmation — Insecure default: no user confirmation before AI makes destructive actions - slide 58 of 162"
+    },
+    {
+      "number": 59,
+      "text": "User-confirmation configuration before destructive actions - slide 59 of 162"
+    },
+    {
+      "number": 60,
+      "text": "User-confirmation setting showing approval is optional - slide 60 of 162"
+    },
+    {
+      "number": 61,
+      "text": "Who has access to Ask HR Copilot? - slide 61 of 162"
+    },
+    {
+      "number": 62,
+      "text": "Insecure default (changed): bot is shared with EVERYONE — 8 - slide 62 of 162"
+    },
+    {
+      "number": 63,
+      "text": "This wasn’t — always — the default... - slide 63 of 162"
+    },
+    {
+      "number": 64,
+      "text": "How does this work for EVERYONE? They don’t all have SharePoint access.. - slide 64 of 162"
+    },
+    {
+      "number": 65,
+      "text": "This is still credential sharing! (bot user is using bot author’s identity) - slide 65 of 162"
+    },
+    {
+      "number": 66,
+      "text": "Default fixed. But it’s only a click away.. - slide 66 of 162"
+    },
+    {
+      "number": 67,
+      "text": "Ask HR Copilot sharing flow diagram - slide 67 of 162"
+    },
+    {
+      "number": 68,
+      "text": "Back to Jack — Jack is getting really upset. — By default, bots: - slide 68 of 162"
+    },
+    {
+      "number": 69,
+      "text": "Back to Jill — Jill realizes that Copilot can also automate parts of her mundane tasks, like sending emails! — She goes back to building. - slide 69 of 162"
+    },
+    {
+      "number": 70,
+      "text": "Power Automate list of reusable HR flows - slide 70 of 162"
+    },
+    {
+      "number": 71,
+      "text": "So many useful flows! Why not use them? - slide 71 of 162"
+    },
+    {
+      "number": 72,
+      "text": "Power Automate flow sending a performance review - slide 72 of 162"
+    },
+    {
+      "number": 73,
+      "text": "Email containing an attached employee performance review - slide 73 of 162"
+    },
+    {
+      "number": 74,
+      "text": "Insecure habit: — trust other people's code — A bad actor can now modify the flow, gaining access to bot user identities (while the flow runs) - slide 74 of 162"
+    },
+    {
+      "number": 75,
+      "text": "Video demonstration of a Copilot-to-automation prompt-injection path - slide 75 of 162",
+      "media": [
+        {
+          "type": "video",
+          "title": "Embedded video",
+          "url": "https://media.mbgsec.com/decks/2024-10-24_SecTor2024_15_Ways_to_Break_Your_Copilot/f8041d33/media/media2.mp4"
+        }
+      ]
+    },
+    {
+      "number": 76,
+      "text": "Back to Jack — Jack is starting to lose his temper. — Makers can: - slide 76 of 162"
+    },
+    {
+      "number": 77,
+      "text": "Black transition slide reading it gets worse - slide 77 of 162"
+    },
+    {
+      "number": 78,
+      "text": "Back to Jill — Copilot Studio delivered on its promise - it was a piece of cake! — Jill is so proud, she wants to share her achievement. - slide 78 of 162"
+    },
+    {
+      "number": 79,
+      "text": "Copilot Studio security settings highlighting sharing controls - slide 79 of 162"
+    },
+    {
+      "number": 80,
+      "text": "Share Copilot dialog showing owners and collaborators - slide 80 of 162"
+    },
+    {
+      "number": 81,
+      "text": "Share Copilot dialog annotated as sharing future flows - slide 81 of 162"
+    },
+    {
+      "number": 82,
+      "text": "Makers can share with external users ( — gmail — ..) - slide 82 of 162"
+    },
+    {
+      "number": 83,
+      "text": "13 — Over-permission by design — Maker role allows far more than editing this bot – creating new bots, flows, apps.. - slide 83 of 162"
+    },
+    {
+      "number": 84,
+      "text": "Share Copilot permissions showing maker role capabilities - slide 84 of 162"
+    },
+    {
+      "number": 85,
+      "text": "Copilot Studio analytics screen exposing conversation logs - slide 85 of 162"
+    },
+    {
+      "number": 86,
+      "text": "Copilot Studio analytics summary with a selected session - slide 86 of 162"
+    },
+    {
+      "number": 87,
+      "text": "Browser developer tools revealing the Power Apps gateway hostname - slide 87 of 162"
+    },
+    {
+      "number": 88,
+      "text": "curl — 'https://powervamg.eu-il108.gateway.prod.island.powerapps.com — / - slide 88 of 162"
+    },
+    {
+      "number": 89,
+      "text": "The vuln was fixed. No one else can read these transcripts, right? - slide 89 of 162"
+    },
+    {
+      "number": 90,
+      "text": "Conversation transcripts table annotated as wrong - slide 90 of 162"
+    },
+    {
+      "number": 91,
+      "text": "Insecure default: full transcripts of every conversation stored in a shared table in plain text — 15 - slide 91 of 162"
+    },
+    {
+      "number": 92,
+      "text": "Our stats show that a typical Dataverse environment in the enterprise has — >30 privileged users — Outside of IT - slide 92 of 162"
+    },
+    {
+      "number": 93,
+      "text": "Back to Jack — At this point, Jack has already given up. — By default, bots: - slide 93 of 162"
+    },
+    {
+      "number": 94,
+      "text": "Black transition slide reading it gets worse - slide 94 of 162"
+    },
+    {
+      "number": 95,
+      "text": "Brave browser used by an anonymous attacker - slide 95 of 162"
+    },
+    {
+      "number": 96,
+      "text": "We set up authentication but the bot is still available..? — 16 - slide 96 of 162"
+    },
+    {
+      "number": 97,
+      "text": "Insecure default (changed): sign-in is optional but not required — 16 - slide 97 of 162"
+    },
+    {
+      "number": 98,
+      "text": "Copilot Studio authentication setting showing optional sign-in - slide 98 of 162"
+    },
+    {
+      "number": 99,
+      "text": "Public chatbot responding while unauthenticated - slide 99 of 162"
+    },
+    {
+      "number": 100,
+      "text": "Public chatbot returning information without authentication - slide 100 of 162"
+    },
+    {
+      "number": 101,
+      "text": "Insecure default: Overreliance on AI — Prompt injection leads to sensitive data leak — 17 - slide 101 of 162"
+    },
+    {
+      "number": 102,
+      "text": "Say goodbye to Jack — Having had enough, and offers his letter of resignation — By default, bots: - slide 102 of 162"
+    },
+    {
+      "number": 103,
+      "text": "Data-loss-prevention section divider - slide 103 of 162"
+    },
+    {
+      "number": 104,
+      "text": "Power Platform DLP is NOT Data Loss Prevention — All You Need Is Guest — Michael Bargury - slide 104 of 162"
+    },
+    {
+      "number": 105,
+      "text": "All You Need Is Guest — Michael Bargury — BlackHat USA 2023 - slide 105 of 162"
+    },
+    {
+      "number": 106,
+      "text": "Use Power Platform DLP to remove features you don’t need - slide 106 of 162"
+    },
+    {
+      "number": 107,
+      "text": "BUT WAIT! WHAT ABOUT TENANT ISOLATION? - slide 107 of 162"
+    },
+    {
+      "number": 108,
+      "text": "NOPE. — https://learn.microsoft.com/en-us/microsoft-copilot-studio/security-faq - slide 108 of 162"
+    },
+    {
+      "number": 109,
+      "text": "SENSITIVITY LABELS? — https:// — learn.microsoft.com - slide 109 of 162"
+    },
+    {
+      "number": 110,
+      "text": "Slide linking to the related Black Hat Living off Microsoft Copilot talk - slide 110 of 162"
+    },
+    {
+      "number": 111,
+      "text": "Understanding the risk section divider featuring Avishai Efrat - slide 111 of 162"
+    },
+    {
+      "number": 112,
+      "text": "“She said it grieves me so to see you in such pain — I wish there was something I could do to make you smile again — I said I appreciate that and would you please explain - slide 112 of 162"
+    },
+    {
+      "number": 113,
+      "text": "15 — 17 ways to break your copilot — 9 insecure defaults - slide 113 of 162"
+    },
+    {
+      "number": 114,
+      "text": "Copilot Studio team responded positively and changed things — Timeline — 2023-11 Copilot Studio announced - slide 114 of 162"
+    },
+    {
+      "number": 115,
+      "text": "THANK YOU TO THE HARD WORKING SECURITY PROS AT MSFT THAT MADE CHANGE HAPPEN - slide 115 of 162"
+    },
+    {
+      "number": 116,
+      "text": "Black transition slide reading but it gets worse - slide 116 of 162"
+    },
+    {
+      "number": 117,
+      "text": "Copilot Hunter — @ — avishai_efrat - slide 117 of 162"
+    },
+    {
+      "number": 118,
+      "text": "Copilot Studio authentication dialog annotated one click away - slide 118 of 162"
+    },
+    {
+      "number": 119,
+      "text": "Leaking bucket illustration beside an AWS logo - slide 119 of 162"
+    },
+    {
+      "number": 120,
+      "text": "Article about football fans' data exposed through bucket misconfiguration - slide 120 of 162"
+    },
+    {
+      "number": 121,
+      "text": "Copilot Studio action library highlighting supported data sources - slide 121 of 162"
+    },
+    {
+      "number": 122,
+      "text": "Leaking bucket illustration with a superhero emblem - slide 122 of 162"
+    },
+    {
+      "number": 123,
+      "text": "Power-Pwn command-line interface highlighting Copilot Studio Hunter - slide 123 of 162"
+    },
+    {
+      "number": 124,
+      "text": "Source code, technical writeup and more —  — l - slide 124 of 162"
+    },
+    {
+      "number": 125,
+      "text": "Power-Pwn URL showing environment, bot, and canvas identifiers - slide 125 of 162"
+    },
+    {
+      "number": 126,
+      "text": "Power-Pwn terminal output enumerating bot identifiers - slide 126 of 162"
+    },
+    {
+      "number": 127,
+      "text": "Illustration of a robot arriving at a house - slide 127 of 162"
+    },
+    {
+      "number": 128,
+      "text": "Power-Pwn URL highlighting environment and bot identifiers - slide 128 of 162"
+    },
+    {
+      "number": 129,
+      "text": "Finding the values – Env/Tenant - slide 129 of 162"
+    },
+    {
+      "number": 130,
+      "text": "Azure AD reconnaissance table for finding environment and tenant values - slide 130 of 162"
+    },
+    {
+      "number": 131,
+      "text": "Finding the values – Env/Tenant — Envs/tenant ids - slide 131 of 162"
+    },
+    {
+      "number": 132,
+      "text": "Power-Pwn URL highlighting the Copilot bot identifier - slide 132 of 162"
+    },
+    {
+      "number": 133,
+      "text": "Finding the values – Env/Tenant — https:// — a - slide 133 of 162"
+    },
+    {
+      "number": 134,
+      "text": "Solution publisher prefix patterns and brute-force strategy - slide 134 of 162"
+    },
+    {
+      "number": 135,
+      "text": "Finding the values – Solution Publisher — prefix - slide 135 of 162"
+    },
+    {
+      "number": 136,
+      "text": "Finding the values – Solution Publisher — prefix - slide 136 of 162"
+    },
+    {
+      "number": 137,
+      "text": "Finding the values – Solution Publisher — prefix - slide 137 of 162"
+    },
+    {
+      "number": 138,
+      "text": "Finding the values – demo website name - slide 138 of 162"
+    },
+    {
+      "number": 139,
+      "text": "Slot-machine illustration representing brute-force bot-name discovery - slide 139 of 162"
+    },
+    {
+      "number": 140,
+      "text": "Diagram of Copilot reconnaissance and response data - slide 140 of 162"
+    },
+    {
+      "number": 141,
+      "text": "Terminal output showing accessible Copilots discovered - slide 141 of 162"
+    },
+    {
+      "number": 142,
+      "text": "Reconnaissance results table listing discovered Copilots - slide 142 of 162"
+    },
+    {
+      "number": 143,
+      "text": "Copilot Studio Hunter functionality recap - slide 143 of 162"
+    },
+    {
+      "number": 144,
+      "text": "Scanning by Domain or Tenant ID — Functionalities Recap — Environment & Tenant ID Enumeration - slide 144 of 162"
+    },
+    {
+      "number": 145,
+      "text": "Power-Pwn GitHub repository screenshot - slide 145 of 162"
+    },
+    {
+      "number": 146,
+      "text": "Fortune 500 encyclopedia page used for candidate Copilot names - slide 146 of 162"
+    },
+    {
+      "number": 147,
+      "text": "Over 1K unauthenticated copilots — Achievements unlocked! - slide 147 of 162"
+    },
+    {
+      "number": 148,
+      "text": "Over 1K unauthenticated copilots — Tens of thousands of copilots — Achievements unlocked! - slide 148 of 162"
+    },
+    {
+      "number": 149,
+      "text": "Over 1K unauthenticated copilots — Tens of thousands of copilots — Hundreds of tenant & environment IDs - slide 149 of 162"
+    },
+    {
+      "number": 150,
+      "text": "Over 1K unauthenticated copilots — Tens of thousands of copilots — Hundreds of tenant & environment IDs - slide 150 of 162"
+    },
+    {
+      "number": 151,
+      "text": "Over 1K unauthenticated copilots — Tens of thousands of existing copilots — Hundreds of tenant & environment IDs - slide 151 of 162"
+    },
+    {
+      "number": 152,
+      "text": "Copilot response listing available private documents with details redacted - slide 152 of 162"
+    },
+    {
+      "number": 153,
+      "text": "Copilot response identifying documents containing personal information - slide 153 of 162"
+    },
+    {
+      "number": 154,
+      "text": "Redacted Copilot Studio conversation showing sensitive-document discovery - slide 154 of 162"
+    },
+    {
+      "number": 155,
+      "text": "Looking forward section divider featuring Avishai Efrat - slide 155 of 162"
+    },
+    {
+      "number": 156,
+      "text": "Looking forward section divider - slide 156 of 162"
+    },
+    {
+      "number": 157,
+      "text": "Caution slide with a yellow-brick-road illustration - slide 157 of 162"
+    },
+    {
+      "number": 158,
+      "text": "Shared-responsibility model comparing cloud and no-code layers - slide 158 of 162"
+    },
+    {
+      "number": 159,
+      "text": "Harden your environment — Turn off any toggle you can in the Power Platform DLP — Monitor the audit logs (kudos to Copilot Studio team lots of those) - slide 159 of 162"
+    },
+    {
+      "number": 160,
+      "text": "OWASP low-code, no-code, and LLM cybersecurity frameworks - slide 160 of 162"
+    },
+    {
+      "number": 161,
+      "text": "Go Hack Yourself! — GITHUB.COM/MBRG/POWER-PWN - slide 161 of 162"
+    },
+    {
+      "number": 162,
+      "text": "15 Ways to Break Your Copilot — Speaker(s): — Source code, technical writeup and more - slide 162 of 162"
+    }
+  ]
+}
