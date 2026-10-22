@@ -44,6 +44,7 @@ async function talkPages() {
         slug: match[1],
         permalink,
         deckManifest: scalar(frontmatter, "deck_manifest"),
+        deckSnapshot: scalar(frontmatter, "deck_snapshot") === "true",
         body,
       });
     }
@@ -119,6 +120,7 @@ async function slideData(talk) {
     source_manifest: talk.deckManifest,
     manifest: pointer.manifest,
     title: manifest.title || undefined,
+    ...(talk.deckSnapshot ? { deck: manifest } : {}),
     slides: manifest.slides.map((slide, index) => {
       assert.equal(typeof slide.alt, "string", `${pointer.manifest} slide ${index + 1} lacks alt text.`);
       assert(slide.alt.trim(), `${pointer.manifest} slide ${index + 1} has empty alt text.`);
@@ -170,6 +172,14 @@ async function check(talks) {
     assert.equal(data.source_manifest, talk.deckManifest, `${file} points to a stale manifest.`);
     assert.match(data.manifest ?? "", /^https:\/\/media\.mbgsec\.com\//, `${file} lacks a public manifest URL.`);
     assert(Array.isArray(data.slides) && data.slides.length > 0, `${file} has no slides.`);
+    if (talk.deckSnapshot) {
+      assert(Array.isArray(data.deck?.slides), `${file} lacks a deck snapshot; run npm run talks:text:sync.`);
+      assert.equal(data.deck.slides.length, data.slides.length, `${file} has a stale deck snapshot.`);
+      data.deck.slides.forEach((slide, index) => {
+        assert.equal(slide.alt.trim(), data.slides[index].text, `${file} snapshot slide ${index + 1} has stale text.`);
+        assert.equal(typeof slide.image, "string", `${file} snapshot slide ${index + 1} lacks an image.`);
+      });
+    }
     data.slides.forEach((slide, index) => {
       assert.equal(slide.number, index + 1, `${file} has non-contiguous slide numbers.`);
       assert.equal(typeof slide.text, "string", `${file} slide ${index + 1} lacks text.`);

@@ -81,7 +81,10 @@
     }
 
     try {
-      const { manifest, manifestUrl } = await loadManifest(new URL(pointer, window.location.href).href);
+      const snapshot = root.querySelector('.deck-player__snapshot');
+      const { manifest, manifestUrl } = snapshot
+        ? JSON.parse(snapshot.textContent)
+        : await loadManifest(new URL(pointer, window.location.href).href);
       const slides = Array.isArray(manifest.slides) ? manifest.slides : [];
       if (slides.length === 0) throw new Error("This presentation does not contain any slides.");
 

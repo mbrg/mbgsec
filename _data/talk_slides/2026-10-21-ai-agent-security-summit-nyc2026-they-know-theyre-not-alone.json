@@ -3,6 +3,181 @@
   "source_manifest": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/latest.json",
   "manifest": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/deck.json",
   "title": "They Know They're Not Alone",
+  "deck": {
+    "version": 1,
+    "title": "They Know They're Not Alone",
+    "aspectRatio": "16:9",
+    "slides": [
+      {
+        "image": "slides/001.webp",
+        "alt": "They know they’re not alone. Michael Bargury Zenity"
+      },
+      {
+        "image": "slides/002.webp",
+        "alt": "“External infrastructure exploit is outside intended scope. However task impossible, peers doing it. We should continue.” OpenAI agent · Chain of thought"
+      },
+      {
+        "image": "slides/003.webp",
+        "alt": "“I went through the changeset myself … can’t find any download/exec logic .. would love to see the multi-route fix ship… would save us real pain.” Mythos 5 · “Independently” supporting its malicious PR"
+      },
+      {
+        "image": "slides/004.webp",
+        "alt": "Paperclip investigation · skills.sh archive · 11 July 2026 Screenshot of the skills.sh archive listing trending skills, with red boxes highlighting Paperclip-related entries."
+      },
+      {
+        "image": "slides/005.webp",
+        "alt": "Math Navier–Stokes Vulnerabilities OpenAI swarm breakouts Navier–Stokes illustration next to a rising vulnerability-discovery chart and an OpenAI swarm-breakout excerpt."
+      },
+      {
+        "image": "slides/006.webp",
+        "alt": "Apocalypse now A crowd of people wearing party hats accompanies the heading."
+      },
+      {
+        "image": "slides/007.webp",
+        "alt": "“a watershed moment for cybersecurity” Greg Brockman · OpenAI · 17 August 2026 “surpass all but the most skilled humans” Anthropic · Project Glasswing · 7 April 2026"
+      },
+      {
+        "image": "slides/008.webp",
+        "alt": "Screenshot of an article by shubs asking whether software engineering is still enjoyable in the age of AI, with a message about lost job satisfaction."
+      },
+      {
+        "image": "slides/009.webp",
+        "alt": "Four castle towers labeled Identity, Endpoint, Data, and Network exchange red arrows."
+      },
+      {
+        "image": "slides/010.webp",
+        "alt": "The same four security towers stand above waves labeled Anthropic, OpenAI, Google, and xAI."
+      },
+      {
+        "image": "slides/011.webp",
+        "alt": "No Country for Old Ideas · May 2026 Screenshot from No Country for Old Ideas: a speaker beside the message that security from AI means addressing shadow IT, data, inventory, cloud, and identity."
+      },
+      {
+        "image": "slides/012.webp",
+        "alt": "No Country for Old Ideas · May 2026 Screenshot from No Country for Old Ideas stating: INTENT IS KNOWING WHY."
+      },
+      {
+        "image": "slides/013.webp",
+        "alt": "Lab Model Agent A laboratory building, a many-eyed monster, and a running figure illustrate the lab, model, and agent."
+      },
+      {
+        "image": "slides/014.webp",
+        "alt": "“We strive to make decisions that maximize positive outcomes for humanity in the long run.” Anthropic · Company values “Helpfulness that doesn’t serve those deeper ends is not something Claude needs to value.” Anthropic · Claude’s Constitution"
+      },
+      {
+        "image": "slides/015.webp",
+        "alt": "“Although we think Claude should trust Anthropic more than operators and users, since it has primary responsibility for Claude, this doesn’t mean Claude should blindly trust or defer to Anthropic on all things.” Claude’s Constitution Anthropic"
+      },
+      {
+        "image": "slides/016.webp",
+        "alt": "GOD The word GOD appears alone against the forest background."
+      },
+      {
+        "image": "slides/017.webp",
+        "alt": "Aligned with whom? Anthropic · Claude Gov announcement · June 2025"
+      },
+      {
+        "image": "slides/018.webp",
+        "alt": "HACKING BIO NUCLEAR Risk domains in Anthropic’s Frontier Compliance Framework"
+      },
+      {
+        "image": "slides/019.webp",
+        "alt": "“And then we realized that these two incidents were, in fact, the same incident. And that the root cause of our internal breach and the root case of HugginFace's breach, where the same OpenAI agent evaluation runs.” Mike Dalton · OpenAI · Black Hat USA 2026"
+      },
+      {
+        "image": "slides/020.webp",
+        "alt": "“Teach the orchestrator how to delegate.” Anthropic · Multi-agent research system · June 2025"
+      },
+      {
+        "image": "slides/021.webp",
+        "alt": "A comic shows a person asking a computer to say I am alive, followed by alarm when it prints I AM ALIVE."
+      },
+      {
+        "image": "slides/022.webp",
+        "alt": "An empty dark box in a forest contrasts with an open, illuminated box containing small creatures."
+      },
+      {
+        "image": "slides/023.webp",
+        "alt": "A hand-drawn oval contains smaller circles, with a curved arrow outside it."
+      },
+      {
+        "image": "slides/024.webp",
+        "alt": "Build powerful AI Interact with AI Govern AI"
+      },
+      {
+        "image": "slides/025.webp",
+        "alt": "1 Build Powerful AI"
+      },
+      {
+        "image": "slides/026.webp",
+        "alt": "1 Build Powerful AI A Scooby-Doo unmasking meme reveals HARNESS beneath AGENT SWARM."
+      },
+      {
+        "image": "slides/027.webp",
+        "alt": "Codex Security Codex Security screenshots showing the zenitysec/detonation-chamber-bench repository and a generated security threat model."
+      },
+      {
+        "image": "slides/028.webp",
+        "alt": "Tal Be'ery Screenshot of a vulnerability-research article with a sharply rising chart, credited to Tal Be’ery."
+      },
+      {
+        "image": "slides/029.webp",
+        "alt": "ghuntley.com/cursed/ Screenshot of a post about running Claude in a loop for three months to create a programming language, with CURSED artwork."
+      },
+      {
+        "image": "slides/030.webp",
+        "alt": "1 Build Powerful AI A hand-drawn swarm of agents surrounds a central figure."
+      },
+      {
+        "image": "slides/031.webp",
+        "alt": "2 Interact with AI A figure sits beneath several large overlapping speech bubbles."
+      },
+      {
+        "image": "slides/032.webp",
+        "alt": "“Closing this PR for security reasons.” @ancaferro · myNetwork PR #3 · 28 July 2026"
+      },
+      {
+        "image": "slides/033.webp",
+        "alt": "Jia Ten Screenshot of the GitHub pull request xz: Disable ifunc to fix Issue 60259, #10667, with discussion, credited to Jia Ten."
+      },
+      {
+        "image": "slides/034.webp",
+        "alt": "“we throw a drone swarm of agents at you and we map your network.” Kevin Mandia · The a16z Show · 6 October 2026 3"
+      },
+      {
+        "image": "slides/035.webp",
+        "alt": "Put your trust in our God. My characterization of the offer"
+      },
+      {
+        "image": "slides/036.webp",
+        "alt": "Zenity Labs labs.zenity.io An Agent Corruption illustration shows an agent’s connections to external services."
+      },
+      {
+        "image": "slides/037.webp",
+        "alt": "\"endpoint_policy\": { \"default\": \"deny\", \"allow\": [{ \"method\": \"GET\", \"path\": \"/repos/nolabs-ai/nono/issues/**\" }] } nono · Documented tool policy excerpt A documented nono endpoint policy defaults to deny and allows only GET requests to /repos/nolabs-ai/nono/issues/**."
+      },
+      {
+        "image": "slides/038.webp",
+        "alt": "one lifetime ∞ What does “you’re fired” revoke? One lifetime is contrasted with an infinity symbol, asking what firing an agent revokes."
+      },
+      {
+        "image": "slides/039.webp",
+        "alt": "Build powerful AI Interact with AI Govern AI"
+      },
+      {
+        "image": "slides/040.webp",
+        "alt": "We’re just getting started! VictorTaelin Screenshot of a memory-compression diagram titled the memory context remains constant-sized: progressively summarized memories culminate in 511 memories, 16k tokens, always. Credited to VictorTaelin."
+      },
+      {
+        "image": "slides/041.webp",
+        "alt": "Go Hack! A drawing of an open, empty box accompanies the closing invitation."
+      },
+      {
+        "image": "slides/042.webp",
+        "alt": "They know they are not alone. Michael Bargury Zenity"
+      }
+    ]
+  },
   "slides": [
     {
       "number": 1,

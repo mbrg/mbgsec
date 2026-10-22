@@ -4,6 +4,7 @@ talk_date: 2026-10-21
 conference: AI Agent Security Summit by Zenity Labs @ NYC 2026
 permalink: /talks/2026-10-21-ai-agent-security-summit-nyc2026-they-know-theyre-not-alone/
 layout: deck
+deck_snapshot: true
 deck_manifest: https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/latest.json
 pdf_url: https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/slides.pdf
 schedule_url: https://zenity.io/resources/events/ai-agent-security-summit-nyc#agenda
