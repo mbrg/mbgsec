@@ -139,12 +139,16 @@
   {% assign snapshot_data = site.data.talk_slides[snapshot_slug] %}
   {% if snapshot_data.first_image %}
     <link rel="preconnect" href="https://media.mbgsec.com">
-    <link rel="preload" as="image" href="{{ snapshot_data.first_image | escape }}" fetchpriority="high">
+    <link rel="preload" as="image" href="{{ snapshot_data.first_image | escape }}" fetchpriority="high"{% if snapshot_data.first_image_srcset %} imagesrcset="{{ snapshot_data.first_image_srcset | escape }}" imagesizes="{{ snapshot_data.first_image_sizes | escape }}"{% endif %}>
   {% endif %}
 {% endif %}
 
 <!-- For all browsers -->
+{% if page.deck_snapshot %}
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;var sheet=this;if(document.readyState==='complete'){sheet.rel='stylesheet';}else{window.addEventListener('load',function(){sheet.rel='stylesheet';},{once:true});}">
+{% else %}
 <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+{% endif %}
 <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
 
 {% if site.head_scripts %}

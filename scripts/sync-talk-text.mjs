@@ -71,6 +71,16 @@ function publicMediaUrl(value, manifestUrl) {
   return new URL(value, manifestUrl).href;
 }
 
+function imageSrcset(slide, manifestUrl) {
+  if (!Array.isArray(slide.srcset)) return undefined;
+  return slide.srcset.map((source) => {
+    assert(Number.isInteger(source.width) && source.width > 0, "Responsive image widths must be positive integers.");
+    const url = publicMediaUrl(source.src, manifestUrl);
+    assert(url, "Responsive image source is missing.");
+    return `${url} ${source.width}w`;
+  }).join(", ");
+}
+
 function slideMedia(slide, manifestUrl) {
   const media = [];
   for (const video of Array.isArray(slide.youtube) ? slide.youtube : []) {
@@ -120,7 +130,12 @@ async function slideData(talk) {
     source_manifest: talk.deckManifest,
     manifest: pointer.manifest,
     title: manifest.title || undefined,
-    ...(talk.deckSnapshot ? { deck: manifest, first_image: publicMediaUrl(manifest.slides[0]?.image, pointer.manifest) } : {}),
+    ...(talk.deckSnapshot ? {
+      deck: manifest,
+      first_image: publicMediaUrl(manifest.slides[0]?.image, pointer.manifest),
+      first_image_srcset: imageSrcset(manifest.slides[0], pointer.manifest),
+      first_image_sizes: manifest.slides[0]?.sizes || "100vw",
+    } : {}),
     slides: manifest.slides.map((slide, index) => {
       assert.equal(typeof slide.alt, "string", `${pointer.manifest} slide ${index + 1} lacks alt text.`);
       assert(slide.alt.trim(), `${pointer.manifest} slide ${index + 1} has empty alt text.`);
@@ -176,6 +191,7 @@ async function check(talks) {
       assert(Array.isArray(data.deck?.slides), `${file} lacks a deck snapshot; run npm run talks:text:sync.`);
       assert.equal(data.deck.slides.length, data.slides.length, `${file} has a stale deck snapshot.`);
       assert.equal(data.first_image, publicMediaUrl(data.deck.slides[0]?.image, data.manifest), `${file} has a stale first-slide preload.`);
+      assert.equal(data.first_image_srcset, imageSrcset(data.deck.slides[0], data.manifest), `${file} has a stale responsive preload.`);
       data.deck.slides.forEach((slide, index) => {
         assert.equal(slide.alt.trim(), data.slides[index].text, `${file} snapshot slide ${index + 1} has stale text.`);
         assert.equal(typeof slide.image, "string", `${file} snapshot slide ${index + 1} lacks an image.`);

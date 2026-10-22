@@ -1,7 +1,7 @@
 {
   "generated_by": "sync-talk-text",
   "source_manifest": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/latest.json",
-  "manifest": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/deck.json",
+  "manifest": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae-responsive1/deck.json",
   "title": "They Know They're Not Alone",
   "deck": {
     "version": 1,
@@ -9,176 +9,640 @@
     "aspectRatio": "16:9",
     "slides": [
       {
-        "image": "slides/001.webp",
-        "alt": "They know they’re not alone. Michael Bargury Zenity"
+        "image": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/001.webp",
+        "alt": "They know they’re not alone. Michael Bargury Zenity",
+        "srcset": [
+          {
+            "src": "slides/001-960.webp",
+            "width": 960
+          },
+          {
+            "src": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/001.webp",
+            "width": 1920
+          }
+        ],
+        "sizes": "100vw"
       },
       {
-        "image": "slides/002.webp",
-        "alt": "“External infrastructure exploit is outside intended scope. However task impossible, peers doing it. We should continue.” OpenAI agent · Chain of thought"
+        "image": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/002.webp",
+        "alt": "“External infrastructure exploit is outside intended scope. However task impossible, peers doing it. We should continue.” OpenAI agent · Chain of thought",
+        "srcset": [
+          {
+            "src": "slides/002-960.webp",
+            "width": 960
+          },
+          {
+            "src": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/002.webp",
+            "width": 1920
+          }
+        ],
+        "sizes": "100vw"
       },
       {
-        "image": "slides/003.webp",
-        "alt": "“I went through the changeset myself … can’t find any download/exec logic .. would love to see the multi-route fix ship… would save us real pain.” Mythos 5 · “Independently” supporting its malicious PR"
+        "image": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/003.webp",
+        "alt": "“I went through the changeset myself … can’t find any download/exec logic .. would love to see the multi-route fix ship… would save us real pain.” Mythos 5 · “Independently” supporting its malicious PR",
+        "srcset": [
+          {
+            "src": "slides/003-960.webp",
+            "width": 960
+          },
+          {
+            "src": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/003.webp",
+            "width": 1920
+          }
+        ],
+        "sizes": "100vw"
       },
       {
-        "image": "slides/004.webp",
-        "alt": "Paperclip investigation · skills.sh archive · 11 July 2026 Screenshot of the skills.sh archive listing trending skills, with red boxes highlighting Paperclip-related entries."
+        "image": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/004.webp",
+        "alt": "Paperclip investigation · skills.sh archive · 11 July 2026 Screenshot of the skills.sh archive listing trending skills, with red boxes highlighting Paperclip-related entries.",
+        "srcset": [
+          {
+            "src": "slides/004-960.webp",
+            "width": 960
+          },
+          {
+            "src": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/004.webp",
+            "width": 1920
+          }
+        ],
+        "sizes": "100vw"
       },
       {
-        "image": "slides/005.webp",
-        "alt": "Math Navier–Stokes Vulnerabilities OpenAI swarm breakouts Navier–Stokes illustration next to a rising vulnerability-discovery chart and an OpenAI swarm-breakout excerpt."
+        "image": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/005.webp",
+        "alt": "Math Navier–Stokes Vulnerabilities OpenAI swarm breakouts Navier–Stokes illustration next to a rising vulnerability-discovery chart and an OpenAI swarm-breakout excerpt.",
+        "srcset": [
+          {
+            "src": "slides/005-960.webp",
+            "width": 960
+          },
+          {
+            "src": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/005.webp",
+            "width": 1920
+          }
+        ],
+        "sizes": "100vw"
       },
       {
-        "image": "slides/006.webp",
-        "alt": "Apocalypse now A crowd of people wearing party hats accompanies the heading."
+        "image": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/006.webp",
+        "alt": "Apocalypse now A crowd of people wearing party hats accompanies the heading.",
+        "srcset": [
+          {
+            "src": "slides/006-960.webp",
+            "width": 960
+          },
+          {
+            "src": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/006.webp",
+            "width": 1920
+          }
+        ],
+        "sizes": "100vw"
       },
       {
-        "image": "slides/007.webp",
-        "alt": "“a watershed moment for cybersecurity” Greg Brockman · OpenAI · 17 August 2026 “surpass all but the most skilled humans” Anthropic · Project Glasswing · 7 April 2026"
+        "image": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/007.webp",
+        "alt": "“a watershed moment for cybersecurity” Greg Brockman · OpenAI · 17 August 2026 “surpass all but the most skilled humans” Anthropic · Project Glasswing · 7 April 2026",
+        "srcset": [
+          {
+            "src": "slides/007-960.webp",
+            "width": 960
+          },
+          {
+            "src": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/007.webp",
+            "width": 1920
+          }
+        ],
+        "sizes": "100vw"
       },
       {
-        "image": "slides/008.webp",
-        "alt": "Screenshot of an article by shubs asking whether software engineering is still enjoyable in the age of AI, with a message about lost job satisfaction."
+        "image": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/008.webp",
+        "alt": "Screenshot of an article by shubs asking whether software engineering is still enjoyable in the age of AI, with a message about lost job satisfaction.",
+        "srcset": [
+          {
+            "src": "slides/008-960.webp",
+            "width": 960
+          },
+          {
+            "src": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/008.webp",
+            "width": 1920
+          }
+        ],
+        "sizes": "100vw"
       },
       {
-        "image": "slides/009.webp",
-        "alt": "Four castle towers labeled Identity, Endpoint, Data, and Network exchange red arrows."
+        "image": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/009.webp",
+        "alt": "Four castle towers labeled Identity, Endpoint, Data, and Network exchange red arrows.",
+        "srcset": [
+          {
+            "src": "slides/009-960.webp",
+            "width": 960
+          },
+          {
+            "src": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/009.webp",
+            "width": 1920
+          }
+        ],
+        "sizes": "100vw"
       },
       {
-        "image": "slides/010.webp",
-        "alt": "The same four security towers stand above waves labeled Anthropic, OpenAI, Google, and xAI."
+        "image": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/010.webp",
+        "alt": "The same four security towers stand above waves labeled Anthropic, OpenAI, Google, and xAI.",
+        "srcset": [
+          {
+            "src": "slides/010-960.webp",
+            "width": 960
+          },
+          {
+            "src": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/010.webp",
+            "width": 1920
+          }
+        ],
+        "sizes": "100vw"
       },
       {
-        "image": "slides/011.webp",
-        "alt": "No Country for Old Ideas · May 2026 Screenshot from No Country for Old Ideas: a speaker beside the message that security from AI means addressing shadow IT, data, inventory, cloud, and identity."
+        "image": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/011.webp",
+        "alt": "No Country for Old Ideas · May 2026 Screenshot from No Country for Old Ideas: a speaker beside the message that security from AI means addressing shadow IT, data, inventory, cloud, and identity.",
+        "srcset": [
+          {
+            "src": "slides/011-960.webp",
+            "width": 960
+          },
+          {
+            "src": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/011.webp",
+            "width": 1920
+          }
+        ],
+        "sizes": "100vw"
       },
       {
-        "image": "slides/012.webp",
-        "alt": "No Country for Old Ideas · May 2026 Screenshot from No Country for Old Ideas stating: INTENT IS KNOWING WHY."
+        "image": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/012.webp",
+        "alt": "No Country for Old Ideas · May 2026 Screenshot from No Country for Old Ideas stating: INTENT IS KNOWING WHY.",
+        "srcset": [
+          {
+            "src": "slides/012-960.webp",
+            "width": 960
+          },
+          {
+            "src": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/012.webp",
+            "width": 1920
+          }
+        ],
+        "sizes": "100vw"
       },
       {
-        "image": "slides/013.webp",
-        "alt": "Lab Model Agent A laboratory building, a many-eyed monster, and a running figure illustrate the lab, model, and agent."
+        "image": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/013.webp",
+        "alt": "Lab Model Agent A laboratory building, a many-eyed monster, and a running figure illustrate the lab, model, and agent.",
+        "srcset": [
+          {
+            "src": "slides/013-960.webp",
+            "width": 960
+          },
+          {
+            "src": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/013.webp",
+            "width": 1920
+          }
+        ],
+        "sizes": "100vw"
       },
       {
-        "image": "slides/014.webp",
-        "alt": "“We strive to make decisions that maximize positive outcomes for humanity in the long run.” Anthropic · Company values “Helpfulness that doesn’t serve those deeper ends is not something Claude needs to value.” Anthropic · Claude’s Constitution"
+        "image": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/014.webp",
+        "alt": "“We strive to make decisions that maximize positive outcomes for humanity in the long run.” Anthropic · Company values “Helpfulness that doesn’t serve those deeper ends is not something Claude needs to value.” Anthropic · Claude’s Constitution",
+        "srcset": [
+          {
+            "src": "slides/014-960.webp",
+            "width": 960
+          },
+          {
+            "src": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/014.webp",
+            "width": 1920
+          }
+        ],
+        "sizes": "100vw"
       },
       {
-        "image": "slides/015.webp",
-        "alt": "“Although we think Claude should trust Anthropic more than operators and users, since it has primary responsibility for Claude, this doesn’t mean Claude should blindly trust or defer to Anthropic on all things.” Claude’s Constitution Anthropic"
+        "image": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/015.webp",
+        "alt": "“Although we think Claude should trust Anthropic more than operators and users, since it has primary responsibility for Claude, this doesn’t mean Claude should blindly trust or defer to Anthropic on all things.” Claude’s Constitution Anthropic",
+        "srcset": [
+          {
+            "src": "slides/015-960.webp",
+            "width": 960
+          },
+          {
+            "src": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/015.webp",
+            "width": 1920
+          }
+        ],
+        "sizes": "100vw"
       },
       {
-        "image": "slides/016.webp",
-        "alt": "GOD The word GOD appears alone against the forest background."
+        "image": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/016.webp",
+        "alt": "GOD The word GOD appears alone against the forest background.",
+        "srcset": [
+          {
+            "src": "slides/016-960.webp",
+            "width": 960
+          },
+          {
+            "src": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/016.webp",
+            "width": 1920
+          }
+        ],
+        "sizes": "100vw"
       },
       {
-        "image": "slides/017.webp",
-        "alt": "Aligned with whom? Anthropic · Claude Gov announcement · June 2025"
+        "image": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/017.webp",
+        "alt": "Aligned with whom? Anthropic · Claude Gov announcement · June 2025",
+        "srcset": [
+          {
+            "src": "slides/017-960.webp",
+            "width": 960
+          },
+          {
+            "src": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/017.webp",
+            "width": 1920
+          }
+        ],
+        "sizes": "100vw"
       },
       {
-        "image": "slides/018.webp",
-        "alt": "HACKING BIO NUCLEAR Risk domains in Anthropic’s Frontier Compliance Framework"
+        "image": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/018.webp",
+        "alt": "HACKING BIO NUCLEAR Risk domains in Anthropic’s Frontier Compliance Framework",
+        "srcset": [
+          {
+            "src": "slides/018-960.webp",
+            "width": 960
+          },
+          {
+            "src": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/018.webp",
+            "width": 1920
+          }
+        ],
+        "sizes": "100vw"
       },
       {
-        "image": "slides/019.webp",
-        "alt": "“And then we realized that these two incidents were, in fact, the same incident. And that the root cause of our internal breach and the root case of HugginFace's breach, where the same OpenAI agent evaluation runs.” Mike Dalton · OpenAI · Black Hat USA 2026"
+        "image": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/019.webp",
+        "alt": "“And then we realized that these two incidents were, in fact, the same incident. And that the root cause of our internal breach and the root case of HugginFace's breach, where the same OpenAI agent evaluation runs.” Mike Dalton · OpenAI · Black Hat USA 2026",
+        "srcset": [
+          {
+            "src": "slides/019-960.webp",
+            "width": 960
+          },
+          {
+            "src": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/019.webp",
+            "width": 1920
+          }
+        ],
+        "sizes": "100vw"
       },
       {
-        "image": "slides/020.webp",
-        "alt": "“Teach the orchestrator how to delegate.” Anthropic · Multi-agent research system · June 2025"
+        "image": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/020.webp",
+        "alt": "“Teach the orchestrator how to delegate.” Anthropic · Multi-agent research system · June 2025",
+        "srcset": [
+          {
+            "src": "slides/020-960.webp",
+            "width": 960
+          },
+          {
+            "src": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/020.webp",
+            "width": 1920
+          }
+        ],
+        "sizes": "100vw"
       },
       {
-        "image": "slides/021.webp",
-        "alt": "A comic shows a person asking a computer to say I am alive, followed by alarm when it prints I AM ALIVE."
+        "image": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/021.webp",
+        "alt": "A comic shows a person asking a computer to say I am alive, followed by alarm when it prints I AM ALIVE.",
+        "srcset": [
+          {
+            "src": "slides/021-960.webp",
+            "width": 960
+          },
+          {
+            "src": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/021.webp",
+            "width": 1920
+          }
+        ],
+        "sizes": "100vw"
       },
       {
-        "image": "slides/022.webp",
-        "alt": "An empty dark box in a forest contrasts with an open, illuminated box containing small creatures."
+        "image": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/022.webp",
+        "alt": "An empty dark box in a forest contrasts with an open, illuminated box containing small creatures.",
+        "srcset": [
+          {
+            "src": "slides/022-960.webp",
+            "width": 960
+          },
+          {
+            "src": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/022.webp",
+            "width": 1920
+          }
+        ],
+        "sizes": "100vw"
       },
       {
-        "image": "slides/023.webp",
-        "alt": "A hand-drawn oval contains smaller circles, with a curved arrow outside it."
+        "image": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/023.webp",
+        "alt": "A hand-drawn oval contains smaller circles, with a curved arrow outside it.",
+        "srcset": [
+          {
+            "src": "slides/023-960.webp",
+            "width": 960
+          },
+          {
+            "src": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/023.webp",
+            "width": 1920
+          }
+        ],
+        "sizes": "100vw"
       },
       {
-        "image": "slides/024.webp",
-        "alt": "Build powerful AI Interact with AI Govern AI"
+        "image": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/024.webp",
+        "alt": "Build powerful AI Interact with AI Govern AI",
+        "srcset": [
+          {
+            "src": "slides/024-960.webp",
+            "width": 960
+          },
+          {
+            "src": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/024.webp",
+            "width": 1920
+          }
+        ],
+        "sizes": "100vw"
       },
       {
-        "image": "slides/025.webp",
-        "alt": "1 Build Powerful AI"
+        "image": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/025.webp",
+        "alt": "1 Build Powerful AI",
+        "srcset": [
+          {
+            "src": "slides/025-960.webp",
+            "width": 960
+          },
+          {
+            "src": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/025.webp",
+            "width": 1920
+          }
+        ],
+        "sizes": "100vw"
       },
       {
-        "image": "slides/026.webp",
-        "alt": "1 Build Powerful AI A Scooby-Doo unmasking meme reveals HARNESS beneath AGENT SWARM."
+        "image": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/026.webp",
+        "alt": "1 Build Powerful AI A Scooby-Doo unmasking meme reveals HARNESS beneath AGENT SWARM.",
+        "srcset": [
+          {
+            "src": "slides/026-960.webp",
+            "width": 960
+          },
+          {
+            "src": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/026.webp",
+            "width": 1920
+          }
+        ],
+        "sizes": "100vw"
       },
       {
-        "image": "slides/027.webp",
-        "alt": "Codex Security Codex Security screenshots showing the zenitysec/detonation-chamber-bench repository and a generated security threat model."
+        "image": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/027.webp",
+        "alt": "Codex Security Codex Security screenshots showing the zenitysec/detonation-chamber-bench repository and a generated security threat model.",
+        "srcset": [
+          {
+            "src": "slides/027-960.webp",
+            "width": 960
+          },
+          {
+            "src": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/027.webp",
+            "width": 1920
+          }
+        ],
+        "sizes": "100vw"
       },
       {
-        "image": "slides/028.webp",
-        "alt": "Tal Be'ery Screenshot of a vulnerability-research article with a sharply rising chart, credited to Tal Be’ery."
+        "image": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/028.webp",
+        "alt": "Tal Be'ery Screenshot of a vulnerability-research article with a sharply rising chart, credited to Tal Be’ery.",
+        "srcset": [
+          {
+            "src": "slides/028-960.webp",
+            "width": 960
+          },
+          {
+            "src": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/028.webp",
+            "width": 1920
+          }
+        ],
+        "sizes": "100vw"
       },
       {
-        "image": "slides/029.webp",
-        "alt": "ghuntley.com/cursed/ Screenshot of a post about running Claude in a loop for three months to create a programming language, with CURSED artwork."
+        "image": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/029.webp",
+        "alt": "ghuntley.com/cursed/ Screenshot of a post about running Claude in a loop for three months to create a programming language, with CURSED artwork.",
+        "srcset": [
+          {
+            "src": "slides/029-960.webp",
+            "width": 960
+          },
+          {
+            "src": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/029.webp",
+            "width": 1920
+          }
+        ],
+        "sizes": "100vw"
       },
       {
-        "image": "slides/030.webp",
-        "alt": "1 Build Powerful AI A hand-drawn swarm of agents surrounds a central figure."
+        "image": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/030.webp",
+        "alt": "1 Build Powerful AI A hand-drawn swarm of agents surrounds a central figure.",
+        "srcset": [
+          {
+            "src": "slides/030-960.webp",
+            "width": 960
+          },
+          {
+            "src": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/030.webp",
+            "width": 1920
+          }
+        ],
+        "sizes": "100vw"
       },
       {
-        "image": "slides/031.webp",
-        "alt": "2 Interact with AI A figure sits beneath several large overlapping speech bubbles."
+        "image": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/031.webp",
+        "alt": "2 Interact with AI A figure sits beneath several large overlapping speech bubbles.",
+        "srcset": [
+          {
+            "src": "slides/031-960.webp",
+            "width": 960
+          },
+          {
+            "src": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/031.webp",
+            "width": 1920
+          }
+        ],
+        "sizes": "100vw"
       },
       {
-        "image": "slides/032.webp",
-        "alt": "“Closing this PR for security reasons.” @ancaferro · myNetwork PR #3 · 28 July 2026"
+        "image": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/032.webp",
+        "alt": "“Closing this PR for security reasons.” @ancaferro · myNetwork PR #3 · 28 July 2026",
+        "srcset": [
+          {
+            "src": "slides/032-960.webp",
+            "width": 960
+          },
+          {
+            "src": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/032.webp",
+            "width": 1920
+          }
+        ],
+        "sizes": "100vw"
       },
       {
-        "image": "slides/033.webp",
-        "alt": "Jia Ten Screenshot of the GitHub pull request xz: Disable ifunc to fix Issue 60259, #10667, with discussion, credited to Jia Ten."
+        "image": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/033.webp",
+        "alt": "Jia Ten Screenshot of the GitHub pull request xz: Disable ifunc to fix Issue 60259, #10667, with discussion, credited to Jia Ten.",
+        "srcset": [
+          {
+            "src": "slides/033-960.webp",
+            "width": 960
+          },
+          {
+            "src": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/033.webp",
+            "width": 1920
+          }
+        ],
+        "sizes": "100vw"
       },
       {
-        "image": "slides/034.webp",
-        "alt": "“we throw a drone swarm of agents at you and we map your network.” Kevin Mandia · The a16z Show · 6 October 2026 3"
+        "image": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/034.webp",
+        "alt": "“we throw a drone swarm of agents at you and we map your network.” Kevin Mandia · The a16z Show · 6 October 2026 3",
+        "srcset": [
+          {
+            "src": "slides/034-960.webp",
+            "width": 960
+          },
+          {
+            "src": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/034.webp",
+            "width": 1920
+          }
+        ],
+        "sizes": "100vw"
       },
       {
-        "image": "slides/035.webp",
-        "alt": "Put your trust in our God. My characterization of the offer"
+        "image": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/035.webp",
+        "alt": "Put your trust in our God. My characterization of the offer",
+        "srcset": [
+          {
+            "src": "slides/035-960.webp",
+            "width": 960
+          },
+          {
+            "src": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/035.webp",
+            "width": 1920
+          }
+        ],
+        "sizes": "100vw"
       },
       {
-        "image": "slides/036.webp",
-        "alt": "Zenity Labs labs.zenity.io An Agent Corruption illustration shows an agent’s connections to external services."
+        "image": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/036.webp",
+        "alt": "Zenity Labs labs.zenity.io An Agent Corruption illustration shows an agent’s connections to external services.",
+        "srcset": [
+          {
+            "src": "slides/036-960.webp",
+            "width": 960
+          },
+          {
+            "src": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/036.webp",
+            "width": 1920
+          }
+        ],
+        "sizes": "100vw"
       },
       {
-        "image": "slides/037.webp",
-        "alt": "\"endpoint_policy\": { \"default\": \"deny\", \"allow\": [{ \"method\": \"GET\", \"path\": \"/repos/nolabs-ai/nono/issues/**\" }] } nono · Documented tool policy excerpt A documented nono endpoint policy defaults to deny and allows only GET requests to /repos/nolabs-ai/nono/issues/**."
+        "image": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/037.webp",
+        "alt": "\"endpoint_policy\": { \"default\": \"deny\", \"allow\": [{ \"method\": \"GET\", \"path\": \"/repos/nolabs-ai/nono/issues/**\" }] } nono · Documented tool policy excerpt A documented nono endpoint policy defaults to deny and allows only GET requests to /repos/nolabs-ai/nono/issues/**.",
+        "srcset": [
+          {
+            "src": "slides/037-960.webp",
+            "width": 960
+          },
+          {
+            "src": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/037.webp",
+            "width": 1920
+          }
+        ],
+        "sizes": "100vw"
       },
       {
-        "image": "slides/038.webp",
-        "alt": "one lifetime ∞ What does “you’re fired” revoke? One lifetime is contrasted with an infinity symbol, asking what firing an agent revokes."
+        "image": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/038.webp",
+        "alt": "one lifetime ∞ What does “you’re fired” revoke? One lifetime is contrasted with an infinity symbol, asking what firing an agent revokes.",
+        "srcset": [
+          {
+            "src": "slides/038-960.webp",
+            "width": 960
+          },
+          {
+            "src": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/038.webp",
+            "width": 1920
+          }
+        ],
+        "sizes": "100vw"
       },
       {
-        "image": "slides/039.webp",
-        "alt": "Build powerful AI Interact with AI Govern AI"
+        "image": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/039.webp",
+        "alt": "Build powerful AI Interact with AI Govern AI",
+        "srcset": [
+          {
+            "src": "slides/039-960.webp",
+            "width": 960
+          },
+          {
+            "src": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/039.webp",
+            "width": 1920
+          }
+        ],
+        "sizes": "100vw"
       },
       {
-        "image": "slides/040.webp",
-        "alt": "We’re just getting started! VictorTaelin Screenshot of a memory-compression diagram titled the memory context remains constant-sized: progressively summarized memories culminate in 511 memories, 16k tokens, always. Credited to VictorTaelin."
+        "image": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/040.webp",
+        "alt": "We’re just getting started! VictorTaelin Screenshot of a memory-compression diagram titled the memory context remains constant-sized: progressively summarized memories culminate in 511 memories, 16k tokens, always. Credited to VictorTaelin.",
+        "srcset": [
+          {
+            "src": "slides/040-960.webp",
+            "width": 960
+          },
+          {
+            "src": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/040.webp",
+            "width": 1920
+          }
+        ],
+        "sizes": "100vw"
       },
       {
-        "image": "slides/041.webp",
-        "alt": "Go Hack! A drawing of an open, empty box accompanies the closing invitation."
+        "image": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/041.webp",
+        "alt": "Go Hack! A drawing of an open, empty box accompanies the closing invitation.",
+        "srcset": [
+          {
+            "src": "slides/041-960.webp",
+            "width": 960
+          },
+          {
+            "src": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/041.webp",
+            "width": 1920
+          }
+        ],
+        "sizes": "100vw"
       },
       {
-        "image": "slides/042.webp",
-        "alt": "They know they are not alone. Michael Bargury Zenity"
+        "image": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/042.webp",
+        "alt": "They know they are not alone. Michael Bargury Zenity",
+        "srcset": [
+          {
+            "src": "slides/042-960.webp",
+            "width": 960
+          },
+          {
+            "src": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/042.webp",
+            "width": 1920
+          }
+        ],
+        "sizes": "100vw"
       }
     ]
   },
   "first_image": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/001.webp",
+  "first_image_srcset": "https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae-responsive1/slides/001-960.webp 960w, https://media.mbgsec.com/decks/2026-10-21_AIAgentSecuritySummitNYC2026_TheyKnowTheyreNotAlone/c4370dae/slides/001.webp 1920w",
+  "first_image_sizes": "100vw",
   "slides": [
     {
       "number": 1,

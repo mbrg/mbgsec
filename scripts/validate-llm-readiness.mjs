@@ -200,7 +200,8 @@ try {
     const embedded = snapshotPage.match(/<script type="application\/json" class="deck-player__snapshot">([\s\S]*?)<\/script>/)?.[1];
     assert(embedded, `${filename} lacks its embedded deck snapshot`);
     assert.deepEqual(JSON.parse(embedded), { manifestUrl: data.manifest, manifest: data.deck }, `${filename} embeds a stale or malformed snapshot`);
-    assert(snapshotPage.includes(`<link rel="preload" as="image" href="${data.first_image}" fetchpriority="high">`), `${filename} lacks its first-slide preload`);
+    assert(snapshotPage.includes(`<link rel="preload" as="image" href="${data.first_image}" fetchpriority="high"`), `${filename} lacks its first-slide preload`);
+    if (data.first_image_srcset) assert(snapshotPage.includes(`imagesrcset="${data.first_image_srcset}" imagesizes="${data.first_image_sizes}"`), `${filename} lacks its responsive preload`);
   }
   assert.equal((deck.match(/<h1\b/g) ?? []).length, 1, "Deck must have exactly one h1");
   assertHtmlContract(deck, {

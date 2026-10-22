@@ -52,6 +52,12 @@ upper-left corner; `width` and `height` define the media rectangle. A slide may
 contain multiple `animations` and `videos`. Relative media paths are resolved
 from `deck.json`.
 
+For responsive slide images, keep `image` as the full-resolution fallback and add
+`srcset: [{"src": "slides/001-960.webp", "width": 960}, {"src": "slides/001.webp", "width": 1920}]`
+plus `sizes: "100vw"` to each slide. The viewer and opening-image preload use the
+same candidates, so mobile browsers can fetch a smaller image while desktop and
+fullscreen views retain full resolution. The publisher validates these asset paths.
+
 ## Publish
 
 Review the immutable, versioned object plan first:

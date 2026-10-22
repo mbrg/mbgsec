@@ -114,6 +114,10 @@
         const image = document.createElement("img");
         image.className = "deck-player__slide-image";
         image.fetchPriority = "high";
+        if (Array.isArray(slide.srcset)) {
+          image.srcset = slide.srcset.map((source) => `${resolveAsset(source.src, manifestUrl)} ${source.width}w`).join(", ");
+          image.sizes = slide.sizes || "100vw";
+        }
         image.src = imageUrl;
         image.alt = typeof slide.alt === "string" ? slide.alt : `Slide ${index + 1}`;
         image.decoding = "async";
