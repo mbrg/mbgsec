@@ -148,6 +148,11 @@ try {
   assert(!home.includes('href="#" class="disabled'), "Homepage uses disabled anchors as controls");
   assert(home.includes('<h2 class="archive__subtitle">'), "Homepage lacks its Recent Posts section heading");
   assert.equal((home.match(/<h1\b/g) ?? []).length, 1, "Homepage must have exactly one h1");
+  assert(home.includes('/assets/js/lazy-search.js'), "Search must load on demand");
+  assert(!/<script\b[^>]*src="[^"]*\/lunr\//.test(home), "Homepage eagerly loads the search index");
+  const homePostImages = [...home.slice(home.indexOf('class="archive__item-content"')).matchAll(/<img\b[^>]*>/g)];
+  assert(homePostImages[0]?.[0].includes('fetchpriority="high"'), "Homepage lead image must retain high priority");
+  assert(homePostImages[1]?.[0].includes('loading="lazy"'), "Homepage offscreen post images must load lazily");
 
   const post = await get(postPath, /^text\/html; charset=utf-8$/);
   assertHtmlContract(post, {

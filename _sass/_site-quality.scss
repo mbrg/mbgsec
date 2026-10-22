@@ -1,3 +1,8 @@
+.entries-list > .archive__item:first-child .archive__item-content > :not(:first-child) {
+  content-visibility: auto;
+  contain-intrinsic-block-size: auto 200px;
+}
+
 .pagination li span {
   display: block;
   margin-bottom: 0.25em;

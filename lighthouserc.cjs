@@ -9,6 +9,7 @@ module.exports = {
         "http://localhost/weblog/2026-03-29-claude-code-auto-mode-a-safer-way-to-skip-permissions/",
         "http://localhost/archive/2026-03-29-claude-code-auto-mode-a-safer-way-to-skip-permissions/",
         "http://localhost/talks/2026-08-06-bhusa2026-promptware-eod-skillful-agent-detonation/",
+        "http://localhost/talks/2026-10-21-ai-agent-security-summit-nyc2026-they-know-theyre-not-alone/",
       ],
       settings: {
         maxWaitForLoad: 45000,

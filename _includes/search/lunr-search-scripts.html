@@ -1,0 +1,7 @@
+{% assign locale = include.locale | default: site.locale %}
+{% assign lang = locale | slice: 0,2 | default: "en" %}
+{% unless lang == "gr" %}{% assign lang = "en" %}{% endunless %}
+<script src="{{ '/assets/js/lazy-search.js' | relative_url }}"
+  data-core="{{ '/assets/js/lunr/lunr.min.js' | relative_url }}"
+  data-store="{{ '/assets/js/lunr/lunr-store.js' | relative_url }}"
+  data-language="{{ '/assets/js/lunr/lunr-' | append: lang | append: '.js' | relative_url }}" defer></script>
