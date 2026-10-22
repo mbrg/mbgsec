@@ -134,6 +134,14 @@
 {% if page.layout == 'deck' or page.layout == 'talk' %}
   <link rel="stylesheet" href="{{ '/assets/css/deck-player.css' | relative_url }}?v=20260814-talks-v2">
 {% endif %}
+{% if page.deck_snapshot %}
+  {% assign snapshot_slug = page.permalink | split: '/' | last %}
+  {% assign snapshot_data = site.data.talk_slides[snapshot_slug] %}
+  {% if snapshot_data.first_image %}
+    <link rel="preconnect" href="https://media.mbgsec.com">
+    <link rel="preload" as="image" href="{{ snapshot_data.first_image | escape }}" fetchpriority="high">
+  {% endif %}
+{% endif %}
 
 <!-- For all browsers -->
 <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">

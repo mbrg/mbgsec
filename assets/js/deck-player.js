@@ -113,6 +113,7 @@
 
         const image = document.createElement("img");
         image.className = "deck-player__slide-image";
+        image.fetchPriority = "high";
         image.src = imageUrl;
         image.alt = typeof slide.alt === "string" ? slide.alt : `Slide ${index + 1}`;
         image.decoding = "async";
@@ -214,8 +215,11 @@
         const following = slides[index + 1];
         const followingImage = resolveAsset(following?.image, manifestUrl);
         if (followingImage) {
-          const preload = new Image();
-          preload.src = followingImage;
+          image.addEventListener("load", () => {
+            const preload = new Image();
+            preload.fetchPriority = "low";
+            preload.src = followingImage;
+          }, { once: true });
         }
 
         counter.value = `${index + 1} / ${slides.length}`;

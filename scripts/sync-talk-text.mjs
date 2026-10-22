@@ -120,7 +120,7 @@ async function slideData(talk) {
     source_manifest: talk.deckManifest,
     manifest: pointer.manifest,
     title: manifest.title || undefined,
-    ...(talk.deckSnapshot ? { deck: manifest } : {}),
+    ...(talk.deckSnapshot ? { deck: manifest, first_image: publicMediaUrl(manifest.slides[0]?.image, pointer.manifest) } : {}),
     slides: manifest.slides.map((slide, index) => {
       assert.equal(typeof slide.alt, "string", `${pointer.manifest} slide ${index + 1} lacks alt text.`);
       assert(slide.alt.trim(), `${pointer.manifest} slide ${index + 1} has empty alt text.`);
@@ -175,6 +175,7 @@ async function check(talks) {
     if (talk.deckSnapshot) {
       assert(Array.isArray(data.deck?.slides), `${file} lacks a deck snapshot; run npm run talks:text:sync.`);
       assert.equal(data.deck.slides.length, data.slides.length, `${file} has a stale deck snapshot.`);
+      assert.equal(data.first_image, publicMediaUrl(data.deck.slides[0]?.image, data.manifest), `${file} has a stale first-slide preload.`);
       data.deck.slides.forEach((slide, index) => {
         assert.equal(slide.alt.trim(), data.slides[index].text, `${file} snapshot slide ${index + 1} has stale text.`);
         assert.equal(typeof slide.image, "string", `${file} snapshot slide ${index + 1} lacks an image.`);
