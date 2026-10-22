@@ -13,6 +13,12 @@
     return new URL(value, manifestUrl).href;
   };
 
+  const setResponsiveSources = (image, slide, manifestUrl) => {
+    if (!Array.isArray(slide.srcset)) return;
+    image.srcset = slide.srcset.map((source) => `${resolveAsset(source.src, manifestUrl)} ${source.width}w`).join(", ");
+    image.sizes = slide.sizes || "100vw";
+  };
+
   const youtubeVideoId = (value) => {
     if (typeof value !== "string" || !/^[A-Za-z0-9_-]{11}$/.test(value)) return null;
     return value;
@@ -114,10 +120,7 @@
         const image = document.createElement("img");
         image.className = "deck-player__slide-image";
         image.fetchPriority = "high";
-        if (Array.isArray(slide.srcset)) {
-          image.srcset = slide.srcset.map((source) => `${resolveAsset(source.src, manifestUrl)} ${source.width}w`).join(", ");
-          image.sizes = slide.sizes || "100vw";
-        }
+        setResponsiveSources(image, slide, manifestUrl);
         image.src = imageUrl;
         image.alt = typeof slide.alt === "string" ? slide.alt : `Slide ${index + 1}`;
         image.decoding = "async";
@@ -222,6 +225,7 @@
           image.addEventListener("load", () => {
             const preload = new Image();
             preload.fetchPriority = "low";
+            setResponsiveSources(preload, following, manifestUrl);
             preload.src = followingImage;
           }, { once: true });
         }
