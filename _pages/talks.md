@@ -10,6 +10,7 @@ layout: splash
 
 | Date | Conference | Talk | Resources |
 | - | - | - | - |
+| 2026-10-21 | AI Agent Security Summit by Zenity Labs @ NYC 2026 | They Know They're Not Alone | {% include talk-table-resources.html permalink="/talks/2026-10-21-ai-agent-security-summit-nyc2026-they-know-theyre-not-alone/" %} |
 | 2026-08-06 | Black Hat USA 2026 | Promptware EOD: Skillful Agent Detonation | {% include talk-table-resources.html permalink="/talks/2026-08-06-bhusa2026-promptware-eod-skillful-agent-detonation/" %} |
 | 2026-08-05 | Black Hat USA 2026 | Pwning Agentic Browsers with PleaseFix: A New Vulnerability Class for 0-Click Takeover | {% include talk-table-resources.html permalink="/talks/2026-08-05-bhusa2026-pwning-agentic-browsers-with-pleasefix/" %} |
 | 2026-05-27 | AI Agent Security Summit by Zenity Labs @ SF 2026 | No Country for Old Ideas | {% include talk-table-resources.html permalink="/talks/2026-05-27-ai-agent-security-summit-sf2026-no-country-for-old-ideas/" %} |
