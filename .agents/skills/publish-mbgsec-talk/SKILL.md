@@ -127,6 +127,7 @@ talk_date: YYYY-MM-DD
 conference: Conference Name YYYY
 permalink: /talks/<page-slug>/
 layout: deck
+deck_snapshot: true
 deck_manifest: https://media.mbgsec.com/decks/<r2-slug>/latest.json
 pdf_url: https://media.mbgsec.com/decks/<r2-slug>/slides.pdf
 schedule_url: https://official.example/talk
@@ -148,6 +149,10 @@ Use the deck layout's icon-only resource controls for PDF, schedule, recording, 
 Find the matching row in `_pages/talks.md`. Every listed talk must have a page, even when no slide deck is available; use the `talk` layout for a resource-only page. Use the `talk-table-resources.html` include in the Resources cell and pass it the talk permalink. The include renders the talk-page icon and derives a generic video icon from any `recording_url` in that page's frontmatter. Never pass a recording URL directly from the table. Every Resources cell contains the talk-page icon and, when a recording exists, the recording icon in that order. Do not put PDF, schedule, GitHub, project, or other resource icons in the table; keep them inside the talk page. Preserve the table's formatting and chronology.
 
 Run `npm run talks:text:sync` after the page and public deck manifest are final.
+Use `deck_snapshot: true` for a new deck so the generated public manifest is
+embedded in the page and Cloudflare preview hosts do not need R2 CORS permission
+for JSON fetches. Verify the actual Cloudflare PR preview in a browser after
+pushing; localhost alone cannot establish that preview-origin requests work.
 Commit the generated `_pages/talk-text/` page and `_data/talk_slides/` data so the
 same-origin `/talks/<page-slug>/llms.txt` route contains metadata, all resources,
 the published abstract/transcript, and separately labeled slide accessibility

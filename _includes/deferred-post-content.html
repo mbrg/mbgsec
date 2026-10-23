@@ -8,4 +8,7 @@
   | replace: ' fetchpriority="low"', ''
   | replace: ' fetchpriority="auto"', ''
   | replace: '<img ', '<img loading="lazy" decoding="async" ' %}
+{% if include.eager_first %}
+  {% assign deferred_post_content = deferred_post_content | replace_first: '<img loading="lazy" decoding="async" ', '<img fetchpriority="high" decoding="async" ' %}
+{% endif %}
 {{ deferred_post_content }}

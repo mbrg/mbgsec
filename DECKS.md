@@ -52,6 +52,12 @@ upper-left corner; `width` and `height` define the media rectangle. A slide may
 contain multiple `animations` and `videos`. Relative media paths are resolved
 from `deck.json`.
 
+For responsive slide images, keep `image` as the full-resolution fallback and add
+`srcset: [{"src": "slides/001-960.webp", "width": 960}, {"src": "slides/001.webp", "width": 1920}]`
+plus `sizes: "100vw"` to each slide. The viewer and opening-image preload use the
+same candidates, so mobile browsers can fetch a smaller image while desktop and
+fullscreen views retain full resolution. The publisher validates these asset paths.
+
 ## Publish
 
 Review the immutable, versioned object plan first:
@@ -105,6 +111,7 @@ talk_date: 2026-08-06
 conference: Example Conference 2026
 permalink: /talks/my-talk/
 layout: deck
+deck_snapshot: true
 deck_manifest: https://media.mbgsec.com/decks/my-talk/latest.json
 pdf_url: https://media.mbgsec.com/decks/my-talk/slides.pdf
 schedule_url: https://conference.example.com/schedule/my-talk
@@ -114,6 +121,12 @@ github_url: https://github.com/example/my-talk
 ```
 
 The `pdf_url`, `schedule_url`, `recording_url`, and `github_url` fields are optional.
+Set `deck_snapshot: true` for new decks. `npm run talks:text:sync` stores the public
+manifest alongside its generated slide text, and Jekyll embeds that snapshot in
+the viewer. This lets Cloudflare preview URLs load the deck without requiring R2
+to allow cross-origin JSON requests from every preview host. Images and media
+still resolve against the immutable R2 manifest URL. Re-run the sync whenever the
+published manifest changes. Existing decks without snapshots retain remote loading.
 Use `github_url` for a public source repository shared with the talk. The deck page
 shows only the resource buttons whose URLs are present. Link the corresponding row
 in `_pages/talks.md` with the `talk-table-resources.html` include when the talk

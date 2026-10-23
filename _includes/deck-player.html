@@ -3,6 +3,13 @@
   data-deck-manifest="{{ page.deck_manifest | escape }}"
   aria-label="{{ page.title | escape }} presentation"
 >
+  {% if page.deck_snapshot %}
+    {% assign deck_slug = page.permalink | split: '/' | last %}
+    {% assign deck_data = site.data.talk_slides[deck_slug] %}
+    {% if deck_data.deck %}
+      <script type="application/json" class="deck-player__snapshot">{"manifestUrl":{{ deck_data.manifest | jsonify }},"manifest":{{ deck_data.deck | jsonify | replace: '<', '\u003c' }}}</script>
+    {% endif %}
+  {% endif %}
   <section class="deck-player__viewport" aria-label="Slide viewer">
     <div class="deck-player__stage" tabindex="0">
       <div class="deck-player__slide"></div>

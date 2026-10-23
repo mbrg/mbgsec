@@ -78,6 +78,9 @@ function referencedAssets(manifest) {
   const references = [];
   for (const slide of manifest.slides) {
     if (slide.image) references.push(slide.image);
+    for (const source of Array.isArray(slide.srcset) ? slide.srcset : []) {
+      if (source?.src) references.push(source.src);
+    }
     const animations = Array.isArray(slide.animations) ? slide.animations : [];
     for (const animation of animations) {
       if (animation?.src) references.push(animation.src);

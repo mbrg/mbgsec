@@ -1,20 +1,20 @@
 # Talk enrichment coverage
 
-Generated 2026-08-14 by the repository-local `enrich-mbgsec-talks` skill. Working artifacts are ignored; published frontmatter is the authoritative public state.
+Generated 2026-10-22 by the repository-local `enrich-mbgsec-talks` skill. Working artifacts are ignored; published frontmatter is the authoritative public state.
 
 ## Coverage
 
 | Measure | Count |
 | --- | ---: |
-| Talk pages | 69 |
-| Official agenda links | 64 |
-| Published agenda abstracts | 59 |
+| Talk pages | 70 |
+| Official agenda links | 65 |
+| Published agenda abstracts | 60 |
 | Verified agenda exceptions | 10 |
-| Resolved abstract records | 69/69 |
+| Resolved abstract records | 70/70 |
 | Recording links | 47 |
-| Recording-derived raw transcripts | 47 |
-| Transcript candidates | 47 |
-| Evaluator runs | 5 |
+| Recording-derived raw transcripts | 0 |
+| Transcript candidates | 0 |
+| Evaluator runs | 0 |
 | LLM-reviewed published transcripts | 44 |
 
 ## Operating rule
@@ -27,6 +27,7 @@ Run `npm run talks:enrichment:report` after every batch. Use `npm run talks:enri
 
 | Date | Talk | Abstract state | Recording | Transcript stage | Next action |
 | --- | --- | --- | :---: | --- | --- |
+| 2026-10-21 | `2026-10-21-ai-agent-security-summit-nyc2026-they-know-theyre-not-alone` | published | — | no-recording | Abstract complete; No recording source listed |
 | 2026-08-06 | `2026-08-06-bhusa2026-promptware-eod-skillful-agent-detonation` | published | — | no-recording | Abstract complete; No recording source listed |
 | 2026-08-05 | `2026-08-05-bhusa2026-pwning-agentic-browsers-with-pleasefix` | published | — | no-recording | Abstract complete; No recording source listed |
 | 2026-05-27 | `2026-05-27-ai-agent-security-summit-sf2026-no-country-for-old-ideas` | published | yes | complete | Abstract complete; Transcript complete |

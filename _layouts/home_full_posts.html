@@ -34,7 +34,7 @@ layout: archive
       
       <div class="archive__item-content">
         {% if visible_post_index == 0 %}
-          {{ post.content }}
+          {% include deferred-post-content.html post=post eager_first=true %}
         {% else %}
           {% include deferred-post-content.html post=post %}
         {% endif %}

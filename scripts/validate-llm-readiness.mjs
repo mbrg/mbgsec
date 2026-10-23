@@ -148,6 +148,11 @@ try {
   assert(!home.includes('href="#" class="disabled'), "Homepage uses disabled anchors as controls");
   assert(home.includes('<h2 class="archive__subtitle">'), "Homepage lacks its Recent Posts section heading");
   assert.equal((home.match(/<h1\b/g) ?? []).length, 1, "Homepage must have exactly one h1");
+  assert(home.includes('/assets/js/lazy-search.js'), "Search must load on demand");
+  assert(!/<script\b[^>]*src="[^"]*\/lunr\//.test(home), "Homepage eagerly loads the search index");
+  const homePostImages = [...home.slice(home.indexOf('class="archive__item-content"')).matchAll(/<img\b[^>]*>/g)];
+  assert(homePostImages[0]?.[0].includes('fetchpriority="high"'), "Homepage lead image must retain high priority");
+  assert(homePostImages[1]?.[0].includes('loading="lazy"'), "Homepage offscreen post images must load lazily");
 
   const post = await get(postPath, /^text\/html; charset=utf-8$/);
   assertHtmlContract(post, {
@@ -185,7 +190,19 @@ try {
   assert(deck.includes('> Full text'), "Deck lacks a visible complete-text link");
   assert(deck.includes("Read the complete talk text and slide descriptions"), "Deck lacks a useful no-JavaScript fallback");
   assert(deck.includes('/assets/css/deck-player.css?v=20260814-talks-v2'), "Deck lacks its versioned player stylesheet");
-  assert(deck.includes('/assets/js/deck-player.js?v=20260814-talks-v2'), "Deck lacks its versioned player script");
+  assert(/\/assets\/js\/deck-player\.js\?v=[A-Za-z0-9_-]+/.test(deck), "Deck lacks its versioned player script");
+  const slideDataDirectory = path.join(repositoryRoot, "_data", "talk_slides");
+  for (const filename of await readdir(slideDataDirectory)) {
+    if (!filename.endsWith(".json")) continue;
+    const data = JSON.parse(await readFile(path.join(slideDataDirectory, filename), "utf8"));
+    if (!data.deck) continue;
+    const snapshotPage = await get(`/talks/${filename.slice(0, -5)}/`, /^text\/html; charset=utf-8$/);
+    const embedded = snapshotPage.match(/<script type="application\/json" class="deck-player__snapshot">([\s\S]*?)<\/script>/)?.[1];
+    assert(embedded, `${filename} lacks its embedded deck snapshot`);
+    assert.deepEqual(JSON.parse(embedded), { manifestUrl: data.manifest, manifest: data.deck }, `${filename} embeds a stale or malformed snapshot`);
+    assert(snapshotPage.includes(`<link rel="preload" as="image" href="${data.first_image}" fetchpriority="high"`), `${filename} lacks its first-slide preload`);
+    if (data.first_image_srcset) assert(snapshotPage.includes(`imagesrcset="${data.first_image_srcset}" imagesizes="${data.first_image_sizes}"`), `${filename} lacks its responsive preload`);
+  }
   assert.equal((deck.match(/<h1\b/g) ?? []).length, 1, "Deck must have exactly one h1");
   assertHtmlContract(deck, {
     canonical: `${canonicalOrigin}${deckPath}`,
